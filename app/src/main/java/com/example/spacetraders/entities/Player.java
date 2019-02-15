@@ -1,4 +1,4 @@
-package com.example.spacetraders.entity;
+package com.example.spacetraders.entities;
 
 /**
  * This class represents the player
@@ -10,13 +10,13 @@ public class Player {
     private int traderSkill;
     private int engineerSkill;
     private int credits;
-    private Spaceship ship;
+    private Ship ship;
 
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, Spaceship.GNAT);
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, new Ship(ShipType.GNAT));
     }
 
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, Spaceship ship) {
+    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
