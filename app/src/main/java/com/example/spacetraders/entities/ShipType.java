@@ -7,7 +7,7 @@ public enum ShipType {
     FLEA("Flea"), GNAT("Gnat"), FIREFLY("Firefly"), MOSQUITO("Mosquito"), BUMBLEBEE("Bumblebee"),
     BEETLE("Beetle"), HORNET("Hornet"), GRASSHOPPER("Grasshopper"), TERMITE("Termite"), WASP("Wasp");
 
-    private String name;
+    private final String name;
     /*
     private int numWeapons;
     private int numShields;
