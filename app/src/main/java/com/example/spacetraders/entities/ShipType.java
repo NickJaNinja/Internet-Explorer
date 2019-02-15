@@ -21,22 +21,86 @@ public enum ShipType {
     private final int numGadgets;
     private final int numCargoHolds;
     private final int fuel;
-    private final int numMerc;
+    private final int numCrew;
 
     /**
      * Constructor for the enumeration
      *
      * @param name   name of ship type
      */
-    ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds, int fuel, int numMerc) {
+    ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds, int fuel, int numCrew) {
         this.name = name;
         this.numWeapons = numWeapons;
         this.numShields = numShields;
         this.numGadgets = numGadgets;
         this.numCargoHolds = numCargoHolds;
         this.fuel = fuel;
-        this.numMerc = numMerc;
+        this.numCrew = numCrew;
     }
+
+    /**
+     * getter for name
+     *
+     * @return name
+     */
+    public int getName() {
+        return name;
+    }
+
+    /**
+     * getter for numWeapons
+     *
+     * @return numWeapons
+     */
+    public int getNumWeapons() {
+        return numWeapons;
+    }
+
+    /**
+     * getter for numShields
+     *
+     * @return numShields
+     */
+    public int getNumShields() {
+        return numShields;
+    }
+
+    /**
+     * getter for numGadgets
+     *
+     * @return numGadgets
+     */
+    public int getNumGadgets() {
+        return numGadgets;
+    }
+
+    /**
+     * getter for numCargoHolds
+     *
+     * @return numCargoHolds
+     */
+    public int getNumCargoHolds() {
+        return numCargoHolds;
+    }
+
+    /**
+     * getter for fuel
+     *
+     * @return fuel
+     */
+    public int getFuel() {
+        return fuel;
+    }
+
+    /**
+     * getter for numCrew
+     *
+     * @return numCrew
+     */
+    public int getNumCrew() {
+        return numCrew;
+    }
+
 
     /**
      *

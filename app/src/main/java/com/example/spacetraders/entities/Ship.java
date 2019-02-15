@@ -8,6 +8,7 @@ public class Ship {
     /** type of ship*/
     private ShipType type;
 
+
     /**
      * Constructor for the ship
      *
