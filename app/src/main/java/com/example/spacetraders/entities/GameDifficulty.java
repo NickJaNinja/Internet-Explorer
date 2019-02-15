@@ -1,4 +1,4 @@
-package com.example.spacetraders.entity;
+package com.example.spacetraders.entities;
 
 /**
  * This class represents the various game difficulties
