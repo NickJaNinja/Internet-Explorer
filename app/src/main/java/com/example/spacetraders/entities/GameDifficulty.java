@@ -6,7 +6,7 @@ package com.example.spacetraders.entities;
 public enum GameDifficulty {
     BEGINNER("Beginner"), EASY("Easy"), NORMAL("Normal"), HARD("Hard"), IMPOSSIBLE("Impossible");
 
-    private String name;
+    private final String name;
 
     /**
      * Constructor for the enumeration

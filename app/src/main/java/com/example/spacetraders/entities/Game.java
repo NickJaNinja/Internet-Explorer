@@ -32,4 +32,20 @@ public class Game {
      * @return player
      */
     public Player getPlayer() {return player;}
+
+
+    /**
+     * setter for game difficulty
+     *
+     * @param difficulty the new difficulty
+     */
+    public void setGameDifficulty(GameDifficulty difficulty) {this.difficulty = difficulty;}
+
+    /**
+     * setter for player
+     *
+     * @param player the new difficulty
+     */
+    public void setPlayer(Player player) {this.player = player;}
+
 }

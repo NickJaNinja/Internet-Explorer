@@ -159,7 +159,7 @@ public class Player {
 
     /**
      * setter for credits
-     *
+     *w
      * @param credits player's credits
      */
     public void setCredits(int credits) {
