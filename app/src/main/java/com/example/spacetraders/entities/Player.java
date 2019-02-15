@@ -174,4 +174,22 @@ public class Player {
     public void setShip(Ship ship) {
         this.ship = ship;
     }
+
+    /**
+     * to string for player
+     * 
+     * @return string of player info
+     */
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", pilotSkill=" + pilotSkill +
+                ", fighterSkill=" + fighterSkill +
+                ", traderSkill=" + traderSkill +
+                ", engineerSkill=" + engineerSkill +
+                ", credits=" + credits +
+                ", ship=" + ship +
+                '}';
+    }
 }
