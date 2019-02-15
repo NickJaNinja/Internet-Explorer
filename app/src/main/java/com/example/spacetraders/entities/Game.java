@@ -20,7 +20,16 @@ public class Game {
         this.player = player;
     }
 
+    /**
+     * getter for game difficulty
+     *
+     * @return difficulty
+     */
     public GameDifficulty getGameDifficulty() {return difficulty;}
 
+    /**
+     * getter for player
+     * @return player
+     */
     public Player getPlayer() {return player;}
 }

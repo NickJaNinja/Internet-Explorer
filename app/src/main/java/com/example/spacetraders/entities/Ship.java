@@ -26,4 +26,15 @@ public class Ship {
         return type;
     }
 
+    /**
+     * to string for ship
+     *
+     * @return string of ship
+     */
+    @Override
+    public String toString() {
+        return "Ship{" +
+                "type=" + type +
+                '}';
+    }
 }
