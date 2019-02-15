@@ -177,7 +177,7 @@ public class Player {
 
     /**
      * to string for player
-     * 
+     *
      * @return string of player info
      */
     @Override
