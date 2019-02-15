@@ -1,4 +1,4 @@
-package com.example.spacetraders;
+package com.example.spacetraders.views;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
