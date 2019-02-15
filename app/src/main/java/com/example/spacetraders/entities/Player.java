@@ -26,7 +26,7 @@ public class Player {
      * @param credits initial credits
      * @param ship initial ship
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, Spaceship ship) {
+    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
@@ -108,7 +108,7 @@ public class Player {
      *
      * @return ship
      */
-    public Spaceship getShip() {
+    public Ship getShip() {
         return ship;
     }
 
@@ -171,7 +171,7 @@ public class Player {
      *
      * @param ship player's ship
      */
-    public void setShip(Spaceship ship) {
+    public void setShip(Ship ship) {
         this.ship = ship;
     }
 }
