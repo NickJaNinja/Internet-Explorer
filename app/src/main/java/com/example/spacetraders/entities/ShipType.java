@@ -8,13 +8,11 @@ public enum ShipType {
     BEETLE("Beetle"), HORNET("Hornet"), GRASSHOPPER("Grasshopper"), TERMITE("Termite"), WASP("Wasp");
 
     private final String name;
-    /*
-    private int numWeapons;
-    private int numShields;
-    private int numGadgets;
-    private int numCargoHolds;
-    private int maxRange;
-    */
+    private final int numWeapons;
+    private final int numShields;
+    private final int numGadgets;
+    private final int numCargoHolds;
+    private final int maxRange;
 
     /**
      * Constructor for the enumeration
