@@ -39,6 +39,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView tradeText;
     private TextView engineerText;
     private TextView pilotText;
+    private TextView pointsRemaining;
 
     private Game g;
     private Player p;
@@ -71,6 +72,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         tradeText = findViewById(R.id.traderSkill);
         engineerText = findViewById(R.id.engineerSkill);
         pilotText = findViewById(R.id.pilotSkill);
+        pointsRemaining = findViewById(R.id.skill_points_value);
         Button button = findViewById(R.id.ok_button);
 
         // Making game difficulty adapter
@@ -81,7 +83,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         // Skill point buttons
         fightPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (editPlayerViewModel.onSkill())
+                if (editPlayerViewModel.onSkill(Integer.parseInt()))
                 fighterText.setText(Integer.parseInt((String)fighterText.getText()) + 1);
             }
         });
