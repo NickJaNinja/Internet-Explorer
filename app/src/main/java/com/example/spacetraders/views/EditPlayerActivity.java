@@ -81,6 +81,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         // Skill point buttons
         fightPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (editPlayerViewModel.onSkill())
                 fighterText.setText(Integer.parseInt((String)fighterText.getText()) + 1);
             }
         });
@@ -145,7 +146,8 @@ public class EditPlayerActivity extends AppCompatActivity {
     }
 
 
-    public void onSkillPressed(Button b) {
+    public void onSkillPressed(View view) {
+        Log.d("Edit", "Skill Button Pressed");
 
     }
 }
