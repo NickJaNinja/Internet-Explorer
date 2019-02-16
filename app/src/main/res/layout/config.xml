@@ -310,6 +310,7 @@
         android:text="SKILL POINTS"
         android:textColor="#ffffff"
         android:textSize="20sp"
+        app:fontFamily="@font/tauri"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerNameLayout" />
 
