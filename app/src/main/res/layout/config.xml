@@ -296,9 +296,9 @@
         android:text="DIFFICULTY"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner" />
+        app:layout_constraintBottom_toTopOf="@+id/difficulty_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/difficulty_spinner"
+        app:layout_constraintStart_toStartOf="@+id/difficulty_spinner" />
 
     <TextView
         android:id="@+id/textView10"
@@ -326,7 +326,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/skill_points_value"
         android:layout_width="51dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -339,7 +339,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/cancel_button"
         android:layout_width="46dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -352,7 +352,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/resetToDefaultButton"
+        android:id="@+id/reset_button"
         android:layout_width="46dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -363,10 +363,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+        app:layout_constraintStart_toEndOf="@+id/cancel_button" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/ok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -379,7 +379,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/difficulty_spinner"
         android:layout_width="199dp"
         android:layout_height="33dp"
         tools:layout_editor_absoluteX="103dp"
