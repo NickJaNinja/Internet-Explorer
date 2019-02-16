@@ -116,7 +116,7 @@
 
         <TextView
             android:id="@+id/pilotSkill"
-            android:layout_width="0t"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight=".33"
@@ -161,7 +161,7 @@
 
         <TextView
             android:id="@+id/fighterSkill"
-            android:layout_width="0t"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight=".33"
@@ -206,7 +206,7 @@
 
         <TextView
             android:id="@+id/traderSkill"
-            android:layout_width="0t"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight=".33"
@@ -251,7 +251,7 @@
 
         <TextView
             android:id="@+id/engineerSkill"
-            android:layout_width="0t"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight=".33"
