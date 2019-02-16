@@ -187,8 +187,8 @@ class Player {
      *
      * @return string of player info
      */
-    func String toString() {
-        return "Player{" + "name='" + name + '\'' + ", pilotSkill=" + pilotSkill +
+    func toString() -> String {
+        return "Player{" + "name='" + name + "'" + ", pilotSkill=" + pilotSkill +
             ", fighterSkill=" + fighterSkill + ", traderSkill=" + traderSkill +
             ", engineerSkill=" + engineerSkill + ", credits=" + credits +
             ", ship=" + ship + "}";
