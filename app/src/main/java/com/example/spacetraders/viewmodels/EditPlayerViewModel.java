@@ -16,7 +16,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param trade trader points
      * @param eng engineering points
      * @param pilot pilot points
-     * @return
+     * @return true if OK button can move to next screen
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot) {
         if (name == null || name.length() < 1) { return false; }
@@ -33,7 +33,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      *
      * @param pointsRemaining skill points left unspent
      * @param sign +1 if plus button, -1 if minus button
-     * @return
+     * @return true if skill point can be updated
      */
     public boolean onSkill(int pointsRemaining, int sign) {
         if (pointsRemaining - sign < 0) {
