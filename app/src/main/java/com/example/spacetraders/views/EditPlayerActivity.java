@@ -123,9 +123,14 @@ public class EditPlayerActivity extends AppCompatActivity {
         p = new Player();
         gameDifficultySpinner.setSelection(g.getGameDifficulty().ordinal());
 
-        
+
     }
 
+    /**
+     *
+     *
+     * @param view
+     */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
 
@@ -137,5 +142,10 @@ public class EditPlayerActivity extends AppCompatActivity {
 
         GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
         g = new Game(diff, p);
+    }
+
+
+    public void onSkillPressed(Button b) {
+
     }
 }
