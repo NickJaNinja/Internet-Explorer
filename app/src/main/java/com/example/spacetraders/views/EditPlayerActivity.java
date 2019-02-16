@@ -1,8 +1,6 @@
 package com.example.spacetraders.views;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -143,31 +141,36 @@ public class EditPlayerActivity extends AppCompatActivity {
      */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
-        String name = nameField.getText().toString();
-        int engineer = Integer.parseInt(engineerText.getText().toString());
-        int fighter = Integer.parseInt(fighterText.getText().toString());
-        int trader = Integer.parseInt(tradeText.getText().toString());
-        int pilot = Integer.parseInt(pilotText.getText().toString());
-        p.setName(name);
-        p.setEngineerSkill(engineer);
-        p.setFighterSkill(fighter);
-        p.setTraderSkill(trader);
-        p.setPilotSkill(pilot);
-        if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
-            GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-            g = new Game(diff, p);
+            String name = nameField.getText().toString();
+            int engineer = Integer.parseInt(engineerText.getText().toString());
+            int fighter = Integer.parseInt(fighterText.getText().toString());
+            int trader = Integer.parseInt(tradeText.getText().toString());
+            int pilot = Integer.parseInt(pilotText.getText().toString());
+            p.setName(name);
+            p.setEngineerSkill(engineer);
+            p.setFighterSkill(fighter);
+            p.setTraderSkill(trader);
+            p.setPilotSkill(pilot);
+            if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
+                GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
+                g = new Game(diff, p);
         }
     }
 
-
+    // CAN USE THIS INSTEAD OF 8 LISTENERS IN onCreate()
+    /*
     public void onSkillPressed(View view) {
         Log.d("Edit", "Skill Button Pressed");
 
     }
+<<<<<<< HEAD
+    */
+=======
 
     // . ..█ (͡° ͜ʖ ͡°)
     // ███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
     // ▂▄▅█████████▅▄▃▂
     // I███████████████████].
     // ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤...
+>>>>>>> 4e80e504e8c102d4fda3da942bc2b7779bc99de6
 }
