@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4c4b4b">
+    android:background="#4B4B4C">
 
     <TextView
         android:id="@+id/pilotText"
@@ -43,7 +43,6 @@
         android:id="@+id/pilotText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="TRADER"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/traderSkillLayout"
@@ -110,7 +109,7 @@
             android:id="@+id/pilotSkillSubtract"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#FF0000"
             android:text="—"
             android:textStyle="normal" />
@@ -120,7 +119,8 @@
             android:layout_width="0t"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight=".4"
+            android:layout_weight=".33"
+            android:background="#676767"
             android:gravity="center"
             android:text="4"
             android:textColor="#ffffff"
@@ -132,7 +132,7 @@
             android:id="@+id/pilotSkillAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#32CD32"
             android:text="+"
             android:textStyle="normal" />
@@ -154,7 +154,7 @@
             android:id="@+id/fighterSkillSubtract"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#FF0000"
             android:text="—"
             android:textStyle="normal" />
@@ -164,7 +164,8 @@
             android:layout_width="0t"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight=".4"
+            android:layout_weight=".33"
+            android:background="#676767"
             android:gravity="center"
             android:text="4"
             android:textColor="#ffffff"
@@ -176,7 +177,7 @@
             android:id="@+id/fighterSkillAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#32CD32"
             android:text="+"
             android:textStyle="normal" />
@@ -198,7 +199,7 @@
             android:id="@+id/traderSkillSubtract"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#FF0000"
             android:text="—"
             android:textStyle="normal" />
@@ -208,7 +209,8 @@
             android:layout_width="0t"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight=".4"
+            android:layout_weight=".33"
+            android:background="#676767"
             android:gravity="center"
             android:text="4"
             android:textColor="#ffffff"
@@ -220,7 +222,7 @@
             android:id="@+id/traderSkillAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#32CD32"
             android:text="+"
             android:textStyle="normal" />
@@ -242,7 +244,7 @@
             android:id="@+id/engineerSkillSubtract"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#FF0000"
             android:text="—"
             android:textStyle="normal" />
@@ -252,7 +254,8 @@
             android:layout_width="0t"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight=".4"
+            android:layout_weight=".33"
+            android:background="#676767"
             android:gravity="center"
             android:text="4"
             android:textColor="#ffffff"
@@ -264,7 +267,7 @@
             android:id="@+id/engineerSkillAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"
+            android:layout_weight=".33"
             android:background="#32CD32"
             android:text="+"
             android:textStyle="normal" />
@@ -285,17 +288,30 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="DIFFICULTY"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner" />
+
+    <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
-        android:layout_marginBottom="8dp"
         android:text="SKILL POINTS"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/pilotSkillLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameLayout" />
 
     <TextView
         android:id="@+id/textView12"
@@ -311,15 +327,62 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="34dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="51dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFA500"
         android:gravity="center"
         android:text="0"
-        android:textColor="#ffffff"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/textView12"
         app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FF0000"
+        android:text="✖"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/resetToDefaultButton"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFA500"
+        android:text="↻"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#676767"
+        android:text="CONTINUE"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="199dp"
+        android:layout_height="33dp"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="601dp" />
 
 </android.support.constraint.ConstraintLayout>
