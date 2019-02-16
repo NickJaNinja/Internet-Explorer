@@ -78,6 +78,9 @@
                                 <state key="normal" title="—">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjr-ix-oi8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK1-fV-7su">
                                 <rect key="frame" x="25" y="350" width="30" height="30"/>
@@ -218,6 +221,7 @@
                         <outlet property="fighterPlusbutton" destination="yjI-vu-NOh" id="pqg-Ie-ll2"/>
                         <outlet property="label" destination="QiK-et-x8e" id="xiw-FD-OFF"/>
                         <outlet property="numEngineerSkills" destination="vhp-qM-sek" id="xS3-lQ-Id5"/>
+                        <outlet property="numFighterSkills" destination="POF-0V-4dj" id="1hU-PG-0Hk"/>
                         <outlet property="numPilotSkills" destination="ZhM-R6-SkP" id="FQ8-YS-fvK"/>
                         <outlet property="numSkillPointsLabel" destination="p3D-IO-y70" id="UOo-dy-tBv"/>
                         <outlet property="numTraderSkills" destination="OUa-Ec-1sw" id="whJ-7e-DSs"/>
@@ -226,11 +230,14 @@
                         <outlet property="pilotNameTextField" destination="6rY-BL-ghT" id="Mzg-rl-YaX"/>
                         <outlet property="pilotPlusbutton" destination="8hv-Dq-uMC" id="kjd-zU-DOr"/>
                         <outlet property="skills" destination="hlU-6v-lGL" id="F2V-mL-S8d"/>
+                        <outlet property="stringCreateNewCharacter" destination="4Mg-1X-HEF" id="puV-fa-Pqs"/>
                         <outlet property="stringDifficulty" destination="HST-4c-yEf" id="mSU-Y6-tLT"/>
                         <outlet property="stringEngineer" destination="dY3-pU-wAb" id="nQr-Jw-FfH"/>
                         <outlet property="stringFighter" destination="pTc-Va-cqw" id="8ge-zO-My6"/>
                         <outlet property="stringPilot" destination="SgH-sn-K8Z" id="erv-pZ-HJ0"/>
                         <outlet property="stringPilotName" destination="RZj-IB-iV7" id="9bg-3a-aKD"/>
+                        <outlet property="stringSkillPointsRemainingLabel" destination="p3D-IO-y70" id="lnK-Fn-hr1"/>
+                        <outlet property="stringSkills" destination="hlU-6v-lGL" id="zMP-3z-ZQ5"/>
                         <outlet property="stringTrader" destination="Q1h-cS-GFh" id="GQP-hv-xN4"/>
                         <outlet property="textField" destination="6rY-BL-ghT" id="w4k-Ks-kNh"/>
                         <outlet property="traderMinusbutton" destination="hNk-9s-iGL" id="Rxm-7F-Xal"/>
