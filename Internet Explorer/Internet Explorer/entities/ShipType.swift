@@ -8,7 +8,7 @@
 
 import Foundation
 /**
- * This class represents the various spaceships
+ * self class represents the various spaceships
  */
 enum ShipType{
     case FLEA("Flea": String, 0: Int, 0: Int, 0: Int, 2: Int, 20: Int, 0: Int)
@@ -22,27 +22,27 @@ enum ShipType{
     case TERMITE("Termite", 1, 3, 2, 60, 13, 3) //strong hull
     case WASP("Wasp", 3, 2, 2, 35, 14, 3) //strong hull
     
-    var final name: String!;
-    var final int numWeapons;
-    var final int numShields;
-    var final int numGadgets;
-    var final int numCargoHolds;
-    var final int fuel;
-    var final int numMerc;
+    var final name: String?
+    var final numWeapons: Int = 0
+    var final numShields: Int = 0
+    var final numGadgets: Int = 0
+    var final numCargoHolds: Int = 0
+    var final fuel: Int?
+    var final numMerc: Int?
     
     /**
      * Constructor for the enumeration
      *
      * @param name   name of ship type
      */
-    func ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds, int fuel, int numMerc) {
-    this.name = name;
-    this.numWeapons = numWeapons;
-    this.numShields = numShields;
-    this.numGadgets = numGadgets;
-    this.numCargoHolds = numCargoHolds;
-    this.fuel = fuel;
-    this.numMerc = numMerc;
+    func ShipType(name: String, numWeapons: Int, numShields: Int, numGadgets: Int, numCargoHolds: Int, fuel: Int, numMerc: Int) {
+        self.name = name
+        self.numWeapons = numWeapons
+        self.numShields = numShields
+        self.numGadgets = numGadgets
+        self.numCargoHolds = numCargoHolds
+        self.fuel = fuel
+        self.numMerc = numMerc
     }
     
     /**

@@ -71,11 +71,14 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPick
         }
         
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return GameDifficulty.count
+//            return GameDifficulty.count
+            return 5
         }
         
+        let difficulty = ["Beginner","Easy","Normal","Hard","Imposible"]
+        
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return GameDifficulty[row]
+            return difficulty[row]
         }
         
         // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
