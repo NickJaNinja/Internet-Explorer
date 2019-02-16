@@ -376,7 +376,8 @@
         android:text="CONTINUE"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onOkPressed" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
