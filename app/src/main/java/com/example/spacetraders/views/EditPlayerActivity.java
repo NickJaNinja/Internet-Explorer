@@ -143,6 +143,11 @@ public class EditPlayerActivity extends AppCompatActivity {
 
         GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
         g = new Game(diff, p);
+        editPlayerViewModel.onOk(nameField.getText().toString(),
+                Integer.parseInt(fighterText.getText().toString()),
+                Integer.parseInt(tradeText.getText().toString()),
+                Integer.parseInt(engineerText.getText().toString()),
+                Integer.parseInt(pilotText.getText().toString()));
     }
 
 
