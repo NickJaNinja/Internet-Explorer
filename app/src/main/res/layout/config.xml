@@ -51,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bob the Destroyer"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
