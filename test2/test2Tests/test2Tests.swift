@@ -1,15 +1,15 @@
 //
-//  Internet_ExplorerTests.swift
-//  Internet ExplorerTests
+//  test2Tests.swift
+//  test2Tests
 //
-//  Created by Cecilia on 2/15/19.
+//  Created by Cecilia on 2/16/19.
 //  Copyright © 2019 Cecilia. All rights reserved.
 //
 
 import XCTest
-@testable import Internet_Explorer
+@testable import test2
 
-class Internet_ExplorerTests: XCTestCase {
+class test2Tests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

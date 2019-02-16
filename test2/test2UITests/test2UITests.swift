@@ -1,14 +1,14 @@
 //
-//  Internet_ExplorerUITests.swift
-//  Internet ExplorerUITests
+//  test2UITests.swift
+//  test2UITests
 //
-//  Created by Cecilia on 2/15/19.
+//  Created by Cecilia on 2/16/19.
 //  Copyright © 2019 Cecilia. All rights reserved.
 //
 
 import XCTest
 
-class Internet_ExplorerUITests: XCTestCase {
+class test2UITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
