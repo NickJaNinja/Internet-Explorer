@@ -48,6 +48,13 @@ public class Player {
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
         this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, new Ship(ShipType.GNAT));
     }
+
+    /**
+     *  Create a base player
+     */
+    public Player() {
+        this("", 0, 0, 0, 0, 1000, new Ship(ShipType.GNAT));
+    }
     
     /**
      * getter for name
