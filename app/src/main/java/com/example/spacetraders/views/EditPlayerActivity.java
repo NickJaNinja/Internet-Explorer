@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,10 +19,6 @@ import com.example.spacetraders.viewmodels.EditPlayerViewModel;
 
 public class EditPlayerActivity extends AppCompatActivity {
     private EditPlayerViewModel editPlayerViewModel;
-
-    public static final int ADD_PLAYER_REQUEST_ID = 1;
-
-    public static final String EXTRA_PLAYER = "com.example.spacetraders.views.EXTRA_PLAYER";
 
     private EditText nameField;
     private Button fightPlus;
@@ -42,12 +39,11 @@ public class EditPlayerActivity extends AppCompatActivity {
     private Game g;
     private Player p;
 
-    private boolean editing;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.config);
+        editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
         // I HAVE NO IDEA WHAT THIS DOES
         if (getSupportActionBar() != null) {
@@ -163,14 +159,10 @@ public class EditPlayerActivity extends AppCompatActivity {
         Log.d("Edit", "Skill Button Pressed");
 
     }
-<<<<<<< HEAD
     */
-=======
-
     // . ..█ (͡° ͜ʖ ͡°)
     // ███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
     // ▂▄▅█████████▅▄▃▂
     // I███████████████████].
     // ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤...
->>>>>>> 4e80e504e8c102d4fda3da942bc2b7779bc99de6
 }
