@@ -83,43 +83,50 @@ public class EditPlayerActivity extends AppCompatActivity {
         // Skill point buttons
         fightPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (editPlayerViewModel.onSkill(Integer.parseInt()))
-                fighterText.setText(Integer.parseInt((String)fighterText.getText()) + 1);
+                fighterText.setText(Integer.parseInt((String) fighterText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
         fightMinus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                fighterText.setText(Integer.parseInt((String)fighterText.getText()) - 1);
+                fighterText.setText(Integer.parseInt((String)fighterText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), -1));
             }
         });
         tradePlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                tradeText.setText(Integer.parseInt((String)tradeText.getText()) + 1);
+                tradeText.setText(Integer.parseInt((String)tradeText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
         tradeMinus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                tradeText.setText(Integer.parseInt((String)tradeText.getText()) - 1);
+                tradeText.setText(Integer.parseInt((String)tradeText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), -1));
             }
         });
         engineerPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                engineerText.setText(Integer.parseInt((String)engineerText.getText()) + 1);
+                engineerText.setText(Integer.parseInt((String)engineerText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
         engineerMinus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                engineerText.setText(Integer.parseInt((String)engineerText.getText()) - 1);
+                engineerText.setText(Integer.parseInt((String)engineerText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), -1));
             }
         });
         pilotPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                pilotText.setText(Integer.parseInt((String)pilotText.getText()) + 1);
+                pilotText.setText(Integer.parseInt((String)pilotText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
         pilotMinus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                pilotText.setText(Integer.parseInt((String)pilotText.getText()) - 1);
+                pilotText.setText(Integer.parseInt((String)pilotText.getText())
+                        + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), -1));
             }
         });
 
@@ -132,7 +139,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     /**
      *
      *
-     * @param view
+     * @param view the view
      */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
@@ -157,4 +164,10 @@ public class EditPlayerActivity extends AppCompatActivity {
         Log.d("Edit", "Skill Button Pressed");
 
     }
+
+    // . ..█ (͡° ͜ʖ ͡°)
+    // ███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
+    // ▂▄▅█████████▅▄▃▂
+    // I███████████████████].
+    // ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤...
 }
