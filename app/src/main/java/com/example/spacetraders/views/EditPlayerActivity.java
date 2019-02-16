@@ -137,10 +137,10 @@ public class EditPlayerActivity extends AppCompatActivity {
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
         String name = nameField.getText().toString();
-        int engineer = Integer.parseInt((String)engineerText.getText());
-        int fighter = Integer.parseInt((String)fighterText.getText());
-        int trader = Integer.parseInt((String)tradeText.getText());
-        int pilot = Integer.parseInt((String)pilotText.getText());
+        int engineer = Integer.parseInt(engineerText.getText().toString());
+        int fighter = Integer.parseInt(fighterText.getText().toString());
+        int trader = Integer.parseInt(tradeText.getText().toString());
+        int pilot = Integer.parseInt(pilotText.getText().toString());
         p.setName(name);
         p.setEngineerSkill(engineer);
         p.setFighterSkill(fighter);
