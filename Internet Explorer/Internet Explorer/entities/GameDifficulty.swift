@@ -10,24 +10,28 @@ import Foundation
 /**
  * This class represents the various game difficulties
  */
-public enum GameDifficulty {
-    BEGINNER("Beginner"), EASY("Easy"), NORMAL("Normal"), HARD("Hard"), IMPOSSIBLE("Impossible");
+enum GameDifficulty: String {
+    case BEGINNER = "Beginner"
+    case EASY = "Easy"
+    case NORMAL = "Normal"
+    case HARD = "Hard"
+    case IMPOSSIBL = "Impossible"
     
-    private final String name;
+    var final name: String?
     
     /**
      * Constructor for the enumeration
      *
      * @param name   name of difficulty
      */
-    GameDifficulty(String name) {
-    this.name = name;
+    func GameDifficulty (name: String) {
+        self.name = name
     }
     
     /**
      *
      * @return the display string representation of the course
      */
-    public String toString() { return name; }
+    public toString() -> String { return name }
 }
 

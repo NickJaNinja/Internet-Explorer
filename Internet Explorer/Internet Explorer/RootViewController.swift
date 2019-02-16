@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UIPageViewControllerDelegate {
+class RootViewController: UIViewController, UIPageViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var pageViewController: UIPageViewController?
 
@@ -37,6 +37,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.pageViewController!.view.frame = pageViewRect
 
         self.pageViewController!.didMove(toParent: self)
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
 
     var modelController: ModelController {
@@ -62,7 +65,19 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
             self.pageViewController!.isDoubleSided = false
             return .min
         }
-
+        
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return GameDifficulty.count
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return GameDifficulty[row]
+        }
+        
         // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
         let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
         var viewControllers: [UIViewController]
