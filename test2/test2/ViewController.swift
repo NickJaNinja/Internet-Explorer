@@ -9,54 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return 5
-//    }
-//
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 5
-//    }
-//
-//
-//    func difficultySpinner(_ difficultySpinner: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return 5
-//    }
-//
-//
-//    func difficultySpinner(_ difficultySpinner: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return difficultyPickerData[row]
-//    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // Number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -&gt; Int {
-    return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
-    return difficultyPickerData.count
-    }
-    
-    // The data to return fopr the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
-    return difficultyPickerData[row]
-    }
-    
-    var difficultyPickerData: [String] = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        difficultySpinner.delegate = self
-        difficultySpinner.dataSource = self
-        difficultyPickerData = ["Beginner","Easy","Normal","Hard","Imposible"]
-    }
-    
     
     
     @IBOutlet weak var stringCreateNewCharacter: UILabel!
@@ -87,10 +39,84 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var engineerPlusbutton: UIButton!
     
     @IBOutlet weak var difficultySpinner: UIPickerView!
+    
+    
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return 5
+//    }
+//
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 5
+//    }
+//
+//
+//    func difficultySpinner(_ difficultySpinner: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return 5
+//    }
+//
+//
+//    func difficultySpinner(_ difficultySpinner: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return difficultyPickerData[row]
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
+//
+//    // Number of columns of data
+//    func numberOfComponents(in pickerView: UIPickerView) -&gt; Int {
+//    return 1
+//    }
+//
+//    // The number of rows of data
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
+//    return difficultyPickerData.count
+//    }
+//
+//    // The data to return fopr the row and component (column) that's being passed in
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
+//    return difficultyPickerData[row]
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        difficultySpinner.delegate = self
+        difficultySpinner.dataSource = self
+        difficultyPickerData = ["Beginner","Easy","Normal","Hard","Imposible"]
+    }
+    
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return 10
+        } else {
+            return 100
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return "First \(row)"
+        } else {
+            return "Second \(row)"
+        }
+    }
+    
+    var difficultyPickerData: [String] = [String]()
+    
+
 
     
-    @IBAction func buttonClicked(_ pilotPlusButton: Any) {
-
+    @IBAction func buttonClicked(_ sender: Any) {
+        numPilotSkills.setValue("5")
         }
     }
 

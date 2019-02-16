@@ -110,7 +110,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".33"
-            android:background="#FF0000"
+            android:background="@color/colorAccent"
             android:text="—"
             android:textStyle="normal" />
 
@@ -133,7 +133,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".33"
-            android:background="#32CD32"
+            android:background="@color/colorPrimary"
             android:text="+"
             android:textStyle="normal" />
 
@@ -155,7 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".33"
-            android:background="#FF0000"
+            android:background="@color/colorAccent"
             android:text="—"
             android:textStyle="normal" />
 
@@ -178,7 +178,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".33"
-            android:background="#32CD32"
+            android:background="@color/colorPrimary"
             android:text="+"
             android:textStyle="normal" />
 
@@ -200,7 +200,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".33"
-            android:background="#FF0000"
+            android:background="@color/colorAccent"
             android:text="—"
             android:textStyle="normal" />
 
@@ -223,7 +223,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".33"
-            android:background="#32CD32"
+            android:background="@color/colorPrimary"
             android:text="+"
             android:textStyle="normal" />
 
@@ -245,7 +245,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".33"
-            android:background="#FF0000"
+            android:background="@color/colorAccent"
             android:text="—"
             android:textStyle="normal" />
 
@@ -268,7 +268,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".33"
-            android:background="#32CD32"
+            android:background="@color/colorPrimary"
             android:text="+"
             android:textStyle="normal" />
 
@@ -345,7 +345,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#FF0000"
+        android:background="@color/colorPrimaryDark"
         android:text="✖"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
