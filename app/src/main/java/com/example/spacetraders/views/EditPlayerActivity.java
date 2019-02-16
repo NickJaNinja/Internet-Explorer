@@ -132,7 +132,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     /**
      *
      *
-     * @param view
+     * @param view the view
      */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
@@ -157,4 +157,10 @@ public class EditPlayerActivity extends AppCompatActivity {
         Log.d("Edit", "Skill Button Pressed");
 
     }
+
+    // . ..█ (͡° ͜ʖ ͡°)
+    // ███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
+    // ▂▄▅█████████▅▄▃▂
+    // I███████████████████].
+    // ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤...
 }
