@@ -134,20 +134,20 @@ public class EditPlayerActivity extends AppCompatActivity {
      */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
-
-        p.setName(nameField.getText().toString());
-        p.setEngineerSkill(Integer.parseInt((String)engineerText.getText()));
-        p.setFighterSkill(Integer.parseInt((String)fighterText.getText()));
-        p.setTraderSkill(Integer.parseInt((String)tradeText.getText()));
-        p.setPilotSkill(Integer.parseInt((String)pilotText.getText()));
-
-        GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-        g = new Game(diff, p);
-        editPlayerViewModel.onOk(nameField.getText().toString(),
-                Integer.parseInt(fighterText.getText().toString()),
-                Integer.parseInt(tradeText.getText().toString()),
-                Integer.parseInt(engineerText.getText().toString()),
-                Integer.parseInt(pilotText.getText().toString()));
+        String name = nameField.getText().toString();
+        int engineer = Integer.parseInt((String)engineerText.getText());
+        int fighter = Integer.parseInt((String)fighterText.getText());
+        int trader = Integer.parseInt((String)tradeText.getText());
+        int pilot = Integer.parseInt((String)pilotText.getText());
+        p.setName(name);
+        p.setEngineerSkill(engineer);
+        p.setFighterSkill(fighter);
+        p.setTraderSkill(trader);
+        p.setPilotSkill(pilot);
+        if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
+            GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
+            g = new Game(diff, p);
+        }
     }
 
 
