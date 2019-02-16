@@ -123,7 +123,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         p = new Player();
         gameDifficultySpinner.setSelection(g.getGameDifficulty().ordinal());
 
-        editPlayerViewModel = ViewModelProvider.
+        
     }
 
     public void onOkPressed(View view) {
