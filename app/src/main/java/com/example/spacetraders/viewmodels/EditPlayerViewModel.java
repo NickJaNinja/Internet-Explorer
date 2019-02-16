@@ -11,11 +11,11 @@ public class EditPlayerViewModel extends AndroidViewModel {
     /**
      *
      *
-     * @param name
-     * @param fight
-     * @param trade
-     * @param eng
-     * @param pilot
+     * @param name name of player
+     * @param fight fighter points
+     * @param trade trader points
+     * @param eng engineering points
+     * @param pilot pilot points
      * @return
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot) {
@@ -26,4 +26,20 @@ public class EditPlayerViewModel extends AndroidViewModel {
         }
         return true;
     }
+
+    /**
+     * Returns false if button should not do anything,
+     * true if skill point value should change
+     *
+     * @param pointsRemaining skill points left unspent
+     * @param sign +1 if plus button, -1 if minus button
+     * @return
+     */
+    public boolean onSkill(int pointsRemaining, int sign) {
+        if (pointsRemaining - sign < 0) {
+            return false;
+        }
+        return true;
+    }
+
 }
