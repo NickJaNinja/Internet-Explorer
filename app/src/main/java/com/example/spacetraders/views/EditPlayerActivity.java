@@ -66,12 +66,12 @@ public class EditPlayerActivity extends AppCompatActivity {
         engineerMinus = findViewById(R.id.engineerSkillSubtract);
         pilotPlus = findViewById(R.id.pilotSkillAdd);
         pilotMinus = findViewById(R.id.pilotSkillSubtract);
-        gameDifficultySpinner = findViewById(R.id.);
+        gameDifficultySpinner = findViewById(R.id.difficulty_spinner);
         fighterText = findViewById(R.id.fighterSkill);
         tradeText = findViewById(R.id.traderSkill);
         engineerText = findViewById(R.id.engineerSkill);
         pilotText = findViewById(R.id.pilotSkill);
-        Button button = findViewById(R.id.);
+        Button button = findViewById(R.id.ok_button);
 
         // Making game difficulty adapter
         ArrayAdapter<GameDifficulty> difficultyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
