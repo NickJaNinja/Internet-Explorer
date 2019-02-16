@@ -40,7 +40,120 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var difficultySpinner: UIPickerView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        difficultySpinner.delegate = self
+        difficultySpinner.dataSource = self
+        difficultyPickerData = ["Beginner","Easy","Normal","Hard","Imposible"]
+        numSkillPointsLabel.text =        String(numSkillPointsLeft)
+
+    }
     
+    
+    let playerOne = Player(name: "Bod the Destroyer", pilotSkill: 4, fighterSkill: 4, traderSkill: 4, engineerSkill: 4)
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return 10
+        } else {
+            return 100
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return "First \(row)"
+        } else {
+            return "Second \(row)"
+        }
+    }
+    
+    var difficultyPickerData: [String] = [String]()
+    var numSkillPointsLeft = 0
+
+
+    
+    @IBAction func pilotMinusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getPilotSkill()
+        playerOne.setPilotSkill(pilotSkill: temp - 1)
+        numPilotSkills.text = String(playerOne.getPilotSkill())
+        numSkillPointsLeft += numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func pilotPlusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getPilotSkill()
+        playerOne.setPilotSkill(pilotSkill: temp + 1)
+        numPilotSkills.text = String(playerOne.getPilotSkill())
+        numSkillPointsLeft -= numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func fighterMinusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getFighterSkill()
+        playerOne.setFighterSkill(fighterSkill: temp - 1)
+        numFighterSkills.text = String(playerOne.getFighterSkill())
+        numSkillPointsLeft += numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func fighterPlusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getFighterSkill()
+        playerOne.setFighterSkill(fighterSkill: temp + 1)
+        numFighterSkills.text = String(playerOne.getFighterSkill())
+        numSkillPointsLeft -= numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func traderMinusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getTraderSkill()
+        playerOne.setTraderSkill(traderSkill: temp - 1)
+        numTraderSkills.text = String(playerOne.getTraderSkill())
+        numSkillPointsLeft += numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func traderPlusbuttonlicked(_ sender: Any) {
+        let temp = playerOne.getTraderSkill()
+        playerOne.setTraderSkill(traderSkill: temp + 1)
+        numTraderSkills.text = String(playerOne.getTraderSkill())
+        numSkillPointsLeft -= numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func engineerMinusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getEngineerSkill()
+        playerOne.setEngineerSkill(engineerSkill: temp - 1)
+        numEngineerSkills.text = String(playerOne.getEngineerSkill())
+        numSkillPointsLeft += numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+    @IBAction func engineerPlusbuttonClicked(_ sender: Any) {
+        let temp = playerOne.getEngineerSkill()
+        playerOne.setEngineerSkill(engineerSkill: temp + 1)
+        numEngineerSkills.text = String(playerOne.getEngineerSkill())
+        numSkillPointsLeft -= numSkillPointsLeft
+        numSkillPointsLabel.text = String(numSkillPointsLeft)
+    }
+    
+
+}
+
+
+
+
+
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var DestViewController : ViewController = segue.destinationViewController as ViewController
+//        Player.pilotSkill = 3
+//    }
+
 //    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 //        return 5
 //    }
@@ -78,48 +191,3 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
 //    return difficultyPickerData[row]
 //    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        difficultySpinner.delegate = self
-        difficultySpinner.dataSource = self
-        difficultyPickerData = ["Beginner","Easy","Normal","Hard","Imposible"]
-    }
-    
-    
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return 10
-        } else {
-            return 100
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return "First \(row)"
-        } else {
-            return "Second \(row)"
-        }
-    }
-    
-    var difficultyPickerData: [String] = [String]()
-    
-
-
-    
-    @IBAction func buttonClicked(_ sender: Any) {
-        numPilotSkills.setValue("5")
-        }
-    }
-
-
-
-

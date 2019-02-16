@@ -14,7 +14,11 @@
 		2ED9436222186F130098FB4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED9436022186F130098FB4A /* LaunchScreen.storyboard */; };
 		2ED9436D22186F130098FB4A /* test2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9436C22186F130098FB4A /* test2Tests.swift */; };
 		2ED9437822186F140098FB4A /* test2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9437722186F140098FB4A /* test2UITests.swift */; };
-		2ED9438A221893730098FB4A /* entities in Resources */ = {isa = PBXBuildFile; fileRef = 2ED94389221893720098FB4A /* entities */; };
+		2ED943CC2218B7520098FB4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED943C72218B7500098FB4A /* Ship.swift */; };
+		2ED943CD2218B7520098FB4A /* ShipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED943C82218B7510098FB4A /* ShipType.swift */; };
+		2ED943CE2218B7520098FB4A /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED943C92218B7520098FB4A /* GameDifficulty.swift */; };
+		2ED943CF2218B7520098FB4A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED943CA2218B7520098FB4A /* Game.swift */; };
+		2ED943D02218B7520098FB4A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED943CB2218B7520098FB4A /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,11 @@
 		2ED9437322186F130098FB4A /* test2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED9437722186F140098FB4A /* test2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2UITests.swift; sourceTree = "<group>"; };
 		2ED9437922186F140098FB4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ED94389221893720098FB4A /* entities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = entities; path = "../../../Internet Explorer dataviewcontrol/Internet Explorer/entities"; sourceTree = "<group>"; };
+		2ED943C72218B7500098FB4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		2ED943C82218B7510098FB4A /* ShipType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipType.swift; sourceTree = "<group>"; };
+		2ED943C92218B7520098FB4A /* GameDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
+		2ED943CA2218B7520098FB4A /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2ED943CB2218B7520098FB4A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,11 @@
 		2ED9435622186F120098FB4A /* test2 */ = {
 			isa = PBXGroup;
 			children = (
-				2ED94389221893720098FB4A /* entities */,
+				2ED943CA2218B7520098FB4A /* Game.swift */,
+				2ED943C92218B7520098FB4A /* GameDifficulty.swift */,
+				2ED943CB2218B7520098FB4A /* Player.swift */,
+				2ED943C72218B7500098FB4A /* Ship.swift */,
+				2ED943C82218B7510098FB4A /* ShipType.swift */,
 				2ED9435722186F120098FB4A /* AppDelegate.swift */,
 				2ED9435922186F120098FB4A /* ViewController.swift */,
 				2ED9435B22186F120098FB4A /* Main.storyboard */,
@@ -233,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED9436222186F130098FB4A /* LaunchScreen.storyboard in Resources */,
-				2ED9438A221893730098FB4A /* entities in Resources */,
 				2ED9435F22186F130098FB4A /* Assets.xcassets in Resources */,
 				2ED9435D22186F120098FB4A /* Main.storyboard in Resources */,
 			);
@@ -261,7 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED9435A22186F120098FB4A /* ViewController.swift in Sources */,
+				2ED943CF2218B7520098FB4A /* Game.swift in Sources */,
+				2ED943CC2218B7520098FB4A /* Ship.swift in Sources */,
 				2ED9435822186F120098FB4A /* AppDelegate.swift in Sources */,
+				2ED943D02218B7520098FB4A /* Player.swift in Sources */,
+				2ED943CD2218B7520098FB4A /* ShipType.swift in Sources */,
+				2ED943CE2218B7520098FB4A /* GameDifficulty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

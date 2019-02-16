@@ -42,6 +42,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pilotPlusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V9X-NR-5EC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjI-vu-NOh">
                                 <rect key="frame" x="136" y="348" width="30" height="30"/>
@@ -51,6 +54,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="fighterPlusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vyR-zp-Jl8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avu-2N-u1j">
                                 <rect key="frame" x="136" y="438" width="30" height="30"/>
@@ -60,6 +66,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="traderPlusbuttonlicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NL5-aq-WbU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-4S-tgw">
                                 <rect key="frame" x="136" y="528" width="30" height="30"/>
@@ -69,6 +78,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="engineerPlusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5P-7M-tZd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4L-on-Gex">
                                 <rect key="frame" x="25" y="270" width="30" height="30"/>
@@ -80,6 +92,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjr-ix-oi8"/>
+                                    <action selector="pilotMinusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Eh-Fk-OgW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK1-fV-7su">
@@ -90,6 +103,9 @@
                                 <state key="normal" title="—">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="fighterMinusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOu-Db-hEM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNk-9s-iGL">
                                 <rect key="frame" x="25" y="438" width="30" height="30"/>
@@ -99,6 +115,9 @@
                                 <state key="normal" title="—">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="traderMinusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UqC-fq-QSL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCe-Pa-o0f">
                                 <rect key="frame" x="25" y="528" width="30" height="30"/>
@@ -108,6 +127,9 @@
                                 <state key="normal" title="—">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="engineerMinusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGt-nZ-Er1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKILLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-6v-lGL">
                                 <rect key="frame" x="63" y="228" width="64" height="24"/>
