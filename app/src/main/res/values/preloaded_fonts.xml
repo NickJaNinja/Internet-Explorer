@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+<<<<<<< HEAD
         <item>@font/aclonica</item>
+=======
+        <item>@font/tauri</item>
+>>>>>>> 045eca216169a1c8459eb59fc6028a5a819b5ac5
     </array>
 </resources>

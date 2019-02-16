@@ -12,6 +12,14 @@ public class Game {
     /**
      * Constructor for the game
      *
+     */
+    public Game() {
+        this(GameDifficulty.BEGINNER, null);
+    }
+
+    /**
+     * Constructor for the game
+     *
      * @param difficulty   difficulty of game
      * @param player        the player
      */
