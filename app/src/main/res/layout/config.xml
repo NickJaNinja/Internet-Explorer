@@ -382,7 +382,17 @@
         android:id="@+id/difficulty_spinner"
         android:layout_width="199dp"
         android:layout_height="33dp"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="601dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="104dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pilotText3"
+        app:layout_constraintVertical_bias="0.907" />
 
 </android.support.constraint.ConstraintLayout>
