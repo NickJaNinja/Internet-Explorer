@@ -9,9 +9,9 @@
 import Foundation
 class Game {
     /** the game difficulty */
-    var  GameDifficulty difficulty
+    var difficulty: GameDifficulty?
     /** the player */
-    var Player player
+    var player: Player?
     
     /**
      * Constructor for the game
@@ -19,9 +19,9 @@ class Game {
      * @param difficulty   difficulty of game
      * @param player        the player
      */
-    func Game (GameDifficulty, difficulty, Player player) {
-    self.difficulty = difficulty
-    self.player = player
+    func Game (difficulty: GameDifficulty, player: Player) {
+        self.difficulty = difficulty
+        self.player = player
     }
     
     /**
@@ -29,13 +29,13 @@ class Game {
      *
      * @return difficulty
      */
-    func GameDifficulty getGameDifficulty() {return difficulty}
+    func getGameDifficulty() -> GameDifficulty {return difficulty!}
     
     /**
      * getter for player
      * @return player
      */
-    func Player getPlayer() {return player}
+    func getPlayer() -> Player {return player!}
     
     
     /**
@@ -43,13 +43,13 @@ class Game {
      *
      * @param difficulty the new difficulty
      */
-    func void setGameDifficulty(GameDifficulty difficulty) {self.difficulty = difficulty}
+    func setGameDifficulty (difficulty: GameDifficulty) {self.difficulty = difficulty}
     
     /**
      * setter for player
      *
      * @param player the new difficulty
      */
-    func void setPlayer(Player player) {self.player = player}
+    func setPlayer(player: Player) {self.player = player}
     
 }

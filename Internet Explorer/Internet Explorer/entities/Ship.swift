@@ -11,17 +11,17 @@ import Foundation
  * This class represents the player's ship
  */
 
-public class Ship {
+class Ship {
     /** type of ship*/
-    private ShipType type;
+    var type: ShipType?
     
     /**
      * Constructor for the ship
      *
      * @param type   type of ship
      */
-    public Ship(ShipType type) {
-    this.type = type;
+    func Ship(type: ShipType) {
+        self.type = type
     }
     
     /**
@@ -29,8 +29,8 @@ public class Ship {
      *
      * @return  type of ship
      */
-    public ShipType getShipType() {
-    return type;
+    func getShipType() -> ShipType{
+        return type!
     }
     
     /**
@@ -38,10 +38,7 @@ public class Ship {
      *
      * @return string of ship
      */
-    @Override
-    public String toString() {
-    return "Ship{" +
-    "type=" + type +
-    '}';
+    func toString() -> String{
+        return "Ship{" + "type=" + type + "}";
     }
 }
