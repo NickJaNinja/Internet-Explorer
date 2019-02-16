@@ -43,7 +43,7 @@ public enum ShipType {
      *
      * @return name
      */
-    public int getName() {
+    public String getName() {
         return name;
     }
 
