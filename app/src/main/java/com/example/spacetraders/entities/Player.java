@@ -22,7 +22,7 @@ public class Player {
      * @param pilotSkill initial pilotSkill
      * @param fighterSkill initial fighterSkill
      * @param traderSkill initial traderSkill
-     * @param engineerSkill inital engineerSkill
+     * @param engineerSkill initial engineerSkill
      * @param credits initial credits
      * @param ship initial ship
      */
@@ -43,7 +43,7 @@ public class Player {
      * @param pilotSkill initial pilotSkill
      * @param fighterSkill initial fighterSkill
      * @param traderSkill initial traderSkill
-     * @param engineerSkill inital engineerSkill
+     * @param engineerSkill initial engineerSkill
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
         this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, new Ship(ShipType.GNAT));
