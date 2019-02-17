@@ -75,68 +75,58 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var difficultyPickerData: [String] = [String]()
     var numSkillPointsLeft = 0
-
-
     
     @IBAction func pilotMinusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getPilotSkill()
-        playerOne.setPilotSkill(pilotSkill: temp - 1)
+        playerOne.setPilotSkill(pilotSkill: playerOne.getPilotSkill() - 1)
         numPilotSkills.text = String(playerOne.getPilotSkill())
         numSkillPointsLeft += numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func pilotPlusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getPilotSkill()
-        playerOne.setPilotSkill(pilotSkill: temp + 1)
+        playerOne.setPilotSkill(pilotSkill: playerOne.getPilotSkill() + 1)
         numPilotSkills.text = String(playerOne.getPilotSkill())
         numSkillPointsLeft -= numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func fighterMinusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getFighterSkill()
-        playerOne.setFighterSkill(fighterSkill: temp - 1)
+        playerOne.setFighterSkill(fighterSkill: playerOne.getFighterSkill() - 1)
         numFighterSkills.text = String(playerOne.getFighterSkill())
         numSkillPointsLeft += numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func fighterPlusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getFighterSkill()
-        playerOne.setFighterSkill(fighterSkill: temp + 1)
+        playerOne.setFighterSkill(fighterSkill: playerOne.getFighterSkill() + 1)
         numFighterSkills.text = String(playerOne.getFighterSkill())
         numSkillPointsLeft -= numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func traderMinusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getTraderSkill()
-        playerOne.setTraderSkill(traderSkill: temp - 1)
+        playerOne.setTraderSkill(traderSkill: playerOne.getTraderSkill() - 1)
         numTraderSkills.text = String(playerOne.getTraderSkill())
         numSkillPointsLeft += numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func traderPlusbuttonlicked(_ sender: Any) {
-        let temp = playerOne.getTraderSkill()
-        playerOne.setTraderSkill(traderSkill: temp + 1)
+        playerOne.setTraderSkill(traderSkill: playerOne.getTraderSkill() + 1)
         numTraderSkills.text = String(playerOne.getTraderSkill())
         numSkillPointsLeft -= numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func engineerMinusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getEngineerSkill()
-        playerOne.setEngineerSkill(engineerSkill: temp - 1)
+        playerOne.setEngineerSkill(engineerSkill: playerOne.getEngineerSkill() - 1)
         numEngineerSkills.text = String(playerOne.getEngineerSkill())
         numSkillPointsLeft += numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
     }
     
     @IBAction func engineerPlusbuttonClicked(_ sender: Any) {
-        let temp = playerOne.getEngineerSkill()
-        playerOne.setEngineerSkill(engineerSkill: temp + 1)
+        playerOne.setEngineerSkill(engineerSkill: playerOne.getEngineerSkill() + 1)
         numEngineerSkills.text = String(playerOne.getEngineerSkill())
         numSkillPointsLeft -= numSkillPointsLeft
         numSkillPointsLabel.text = String(numSkillPointsLeft)
