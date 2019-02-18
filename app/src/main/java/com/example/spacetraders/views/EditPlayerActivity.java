@@ -1,10 +1,10 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +31,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     private Button engineerMinus;
     private Button pilotPlus;
     private Button pilotMinus;
+    private Button reset;
     private Button exit;
     private Spinner gameDifficultySpinner;
     private TextView fighterText;
@@ -70,6 +71,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         engineerText = findViewById(R.id.engineerSkill);
         pilotText = findViewById(R.id.pilotSkill);
         pointsRemaining = findViewById(R.id.skill_points_value);
+        reset = findViewById(R.id.reset_button);
         exit = findViewById(R.id.cancel_button);
 
         // Making game difficulty adapter
@@ -200,8 +202,22 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed(v);
             }
-
         });
+
+
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                nameField.setText(null);
+                pilotText.setText(String.format("%d", 4));
+                fighterText.setText(String.format("%d", 4));
+                tradeText.setText(String.format("%d", 4));
+                engineerText.setText(String.format("%d", 4));
+                pointsRemaining.setText(String.format("%d", 0));
+                onAnyButtonPressed(v);
+            }
+        });
+
         exit.setOnClickListener((v) -> {
             finish();
         });
@@ -230,13 +246,13 @@ public class EditPlayerActivity extends AppCompatActivity {
             g = new Game(diff, p);
 
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
+        } else {
+            CharSequence text = editPlayerViewModel.getToastText();
 
-
+            Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
-
-
-
 
     /**
      *  whenever a plus or minus button is pressed, changes the currSkillRem Text View background
