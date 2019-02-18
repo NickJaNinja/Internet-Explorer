@@ -67,7 +67,6 @@ public class EditPlayerActivity extends AppCompatActivity {
         engineerText = findViewById(R.id.engineerSkill);
         pilotText = findViewById(R.id.pilotSkill);
         pointsRemaining = findViewById(R.id.skill_points_value);
-        Button button = findViewById(R.id.ok_button);
 
         // Making game difficulty adapter
         ArrayAdapter<GameDifficulty> difficultyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
@@ -113,7 +112,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         });
         pilotPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                pilotText.setText(Integer.parseInt((String)pilotText.getText())
+                pilotText.setText(Integer.parseInt(pilotText.getText().toString())
                         + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
@@ -123,11 +122,6 @@ public class EditPlayerActivity extends AppCompatActivity {
                         + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), -1));
             }
         });
-
-        p = new Player();
-        gameDifficultySpinner.setSelection(g.getGameDifficulty().ordinal());
-
-
     }
 
     /**
@@ -137,26 +131,32 @@ public class EditPlayerActivity extends AppCompatActivity {
      */
     public void onOkPressed(View view) {
         Log.d("Edit", "OK Player Pressed");
-            String name = nameField.getText().toString();
-            int engineer = Integer.parseInt(engineerText.getText().toString());
-            int fighter = Integer.parseInt(fighterText.getText().toString());
-            int trader = Integer.parseInt(tradeText.getText().toString());
-            int pilot = Integer.parseInt(pilotText.getText().toString());
+        String name = nameField.getText().toString();
+        int engineer = Integer.parseInt(engineerText.getText().toString());
+        int fighter = Integer.parseInt(fighterText.getText().toString());
+        int trader = Integer.parseInt(tradeText.getText().toString());
+        int pilot = Integer.parseInt(pilotText.getText().toString());
+        if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
+            p = new Player();
             p.setName(name);
             p.setEngineerSkill(engineer);
             p.setFighterSkill(fighter);
             p.setTraderSkill(trader);
             p.setPilotSkill(pilot);
-            if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
-                GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-                g = new Game(diff, p);
+            GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
+            g = new Game(diff, p);
         }
     }
 
     // CAN USE THIS INSTEAD OF 8 LISTENERS IN onCreate()
     /*
-    public void onSkillPressed(View view) {
-        Log.d("Edit", "Skill Button Pressed");
+    public void onPlusPressed(View view) {
+        Log.d("Edit", "Skill Plus Button Pressed");
+
+    }
+
+    public void onMinusPressed(View view) {
+        Log.d("Edit", "Skill Minus Button Pressed");
 
     }
     */
