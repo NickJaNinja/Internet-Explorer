@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
@@ -170,6 +171,11 @@ public class EditPlayerActivity extends AppCompatActivity {
             p.setPilotSkill(pilot);
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
             g = new Game(diff, p);
+        } else {
+            CharSequence text = editPlayerViewModel.getToastText();
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+            toast.show();
         }
     }
 
