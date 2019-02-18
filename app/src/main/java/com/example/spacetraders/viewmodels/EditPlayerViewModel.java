@@ -2,14 +2,16 @@ package com.example.spacetraders.viewmodels;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.os.Bundle;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 
 public class EditPlayerViewModel extends AndroidViewModel {
     public EditPlayerViewModel(@NonNull Application app) { super(app); }
 
+    private String toastText;
+
     /**
-     *
+     * Checks to see if player is configured correctly
      *
      * @param name name of player
      * @param fight fighter points
@@ -19,12 +21,25 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @return true if OK button can move to next screen
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot) {
-        if (name == null || name.length() < 1) { return false; }
+        if (name == null || name.length() < 1) {
+            toastText = "Please enter your pilot's name";
+            return false;
+        }
         int sum = fight + trade + eng + pilot;
         if (sum != 16) {
+            toastText = "Please use all of your skill points";
             return false;
         }
         return true;
+    }
+
+    /**
+     * returns value of String toastText
+     *
+     * @return value of toastText
+     */
+    public String getToastText() {
+        return toastText;
     }
 
     /**
@@ -43,6 +58,17 @@ public class EditPlayerViewModel extends AndroidViewModel {
             return -1;
         }
         return 1;
+    }
+
+    /**
+     * returns green color hex if currSkillRem is 0, else returns orange color hex
+     *
+     * @param currSkillRem current amount of skill points remaining
+     * @return the color to use
+     */
+    public int onAnyButton(int currSkillRem) {
+        if (currSkillRem == 0) return Color.parseColor("#FF5FCA77");
+        else return Color.parseColor("#FFA500");
     }
 
 }
