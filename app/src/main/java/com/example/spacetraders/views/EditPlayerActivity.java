@@ -112,7 +112,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         });
         pilotPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                pilotText.setText(Integer.parseInt((String)pilotText.getText())
+                pilotText.setText(Integer.parseInt(pilotText.getText().toString())
                         + editPlayerViewModel.onSkill(Integer.parseInt(pointsRemaining.toString()), 1));
             }
         });
