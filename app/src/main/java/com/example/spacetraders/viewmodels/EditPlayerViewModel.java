@@ -35,8 +35,8 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param sign +1 if plus button, -1 if minus button
      * @return amount to change skill point value by
      */
-    public int onSkill(int pointsRemaining, int sign) {
-        if (pointsRemaining - sign < 0) {
+    public int onSkill(int curr, int pointsRemaining, int sign) {
+        if (pointsRemaining - sign < 0 || (curr == 0 && sign < 0)) {
             return 0;
         }
         else if (sign < 0) {
