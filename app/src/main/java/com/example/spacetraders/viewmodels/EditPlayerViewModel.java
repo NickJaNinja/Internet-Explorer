@@ -11,7 +11,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
     private String toastText;
 
     /**
-     *
+     * check conditions for creating a player
      *
      * @param name name of player
      * @param fight fighter points

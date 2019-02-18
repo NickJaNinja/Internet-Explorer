@@ -43,6 +43,11 @@ public class EditPlayerActivity extends AppCompatActivity {
     private Game g;
     private Player p;
 
+    /**
+     * view when app is opened
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +85,6 @@ public class EditPlayerActivity extends AppCompatActivity {
         gameDifficultySpinner.setAdapter(difficultyAdapter);
 
         // Skill point buttons
-
         fightPlus.setOnClickListener(v -> {
             int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(fighterText.getText().toString()),
                     Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -204,8 +208,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
 
-
-
+        // reset button: all textfields
         reset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nameField.setText(null);
@@ -218,13 +221,14 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
 
+        // exit button: exit game
         exit.setOnClickListener((v) -> {
             finish();
         });
     }
 
     /**
-     *
+     * create new player on ok pressed
      *
      * @param view the view
      */
