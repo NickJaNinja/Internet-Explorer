@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,8 +47,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.config);
         editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
-
-        // I HAVE NO IDEA WHAT THIS DOES
+        
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setHomeButtonEnabled(false);
@@ -80,57 +78,6 @@ public class EditPlayerActivity extends AppCompatActivity {
         gameDifficultySpinner.setAdapter(difficultyAdapter);
 
         // Skill point buttons
-
-        fightPlus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(fighterText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), 1);
-            fighterText.setText(String.format("%d", Integer.parseInt((String) fighterText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        fightMinus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(fighterText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), -1);
-            fighterText.setText(String.format("%d", Integer.parseInt((String)fighterText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        tradePlus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(tradeText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), 1);
-            tradeText.setText(String.format("%d", Integer.parseInt((String)tradeText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        tradeMinus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(tradeText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), -1);
-            tradeText.setText(String.format("%d", Integer.parseInt((String)tradeText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        engineerPlus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(engineerText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), 1);
-            engineerText.setText(String.format("%d", Integer.parseInt((String)engineerText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        engineerMinus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(engineerText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), -1);
-            engineerText.setText(String.format("%d", Integer.parseInt((String)engineerText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        pilotPlus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(pilotText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), 1);
-            pilotText.setText(String.format("%d", Integer.parseInt(pilotText.getText().toString()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-        pilotMinus.setOnClickListener(v -> {
-            int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(pilotText.getText().toString()),
-                    Integer.parseInt(pointsRemaining.getText().toString()), -1);
-            pilotText.setText(String.format("%d", Integer.parseInt((String)pilotText.getText()) + skillChange));
-            pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-        });
-
-
         fightPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(fighterText.getText().toString()),
@@ -204,8 +151,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
 
-
-
+        // Resets player configuration screen
         reset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nameField.setText(null);
@@ -218,13 +164,17 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
 
-        exit.setOnClickListener((v) -> {
-            finish();
+        // Exits the app
+        exit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
         });
     }
 
     /**
-     *
+     * Compiles player data and creates a new player if data is all correct.
+     * Also creates a new game with the data.
      *
      * @param view the view
      */
