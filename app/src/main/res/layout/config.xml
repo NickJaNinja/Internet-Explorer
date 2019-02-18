@@ -93,7 +93,7 @@
             android:id="@+id/playerNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bob the Destroyer"
+            android:hint="eg. Bob the Destroyer"
             android:textColor="#ffffff" />
     </android.support.design.widget.TextInputLayout>
 
@@ -346,7 +346,7 @@
         android:layout_width="51dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:background="#FFA500"
+        android:background="#FF5FCA77"
         android:gravity="center"
         android:text="0"
         android:textSize="30sp"

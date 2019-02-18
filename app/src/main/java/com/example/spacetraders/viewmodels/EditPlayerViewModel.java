@@ -2,6 +2,7 @@ package com.example.spacetraders.viewmodels;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -43,6 +44,17 @@ public class EditPlayerViewModel extends AndroidViewModel {
             return -1;
         }
         return 1;
+    }
+
+    /**
+     * returns green color hex if currSkillRem is 0, else returns orange color hex
+     *
+     * @param currSkillRem current amount of skill points remaining
+     * @return
+     */
+    public int onAnyButton(int currSkillRem) {
+        if (currSkillRem == 0) return Color.parseColor("#FF5FCA77");
+        else return Color.parseColor("#FFA500");
     }
 
 }
