@@ -6,6 +6,7 @@ import java.util.Random;
 public class Planet {
 
     private String name;
+    private Star parentStar;
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
@@ -13,8 +14,9 @@ public class Planet {
     /**Constructor for Planet, randomizes levels
      * @param name name
      */
-    public Planet(String name) {
+    public Planet(String name, Star parentStar) {
         this.name = name;
+        this.parentStar = parentStar;
         Random r = new Random();
 
         int techPick = r.nextInt(TechLevel.values().length);
@@ -34,8 +36,9 @@ public class Planet {
      * @param resourcesLevel resources level
      * @param politicalSystem political system
      */
-    public Planet(String name, TechLevel techLevel, ResourcesLevel resourcesLevel, PoliticalSystem politicalSystem) {
+    public Planet(String name, Star parentStar, TechLevel techLevel, ResourcesLevel resourcesLevel, PoliticalSystem politicalSystem) {
         this.name = name;
+        this.parentStar = parentStar;
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
         this.politicalSystem = politicalSystem;
