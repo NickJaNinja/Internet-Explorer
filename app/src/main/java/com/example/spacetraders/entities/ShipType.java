@@ -1,7 +1,7 @@
 package com.example.spacetraders.entities;
 
 /**
- * This class represents the various spaceships
+ * This enum represents the various spaceship types
  */
 public enum ShipType {
     FLEA("Flea", 0, 0, 0, 2, 20, 0),
