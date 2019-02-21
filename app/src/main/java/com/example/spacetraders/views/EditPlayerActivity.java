@@ -16,6 +16,7 @@ import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.EditPlayerViewModel;
 
 public class EditPlayerActivity extends AppCompatActivity {
@@ -193,7 +194,8 @@ public class EditPlayerActivity extends AppCompatActivity {
             p.setTraderSkill(trader);
             p.setPilotSkill(pilot);
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-            g = new Game(diff, p);
+            Model.getInstance().createGame(diff, p);
+            // g = new Game(diff, p);
 
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
         } else {
