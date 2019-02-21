@@ -7,6 +7,9 @@ public class Star {
 
     private String name;
     private char classification;
+    private float radius;
+
+
     private Random r = new Random();
 
     /**
@@ -26,7 +29,7 @@ public class Star {
      */
     public Star(String name) {
         this.name = name;
-        classification = GenerateClassification();
+        classification = generateClassification();
     }
 
     /**
@@ -34,7 +37,7 @@ public class Star {
      *
      * @return char classification
      */
-    private char GenerateClassification() {
+    private char generateClassification() {
         float roll = r.nextFloat() * 100;
         if (roll > 60) return 'M'; // 40% chance
         else if (roll <= 60 && roll > 35) return 'K';// 25% chance

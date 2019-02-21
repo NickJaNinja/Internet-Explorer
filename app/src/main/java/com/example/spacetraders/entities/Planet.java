@@ -10,6 +10,7 @@ public class Planet {
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
+    private float distanceFromParentStar;
 
     /**Constructor for Planet, randomizes levels
      * @param name name
@@ -43,4 +44,10 @@ public class Planet {
         this.resourcesLevel = resourcesLevel;
         this.politicalSystem = politicalSystem;
     }
+
+    /**
+     * Gets distance from parent star
+     * @return float distance from parent star
+     */
+    public float getDistanceFromParentStar() {return distanceFromParentStar;}
 }

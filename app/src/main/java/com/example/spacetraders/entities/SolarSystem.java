@@ -16,8 +16,8 @@ public class SolarSystem {
      * @param coordinates the coordinates of the solar system
      */
     public SolarSystem(String name, Coordinates coordinates) {
-        NameStars(stars, GenerateNumStars());
-        NamePlanets(planets, stars, GenerateNumPlanets());
+        createStars(stars, generateNumStars());
+        createPlanets(planets, stars, generateNumPlanets());
 
         this.name = name;
         this.coordinates = coordinates;
@@ -39,7 +39,7 @@ public class SolarSystem {
      *
      * @return int number of stars
      */
-    private int GenerateNumStars () {
+    private int generateNumStars () {
         int roll = r.nextInt(11) + 1;
         if (roll < 5) return 2; // 4 in 10 chance for binary star system
         else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
@@ -57,7 +57,7 @@ public class SolarSystem {
      * @param stars array of stars
      * @param numStars int number of stars
      */
-    private void NameStars (Star[] stars, int numStars) {
+    private void createStars (Star[] stars, int numStars) {
         stars = new Star[numStars];
         if (numStars < 1) { // if one unary star system
             stars[0] = new Star(name);
@@ -74,7 +74,7 @@ public class SolarSystem {
      *
      * @return int number of planets
      */
-    private int GenerateNumPlanets () {
+    private int generateNumPlanets () {
         return r.nextInt(8) + 1; // random int from 1 to 7
     }
 
@@ -93,15 +93,25 @@ public class SolarSystem {
      * @param stars array of stars
      * @param numPlanets int number of planets
      */
-    private void NamePlanets (Planet[] planets, Star[] stars, int numPlanets) {
+    private void createPlanets (Planet[] planets, Star[] stars, int numPlanets) {
         planets = new Planet[numPlanets];
         for (int i = 0; i < numPlanets; i++) {
             if (stars.length > 1) { // if multi-star system
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
+                generateDistanceFromParentStar(planets[i], i);
             } else { // if unary star system
                 planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
             }
+        }
+    }
+
+    private float generateDistanceFromParentStar(Planet planet, int planetNumber) {
+        if (planets[0].equals(planet)) { // first planet
+            return 0.39f; // TODO how to calculate distance from first planet to parent star?
+        } else { // planets' after first
+            // use Titius-Bode Law
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.00f;
         }
     }
 
