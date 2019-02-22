@@ -12,7 +12,7 @@ public enum TechLevel {
     EARLY_INDUSTRIAL(4, "Early Industrial"),
     INDUSTRIAL(5, "Industrial"),
     POST_INDUSTRIAL(6, "Post-Industrial"),
-    HI_TECH(7, "Hi-tech");
+    HI_TECH(7, "Hi-Tech");
 
 
     private final int level;
