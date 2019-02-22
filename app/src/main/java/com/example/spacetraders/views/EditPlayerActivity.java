@@ -156,6 +156,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 nameField.setText(null);
+                gameDifficultySpinner.setSelection(0);
                 pilotText.setText(String.format("%d", 4));
                 fighterText.setText(String.format("%d", 4));
                 tradeText.setText(String.format("%d", 4));
