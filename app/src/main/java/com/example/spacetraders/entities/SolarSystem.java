@@ -76,7 +76,7 @@ public class SolarSystem {
      * @return int number of planets
      */
     private int generateNumPlanets () {
-        return r.nextInt(8) + 1; // random int from 1 to 7
+        return r.nextInt(14) + 1; // random int from 1 to 13
     }
 
     /**
@@ -98,18 +98,24 @@ public class SolarSystem {
             if (stars.length > 1) { // if multi-star system
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
-                generateDistanceFromParentStar(planets[i], i);
 
             } else { // if unary star system
                 planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
-                generateDistanceFromParentStar(planets[i], i);
+            }
+            planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
+
+            if (planets[i].getDistanceFromParentStar() > planets[i].getParentStar().getInnerHZRadius()
+                    && planets[i].getDistanceFromParentStar() < planets[i].getParentStar().getOuterHZRadius()) {
+                planets[i].setInHabitableZone(true);
+            } else {
+                planets[i].setInHabitableZone(false);
             }
         }
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         if (planets[0].equals(planet)) { // first planet
-            return r.nextDouble() * (2 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
+            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
         } else { // planets' after first
             // by Titius-Bode Law
             return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
