@@ -20,17 +20,20 @@ public class Test {
         System.out.println("\t--------------------------------");
         for (Star star: testSystem.getStars()) {
             System.out.println("\t" + star.getName());
+            System.out.println("\t\tType:\t\t\t\t\t\t" + star.getClassification() + " Class Star");
             System.out.println("\t\tRadius:\t\t\t\t\t\t" + star.getRadiusInKm() + " km");
             System.out.println("\t\tMass:\t\t\t\t\t\t" + star.getMassInKg() + " kg");
             System.out.println("\t\tSurface Temperature:\t\t" + star.getTemperature() + " K");
             System.out.println("\t\tLuminosity:\t\t\t\t\t" + star.getLuminosityInWatts() + " W");
+            System.out.println("\t\tInner Habitable Radius:\t\t" + star.getInnerHZRadius() + " AUs");
+            System.out.println("\t\tOuter Habitable Radius:\t\t" + star.getOuterHZRadius() + " AUs");
         }
         System.out.println();
         System.out.println("\tPlanet Details");
         System.out.println("\t--------------------------------");
         for (Planet planet: testSystem.getPlanets()) {
             System.out.println("\t" + planet.getName());
-            System.out.println("\t\tDistance from Star:\t" + planet.getDistanceFromParentStar() + " km");
+            System.out.println("\t\tDistance from Star:\t" + planet.getDistanceFromParentStar() + " AUs");
             if (planet.getInHabitableZone()) {
                 System.out.println("\t\tStatus:\t\t\t\t\t\tinhabited");
             }

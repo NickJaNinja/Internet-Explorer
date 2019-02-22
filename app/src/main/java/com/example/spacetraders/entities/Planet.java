@@ -22,12 +22,6 @@ public class Planet {
         this.parentStar = parentStar;
         Random r = new Random();
 
-        if (distanceFromParentStar > parentStar.getInnerHZRadius() && distanceFromParentStar < parentStar.getOuterHZRadius()) {
-            inHabitableZone = true;
-        } else {
-            inHabitableZone = false;
-        }
-
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];
 
@@ -51,6 +45,19 @@ public class Planet {
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
         this.politicalSystem = politicalSystem;
+    }
+
+    /**
+     * sets distance from parent star.
+     *
+     * @param distanceFromParentStar double distance from the parent star
+     */
+    public void setDistanceFromParentStar(double distanceFromParentStar) {
+        this.distanceFromParentStar = distanceFromParentStar;
+    }
+
+    public void setInHabitableZone(boolean inHabitableZone) {
+        this.inHabitableZone = inHabitableZone;
     }
 
     /**
