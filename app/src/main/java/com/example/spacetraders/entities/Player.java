@@ -13,6 +13,7 @@ public class Player {
     private int traderSkill;
     private int engineerSkill;
     private int credits;
+    private int reputation;
     private Ship ship;
 
     /**
@@ -24,15 +25,17 @@ public class Player {
      * @param traderSkill initial traderSkill
      * @param engineerSkill initial engineerSkill
      * @param credits initial credits
+     * @param reputation initial reputation level
      * @param ship initial ship
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, Ship ship) {
+    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
         this.traderSkill = traderSkill;
         this.engineerSkill = engineerSkill;
         this.credits = credits;
+        this.reputation = reputation;
         this.ship = ship;
     }
 
@@ -46,14 +49,14 @@ public class Player {
      * @param engineerSkill initial engineerSkill
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, new Ship(ShipType.GNAT));
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, 0, new Ship(ShipType.GNAT));
     }
 
     /**
      *  Create a base player
      */
     public Player() {
-        this("", 0, 0, 0, 0, 1000, new Ship(ShipType.GNAT));
+        this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
     
     /**
@@ -111,6 +114,15 @@ public class Player {
     }
 
     /**
+     * getter for reputation
+     *
+     * @return reputation
+     */
+    public int getReputation() {
+        return reputation;
+    }
+
+    /**
      * getter for ship
      *
      * @return ship
@@ -165,12 +177,21 @@ public class Player {
     }
 
     /**
-     * setter for credits
+     * getter for credits
      *w
      * @param credits player's credits
      */
     public void setCredits(int credits) {
         this.credits = credits;
+    }
+
+    /**
+     * getter for reputation
+     *
+     * @param reputation the reputation
+     */
+    public void setReputation(int reputation) {
+        this.reputation = reputation;
     }
 
     /**
