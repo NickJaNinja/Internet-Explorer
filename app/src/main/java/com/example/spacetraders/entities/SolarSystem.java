@@ -9,6 +9,7 @@ public class SolarSystem {
     private Coordinates coordinates;
     private Planet[] planets;
     private Star[] stars;
+
     private Random r = new Random();
 
     /**Constructor for Solar System. Randomizes all stats.
@@ -100,18 +101,19 @@ public class SolarSystem {
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
                 generateDistanceFromParentStar(planets[i], i);
+
             } else { // if unary star system
                 planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
             }
         }
     }
 
-    private float generateDistanceFromParentStar(Planet planet, int planetNumber) {
+    private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         if (planets[0].equals(planet)) { // first planet
-            return 0.39f; // TODO how to calculate distance from first planet to parent star?
+            return r.nextDouble() * (2 - .15) + .15; // TODO how to calculate distance from first planet to parent star?
         } else { // planets' after first
             // use Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.00f;
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight variation so this is less exact
         }
     }
 

@@ -10,7 +10,8 @@ public class Planet {
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
-    private float distanceFromParentStar;
+    private double distanceFromParentStar; // in AUs
+    private boolean inHabitableZone;
 
     /**Constructor for Planet, randomizes levels
      * @param name name
@@ -19,6 +20,12 @@ public class Planet {
         this.name = name;
         this.parentStar = parentStar;
         Random r = new Random();
+
+        if (distanceFromParentStar > parentStar.getInnerHZRadius() && distanceFromParentStar < parentStar.getOuterHZRadius()) {
+            inHabitableZone = true;
+        } else {
+            inHabitableZone = false;
+        }
 
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];
@@ -46,8 +53,20 @@ public class Planet {
     }
 
     /**
-     * Gets distance from parent star
-     * @return float distance from parent star
+     * Gets whether or not the planet is in the habitable zone
+     *
+     * @return boolean in habitable zone
      */
-    public float getDistanceFromParentStar() {return distanceFromParentStar;}
+    public boolean getInHabitableZone() {
+        return inHabitableZone;
+    }
+
+    /**
+     * Gets distance from parent star
+     *
+     * @return double distance from parent star
+     */
+    public double getDistanceFromParentStar() {
+        return distanceFromParentStar;
+    }
 }
