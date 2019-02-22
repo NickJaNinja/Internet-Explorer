@@ -12,6 +12,7 @@ public class Planet {
     private PoliticalSystem politicalSystem;
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
+    private int population;
 
     /**Constructor for Planet, randomizes levels
      * @param name name
@@ -53,6 +54,15 @@ public class Planet {
     }
 
     /**
+     * gets name of planet.
+     *
+     * @return String name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
      * Gets whether or not the planet is in the habitable zone
      *
      * @return boolean in habitable zone
@@ -68,5 +78,14 @@ public class Planet {
      */
     public double getDistanceFromParentStar() {
         return distanceFromParentStar;
+    }
+
+    /**
+     * Gets parent star.
+     *
+     * @return Star parent star
+     */
+    public Star getParentStar() {
+        return parentStar;
     }
 }

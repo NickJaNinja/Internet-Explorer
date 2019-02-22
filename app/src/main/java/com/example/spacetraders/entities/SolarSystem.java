@@ -17,11 +17,11 @@ public class SolarSystem {
      * @param coordinates the coordinates of the solar system
      */
     public SolarSystem(String name, Coordinates coordinates) {
-        createStars(stars, generateNumStars());
-        createPlanets(planets, stars, generateNumPlanets());
-
         this.name = name;
         this.coordinates = coordinates;
+
+        createStars(generateNumStars());
+        createPlanets(generateNumPlanets());
     }
 
     /**Constructor for Solar System
@@ -55,17 +55,17 @@ public class SolarSystem {
      * in alphabetic order.
      * eg Kepler A, Kepler B, ...
      *
-     * @param stars array of stars
      * @param numStars int number of stars
      */
-    private void createStars (Star[] stars, int numStars) {
+    private void createStars (int numStars) {
         stars = new Star[numStars];
-        if (numStars < 1) { // if one unary star system
+        if (numStars < 2) { // if unary star system
             stars[0] = new Star(name);
         } else { // if multi-star system
             char alphabet = 'A';
             for (int i = 0; i < numStars; i++) {
-                stars[i] = new Star(name + alphabet);
+                stars[i] = new Star(name + " " + alphabet);
+                alphabet++;
             }
         }
     }
@@ -90,11 +90,9 @@ public class SolarSystem {
      *
      * Also randomly decides parent star of planet.
      *
-     * @param planets array of planets to name
-     * @param stars array of stars
      * @param numPlanets int number of planets
      */
-    private void createPlanets (Planet[] planets, Star[] stars, int numPlanets) {
+    private void createPlanets (int numPlanets) {
         planets = new Planet[numPlanets];
         for (int i = 0; i < numPlanets; i++) {
             if (stars.length > 1) { // if multi-star system
@@ -104,16 +102,17 @@ public class SolarSystem {
 
             } else { // if unary star system
                 planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
+                generateDistanceFromParentStar(planets[i], i);
             }
         }
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         if (planets[0].equals(planet)) { // first planet
-            return r.nextDouble() * (2 - .15) + .15; // TODO how to calculate distance from first planet to parent star?
+            return r.nextDouble() * (2 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
         } else { // planets' after first
-            // use Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight variation so this is less exact
+            // by Titius-Bode Law
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
         }
     }
 
@@ -142,6 +141,15 @@ public class SolarSystem {
      */
     public Planet[] getPlanets() {
         return planets;
+    }
+
+    /**
+     * getter for stars
+     *
+     * @return  array of stars
+     */
+    public Star[] getStars() {
+        return stars;
     }
 
 }

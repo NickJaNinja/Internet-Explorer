@@ -127,16 +127,88 @@ public class Star {
     /**
      * gets name of star.
      *
-     * @return String name of star
+     * @return String name
      */
     public String getName() {
         return name;
     }
 
     /**
+     * gets classification of star.
+     *
+     * @return char classification
+     */
+    public char getClassification() {
+        return classification;
+    }
+
+    /**
+     * gets temperature of star in Kelvin.
+     *
+     * @return int temperature
+     */
+    public int getTemperature() {
+        return temperature;
+    }
+
+    /**
+     * gets solar mass of star.
+     *
+     * @return double mass
+     */
+    public double getMass() {
+        return mass;
+    }
+
+    /**
+     * gets mass of star in kilograms.
+     *
+     * @return double mass
+     */
+    public double getMassInKg() {
+        return mass * 1.989e30;
+    }
+
+    /**
+     * gets solar radius of star.
+     *
+     * @return double radius
+     */
+    public double getRadius() {
+        return radius;
+    }
+
+    /**
+     * gets radius of star in kilometers.
+     *
+     * @return double radius
+     */
+    public double getRadiusInKm() {
+        return radius * 695500;
+    }
+
+    /**
+     * gets solar luminosity of star.
+     *
+     * @return double luminosity.
+     */
+    public double getLuminosity() {
+        return luminosity;
+    }
+
+    /**
+     * gets luminosity of star in Watts.
+     *
+     * @return double luminosity.
+     */
+    public double getLuminosityInWatts() {
+        return luminosity * 3.828e26;
+    }
+
+    /**
      * gets inner habitable zone radius of the star in AUs
      *
-     * @return inner habitable zone radius
+     * @return double inner habitable zone radius
      */
     public double getInnerHZRadius() {
         return innerHZRadius;
@@ -145,7 +217,7 @@ public class Star {
     /**
      * gets outer habitable zone radius of the star in AUs
      *
-     * @return outer habitable zone radius
+     * @return double outer habitable zone radius
      */
     public double getOuterHZRadius() {
         return outerHZRadius;
