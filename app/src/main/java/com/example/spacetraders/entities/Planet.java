@@ -16,6 +16,7 @@ public class Planet {
 
     /**Constructor for Planet, randomizes levels
      * @param name name
+     * @param parentStar the parent star
      */
     public Planet(String name, Star parentStar) {
         this.name = name;
@@ -23,9 +24,9 @@ public class Planet {
         Random r = new Random();
 
         if (distanceFromParentStar > parentStar.getInnerHZRadius() && distanceFromParentStar < parentStar.getOuterHZRadius()) {
-            inHabitableZone = true;
+            this.inHabitableZone = true;
         } else {
-            inHabitableZone = false;
+            this.inHabitableZone = false;
         }
 
         int techPick = r.nextInt(TechLevel.values().length);
