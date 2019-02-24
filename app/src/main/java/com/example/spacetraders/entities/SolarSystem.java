@@ -8,6 +8,7 @@ public class SolarSystem {
     private String name;
     private Coordinates coordinates;
     private Star[] stars;
+    private Planet[] planets;
 
     private Random r = new Random();
 
@@ -19,6 +20,7 @@ public class SolarSystem {
         this.name = name;
         this.coordinates = coordinates;
         createStars(generateNumStars());
+        createPlanets(generateNumPlanets());
     }
 
     /**
@@ -52,6 +54,40 @@ public class SolarSystem {
             for (int i = 0; i < numStars; i++) {
                 stars[i] = new Star(name + " " + alphabet);
                 alphabet++;
+            }
+        }
+    }
+
+    /**
+     * If unary star system, names planets in format "name of parent star + SPACE + number" in order
+     * of smallest distance from parent star.
+     * eg Kepler 1, Kepler 2, ...
+     *
+     * If multi-star system, names planets in format of "name of parent star + number" in order of
+     * smallest distance from parent star.
+     * eg Kepler B1, Kepler A2, ...
+     *
+     * Also randomly decides parent star of planet.
+     *
+     * @param numPlanets int number of planets
+     */
+    private void createPlanets (int numPlanets) {
+        planets = new Planet[numPlanets];
+        for (int i = 0; i < numPlanets; i++) {
+            if (stars.length > 1) { // if multi-star system
+                int roll = r.nextInt(stars.length);
+                planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
+
+            } else { // if unary star system
+                planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
+            }
+            planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
+
+            if (planets[i].getDistanceFromParentStar() > planets[i].getParentStar().getInnerHZRadius()
+                    && planets[i].getDistanceFromParentStar() < planets[i].getParentStar().getOuterHZRadius()) {
+                planets[i].setInHabitableZone(true);
+            } else {
+                planets[i].setInHabitableZone(false);
             }
         }
     }
@@ -93,12 +129,30 @@ public class SolarSystem {
     }
 
     /**
+     * getter for planets
+     *
+     * @return  array of planets
+     */
+    public Planet[] getPlanets() {
+        return planets;
+    }
+
+    /**
      * gets a random star
      * 
      * @return random star
      */
     public Star getRandomStar() {
         return stars[r.nextInt(stars.length)];
+    }
+
+    /**
+     * gets a random planet
+     * 
+     * @return random planet
+     */
+    public Planet getRandomPlanet() {
+        return planets[r.nextInt(planets.length)];
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.Random;
 public class Planet {
 
     private String name;
-    //private Star parentStar;
+    private Star parentStar;
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
@@ -33,25 +33,10 @@ public class Planet {
         this.techLevel = TechLevel.values()[techPick];
 
         int resourcesPick = r.nextInt(ResourcesLevel.values().length);
-        this.resourcesLevel = ResourcesLevel.values()[resourcesPick];
+        this.resourcesLevel = ResourcesLevel.va2lues()[resourcesPick];
 
         int politicalPick = r.nextInt(PoliticalSystem.values().length);
         this.politicalSystem = PoliticalSystem.values()[politicalPick];
-    }
-
-
-    /**Constructor for Planet
-     * @param name name
-     * @param techLevel tech level
-     * @param resourcesLevel resources level
-     * @param politicalSystem political system
-     */
-    public Planet(String name, Star parentStar, TechLevel techLevel, ResourcesLevel resourcesLevel, PoliticalSystem politicalSystem) {
-        this.name = name;
-        this.parentStar = parentStar;
-        this.techLevel = techLevel;
-        this.resourcesLevel = resourcesLevel;
-        this.politicalSystem = politicalSystem;
     }
 
     /**
@@ -103,12 +88,4 @@ public class Planet {
         return parentStar;
     }
 
-    private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
-        if (planets[0].equals(planet)) { // first planet
-            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
-        } else { // planets' after first
-            // by Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
-        }
-    }
 }

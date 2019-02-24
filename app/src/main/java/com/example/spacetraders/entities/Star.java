@@ -13,7 +13,7 @@ public class Star {
     private double luminosity; // in solar luminosity (L☉)
     private double innerHZRadius; // in AUs
     private double outerHZRadius; // in AUs
-    private Planet[] planets;
+    //private Planet[] planets;
 
 
     private Random r = new Random();
@@ -29,7 +29,7 @@ public class Star {
         generateTemperatureAndRadius(classification);
         calculateLuminosityAndMass(temperature, radius);
         calculateHabitableZone(luminosity);
-        createPlanets(generateNumPlanets());
+        
     }
 
     /**
@@ -147,6 +147,15 @@ public class Star {
             } else {
                 planets[i].setInHabitableZone(false);
             }
+        }
+    }
+
+    private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
+        if (planets[0].equals(planet)) { // first planet
+            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
+        } else { // planets' after first
+            // by Titius-Bode Law
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
         }
     }
 
