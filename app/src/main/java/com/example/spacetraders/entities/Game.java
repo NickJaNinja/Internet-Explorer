@@ -8,6 +8,8 @@ public class Game {
     private GameDifficulty difficulty;
     /** the player */
     private Player player;
+    /** the universe */
+    private Universe universe;
 
     /**
      * Constructor for the game
@@ -26,6 +28,7 @@ public class Game {
     public Game(GameDifficulty difficulty, Player player) {
         this.difficulty = difficulty;
         this.player = player;
+        this.universe = new Universe();
     }
 
     /**
@@ -41,6 +44,12 @@ public class Game {
      */
     public Player getPlayer() {return player;}
 
+    /**
+     * getter for universe
+     * @return universe
+     */
+    public Universe getUniverse() {return universe;}
+
 
     /**
      * setter for game difficulty
@@ -55,5 +64,12 @@ public class Game {
      * @param player the new difficulty
      */
     public void setPlayer(Player player) {this.player = player;}
+
+     /**
+     * setter for universe
+     *
+     * @param universe the new universe
+     */
+    public void setUniverse(Universe universe) {this.universe = universe;}
 
 }

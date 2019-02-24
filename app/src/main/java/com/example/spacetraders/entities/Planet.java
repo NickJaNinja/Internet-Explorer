@@ -6,7 +6,7 @@ import java.util.Random;
 public class Planet {
 
     private String name;
-    private Star parentStar;
+    //private Star parentStar;
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
@@ -101,5 +101,14 @@ public class Planet {
      */
     public Star getParentStar() {
         return parentStar;
+    }
+
+    private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
+        if (planets[0].equals(planet)) { // first planet
+            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
+        } else { // planets' after first
+            // by Titius-Bode Law
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
+        }
     }
 }

@@ -133,16 +133,17 @@ public class Universe {
     };
 
     /**dimensions of universe*/
-    private static final int MAXX = 1500;
-    private static final int MAXY = 1000;
+    private static final int MAXX = 2000;
+    private static final int MAXY = 2000;
 
     private SolarSystem[] solarSystems;
+
+    private Random r = new Random();
 
     /**Constructor for Universe*/
     public Universe() {
         Set<Coordinates> coordSet = new HashSet<Coordinates>();
         this.solarSystems = new SolarSystem[SOLARSYSTEMNAMES.length];
-        Random r = new Random();
         for (int i = 0; i < SOLARSYSTEMNAMES.length; i++) {
             //keep making random coordinates until we find one that hasn't been used yet
             int randX = r.nextInt(MAXX - 1);
@@ -165,6 +166,15 @@ public class Universe {
      */
     public SolarSystem[] getSolarSystems() {
         return solarSystems;
+    }
+
+    /**
+     * gets a random solar system
+     * 
+     * @return random solar system
+     */
+    public SolarSystem getRandomSolarSystem() {
+        return solarSystems[r.nextInt(solarSystems.length)];
     }
 
 }
