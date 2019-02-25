@@ -91,7 +91,14 @@ public class SolarSystem {
             }
         }
     }
-
+    private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
+        if (planets[0].equals(planet)) { // first planet
+            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
+        } else { // planets' after first
+            // by Titius-Bode Law
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
+        }
+    }
     /**
      * Generates the number of planets
      *

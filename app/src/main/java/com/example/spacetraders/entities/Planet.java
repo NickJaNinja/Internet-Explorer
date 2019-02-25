@@ -33,7 +33,7 @@ public class Planet {
         this.techLevel = TechLevel.values()[techPick];
 
         int resourcesPick = r.nextInt(ResourcesLevel.values().length);
-        this.resourcesLevel = ResourcesLevel.va2lues()[resourcesPick];
+        this.resourcesLevel = ResourcesLevel.values()[resourcesPick];
 
         int politicalPick = r.nextInt(PoliticalSystem.values().length);
         this.politicalSystem = PoliticalSystem.values()[politicalPick];
