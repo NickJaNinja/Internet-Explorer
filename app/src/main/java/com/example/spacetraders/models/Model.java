@@ -25,4 +25,6 @@ public class Model {
     public void createGame(GameDifficulty gd, Player p) {
         game = new Game(gd, p);
     }
+
+    public Game getGame() { return game; }
 }

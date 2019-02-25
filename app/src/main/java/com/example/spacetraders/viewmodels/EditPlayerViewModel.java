@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 
 public class EditPlayerViewModel extends AndroidViewModel {
+
     public EditPlayerViewModel(@NonNull Application app) { super(app); }
 
     private String toastText;

@@ -1,19 +1,30 @@
 package com.example.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Game;
+import com.example.spacetraders.models.Model;
+import com.example.spacetraders.viewmodels.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
+    private MainViewModel mainViewModel;
+
+    private Game g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
+        // Should prob delete this later, seems like the view has too much access to data
+        mainViewModel.printUniverse(Model.getInstance().getGame());
     }
 
     @Override
