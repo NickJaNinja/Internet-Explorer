@@ -1,6 +1,7 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -197,8 +198,10 @@ public class EditPlayerActivity extends AppCompatActivity {
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
             Model.getInstance().createGame(diff, p);
             // g = new Game(diff, p);
-
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
+
+            Intent intent = new Intent(EditPlayerActivity.this, MainActivity.class);
+            startActivity(intent);
         } else {
             CharSequence text = editPlayerViewModel.getToastText();
 
