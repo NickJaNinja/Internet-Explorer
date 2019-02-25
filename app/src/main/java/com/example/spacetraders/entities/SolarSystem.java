@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.util.HashMap;
 import java.util.Random;
 
 /**This class represents a solar system*/
@@ -77,7 +78,6 @@ public class SolarSystem {
             if (stars.length > 1) { // if multi-star system
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
-
             } else { // if unary star system
                 planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
             }
