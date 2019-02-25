@@ -39,4 +39,14 @@ public class Coordinates {
         }
         return false;
     }
+
+    /**
+     * to string for coordinates
+     *
+     * @return string of coordinates info
+     */
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
 }

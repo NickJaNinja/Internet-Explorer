@@ -13,7 +13,6 @@ public class Star {
     private double luminosity; // in solar luminosity (L☉)
     private double innerHZRadius; // in AUs
     private double outerHZRadius; // in AUs
-    //private Planet[] planets;
 
 
     private Random r = new Random();
@@ -29,7 +28,6 @@ public class Star {
         generateTemperatureAndRadius(classification);
         calculateLuminosityAndMass(temperature, radius);
         calculateHabitableZone(luminosity);
-        
     }
 
     /**
@@ -114,40 +112,6 @@ public class Star {
         // source: http://www.planetarybiology.com/calculating_habitable_zone.html
         innerHZRadius = Math.pow(luminosity / 1.1, .5); // inner radius = (L☉/1.1)^(1/2)
         outerHZRadius = Math.pow(luminosity / 0.53, .5); // outer radius = (L☉/0.53)^(1/2)
-    }
-
-    /**
-     * If unary star system, names planets in format "name of parent star + SPACE + number" in order
-     * of smallest distance from parent star.
-     * eg Kepler 1, Kepler 2, ...
-     *
-     * If multi-star system, names planets in format of "name of parent star + number" in order of
-     * smallest distance from parent star.
-     * eg Kepler B1, Kepler A2, ...
-     *
-     * Also randomly decides parent star of planet.
-     *
-     * @param numPlanets int number of planets
-     */
-    private void createPlanets (int numPlanets) {
-        planets = new Planet[numPlanets];
-        for (int i = 0; i < numPlanets; i++) {
-            if (stars.length > 1) { // if multi-star system
-                int roll = r.nextInt(stars.length);
-                planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
-
-            } else { // if unary star system
-                planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
-            }
-            planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
-
-            if (planets[i].getDistanceFromParentStar() > planets[i].getParentStar().getInnerHZRadius()
-                    && planets[i].getDistanceFromParentStar() < planets[i].getParentStar().getOuterHZRadius()) {
-                planets[i].setInHabitableZone(true);
-            } else {
-                planets[i].setInHabitableZone(false);
-            }
-        }
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
@@ -259,12 +223,13 @@ public class Star {
     }
 
     /**
-     * getter for planets
+     * to string for star
      *
-     * @return  array of planets
+     * @return string of star info
      */
-    public Planet[] getPlanets() {
-        return planets;
+    @Override
+    public String toString() {
+        return name;
     }
 
 }

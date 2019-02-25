@@ -88,4 +88,13 @@ public class Planet {
         return parentStar;
     }
 
+    /**
+     * to string for planet
+     *
+     * @return string of planet info
+     */
+    @Override
+    public String toString() {
+        return name;
+    }
 }

@@ -154,5 +154,23 @@ public class SolarSystem {
     public Planet getRandomPlanet() {
         return planets[r.nextInt(planets.length)];
     }
+    
+    /**
+     * to string for solar system
+     *
+     * @return string of solar system info
+     */
+    @Override
+    public String toString() {
+        String str = "Solar System: " + name + " at " + coordinates + "\nSuns: ";
+        for (Star s : stars) {
+            str += s + ", ";
+        }
+        str += "Planets: ";
+        for (Planet p : planets) {
+            str += p + ", ";
+        }
+        return str + "\n";
+    }
 
 }

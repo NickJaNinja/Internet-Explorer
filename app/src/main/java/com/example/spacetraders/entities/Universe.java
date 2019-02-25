@@ -177,4 +177,18 @@ public class Universe {
         return solarSystems[r.nextInt(solarSystems.length)];
     }
 
+    /**
+     * to string for universe
+     *
+     * @return string of universe info
+     */
+    @Override
+    public String toString() {
+        String str = "Universe: " + solarSystems.length + " solar systems\n ";
+        for (SolarSystem s : solarSystems) {
+            str += s.toString();
+        }
+        return str;
+    }
+
 }
