@@ -54,7 +54,7 @@
             android:id="@+id/market_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MARKET"
+            android:text="> MARKET"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
@@ -67,7 +67,7 @@
             android:id="@+id/upgrade_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UPGRADE"
+            android:text="> UPGRADE"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
@@ -80,7 +80,7 @@
             android:id="@+id/refuel_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REFUEL"
+            android:text="> REFUEL"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
@@ -93,7 +93,7 @@
             android:id="@+id/leave_orbit__text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LEAVE ORBIT"
+            android:text="> LEAVE ORBIT"
             android:textColor="#ffffff"
             android:textSize="24sp" />
 
@@ -101,32 +101,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#ffffff" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:text="Button" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
