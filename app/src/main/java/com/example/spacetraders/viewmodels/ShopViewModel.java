@@ -4,6 +4,11 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
+import com.example.spacetraders.entities.ShopGoods;
+import com.example.spacetraders.entities.TradeGoods;
+
+import java.util.List;
+
 public class ShopViewModel extends AndroidViewModel {
 
 
@@ -28,5 +33,20 @@ public class ShopViewModel extends AndroidViewModel {
 
         return true;
     }
+
+    /**
+     * check if the selected good to sell is in play's cargo
+     * @param good, the good to be sold
+     * @param goodsInCargo list of all goods in play's cargo
+     * @return true if cargo contains the good to be sold, transaction is allowed
+     */
+    public boolean onSell(TradeGoods good, List<ShopGoods> goodsInCargo) {
+        if (!goodsInCargo.contains(good)) {
+            return false;
+        }
+        return true;
+    }
+
+
 
 }
