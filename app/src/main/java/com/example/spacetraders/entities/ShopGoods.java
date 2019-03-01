@@ -2,8 +2,8 @@ package com.example.spacetraders.entities;
 
 public enum ShopGoods implements TradeGoods {
         WATER("Water",
-                TechLevel.PRE_AGRICULTURAL,
-                TechLevel.PRE_AGRICULTURAL,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
                 TechLevel.MEDIEVAL,
                 30,
                 3,
@@ -12,7 +12,114 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.LOTS_OF_WATER,
                 ResourcesLevel.DESERT,
                 30,
-                50);
+                50),
+        FURS("Furs",
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                250,
+                10,
+                10,
+                RadicalPriceEvent.COLD,
+                ResourcesLevel.RICH_FAUNA,
+                ResourcesLevel.LIFELESS,
+                230,
+                280),
+        FOOD("Food",
+                TechLevel.AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.AGRICULTURE,
+                100,
+                5,
+                5,
+                RadicalPriceEvent.CROPFAIL,
+                ResourcesLevel.RICH_SOIL,
+                ResourcesLevel.POOR_SOIL,
+                90,
+                160),
+        ORE("Ore",
+                TechLevel.MEDIEVAL,
+                TechLevel.MEDIEVAL,
+                TechLevel.RENAISSANCE,
+                350,
+                20,
+                10,
+                RadicalPriceEvent.WAR,
+                ResourcesLevel.MINERAL_RICH,
+                ResourcesLevel.MINERAL_POOR,
+                350, 420),
+        GAMES("Games",
+                TechLevel.RENAISSANCE,
+                TechLevel.AGRICULTURE,
+                TechLevel.POST_INDUSTRIAL,
+                250,
+                -10,
+                5,
+                RadicalPriceEvent.BOREDOM,
+                ResourcesLevel.ARTISTIC,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                160,
+                270),
+        FIREARMS("Firearms",
+                TechLevel.RENAISSANCE,
+                TechLevel.AGRICULTURE,
+                TechLevel.INDUSTRIAL,
+                1250,
+                -75,
+                100,
+                RadicalPriceEvent.WAR,
+                ResourcesLevel.WARLIKE,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                600,
+                1100),
+        MEDICINE("Medicine",
+                TechLevel.EARLY_INDUSTRIAL,
+                TechLevel.AGRICULTURE,
+                TechLevel.POST_INDUSTRIAL,
+                650,
+                -20,
+                10,
+                RadicalPriceEvent.PLAGUE,
+                ResourcesLevel.LOTS_OF_HERBS,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                400,
+                700),
+        MACHINES("Machines",
+                TechLevel.EARLY_INDUSTRIAL,
+                TechLevel.RENAISSANCE,
+                TechLevel.INDUSTRIAL,
+                900,
+                -30,
+                5,
+                RadicalPriceEvent.LACKOFWORKERS,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                600,
+                800),
+        NARCOTICS("Narcotics",
+                TechLevel.INDUSTRIAL,
+                TechLevel.AGRICULTURE,
+                TechLevel.INDUSTRIAL,
+                3500,
+                -125,
+                150,
+                RadicalPriceEvent.BOREDOM,
+                ResourcesLevel.WEIRD_MUSHROOMS,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                2000,
+                3000),
+        ROBOTS("Robots",
+                TechLevel.POST_INDUSTRIAL,
+                TechLevel.POST_INDUSTRIAL,
+                TechLevel.HI_TECH,
+                5000,
+                -100,
+                50,
+                RadicalPriceEvent.LACKOFWORKERS,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                3500,
+                5000);
 
         /**
          * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
@@ -38,7 +145,22 @@ public enum ShopGoods implements TradeGoods {
         private final ResourcesLevel er;
         private final int mtl;
         private final int mth;
-
+    /**
+     * Constructor for the enumeration
+     *
+     * @param name the name
+     * @param mtlp min tech level to produce
+     * @param mtlu min tech level to use
+     * @param ttp the ttp
+     * @param basePrice the base price
+     * @param ipl the ipl
+     * @param var the var
+     * @param ie the ie
+     * @param cr the cr
+     * @param er the er
+     * @param mtl the mtl
+     * @param mth the mth
+     */
         ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
             this.name = name;
             this.mtlp = mtlp;
@@ -54,4 +176,100 @@ public enum ShopGoods implements TradeGoods {
             this.mth = mth;
         }
 
+    /**
+     * getter for name
+     *
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * getter for mtlp
+     *
+     * @return mtlp
+     */
+    public TechLevel getMtlp() {
+        return mtlp;
+    }
+    /**
+     * getter for mtlu
+     *
+     * @return mtlu
+     */
+    public TechLevel getMtlu() {
+        return mtlu;
+    }
+    /**
+     * getter for itp
+     *
+     * @return name
+     */
+    public TechLevel getTtp() {
+        return ttp;
+    }
+    /**
+     * getter for base price
+     *
+     * @return base price
+     */
+    public int getBasePrice() {
+        return basePrice;
+    }
+    /**
+     * getter for ipl
+     *
+     * @return ipl
+     */
+    public int getIpl() {
+        return ipl;
+    }
+    /**
+     * getter for var
+     *
+     * @return var
+     */
+    public int getVar() {
+        return var;
+    }
+    /**
+     * getter for ie
+     *
+     * @return ie
+     */
+    public RadicalPriceEvent getIe() {
+        return ie;
+    }
+    /**
+     * getter for cr
+     *
+     * @return cr
+     */
+    public ResourcesLevel getCr() {
+        return cr;
+    }
+    /**
+     * getter for er
+     *
+     * @return er
+     */
+    public ResourcesLevel getEr() {
+        return er;
+    }
+    /**
+     * getter for mtl
+     *
+     * @return mtl
+     */
+    public int getMtl() {
+        return mtl;
+    }
+    /**
+     * getter for mth
+     *
+     * @return mth
+     */
+    public int getMth() {
+        return mth;
+    }
 }

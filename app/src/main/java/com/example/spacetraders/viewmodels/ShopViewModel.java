@@ -11,8 +11,6 @@ import java.util.List;
 
 public class ShopViewModel extends AndroidViewModel {
 
-
-
     public ShopViewModel(@NonNull Application app) { super(app); }
 
     /***

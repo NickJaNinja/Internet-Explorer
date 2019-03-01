@@ -2,7 +2,6 @@ package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +11,7 @@ import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.MainViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends GUIActivity {
     private MainViewModel mainViewModel;
 
     private Game g;

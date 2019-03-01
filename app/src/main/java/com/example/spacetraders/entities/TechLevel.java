@@ -5,7 +5,7 @@ package com.example.spacetraders.entities;
  * This enum represents the various tech levels
  */
 public enum TechLevel {
-    PRE_AGRICULTURAL(0, "Pre-Agriculture"),
+    PRE_AGRICULTURE(0, "Pre-Agriculture"),
     AGRICULTURE(1, "Agriculture"),
     MEDIEVAL(2, "Medieval"),
     RENAISSANCE(3, "Renasissance"),

@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".views.GUIActivity"
+            android:parentActivityName=".views.EditPlayerActivity" />
+        <activity
             android:name=".views.MainActivity"
             android:parentActivityName=".views.EditPlayerActivity" />
         <activity
