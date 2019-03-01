@@ -4,7 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
-public class ShopViewModel extends AndroidViewModel {
+public class PlanetViewModel extends AndroidViewModel {
 
-    public ShopViewModel(@NonNull Application app) { super(app); }
+    public PlanetViewModel(@NonNull Application app) { super(app); }
 }
