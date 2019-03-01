@@ -42,7 +42,7 @@ public enum ShopGoods extends TradeGoods {
         ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
             this.name = name;
             this.mtlp = mtlp;
-            this.mtlu = mtlu;1
+            this.mtlu = mtlu;
             this.ttp = ttp;
             this.basePrice = basePrice;
             this.ipl = ipl;
