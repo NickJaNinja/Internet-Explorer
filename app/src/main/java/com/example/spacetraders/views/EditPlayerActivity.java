@@ -41,7 +41,6 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView pilotText;
     private TextView pointsRemaining;
 
-    private Game g;
     private Player p;
 
     @Override
@@ -197,7 +196,6 @@ public class EditPlayerActivity extends AppCompatActivity {
             p.setPilotSkill(pilot);
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
             Model.getInstance().createGame(diff, p);
-            // g = new Game(diff, p);
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
 
             Intent intent = new Intent(EditPlayerActivity.this, MainActivity.class);
