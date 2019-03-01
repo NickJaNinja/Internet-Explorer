@@ -59,6 +59,7 @@
                 android:hint="eg. Bob the Destroyer"
                 android:textColor="#ffffff"
                 app:backgroundTint="#ffffff" />
+
         </android.support.design.widget.TextInputLayout>
 
         <TextView
