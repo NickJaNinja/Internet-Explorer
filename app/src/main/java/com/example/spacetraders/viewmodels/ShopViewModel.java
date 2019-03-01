@@ -38,7 +38,7 @@ public class ShopViewModel extends AndroidViewModel {
      * @param goodsInCargo list of all goods in play's cargo
      * @return true if cargo contains the good to be sold, transaction is allowed
      */
-    public boolean onSell(TradeGoods good, List<ShopGoods> goodsInCargo) {
+    public boolean onSell(TradeGoods good, List<TradeGoods> goodsInCargo) {
         if (!goodsInCargo.contains(good)) {
             return false;
         }
