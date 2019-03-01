@@ -1,4 +1,6 @@
 package com.example.spacetraders.entities;
 
-public class TradeGoods {
+public interface TradeGoods {
+
+
 }

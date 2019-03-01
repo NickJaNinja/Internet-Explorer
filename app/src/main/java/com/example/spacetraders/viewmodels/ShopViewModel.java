@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 public class ShopViewModel extends AndroidViewModel {
 
 
+
     public ShopViewModel(@NonNull Application app) { super(app); }
 
     /***
@@ -27,4 +28,5 @@ public class ShopViewModel extends AndroidViewModel {
 
         return true;
     }
+
 }
