@@ -1,4 +1,4 @@
 package com.example.spacetraders.entities;
 
-public class IllegalGoods extends TradeGoods {
+public class IllegalGoods implements TradeGoods {
 }

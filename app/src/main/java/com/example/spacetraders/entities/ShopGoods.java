@@ -1,9 +1,9 @@
 package com.example.spacetraders.entities;
 
-public enum ShopGoods extends TradeGoods {
+public enum ShopGoods implements TradeGoods {
         WATER("Water",
-                TechLevel.PRE_AGRICULTURAL,
-                TechLevel.PRE_AGRICULTURAL,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
                 TechLevel.MEDIEVAL,
                 30,
                 3,
@@ -12,7 +12,78 @@ public enum ShopGoods extends TradeGoods {
                 ResourcesLevel.LOTS_OF_WATER,
                 ResourcesLevel.DESERT,
                 30,
-                50);
+                50),
+        FURS("Furs",
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                250,
+                10,
+                10,
+                RadicalPriceEvent.COLD,
+                ResourcesLevel.RICH_FAUNA,
+                ResourcesLevel.LIFELESS,
+                230,
+                280),
+        FOOD("Food",
+                TechLevel.AGRICULTURE,
+                TechLevel.PRE_AGRICULTURE,
+                TechLevel.AGRICULTURE,
+                100,
+                5,
+                5,
+                RadicalPriceEvent.CROPFAIL,
+                ResourcesLevel.RICH_SOIL,
+                ResourcesLevel.POOR_SOIL,
+                90,
+                160),
+        ORE("Ore",
+                TechLevel.MEDIEVAL,
+                TechLevel.MEDIEVAL,
+                TechLevel.RENAISSANCE,
+                350,
+                20,
+                10,
+                RadicalPriceEvent.WAR,
+                ResourcesLevel.MINERAL_RICH,
+                ResourcesLevel.MINERAL_POOR,
+                350, 420),
+        GAMES("Games",
+                TechLevel.RENAISSANCE,
+                TechLevel.AGRICULTURE,
+                TechLevel.POST_INDUSTRIAL,
+                250,
+                -10,
+                5,
+                RadicalPriceEvent.BOREDOM,
+                ResourcesLevel.ARTISTIC,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                160,
+                270),
+        FIREARMS("Firearms",
+                TechLevel.RENAISSANCE,
+                TechLevel.AGRICULTURE,
+                TechLevel.INDUSTRIAL,
+                1250,
+                -75,
+                100,
+                RadicalPriceEvent.WAR,
+                ResourcesLevel.WARLIKE,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                600,
+                1100),
+        MEDICINE("Medicine",
+                TechLevel.EARLY_INDUSTRIAL,
+                TechLevel.AGRICULTURE,
+                TechLevel.POST_INDUSTRIAL,
+                650,
+                -20,
+                10,
+                RadicalPriceEvent.PLAGUE,
+                ResourcesLevel.LOTS_OF_HERBS,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                400,
+                700);
 
         /**
          * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
@@ -39,7 +110,7 @@ public enum ShopGoods extends TradeGoods {
         private final int mtl;
         private final int mth;
 
-        ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
+        private ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
             this.name = name;
             this.mtlp = mtlp;
             this.mtlu = mtlu;
