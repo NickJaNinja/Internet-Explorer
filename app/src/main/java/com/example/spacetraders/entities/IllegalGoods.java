@@ -3,8 +3,8 @@ package com.example.spacetraders.entities;
 public enum IllegalGoods implements TradeGoods {
     BOBCOIN("Bobcoin",
             TechLevel.POST_INDUSTRIAL,
-            TechLevel.PRE_AGRICULTURE,
-            TechLevel.MEDIEVAL,
+            TechLevel.POST_INDUSTRIAL,
+            TechLevel.HI_TECH,
             420,
             0,
             69,
@@ -39,7 +39,23 @@ public enum IllegalGoods implements TradeGoods {
     private final int mtl;
     private final int mth;
 
-    private IllegalGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
+    /**
+     * Constructor for the enumeration
+     *
+     * @param name the name
+     * @param mtlp min tech level to produce
+     * @param mtlu min tech level to use
+     * @param ttp the ttp
+     * @param basePrice the base price
+     * @param ipl the ipl
+     * @param var the var
+     * @param ie the ie
+     * @param cr the cr
+     * @param er the er
+     * @param mtl the mtl
+     * @param mth the mth
+     */
+    IllegalGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
@@ -52,5 +68,102 @@ public enum IllegalGoods implements TradeGoods {
         this.er = er;
         this.mtl = mtl;
         this.mth = mth;
+    }
+
+    /**
+     * getter for name
+     *
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * getter for mtlp
+     *
+     * @return mtlp
+     */
+    public TechLevel getMtlp() {
+        return mtlp;
+    }
+    /**
+     * getter for mtlu
+     *
+     * @return mtlu
+     */
+    public TechLevel getMtlu() {
+        return mtlu;
+    }
+    /**
+     * getter for itp
+     *
+     * @return name
+     */
+    public TechLevel getTtp() {
+        return ttp;
+    }
+    /**
+     * getter for base price
+     *
+     * @return base price
+     */
+    public int getBasePrice() {
+        return basePrice;
+    }
+    /**
+     * getter for ipl
+     *
+     * @return ipl
+     */
+    public int getIpl() {
+        return ipl;
+    }
+    /**
+     * getter for var
+     *
+     * @return var
+     */
+    public int getVar() {
+        return var;
+    }
+    /**
+     * getter for ie
+     *
+     * @return ie
+     */
+    public RadicalPriceEvent getIe() {
+        return ie;
+    }
+    /**
+     * getter for cr
+     *
+     * @return cr
+     */
+    public ResourcesLevel getCr() {
+        return cr;
+    }
+    /**
+     * getter for er
+     *
+     * @return er
+     */
+    public ResourcesLevel getEr() {
+        return er;
+    }
+    /**
+     * getter for mtl
+     *
+     * @return mtl
+     */
+    public int getMtl() {
+        return mtl;
+    }
+    /**
+     * getter for mth
+     *
+     * @return mth
+     */
+    public int getMth() {
+        return mth;
     }
 }
