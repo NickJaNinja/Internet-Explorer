@@ -30,10 +30,11 @@ public class SolarSystem {
      * @return int number of stars
      */
     private int generateNumStars () {
-        int roll = r.nextInt(10) + 1;
-        if (roll < 5) return 2; // 4 in 10 chance for binary star system
-        else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
-        else return 1; // 6 in 10 chance for unary star system
+        //int roll = r.nextInt(10) + 1;
+        //if (roll < 5) return 2; // 4 in 10 chance for binary star system
+        //else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
+        //else return 1; // 6 in 10 chance for unary star system
+        return 1;
     }
 
     /**
