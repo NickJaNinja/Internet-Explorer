@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4B4B4C">
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,7 +38,7 @@
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="MARKET"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="30sp" />
 
         <View
@@ -46,35 +46,69 @@
             android:layout_height="1dp"
             android:layout_gravity="center"
             android:layout_marginBottom="50dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
             android:id="@+id/buy_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BUY"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
             <LinearLayout
+                android:id="@+id/buy_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/buy_item_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="ITEM"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/buy_stock_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:text="STOCK"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/buy_price_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:text="PRICE"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+                    
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
@@ -82,30 +116,64 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
             android:id="@+id/sell_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SELL"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
             <LinearLayout
+                android:id="@+id/sell_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/sell_item_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="ITEM"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sell_stock_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:text="STOCK"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sell_price_hint_text"
+                        android:layout_width="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:text="PRICE"
+                        android:textColor="@color/colorHint"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
@@ -113,7 +181,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,13 +195,13 @@
                 android:layout_weight=".5"
                 android:gravity="center"
                 android:text="CANCEL"
-                android:textColor="#ffffff"
+                android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:background="#ffffff" />
+                android:background="@color/colorText" />
 
             <TextView
                 android:id="@+id/confirm_button"
@@ -142,7 +210,7 @@
                 android:layout_weight=".5"
                 android:gravity="center"
                 android:text="CONFIRM"
-                android:textColor="#ffffff"
+                android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
         </LinearLayout>
@@ -150,20 +218,20 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
             android:id="@+id/leave_market_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="< LEAVE MARKET"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
