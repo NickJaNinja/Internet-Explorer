@@ -40,9 +40,10 @@
             android:textSize="30sp" />
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="1dp"
             android:layout_marginBottom="50dp"
+            android:layout_gravity="center"
             android:background="#ffffff" />
 
         <View
@@ -51,7 +52,7 @@
             android:background="#ffffff" />
 
         <TextView
-            android:id="@+id/market_text"
+            android:id="@+id/market_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> MARKET"
@@ -64,7 +65,7 @@
             android:background="#ffffff" />
 
         <TextView
-            android:id="@+id/upgrade_text"
+            android:id="@+id/upgrade_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> UPGRADE"
@@ -77,7 +78,7 @@
             android:background="#ffffff" />
 
         <TextView
-            android:id="@+id/refuel_text"
+            android:id="@+id/refuel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> REFUEL"
@@ -90,7 +91,7 @@
             android:background="#ffffff" />
 
         <TextView
-            android:id="@+id/leave_orbit__text"
+            android:id="@+id/leave_orbit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> LEAVE ORBIT"
