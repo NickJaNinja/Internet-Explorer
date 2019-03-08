@@ -184,6 +184,7 @@ public enum ShopGoods implements TradeGoods {
     public String getName() {
         return name;
     }
+
     /**
      * getter for mtlp
      *
@@ -192,6 +193,7 @@ public enum ShopGoods implements TradeGoods {
     public TechLevel getMtlp() {
         return mtlp;
     }
+
     /**
      * getter for mtlu
      *
