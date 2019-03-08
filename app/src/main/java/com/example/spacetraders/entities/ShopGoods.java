@@ -1,5 +1,5 @@
 package com.example.spacetraders.entities;
-/**This enum represents the various shop goods*/
+
 public enum ShopGoods implements TradeGoods {
         WATER("Water",
                 TechLevel.PRE_AGRICULTURE,

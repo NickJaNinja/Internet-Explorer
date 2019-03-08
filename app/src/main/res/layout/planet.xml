@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4B4B4C">
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -36,71 +36,72 @@
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="CERCES 1"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="30sp" />
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="1dp"
             android:layout_marginBottom="50dp"
-            android:background="#ffffff" />
+            android:layout_gravity="center"
+            android:background="@color/colorText" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
-            android:id="@+id/market_text"
+            android:id="@+id/market_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> MARKET"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
-            android:id="@+id/upgrade_text"
+            android:id="@+id/upgrade_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> UPGRADE"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
-            android:id="@+id/refuel_text"
+            android:id="@+id/refuel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> REFUEL"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
 
         <TextView
-            android:id="@+id/leave_orbit__text"
+            android:id="@+id/leave_orbit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="> LEAVE ORBIT"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ffffff" />
+            android:background="@color/colorText" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

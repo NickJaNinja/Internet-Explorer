@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5FCA77</color>
-    <color name="colorPrimaryDark">#DC910202</color>
-    <color name="colorAccent">#D25A64</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorBackground">#4B4B4C</color>
+    <color name="colorHint">#8C8C8C</color>
+    <color name="colorPlusButton">#5FCA77</color>
+    <color name="colorMinusButton">#DC910202</color>
+    <color name="colorCancelButton">#D25A64</color>
 </resources>
