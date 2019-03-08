@@ -130,7 +130,20 @@ public enum ShopGoods {
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 3500,
                 5000,
-                false);
+                false),
+        BOBCOIN("Bobcoin",
+                TechLevel.POST_INDUSTRIAL,
+                TechLevel.POST_INDUSTRIAL,
+                TechLevel.HI_TECH,
+                420,
+                0,
+                69,
+                RadicalPriceEvent.BOREDOM,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                ResourcesLevel.NO_SPECIAL_RESOURCES,
+                240,
+                666,
+                true);
 
         /**
          * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
