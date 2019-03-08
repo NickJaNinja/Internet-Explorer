@@ -58,9 +58,42 @@ public class ShopActivity extends GUIActivity {
         buyLayout = findViewById(R.id.buy_layout);
         buyLayout.addView(line);
 
+<<<<<<< HEAD
+=======
+        // Connecting button instance variables with market.xml buttons
+        confirm.findViewById(R.id.confirm_button);
+        cancel.findViewById(R.id.cancel_button);
+        leaveMarket.findViewById(R.id.leave_market_button);
+
+
+>>>>>>> f2aacc96a55b1ab6b71af02be9fddab9bed29b43
         // adding Views to buyLayout
         buyLayout.addView(item_layout);
         buyLayout.addView(line);
+
+
+        //confirm transaction
+        confirm.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        //cancel transaction
+        cancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        //leave market place
+        leaveMarket.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
     }
+
+
 
 }
