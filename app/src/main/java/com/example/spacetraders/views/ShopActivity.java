@@ -28,21 +28,28 @@ public class ShopActivity extends GUIActivity {
         line.setMinimumHeight(1);
         line.setBackgroundColor(Color.parseColor("#ffffff"));
 
+
+
         // creating a LinearLayout containing the item and info about it in TextViews
         LinearLayout item_layout = new LinearLayout(this);
         item_layout.setOrientation(LinearLayout.HORIZONTAL);
-        LinearLayout.LayoutParams item_layout_params = new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams item_layout_params1 = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                0.3f);
+                0.5f);
+        LinearLayout.LayoutParams item_layout_params2 = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
+                0.25f);
+
+        // adding text views for each item in item_layout
         TextView item_name = new TextView(this);
         item_name.setWidth(0);
-        item_name.setLayoutParams(item_layout_params);
+        item_name.setLayoutParams(item_layout_params1);
         TextView item_price = new TextView(this);
         item_price.setWidth(0);
-        item_price.setLayoutParams(item_layout_params);
+        item_price.setLayoutParams(item_layout_params2);
         TextView item_stock = new TextView(this);
         item_stock.setWidth(0);
-        item_stock.setLayoutParams(item_layout_params);
+        item_stock.setLayoutParams(item_layout_params2);
 
         item_layout.addView(item_name);
         item_layout.addView(item_price);
@@ -51,12 +58,15 @@ public class ShopActivity extends GUIActivity {
         buyLayout = findViewById(R.id.buy_layout);
         buyLayout.addView(line);
 
+<<<<<<< HEAD
+=======
         // Connecting button instance variables with market.xml buttons
         confirm.findViewById(R.id.confirm_button);
         cancel.findViewById(R.id.cancel_button);
         leaveMarket.findViewById(R.id.leave_market_button);
 
 
+>>>>>>> f2aacc96a55b1ab6b71af02be9fddab9bed29b43
         // adding Views to buyLayout
         buyLayout.addView(item_layout);
         buyLayout.addView(line);
