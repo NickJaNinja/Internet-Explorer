@@ -40,7 +40,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     @Override
     public int getItemCount() {
-        return 0;
+        return shopGoodsList.size();
+    }
+
+    public void setShopGoodsList(List<ShopGoods> shopGoods) {
+        shopGoodsList = shopGoods;
+        notifyDataSetChanged();
     }
 
     class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
