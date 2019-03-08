@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.view.ViewGroup;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.ShopGoods;
 
 import java.util.ArrayList;
@@ -32,9 +33,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopGoods shopGoods = shopGoodsList.get(position);
+        int shopGoodsStock = 
 
         shopGoodsViewHolder.price.setText(shopGoods.getBasePrice());
         shopGoodsViewHolder.name.setText(shopGoods.getName());
+        shopGoodsViewHolder.stock.setText(shopGoodsStock);
 
     }
 
@@ -51,6 +54,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView price;
+        private TextView stock;
 
         /**
          *

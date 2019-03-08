@@ -14,7 +14,7 @@ public class Planet {
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
     private int population;
-    private EnumMap<ShopGoods, Integer>;
+    private EnumMap<ShopGoods, Integer> shopGoodsStockMap;
 
     /**Constructor for Planet, randomizes levels
      * @param name name
@@ -88,6 +88,10 @@ public class Planet {
      */
     public Star getParentStar() {
         return parentStar;
+    }
+
+    public EnumMap<ShopGoods, Integer> getShopGoodsStockMap() {
+        return shopGoodsStockMap;
     }
 
     /**
