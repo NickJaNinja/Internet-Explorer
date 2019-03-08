@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import java.util.EnumMap;
+
 /**
  * This class represents the player's ship
  */
@@ -7,7 +9,8 @@ package com.example.spacetraders.entities;
 public class Ship {
     /** type of ship*/
     private ShipType type;
-
+    private EnumMap<ShopGoods, Integer> cargo;
+    private int inventory;
 
     /**
      * Constructor for the ship
@@ -16,6 +19,7 @@ public class Ship {
      */
     public Ship(ShipType type) {
         this.type = type;
+        inventory = 0;
     }
 
     /**
@@ -25,6 +29,20 @@ public class Ship {
      */
     public ShipType getShipType() {
         return type;
+    }
+
+    public int getInventory() { return inventory; }
+
+    public EnumMap<ShopGoods, Integer> getCargo() { return cargo; }
+
+    public void addCargo(ShopGoods good, int amount) {
+        if (cargo.get(good) == null) {
+            cargo.put(good, amount);
+        } else {
+            int curr = cargo.get(good);
+            curr += amount;
+            cargo.put(good, curr);
+        }
     }
 
     /**

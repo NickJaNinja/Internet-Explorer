@@ -5,7 +5,6 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
 import com.example.spacetraders.entities.ShopGoods;
-import com.example.spacetraders.entities.TradeGoods;
 
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class ShopViewModel extends AndroidViewModel {
      * @param goodsInCargo list of all goods in play's cargo
      * @return true if cargo contains the good to be sold, transaction is allowed
      */
-    public boolean onSell(TradeGoods good, List<TradeGoods> goodsInCargo) {
+    public boolean onSell(ShopGoods good, List<ShopGoods> goodsInCargo) {
         if (!goodsInCargo.contains(good)) {
             return false;
         }

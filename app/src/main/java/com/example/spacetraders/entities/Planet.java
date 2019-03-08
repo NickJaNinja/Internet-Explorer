@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.util.EnumMap;
 import java.util.Random;
 
 /**This class represents a planet*/
@@ -13,6 +14,7 @@ public class Planet {
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
     private int population;
+    private EnumMap<ShopGoods, Integer>;
 
     /**Constructor for Planet, randomizes levels
      * @param name name
