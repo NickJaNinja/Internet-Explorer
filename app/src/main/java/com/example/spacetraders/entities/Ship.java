@@ -36,11 +36,8 @@ public class Ship {
     public EnumMap<ShopGoods, Integer> getCargo() { return cargo; }
 
     public void addCargo(ShopGoods good, int amount) {
-        int remaining = type.getNumCargoHolds() - inventory;
         if (cargo.get(good) == null) {
-            if (amount <= remaining) {
-                cargo.put(good, amount);
-            }
+            cargo.put(good, amount);
         } else {
             int curr = cargo.get(good);
             curr += amount;
