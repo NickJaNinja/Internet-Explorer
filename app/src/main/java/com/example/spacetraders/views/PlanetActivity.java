@@ -15,6 +15,16 @@ public class PlanetActivity extends GUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planet);
+
+
+
+
+
+        // Connecting button instance variables with planet.xml buttons
+        market.findViewById(R.id.market_button);
+        upgrade.findViewById(R.id.upgrade_button);
+        refuel.findViewById(R.id.refuel_button);
+        leaveOrbit.findViewById(R.id.leave_orbit_button);
     }
 
 }
