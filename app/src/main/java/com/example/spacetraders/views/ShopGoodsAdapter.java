@@ -4,7 +4,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.view.ViewGroup;
+
+import com.example.spacetraders.R;
 
 public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
 
@@ -18,4 +21,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
         return new ShopGoodsViewHolder(itemView);
     }
-}
+
+    class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
+        private TextView Price;
+    }
