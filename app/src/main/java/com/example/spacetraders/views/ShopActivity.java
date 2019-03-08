@@ -17,6 +17,7 @@ public class ShopActivity extends GUIActivity {
     private Button cancel;
     private Button leaveMarket;
     private LinearLayout buyLayout;
+    private ShopGoodsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +85,9 @@ public class ShopActivity extends GUIActivity {
 
             }
         });
+
+        adapter.setShopGoodsList();
+
     }
-
-
 
 }

@@ -33,7 +33,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopGoods shopGoods = shopGoodsList.get(position);
-        int shopGoodsStock = 
+        int shopGoodsStock =
 
         shopGoodsViewHolder.price.setText(shopGoods.getBasePrice());
         shopGoodsViewHolder.name.setText(shopGoods.getName());
@@ -49,6 +49,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     public void setShopGoodsList(List<ShopGoods> shopGoods) {
         shopGoodsList = shopGoods;
         notifyDataSetChanged();
+    }
+
+    public void setShopGoodsList() {
     }
 
     class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
