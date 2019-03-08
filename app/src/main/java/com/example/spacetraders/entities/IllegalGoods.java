@@ -1,6 +1,6 @@
 package com.example.spacetraders.entities;
 /**This enum represents the various shop goods*/
-public enum IllegalGoods implements TradeGoods {
+public enum IllegalGoods {
     BOBCOIN("Bobcoin",
             TechLevel.POST_INDUSTRIAL,
             TechLevel.POST_INDUSTRIAL,

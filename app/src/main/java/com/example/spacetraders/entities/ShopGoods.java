@@ -1,6 +1,6 @@
 package com.example.spacetraders.entities;
 
-public enum ShopGoods implements TradeGoods {
+public enum ShopGoods {
         WATER("Water",
                 TechLevel.PRE_AGRICULTURE,
                 TechLevel.PRE_AGRICULTURE,
@@ -12,7 +12,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.LOTS_OF_WATER,
                 ResourcesLevel.DESERT,
                 30,
-                50),
+                50,
+                false),
         FURS("Furs",
                 TechLevel.PRE_AGRICULTURE,
                 TechLevel.PRE_AGRICULTURE,
@@ -24,7 +25,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.RICH_FAUNA,
                 ResourcesLevel.LIFELESS,
                 230,
-                280),
+                280,
+                false),
         FOOD("Food",
                 TechLevel.AGRICULTURE,
                 TechLevel.PRE_AGRICULTURE,
@@ -36,7 +38,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.RICH_SOIL,
                 ResourcesLevel.POOR_SOIL,
                 90,
-                160),
+                160,
+                false),
         ORE("Ore",
                 TechLevel.MEDIEVAL,
                 TechLevel.MEDIEVAL,
@@ -47,7 +50,9 @@ public enum ShopGoods implements TradeGoods {
                 RadicalPriceEvent.WAR,
                 ResourcesLevel.MINERAL_RICH,
                 ResourcesLevel.MINERAL_POOR,
-                350, 420),
+                350,
+                420,
+                false),
         GAMES("Games",
                 TechLevel.RENAISSANCE,
                 TechLevel.AGRICULTURE,
@@ -59,7 +64,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.ARTISTIC,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 160,
-                270),
+                270,
+                false),
         FIREARMS("Firearms",
                 TechLevel.RENAISSANCE,
                 TechLevel.AGRICULTURE,
@@ -71,7 +77,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.WARLIKE,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 600,
-                1100),
+                1100,
+                false),
         MEDICINE("Medicine",
                 TechLevel.EARLY_INDUSTRIAL,
                 TechLevel.AGRICULTURE,
@@ -83,7 +90,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.LOTS_OF_HERBS,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 400,
-                700),
+                700,
+                false),
         MACHINES("Machines",
                 TechLevel.EARLY_INDUSTRIAL,
                 TechLevel.RENAISSANCE,
@@ -95,7 +103,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 600,
-                800),
+                800,
+                false),
         NARCOTICS("Narcotics",
                 TechLevel.INDUSTRIAL,
                 TechLevel.AGRICULTURE,
@@ -107,7 +116,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.WEIRD_MUSHROOMS,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 2000,
-                3000),
+                3000,
+                false),
         ROBOTS("Robots",
                 TechLevel.POST_INDUSTRIAL,
                 TechLevel.POST_INDUSTRIAL,
@@ -119,7 +129,8 @@ public enum ShopGoods implements TradeGoods {
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 ResourcesLevel.NO_SPECIAL_RESOURCES,
                 3500,
-                5000);
+                5000,
+                false);
 
         /**
          * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
@@ -132,6 +143,7 @@ public enum ShopGoods implements TradeGoods {
          * ER = When this condition is present, the resource is expensive
          * MTL = Min price offered in space trade with random trader (not on a planet)
          * MTH = Max price offered in space trade with random trader (not on a planet)
+         * isIllegal = true if illegal, false if legal
          */
         private final String name;
         private final TechLevel mtlp;
@@ -145,6 +157,7 @@ public enum ShopGoods implements TradeGoods {
         private final ResourcesLevel er;
         private final int mtl;
         private final int mth;
+        private final boolean isIllegal;
     /**
      * Constructor for the enumeration
      *
@@ -160,8 +173,9 @@ public enum ShopGoods implements TradeGoods {
      * @param er the er
      * @param mtl the mtl
      * @param mth the mth
+     * @param isIllegal legal condition
      */
-        ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth) {
+        ShopGoods (String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth, boolean isIllegal) {
             this.name = name;
             this.mtlp = mtlp;
             this.mtlu = mtlu;
@@ -174,6 +188,7 @@ public enum ShopGoods implements TradeGoods {
             this.er = er;
             this.mtl = mtl;
             this.mth = mth;
+            this.isIllegal = isIllegal;
         }
 
     /**
