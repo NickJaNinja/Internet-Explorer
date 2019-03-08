@@ -18,6 +18,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /** a copy of the list of shop goods in the model */
     private List<ShopGoods> shopGoodsList = new ArrayList<>();
+    private
 
     @NonNull
     @Override

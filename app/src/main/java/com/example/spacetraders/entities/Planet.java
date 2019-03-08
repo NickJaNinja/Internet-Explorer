@@ -90,6 +90,22 @@ public class Planet {
         return parentStar;
     }
 
+    public TechLevel getTechLevel() {
+        return techLevel;
+    }
+
+    public ResourcesLevel getResourcesLevel() {
+        return resourcesLevel;
+    }
+
+    public PoliticalSystem getPoliticalSystem() {
+        return politicalSystem;
+    }
+
+    public boolean isInHabitableZone() {
+        return inHabitableZone;
+    }
+
     /**
      * to string for planet
      *

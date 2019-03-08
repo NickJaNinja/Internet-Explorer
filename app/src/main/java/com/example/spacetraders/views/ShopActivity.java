@@ -87,6 +87,7 @@ public class ShopActivity extends GUIActivity {
         });
 
         adapter.setShopGoodsList();
+        adapter.onCreateViewHolder()
 
     }
 
