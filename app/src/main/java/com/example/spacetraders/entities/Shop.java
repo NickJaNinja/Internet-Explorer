@@ -23,6 +23,7 @@ public class Shop {
                         * (techLevel.getLevel() - shopGood.getMtlp().getLevel())
                         + shopGood.getBasePrice()
                         * (new Random()).nextInt(shopGood.getVar() + 1);
+                // generates stock, making items with a higher bass price have lower stock
                 int stock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 priceNStock.add(finalPriceOfDaniel);
                 priceNStock.add(stock);
