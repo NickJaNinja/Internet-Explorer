@@ -39,6 +39,8 @@ public class Planet {
 
         int politicalPick = r.nextInt(PoliticalSystem.values().length);
         this.politicalSystem = PoliticalSystem.values()[politicalPick];
+
+        shop = new Shop(techLevel, resourcesLevel);
     }
 
     /**
