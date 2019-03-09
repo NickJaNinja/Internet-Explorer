@@ -2,6 +2,7 @@ package com.example.spacetraders.entities;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 
 public class Shop {
     private EnumMap<ShopGoods, ArrayList<Integer>> shopGoodsStockMap;
@@ -14,6 +15,16 @@ public class Shop {
     public Shop(TechLevel techLevel, ResourcesLevel resourcesLevel) {
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
-        if (techLevel.)
+        for (ShopGoods shopGood: ShopGoods.values()) {
+            if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
+                ArrayList<Integer> priceNStock = new ArrayList<>();
+                int finalPriceOfDaniel = shopGood.getBasePrice() + shopGood.getIpl() * (techLevel.getLevel() - shopGood.getMtlp().getLevel()) + shopGood.getBasePrice() * shopGood.getVar();
+                int stock = 0;
+                priceNStock.add(finalPriceOfDaniel);
+                priceNStock.add(stock);
+                shopGoodsStockMap.put(shopGood, priceNStock);
+            }
+
+        }
     }
 }
