@@ -19,8 +19,11 @@ public class Shop {
         for (ShopGoods shopGood: ShopGoods.values()) {
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
                 ArrayList<Integer> priceNStock = new ArrayList<>();
-                int finalPriceOfDaniel = shopGood.getBasePrice() + shopGood.getIpl() * (techLevel.getLevel() - shopGood.getMtlp().getLevel()) + shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1);
-                int stock = new Random().nextInt();
+                int finalPriceOfDaniel = shopGood.getBasePrice() + shopGood.getIpl()
+                        * (techLevel.getLevel() - shopGood.getMtlp().getLevel())
+                        + shopGood.getBasePrice()
+                        * (new Random()).nextInt(shopGood.getVar() + 1);
+                int stock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 priceNStock.add(finalPriceOfDaniel);
                 priceNStock.add(stock);
                 shopGoodsStockMap.put(shopGood, priceNStock);
