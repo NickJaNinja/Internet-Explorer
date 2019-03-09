@@ -16,4 +16,7 @@ public class Shop {
         this.resourcesLevel = resourcesLevel;
         if (techLevel.)
     }
+
+
+
 }
