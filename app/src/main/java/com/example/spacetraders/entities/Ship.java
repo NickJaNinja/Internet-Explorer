@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
 
 /**
@@ -9,7 +10,7 @@ import java.util.EnumMap;
 public class Ship {
     /** type of ship*/
     private ShipType type;
-    private EnumMap<ShopGoods, Integer> cargo;
+    private EnumMap<ShopGoods, ArrayList<Integer>> cargo;
     private int inventory;
 
     /**
@@ -19,6 +20,7 @@ public class Ship {
      */
     public Ship(ShipType type) {
         this.type = type;
+        cargo = null;
         inventory = 0;
     }
 
@@ -33,16 +35,40 @@ public class Ship {
 
     public int getInventory() { return inventory; }
 
-    public EnumMap<ShopGoods, Integer> getCargo() { return cargo; }
+    public EnumMap<ShopGoods, ArrayList<Integer>> getCargo() { return cargo; }
 
-    public void addCargo(ShopGoods good, int amount) {
+    public void addCargo(ShopGoods good, int amount, int price) {
         if (cargo.get(good) == null) {
-            cargo.put(good, amount);
+            ArrayList<Integer> item = new ArrayList<>();
+            item.add(amount);
+            item.add(price);
+            cargo.put(good, item);
         } else {
-            int curr = cargo.get(good);
-            curr += amount;
-            cargo.put(good, curr);
+            int currAmt = cargo.get(good).get(0);
+            int currPrc = cargo.get(good).get(1);
+            int avgPrc = currAmt * currPrc;
+            avgPrc += amount * price;
+            avgPrc /= (amount + currAmt);
+            ArrayList<Integer> item = new ArrayList<>();
+            item.add(currAmt + amount);
+            item.add(avgPrc);
+            cargo.put(good, item);
         }
+    }
+
+    public void removeCargo(ShopGoods good, int amount, int price) {
+        if (cargo.get(good) == null) {
+            return;
+        }
+        int currAmt = cargo.get(good).get(0);
+        int currPrc = cargo.get(good).get(1);
+        int avgPrc = currAmt * currPrc;
+        avgPrc -= amount * price;
+        avgPrc /= (currAmt - amount);
+        ArrayList<Integer> item = new ArrayList<>();
+        item.add(currAmt - amount);
+        item.add(avgPrc);
+        cargo.put(good, item);
     }
 
     /**
