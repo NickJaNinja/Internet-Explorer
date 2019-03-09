@@ -20,7 +20,7 @@ public class Shop {
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
                 ArrayList<Integer> priceNStock = new ArrayList<>();
                 int finalPriceOfDaniel = shopGood.getBasePrice() + shopGood.getIpl() * (techLevel.getLevel() - shopGood.getMtlp().getLevel()) + shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1);
-                int stock = 50;
+                int stock = new Random().nextInt();
                 priceNStock.add(finalPriceOfDaniel);
                 priceNStock.add(stock);
                 shopGoodsStockMap.put(shopGood, priceNStock);
