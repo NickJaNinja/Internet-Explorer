@@ -32,6 +32,8 @@ public class Shop {
         }
     }
 
-
+    // Add this method if we want to change when shop is restocked
+    // Aka not only when we make a new shop instance
+    public void restock() {}
 
 }
