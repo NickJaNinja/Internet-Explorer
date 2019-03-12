@@ -29,7 +29,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private OnShopClickListener listener;
 
     @NonNull
-
+    @Override
     public ShopGoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.market_entry, parent, false);
@@ -37,7 +37,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return new ShopGoodsViewHolder(itemView);
     }
 
-    class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
+    public class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView price;
         private TextView stock;
@@ -59,50 +59,14 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     }
 
 
-    @NonNull
-    @Override
-    public ShopGoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-
-        // hook up to the view for a single student in the system
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.student_item, parent, false);
-
-        return new ShopGoodsViewHolder(itemView);
-    }
-
-    @Override
-    public int onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
-        ShopEntry shopGoods = shopGoodsList.get(position);
-        int shopGoodsStock =
-
-        shopGoodsViewHolder.price.setText(shopGoods.getGood().getBasePrice());
-        shopGoodsViewHolder.name.setText(shopGoods.getGood().getName());
-        shopGoodsViewHolder.stock.setText(shopGoodsStock);
-
-    }
-
     @Override
     public int getItemCount() {
         return shopGoodsList.size();
     }
 
-    public void setShopGoodsList(List<ShopGoods> shopGoods) {
-        shopGoodsList = shopGoods;
+    public void setShopGoodsList(List<ShopEntry> shopEntries) {
+        shopGoodsList = shopEntries;
         notifyDataSetChanged();
-    }
-
-    public void setShopGoodsList() {
-    }
-
-    class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private TextView price;
-        private TextView stock;
-
-
-        public ShopGoodsViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
     }
 
 
