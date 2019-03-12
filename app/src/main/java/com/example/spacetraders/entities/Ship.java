@@ -37,7 +37,8 @@ public class Ship {
 
     public EnumMap<ShopGoods, ShopEntry> getCargo() { return cargo; }
 
-    public void addCargo(ShopGoods good, int amount, int price) {
+    public int addCargo(ShopGoods good, int amount, int price) {
+        if (inventory + amount > type.getNumCargoHolds()) { return 0; }
         if (cargo.get(good) == null) {
             cargo.put(good, new ShopEntry(good, amount, price));
         } else {
@@ -49,11 +50,14 @@ public class Ship {
             avgPrc /= (amount + currAmt);
             item.setStock(currAmt + amount);
             item.setPrice(avgPrc);
+            inventory += amount;
             cargo.put(good, item);
         }
+        return 1;
     }
 
-    public void removeCargo(ShopGoods good, int amount, int price) {
+    public int removeCargo(ShopGoods good, int amount, int price) {
+        if (inventory - amount < 0) { return 0; }
         if (cargo.get(good) == null) {
             return;
         }
@@ -65,7 +69,9 @@ public class Ship {
         avgPrc /= (currAmt - amount);
         item.setStock(currAmt - amount);
         item.setPrice(avgPrc);
+        inventory -= amount;
         cargo.put(good, item);
+        return 1;
     }
 
     /**
