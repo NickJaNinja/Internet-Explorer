@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Shop;
 
 public class ShopActivity extends GUIActivity {
     private Button confirm;
@@ -18,6 +19,7 @@ public class ShopActivity extends GUIActivity {
     private Button leaveMarket;
     private LinearLayout buyLayout;
     private ShopGoodsAdapter adapter;
+    private Shop shop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,12 +5,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Planet;
 
 public class PlanetActivity extends GUIActivity {
     private TextView market;
     private TextView upgrade;
     private TextView refuel;
     private TextView leaveOrbit;
+    private Planet planet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
