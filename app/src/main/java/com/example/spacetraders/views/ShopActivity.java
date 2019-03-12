@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Shop;
 
 public class ShopActivity extends GUIActivity {
     private Button confirm;
@@ -22,6 +23,7 @@ public class ShopActivity extends GUIActivity {
     private Button leaveMarket;
     private ListView buyList;
     private ShopGoodsAdapter adapter;
+    private Shop shop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

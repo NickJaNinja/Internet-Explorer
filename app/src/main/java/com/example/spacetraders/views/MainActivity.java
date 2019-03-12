@@ -14,7 +14,7 @@ import com.example.spacetraders.viewmodels.MainViewModel;
 public class MainActivity extends GUIActivity {
     private MainViewModel mainViewModel;
 
-    private Game g;
+    private Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
