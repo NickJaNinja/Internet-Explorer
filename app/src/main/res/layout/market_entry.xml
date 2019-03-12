@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@color/colorBackground">
 
     <TextView
         android:id="@+id/sell_item_hint_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".5"
         android:text="ITEM"
@@ -16,7 +17,7 @@
 
     <TextView
         android:id="@+id/sell_stock_hint_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".25"
         android:text="STOCK"
@@ -25,7 +26,7 @@
 
     <TextView
         android:id="@+id/sell_price_hint_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".25"
         android:text="PRICE"

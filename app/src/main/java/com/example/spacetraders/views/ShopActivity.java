@@ -4,6 +4,8 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,10 +30,23 @@ public class ShopActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market);
 
+        /*
+        Set up our recycler view by grabbing the layout for a single item
+        */
+        RecyclerView recyclerView = findViewById(R.id.buy_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+        // Setup the adapter for this recycler view
+        adapter = new ShopGoodsAdapter();
+        recyclerView.setAdapter(adapter);
+
+
+
         //buyList = findViewById(R.id.buy_list);
-        for (int c = 0; c < adapter.getItemCount(); c++) {
+        //for (int c = 0; c < adapter.getItemCount(); c++) {
             //buyList.addView(adapter.getLayout(c, this));
-        }
+        //}
 
 
         /*
@@ -101,8 +116,8 @@ public class ShopActivity extends GUIActivity {
             }
         });
 
-        adapter.setShopGoodsList();
-        adapter.onCreateViewHolder();
+        //adapter.setShopGoodsList();
+        //adapter.onCreateViewHolder();
 
     }
 
