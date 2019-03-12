@@ -10,7 +10,7 @@ import java.util.EnumMap;
 public class Ship {
     /** type of ship*/
     private ShipType type;
-    private EnumMap<ShopGoods, ArrayList<Integer>> cargo;
+    private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
 
     /**
@@ -35,23 +35,20 @@ public class Ship {
 
     public int getInventory() { return inventory; }
 
-    public EnumMap<ShopGoods, ArrayList<Integer>> getCargo() { return cargo; }
+    public EnumMap<ShopGoods, ShopEntry> getCargo() { return cargo; }
 
     public void addCargo(ShopGoods good, int amount, int price) {
         if (cargo.get(good) == null) {
-            ArrayList<Integer> item = new ArrayList<>();
-            item.add(amount);
-            item.add(price);
-            cargo.put(good, item);
+            cargo.put(good, new ShopEntry(good, amount, price));
         } else {
-            int currAmt = cargo.get(good).get(0);
-            int currPrc = cargo.get(good).get(1);
+            ShopEntry item = cargo.get(good);
+            int currAmt = item.getStock();
+            int currPrc = item.getPrice();
             int avgPrc = currAmt * currPrc;
             avgPrc += amount * price;
             avgPrc /= (amount + currAmt);
-            ArrayList<Integer> item = new ArrayList<>();
-            item.add(currAmt + amount);
-            item.add(avgPrc);
+            item.setStock(currAmt + amount);
+            item.setPrice(avgPrc);
             cargo.put(good, item);
         }
     }
@@ -60,14 +57,14 @@ public class Ship {
         if (cargo.get(good) == null) {
             return;
         }
-        int currAmt = cargo.get(good).get(0);
-        int currPrc = cargo.get(good).get(1);
+        ShopEntry item = cargo.get(good);
+        int currAmt = item.getStock();
+        int currPrc = item.getPrice();
         int avgPrc = currAmt * currPrc;
         avgPrc -= amount * price;
         avgPrc /= (currAmt - amount);
-        ArrayList<Integer> item = new ArrayList<>();
-        item.add(currAmt - amount);
-        item.add(avgPrc);
+        item.setStock(currAmt - amount);
+        item.setPrice(avgPrc);
         cargo.put(good, item);
     }
 
