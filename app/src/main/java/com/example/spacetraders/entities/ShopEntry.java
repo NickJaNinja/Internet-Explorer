@@ -33,4 +33,6 @@ public class ShopEntry {
         list.add(Integer.toString(price));
         return list;
     }
+
+
 }

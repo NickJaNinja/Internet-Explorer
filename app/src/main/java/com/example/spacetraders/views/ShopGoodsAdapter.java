@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
+import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return new ShopGoodsViewHolder(itemView);
     }
 
-    /*class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
+    class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView price;
         private TextView stock;
@@ -45,20 +46,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         public ShopGoodsViewHolder(@NonNull View itemView) {
             super(itemView);
         }
-    }*/
+    }
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
 
 
         shopGoodsViewHolder.price.setText(shopEntry.getPrice());
-        shopGoodsViewHolder.name.setText(shopEntry.getName());
+        shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
         shopGoodsViewHolder.stock.setText(shopEntry.getStock());
 
     }
 
 
-    /*
     @NonNull
     @Override
     public ShopGoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
@@ -71,12 +71,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
-        ShopGoods shopGoods = shopGoodsList.get(position);
+    public int onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
+        ShopEntry shopGoods = shopGoodsList.get(position);
         int shopGoodsStock =
 
-        shopGoodsViewHolder.price.setText(shopGoods.getBasePrice());
-        shopGoodsViewHolder.name.setText(shopGoods.getName());
+        shopGoodsViewHolder.price.setText(shopGoods.getGood().getBasePrice());
+        shopGoodsViewHolder.name.setText(shopGoods.getGood().getName());
         shopGoodsViewHolder.stock.setText(shopGoodsStock);
 
     }
@@ -105,7 +105,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         }
     }
 
-    */
+
 /*
     public LinearLayout getLayout(int index, Context context) {
         // layout containing line and the item layout
