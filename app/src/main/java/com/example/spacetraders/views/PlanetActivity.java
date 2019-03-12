@@ -1,6 +1,8 @@
 package com.example.spacetraders.views;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,6 +24,12 @@ public class PlanetActivity extends GUIActivity {
         refuel = findViewById(R.id.refuel_button);
         leaveOrbit = findViewById(R.id.leave_orbit_button);
 
+        // pressing market button
+        market.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShopActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
-
 }
