@@ -29,7 +29,6 @@ public class Shop {
                 priceNStock.add(stock);
                 shopGoodsStockMap.put(shopGood, priceNStock);
             }
-
         }
     }
 
