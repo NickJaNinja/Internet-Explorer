@@ -6,4 +6,6 @@
     <color name="colorPlusButton">#5FCA77</color>
     <color name="colorMinusButton">#DC910202</color>
     <color name="colorCancelButton">#D25A64</color>
+    <color name="colorAccent">#D25A64</color>
+    <color name="colorPrimary">#D25A64</color>
 </resources>
