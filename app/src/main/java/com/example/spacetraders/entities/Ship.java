@@ -58,9 +58,7 @@ public class Ship {
 
     public int removeCargo(ShopGoods good, int amount, int price) {
         if (inventory - amount < 0) { return 0; }
-        if (cargo.get(good) == null) {
-            return;
-        }
+        if (cargo.get(good) == null) { return 0; }
         ShopEntry item = cargo.get(good);
         int currAmt = item.getStock();
         int currPrc = item.getPrice();
