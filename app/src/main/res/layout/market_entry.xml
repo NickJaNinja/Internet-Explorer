@@ -7,7 +7,7 @@
     android:background="@color/colorBackground">
 
     <TextView
-        android:id="@+id/sell_item_hint_text"
+        android:id="@+id/item_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".5"
@@ -16,7 +16,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/sell_stock_hint_text"
+        android:id="@+id/stock_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".25"
@@ -25,7 +25,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/sell_price_hint_text"
+        android:id="@+id/price_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".25"
