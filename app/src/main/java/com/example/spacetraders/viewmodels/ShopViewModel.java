@@ -38,10 +38,12 @@ public class ShopViewModel extends AndroidViewModel {
      * @return true if cargo contains the good to be sold, transaction is allowed
      */
     public boolean onSell(ShopGoods good, List<ShopGoods> goodsInCargo) {
-        if (!goodsInCargo.contains(good)) {
-            return false;
+        for (int i = 0; i < goodsInCargo.size(); i++) {
+            if (good == goodsInCargo.get(i)) {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 
 
