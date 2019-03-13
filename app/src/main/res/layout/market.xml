@@ -212,7 +212,7 @@
             android:id="@+id/leave_market_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="< LEAVE MARKET"
+            android:text="@string/this_is_a_string_name"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
