@@ -10,6 +10,7 @@ public class Shop {
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
+    private List<ShopEntry> inventory;
 
     // array list with price & stock
 
@@ -35,6 +36,7 @@ public class Shop {
             }
         }
     }
+
     /**
      * Decreases stock of good by amount
      */
@@ -43,5 +45,11 @@ public class Shop {
         e.setStock(e.getStock() - amount);
     }
 
-
+    public List<ShopEntry> getInventoryAsList() {
+        List<ShopEntry> inv = new ArrayList<>();
+        for (ShopEntry entry : shopGoodsStockMap.values()) {
+            inv.add(entry);
+        }
+        return inv;
+    }
 }

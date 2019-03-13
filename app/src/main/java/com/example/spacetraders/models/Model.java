@@ -45,7 +45,7 @@ public class Model {
     }
 
     public List<ShopEntry> getShopEntries(Shop shop) {
-        
+        return shop.getInventoryAsList();
     }
 
     public Game getGame() { return game; }
