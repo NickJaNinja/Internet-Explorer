@@ -20,7 +20,7 @@ public class Ship {
      */
     public Ship(ShipType type) {
         this.type = type;
-        cargo = null;
+        cargo = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
         inventory = 0;
     }
 

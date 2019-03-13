@@ -16,6 +16,7 @@ public class Shop {
     public Shop(TechLevel techLevel, ResourcesLevel resourcesLevel) {
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
+        shopGoodsStockMap = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
         restock();
     }
 
