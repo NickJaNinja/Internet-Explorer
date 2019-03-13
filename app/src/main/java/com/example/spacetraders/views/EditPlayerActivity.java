@@ -198,7 +198,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             Model.getInstance().createGame(diff, p);
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
 
-            Intent intent = new Intent(EditPlayerActivity.this, MainActivity.class);
+            Intent intent = new Intent(EditPlayerActivity.this, PlanetActivity.class);
             startActivity(intent);
         } else {
             CharSequence text = editPlayerViewModel.getToastText();
