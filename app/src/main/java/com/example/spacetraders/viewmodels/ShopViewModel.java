@@ -14,6 +14,8 @@ import java.util.List;
 public class ShopViewModel extends AndroidViewModel {
 
     private Model model;
+    private List<ShopEntry> shopInventoryTemp;
+    private List<ShopEntry> playerInventoryTemp;
 
     public ShopViewModel(@NonNull Application app) {
         super(app);
@@ -54,6 +56,18 @@ public class ShopViewModel extends AndroidViewModel {
         return false;
     }
 
+    public void setUpShop(Shop shop) {
+        shopInventoryTemp = getShopEntries(shop);
+    }
+
+    public void addItemToPlayerInventoryTemp(ShopEntry shopEntry) {
+        playerInventoryTemp.add(shopEntry);
+    }
+
+    public void addItemToShopInventoryTemp(ShopEntry shopEntry) {
+        shopInventoryTemp.add(shopEntry);
+    }
+
     /**
      *  Takes in a shop and finds the items in its stock
      * @param shop the shop to get the inventory of
@@ -63,4 +77,7 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries(shop);
     }
 
+    public void setShopEntriesToTemp() {
+
+    }
 }
