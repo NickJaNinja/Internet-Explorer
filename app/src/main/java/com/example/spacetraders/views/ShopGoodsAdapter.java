@@ -1,22 +1,14 @@
 package com.example.spacetraders.views;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.view.ViewGroup;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.ShopEntry;
-import com.example.spacetraders.entities.ShopGoods;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +18,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
     private List<ShopEntry> shopGoodsList = new ArrayList<>();
-    private OnShopClickListener listener;
 
     @NonNull
     @Override
@@ -45,6 +36,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
         public ShopGoodsViewHolder(@NonNull View itemView) {
             super(itemView);
+            name = itemView.findViewById(R.id.item_text);
+            price = itemView.findViewById(R.id.stock_text);
+            stock = itemView.findViewById(R.id.price_text);
         }
     }
     @Override
@@ -68,7 +62,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         shopGoodsList = shopEntries;
         notifyDataSetChanged();
     }
-
 
 /*
     public LinearLayout getLayout(int index, Context context) {

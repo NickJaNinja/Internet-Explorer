@@ -34,5 +34,13 @@ public class Shop {
             }
         }
     }
+    /**
+     * Decreases stock of good by amount
+     */
+    public void decreaseStock(ShopGoods good, int amount) {
+        ShopEntry e = shopGoodsStockMap.get(good);
+        e.setStock(e.getStock() - amount);
+    }
+
 
 }
