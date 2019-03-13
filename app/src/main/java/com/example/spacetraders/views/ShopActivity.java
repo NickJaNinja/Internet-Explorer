@@ -1,31 +1,23 @@
 package com.example.spacetraders.views;
 
-import android.app.ActionBar;
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Shop;
-
-import org.w3c.dom.Text;
+import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class ShopActivity extends GUIActivity {
     private TextView cancel;
     private TextView confirm;
-    private TextView leaveMarket;
     private ListView buyList;
     private ShopGoodsAdapter adapter;
     private Shop shop;
+    private ShopViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +87,6 @@ public class ShopActivity extends GUIActivity {
         // Connecting button instance variables with market.xml buttons
         confirm = findViewById(R.id.confirm_button);
         cancel = findViewById(R.id.cancel_button);
-        leaveMarket = findViewById(R.id.leave_market_button);
 
         //confirm transaction
         confirm.setOnClickListener(new View.OnClickListener() {
@@ -111,16 +102,15 @@ public class ShopActivity extends GUIActivity {
             }
         });
 
-        //leave market place
-        leaveMarket.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });
-
         //adapter.setShopGoodsList();
         //adapter.onCreateViewHolder();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //adapter.setShopGoodsList(viewModel.getShopEntries());
     }
 
 }
