@@ -17,7 +17,7 @@ public class Shop {
     public Shop(TechLevel techLevel, ResourcesLevel resourcesLevel) {
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
-        shopGoodsStockMap = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
+        shopGoodsStockMap = new EnumMap<>(ShopGoods.class);
         restock();
     }
 
@@ -39,12 +39,20 @@ public class Shop {
 
     /**
      * Decreases stock of good by amount
+     *
+     * @param good the good to decrease stock
+     * @param amount the amount to decrease
      */
     public void decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
         e.setStock(e.getStock() - amount);
     }
 
+    /**
+     * Makes a list of the shop entries
+     *
+     * @return the shop entry list
+     */
     public List<ShopEntry> getInventoryAsList() {
         List<ShopEntry> inv = new ArrayList<>();
         for (ShopEntry entry : shopGoodsStockMap.values()) {
