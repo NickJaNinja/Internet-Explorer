@@ -104,7 +104,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/buy_list"
             android:layout_width="match_parent"
-            android:layout_height="165dp">
+            android:layout_height="180dp">
         </android.support.v7.widget.RecyclerView>
 
         <View
@@ -163,7 +163,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/sell_list"
             android:layout_width="match_parent"
-            android:layout_height="165dp">
+            android:layout_height="180dp">
         </android.support.v7.widget.RecyclerView>
 
         <View
@@ -202,20 +202,6 @@
                 android:textSize="24sp" />
 
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/leave_market_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/this_is_a_string_name"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
