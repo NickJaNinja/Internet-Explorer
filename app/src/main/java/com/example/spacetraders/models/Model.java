@@ -3,7 +3,11 @@ package com.example.spacetraders.models;
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.entities.Shop;
+import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
+
+import java.util.List;
 
 public class Model {
     private Game game;
@@ -38,6 +42,10 @@ public class Model {
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
         return game.makeTransaction(sg, amount, price);
+    }
+
+    public List<ShopEntry> getShopEntries(Shop shop) {
+        
     }
 
     public Game getGame() { return game; }

@@ -4,13 +4,21 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
+import com.example.spacetraders.entities.Shop;
+import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
+import com.example.spacetraders.models.Model;
 
 import java.util.List;
 
 public class ShopViewModel extends AndroidViewModel {
 
-    public ShopViewModel(@NonNull Application app) { super(app); }
+    private Model model;
+
+    public ShopViewModel(@NonNull Application app) {
+        super(app);
+        model = Model.getInstance();
+    }
 
     /***
      * check if the player have enough money and cargo hold for buying the good
@@ -46,6 +54,8 @@ public class ShopViewModel extends AndroidViewModel {
         return false;
     }
 
-
+    public List<ShopEntry> getShopEntries(Shop shop) {
+        return model.getShopEntries(shop);
+    }
 
 }

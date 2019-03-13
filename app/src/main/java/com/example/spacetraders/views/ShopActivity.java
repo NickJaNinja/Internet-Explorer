@@ -110,7 +110,7 @@ public class ShopActivity extends GUIActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //adapter.setShopGoodsList(viewModel.getShopEntries());
+        adapter.setShopGoodsList(viewModel.getShopEntries(shop));
     }
 
 }
