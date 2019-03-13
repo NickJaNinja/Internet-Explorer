@@ -54,6 +54,11 @@ public class ShopViewModel extends AndroidViewModel {
         return false;
     }
 
+    /**
+     *  Takes in a shop and finds the items in its stock
+     * @param shop the shop to get the inventory of
+     * @return a list of shop entries
+     */
     public List<ShopEntry> getShopEntries(Shop shop) {
         return model.getShopEntries(shop);
     }
