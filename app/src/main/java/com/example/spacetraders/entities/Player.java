@@ -59,6 +59,14 @@ public class Player {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
 
+    /**
+     * Carries out a transaction of goods if valid
+     *
+     * @param sg the type of the good associated with this transaction
+     * @param amount the total amount of the good to buy
+     * @param price the price of each good
+     * @return 1 if transaction occurred, 0 otherwise
+     */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
         if (credits < amount * price) { return 0; }
         if (amount <= 0) {
