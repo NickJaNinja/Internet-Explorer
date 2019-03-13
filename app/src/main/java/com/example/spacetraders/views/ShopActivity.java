@@ -20,7 +20,7 @@ import com.example.spacetraders.entities.Shop;
 import org.w3c.dom.Text;
 
 public class ShopActivity extends GUIActivity {
-    private Button cancel;
+    private TextView cancel;
     private TextView confirm;
     private TextView leaveMarket;
     private ListView buyList;
