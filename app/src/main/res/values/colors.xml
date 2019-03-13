@@ -8,4 +8,5 @@
     <color name="colorCancelButton">#D25A64</color>
     <color name="colorAccent">#D25A64</color>
     <color name="colorPrimary">#D25A64</color>
+    <color name="colorPrimaryDark">#D25A64</color>
 </resources>
