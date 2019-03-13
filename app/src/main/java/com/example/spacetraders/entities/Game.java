@@ -31,6 +31,15 @@ public class Game {
         this.universe = new Universe();
     }
 
+    /**
+     * Passes a good, an amount, and a price all the way down to player
+     * and ship to be able to carry out a transaction if valid
+     *
+     * @param sg the type of the good associated with this transaction
+     * @param amount the total amount of the good to buy
+     * @param price the price of each good
+     * @return 1 if transaction occurred, 0 otherwise
+     */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
         return player.makeTransaction(sg, amount, price);
     }
