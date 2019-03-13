@@ -36,6 +36,4 @@ public class PlanetActivity extends GUIActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) { return true; }
 }

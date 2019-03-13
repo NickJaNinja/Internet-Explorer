@@ -17,10 +17,12 @@ import android.widget.TextView;
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Shop;
 
+import org.w3c.dom.Text;
+
 public class ShopActivity extends GUIActivity {
-    private Button confirm;
     private Button cancel;
-    private Button leaveMarket;
+    private TextView confirm;
+    private TextView leaveMarket;
     private ListView buyList;
     private ShopGoodsAdapter adapter;
     private Shop shop;
@@ -91,9 +93,9 @@ public class ShopActivity extends GUIActivity {
         */
 
         // Connecting button instance variables with market.xml buttons
-        confirm.findViewById(R.id.confirm_button);
-        cancel.findViewById(R.id.cancel_button);
-        leaveMarket.findViewById(R.id.leave_market_button);
+        confirm = findViewById(R.id.confirm_button);
+        cancel = findViewById(R.id.cancel_button);
+        leaveMarket = findViewById(R.id.leave_market_button);
 
         //confirm transaction
         confirm.setOnClickListener(new View.OnClickListener() {
