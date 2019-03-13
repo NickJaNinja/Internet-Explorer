@@ -3,6 +3,7 @@ package com.example.spacetraders.models;
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.entities.ShopGoods;
 
 public class Model {
     private Game game;
@@ -24,6 +25,19 @@ public class Model {
      */
     public void createGame(GameDifficulty gd, Player p) {
         game = new Game(gd, p);
+    }
+
+    /**
+     * Passes a good, an amount, and a price all the way down to player
+     * and ship to be able to carry out a transaction if valid
+     *
+     * @param sg
+     * @param amount
+     * @param price
+     * @return 1 if transaction occured, 0 otherwise
+     */
+    public int makeTransaction(ShopGoods sg, int amount, int price) {
+        return game.makeTransaction(sg, amount, price);
     }
 
     public Game getGame() { return game; }

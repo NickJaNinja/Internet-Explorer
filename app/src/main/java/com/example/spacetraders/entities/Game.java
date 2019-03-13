@@ -31,6 +31,10 @@ public class Game {
         this.universe = new Universe();
     }
 
+    public int makeTransaction(ShopGoods sg, int amount, int price) {
+        return player.makeTransaction(sg, amount, price);
+    }
+
     /**
      * getter for game difficulty
      *

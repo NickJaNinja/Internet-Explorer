@@ -58,7 +58,24 @@ public class Player {
     public Player() {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
-    
+
+    public int makeTransaction(ShopGoods sg, int amount, int price) {
+        if (credits < amount * price) { return 0; }
+        if (amount <= 0) {
+            if (ship.removeCargo(sg, amount, price) == 0) {
+                return 0;
+            }
+            credits += amount * price;
+            return 1;
+        } else {
+            if (ship.addCargo(sg, amount, price) == 0) {
+                return 0;
+            }
+            credits -= amount * price;
+        }
+        return 1;
+    }
+
     /**
      * getter for name
      *
