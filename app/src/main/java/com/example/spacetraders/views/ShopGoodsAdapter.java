@@ -68,6 +68,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                     if (model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
                         shopGoodsList = model.getShopEntries();
+                        playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
+                        notifyDataSetChanged();
                         /*
                         ShopEntry select = shopGoodsList.get(position);
                         List<ShopEntry> tempPlayerCargo = playerCargoAdapter.getPlayerCargoList();
