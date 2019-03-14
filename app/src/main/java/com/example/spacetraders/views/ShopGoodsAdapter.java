@@ -63,8 +63,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
-
-
         shopGoodsViewHolder.price.setText(shopEntry.getPrice() + "");
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
         shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
