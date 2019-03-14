@@ -30,7 +30,7 @@ public class Game {
         this.difficulty = difficulty;
         this.player = player;
         this.universe = new Universe();
-        currPlanet = universe.getRandomPlanet();
+        this.currPlanet = universe.getRandomPlanet();
     }
 
     /**
