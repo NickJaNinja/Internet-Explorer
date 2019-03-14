@@ -134,8 +134,3 @@ public class ShopActivity extends GUIActivity {
     }
 
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 520f4140b9ea9b27f721586c0e6e4f96781979fd
