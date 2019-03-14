@@ -128,6 +128,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
         notifyDataSetChanged();
     }
 
+    public List<ShopEntry> getPlayerCargoList() {
+        return playerCargoList;
+    }
+
     public void setPlayerCargoList(List<ShopEntry> playerCargo) {
         playerCargoList = playerCargo;
         notifyDataSetChanged();
