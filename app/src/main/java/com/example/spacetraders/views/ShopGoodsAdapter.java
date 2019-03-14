@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
@@ -106,6 +108,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, shopGoodsList.size());
                         */
+                    } else {
+                        CharSequence text = "Not enough money or storage";
+                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                        toast.show();
                     }
                 }
             });
