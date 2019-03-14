@@ -25,9 +25,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private PlayerCargoAdapter playerCargoAdapter;
     private List<ShopEntry> shopGoodsList;
     private OnClickListener listener;
+    private Model model;
 
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList) {
         this.shopGoodsList = shopGoodsList;
+        this.model = Model.getInstance();
     }
 
     @NonNull
