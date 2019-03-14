@@ -57,8 +57,9 @@ public class ShopViewModel extends AndroidViewModel {
         return false;
     }
 
-    public void setUpShop() {
+    public void setUpMarket() {
         shopInventoryTemp = getShopEntries();
+        playerInventoryTemp = getPlayerEntries();
     }
 
     public void addItemToPlayerInventoryTemp(ShopEntry shopEntry) {
@@ -78,7 +79,11 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries(shop);
     }
 
-    public void setShopEntriesToTemp() {
+    public List<ShopEntry> getPlayerEntries() {
+        return model.getPlayerEntries();
+    }
+
+    public void setMarketsEntriesToTemp() {
 
     }
 
