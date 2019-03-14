@@ -17,7 +17,7 @@ public class ShopActivity extends GUIActivity {
     private TextView confirm;
     private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
-    private ShopGoodsAdapter adapterForPlayer;
+    private PlayerCargoAdapter adapterForPlayer;
     private Shop shop;
     private ShopViewModel viewModel;
     private RecyclerView recyclerViewShop;
@@ -47,12 +47,12 @@ public class ShopActivity extends GUIActivity {
         /*
         Set up our recycler view by grabbing the layout for a single item
         */
-        recyclerViewPlayer = findViewById(R.id.buy_list);
+        recyclerViewPlayer = findViewById(R.id.sell_list);
         recyclerViewPlayer.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewPlayer.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForPlayer = new ShopGoodsAdapter(viewModel.getShopEntries());
+        adapterForPlayer = new PlayerCargoAdapter(viewModel.getShopEntries());
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
 
@@ -131,7 +131,7 @@ public class ShopActivity extends GUIActivity {
     protected void onResume() {
         super.onResume();
         adapterForShop.setShopGoodsList(viewModel.getShopEntries());
-        adapterForShop.setPlayerCargoList(viewModel.getPlayerEntries());
+        adapterForPlayer.setPlayerCargoList(viewModel.getPlayerEntries());
     }
 
 }
