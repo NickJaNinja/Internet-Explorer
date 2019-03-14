@@ -89,13 +89,21 @@ public class Model {
     public Shop getShop() { return currShop; }
     /**
      * setter for shop
+     * @param s the new shop
      */
     public void setShop(Shop s) { currShop = s; }
-
+    /**
+     * setter for entry to swap
+     * @param entryToSwap the entry to swap
+     */
     public void setEntryToSwap(ShopEntry entryToSwap) {
         this.entryToSwap = entryToSwap;
     }
-
+    /**
+     * getter for entry to swap
+     *
+     * @return entry to swap
+     */
     public ShopEntry getEntryToSwap() {
         return this.entryToSwap;
     }
