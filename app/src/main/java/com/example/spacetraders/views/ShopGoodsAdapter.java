@@ -78,8 +78,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
 
                     //remove from market
-                   //shopGoodsList.remove(shopGoodsList.get(position));
-                   shopGoodsList.get(position).setStock(select.getStock() - 1);
+                    //shopGoodsList.remove(shopGoodsList.get(position));
+                    shopGoodsList.get(position).setStock(select.getStock() - 1);
 
                     notifyItemRemoved(position);
                     notifyItemRangeChanged(position, shopGoodsList.size());

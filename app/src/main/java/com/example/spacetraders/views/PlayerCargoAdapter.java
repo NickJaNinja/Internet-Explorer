@@ -45,8 +45,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
         public PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
-            price = itemView.findViewById(R.id.price_text);
-            stock = itemView.findViewById(R.id.stock_text);
+            price = itemView.findViewById(R.id.stock_text);
+            stock = itemView.findViewById(R.id.price_text);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -57,32 +57,6 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(playerCargoList.get(position));
                     }
-
-                    ShopEntry select = playerCargoList.get(position);
-
-                     //add to shop inventory
-                    for (ShopEntry e : shopGoodsAdapter.getShopGoodsList()) {
-                        if (e == select) {
-                            select.setStock(select.getStock() + 1);
-                        } else {
-                            select.setStock(1);
-                        }
-                    }
-
-                    shopGoodsAdapter.getShopGoodsList().add(select);
-                    shopGoodsAdapter.notifyItemRangeInserted(shopGoodsAdapter.getShopGoodsList().size() - 1, shopGoodsAdapter.getShopGoodsList().size());
-
-                    //remove from player inventory
-                
-                    select = playerCargoList.get(position);
-                    select.setStock(select.getStock() - 1);
-                    if (select.getStock() == 0) {
-                        playerCargoList.remove(select);
-                    }
-
-                   // playerCargoList.remove(playerCargoList.get(position));
-                    notifyItemRemoved(position);
-                    notifyItemRangeChanged(position, playerCargoList.size());
                 }
             });
         }
@@ -173,9 +147,5 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
 
     public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
-    }
-
-    public List<ShopEntry> getPlayerCargoList() {
-        return playerCargoList;
     }
 }
