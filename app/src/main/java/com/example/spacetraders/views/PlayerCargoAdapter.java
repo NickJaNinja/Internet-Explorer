@@ -58,10 +58,29 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                         listener.onClicked(playerCargoList.get(position));
                     }
 
-                    shopGoodsAdapter.getShopGoodsList().add(playerCargoList.get(position));
+                    ShopEntry select = playerCargoList.get(position);
+
+                     //add to shop inventory
+                    for (ShopEntry e : shopGoodsAdapter.getShopGoodsList()) {
+                        if (e == select) {
+                            select.setStock(select.getStock() + 1);
+                        } else {
+                            select.setStock(1);
+                        }
+                    }
+
+                    shopGoodsAdapter.getShopGoodsList().add(select);
                     shopGoodsAdapter.notifyItemRangeInserted(shopGoodsAdapter.getShopGoodsList().size() - 1, shopGoodsAdapter.getShopGoodsList().size());
 
-                    playerCargoList.remove(playerCargoList.get(position));
+                    //remove from player inventory
+                
+                    select = playerCargoList.get(position);
+                    select.setStock(select.getStock() - 1);
+                    if (select.getStock() == 0) {
+                        playerCargoList.remove(select);
+                    }
+
+                   // playerCargoList.remove(playerCargoList.get(position));
                     notifyItemRemoved(position);
                     notifyItemRangeChanged(position, playerCargoList.size());
                 }

@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -58,12 +59,26 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(shopGoodsList.get(position));
+                        //view.setBackgroundColor(Color.CYAN);
+                    }
+                    ShopEntry select = shopGoodsList.get(position);
+                    // add to player cargo
+                    for (ShopEntry e : playerCargoAdapter.getPlayerCargoList()) {
+                        if (e == select) {
+                            select.setStock(select.getStock() + 1);
+                        } else {
+                            select.setStock(1);
+                        }
                     }
 
-                    playerCargoAdapter.getPlayerCargoList().add(shopGoodsList.get(position));
+                    playerCargoAdapter.getPlayerCargoList().add(select);
                     playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
 
-                    shopGoodsList.remove(shopGoodsList.get(position));
+
+                    //remove from market
+                   //shopGoodsList.remove(shopGoodsList.get(position));
+                   shopGoodsList.get(position).setStock(select.getStock() - 1);
+
                     notifyItemRemoved(position);
                     notifyItemRangeChanged(position, shopGoodsList.size());
                 }
