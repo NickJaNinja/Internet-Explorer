@@ -65,6 +65,12 @@ public class Game {
      */
     public Universe getUniverse() {return universe;}
 
+    /**
+     * getter for current planet
+     * @return current planet
+     */
+    public Planet getCurrentPlanet() {return currPlanet;}
+
 
     /**
      * setter for game difficulty
@@ -87,4 +93,8 @@ public class Game {
      */
     public void setUniverse(Universe universe) {this.universe = universe;}
 
+    /**
+     * setter for current planet
+     */
+    public void setCurrentPlanet(Planet newCurr) {this.currPlanet = newCurr;}
 }

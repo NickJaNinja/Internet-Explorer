@@ -178,6 +178,15 @@ public class Universe {
     }
 
     /**
+     * gets a random planet
+     *
+     * @return random planet
+     */
+    public Planet getRandomPlanet() {
+        return solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();
+    }
+
+    /**
      * to string for universe
      *
      * @return string of universe info
