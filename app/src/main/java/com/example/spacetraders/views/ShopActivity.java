@@ -55,6 +55,8 @@ public class ShopActivity extends GUIActivity {
         adapterForPlayer = new PlayerCargoAdapter(viewModel.getShopEntries());
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
+        adapterForPlayer.setShopGoodsAdapter(adapterForShop);
+        adapterForShop.setPlayerCargoAdapter(adapterForPlayer);
 
         //buyList = findViewById(R.id.buy_list);
         //for (int c = 0; c < adapter.getItemCount(); c++) {
