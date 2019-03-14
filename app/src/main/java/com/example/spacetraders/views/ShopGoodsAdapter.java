@@ -63,17 +63,22 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         listener.onClicked(shopGoodsList.get(position));
                         //view.setBackgroundColor(Color.CYAN);
                     }
+
                     ShopEntry select = shopGoodsList.get(position);
                     // add to player cargo
-                    for (ShopEntry e : playerCargoAdapter.getPlayerCargoList()) {
-                        if (e == select) {
-                            select.setStock(select.getStock() + 1);
-                        } else {
+                    List<ShopEntry> list = playerCargoAdapter.getPlayerCargoList();
+                    for (int c = 0; c < list.size(); c++) {
+                        if (list.get(c).getGood() == select.getGood()) {
+                           list.get(c).setStock(list.get(c).getStock() + 1);
+                        } else if (c == list.size() - 1) {
                             select.setStock(1);
+                            playerCargoAdapter.getPlayerCargoList().add(select);
                         }
+
                     }
 
-                    playerCargoAdapter.getPlayerCargoList().add(select);
+
+                   // playerCargoAdapter.getPlayerCargoList().add(select);
                     playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
 
 
