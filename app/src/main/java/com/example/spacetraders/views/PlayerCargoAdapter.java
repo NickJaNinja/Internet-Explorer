@@ -73,6 +73,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                             list.get(selectIndex).setStock(currStock + 1);
                         } else {
                             select.setStock(1);
+                            select.setPrice(cost);
                             shopGoodsAdapter.getShopGoodsList().add(select);
                         }
                         /*

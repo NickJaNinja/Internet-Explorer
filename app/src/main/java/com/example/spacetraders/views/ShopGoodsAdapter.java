@@ -66,40 +66,42 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                     int cost = Integer.parseInt(price.getText().toString());
 
-                    if (model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {}
-                    ShopEntry select = shopGoodsList.get(position);
-                    List<ShopEntry> list = playerCargoAdapter.getPlayerCargoList();
-                    if (list.contains(select)) {
-                        int selectIndex = list.indexOf(select);
-                        int currStock = list.get(selectIndex).getStock();
-                        list.get(selectIndex).setStock(currStock + 1);
-                    } else {
-                        select.setStock(1);
-                        playerCargoAdapter.getPlayerCargoList().add(select);
-                    }
-
-                    // add to player cargo
-                    /*
-                    for (int c = 0; c < list.size(); c++) {
-                        if (list.get(c) == select) {
-                           list.get(c).setStock(list.get(c).getStock() + 1);
-                        } else if (c == list.size() - 1) {
+                    if (model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
+                        ShopEntry select = shopGoodsList.get(position);
+                        List<ShopEntry> list = playerCargoAdapter.getPlayerCargoList();
+                        if (list.contains(select)) {
+                            int selectIndex = list.indexOf(select);
+                            int currStock = list.get(selectIndex).getStock();
+                            list.get(selectIndex).setStock(currStock + 1);
+                        } else {
                             select.setStock(1);
+                            select.setPrice(cost);
                             playerCargoAdapter.getPlayerCargoList().add(select);
                         }
-                    }*/
+
+                        // add to player cargo
+                        /*
+                        for (int c = 0; c < list.size(); c++) {
+                            if (list.get(c) == select) {
+                               list.get(c).setStock(list.get(c).getStock() + 1);
+                            } else if (c == list.size() - 1) {
+                                select.setStock(1);
+                                playerCargoAdapter.getPlayerCargoList().add(select);
+                            }
+                        }*/
 
 
-                   // playerCargoAdapter.getPlayerCargoList().add(select);
-                    playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
+                        // playerCargoAdapter.getPlayerCargoList().add(select);
+                        playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
 
 
-                    //remove from market
-                    //shopGoodsList.remove(shopGoodsList.get(position));
-                    shopGoodsList.get(position).setStock(select.getStock() - 1);
+                        //remove from market
+                        //shopGoodsList.remove(shopGoodsList.get(position));
+                        shopGoodsList.get(position).setStock(select.getStock() - 1);
 
-                    notifyItemRemoved(position);
-                    notifyItemRangeChanged(position, shopGoodsList.size());
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, shopGoodsList.size());
+                    }
                 }
             });
 
