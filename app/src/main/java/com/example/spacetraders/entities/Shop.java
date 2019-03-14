@@ -36,7 +36,7 @@ public class Shop {
                     itemPrice -= var;
                 }
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
-                shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemPrice, itemStock));
+                shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             }
             /*System.out.println("hello!!!!!!");
             System.out.println("shopGood.getBasePrice()"+shopGood.getBasePrice());
