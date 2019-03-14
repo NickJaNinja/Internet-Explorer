@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,7 @@ public class ShopActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market);
 
+        viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         viewModel.setUpMarket();
 
 
