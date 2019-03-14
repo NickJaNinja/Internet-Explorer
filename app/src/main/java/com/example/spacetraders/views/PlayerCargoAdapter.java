@@ -13,14 +13,14 @@ import com.example.spacetraders.entities.ShopEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
+public class PlayerCargoAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
 
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
-    private List<ShopEntry> shopGoodsList;
+    private List<ShopEntry> playerCargoList;
 
-    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList) {
-        this.shopGoodsList = shopGoodsList;
+    public PlayerCargoAdapter(List<ShopEntry> shopGoodsList) {
+        this.playerCargoList = shopGoodsList;
     }
 
     @NonNull
