@@ -63,6 +63,7 @@ public class Ship {
             int currAmt = item.getStock();
             if (currAmt + amount <= 0) {
                 cargo.remove(good);
+                inventory += amount;
                 return 1;
             }
             int currPrc = item.getPrice();
