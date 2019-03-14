@@ -2,6 +2,7 @@ package com.example.spacetraders.models;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
+import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
 import com.example.spacetraders.entities.Ship;
 import com.example.spacetraders.entities.Shop;
@@ -54,4 +55,6 @@ public class Model {
     }
 
     public Game getGame() { return game; }
+
+    public Planet getCurrentPlanet() { return game.getCurrentPlanet(); }
 }

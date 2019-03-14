@@ -2,6 +2,7 @@ package com.example.spacetraders.entities;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 
 /**
  * This class represents the player's ship
@@ -82,5 +83,13 @@ public class Ship {
         return "Ship{" +
                 "type=" + type +
                 '}';
+    }
+
+    public List<ShopEntry> getInventoryCargo() {
+        List<ShopEntry> inv = new ArrayList<>();
+        for (ShopEntry entry : cargo.values()) {
+            inv.add(entry);
+        }
+        return inv;
     }
 }
