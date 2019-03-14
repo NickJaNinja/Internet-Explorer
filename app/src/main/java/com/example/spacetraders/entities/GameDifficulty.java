@@ -11,15 +11,16 @@ public enum GameDifficulty {
     /**
      * Constructor for the enumeration
      *
-     * @param name   name of difficulty
+     * @param name name of difficulty
      */
     GameDifficulty(String name) {
         this.name = name;
     }
 
     /**
-     *
      * @return the display string representation of the course
      */
-    public String toString() { return name; }
+    public String toString() {
+        return name;
+    }
 }

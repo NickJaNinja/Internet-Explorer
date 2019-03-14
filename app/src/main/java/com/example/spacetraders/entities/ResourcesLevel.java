@@ -20,11 +20,12 @@ public enum ResourcesLevel {
 
     private final int level;
     private final String name;
+
     /**
      * Constructor for the enumeration
      *
-     * @param level   resources level
-     * @param name the name
+     * @param level resources level
+     * @param name  the name
      */
     ResourcesLevel(int level, String name) {
         this.level = level;

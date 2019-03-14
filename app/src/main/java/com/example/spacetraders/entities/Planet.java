@@ -3,7 +3,9 @@ package com.example.spacetraders.entities;
 import java.util.EnumMap;
 import java.util.Random;
 
-/**This class represents a planet*/
+/**
+ * This class represents a planet
+ */
 public class Planet {
 
     private String name;
@@ -16,8 +18,10 @@ public class Planet {
     private int population;
     private Shop shop;
 
-    /**Constructor for Planet, randomizes levels
-     * @param name name
+    /**
+     * Constructor for Planet, randomizes levels
+     *
+     * @param name       name
      * @param parentStar the parent star
      */
     public Planet(String name, Star parentStar) {
@@ -108,7 +112,9 @@ public class Planet {
         return inHabitableZone;
     }
 
-    public Shop getShop() { return shop; }
+    public Shop getShop() {
+        return shop;
+    }
 
     /**
      * to string for planet

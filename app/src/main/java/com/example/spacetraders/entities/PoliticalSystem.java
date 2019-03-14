@@ -23,6 +23,7 @@ public enum PoliticalSystem {
     THEOCRACY("Theocracy");
 
     private final String name;
+
     /**
      * Constructor for the enumeration
      *
