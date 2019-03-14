@@ -7,17 +7,19 @@ import android.support.annotation.NonNull;
 
 public class EditPlayerViewModel extends AndroidViewModel {
 
-    public EditPlayerViewModel(@NonNull Application app) { super(app); }
+    public EditPlayerViewModel(@NonNull Application app) {
+        super(app);
+    }
 
     private String toastText;
 
     /**
      * Checks to see if player is configured correctly
      *
-     * @param name name of player
+     * @param name  name of player
      * @param fight fighter points
      * @param trade trader points
-     * @param eng engineering points
+     * @param eng   engineering points
      * @param pilot pilot points
      * @return true if OK button can move to next screen
      */
@@ -48,14 +50,13 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * true if skill point value should change
      *
      * @param pointsRemaining skill points left unspent
-     * @param sign +1 if plus button, -1 if minus button
+     * @param sign            +1 if plus button, -1 if minus button
      * @return amount to change skill point value by
      */
     public int onSkill(int curr, int pointsRemaining, int sign) {
         if (pointsRemaining - sign < 0 || (curr == 0 && sign < 0)) {
             return 0;
-        }
-        else if (sign < 0) {
+        } else if (sign < 0) {
             return -1;
         }
         return 1;
