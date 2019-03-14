@@ -75,7 +75,7 @@ public class ShopViewModel extends AndroidViewModel {
      * @return a list of shop entries
      */
     public List<ShopEntry> getShopEntries() {
-        return model.getShopEntries(shop);
+        return model.getShopEntries(model.getShop());
     }
 
     //i will change it
@@ -88,6 +88,7 @@ public class ShopViewModel extends AndroidViewModel {
     }
 
     public void setShop(Shop s) {
+        shop = s;
         model.setShop(s);
     }
 
