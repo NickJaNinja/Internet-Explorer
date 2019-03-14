@@ -38,13 +38,13 @@ public class Shop {
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             }
-            System.out.println("hello!!!!!!");
+            /*System.out.println("hello!!!!!!");
             System.out.println("shopGood.getBasePrice()"+shopGood.getBasePrice());
             System.out.println("shopGood.getIpl()"+shopGood.getIpl());
             System.out.println("techLevel.getLevel()"+techLevel.getLevel());
             System.out.println("shopGood.getMtlp().getLevel()"+shopGood.getMtlp().getLevel());
             System.out.println("shopGood.getVar()"+shopGood.getVar());
-            System.out.println("variance"+(new Random()).nextInt(shopGood.getVar() + 1)/100.0);
+            System.out.println("variance"+(new Random()).nextInt(shopGood.getVar() + 1)/100.0);*/
 
         }
     }

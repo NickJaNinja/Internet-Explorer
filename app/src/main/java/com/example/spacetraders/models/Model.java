@@ -22,7 +22,11 @@ public class Model {
      *  the "back end"  more easily
      */
     private static  Model instance = new Model();
-
+    /**
+     * getter for instance
+     *
+     * @return instance
+     */
     public static Model getInstance() { return instance; }
 
     /**
@@ -48,20 +52,44 @@ public class Model {
         return game.makeTransaction(sg, amount, price);
     }
 
+    /**
+     * getter for shop entries
+     *
+     * @return shop entries
+     */
     public List<ShopEntry> getShopEntries(Shop shop) {
         return shop.getInventoryAsList();
     }
 
+    /**
+     * getter for player entities
+     *
+     * @return player entities
+     */
     public List<ShopEntry> getPlayerEntries(Ship ship) {
         return ship.getInventoryCargo();
     }
-
+    /**
+     * getter for game
+     *
+     * @return game
+     */
     public Game getGame() { return game; }
-
+    /**
+     * getter for current planet
+     *
+     * @return current planet
+     */
     public Planet getCurrentPlanet() { return game.getCurrentPlanet(); }
-
+    /**
+     * getter for shop
+     *
+     * @return shop
+     */
     public Shop getShop() { return currShop; }
-
+    /**
+     * setter for shop
+     */
     public void setShop(Shop s) { currShop = s; }
 
     public void setEntryToSwap(ShopEntry entryToSwap) {

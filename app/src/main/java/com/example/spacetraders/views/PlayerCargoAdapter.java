@@ -18,6 +18,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
     /** a copy of the list of shop goods in the model */
 
     private List<ShopEntry> playerCargoList;
+    private OnClickListener listener;
 
     public PlayerCargoAdapter(List<ShopEntry> playerCargoList) {
         this.playerCargoList = playerCargoList;
@@ -43,6 +44,18 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.stock_text);
             stock = itemView.findViewById(R.id.price_text);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onClicked(playerCargoList.get(position));
+                    }
+                }
+            });
         }
     }
     @Override
@@ -116,4 +129,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
         return master_layout;
     }
     */
+    public interface OnClickListener {
+    void onClicked(ShopEntry goods);
+    }
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
 }
