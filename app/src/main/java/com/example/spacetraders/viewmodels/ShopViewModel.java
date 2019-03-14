@@ -31,14 +31,9 @@ public class ShopViewModel extends AndroidViewModel {
      * @return true if purchase is allowed
      */
     public boolean onBuy(int price, int creditRemaining, int cargoHoldRemaining) {
-        if (price > creditRemaining) {
+        if (price > creditRemaining || cargoHoldRemaining <= 0) {
             return false;
         }
-
-        if (cargoHoldRemaining <= 0) {
-            return false;
-        }
-
         return true;
     }
 
@@ -58,6 +53,9 @@ public class ShopViewModel extends AndroidViewModel {
         return false;
     }
 
+    /**
+     * initializes market
+     */
     public void setUpMarket() {
         shopInventoryTemp = getShopEntries();
         //playerInventoryTemp = getPlayerEntries();
