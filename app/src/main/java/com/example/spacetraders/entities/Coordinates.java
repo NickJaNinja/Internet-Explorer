@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
-/**This class represents the coordinates of a solar system*/
+/**
+ * This class represents the coordinates of a solar system
+ */
 public class Coordinates {
     private int x;
     private int y;
@@ -15,12 +17,24 @@ public class Coordinates {
         this.x = x;
         this.y = y;
     }
-    /** getter for x*/
-    public int getX() { return x;}
-    /** getter for y*/
-    public int getY() { return y;}
 
-    /** hashCode method
+    /**
+     * getter for x
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * getter for y
+     */
+    public int getY() {
+        return y;
+    }
+
+    /**
+     * hashCode method
+     *
      * @return the hashcode
      */
     public int hashCode() {
@@ -29,12 +43,14 @@ public class Coordinates {
         return x + tmp * tmp;
     }
 
-    /** isEqual method
+    /**
+     * isEqual method
+     *
      * @param obj some other object
      * @return if they are the same coordinates
      */
     public boolean isEqual(Object obj) {
-        if(obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x && ((Coordinates) obj).getY() == this.y) {
+        if (obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x && ((Coordinates) obj).getY() == this.y) {
             return true;
         }
         return false;

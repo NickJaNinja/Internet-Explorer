@@ -44,7 +44,8 @@ public class ShopViewModel extends AndroidViewModel {
 
     /**
      * check if the selected good to sell is in play's cargo
-     * @param good, the good to be sold
+     *
+     * @param good,        the good to be sold
      * @param goodsInCargo list of all goods in play's cargo
      * @return true if cargo contains the good to be sold, transaction is allowed
      */
@@ -71,7 +72,8 @@ public class ShopViewModel extends AndroidViewModel {
     }
 
     /**
-     *  Takes in a shop and finds the items in its stock
+     * Takes in a shop and finds the items in its stock
+     *
      * @return a list of shop entries
      */
     public List<ShopEntry> getShopEntries() {

@@ -1,4 +1,5 @@
 package com.example.spacetraders.entities;
+
 /**
  * This enum represents the various radical price events that could happen on a planet
  */

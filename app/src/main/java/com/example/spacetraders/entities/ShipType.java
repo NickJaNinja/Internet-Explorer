@@ -26,7 +26,7 @@ public enum ShipType {
     /**
      * Constructor for the enumeration
      *
-     * @param name   name of ship type
+     * @param name name of ship type
      */
     ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds, int fuel, int numCrew) {
         this.name = name;
@@ -103,8 +103,9 @@ public enum ShipType {
 
 
     /**
-     *
      * @return the display string representation of the shiptype
      */
-    public String toString() { return name; }
+    public String toString() {
+        return name;
+    }
 }

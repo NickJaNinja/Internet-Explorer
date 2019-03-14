@@ -19,14 +19,14 @@ public class Player {
     /**
      * constuctor with all parameters
      *
-     * @param name player's name
-     * @param pilotSkill initial pilotSkill
-     * @param fighterSkill initial fighterSkill
-     * @param traderSkill initial traderSkill
+     * @param name          player's name
+     * @param pilotSkill    initial pilotSkill
+     * @param fighterSkill  initial fighterSkill
+     * @param traderSkill   initial traderSkill
      * @param engineerSkill initial engineerSkill
-     * @param credits initial credits
-     * @param reputation initial reputation level
-     * @param ship initial ship
+     * @param credits       initial credits
+     * @param reputation    initial reputation level
+     * @param ship          initial ship
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, int reputation, Ship ship) {
         this.name = name;
@@ -42,10 +42,10 @@ public class Player {
     /**
      * constuctor with default values for credit = 1000 & ship = GNAT
      *
-     * @param name player's name
-     * @param pilotSkill initial pilotSkill
-     * @param fighterSkill initial fighterSkill
-     * @param traderSkill initial traderSkill
+     * @param name          player's name
+     * @param pilotSkill    initial pilotSkill
+     * @param fighterSkill  initial fighterSkill
+     * @param traderSkill   initial traderSkill
      * @param engineerSkill initial engineerSkill
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
@@ -53,7 +53,7 @@ public class Player {
     }
 
     /**
-     *  Create a base player
+     * Create a base player
      */
     public Player() {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
@@ -62,13 +62,15 @@ public class Player {
     /**
      * Carries out a transaction of goods if valid
      *
-     * @param sg the type of the good associated with this transaction
+     * @param sg     the type of the good associated with this transaction
      * @param amount the total amount of the good to buy
-     * @param price the price of each good
+     * @param price  the price of each good
      * @return 1 if transaction occurred, 0 otherwise
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
-        if (credits < amount * price) { return 0; }
+        if (credits < amount * price) {
+            return 0;
+        }
         if (amount <= 0) {
             if (ship.removeCargo(sg, amount, price) == 0) {
                 return 0;
@@ -203,7 +205,8 @@ public class Player {
 
     /**
      * getter for credits
-     *w
+     * w
+     *
      * @param credits player's credits
      */
     public void setCredits(int credits) {

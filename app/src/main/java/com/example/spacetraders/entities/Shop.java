@@ -25,9 +25,9 @@ public class Shop {
      * Generates quantity and price for all goods in the shop
      */
     public void restock() {
-        for (ShopGoods shopGood: ShopGoods.values()) {
+        for (ShopGoods shopGood : ShopGoods.values()) {
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
-                int itemPrice = (int)( shopGood.getBasePrice() + shopGood.getIpl()
+                int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
                         * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
                 int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
                 if ((new Random()).nextInt(2) == 0) {
@@ -52,7 +52,7 @@ public class Shop {
     /**
      * Decreases stock of good by amount
      *
-     * @param good the good to decrease stock
+     * @param good   the good to decrease stock
      * @param amount the amount to decrease
      */
     public void decreaseStock(ShopGoods good, int amount) {

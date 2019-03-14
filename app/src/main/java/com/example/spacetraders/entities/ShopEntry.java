@@ -14,17 +14,29 @@ public class ShopEntry {
         this.price = p;
     }
 
-    public ShopGoods getGood() { return good; }
+    public ShopGoods getGood() {
+        return good;
+    }
 
-    public void setGood(ShopGoods good) { this.good = good; }
+    public void setGood(ShopGoods good) {
+        this.good = good;
+    }
 
-    public int getPrice() { return price; }
+    public int getPrice() {
+        return price;
+    }
 
-    public void setPrice(int price) { this.price = price; }
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
-    public int getStock() { return stock; }
+    public int getStock() {
+        return stock;
+    }
 
-    public void setStock(int amount) { this.stock = amount; }
+    public void setStock(int amount) {
+        this.stock = amount;
+    }
 
     /**
      * Makes this object into a list of Strings

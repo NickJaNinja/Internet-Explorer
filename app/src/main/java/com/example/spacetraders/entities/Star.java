@@ -2,7 +2,9 @@ package com.example.spacetraders.entities;
 
 import java.util.Random;
 
-/**This class represents a star*/
+/**
+ * This class represents a star
+ */
 public class Star {
 
     private String name;
@@ -79,8 +81,7 @@ public class Star {
         if (classification == 'B') {
             temperature = r.nextInt(30001) + 10000; // 10,000–30,000 K
             radius = r.nextDouble() * (6.61 - 1.8) + 1.8; // 1.8–6.6 R☉
-        }
-        else { // 'O'
+        } else { // 'O'
             temperature = r.nextInt(100000) + 30000; // ≥ 30,000 K (capped at 99,999 K)
             radius = r.nextDouble() * (100 - 6.6) + 6.6; // ≥ 6.6 R☉ (capped at 99.99 R☉)
         }
@@ -90,7 +91,7 @@ public class Star {
      * Calculates luminosity and mass of star based on temperature and radius.
      *
      * @param temperature temperature of star in Kelvin
-     * @param radius solar radius of star
+     * @param radius      solar radius of star
      */
     private void calculateLuminosityAndMass(int temperature, double radius) {
         // by definition of solar temperature: T☉ = T (in K) / T of Earth (in K)   where T of Earth is 5,778 K

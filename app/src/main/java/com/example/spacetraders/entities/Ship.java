@@ -9,7 +9,9 @@ import java.util.List;
  */
 
 public class Ship {
-    /** type of ship*/
+    /**
+     * type of ship
+     */
     private ShipType type;
     private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
@@ -17,7 +19,7 @@ public class Ship {
     /**
      * Constructor for the ship
      *
-     * @param type   type of ship
+     * @param type type of ship
      */
     public Ship(ShipType type) {
         this.type = type;
@@ -28,28 +30,34 @@ public class Ship {
     /**
      * getter for ship type
      *
-     * @return  type of ship
+     * @return type of ship
      */
     public ShipType getShipType() {
         return type;
     }
 
-    public int getInventory() { return inventory; }
+    public int getInventory() {
+        return inventory;
+    }
 
-    public EnumMap<ShopGoods, ShopEntry> getCargo() { return cargo; }
+    public EnumMap<ShopGoods, ShopEntry> getCargo() {
+        return cargo;
+    }
 
     /**
      * Add good of a certain amount to cargo, where each good is at a certain price
      * Amount * Price = Total $ of the transaction
      * This method also does nothing and returns 0 if the transaction does not occur
      *
-     * @param good the good to be transacted
+     * @param good   the good to be transacted
      * @param amount amount of the good
-     * @param price price of each good
+     * @param price  price of each good
      * @return 1 if occurred, 0 if failed
      */
     public int addCargo(ShopGoods good, int amount, int price) {
-        if (inventory + amount > type.getNumCargoHolds()) { return 0; }
+        if (inventory + amount > type.getNumCargoHolds()) {
+            return 0;
+        }
         if (cargo.get(good) == null) {
             cargo.put(good, new ShopEntry(good, amount, price));
         } else {
@@ -73,15 +81,19 @@ public class Ship {
      * This method also does nothing and returns 0 if the transaction does not occur
      * Since this is remove, amount should be negative
      *
-     * @param good the good to be transacted
+     * @param good   the good to be transacted
      * @param amount amount of the good
-     * @param price price of each good
+     * @param price  price of each good
      * @return 1 if occurred, 0 if failed
      */
     public int removeCargo(ShopGoods good, int amount, int price) {
         assert amount < 0;
-        if (inventory - amount < 0) { return 0; }
-        if (cargo.get(good) == null) { return 0; }
+        if (inventory - amount < 0) {
+            return 0;
+        }
+        if (cargo.get(good) == null) {
+            return 0;
+        }
         ShopEntry item = cargo.get(good);
         int currAmt = item.getStock();
         int currPrc = item.getPrice();

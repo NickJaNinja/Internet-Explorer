@@ -10,7 +10,9 @@ import com.example.spacetraders.models.Model;
 
 public class MainViewModel extends AndroidViewModel {
 
-    public MainViewModel(@NonNull Application app) { super(app); }
+    public MainViewModel(@NonNull Application app) {
+        super(app);
+    }
 
 
     // remove later, only use this for m6
