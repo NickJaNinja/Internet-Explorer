@@ -71,7 +71,15 @@ public class Player {
         if (credits < amount * price) {
             return 0;
         }
-        if (amount <= 0) {
+        if (ship.addCargo(sg, amount, price) == 0) {
+            return 0;
+        }
+        credits -= amount * price;
+        return 1;
+
+
+
+        /*if (amount <= 0) {
             if (ship.removeCargo(sg, amount, price) == 0) {
                 return 0;
             }
@@ -83,7 +91,7 @@ public class Player {
             }
             credits -= amount * price;
         }
-        return 1;
+        return 1;*/
     }
 
     /**

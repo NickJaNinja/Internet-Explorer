@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Shop;
+import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class ShopActivity extends GUIActivity {
@@ -22,11 +23,14 @@ public class ShopActivity extends GUIActivity {
     private ShopViewModel viewModel;
     private RecyclerView recyclerViewShop;
     private RecyclerView recyclerViewPlayer;
+    private Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market);
+
+        this.model = Model.getInstance();
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         viewModel.setUpMarket();
@@ -124,6 +128,7 @@ public class ShopActivity extends GUIActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewModel.setUpMarket();
+
             }
         });
 
