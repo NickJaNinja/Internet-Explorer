@@ -31,7 +31,7 @@ public class Game {
         this.difficulty = difficulty;
         this.player = player;
         this.universe = new Universe();
-        currPlanet =
+        currPlanet = universe.getRandomPlanet();
     }
 
     /**

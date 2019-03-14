@@ -18,6 +18,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
     private List<ShopEntry> shopGoodsList = new ArrayList<>();
+    private List<ShopEntry> playerCargoList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -60,6 +61,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     public void setShopGoodsList(List<ShopEntry> shopEntries) {
         shopGoodsList = shopEntries;
+        notifyDataSetChanged();
+    }
+
+    public void setPlayerCargoList(List<ShopEntry> playerCargo) {
+        playerCargoList = playerCargo;
         notifyDataSetChanged();
     }
 

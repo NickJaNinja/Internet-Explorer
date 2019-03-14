@@ -183,7 +183,9 @@ public class Universe {
      * @return random planet
      */
     public Planet getRandomPlanet() {
-        return solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();
+        Planet plan = solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();
+        System.out.println("RANDOM PLANET: " + plan.toString());
+        return plan;
     }
 
     /**
