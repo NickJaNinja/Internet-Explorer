@@ -17,8 +17,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
-    private List<ShopEntry> shopGoodsList = new ArrayList<>();
+    private List<ShopEntry> shopGoodsList;
     private List<ShopEntry> playerCargoList = new ArrayList<>();
+
+    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList) {
+        this.shopGoodsList = shopGoodsList;
+    }
 
     @NonNull
     @Override
@@ -47,9 +51,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         ShopEntry shopEntry = shopGoodsList.get(position);
 
 
-        shopGoodsViewHolder.price.setText(shopEntry.getPrice());
+        shopGoodsViewHolder.price.setText(shopEntry.getPrice() + "");
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        shopGoodsViewHolder.stock.setText(shopEntry.getStock());
+        shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
 
     }
 
