@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
+import com.example.spacetraders.models.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
     private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
+    private Model model;
 
     public PlayerCargoAdapter(List<ShopEntry> playerCargoList) {
         this.playerCargoList = playerCargoList;
+        this.model = Model.getInstance();
     }
 
     @NonNull
