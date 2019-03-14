@@ -302,4 +302,12 @@ public enum ShopGoods {
     public int getMth() {
         return mth;
     }
+    /**
+     * getter for isIllegal
+     *
+     * @return isIllegal
+     */
+    public boolean isIllegal() {
+        return isIllegal;
+    }
 }
