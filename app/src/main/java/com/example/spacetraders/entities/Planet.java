@@ -137,6 +137,10 @@ public class Planet {
         return inHabitableZone;
     }
 
+    public int makeTransaction(ShopGoods sg, int amount) {
+        return shop.decreaseStock(sg, amount);
+    }
+
     /**
      * Gets shop
      *

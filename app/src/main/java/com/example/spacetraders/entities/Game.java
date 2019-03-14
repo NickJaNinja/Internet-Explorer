@@ -51,7 +51,7 @@ public class Game {
      * @return 1 if transaction occurred, 0 otherwise
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
-        return player.makeTransaction(sg, amount, price);
+        return player.makeTransaction(sg, amount, price) & currPlanet.makeTransaction(sg, amount);
     }
 
     /**

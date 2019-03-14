@@ -10,7 +10,6 @@ public class Shop {
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
-    private List<ShopEntry> inventory;
 
     /**
      * Constructor for shop
@@ -51,9 +50,12 @@ public class Shop {
      * @param good   the good to decrease stock
      * @param amount the amount to decrease
      */
-    public void decreaseStock(ShopGoods good, int amount) {
+    public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
-        shopGoodsStockMap.get(good).setStock(e.getStock() - amount);
+        int newAmount = e.getStock() - amount;
+        if (newAmount < 0) { return 0; }
+        shopGoodsStockMap.get(good).setStock(newAmount);
+        return 1;
     }
 
     /**
