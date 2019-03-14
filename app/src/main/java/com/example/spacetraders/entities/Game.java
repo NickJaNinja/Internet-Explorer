@@ -10,6 +10,7 @@ public class Game {
     private Player player;
     /** the universe */
     private Universe universe;
+    /** planet the player is on */
     private Planet currPlanet;
 
     /**
