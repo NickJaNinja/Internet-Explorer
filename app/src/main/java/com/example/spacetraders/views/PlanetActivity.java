@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +27,7 @@ public class PlanetActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planet);
 
+        viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
         planet = model.getCurrentPlanet();
 
