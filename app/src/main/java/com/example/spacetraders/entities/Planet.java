@@ -56,6 +56,11 @@ public class Planet {
         this.distanceFromParentStar = distanceFromParentStar;
     }
 
+    /**
+     * sets inHabitableZone
+     *
+     * @param inHabitableZone inHabitableZone
+     */
     public void setInHabitableZone(boolean inHabitableZone) {
         this.inHabitableZone = inHabitableZone;
     }
@@ -96,22 +101,47 @@ public class Planet {
         return parentStar;
     }
 
+    /**
+     * Gets tech level
+     *
+     * @return tech level
+     */
     public TechLevel getTechLevel() {
         return techLevel;
     }
 
+    /**
+     * Gets resources level
+     *
+     * @return the resources level
+     */
     public ResourcesLevel getResourcesLevel() {
         return resourcesLevel;
     }
 
+    /**
+     * Gets political system
+     *
+     * @return political system
+     */
     public PoliticalSystem getPoliticalSystem() {
         return politicalSystem;
     }
 
+    /**
+     * Gets if in habitable zone
+     *
+     * @return if in habitable zone
+     */
     public boolean isInHabitableZone() {
         return inHabitableZone;
     }
 
+    /**
+     * Gets shop
+     *
+     * @return shop
+     */
     public Shop getShop() {
         return shop;
     }

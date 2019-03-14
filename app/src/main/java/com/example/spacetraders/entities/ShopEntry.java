@@ -8,32 +8,69 @@ public class ShopEntry {
     private int stock;
     private int price;
 
+    /**
+     * Constructor for shop entry
+     *
+     * @param g the good
+     * @param s the stock
+     * @param p the price
+     */
     public ShopEntry(ShopGoods g, int s, int p) {
         this.good = g;
         this.stock = s;
         this.price = p;
     }
 
+    /**
+     * getter for good
+     *
+     * @return good
+     */
     public ShopGoods getGood() {
         return good;
     }
 
+    /**
+     * setter for good
+     *
+     * @param good the new good
+     */
     public void setGood(ShopGoods good) {
         this.good = good;
     }
 
+    /**
+     * getter for price
+     *
+     * @return price
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * setter for price
+     *
+     * @param price the new price
+     */
     public void setPrice(int price) {
         this.price = price;
     }
 
+    /**
+     * getter for stock
+     *
+     * @return stock
+     */
     public int getStock() {
         return stock;
     }
 
+    /**
+     * setter for stock
+     *
+     * @param amount the new stock
+     */
     public void setStock(int amount) {
         this.stock = amount;
     }

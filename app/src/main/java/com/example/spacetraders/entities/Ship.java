@@ -9,9 +9,6 @@ import java.util.List;
  */
 
 public class Ship {
-    /**
-     * type of ship
-     */
     private ShipType type;
     private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;

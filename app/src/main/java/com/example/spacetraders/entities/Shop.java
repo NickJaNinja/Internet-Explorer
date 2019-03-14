@@ -12,8 +12,12 @@ public class Shop {
     private PoliticalSystem politicalSystem;
     private List<ShopEntry> inventory;
 
-    // array list with price & stock
-
+    /**
+     * Constructor for shop
+     *
+     * @param techLevel      the tech level
+     * @param resourcesLevel the resources level
+     */
     public Shop(TechLevel techLevel, ResourcesLevel resourcesLevel) {
         this.techLevel = techLevel;
         this.resourcesLevel = resourcesLevel;
@@ -38,14 +42,6 @@ public class Shop {
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             }
-            /*System.out.println("hello!!!!!!");
-            System.out.println("shopGood.getBasePrice()"+shopGood.getBasePrice());
-            System.out.println("shopGood.getIpl()"+shopGood.getIpl());
-            System.out.println("techLevel.getLevel()"+techLevel.getLevel());
-            System.out.println("shopGood.getMtlp().getLevel()"+shopGood.getMtlp().getLevel());
-            System.out.println("shopGood.getVar()"+shopGood.getVar());
-            System.out.println("variance"+(new Random()).nextInt(shopGood.getVar() + 1)/100.0);*/
-
         }
     }
 
