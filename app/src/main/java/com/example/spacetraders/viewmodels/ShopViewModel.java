@@ -79,9 +79,10 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries(shop);
     }
 
-    //public List<ShopEntry> getPlayerEntries() {
-    //    return model.getPlayerEntries();
-    //}
+    //i will change it
+    public List<ShopEntry> getPlayerEntries() {
+        return model.getGame().getPlayer().getShip().getInventoryCargo();
+    }
 
     public void setMarketsEntriesToTemp() {
 

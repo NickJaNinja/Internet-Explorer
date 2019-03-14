@@ -85,6 +85,11 @@ public class Ship {
                 '}';
     }
 
+    /**
+     * Makes a list of the shop entries in player's cargo
+     *
+     * @return the shop entry list in player's cargo
+     */
     public List<ShopEntry> getInventoryCargo() {
         List<ShopEntry> inv = new ArrayList<>();
         for (ShopEntry entry : cargo.values()) {
