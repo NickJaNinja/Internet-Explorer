@@ -67,11 +67,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
-    public void setPlayerCargoList(List<ShopEntry> playerCargo) {
-        playerCargoList = playerCargo;
-        notifyDataSetChanged();
-    }
-
 /*
     public LinearLayout getLayout(int index, Context context) {
         // layout containing line and the item layout

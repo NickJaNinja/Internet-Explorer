@@ -13,32 +13,32 @@ import com.example.spacetraders.entities.ShopEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerCargoAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
+public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.PlayerCargoViewHolder> {
 
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
     private List<ShopEntry> playerCargoList;
 
-    public PlayerCargoAdapter(List<ShopEntry> shopGoodsList) {
-        this.playerCargoList = shopGoodsList;
+    public PlayerCargoAdapter(List<ShopEntry> playerCargoList) {
+        this.playerCargoList = playerCargoList;
     }
 
     @NonNull
     @Override
-    public ShopGoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public PlayerCargoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.market_entry, parent, false);
 
-        return new ShopGoodsViewHolder(itemView);
+        return new PlayerCargoViewHolder(itemView);
     }
 
-    public class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
+    public class PlayerCargoViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView price;
         private TextView stock;
 
 
-        public ShopGoodsViewHolder(@NonNull View itemView) {
+        public PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.stock_text);
@@ -46,24 +46,24 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Sh
         }
     }
     @Override
-    public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
-        ShopEntry shopEntry = shopGoodsList.get(position);
+    public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder, int position) {
+        ShopEntry shopEntry = playerCargoList.get(position);
 
 
-        shopGoodsViewHolder.price.setText(shopEntry.getPrice() + "");
-        shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
+        playerCargoViewHolder.price.setText(shopEntry.getPrice() + "");
+        playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
+        playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
 
     }
 
 
     @Override
     public int getItemCount() {
-        return shopGoodsList.size();
+        return playerCargoList.size();
     }
 
     public void setShopGoodsList(List<ShopEntry> shopEntries) {
-        shopGoodsList = shopEntries;
+        playerCargoList = shopEntries;
         notifyDataSetChanged();
     }
 
