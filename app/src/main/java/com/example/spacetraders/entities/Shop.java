@@ -53,7 +53,7 @@ public class Shop {
      */
     public void decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
-        e.setStock(e.getStock() - amount);
+        shopGoodsStockMap.get(good).setStock(e.getStock() - amount);
     }
 
     /**
