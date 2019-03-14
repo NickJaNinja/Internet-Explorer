@@ -15,27 +15,43 @@ public class ShopActivity extends GUIActivity {
     private TextView cancel;
     private TextView confirm;
     private ListView buyList;
-    private ShopGoodsAdapter adapter;
+    private ShopGoodsAdapter adapterForShop;
+    private ShopGoodsAdapter adapterForPlayer;
     private Shop shop;
     private ShopViewModel viewModel;
+    private RecyclerView recyclerViewShop;
+    private RecyclerView recyclerViewPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market);
 
-        viewModel.setUpShop();
+        viewModel.setUpMarket();
+
 
         /*
         Set up our recycler view by grabbing the layout for a single item
         */
-        RecyclerView recyclerView = findViewById(R.id.buy_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+        recyclerViewShop = findViewById(R.id.buy_list);
+        recyclerViewShop.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewShop.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapter = new ShopGoodsAdapter();
-        recyclerView.setAdapter(adapter);
+        adapterForShop = new ShopGoodsAdapter();
+        recyclerViewShop.setAdapter(adapterForShop);
+
+
+        /*
+        Set up our recycler view by grabbing the layout for a single item
+        */
+        recyclerViewPlayer = findViewById(R.id.buy_list);
+        recyclerViewPlayer.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewPlayer.setHasFixedSize(true);
+
+        // Setup the adapter for this recycler view
+        adapterForPlayer = new ShopGoodsAdapter();
+        recyclerViewPlayer.setAdapter(adapterForPlayer);
 
 
 
@@ -93,15 +109,15 @@ public class ShopActivity extends GUIActivity {
         //confirm transaction
         confirm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                viewModel.setShopEntriesToTemp();
-                viewModel.setUpShop();
+                viewModel.setMarketsEntriesToTemp();
+                viewModel.setUpMarket();
             }
         });
 
         //cancel transaction
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                viewModel.setUpShop();
+                viewModel.setUpMarket();
             }
         });
 
@@ -112,7 +128,8 @@ public class ShopActivity extends GUIActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.setShopGoodsList(viewModel.getShopEntries());
+        adapterForShop.setShopGoodsList(viewModel.getShopEntries());
+        adapterForShop.setPlayerCargoList(viewModel.getPlayerEntries());
     }
 
 }
