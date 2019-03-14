@@ -30,6 +30,7 @@ public class PlanetActivity extends GUIActivity {
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
         planet = model.getCurrentPlanet();
+        viewModel.setShop(planet.getShop());
 
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
