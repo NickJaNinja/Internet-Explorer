@@ -57,6 +57,13 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(playerCargoList.get(position));
                     }
+
+                    shopGoodsAdapter.getShopGoodsList().add(playerCargoList.get(position));
+                    shopGoodsAdapter.notifyItemRangeInserted(shopGoodsAdapter.getShopGoodsList().size() - 1, shopGoodsAdapter.getShopGoodsList().size());
+
+                    playerCargoList.remove(playerCargoList.get(position));
+                    notifyItemRemoved(position);
+                    notifyItemRangeChanged(position, playerCargoList.size());
                 }
             });
         }
@@ -147,5 +154,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
 
     public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
+    }
+
+    public List<ShopEntry> getPlayerCargoList() {
+        return playerCargoList;
     }
 }

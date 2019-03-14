@@ -60,9 +60,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         listener.onClicked(shopGoodsList.get(position));
                     }
 
-                    Model.getInstance().setEntryToSwap(shopGoodsList.get(position));
-                    shopGoodsList.remove(shopGoodsList.get(position));
+                    playerCargoAdapter.getPlayerCargoList().add(shopGoodsList.get(position));
+                    playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
 
+                    shopGoodsList.remove(shopGoodsList.get(position));
                     notifyItemRemoved(position);
                     notifyItemRangeChanged(position, shopGoodsList.size());
                 }
@@ -149,5 +150,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
         playerCargoAdapter = pca;
+    }
+
+    public List<ShopEntry> getShopGoodsList() {
+        return shopGoodsList;
     }
 }
