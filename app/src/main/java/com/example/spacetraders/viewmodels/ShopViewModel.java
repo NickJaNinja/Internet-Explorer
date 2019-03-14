@@ -75,7 +75,7 @@ public class ShopViewModel extends AndroidViewModel {
      * @return a list of shop entries
      */
     public List<ShopEntry> getShopEntries() {
-        return model.getShopEntries(model.getShop());
+        return model.getShopEntries();
     }
 
     //i will change it
