@@ -64,6 +64,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                     int cost = Integer.parseInt(price.getText().toString());
 
                     if (model.makeTransaction(playerCargoList.get(position).getGood(), -1, cost) == 1) {
+                        playerCargoList = model.getPlayerEntries();
+                        /*
                         ShopEntry select = playerCargoList.get(position);
                         //add to shop inventory
                         List<ShopEntry> list = shopGoodsAdapter.getShopGoodsList();
@@ -76,7 +78,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                             select.setPrice(cost);
                             shopGoodsAdapter.getShopGoodsList().add(select);
                         }
-                        /*
+
                         for (int c = 0; c < list.size(); c++) {
                             if (list.get(c) == select) {
                                 list.get(c).setStock(list.get(c).getStock() + 1);
@@ -85,7 +87,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                                 select.setStock(1);
                                 shopGoodsAdapter.getShopGoodsList().add(select);
                             }
-                        }*/
+                        }
 
                         shopGoodsAdapter.notifyItemRangeInserted(
                                 shopGoodsAdapter.getShopGoodsList().size() - 1,
@@ -101,6 +103,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                         // playerCargoList.remove(playerCargoList.get(position));
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, playerCargoList.size());
+                        */
                     }
                 }
             });

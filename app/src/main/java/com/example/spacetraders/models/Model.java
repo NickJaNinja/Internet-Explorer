@@ -14,6 +14,7 @@ import java.util.List;
 public class Model {
     private Game game;
     private Shop currShop;
+    private Player currPlayer;
     private ShopEntry entryToSwap;
     private List<ShopEntry> shopInventoryTempBackup;
     private List<ShopEntry> playerInventoryTempBackup;
@@ -63,8 +64,8 @@ public class Model {
      *
      * @return shop entries
      */
-    public List<ShopEntry> getShopEntries(Shop shop) {
-        return shop.getInventoryAsList();
+    public List<ShopEntry> getShopEntries() {
+        return currShop.getInventoryAsList();
     }
 
     /**
@@ -72,8 +73,8 @@ public class Model {
      *
      * @return player entities
      */
-    public List<ShopEntry> getPlayerEntries(Ship ship) {
-        return ship.getInventoryCargo();
+    public List<ShopEntry> getPlayerEntries() {
+        return currPlayer.getShip().getInventoryCargo();
     }
 
     /**
@@ -110,6 +111,10 @@ public class Model {
      */
     public void setShop(Shop s) {
         currShop = s;
+    }
+
+    public void setPlayer() {
+        currPlayer = game.getPlayer();
     }
 
     /**

@@ -67,12 +67,14 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                     int cost = Integer.parseInt(price.getText().toString());
 
                     if (model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
+                        shopGoodsList = model.getShopEntries();
+                        /*
                         ShopEntry select = shopGoodsList.get(position);
-                        List<ShopEntry> list = playerCargoAdapter.getPlayerCargoList();
-                        if (list.contains(select)) {
-                            int selectIndex = list.indexOf(select);
-                            int currStock = list.get(selectIndex).getStock();
-                            list.get(selectIndex).setStock(currStock + 1);
+                        List<ShopEntry> tempPlayerCargo = playerCargoAdapter.getPlayerCargoList();
+                        if (tempPlayerCargo.contains(select)) {
+                            int selectIndex = tempPlayerCargo.indexOf(select);
+                            int currStock = tempPlayerCargo.get(selectIndex).getStock();
+                            tempPlayerCargo.get(selectIndex).setStock(currStock + 1);
                         } else {
                             select.setStock(1);
                             select.setPrice(cost);
@@ -80,7 +82,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         }
 
                         // add to player cargo
-                        /*
+
                         for (int c = 0; c < list.size(); c++) {
                             if (list.get(c) == select) {
                                list.get(c).setStock(list.get(c).getStock() + 1);
@@ -88,7 +90,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 select.setStock(1);
                                 playerCargoAdapter.getPlayerCargoList().add(select);
                             }
-                        }*/
+                        }
 
 
                         // playerCargoAdapter.getPlayerCargoList().add(select);
@@ -101,6 +103,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, shopGoodsList.size());
+                        */
                     }
                 }
             });
