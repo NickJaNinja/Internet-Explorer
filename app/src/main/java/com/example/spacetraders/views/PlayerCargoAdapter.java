@@ -17,6 +17,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
 
     /** a copy of the list of shop goods in the model */
 
+    private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
 
@@ -135,5 +136,13 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
 
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
+    }
+
+    public ShopGoodsAdapter getShopGoodsAdapter() {
+        return shopGoodsAdapter;
+    }
+
+    public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
+        shopGoodsAdapter = sga;
     }
 }
