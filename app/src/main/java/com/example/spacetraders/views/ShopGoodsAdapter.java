@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
+import com.example.spacetraders.models.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(shopGoodsList.get(position));
                     }
+
+                    Model.getInstance().setEntryToSwap(shopGoodsList.get(position));
+                    shopGoodsList.remove(shopGoodsList.get(position));
+
+                    notifyItemRemoved(position);
+                    notifyItemRangeChanged(position,shopGoodsList.size());
                 }
             });
 

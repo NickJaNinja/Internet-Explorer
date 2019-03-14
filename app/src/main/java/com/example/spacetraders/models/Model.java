@@ -14,6 +14,7 @@ import java.util.List;
 public class Model {
     private Game game;
     private Shop currShop;
+    private ShopEntry entryToSwap;
 
     /** Singleton Pattern Code
      *  this allows us to get access to this class
@@ -62,4 +63,12 @@ public class Model {
     public Shop getShop() { return currShop; }
 
     public void setShop(Shop s) { currShop = s; }
+
+    public void setEntryToSwap(ShopEntry entryToSwap) {
+        this.entryToSwap = entryToSwap;
+    }
+
+    public ShopEntry getEntryToSwap() {
+        return this.entryToSwap;
+    }
 }
