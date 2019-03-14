@@ -45,8 +45,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
         public PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
-            price = itemView.findViewById(R.id.stock_text);
-            stock = itemView.findViewById(R.id.price_text);
+            price = itemView.findViewById(R.id.price_text);
+            stock = itemView.findViewById(R.id.stock_text);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
