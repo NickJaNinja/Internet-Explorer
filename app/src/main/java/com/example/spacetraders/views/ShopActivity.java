@@ -56,7 +56,6 @@ public class ShopActivity extends GUIActivity {
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
 
-
         //buyList = findViewById(R.id.buy_list);
         //for (int c = 0; c < adapter.getItemCount(); c++) {
             //buyList.addView(adapter.getLayout(c, this));
@@ -135,3 +134,13 @@ public class ShopActivity extends GUIActivity {
     }
 
 }
+
+
+    @Override
+    public void onClick(View view) {
+        int position = getAdapterPosition();
+
+        if (listener != null && position != RecyclerView.NO_POSITION) {
+            listener.onStudentClicked(studentList.get(position));
+        }
+    }
