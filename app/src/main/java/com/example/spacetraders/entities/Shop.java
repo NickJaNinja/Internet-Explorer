@@ -27,20 +27,24 @@ public class Shop {
     public void restock() {
         for (ShopGoods shopGood: ShopGoods.values()) {
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
-                int itemPrice = shopGood.getBasePrice() + shopGood.getIpl()
-                        * (techLevel.getLevel() - shopGood.getMtlp().getLevel())
-                        + shopGood.getBasePrice()
-                        * (new Random()).nextInt(shopGood.getVar() + 1) / 100;
+                int itemPrice = (int)( shopGood.getBasePrice() + shopGood.getIpl()
+                        * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
+                int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
+                if ((new Random()).nextInt(2) == 0) {
+                    itemPrice += var;
+                } else {
+                    itemPrice -= var;
+                }
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             }
-            System.out.println(shopGood.getBasePrice());
-            System.out.println(shopGood.getIpl());
-            System.out.println(techLevel.getLevel());
-            System.out.println(shopGood.getMtlp().getLevel());
-            System.out.println(shopGood.getBasePrice());
-            System.out.println(shopGood.getVar());
-            System.out.println((new Random()).nextInt(shopGood.getVar() + 1));
+            System.out.println("hello!!!!!!");
+            System.out.println("shopGood.getBasePrice()"+shopGood.getBasePrice());
+            System.out.println("shopGood.getIpl()"+shopGood.getIpl());
+            System.out.println("techLevel.getLevel()"+techLevel.getLevel());
+            System.out.println("shopGood.getMtlp().getLevel()"+shopGood.getMtlp().getLevel());
+            System.out.println("shopGood.getVar()"+shopGood.getVar());
+            System.out.println("variance"+(new Random()).nextInt(shopGood.getVar() + 1)/100.0);
 
         }
     }

@@ -17,7 +17,7 @@ import java.util.List;
 public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
 
     /** a copy of the list of shop goods in the model */
-    //enum, int stock, int price
+
     private List<ShopEntry> shopGoodsList;
     private  OnClickListener listener;
 
@@ -126,9 +126,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return master_layout;
     }
     */
-public interface OnClickListener {
+    public interface OnClickListener {
         void onClicked(ShopEntry goods);
-}
+    }
 
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
