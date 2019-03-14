@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
+import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class PlanetActivity extends GUIActivity {
     private TextView market;
@@ -16,6 +17,7 @@ public class PlanetActivity extends GUIActivity {
     private TextView refuel;
     private TextView leaveOrbit;
     private Planet planet;
+    private ShopViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class PlanetActivity extends GUIActivity {
         // pressing market button
         market.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                viewModel.setShop(planet.getShop());
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
             }

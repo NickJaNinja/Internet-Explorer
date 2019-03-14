@@ -108,6 +108,8 @@ public class Planet {
         return inHabitableZone;
     }
 
+    public Shop getShop() { return shop; }
+
     /**
      * to string for planet
      *

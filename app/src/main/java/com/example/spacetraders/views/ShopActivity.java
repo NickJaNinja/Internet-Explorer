@@ -24,7 +24,7 @@ public class ShopActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market);
 
-        viewModel.setUpShop(shop);
+        viewModel.setUpShop();
 
         /*
         Set up our recycler view by grabbing the layout for a single item
@@ -94,14 +94,14 @@ public class ShopActivity extends GUIActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewModel.setShopEntriesToTemp();
-                viewModel.setUpShop(shop);
+                viewModel.setUpShop();
             }
         });
 
         //cancel transaction
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                viewModel.setUpShop(shop);
+                viewModel.setUpShop();
             }
         });
 
@@ -112,7 +112,7 @@ public class ShopActivity extends GUIActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.setShopGoodsList(viewModel.getShopEntries(shop));
+        adapter.setShopGoodsList(viewModel.getShopEntries());
     }
 
 }

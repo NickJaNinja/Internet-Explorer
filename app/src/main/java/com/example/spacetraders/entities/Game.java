@@ -10,6 +10,7 @@ public class Game {
     private Player player;
     /** the universe */
     private Universe universe;
+    private Planet currPlanet;
 
     /**
      * Constructor for the game
@@ -29,6 +30,7 @@ public class Game {
         this.difficulty = difficulty;
         this.player = player;
         this.universe = new Universe();
+        currPlanet =
     }
 
     /**
