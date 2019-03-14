@@ -26,6 +26,9 @@ public class PlanetActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planet);
 
+        model = Model.getInstance();
+        planet = model.getCurrentPlanet();
+
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
         refuel = findViewById(R.id.refuel_button);
