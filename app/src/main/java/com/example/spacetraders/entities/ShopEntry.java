@@ -26,7 +26,15 @@ public class ShopEntry {
 
     public void setStock(int amount) { this.stock = amount; }
 
-    public List<String> toList() {
+    /**
+     * Makes this object into a list of Strings
+     * -name
+     * -stock
+     * -price
+     *
+     * @return The list of strings of instance data
+     */
+    public List<String> toStringList() {
         List<String> list = new ArrayList<>();
         list.add(good.getName());
         list.add(Integer.toString(stock));

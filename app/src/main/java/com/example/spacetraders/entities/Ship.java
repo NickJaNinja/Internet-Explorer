@@ -38,6 +38,16 @@ public class Ship {
 
     public EnumMap<ShopGoods, ShopEntry> getCargo() { return cargo; }
 
+    /**
+     * Add good of a certain amount to cargo, where each good is at a certain price
+     * Amount * Price = Total $ of the transaction
+     * This method also does nothing and returns 0 if the transaction does not occur
+     *
+     * @param good the good to be transacted
+     * @param amount amount of the good
+     * @param price price of each good
+     * @return 1 if occurred, 0 if failed
+     */
     public int addCargo(ShopGoods good, int amount, int price) {
         if (inventory + amount > type.getNumCargoHolds()) { return 0; }
         if (cargo.get(good) == null) {
@@ -57,7 +67,19 @@ public class Ship {
         return 1;
     }
 
+    /**
+     * Remove good of a certain amount to cargo, where each good is at a certain price
+     * Amount * Price = Total $ of the transaction
+     * This method also does nothing and returns 0 if the transaction does not occur
+     * Since this is remove, amount should be negative
+     *
+     * @param good the good to be transacted
+     * @param amount amount of the good
+     * @param price price of each good
+     * @return 1 if occurred, 0 if failed
+     */
     public int removeCargo(ShopGoods good, int amount, int price) {
+        assert amount < 0;
         if (inventory - amount < 0) { return 0; }
         if (cargo.get(good) == null) { return 0; }
         ShopEntry item = cargo.get(good);
