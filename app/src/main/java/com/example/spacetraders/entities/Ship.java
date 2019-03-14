@@ -58,6 +58,7 @@ public class Ship {
         }
         if (cargo.get(good) == null) {
             cargo.put(good, new ShopEntry(good, amount, price));
+            inventory += amount;
         } else {
             ShopEntry item = cargo.get(good);
             int currAmt = item.getStock();
