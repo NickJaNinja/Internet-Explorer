@@ -68,7 +68,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                     // add to player cargo
                     List<ShopEntry> list = playerCargoAdapter.getPlayerCargoList();
                     for (int c = 0; c < list.size(); c++) {
-                        if (list.get(c).getGood() == select.getGood()) {
+                        if (list.get(c) == select) {
                            list.get(c).setStock(list.get(c).getStock() + 1);
                         } else if (c == list.size() - 1) {
                             select.setStock(1);
