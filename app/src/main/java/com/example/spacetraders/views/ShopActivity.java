@@ -40,7 +40,7 @@ public class ShopActivity extends GUIActivity {
         recyclerViewShop.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForShop = new ShopGoodsAdapter();
+        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntries());
         recyclerViewShop.setAdapter(adapterForShop);
 
 
@@ -52,7 +52,7 @@ public class ShopActivity extends GUIActivity {
         recyclerViewPlayer.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForPlayer = new ShopGoodsAdapter();
+        adapterForPlayer = new ShopGoodsAdapter(viewModel.getShopEntries());
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
 
