@@ -30,10 +30,18 @@ public class Shop {
                 int itemPrice = shopGood.getBasePrice() + shopGood.getIpl()
                         * (techLevel.getLevel() - shopGood.getMtlp().getLevel())
                         + shopGood.getBasePrice()
-                        * (new Random()).nextInt(shopGood.getVar() + 1);
+                        * (new Random()).nextInt(shopGood.getVar() + 1) / 100;
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             }
+            System.out.println(shopGood.getBasePrice());
+            System.out.println(shopGood.getIpl());
+            System.out.println(techLevel.getLevel());
+            System.out.println(shopGood.getMtlp().getLevel());
+            System.out.println(shopGood.getBasePrice());
+            System.out.println(shopGood.getVar());
+            System.out.println((new Random()).nextInt(shopGood.getVar() + 1));
+
         }
     }
 

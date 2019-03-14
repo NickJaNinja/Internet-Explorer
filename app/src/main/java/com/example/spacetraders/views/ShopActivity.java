@@ -134,3 +134,13 @@ public class ShopActivity extends GUIActivity {
     }
 
 }
+
+
+    @Override
+    public void onClick(View view) {
+        int position = getAdapterPosition();
+
+        if (listener != null && position != RecyclerView.NO_POSITION) {
+            listener.onStudentClicked(studentList.get(position));
+        }
+    }
