@@ -52,7 +52,7 @@ public class Ship {
      * @return 1 if occurred, 0 if failed
      */
     public int addCargo(ShopGoods good, int amount, int price) {
-        if (cargo.get(good) == null) { return 0; }
+        //if (cargo.get(good) == null) { return 0; }
         if (inventory + amount > type.getNumCargoHolds()) {
             return 0;
         }
