@@ -17,11 +17,12 @@ public enum TechLevel {
 
     private final int level;
     private final String name;
+
     /**
      * Constructor for the enumeration
      *
-     * @param level   tech level
-     * @param name the name
+     * @param level tech level
+     * @param name  the name
      */
     TechLevel(int level, String name) {
         this.level = level;
@@ -45,7 +46,6 @@ public enum TechLevel {
     public String getName() {
         return name;
     }
-
 
 
 }

@@ -3,7 +3,9 @@ package com.example.spacetraders.entities;
 import java.util.HashMap;
 import java.util.Random;
 
-/**This class represents a solar system*/
+/**
+ * This class represents a solar system
+ */
 public class SolarSystem {
 
     private String name;
@@ -13,8 +15,10 @@ public class SolarSystem {
 
     private Random r = new Random();
 
-    /**Constructor for Solar System. Randomizes all stats.
-     * @param name name of solar system
+    /**
+     * Constructor for Solar System. Randomizes all stats.
+     *
+     * @param name        name of solar system
      * @param coordinates the coordinates of the solar system
      */
     public SolarSystem(String name, Coordinates coordinates) {
@@ -29,7 +33,7 @@ public class SolarSystem {
      *
      * @return int number of stars
      */
-    private int generateNumStars () {
+    private int generateNumStars() {
         //int roll = r.nextInt(10) + 1;
         //if (roll < 5) return 2; // 4 in 10 chance for binary star system
         //else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
@@ -40,14 +44,14 @@ public class SolarSystem {
     /**
      * If unary star system, names stars in format of "name of solar system"
      * eg Kepler
-     *
+     * <p>
      * If multi-star system, names stars in format "name of solar system + SPACE + uppercase letter"
      * in alphabetic order.
      * eg Kepler A, Kepler B, ...
      *
      * @param numStars int number of stars
      */
-    private void createStars (int numStars) {
+    private void createStars(int numStars) {
         this.stars = new Star[numStars];
         if (numStars < 2) { // if unary star system
             stars[0] = new Star(name);
@@ -64,16 +68,16 @@ public class SolarSystem {
      * If unary star system, names planets in format "name of parent star + SPACE + number" in order
      * of smallest distance from parent star.
      * eg Kepler 1, Kepler 2, ...
-     *
+     * <p>
      * If multi-star system, names planets in format of "name of parent star + number" in order of
      * smallest distance from parent star.
      * eg Kepler B1, Kepler A2, ...
-     *
+     * <p>
      * Also randomly decides parent star of planet.
      *
      * @param numPlanets int number of planets
      */
-    private void createPlanets (int numPlanets) {
+    private void createPlanets(int numPlanets) {
         planets = new Planet[numPlanets];
         for (int i = 0; i < numPlanets; i++) {
             if (stars.length > 1) { // if multi-star system
@@ -92,27 +96,29 @@ public class SolarSystem {
             }
         }
     }
+
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         if (planets[0].equals(planet)) { // first planet
             return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first planet to parent star
         } else { // planets' after first
             // by Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0 ; // TODO add slight random variation so this is less exact
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0; // TODO add slight random variation so this is less exact
         }
     }
+
     /**
      * Generates the number of planets
      *
      * @return int number of planets
      */
-    private int generateNumPlanets () {
+    private int generateNumPlanets() {
         return r.nextInt(13) + 1; // random int from 1 to 13
     }
 
     /**
      * getter for name
      *
-     * @return  name
+     * @return name
      */
     public String getName() {
         return name;
@@ -121,7 +127,7 @@ public class SolarSystem {
     /**
      * getter for coordinates
      *
-     * @return  coordinates
+     * @return coordinates
      */
     public Coordinates getCoordinates() {
         return coordinates;
@@ -130,7 +136,7 @@ public class SolarSystem {
     /**
      * getter for stars
      *
-     * @return  array of stars
+     * @return array of stars
      */
     public Star[] getStars() {
         return stars;
@@ -139,7 +145,7 @@ public class SolarSystem {
     /**
      * getter for planets
      *
-     * @return  array of planets
+     * @return array of planets
      */
     public Planet[] getPlanets() {
         return planets;
@@ -147,7 +153,7 @@ public class SolarSystem {
 
     /**
      * gets a random star
-     * 
+     *
      * @return random star
      */
     public Star getRandomStar() {
@@ -156,13 +162,13 @@ public class SolarSystem {
 
     /**
      * gets a random planet
-     * 
+     *
      * @return random planet
      */
     public Planet getRandomPlanet() {
         return planets[r.nextInt(planets.length)];
     }
-    
+
     /**
      * to string for solar system
      *
