@@ -61,6 +61,10 @@ public class Ship {
         } else {
             ShopEntry item = cargo.get(good);
             int currAmt = item.getStock();
+            if (currAmt + amount <= 0) {
+                cargo.remove(good);
+                return 1;
+            }
             int currPrc = item.getPrice();
             int avgPrc = currAmt * currPrc;
             avgPrc += amount * price;
