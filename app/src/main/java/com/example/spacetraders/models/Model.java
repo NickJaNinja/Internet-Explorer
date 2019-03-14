@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Model {
     private Game game;
+    private Shop currShop;
 
     /** Singleton Pattern Code
      *  this allows us to get access to this class
@@ -57,4 +58,8 @@ public class Model {
     public Game getGame() { return game; }
 
     public Planet getCurrentPlanet() { return game.getCurrentPlanet(); }
+
+    public Shop getShop() { return currShop; }
+
+    public void setShop(Shop s) { currShop = s; }
 }

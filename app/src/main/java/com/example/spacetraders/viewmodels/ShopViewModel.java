@@ -88,10 +88,10 @@ public class ShopViewModel extends AndroidViewModel {
     }
 
     public void setShop(Shop s) {
-        shop = s;
+        model.setShop(s);
     }
 
     public Shop getShop() {
-        return shop;
+        return model.getShop();
     }
 }
