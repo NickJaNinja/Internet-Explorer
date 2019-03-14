@@ -56,7 +56,6 @@ public class ShopActivity extends GUIActivity {
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
 
-
         //buyList = findViewById(R.id.buy_list);
         //for (int c = 0; c < adapter.getItemCount(); c++) {
             //buyList.addView(adapter.getLayout(c, this));
