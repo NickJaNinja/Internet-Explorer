@@ -53,7 +53,9 @@ public class Shop {
     public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
         int newAmount = e.getStock() - amount;
-        if (newAmount < 0) { return 0; }
+        if (newAmount < 0) {
+            return 0;
+        }
         shopGoodsStockMap.get(good).setStock(newAmount);
         return 1;
     }
