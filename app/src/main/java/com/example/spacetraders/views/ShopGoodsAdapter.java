@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
+import com.example.spacetraders.entities.ShopGoods;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /** a copy of the list of shop goods in the model */
     //enum, int stock, int price
     private List<ShopEntry> shopGoodsList;
+    private  OnClickListener listener;
 
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList) {
         this.shopGoodsList = shopGoodsList;
@@ -43,6 +45,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.stock_text);
             stock = itemView.findViewById(R.id.price_text);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onClicked(shopGoodsList.get(position));
+                    }
+                }
+            });
+
         }
     }
     @Override
@@ -111,4 +126,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return master_layout;
     }
     */
+public interface OnClickListener {
+        void onClicked(ShopEntry goods);
+}
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
 }

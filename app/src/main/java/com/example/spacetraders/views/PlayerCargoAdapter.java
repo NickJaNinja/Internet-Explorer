@@ -16,7 +16,7 @@ import java.util.List;
 public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.PlayerCargoViewHolder> {
 
     /** a copy of the list of shop goods in the model */
-    //enum, int stock, int price
+
     private List<ShopEntry> playerCargoList;
 
     public PlayerCargoAdapter(List<ShopEntry> playerCargoList) {
