@@ -104,7 +104,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/buy_list"
             android:layout_width="match_parent"
-            android:layout_height="180dp"/>
+            android:layout_height="170dp"/>
 
         <View
             android:layout_width="match_parent"
@@ -162,7 +162,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/sell_list"
             android:layout_width="match_parent"
-            android:layout_height="180dp"/>
+            android:layout_height="170dp"/>
 
         <View
             android:layout_width="match_parent"
@@ -200,6 +200,20 @@
                 android:textSize="24sp" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorText" />
+
+        <TextView
+            android:id="@+id/wallet_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WALLET: "
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
