@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -21,6 +22,7 @@ public class PlanetActivity extends GUIActivity {
     private Planet planet;
     private ShopViewModel viewModel;
     private Model model;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,15 @@ public class PlanetActivity extends GUIActivity {
         refuel = findViewById(R.id.refuel_button);
         leaveOrbit = findViewById(R.id.leave_orbit_button);
 
+        // music
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
         // pressing market button
         market.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                mediaPlayer.stop();
                 viewModel.setShop(planet.getShop());
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
