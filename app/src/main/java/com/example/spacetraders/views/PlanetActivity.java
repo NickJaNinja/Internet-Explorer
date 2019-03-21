@@ -6,7 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -23,6 +28,7 @@ public class PlanetActivity extends GUIActivity {
     private ShopViewModel viewModel;
     private Model model;
     private MediaPlayer mediaPlayer;
+    private ImageView planetImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,14 @@ public class PlanetActivity extends GUIActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
+        // rotate planet animation
+        planetImage = findViewById(R.id.planet_image);
+        RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setRepeatCount(Animation.INFINITE);
+        rotate.setDuration(100000);
+        rotate.setInterpolator(new LinearInterpolator());
+        planetImage.startAnimation(rotate);
     }
 
 }
