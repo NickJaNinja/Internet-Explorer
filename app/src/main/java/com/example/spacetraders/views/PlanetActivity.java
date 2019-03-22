@@ -48,6 +48,11 @@ public class PlanetActivity extends GUIActivity {
         // music
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);
         mediaPlayer.setLooping(true);
+        try {
+            mediaPlayer.prepare();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         mediaPlayer.start();
 
         // pressing market button
@@ -64,7 +69,7 @@ public class PlanetActivity extends GUIActivity {
         planetImage = findViewById(R.id.planet_image);
         RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setRepeatCount(Animation.INFINITE);
-        rotate.setDuration(100000);
+        rotate.setDuration(500000);
         rotate.setInterpolator(new LinearInterpolator());
         planetImage.startAnimation(rotate);
     }
