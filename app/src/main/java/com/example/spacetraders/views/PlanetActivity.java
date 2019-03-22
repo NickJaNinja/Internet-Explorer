@@ -69,7 +69,7 @@ public class PlanetActivity extends GUIActivity {
         planetImage = findViewById(R.id.planet_image);
         RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setRepeatCount(Animation.INFINITE);
-        rotate.setDuration(500000);
+        rotate.setDuration(300000);
         rotate.setInterpolator(new LinearInterpolator());
         planetImage.startAnimation(rotate);
     }
