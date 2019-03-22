@@ -59,6 +59,11 @@ public class Player {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
 
+
+    public int travelTo() {
+        return 0;
+    }
+
     /**
      * Carries out a transaction of goods if valid
      *
@@ -76,8 +81,6 @@ public class Player {
         }
         credits -= amount * price;
         return 1;
-
-
 
         /*if (amount <= 0) {
             if (ship.removeCargo(sg, amount, price) == 0) {
