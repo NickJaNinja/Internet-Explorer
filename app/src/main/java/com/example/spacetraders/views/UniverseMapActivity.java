@@ -35,11 +35,7 @@ public class UniverseMapActivity extends GUIActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FrameLayout layout = new FrameLayout(this);
-        View.inflate(this, R.layout.planet, layout);
-        View.inflate(this, R.layout.menu_bar, layout);
-
-        setContentView(layout);
+        setContentView(R.layout.universe_map);
 
         nameOfPlanet = findViewById(R.id.name_text);
         distance = findViewById(R.id.distance_text);

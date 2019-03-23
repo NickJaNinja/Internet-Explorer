@@ -39,12 +39,9 @@ public class PlanetActivity extends MenuBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.planet);
 
-        FrameLayout layout = new FrameLayout(this);
-        View.inflate(this, R.layout.planet, layout);
-        View.inflate(this, R.layout.menu_bar, layout);
-
-        setContentView(layout);
+        createMenuBar();
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
