@@ -1,5 +1,5 @@
 package com.example.spacetraders.entities;
-import java.lang.Math.sqrt;
+import java.lang.Math;
 
 /**
  * This class represents the coordinates of a solar system
