@@ -48,7 +48,7 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries();
     }
 
-    //i will change it
+    
     public List<ShopEntry> getPlayerEntries() {
         return model.getPlayerEntries();
     }
