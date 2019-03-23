@@ -190,6 +190,21 @@ public class Universe {
         }
     }
 
+    /*
+        ONLY NEED IF TRAVEL BETWEEN PLANETS IS NOT INSTANTANEOUS
+     */
+    public int distanceBetweenPlanets(Planet from, Planet to) {
+        double fromCoords = from.getDistanceFromParentStar();
+        double toCoords = to.getDistanceFromParentStar();
+        int distance = (int)Math.abs(fromCoords - toCoords);
+        return distance;
+    }
+
+    public int distanceBetweenSystems(SolarSystem from, SolarSystem to) {
+        Coordinates fromCoords = from.getCoordinates();
+        Coordinates toCoords = to.getCoordinates();
+        return fromCoords.dist(toCoords);
+    }
     /**
      * getter for solar systems
      *

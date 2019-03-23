@@ -125,7 +125,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         shopGoodsViewHolder.price.setText(shopEntry.getPrice() + "");
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
         shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
-
     }
 
 
