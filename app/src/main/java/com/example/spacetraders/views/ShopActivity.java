@@ -75,9 +75,6 @@ public class ShopActivity extends GUIActivity {
             public void onClick(View v) {
                 viewModel.setMarketsEntriesToTemp();
                 viewModel.setUpMarket();
-
-
-
             }
         });
 
