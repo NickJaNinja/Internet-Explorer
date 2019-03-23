@@ -22,7 +22,7 @@ public class ShopActivity extends GUIActivity {
     private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
-    private Shop shop;
+    //private Shop shop;
     private ShopViewModel viewModel;
     private RecyclerView recyclerViewShop;
     private RecyclerView recyclerViewPlayer;

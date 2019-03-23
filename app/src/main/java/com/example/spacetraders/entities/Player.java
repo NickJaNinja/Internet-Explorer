@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import java.util.List;
+
 /**
  * This class represents the player
  *
@@ -102,6 +104,10 @@ public class Player {
             ship.refuel(refuelCost);
             this.credits -= refuelCost;
         }
+    }
+
+    public List<ShopEntry> getPlayerEntries() {
+        return ship.getInventoryCargo();
     }
 
     /**

@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import java.util.List;
+
 /**
  * This class represents the game
  */
@@ -115,6 +117,17 @@ public class Game {
         return currPlanet;
     }
 
+    public Shop getCurrentShop() {
+        return currPlanet.getShop();
+    }
+
+    public List<ShopEntry> getShopEntries() {
+        return currPlanet.getShopEntries();
+    }
+
+    public List<ShopEntry> getPlayerEntries() {
+        return player.getPlayerEntries();
+    }
 
     /**
      * setter for game difficulty
