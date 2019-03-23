@@ -15,6 +15,7 @@ public class Player {
     private int credits;
     private int reputation;
     private Ship ship;
+    //private Planet currPlanet;
 
     /**
      * constuctor with all parameters
@@ -37,6 +38,7 @@ public class Player {
         this.credits = credits;
         this.reputation = reputation;
         this.ship = ship;
+        //this.currPlanet =
     }
 
     /**
