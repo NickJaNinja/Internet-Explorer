@@ -134,13 +134,32 @@ public class Universe {
 
     private static final String[] PREFIXES =
             {
-                    "Asdf",
-                    "Qwerty"
+                    "Pan",
+                    "Arc",
+                    "Wub",
+                    "Chung",
+                    "Cri",
+                    "Zen",
+                    "Da'",
+                    "Zur",
+                    "Ut",
+                    "Chrom",
+                    "Zig",
+                    "Wub"
             };
     private static final String[] SUFFIXES =
             {
-                    "Fdsa",
-                    "Ytrewq"
+                    "onia",
+                    "ardia",
+                    "anus",
+                    "wei",
+                    "rom",
+                    "etov",
+                    "der",
+                    "mus",
+                    "igma",
+                    "ulus",
+                    "on"
             };
 
 
@@ -150,7 +169,7 @@ public class Universe {
      */
     private static final int MAXX = 500;
     private static final int MAXY = 500;
-    private int numSolarSystems = 5 + r.nextInt(5);
+    private int numSolarSystems = 100;
 
     private SolarSystem[] solarSystems;
 
@@ -160,7 +179,7 @@ public class Universe {
     public Universe() {
         Set<Coordinates> coordSet = new HashSet<>();
         Set<String> nameSet = new HashSet<>();
-        this.solarSystems = new SolarSystem[SOLARSYSTEMNAMES.length];
+        this.solarSystems = new SolarSystem[numSolarSystems];
 
         for (int i = 0; i < numSolarSystems; i++) {
             //keep making random names and coordinates until we find one that hasn't been used yet
