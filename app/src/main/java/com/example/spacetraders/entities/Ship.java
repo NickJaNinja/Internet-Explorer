@@ -45,6 +45,12 @@ public class Ship {
         return cargo;
     }
 
+    /**
+     * Reduces ship fuel based on distance travelled
+     *
+     * @param distance the distance travelled
+     * @return 1 on success, 0 on fail
+     */
     public int travel(int distance) {
         int fuel = (int)(distance * DIST_TO_FUEL_MULT);
         if (this.fuel - fuel < 0) {
@@ -54,12 +60,38 @@ public class Ship {
         return 1;
     }
 
+    /**
+     * Refuel the ship based on a certain amount of money
+     *
+     * @param money The amount of money paid to refuel
+     */
     public void refuel(int money) {
         int fuel = (int) Math.floor((double)money / FUEL_TO_COST_MULT);
         this.fuel += fuel;
         if (this.fuel > type.getFuel()) {
             this.fuel = type.getFuel();
         }
+    }
+
+    /**
+     * Calculate cost to partially refuel the ship
+     *
+     * @param fuelAmount Amount to refuel
+     * @return Cost to partially refuel the ship
+     */
+    public int getPartialRefuelCost(int fuelAmount) {
+        int cost = fuelAmount * FUEL_TO_COST_MULT;
+        return cost;
+    }
+
+    /**
+     * Calculate cost to refuel the ship
+     *
+     * @return Cost to completely refuel the ship
+     */
+    public int getFullRefuelCost() {
+        int fuelRemaining = type.getFuel() - this.fuel;
+        return getPartialRefuelCost(fuelRemaining);
     }
 
     /**

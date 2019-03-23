@@ -66,6 +66,11 @@ public class Player {
         return 0;
     }
 
+    public int refuelShip(int creditAmount) {
+
+        return 0;
+    }
+
     /**
      * Carries out a transaction of goods if valid
      *
