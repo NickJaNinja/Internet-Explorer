@@ -61,14 +61,35 @@ public class Player {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
 
-
-    public int travelTo() {
-        return 0;
+    /**
+     * Travel a given distance and remove fuel from ship
+     *
+     * @param distance Distance to travel
+     * @return 1 on success, 0 otherwise
+     */
+    public int travel(int distance) {
+        return ship.travel(distance);
     }
 
-    public int refuelShip(int creditAmount) {
+    /**
+     * Doesn't completely refuel the ship
+     * Used if player wants to refuel by a custom amount
+     *
+     * @param creditAmount Amount of credits put towards refueling
+     */
+    public void refuelShipPartial(int creditAmount) {
+        if (creditAmount >= ship.getFullRefuelCost()) {
+            refuelShipMax();
+        }
+        ship.refuel((creditAmount > credits) ? credits : creditAmount);
+    }
 
-        return 0;
+    /**
+     * Refuels ship to have a full tank
+     */
+    public void refuelShipMax() {
+        int refuelCost = ship.getFullRefuelCost();
+        ship.refuel((refuelCost > credits) ? credits : refuelCost);
     }
 
     /**

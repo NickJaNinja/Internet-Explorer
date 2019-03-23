@@ -74,14 +74,14 @@ public class Ship {
     }
 
     /**
-     * Calculate cost to partially refuel the ship
+     * Calculate the amount you can refuel based on given credits
      *
-     * @param fuelAmount Amount to refuel
-     * @return Cost to partially refuel the ship
+     * @param credits Amount of money
+     * @return Amount of purchasable fuel
      */
-    public int getPartialRefuelCost(int fuelAmount) {
-        int cost = fuelAmount * FUEL_TO_COST_MULT;
-        return cost;
+    public int getPurchasableFuel(int credits) {
+        int fuelAmount = credits / FUEL_TO_COST_MULT;
+        return fuelAmount;
     }
 
     /**
@@ -91,7 +91,7 @@ public class Ship {
      */
     public int getFullRefuelCost() {
         int fuelRemaining = type.getFuel() - this.fuel;
-        return getPartialRefuelCost(fuelRemaining);
+        return fuelRemaining * FUEL_TO_COST_MULT;
     }
 
     /**
