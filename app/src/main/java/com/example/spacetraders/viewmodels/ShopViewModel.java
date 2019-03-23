@@ -16,7 +16,8 @@ public class ShopViewModel extends AndroidViewModel {
     private Model model;
     private List<ShopEntry> shopInventoryTemp;
     private List<ShopEntry> playerInventoryTemp;
-    
+    private Shop shop;
+
     public ShopViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
