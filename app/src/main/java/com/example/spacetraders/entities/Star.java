@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import java.util.Random;
+import android.graphics.Color;
 
 /**
  * This class represents a star
@@ -48,6 +49,25 @@ public class Star {
         else if (roll <= 10 && roll > 2.7f) return 'A';// 7.3% chance
         else if (roll <= 2.7f && roll > 0.4f) return 'B';// 2.3% chance
         else return 'O';// 0.4% chance
+    }
+
+    public int getColor() {
+        switch (this.classification) {
+            case 'M':
+                return Color.parseColor("#FF0000");
+            case 'K':
+                return Color.parseColor("#FF9833");
+            case 'G':
+                return Color.parseColor("#FFFF00");
+            case 'F':
+                return Color.parseColor("#FFFFED");
+            case 'A':
+                return Color.parseColor("#FBF8FF");
+            case 'B':
+                return Color.parseColor("#BBCCFF");
+            default: // 'O'
+                return Color.parseColor("#9BB0FF");
+        }
     }
 
     /**
