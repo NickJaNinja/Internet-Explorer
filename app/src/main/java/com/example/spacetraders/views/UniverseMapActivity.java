@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +31,25 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
         theCircle = findViewById(R.id.local_universe);
+
+        for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 20) {
+                ImageView imageView = new ImageView(this);
+                imageView.setImageResource(R.drawable.solarsystemsquare);
+
+                FrameLayout relativeLayout = (FrameLayout) findViewById(R.id.mapframe);
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                        FrameLayout.LayoutParams.WRAP_CONTENT,
+                        FrameLayout.LayoutParams.WRAP_CONTENT
+                );
+                //factor is for converting dp to px
+                float factor = relativeLayout.getContext().getResources().getDisplayMetrics().density;
+                layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
+                layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
+
+                relativeLayout.addView(imageView, layoutParams);
+            }
+        }
 
         theCircle.setOnClickListener(new View.OnClickListener() {
             @Override

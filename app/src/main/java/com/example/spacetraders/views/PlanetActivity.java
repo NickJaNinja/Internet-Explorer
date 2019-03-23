@@ -41,7 +41,6 @@ public class PlanetActivity extends MenuBarActivity {
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
         planet = model.getCurrentPlanet();
-        viewModel.setShop(planet.getShop());
 
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
@@ -62,7 +61,6 @@ public class PlanetActivity extends MenuBarActivity {
         market.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mediaPlayer.stop();
-                viewModel.setShop(planet.getShop());
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
             }

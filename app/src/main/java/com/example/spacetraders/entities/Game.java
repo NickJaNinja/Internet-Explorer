@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import java.util.List;
+
 /**
  * This class represents the game
  */
@@ -115,6 +117,26 @@ public class Game {
         return currPlanet;
     }
 
+    /**
+     * getter for current system
+     *
+     * @return current system
+     */
+    public SolarSystem getCurrentSystem() {
+        return currSystem;
+    }
+
+    public Shop getCurrentShop() {
+        return currPlanet.getShop();
+    }
+
+    public List<ShopEntry> getShopEntries() {
+        return currPlanet.getShopEntries();
+    }
+
+    public List<ShopEntry> getPlayerEntries() {
+        return player.getPlayerEntries();
+    }
 
     /**
      * setter for game difficulty
@@ -130,8 +152,8 @@ public class Game {
      *
      * @param player the new difficulty
      */
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void createPlayer(String name, int pilot, int fight, int trade, int eng) {
+        this.player = new Player(name, pilot, fight, trade, eng);
     }
 
     /**
@@ -148,5 +170,9 @@ public class Game {
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
+    }
+
+    public SolarSystem[] getSolarSystems() {
+        return universe.getSolarSystems();
     }
 }

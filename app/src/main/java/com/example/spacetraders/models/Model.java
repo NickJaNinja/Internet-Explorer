@@ -8,13 +8,12 @@ import com.example.spacetraders.entities.Ship;
 import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
+import com.example.spacetraders.entities.SolarSystem;
 
 import java.util.List;
 
 public class Model {
     private Game game;
-    private Shop currShop;
-    private Player currPlayer;
 
     /**
      * Singleton Pattern Code
@@ -43,6 +42,10 @@ public class Model {
         game = new Game(gd, p);
     }
 
+    public void createPlayer(String name, int pilot, int fight, int trade, int eng) {
+        game.createPlayer(name, pilot, fight, trade, eng);
+    }
+
     /**
      * Passes a good, an amount, and a price all the way down to player
      * and ship to be able to carry out a transaction if valid
@@ -62,7 +65,7 @@ public class Model {
      * @return shop entries
      */
     public List<ShopEntry> getShopEntries() {
-        return currShop.getInventoryAsList();
+        return game.getShopEntries();
     }
 
     /**
@@ -71,7 +74,7 @@ public class Model {
      * @return player entities
      */
     public List<ShopEntry> getPlayerEntries() {
-        return currPlayer.getShip().getInventoryCargo();
+        return game.getPlayerEntries();
     }
 
     /**
@@ -98,20 +101,14 @@ public class Model {
      * @return shop
      */
     public Shop getShop() {
-        return currShop;
+        return game.getCurrentShop();
     }
 
-    /**
-     * setter for shop
-     *
-     * @param s the new shop
-     */
-    public void setShop(Shop s) {
-        currShop = s;
+    public SolarSystem[] getSolarSystems() {
+        return game.getSolarSystems();
     }
 
-    public void setPlayer() {
-        currPlayer = game.getPlayer();
+    public SolarSystem getCurrentSystem() {
+        return game.getCurrentSystem();
     }
-
 }
