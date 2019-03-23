@@ -36,7 +36,7 @@ public class SolarSystemActivity extends GUIActivity {
         this.model = Model.getInstance();
         viewModel = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
 
-        recyclerViewPlanet = findViewById(R.id.buy_list);
+        recyclerViewPlanet = findViewById(R.id.planet_recycler_view);
         recyclerViewPlanet.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewPlanet.setHasFixedSize(true);
 
@@ -49,6 +49,8 @@ public class SolarSystemActivity extends GUIActivity {
 
 
 
-        
+
+
+
     }
 }
