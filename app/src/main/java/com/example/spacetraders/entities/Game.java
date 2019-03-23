@@ -17,6 +17,10 @@ public class Game {
      */
     private Universe universe;
     /**
+     * the solar system
+     */
+    private SolarSystem currSystem;
+    /**
      * planet the player is on
      */
     private Planet currPlanet;
@@ -46,12 +50,20 @@ public class Game {
      */
     public int travelFromTo(Planet from, Planet to) {
         int distance = universe.distanceBetweenPlanets(from, to);
-        return player.travel(distance);
+        if (player.travel(distance) == 0) {
+            return 0;
+        }
+        currPlanet = to;
+        return 1;
     }
 
     public int travelFromTo(SolarSystem from, SolarSystem to) {
         int distance = universe.distanceBetweenSystems(from, to);
-        return player.travel(distance);
+        if (player.travel(distance) == 0) {
+            return 0;
+        }
+        currSystem = to;
+        return 1;
     }
 
     /**
