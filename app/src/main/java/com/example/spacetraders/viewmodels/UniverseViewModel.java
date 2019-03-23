@@ -16,11 +16,6 @@ public class UniverseViewModel extends AndroidViewModel {
         model = Model.getInstance();
     }
 
-    public boolean onTravel(int fuel, int distance) {
-        return fuel >= distance;
-    }
-
-
     public SolarSystem[] getSolarSystems() {
         return model.getSolarSystems();
     }

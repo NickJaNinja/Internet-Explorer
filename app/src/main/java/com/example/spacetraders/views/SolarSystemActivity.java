@@ -15,5 +15,7 @@ public class SolarSystemActivity extends GUIActivity {
         FrameLayout layout = new FrameLayout(this);
         View.inflate(this, R.layout.planet, layout);
         View.inflate(this, R.layout.menu_bar, layout);
+
+        setContentView(layout);
     }
 }
