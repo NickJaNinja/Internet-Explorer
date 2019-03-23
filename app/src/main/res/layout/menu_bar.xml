@@ -4,67 +4,84 @@
     android:id="@+id/menu_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@color/colorBackground"
-    android:layout_gravity="top">
+    android:layout_gravity="bottom">
 
-    <FrameLayout
-        android:layout_width="0dp"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight=".2">
+        android:orientation="horizontal"
+        android:background="@color/colorBackground"
+        android:layout_gravity="bottom">
 
-        <ImageView
-            android:id="@+id/inventory_button"
-            android:layout_width="70px"
-            android:layout_height="100px"
-            android:layout_gravity="center"
-            android:layout_marginTop="10px"
-            android:layout_marginBottom="10px"
-            android:background="@drawable/spaceship" />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2">
 
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/inventory_button"
+                android:layout_width="70px"
+                android:layout_height="100px"
+                android:layout_gravity="center"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@drawable/inventory" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorText" />
+        </FrameLayout>
 
-    <ProgressBar
-        android:id="@+id/fuel_bar"
-        style="@style/Widget.ProgressBar.Vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".3" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorText" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorText" />
+        <ProgressBar
+            android:id="@+id/fuel_bar"
+            style="@style/Widget.ProgressBar.Vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".3" />
 
-    <ProgressBar
-        android:id="@+id/health_bar"
-        style="@style/Widget.ProgressBar.Vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".3" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorText" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorText" />
+        <ProgressBar
+            android:id="@+id/health_bar"
+            style="@style/Widget.ProgressBar.Vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".3" />
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".2">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorText" />
 
-        <ImageView
-            android:id="@+id/status_button"
-            android:layout_width="70px"
-            android:layout_height="100px"
-            android:layout_gravity="center"
-            android:background="@drawable/inventory" />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2">
 
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/status_button"
+                android:layout_width="70px"
+                android:layout_height="100px"
+                android:layout_gravity="center"
+                android:background="@drawable/spaceship"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

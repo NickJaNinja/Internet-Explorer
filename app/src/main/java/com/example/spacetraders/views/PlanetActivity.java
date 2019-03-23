@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -37,6 +38,12 @@ public class PlanetActivity extends MenuBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FrameLayout layout = new FrameLayout(this);
+        View.inflate(this, R.layout.planet, layout);
+        View.inflate(this, R.layout.menu_bar, layout);
+
+        setContentView(layout);
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();

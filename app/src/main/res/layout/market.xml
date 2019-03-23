@@ -42,13 +42,6 @@
             android:textSize="30sp" />
 
         <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
-            android:background="@color/colorText" />
-
-        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorText" />
