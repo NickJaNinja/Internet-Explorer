@@ -41,14 +41,17 @@ public class Game {
         this.currPlanet = universe.getRandomPlanet();
     }
 
+    /*
+        ONLY NEED IF TRAVEL BETWEEN PLANETS IS NOT INSTANTANEOUS
+     */
     public int travelFromTo(Planet from, Planet to) {
-
-        return 0;
+        int distance = universe.distanceBetweenPlanets(from, to);
+        return player.travel(distance);
     }
 
     public int travelFromTo(SolarSystem from, SolarSystem to) {
-
-        return 0;
+        int distance = universe.distanceBetweenSystems(from, to);
+        return player.travel(distance);
     }
 
     /**

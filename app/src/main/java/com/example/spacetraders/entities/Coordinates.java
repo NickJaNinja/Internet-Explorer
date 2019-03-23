@@ -33,6 +33,12 @@ public class Coordinates {
         return y;
     }
 
+    /**
+     * Finds the distance between two 2D coordinates
+     *
+     * @param c The other coordinates
+     * @return the integer distance
+     */
     public int dist(Coordinates c) {
         return (int) Math.sqrt((this.x-c.getX())*(this.x-c.getX())+(this.y-c.getY())*(this.y-c.getY()));
     }
