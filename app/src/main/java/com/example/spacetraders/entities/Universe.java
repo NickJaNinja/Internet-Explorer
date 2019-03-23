@@ -135,8 +135,8 @@ public class Universe {
     /**
      * dimensions of universe
      */
-    private static final int MAXX = 100;
-    private static final int MAXY = 100;
+    private static final int MAXX = 500;
+    private static final int MAXY = 500;
 
     private SolarSystem[] solarSystems;
     private SolarSystem[][] mapOfSolarSystem;
@@ -148,7 +148,7 @@ public class Universe {
      */
     public Universe() {
         Set<Coordinates> coordSet = new HashSet<Coordinates>();
-        mapOfSolarSystem = new SolarSystem[100][100];
+        mapOfSolarSystem = new SolarSystem[MAXX][MAXY];
         this.solarSystems = new SolarSystem[SOLARSYSTEMNAMES.length];
         for (int i = 0; i < SOLARSYSTEMNAMES.length; i++) {
             //keep making random coordinates until we find one that hasn't been used yet
