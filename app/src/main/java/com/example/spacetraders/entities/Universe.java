@@ -196,7 +196,7 @@ public class Universe {
             int randPrefixIndex = r.nextInt(PREFIXES.length);
             int randSuffixIndex = r.nextInt(SUFFIXES.length);
             int randNameNumber = 1 + r.nextInt(100);
-            String name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
+            String name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + "-" + randNameNumber;
             while (nameSet.contains(name)) {
                 randPrefixIndex = r.nextInt(PREFIXES.length);
                 randSuffixIndex = r.nextInt(SUFFIXES.length);

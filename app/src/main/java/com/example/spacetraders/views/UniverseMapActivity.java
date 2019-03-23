@@ -59,7 +59,9 @@ public class UniverseMapActivity extends GUIActivity{
                 float factor = relativeLayout.getContext().getResources().getDisplayMetrics().density;
                 layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
                 layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
+                //color
                 imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i].getStars()[0].getColor());
+
                 relativeLayout.addView(imageView, layoutParams);
 
                 int j = i;

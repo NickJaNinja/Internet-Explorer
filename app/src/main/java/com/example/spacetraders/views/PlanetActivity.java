@@ -34,6 +34,7 @@ public class PlanetActivity extends MenuBarActivity {
     private Model model;
     private MediaPlayer mediaPlayer;
     private ImageView planetImage;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +49,17 @@ public class PlanetActivity extends MenuBarActivity {
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
         planet = model.getCurrentPlanet();
+        name = (TextView)findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
         refuel = findViewById(R.id.refuel_button);
         leaveOrbit = findViewById(R.id.leave_orbit_button);
+
+        // globally
+
+
+        name.setText(planet.getName());
 
         // music
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);
