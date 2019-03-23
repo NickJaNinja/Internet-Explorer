@@ -64,6 +64,7 @@ public class Game {
         if (player.travel(distance) == 0) {
             return 0;
         }
+        currPlanet = to.closestPlanet();
         currSystem = to;
         return 1;
     }
