@@ -34,11 +34,9 @@ public class ShopActivity extends MenuBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FrameLayout layout = new FrameLayout(this);
-        View.inflate(this, R.layout.market, layout);
-        View.inflate(this, R.layout.menu_bar, layout);
+        setContentView(R.layout.market);
 
-        setContentView(layout);
+        createMenuBar();
 
         this.model = Model.getInstance();
 
