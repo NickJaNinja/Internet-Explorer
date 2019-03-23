@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Model {
     private Game game;
-    
+
     /**
      * Singleton Pattern Code
      * this allows us to get access to this class
@@ -39,6 +39,10 @@ public class Model {
      */
     public void createGame(GameDifficulty gd, Player p) {
         game = new Game(gd, p);
+    }
+
+    public void createPlayer(String name, int pilot, int fight, int trade, int eng) {
+        game.createPlayer(name, pilot, fight, trade, eng);
     }
 
     /**

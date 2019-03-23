@@ -56,13 +56,4 @@ public class ShopViewModel extends AndroidViewModel {
     public void setMarketsEntriesToTemp() {
 
     }
-
-    public void setShop(Shop s) {
-        shop = s;
-        model.setShop(s);
-    }
-
-    public Shop getShop() {
-        return model.getShop();
-    }
 }
