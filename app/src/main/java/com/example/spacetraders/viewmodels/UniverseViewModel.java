@@ -7,16 +7,15 @@ import android.support.annotation.NonNull;
 import com.example.spacetraders.models.Model;
 
 public class UniverseViewModel extends AndroidViewModel {
-    Model model;
+    private Model model;
 
     public UniverseViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
     }
 
-    public int onTravel() {
-
-        return 1;
+    public boolean onTravel(int fuel, int distance) {
+        return fuel >= distance;
     }
 
 
