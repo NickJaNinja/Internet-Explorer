@@ -200,6 +200,13 @@ public class Universe {
         return distance;
     }
 
+    /**
+     * Finds the 2D distance between two solar systems
+     *
+     * @param from one system
+     * @param to the other system
+     * @return the distance
+     */
     public int distanceBetweenSystems(SolarSystem from, SolarSystem to) {
         Coordinates fromCoords = from.getCoordinates();
         Coordinates toCoords = to.getCoordinates();
