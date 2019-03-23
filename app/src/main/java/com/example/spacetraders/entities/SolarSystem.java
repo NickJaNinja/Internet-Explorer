@@ -169,6 +169,10 @@ public class SolarSystem {
         return planets[r.nextInt(planets.length)];
     }
 
+    public int dist(SolarSystem s) {
+        return coordinates.dist(s.getCoordinates());
+    }
+
     /**
      * to string for solar system
      *
