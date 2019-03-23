@@ -86,6 +86,7 @@ public class UniverseMapActivity extends GUIActivity{
             public void onClick(View v) {
                 if (currentSolarSystem != null) {
                     Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystem.class);
+                    startActivity(newIntent);
                 }
             }
         });
