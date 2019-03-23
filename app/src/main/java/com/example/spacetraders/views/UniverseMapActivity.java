@@ -10,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.entities.Universe;
+import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
 import android.graphics.Color;
@@ -91,7 +93,8 @@ public class UniverseMapActivity extends GUIActivity{
                     toast.show();
                     return;
                 }
-                Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystem.class);
+                Model.getInstance().travelFromTo(universeViewModel.getCurrentSystem(), currentSolarSystem);
+                Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystemActivity.class);
                 startActivity(newIntent);
             }
         });
