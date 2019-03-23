@@ -44,8 +44,8 @@ public class UniverseMapActivity extends GUIActivity{
                 );
                 //factor is for converting dp to px
                 float factor = relativeLayout.getContext().getResources().getDisplayMetrics().density;
-                layoutParams.leftMargin = (int) (50 * factor); //Your X coordinate
-                layoutParams.topMargin = (int) (60 * factor); //Your Y coordinate
+                layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
+                layoutParams.topMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
 
                 relativeLayout.addView(imageView, layoutParams);
             }

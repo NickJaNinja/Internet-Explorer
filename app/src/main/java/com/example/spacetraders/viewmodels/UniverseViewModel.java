@@ -29,4 +29,12 @@ public class UniverseViewModel extends AndroidViewModel {
         return model.getCurrentSystem();
     }
 
+    public double xCoordOfSystem(SolarSystem center, SolarSystem goal) {
+        return 195 + (goal.getCoordinates().getX()-center.getCoordinates().getX())*195.0/20;
+    }
+
+    public double yCoordOfSystem(SolarSystem center, SolarSystem goal) {
+        return 30 + 195 - (goal.getCoordinates().getY()-center.getCoordinates().getY())*195.0/20;
+    }
+
 }
