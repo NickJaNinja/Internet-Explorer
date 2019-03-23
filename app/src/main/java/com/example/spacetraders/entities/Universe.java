@@ -150,7 +150,7 @@ public class Universe {
      */
     private static final int MAXX = 500;
     private static final int MAXY = 500;
-    private int numSolarSystems = 5 + r.nextInt(500);
+    private int numSolarSystems = 5 + r.nextInt(5);
 
     private SolarSystem[] solarSystems;
 
