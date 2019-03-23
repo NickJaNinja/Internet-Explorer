@@ -15,6 +15,7 @@ public class Player {
     private int credits;
     private int reputation;
     private Ship ship;
+    //private Planet currPlanet;
 
     /**
      * constuctor with all parameters
@@ -37,6 +38,7 @@ public class Player {
         this.credits = credits;
         this.reputation = reputation;
         this.ship = ship;
+        //this.currPlanet =
     }
 
     /**
@@ -59,6 +61,11 @@ public class Player {
         this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
     }
 
+
+    public int travelTo() {
+        return 0;
+    }
+
     /**
      * Carries out a transaction of goods if valid
      *
@@ -76,8 +83,6 @@ public class Player {
         }
         credits -= amount * price;
         return 1;
-
-
 
         /*if (amount <= 0) {
             if (ship.removeCargo(sg, amount, price) == 0) {

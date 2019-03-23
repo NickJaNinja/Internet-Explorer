@@ -1,4 +1,5 @@
 package com.example.spacetraders.entities;
+import java.lang.Math;
 
 /**
  * This class represents the coordinates of a solar system
@@ -30,6 +31,10 @@ public class Coordinates {
      */
     public int getY() {
         return y;
+    }
+
+    public int dist(Coordinates c) {
+        return (int) Math.sqrt((this.x-c.getX())*(this.x-c.getX())+(this.y-c.getY())*(this.y-c.getY()));
     }
 
     /**
