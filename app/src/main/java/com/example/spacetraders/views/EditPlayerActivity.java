@@ -196,8 +196,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             p.setPilotSkill(pilot);
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
             Model.getInstance().createGame(diff, p);
+            Model.getInstance().createPlayer( name, engineer, fighter, trader, pilot);
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
-            Model.getInstance().setPlayer();
+            Model.getInstance().createPlayer(name, pilot, fighter, trader, engineer);
 
             Intent intent = new Intent(EditPlayerActivity.this, PlanetActivity.class);
             startActivity(intent);

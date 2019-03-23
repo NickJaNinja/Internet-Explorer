@@ -152,8 +152,8 @@ public class Game {
      *
      * @param player the new difficulty
      */
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void createPlayer(String name, int pilot, int fight, int trade, int eng) {
+        this.player = new Player(name, pilot, fight, trade, eng);
     }
 
     /**
