@@ -16,7 +16,7 @@ import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
-public class ShopActivity extends GUIActivity {
+public class ShopActivity extends MenuBarActivity {
     private TextView cancel;
     private TextView confirm;
     private ListView buyList;
