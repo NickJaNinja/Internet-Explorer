@@ -118,4 +118,8 @@ public class Model {
     public SolarSystem[] getSolarSystems() {
         return game.getSolarSystems();
     }
+
+    public SolarSystem getCurrentSystem() {
+        return game.getCurrentSystem();
+    }
 }

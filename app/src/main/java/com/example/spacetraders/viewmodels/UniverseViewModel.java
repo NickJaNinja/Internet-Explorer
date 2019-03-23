@@ -26,4 +26,8 @@ public class UniverseViewModel extends AndroidViewModel {
         return model.getSolarSystems();
     }
 
+    public SolarSystem getCurrentSystem() {
+        return model.getCurrentSystem();
+    }
+
 }

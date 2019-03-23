@@ -33,16 +33,20 @@ public class UniverseMapActivity extends GUIActivity{
         theCircle = findViewById(R.id.local_universe);
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            ImageView imageView = new ImageView(this);
-            imageView.setImageResource(R.drawable.solarsystemsquare);
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 20) {
+                ImageView imageView = new ImageView(this);
+                imageView.setImageResource(R.drawable.solarsystemsquare);
 
-            FrameLayout relativeLayout = (FrameLayout) findViewById(R.id.mapframe);
-            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                    FrameLayout.LayoutParams.WRAP_CONTENT,
-                    FrameLayout.LayoutParams.WRAP_CONTENT
-            );
+                FrameLayout relativeLayout = (FrameLayout) findViewById(R.id.mapframe);
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                        FrameLayout.LayoutParams.WRAP_CONTENT,
+                        FrameLayout.LayoutParams.WRAP_CONTENT
+                );
+                layoutParams.leftMargin = 50; //Your X coordinate
+                layoutParams.topMargin = 60; //Your Y coordinate
 
-            relativeLayout.addView(imageView, layoutParams);
+                relativeLayout.addView(imageView, layoutParams);
+            }
         }
 
         theCircle.setOnClickListener(new View.OnClickListener() {

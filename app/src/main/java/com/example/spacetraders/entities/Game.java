@@ -115,6 +115,15 @@ public class Game {
         return currPlanet;
     }
 
+    /**
+     * getter for current system
+     *
+     * @return current system
+     */
+    public SolarSystem getCurrentSystem() {
+        return currSystem;
+    }
+
 
     /**
      * setter for game difficulty
