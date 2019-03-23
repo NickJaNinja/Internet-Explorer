@@ -169,6 +169,13 @@ public class SolarSystem {
         return planets[r.nextInt(planets.length)];
     }
 
+
+    /**
+     * computes the distance between another solar system
+     *
+     * @param s the other solar system
+     * @return the distance
+     */
     public int dist(SolarSystem s) {
         return coordinates.dist(s.getCoordinates());
     }

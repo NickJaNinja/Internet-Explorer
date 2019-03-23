@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
-public class ShopActivity extends GUIActivity {
+public class ShopActivity extends MenuBarActivity {
     private TextView cancel;
     private TextView confirm;
     private ListView buyList;
@@ -32,7 +33,12 @@ public class ShopActivity extends GUIActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.market);
+
+        FrameLayout layout = new FrameLayout(this);
+        View.inflate(this, R.layout.market, layout);
+        View.inflate(this, R.layout.menu_bar, layout);
+
+        setContentView(layout);
 
         this.model = Model.getInstance();
 

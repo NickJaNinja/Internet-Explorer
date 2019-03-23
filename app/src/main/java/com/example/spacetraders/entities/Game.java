@@ -117,6 +117,15 @@ public class Game {
         return currPlanet;
     }
 
+    /**
+     * getter for current system
+     *
+     * @return current system
+     */
+    public SolarSystem getCurrentSystem() {
+        return currSystem;
+    }
+
     public Shop getCurrentShop() {
         return currPlanet.getShop();
     }
@@ -152,5 +161,9 @@ public class Game {
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
+    }
+
+    public SolarSystem[] getSolarSystems() {
+        return universe.getSolarSystems();
     }
 }

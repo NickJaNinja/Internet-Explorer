@@ -4,14 +4,19 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -19,7 +24,7 @@ import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
-public class PlanetActivity extends GUIActivity {
+public class PlanetActivity extends MenuBarActivity {
     private TextView market;
     private TextView upgrade;
     private TextView refuel;
@@ -33,7 +38,12 @@ public class PlanetActivity extends GUIActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.planet);
+
+        FrameLayout layout = new FrameLayout(this);
+        View.inflate(this, R.layout.planet, layout);
+        View.inflate(this, R.layout.menu_bar, layout);
+
+        setContentView(layout);
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();

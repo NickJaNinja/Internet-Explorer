@@ -8,6 +8,7 @@ import com.example.spacetraders.entities.Ship;
 import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
+import com.example.spacetraders.entities.SolarSystem;
 
 import java.util.List;
 
@@ -89,5 +90,22 @@ public class Model {
      */
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();
+    }
+
+    /**
+     * getter for shop
+     *
+     * @return shop
+     */
+    public Shop getShop() {
+        return game.getCurrentShop();
+    }
+
+    public SolarSystem[] getSolarSystems() {
+        return game.getSolarSystems();
+    }
+
+    public SolarSystem getCurrentSystem() {
+        return game.getCurrentSystem();
     }
 }
