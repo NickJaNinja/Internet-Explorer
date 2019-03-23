@@ -42,6 +42,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView pointsRemaining;
 
     private Player p;
+    private Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,6 +189,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         int trader = Integer.parseInt(tradeText.getText().toString());
         int pilot = Integer.parseInt(pilotText.getText().toString());
         if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
+            model = Model.getInstance();
             p = new Player();
             p.setName(name);
             p.setEngineerSkill(engineer);
@@ -195,10 +197,8 @@ public class EditPlayerActivity extends AppCompatActivity {
             p.setTraderSkill(trader);
             p.setPilotSkill(pilot);
             GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-            Model.getInstance().createGame(diff, p);
-            Model.getInstance().createPlayer( name, engineer, fighter, trader, pilot);
+            model.createGame(diff, name, pilot, fighter, trader, engineer);
             Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
-            Model.getInstance().createPlayer(name, pilot, fighter, trader, engineer);
 
             Intent intent = new Intent(EditPlayerActivity.this, PlanetActivity.class);
             startActivity(intent);
