@@ -22,14 +22,15 @@ public class MenuBarActivity extends GUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.menu_bar);
+        //setContentView(R.layout.menu_bar);
+    }
 
+    void createMenuBar() {
         inventory = findViewById(R.id.inventory_button);
         status = findViewById(R.id.status_button);
         fuel = findViewById(R.id.fuel_bar);
         health = findViewById(R.id.health_bar);
 
-        /*
         inventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +48,5 @@ public class MenuBarActivity extends GUIActivity {
 
         fuel.setMax(100);
         fuel.setProgress(70);
-        */
     }
 }

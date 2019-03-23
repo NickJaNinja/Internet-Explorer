@@ -7,231 +7,239 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="395dp"
-        android:layout_height="715dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/planet_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_info_details" />
-
-        <TextView
-            android:id="@+id/market_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="MARKET"
-            android:textColor="@color/colorText"
-            android:textSize="30sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/buy_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BUY"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/colorBackground">
+            android:id="@+id/linearLayout"
+            android:layout_width="395dp"
+            android:layout_height="715dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/planet_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_info_details" />
 
             <TextView
-                android:id="@+id/buy_item_hint_text"
-                android:layout_width="0dp"
+                android:id="@+id/market_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:text="ITEM"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/buy_stock_hint_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".25"
-                android:text="STOCK"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/buy_price_hint_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".25"
-                android:text="PRICE"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/buy_list"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/sell_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SELL"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/colorBackground">
-
-            <TextView
-                android:id="@+id/sell_item_hint_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:text="ITEM"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/sell_stock_hint_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".25"
-                android:text="STOCK"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/sell_price_hint_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".25"
-                android:text="PRICE"
-                android:textColor="@color/colorHint"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/sell_list"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/wallet_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="WALLET: "
-            android:gravity="left"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/cargo_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CARGO SPACE: "
-            android:gravity="left"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/cancel_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="CANCEL"
+                android:text="MARKET"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <TextView
+                android:id="@+id/buy_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BUY"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
             <View
-                android:layout_width="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorBackground">
+
+                <TextView
+                    android:id="@+id/buy_item_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="ITEM"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/buy_stock_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="STOCK"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/buy_price_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="PRICE"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/buy_list"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
                 android:background="@color/colorText" />
 
             <TextView
-                android:id="@+id/confirm_button"
-                android:layout_width="0dp"
+                android:id="@+id/sell_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:gravity="center"
-                android:text="CONFIRM"
+                android:text="SELL"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorBackground">
+
+                <TextView
+                    android:id="@+id/sell_item_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="ITEM"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/sell_stock_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="STOCK"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/sell_price_hint_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:text="PRICE"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sell_list"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <TextView
+                android:id="@+id/wallet_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WALLET: "
+                android:gravity="left"
+                android:textColor="@color/colorText"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <TextView
+                android:id="@+id/cargo_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CARGO SPACE: "
+                android:gravity="left"
+                android:textColor="@color/colorText"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cancel_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="CANCEL"
+                    android:textColor="@color/colorText"
+                    android:textSize="24sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorText" />
+
+                <TextView
+                    android:id="@+id/confirm_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="CONFIRM"
+                    android:textColor="@color/colorText"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorText" />
+
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
+            <include layout="@layout/menu_bar"></include>
 
-    </LinearLayout>
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

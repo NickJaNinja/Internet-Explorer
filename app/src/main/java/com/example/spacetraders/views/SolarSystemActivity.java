@@ -26,11 +26,12 @@ public class SolarSystemActivity extends GUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         FrameLayout layout = new FrameLayout(this);
         View.inflate(this, R.layout.planet, layout);
         View.inflate(this, R.layout.menu_bar, layout);
 
-        setContentView(layout);
+        setContentView(R.layout.solar_system_map);
 
         this.model = Model.getInstance();
         viewModel = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
@@ -48,6 +49,6 @@ public class SolarSystemActivity extends GUIActivity {
 
 
 
-
+        
     }
 }
