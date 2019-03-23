@@ -95,6 +95,10 @@ public class SolarSystem {
                 planets[i].setInHabitableZone(false);
             }
         }
+        getClosestToSun().setIsWarpGate(true);
+    }
+
+    public Planet getClosestToSun() {
         double m = planets[0].getDistanceFromParentStar();
         Planet p = planets[0];
         for (int i = 1; i < planets.length; i++) {
@@ -103,7 +107,7 @@ public class SolarSystem {
                 p = planets[i];
             }
         }
-        p.setIsWarpGate(true);
+        return p;
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
