@@ -116,7 +116,6 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder, int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
 
-
         playerCargoViewHolder.price.setText(shopEntry.getPrice() + "");
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");

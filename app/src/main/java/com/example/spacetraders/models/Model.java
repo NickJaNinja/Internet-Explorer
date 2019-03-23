@@ -15,9 +15,6 @@ public class Model {
     private Game game;
     private Shop currShop;
     private Player currPlayer;
-    private ShopEntry entryToSwap;
-    private List<ShopEntry> shopInventoryTempBackup;
-    private List<ShopEntry> playerInventoryTempBackup;
 
     /**
      * Singleton Pattern Code
@@ -115,60 +112,6 @@ public class Model {
 
     public void setPlayer() {
         currPlayer = game.getPlayer();
-    }
-
-    /**
-     * setter for entry to swap
-     *
-     * @param entryToSwap the entry to swap
-     */
-    public void setEntryToSwap(ShopEntry entryToSwap) {
-        this.entryToSwap = entryToSwap;
-    }
-
-    /**
-     * getter for entry to swap
-     *
-     * @return entry to swap
-     */
-    public ShopEntry getEntryToSwap() {
-        return this.entryToSwap;
-    }
-
-    /**
-     * setter for shop inventory backup
-     *
-     * @param shopInventoryTempBackup backup
-     */
-    public void setShopInventoryTempBackup(List<ShopEntry> shopInventoryTempBackup) {
-        this.shopInventoryTempBackup = shopInventoryTempBackup;
-    }
-
-    /**
-     * getter for shop backup
-     *
-     * @return shop backup
-     */
-    public List<ShopEntry> getShopInventoryTempBackup() {
-        return this.shopInventoryTempBackup;
-    }
-
-    /**
-     * setter for player inventory backup
-     *
-     * @param playerInventoryTempBackup backup
-     */
-    public void setPlayerInventoryTempBackup(List<ShopEntry> playerInventoryTempBackup) {
-        this.playerInventoryTempBackup = playerInventoryTempBackup;
-    }
-
-    /**
-     * getter for player inventory backup
-     *
-     * @return player inventory backup
-     */
-    public List<ShopEntry> getPlayerInventoryTempBackup() {
-        return this.playerInventoryTempBackup;
     }
 
 }

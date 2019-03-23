@@ -132,37 +132,61 @@ public class Universe {
                     "Zuul"            // From the first Ghostbusters movie
             };
 
+    private static final String[] PREFIXES =
+            {
+                    "Asdf",
+                    "Qwerty"
+            };
+    private static final String[] SUFFIXES =
+            {
+                    "Fdsa",
+                    "Ytrewq"
+            };
+
+
+    private Random r = new Random();
     /**
      * dimensions of universe
      */
-    private static final int MAXX = 2000;
-    private static final int MAXY = 2000;
+    private static final int MAXX = 500;
+    private static final int MAXY = 500;
+    private int numSolarSystems = 5 + r.nextInt(5);
 
     private SolarSystem[] solarSystems;
-    private Object[][] mapOfSolarSystem;
-
-    private Random r = new Random();
 
     /**
      * Constructor for Universe
      */
     public Universe() {
-        Set<Coordinates> coordSet = new HashSet<Coordinates>();
-        mapOfSolarSystem = new Object[2000][2000];
+        Set<Coordinates> coordSet = new HashSet<>();
+        Set<String> nameSet = new HashSet<>();
         this.solarSystems = new SolarSystem[SOLARSYSTEMNAMES.length];
-        for (int i = 0; i < SOLARSYSTEMNAMES.length; i++) {
-            //keep making random coordinates until we find one that hasn't been used yet
-            int randX = r.nextInt(MAXX + 1);
-            int randY = r.nextInt(MAXY + 1);
+
+        for (int i = 0; i < numSolarSystems; i++) {
+            //keep making random names and coordinates until we find one that hasn't been used yet
+            //choose coordinates
+            int randX = r.nextInt(MAXX);
+            int randY = r.nextInt(MAXY);
             Coordinates randCoords = new Coordinates(randX, randY);
             while (coordSet.contains(randCoords)) {
-                randX = r.nextInt(MAXX + 1);
-                randY = r.nextInt(MAXY + 1);
+                randX = r.nextInt(MAXX);
+                randY = r.nextInt(MAXY);
                 randCoords = new Coordinates(randX, randY);
             }
+            //choose name
+            int randPrefixIndex = r.nextInt(PREFIXES.length);
+            int randSuffixIndex = r.nextInt(SUFFIXES.length);
+            int randNameNumber = 1 + r.nextInt(100);
+            String name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
+            while (nameSet.contains(name)) {
+                randPrefixIndex = r.nextInt(PREFIXES.length);
+                randSuffixIndex = r.nextInt(SUFFIXES.length);
+                randNameNumber = 1 + r.nextInt(100);
+                name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
+            }
             coordSet.add(randCoords);
-            this.solarSystems[i] = new SolarSystem(SOLARSYSTEMNAMES[i], randCoords);
-            mapOfSolarSystem[randCoords.getX()][randCoords.getY()] = solarSystems[i];
+            nameSet.add(name);
+            this.solarSystems[i] = new SolarSystem(name, randCoords);
         }
     }
 
