@@ -13,8 +13,7 @@ import java.util.List;
 
 public class Model {
     private Game game;
-    private Player currPlayer;
-
+    
     /**
      * Singleton Pattern Code
      * this allows us to get access to this class
