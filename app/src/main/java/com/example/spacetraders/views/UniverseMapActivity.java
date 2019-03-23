@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.example.spacetraders.R;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
+import android.graphics.Color;
+
 public class UniverseMapActivity extends GUIActivity{
 
     private TextView nameOfPlanet;
@@ -51,7 +53,7 @@ public class UniverseMapActivity extends GUIActivity{
                 float factor = relativeLayout.getContext().getResources().getDisplayMetrics().density;
                 layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
                 layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
-
+                imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i].getStars()[0].getColor());
                 relativeLayout.addView(imageView, layoutParams);
             }
         }
