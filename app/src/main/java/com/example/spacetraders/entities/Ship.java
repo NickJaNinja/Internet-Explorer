@@ -12,6 +12,9 @@ public class Ship {
     private ShipType type;
     private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
+    private int fuel;
+    private final int FUEL_TO_COST_MULT = 5;
+    private final double DIST_TO_FUEL_MULT = 0.4;
 
     /**
      * Constructor for the ship
@@ -22,6 +25,7 @@ public class Ship {
         this.type = type;
         cargo = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
         inventory = 0;
+        fuel = type.getFuel();
     }
 
     /**
@@ -39,6 +43,23 @@ public class Ship {
 
     public EnumMap<ShopGoods, ShopEntry> getCargo() {
         return cargo;
+    }
+
+    public int travel(int distance) {
+        int fuel = (int)(distance * DIST_TO_FUEL_MULT);
+        if (this.fuel - fuel < 0) {
+            return 0;
+        }
+        this.fuel -= fuel;
+        return 1;
+    }
+
+    public void refuel(int money) {
+        int fuel = (int) Math.floor((double)money / FUEL_TO_COST_MULT);
+        this.fuel += fuel;
+        if (this.fuel > type.getFuel()) {
+            this.fuel = type.getFuel();
+        }
     }
 
     /**
