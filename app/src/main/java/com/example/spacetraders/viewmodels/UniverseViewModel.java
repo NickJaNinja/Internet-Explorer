@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 
 import com.example.spacetraders.models.Model;
 
+import com.example.spacetraders.entities.SolarSystem;
+
 public class UniverseViewModel extends AndroidViewModel {
     Model model;
 
@@ -20,6 +22,8 @@ public class UniverseViewModel extends AndroidViewModel {
     }
 
 
-
+    public SolarSystem[] getSolarSystems() {
+        return model.getSolarSystems();
+    }
 
 }

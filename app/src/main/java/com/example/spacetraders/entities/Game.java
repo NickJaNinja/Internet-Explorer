@@ -149,4 +149,8 @@ public class Game {
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
     }
+
+    public SolarSystem[] getSolarSystems() {
+        return universe.getSolarSystems();
+    }
 }
