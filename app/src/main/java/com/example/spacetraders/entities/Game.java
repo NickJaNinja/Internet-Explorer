@@ -41,6 +41,16 @@ public class Game {
         this.currPlanet = universe.getRandomPlanet();
     }
 
+    public int travelFromTo(Planet from, Planet to) {
+
+        return 0;
+    }
+
+    public int travelFromTo(SolarSystem from, SolarSystem to) {
+
+        return 0;
+    }
+
     /**
      * Passes a good, an amount, and a price all the way down to player
      * and ship to be able to carry out a transaction if valid
