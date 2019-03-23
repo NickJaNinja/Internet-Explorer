@@ -15,6 +15,7 @@ import com.example.spacetraders.entities.Universe;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
 import android.graphics.Color;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -84,10 +85,14 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentSolarSystem != null) {
-                    Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystem.class);
-                    startActivity(newIntent);
+                if (currentSolarSystem == null) {
+                    CharSequence text = "No System Selected";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
                 }
+                Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystem.class);
+                startActivity(newIntent);
             }
         });
 
