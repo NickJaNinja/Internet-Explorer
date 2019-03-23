@@ -29,6 +29,12 @@
             android:name=".views.MainActivity"
             android:parentActivityName=".views.EditPlayerActivity" />
         <activity
+            android:name=".views.UniverseMapActivity"
+            android:parentActivityName=".views.EditPlayerActivity" />
+        <activity
+            android:name=".views.SolarSystemActivity"
+            android:parentActivityName=".views.EditPlayerActivity" />
+        <activity
             android:name=".views.PlanetActivity"
             android:parentActivityName=".views.EditPlayerActivity"
         ></activity>

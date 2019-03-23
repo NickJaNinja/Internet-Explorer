@@ -84,7 +84,7 @@ public class SolarSystem {
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
             } else { // if unary star system
-                planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
+                planets[i] = new Planet(stars[0].getName() + ((char) ('a'+i)), stars[0]);
             }
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
 
@@ -95,6 +95,15 @@ public class SolarSystem {
                 planets[i].setInHabitableZone(false);
             }
         }
+        double m = planets[0].getDistanceFromParentStar();
+        Planet p = planets[0];
+        for (int i = 1; i < planets.length; i++) {
+            if (planets[i].getDistanceFromParentStar() < m) {
+                m = planets[i].getDistanceFromParentStar();
+                p = planets[i];
+            }
+        }
+        p.setIsWarpGate(true);
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
