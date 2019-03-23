@@ -6,10 +6,10 @@ import android.support.annotation.NonNull;
 
 import com.example.spacetraders.models.Model;
 
-public class PlanetViewModel extends AndroidViewModel {
+public class UniverseViewModel extends AndroidViewModel {
     Model model;
 
-    public PlanetViewModel(@NonNull Application app) {
+    public UniverseViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
     }
