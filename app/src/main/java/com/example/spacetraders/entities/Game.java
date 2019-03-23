@@ -148,15 +148,6 @@ public class Game {
     }
 
     /**
-     * setter for player
-     *
-     * @param player the new difficulty
-     */
-    public void createPlayer(String name, int pilot, int fight, int trade, int eng) {
-        this.player = new Player(name, pilot, fight, trade, eng);
-    }
-
-    /**
      * setter for universe
      *
      * @param universe the new universe
