@@ -81,7 +81,13 @@ public class Player {
         if (creditAmount >= ship.getFullRefuelCost()) {
             refuelShipMax();
         }
-        ship.refuel((creditAmount > credits) ? credits : creditAmount);
+        if (creditAmount > this.credits) {
+            ship.refuel(this.credits);
+            this.credits -= this.credits;
+        } else {
+            ship.refuel(creditAmount);
+            this.credits -= creditAmount;
+        }
     }
 
     /**
@@ -89,7 +95,13 @@ public class Player {
      */
     public void refuelShipMax() {
         int refuelCost = ship.getFullRefuelCost();
-        ship.refuel((refuelCost > credits) ? credits : refuelCost);
+        if (refuelCost > credits) {
+            ship.refuel(this.credits);
+            this.credits -= this.credits;
+        } else {
+            ship.refuel(refuelCost);
+            this.credits -= refuelCost;
+        }
     }
 
     /**
