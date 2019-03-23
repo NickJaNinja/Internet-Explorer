@@ -176,12 +176,12 @@ public class Universe {
             //choose name
             int randPrefixIndex = r.nextInt(PREFIXES.length);
             int randSuffixIndex = r.nextInt(SUFFIXES.length);
-            int randNameNumber = 1 + r.nextInt(9);
+            int randNameNumber = 1 + r.nextInt(100);
             String name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
             while (nameSet.contains(name)) {
                 randPrefixIndex = r.nextInt(PREFIXES.length);
                 randSuffixIndex = r.nextInt(SUFFIXES.length);
-                randNameNumber = 1 + r.nextInt(9);
+                randNameNumber = 1 + r.nextInt(100);
                 name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
             }
             coordSet.add(randCoords);
