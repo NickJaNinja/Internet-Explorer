@@ -84,7 +84,7 @@ public class SolarSystem {
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
             } else { // if unary star system
-                planets[i] = new Planet(stars[0].getName() + " " + (i + 1), stars[0]);
+                planets[i] = new Planet(stars[0].getName() + ((char) ('a'+i)), stars[0]);
             }
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
 
