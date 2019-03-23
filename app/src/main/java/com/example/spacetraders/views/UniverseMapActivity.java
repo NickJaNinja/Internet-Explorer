@@ -1,6 +1,7 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,9 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.SolarSystem;
+import com.example.spacetraders.entities.Universe;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
 import android.graphics.Color;
+
+import java.util.List;
 
 public class UniverseMapActivity extends GUIActivity{
 
@@ -21,6 +26,7 @@ public class UniverseMapActivity extends GUIActivity{
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
     private ImageView theCircle;
+    private SolarSystem currentSolarSystem = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,21 +61,30 @@ public class UniverseMapActivity extends GUIActivity{
                 layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
                 imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i].getStars()[0].getColor());
                 relativeLayout.addView(imageView, layoutParams);
+
+                int j = i;
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        currentSolarSystem = universeViewModel.getSolarSystems()[j];
+                        nameOfPlanet.setText(universeViewModel.getSolarSystems()[j].getName());
+                        distance.setText(universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
+                        coordinates.setText(currentSolarSystem.getCoordinates().toString());
+                    }
+                });
             }
         }
 
-        theCircle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
+
 
 
         engageWarpDrive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (currentSolarSystem != null) {
+                    Intent newIntent = new Intent(UniverseMapActivity.this, )
+                }
             }
         });
 
