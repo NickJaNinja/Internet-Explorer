@@ -14,7 +14,6 @@ import java.util.List;
 
 public class Model {
     private Game game;
-    private Shop currShop;
     private Player currPlayer;
 
     /**
@@ -63,7 +62,7 @@ public class Model {
      * @return shop entries
      */
     public List<ShopEntry> getShopEntries() {
-        return currShop.getInventoryAsList();
+        return game.getShopEntries();
     }
 
     /**
@@ -72,7 +71,7 @@ public class Model {
      * @return player entities
      */
     public List<ShopEntry> getPlayerEntries() {
-        return currPlayer.getShip().getInventoryCargo();
+        return game.getPlayerEntries();
     }
 
     /**
@@ -99,20 +98,7 @@ public class Model {
      * @return shop
      */
     public Shop getShop() {
-        return currShop;
-    }
-
-    /**
-     * setter for shop
-     *
-     * @param s the new shop
-     */
-    public void setShop(Shop s) {
-        currShop = s;
-    }
-
-    public void setPlayer() {
-        currPlayer = game.getPlayer();
+        return game.getCurrentShop();
     }
 
     public SolarSystem[] getSolarSystems() {

@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -149,6 +150,8 @@ public class Planet {
     public Shop getShop() {
         return shop;
     }
+
+    public List<ShopEntry> getShopEntries() { return shop.getInventoryAsList(); }
 
     /**
      * to string for planet
