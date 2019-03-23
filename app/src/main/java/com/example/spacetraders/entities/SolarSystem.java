@@ -95,6 +95,15 @@ public class SolarSystem {
                 planets[i].setInHabitableZone(false);
             }
         }
+        double m = planets[0].getDistanceFromParentStar();
+        Planet p = planets[0];
+        for (int i = 1; i < planets.length; i++) {
+            if (planets[i].getDistanceFromParentStar() < m) {
+                m = planets[i].getDistanceFromParentStar();
+                p = planets[i];
+            }
+        }
+        p.setIsWarpGate(true);
     }
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {

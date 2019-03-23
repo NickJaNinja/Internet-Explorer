@@ -18,6 +18,7 @@ public class Planet {
     private boolean inHabitableZone;
     private int population;
     private Shop shop;
+    private boolean isWarpGate;
 
     /**
      * Constructor for Planet, randomizes levels
@@ -46,6 +47,8 @@ public class Planet {
         this.politicalSystem = PoliticalSystem.values()[politicalPick];
 
         shop = new Shop(techLevel, resourcesLevel);
+
+        this.isWarpGate = false;
     }
 
     /**
@@ -152,6 +155,15 @@ public class Planet {
     }
 
     public List<ShopEntry> getShopEntries() { return shop.getInventoryAsList(); }
+
+    public boolean getIsWarpGate() {
+        return this.isWarpGate;
+    }
+
+    public void setIsWarpGate(boolean b) {
+        this.isWarpGate = b;
+        this.name += " [WARP GATE]";
+    }
 
     /**
      * to string for planet
