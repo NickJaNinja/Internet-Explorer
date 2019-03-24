@@ -55,7 +55,6 @@ public class PlanetActivity extends MenuBarActivity {
 
         // globally
 
-
         name.setText(planet.getName());
 
         // music
@@ -74,6 +73,13 @@ public class PlanetActivity extends MenuBarActivity {
                 mediaPlayer.stop();
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
+            }
+        });
+
+        leaveOrbit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
+                startActivity(intent);
             }
         });
 
