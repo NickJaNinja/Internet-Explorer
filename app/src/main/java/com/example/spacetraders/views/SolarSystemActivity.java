@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.SolarSystemViewModel;
@@ -18,9 +19,10 @@ public class SolarSystemActivity extends GUIActivity {
     private TextView distance;
     private TextView coordinates;
     private RecyclerView recyclerViewPlanet;
-    private Model model;
+  //  private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
+    private SolarSystem solarSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,13 @@ public class SolarSystemActivity extends GUIActivity {
 
         setContentView(R.layout.solar_system_map);
 
-        this.model = Model.getInstance();
+     //   model = Model.getInstance();
         viewModel = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+
+        solarSystem = viewModel.getCurrentSolarSystem();
+
+        coordinates.setText(solarSystem.getCoordinates().toString());
+
 
         recyclerViewPlanet = findViewById(R.id.planet_recycler_view);
         recyclerViewPlanet.setLayoutManager(new LinearLayoutManager(this));
@@ -44,11 +51,24 @@ public class SolarSystemActivity extends GUIActivity {
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
 
+
+    //    name.setText();
+      //  distance.setText();
+//
+      //  Planet selectedPlanet = adapterForPlanets.
+
+
+
+
+
+
+
     }
     @Override
     protected void onResume() {
         super.onResume();
         adapterForPlanets.setPlanetsList(viewModel.getPlanets());
+
     }
 
 }

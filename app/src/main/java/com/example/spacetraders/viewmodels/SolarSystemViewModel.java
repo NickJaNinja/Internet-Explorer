@@ -10,12 +10,15 @@ import com.example.spacetraders.models.Model;
 
 public class SolarSystemViewModel extends AndroidViewModel {
     private Model model;
-    private SolarSystem currentSolarSystem = model.getCurrentSystem();
+    private SolarSystem currentSolarSystem;
 
     public SolarSystemViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
+        currentSolarSystem = model.getCurrentSystem();
     }
+
+
 
     public Planet[] getPlanets() {
         return currentSolarSystem.getPlanets();
@@ -23,6 +26,10 @@ public class SolarSystemViewModel extends AndroidViewModel {
 
     public Planet getCurrentPlanet() {
         return model.getCurrentPlanet();
+    }
+
+    public SolarSystem getCurrentSolarSystem() {
+        return currentSolarSystem;
     }
 
 }

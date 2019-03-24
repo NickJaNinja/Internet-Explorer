@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
+import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 
 
@@ -57,6 +58,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(planetsList.get(position));
                     }
+                  //  Planet selectedPlanet =
+
                 }
             });
         }
@@ -65,9 +68,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
         Planet planet = planetsList.get(position);
-
+        SolarSystem system = model.getCurrentSystem();
         planetViewHolder.name.setText(planet.getName() + "");
         planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
+        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
     }
 
 
