@@ -76,6 +76,11 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         return planetsList.size();
     }
 
+    public void setPlanetsList(Planet[] p) {
+        planetsList = Arrays.asList(p);
+        notifyDataSetChanged();
+    }
+
 
 
     public interface OnClickListener {

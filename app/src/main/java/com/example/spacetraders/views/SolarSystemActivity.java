@@ -44,13 +44,11 @@ public class SolarSystemActivity extends GUIActivity {
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
 
-
-
-
-
-
-
-
-
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapterForPlanets.setPlanetsList(viewModel.getPlanets());
+    }
+
 }
