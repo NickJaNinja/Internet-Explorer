@@ -45,6 +45,7 @@ public class Game {
         this.player = player;
         this.universe = new Universe();
         this.currPlanet = universe.getRandomPlanet();
+        this.currSystem = universe.getRandomSolarSystem();
     }
 
     /*

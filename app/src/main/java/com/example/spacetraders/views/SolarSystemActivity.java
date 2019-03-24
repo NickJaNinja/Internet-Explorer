@@ -40,6 +40,11 @@ public class SolarSystemActivity extends GUIActivity {
 
         solarSystem = viewModel.getCurrentSolarSystem();
 
+       coordinates = findViewById(R.id.coordinates_text);
+       name = findViewById(R.id.name_text);
+        distance = findViewById(R.id.distance_text);
+
+
         coordinates.setText(solarSystem.getCoordinates().toString());
 
 
@@ -52,8 +57,8 @@ public class SolarSystemActivity extends GUIActivity {
 
 
 
-    //    name.setText();
-      //  distance.setText();
+      // name.setText();
+       // distance.setText();
 //
       //  Planet selectedPlanet = adapterForPlanets.
 
