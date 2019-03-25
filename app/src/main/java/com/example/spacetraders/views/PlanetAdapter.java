@@ -58,8 +58,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(planetsList.get(position));
                     }
-                  //  Planet selectedPlanet =
-
+                  /*  name.setText(planetsList.get(getAdapterPosition()).getName());
+                    distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
+                    notifyDataSetChanged();*/
                 }
             });
         }

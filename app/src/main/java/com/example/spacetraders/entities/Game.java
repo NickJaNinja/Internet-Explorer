@@ -44,8 +44,8 @@ public class Game {
         this.difficulty = difficulty;
         this.player = player;
         this.universe = new Universe();
-        this.currPlanet = universe.getRandomPlanet();
         this.currSystem = universe.getRandomSolarSystem();
+        this.currPlanet = currSystem.getRandomPlanet();
     }
 
     /*

@@ -19,13 +19,15 @@ public class SolarSystemActivity extends GUIActivity {
     private TextView distance;
     private TextView coordinates;
     private RecyclerView recyclerViewPlanet;
-  //  private Model model;
+    private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
     private SolarSystem solarSystem;
+    private Planet currPlanet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
 
@@ -35,44 +37,39 @@ public class SolarSystemActivity extends GUIActivity {
 
         setContentView(R.layout.solar_system_map);
 
-     //   model = Model.getInstance();
+        model = Model.getInstance();
         viewModel = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
 
         solarSystem = viewModel.getCurrentSolarSystem();
-
-       coordinates = findViewById(R.id.coordinates_text);
-       name = findViewById(R.id.name_text);
-        distance = findViewById(R.id.distance_text);
+        currPlanet = model.getCurrentPlanet();
+        viewModel.setUpPlanets();
 
 
-        coordinates.setText(solarSystem.getCoordinates().toString());
+
+      //  name.setText("Planet:" + currPlanet.getName());
+    //    distance.setText("" + currPlanet.getDistanceFromParentStar());
 
 
         recyclerViewPlanet = findViewById(R.id.planet_recycler_view);
-        recyclerViewPlanet.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewPlanet.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         recyclerViewPlanet.setHasFixedSize(true);
 
-        adapterForPlanets = new PlanetAdapter(viewModel.getPlanets());
+        adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
-
-
-      // name.setText();
-       // distance.setText();
-//
-      //  Planet selectedPlanet = adapterForPlanets.
-
-
-
-
-
-
+        coordinates = findViewById(R.id.coordinates_text);
+        name = findViewById(R.id.name_text);
+        distance = findViewById(R.id.distance_text);
+       coordinates.setText(solarSystem.getCoordinates().toString());
+       //  name.setText("Planet:" + currPlanet.getName());
+        //    distance.setText("" + currPlanet.getDistanceFromParentStar());
 
     }
     @Override
     protected void onResume() {
         super.onResume();
-        adapterForPlanets.setPlanetsList(viewModel.getPlanets());
+        adapterForPlanets.setPlanetsList(viewModel.getPlanetsInRange());
+
 
     }
 
