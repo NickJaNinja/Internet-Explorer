@@ -23,7 +23,7 @@ public class SolarSystemActivity extends GUIActivity {
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
     private SolarSystem solarSystem;
-    private Planet currPlanet;
+    private Planet selectedPlanet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class SolarSystemActivity extends GUIActivity {
         super.onCreate(savedInstanceState);
 
 
-        FrameLayout layout = new FrameLayout(this);
-        View.inflate(this, R.layout.planet, layout);
-        View.inflate(this, R.layout.menu_bar, layout);
+      //  FrameLayout layout = new FrameLayout(this);
+      //  View.inflate(this, R.layout.planet, layout);
+      //  View.inflate(this, R.layout.menu_bar, layout);
 
         setContentView(R.layout.solar_system_map);
 
@@ -41,8 +41,8 @@ public class SolarSystemActivity extends GUIActivity {
         viewModel = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
 
         solarSystem = viewModel.getCurrentSolarSystem();
-        currPlanet = model.getCurrentPlanet();
-        viewModel.setUpPlanets();
+
+      //  viewModel.setUpPlanets();
 
 
 

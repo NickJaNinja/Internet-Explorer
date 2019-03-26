@@ -30,24 +30,26 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     @NonNull
     @Override
     public PlanetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.solar_system_map, parent, false);
+                .inflate(R.layout.planet_item, parent, false);
 
         return new PlanetViewHolder(itemView);
+
     }
 
 
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
+        private TextView pname;
         private TextView distance;
         private TextView coordinates;
 
 
         public PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name_text);
-            distance = itemView.findViewById(R.id.distance_text);
-            coordinates = itemView.findViewById(R.id.coordinates_text);
+            pname = itemView.findViewById(R.id.planet_name);
+           // distance = itemView.findViewById(R.id.distance_text);
+         //   coordinates = itemView.findViewById(R.id.coordinates_text);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -58,9 +60,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(planetsList.get(position));
                     }
-                  /*  name.setText(planetsList.get(getAdapterPosition()).getName());
-                    distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
-                    notifyDataSetChanged();*/
+                 //   pname.setText(planetsList.get(getAdapterPosition()).getName());
+                  //  distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
+                   // notifyDataSetChanged();
                 }
             });
         }
@@ -70,9 +72,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
         Planet planet = planetsList.get(position);
         SolarSystem system = model.getCurrentSystem();
-        planetViewHolder.name.setText(planet.getName() + "");
-        planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
-        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
+        planetViewHolder.pname.setText(planet.getName() + "");
+       // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
+//        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
+        notifyDataSetChanged();
     }
 
 
