@@ -75,7 +75,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.pname.setText(planet.getName() + "");
        // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
 //        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
-        notifyDataSetChanged();
+//        notifyDataSetChanged();
     }
 
 
