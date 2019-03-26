@@ -87,7 +87,7 @@ public class PlanetActivity extends MenuBarActivity {
         leaveOrbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         });
 

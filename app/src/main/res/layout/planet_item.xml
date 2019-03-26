@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorBackground"
     android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="left"
         android:layout_weight=".5"
-        android:layout_gravity="center"/>
+        android:adjustViewBounds="false" />
 
     <TextView
+        android:id="@+id/planet_name"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="left"
         android:layout_weight=".5"
-        android:layout_gravity="center"/>
+        android:textColor="@color/colorText"
+        android:textSize="20sp" />
 
 </LinearLayout>
