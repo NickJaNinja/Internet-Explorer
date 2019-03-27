@@ -93,7 +93,7 @@ public class UniverseMapActivity extends GUIActivity{
                 }
                 //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
                 //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
-                if (Model.getInstance().travelFromTo(currentSolarSystem) == 0) {
+                if (Model.getInstance().travelToSystem(currentSolarSystem) == 0) {
                     CharSequence text = "Not Enough Fuel";
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
                     toast.show();

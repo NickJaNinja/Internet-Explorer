@@ -56,8 +56,10 @@ public class Model {
         return game.makeTransaction(sg, amount, price);
     }
 
-    public int travelFromTo(SolarSystem to) {
-        return game.travelFromTo(to);
+    public int travelToPlanet(Planet p) { return game.travelToPlanet(p); }
+
+    public int travelToSystem(SolarSystem to) {
+        return game.travelToSystem(to);
     }
 
     /**

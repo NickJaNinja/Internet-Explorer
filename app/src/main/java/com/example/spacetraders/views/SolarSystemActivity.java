@@ -90,7 +90,14 @@ public class SolarSystemActivity extends GUIActivity {
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (model.travelToPlanet(selectedPlanet) == 1) {
+                    // selected planet != curr planet
 
+                } else {
+                    // selected planet was the curr planet
+                }
+                Intent newIntent = new Intent(v.getContext(), PlanetActivity.class);
+                startActivity(newIntent);
             }
         });
 

@@ -48,11 +48,14 @@ public class Game {
         this.currPlanet = currSystem.getRandomPlanet();
     }
 
-    /*
-        ONLY NEED IF TRAVEL BETWEEN PLANETS IS NOT INSTANTANEOUS
+    /**
+     *
+     *
+     * @param to planet to fly to
+     * @return 1 if planet is different from curr planet, 0 if planet is the same
      */
-    public int travelFromTo(Planet from, Planet to) {
-        int distance = universe.distanceBetweenPlanets(from, to);
+    public int travelToPlanet(Planet to) {
+        int distance = universe.distanceBetweenPlanets(currPlanet, to);
         if (player.travel(distance) == 0) {
             return 0;
         }
@@ -60,7 +63,7 @@ public class Game {
         return 1;
     }
 
-    public int travelFromTo(SolarSystem to) {
+    public int travelToSystem(SolarSystem to) {
         int distance = universe.distanceBetweenSystems(currSystem, to);
         if (player.travel(distance) == 0) {
             return 0;
