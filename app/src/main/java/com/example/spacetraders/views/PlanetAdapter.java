@@ -14,6 +14,7 @@ import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -88,7 +89,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         Planet planet = planetsList.get(position);
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
-        planetViewHolder.distance.setText(planet.getDistanceFromParentStar() + "");
+        DecimalFormat df = new DecimalFormat("#.##");
+        planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar() * 8.3167) + " Lm");
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
