@@ -15,11 +15,17 @@ import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.SolarSystemViewModel;
 
+import java.text.DecimalFormat;
+
 public class SolarSystemActivity extends GUIActivity {
     private TextView name;
-    private TextView coordinates;
+    private TextView classification;
+    private TextView radius;
+    private TextView mass;
+    private TextView surfaceTemp;
+    private TextView luminosity;
     private RecyclerView recyclerViewPlanet;
-    private ImageView planetView;
+    private ImageView starView;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
@@ -58,11 +64,23 @@ public class SolarSystemActivity extends GUIActivity {
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
-        name = findViewById(R.id.name_view);
-        coordinates = findViewById(R.id.coordinates_view);
+        starView = findViewById(R.id.star_image);
+        name = findViewById(R.id.star_name);
+        classification = findViewById(R.id.star_classification);
+        radius = findViewById(R.id.star_radius);
+        mass = findViewById(R.id.star_mass);
+        surfaceTemp = findViewById(R.id.star_surface_temperature);
+        luminosity = findViewById(R.id.star_luminosity);
+
+        DecimalFormat dfe = new DecimalFormat("#.#E0");
+        DecimalFormat df = new DecimalFormat("#.##");
 
         name.setText(solarSystem.getName() + "");
-        coordinates.setText(solarSystem.getCoordinates() + "");
+        classification.setText("Type: " + solarSystem.getStars()[0].getClassification() + " Class Star");
+        radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()*1.58125E-5) + " ly");
+        mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
+        surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
+        luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
 
     }
     @Override

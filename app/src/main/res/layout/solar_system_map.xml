@@ -12,7 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".20"
+        android:layout_weight=".26"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -27,75 +27,80 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/system_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="SYSTEM MAP"
-            android:textColor="@color/colorText"
-            android:textSize="30sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/name_text"
+            <ImageView
+                android:id="@+id/star_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight=".5"
+                android:adjustViewBounds="false" />
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="NAME: "
-                android:gravity="left"
-                android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                android:layout_weight=".5"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/name_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="right"
-                android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/star_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/star_classification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
+                <TextView
+                    android:id="@+id/star_radius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/star_mass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/coordinates_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="COORDINATES: "
-                android:gravity="left"
-                android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/star_surface_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/coordinates_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="right"
-                android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/star_luminosity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorHint"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -110,7 +115,7 @@
         android:id="@+id/planet_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".7"
+        android:layout_weight=".64"
         android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
     <LinearLayout
@@ -118,13 +123,6 @@
         android:layout_height="0dp"
         android:layout_weight=".1"
         android:gravity="center">
-
-        <Button
-            android:id="@+id/this_will_take_you_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="THIS WILL TAKE YOU BACK" />
 
         <Button
             android:id="@+id/thrusters_button"
