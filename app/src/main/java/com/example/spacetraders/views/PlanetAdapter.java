@@ -89,9 +89,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         planetViewHolder.distance.setText(planet.getDistanceFromParentStar() + "");
-        planetViewHolder.economy.setText(planet.getResourcesLevel() + "");
-        planetViewHolder.techLevel.setText(planet.getTechLevel() + "");
-        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem() + "");
+        planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
+        planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
+        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
        // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
 //        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
 //        notifyDataSetChanged();
