@@ -29,17 +29,21 @@ public class Shop {
      */
     public void restock() {
         for (ShopGoods shopGood : ShopGoods.values()) {
+            int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
+                    * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
+            int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
+            if ((new Random()).nextInt(2) == 0) {
+                itemPrice += var;
+            } else {
+                itemPrice -= var;
+            }
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
-                int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
-                        * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
-                int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
-                if ((new Random()).nextInt(2) == 0) {
-                    itemPrice += var;
-                } else {
-                    itemPrice -= var;
-                }
+                // Item will be in stock
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
+            } else {
+                // Item will not be in stock
+                shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, 0, itemPrice));
             }
         }
     }

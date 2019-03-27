@@ -86,7 +86,7 @@ public class ShopEntry {
     public List<String> toStringList() {
         List<String> list = new ArrayList<>();
         list.add(good.getName());
-        list.add(Integer.toString(stock));
+        list.add((stock == 0) ? " - " : Integer.toString(stock));
         list.add(Integer.toString(price));
         return list;
     }
