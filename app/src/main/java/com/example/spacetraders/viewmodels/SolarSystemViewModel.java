@@ -13,6 +13,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
     private SolarSystem currentSolarSystem;
     private Planet[] planetsInRange;
 
+
     public SolarSystemViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
@@ -26,10 +27,10 @@ public class SolarSystemViewModel extends AndroidViewModel {
 
 
     public Planet[] getPlanetsInRange() {
-        Planet[] planetsInRange;
+      /*  Planet[] planetsInRange;
         for (int i = 0; i < currentSolarSystem.getPlanets().length; i++) {
             System.out.println((currentSolarSystem.getPlanets())[i].getDistanceFromParentStar());
-        }
+        }*/
         return currentSolarSystem.getPlanets();
     }
 
@@ -39,6 +40,10 @@ public class SolarSystemViewModel extends AndroidViewModel {
 
     public SolarSystem getCurrentSolarSystem() {
         return currentSolarSystem;
+    }
+
+    public void setPlanet(Planet p) {
+        model.getGame().setCurrentPlanet(p);
     }
 
 }

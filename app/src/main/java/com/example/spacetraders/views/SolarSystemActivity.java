@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class SolarSystemActivity extends GUIActivity {
     private PlanetAdapter adapterForPlanets;
     private SolarSystem solarSystem;
     private Planet selectedPlanet;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,7 @@ public class SolarSystemActivity extends GUIActivity {
         mass = findViewById(R.id.star_mass);
         surfaceTemp = findViewById(R.id.star_surface_temperature);
         luminosity = findViewById(R.id.star_luminosity);
+        button = findViewById(R.id.thrusters_button);
 
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
@@ -81,6 +84,17 @@ public class SolarSystemActivity extends GUIActivity {
         mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
         luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+
+                }
+            }
+        );
+
+
 
     }
     @Override
