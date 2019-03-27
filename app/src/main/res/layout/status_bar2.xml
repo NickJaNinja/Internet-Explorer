@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="180dp"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
+
+    <TextView
+        android:id="@+id/map_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SYSTEM MAP"
+        android:gravity="left"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
+
+    <TextView
+        android:id="@+id/ship_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHIP"
+        android:gravity="left"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
+
+    <TextView
+        android:id="@+id/settings_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WALLET"
+        android:gravity="left"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
+
+</LinearLayout>

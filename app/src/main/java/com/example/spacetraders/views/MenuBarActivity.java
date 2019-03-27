@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 
 import com.example.spacetraders.R;
@@ -31,15 +34,21 @@ public class MenuBarActivity extends GUIActivity {
         fuel = findViewById(R.id.fuel_bar);
         health = findViewById(R.id.health_bar);
 
-        inventory.setOnClickListener(new View.OnClickListener() {
+        status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("info", "test log");
-                System.out.println("test");
+                LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
+                        .getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = layoutInflater.inflate(R.layout.status_bar2, null);
+                final PopupWindow popupWindow = new PopupWindow(popupView,
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                //popupWindow.showAsDropDown(status, 0, v.getHeight());
+                popupWindow.showAsDropDown(status, -20, -400);
             }
         });
 
-        status.setOnClickListener(new View.OnClickListener() {
+        inventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
