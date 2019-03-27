@@ -76,6 +76,14 @@ public class PlanetActivity extends MenuBarActivity {
             }
         });
 
+        upgrade.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mediaPlayer.stop();
+                Intent intent = new Intent(v.getContext(), UniverseMapActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
         leaveOrbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
