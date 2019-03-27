@@ -67,7 +67,7 @@ public class SolarSystemActivity extends GUIActivity {
 
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
-        
+
         starView = findViewById(R.id.star_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
