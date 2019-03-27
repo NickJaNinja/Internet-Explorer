@@ -1,6 +1,7 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
@@ -16,17 +18,23 @@ import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.SolarSystemViewModel;
 
+import java.text.DecimalFormat;
+
 public class SolarSystemActivity extends GUIActivity {
     private TextView name;
-    private TextView coordinates;
+    private TextView classification;
+    private TextView radius;
+    private TextView mass;
+    private TextView surfaceTemp;
+    private TextView luminosity;
     private RecyclerView recyclerViewPlanet;
-    private ImageView planetView;
+    private ImageView starView;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
     private SolarSystem solarSystem;
     private Planet selectedPlanet;
-    private Button button;
+    private Button thrusterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,22 +67,32 @@ public class SolarSystemActivity extends GUIActivity {
 
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
+        
+        starView = findViewById(R.id.star_image);
+        name = findViewById(R.id.star_name);
+        classification = findViewById(R.id.star_classification);
+        radius = findViewById(R.id.star_radius);
+        mass = findViewById(R.id.star_mass);
+        surfaceTemp = findViewById(R.id.star_surface_temperature);
+        luminosity = findViewById(R.id.star_luminosity);
+        thrusterButton = findViewById(R.id.thrusters_button);
 
-        name = findViewById(R.id.name_view);
-        coordinates = findViewById(R.id.coordinates_view);
-        button = findViewById(R.id.thrusters_button);
+        DecimalFormat dfe = new DecimalFormat("#.#E0");
+        DecimalFormat df = new DecimalFormat("#.##");
 
         name.setText(solarSystem.getName() + "");
-        coordinates.setText(solarSystem.getCoordinates() + "");
+        classification.setText("Type: " + solarSystem.getStars()[0].getClassification() + " Class Star");
+        radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()*1.58125E-5) + " ly");
+        mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
+        surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
+        luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
 
-        button.setOnClickListener(new View.OnClickListener() {
+        thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
 
-                }
             }
-        );
+        });
 
 
 

@@ -150,7 +150,9 @@ public class Universe {
                     "Fig",
                     "Tap",
                     "Sic",
-                    "But"
+                    "But",
+                    "Lok",
+                    "Ku"
             };
     private static final String[] SUFFIXES =
             {
