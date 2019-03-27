@@ -102,7 +102,7 @@ public class UniverseMapActivity extends GUIActivity{
 
                 //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
                 //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
-                Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystemActivity.class);
+                Intent newIntent = new Intent(UniverseMapActivity.this, PlanetActivity.class);
                 //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
                 //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 startActivity(newIntent);
