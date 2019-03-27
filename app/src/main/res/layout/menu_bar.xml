@@ -27,13 +27,13 @@
             android:layout_weight=".2">
 
             <ImageView
-                android:id="@+id/inventory_button"
+                android:id="@+id/status_button"
                 android:layout_width="70px"
                 android:layout_height="100px"
                 android:layout_gravity="center"
+                android:background="@drawable/spaceship"
                 android:layout_marginTop="10px"
-                android:layout_marginBottom="10px"
-                android:background="@drawable/inventory" />
+                android:layout_marginBottom="10px"/>
 
         </FrameLayout>
 
@@ -72,13 +72,13 @@
             android:layout_weight=".2">
 
             <ImageView
-                android:id="@+id/status_button"
+                android:id="@+id/inventory_button"
                 android:layout_width="70px"
                 android:layout_height="100px"
                 android:layout_gravity="center"
-                android:background="@drawable/spaceship"
                 android:layout_marginTop="10px"
-                android:layout_marginBottom="10px"/>
+                android:layout_marginBottom="10px"
+                android:background="@drawable/inventory" />
 
         </FrameLayout>
 

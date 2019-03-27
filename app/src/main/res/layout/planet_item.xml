@@ -38,14 +38,6 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/planet_economy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:textColor="@color/colorHint"
-            android:textSize="20sp" />
-
-        <TextView
             android:id="@+id/planet_political_system"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,6 +47,14 @@
 
         <TextView
             android:id="@+id/planet_tech_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="@color/colorHint"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/planet_economy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
