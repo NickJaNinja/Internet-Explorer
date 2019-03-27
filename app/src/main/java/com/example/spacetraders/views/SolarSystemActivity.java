@@ -1,6 +1,7 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
@@ -32,7 +34,7 @@ public class SolarSystemActivity extends GUIActivity {
     private PlanetAdapter adapterForPlanets;
     private SolarSystem solarSystem;
     private Planet selectedPlanet;
-    private Button button;
+    private Button thrusterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,7 @@ public class SolarSystemActivity extends GUIActivity {
 
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
-
+        
         starView = findViewById(R.id.star_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
@@ -73,7 +75,7 @@ public class SolarSystemActivity extends GUIActivity {
         mass = findViewById(R.id.star_mass);
         surfaceTemp = findViewById(R.id.star_surface_temperature);
         luminosity = findViewById(R.id.star_luminosity);
-        button = findViewById(R.id.thrusters_button);
+        thrusterButton = findViewById(R.id.thrusters_button);
 
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
@@ -85,14 +87,12 @@ public class SolarSystemActivity extends GUIActivity {
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
         luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
 
-        button.setOnClickListener(new View.OnClickListener() {
+        thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
 
-                }
             }
-        );
+        });
 
 
 

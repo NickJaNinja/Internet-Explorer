@@ -60,8 +60,8 @@ public class Game {
         return 1;
     }
 
-    public int travelFromTo(SolarSystem from, SolarSystem to) {
-        int distance = universe.distanceBetweenSystems(from, to);
+    public int travelFromTo(SolarSystem to) {
+        int distance = universe.distanceBetweenSystems(currSystem, to);
         if (player.travel(distance) == 0) {
             return 0;
         }
