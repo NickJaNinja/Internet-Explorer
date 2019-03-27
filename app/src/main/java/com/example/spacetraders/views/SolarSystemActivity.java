@@ -17,7 +17,6 @@ import com.example.spacetraders.viewmodels.SolarSystemViewModel;
 
 public class SolarSystemActivity extends GUIActivity {
     private TextView name;
-    private TextView distance;
     private TextView coordinates;
     private RecyclerView recyclerViewPlanet;
     private ImageView planetView;
@@ -59,12 +58,11 @@ public class SolarSystemActivity extends GUIActivity {
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
-        coordinates = findViewById(R.id.coordinates_text);
-        name = findViewById(R.id.name_text);
-        distance = findViewById(R.id.distance_text);
-        coordinates.setText(solarSystem.getCoordinates().toString());
-       //  name.setText("Planet:" + currPlanet.getName());
-        //    distance.setText("" + currPlanet.getDistanceFromParentStar());
+        name = findViewById(R.id.name_view);
+        coordinates = findViewById(R.id.coordinates_view);
+
+        name.setText(solarSystem.getName() + "");
+        coordinates.setText(solarSystem.getCoordinates() + "");
 
     }
     @Override
