@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -41,14 +42,21 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
         private TextView pname;
+        private TextView economy;
         private TextView distance;
-        private TextView coordinates;
-
+        private TextView techLevel;
+        private TextView politicalSystem;
+        private ImageView planetView;
 
         public PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
             pname = itemView.findViewById(R.id.planet_name);
-           // distance = itemView.findViewById(R.id.distance_text);
+            economy = itemView.findViewById(R.id.planet_economy);
+            distance = itemView.findViewById(R.id.planet_distance_from_star);
+            techLevel = itemView.findViewById(R.id.planet_tech_level);
+            politicalSystem = itemView.findViewById(R.id.planet_political_system);
+
+            planetView = itemView.findViewById(R.id.planet_image);
          //   coordinates = itemView.findViewById(R.id.coordinates_text);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +71,13 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                  //   pname.setText(planetsList.get(getAdapterPosition()).getName());
                   //  distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
                    // notifyDataSetChanged();
+
+                    // select planet
+                    planetView.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            System.out.println("flag");
+                        }
+                    });
                 }
             });
         }
@@ -73,9 +88,15 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         Planet planet = planetsList.get(position);
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
+        planetViewHolder.distance.setText(planet.getDistanceFromParentStar() + "");
+        planetViewHolder.economy.setText(planet.getResourcesLevel() + "");
+        planetViewHolder.techLevel.setText(planet.getTechLevel() + "");
+        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem() + "");
        // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
 //        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
 //        notifyDataSetChanged();
+
+
     }
 
 

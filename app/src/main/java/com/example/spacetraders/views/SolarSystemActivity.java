@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -19,6 +20,7 @@ public class SolarSystemActivity extends GUIActivity {
     private TextView distance;
     private TextView coordinates;
     private RecyclerView recyclerViewPlanet;
+    private ImageView planetView;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
@@ -60,7 +62,7 @@ public class SolarSystemActivity extends GUIActivity {
         coordinates = findViewById(R.id.coordinates_text);
         name = findViewById(R.id.name_text);
         distance = findViewById(R.id.distance_text);
-       coordinates.setText(solarSystem.getCoordinates().toString());
+        coordinates.setText(solarSystem.getCoordinates().toString());
        //  name.setText("Planet:" + currPlanet.getName());
         //    distance.setText("" + currPlanet.getDistanceFromParentStar());
 

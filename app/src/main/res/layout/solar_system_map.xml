@@ -57,20 +57,6 @@
             android:background="@color/colorText" />
 
         <TextView
-            android:id="@+id/distance_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DISTANCE: "
-            android:gravity="left"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
-
-        <TextView
             android:id="@+id/coordinates_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,7 +74,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/planet_recycler_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".65"
         android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
