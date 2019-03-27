@@ -86,6 +86,13 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/this_will_take_you_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="THIS WILL TAKE YOU BACK" />
+
+        <Button
             android:id="@+id/thrusters_button"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
