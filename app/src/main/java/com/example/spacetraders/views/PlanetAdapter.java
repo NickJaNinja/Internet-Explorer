@@ -24,6 +24,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     private List<Planet> planetsList;
     private OnClickListener listener;
     private Model model;
+    private Planet selectedPlanet;
 
     public PlanetAdapter(Planet[] planets) {
         this.planetsList = Arrays.asList(planets);
@@ -79,6 +80,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                         public void onClick(View v) {
                             System.out.println("flag");
                             Log.d("Debug", "Planet clicked");
+                           // selectedPlanet =
                         }
                     });
                     notifyDataSetChanged();
@@ -90,6 +92,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
         Planet planet = planetsList.get(position);
+        selectedPlanet = planet;
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
@@ -97,11 +100,16 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
+
        // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
 //        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
 //        notifyDataSetChanged();
 
 
+    }
+
+    public Planet getSelectedPlanet() {
+        return selectedPlanet;
     }
 
 
