@@ -112,4 +112,8 @@ public class SolarSystemActivity extends GUIActivity {
 
     }
 
+    public void setSelectedPlanet(Planet p) {
+        this.selectedPlanet = p;
+    }
+
 }

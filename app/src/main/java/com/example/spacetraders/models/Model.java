@@ -53,6 +53,7 @@ public class Model {
      * @return 1 if transaction occurred, 0 otherwise
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
+        if (amount == 0) { return 0; }
         return game.makeTransaction(sg, amount, price);
     }
 
