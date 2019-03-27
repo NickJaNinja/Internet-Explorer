@@ -47,7 +47,7 @@ public class UniverseMapActivity extends GUIActivity{
         theCircle = findViewById(R.id.local_universe);
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 80) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 20) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
@@ -71,9 +71,9 @@ public class UniverseMapActivity extends GUIActivity{
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText("Name: " + universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText("Distance: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
-                        coordinates.setText("Coordinates: " + currentSolarSystem.getCoordinates().toString());
+                        nameOfPlanet.setText(universeViewModel.getSolarSystems()[j].getName());
+                        distance.setText(universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
+                        coordinates.setText(currentSolarSystem.getCoordinates().toString());
                     }
                 });
             }
