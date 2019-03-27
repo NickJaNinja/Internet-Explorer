@@ -3,6 +3,8 @@ package com.example.spacetraders.views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -45,7 +47,7 @@ public class UniverseMapActivity extends GUIActivity{
         theCircle = findViewById(R.id.local_universe);
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 20) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 80) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
@@ -69,9 +71,9 @@ public class UniverseMapActivity extends GUIActivity{
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText(universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText(universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
-                        coordinates.setText(currentSolarSystem.getCoordinates().toString());
+                        nameOfPlanet.setText("Name: " + universeViewModel.getSolarSystems()[j].getName());
+                        distance.setText("Distance: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
+                        coordinates.setText("Coordinates: " + currentSolarSystem.getCoordinates().toString());
                     }
                 });
             }
@@ -89,9 +91,17 @@ public class UniverseMapActivity extends GUIActivity{
                     toast.show();
                     return;
                 }
+                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 Model.getInstance().travelFromTo(universeViewModel.getCurrentSystem(), currentSolarSystem);
+                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystemActivity.class);
+                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 startActivity(newIntent);
+                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
             }
         });
 
