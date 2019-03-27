@@ -145,7 +145,12 @@ public class Universe {
                     "Ut",
                     "Chrom",
                     "Zig",
-                    "Wub"
+                    "Wub",
+                    "Car",
+                    "Fig",
+                    "Tap",
+                    "Sic",
+                    "But"
             };
     private static final String[] SUFFIXES =
             {
@@ -157,9 +162,15 @@ public class Universe {
                     "etov",
                     "der",
                     "mus",
-                    "igma",
+                    "ma",
                     "ulus",
-                    "on"
+                    "on",
+                    "ea",
+                    "il",
+                    "oc",
+                    "dacia",
+                    " Prime",
+                    "'Xi"
             };
 
 
