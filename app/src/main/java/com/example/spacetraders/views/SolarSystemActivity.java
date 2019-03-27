@@ -90,6 +90,12 @@ public class SolarSystemActivity extends GUIActivity {
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (selectedPlanet == null) {
+                    CharSequence text = "No planet selected";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
                 if (model.travelToPlanet(selectedPlanet) == 1) {
                     // selected planet != curr planet
 

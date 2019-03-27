@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,16 +70,18 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(planetsList.get(position));
                     }
-                 //   pname.setText(planetsList.get(getAdapterPosition()).getName());
-                  //  distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
-                   // notifyDataSetChanged();
+                    // pname.setText(planetsList.get(getAdapterPosition()).getName());
+                    // distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
+                    // notifyDataSetChanged();
 
                     // select planet
                     planetView.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             System.out.println("flag");
+                            Log.d("Debug", "Planet clicked");
                         }
                     });
+                    notifyDataSetChanged();
                 }
             });
         }
