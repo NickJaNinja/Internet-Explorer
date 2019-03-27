@@ -91,17 +91,22 @@ public class UniverseMapActivity extends GUIActivity{
                     toast.show();
                     return;
                 }
-                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
-                Model.getInstance().travelFromTo(universeViewModel.getCurrentSystem(), currentSolarSystem);
-                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
+                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
+                if (Model.getInstance().travelFromTo(universeViewModel.getCurrentSystem(), currentSolarSystem) > 0) {
+                    CharSequence text = "Not enough fuel";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
+                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 Intent newIntent = new Intent(UniverseMapActivity.this, SolarSystemActivity.class);
-                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
+                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 startActivity(newIntent);
-                Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
+                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
+                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
             }
         });
 
