@@ -14,7 +14,7 @@ public class Ship {
     private int inventory;
     private int fuel;
     private final int FUEL_TO_COST_MULT = 5;
-    private final double DIST_TO_FUEL_MULT = 0.4;
+    private final double DIST_TO_FUEL_MULT = 0.2;
 
     /**
      * Constructor for the ship
