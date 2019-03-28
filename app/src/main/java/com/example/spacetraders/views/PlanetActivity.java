@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,6 +107,7 @@ public class PlanetActivity extends MenuBarActivity {
             }
         });
 
+
         // rotate planet animation
         planetImage = findViewById(R.id.planet_image);
         RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -113,6 +115,16 @@ public class PlanetActivity extends MenuBarActivity {
         rotate.setDuration(300000);
         rotate.setInterpolator(new LinearInterpolator());
         planetImage.startAnimation(rotate);
+    }
+
+    // android back button
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
 }
