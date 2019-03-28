@@ -55,10 +55,6 @@ public class Game {
      * @return 1 if planet is different from curr planet, 0 if planet is the same
      */
     public int travelToPlanet(Planet to) {
-        int distance = universe.distanceBetweenPlanets(currPlanet, to);
-        if (player.travel(distance) == 0) {
-            return 0;
-        }
         currPlanet = to;
         return 1;
     }
