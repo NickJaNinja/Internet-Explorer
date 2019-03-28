@@ -156,4 +156,13 @@ public class Ship {
         }
         return inv;
     }
+
+    /**
+     * gets fuel percentage
+     *
+     * @return the fuel percentage
+     */
+    public int getFuelPercentage() {
+        return 100*fuel/type.getFuel();
+    }
 }
