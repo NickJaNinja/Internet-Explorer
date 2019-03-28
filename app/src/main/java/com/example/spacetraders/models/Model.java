@@ -63,6 +63,10 @@ public class Model {
         return game.travelToSystem(to);
     }
 
+    public void refuelShipMax() {
+        game.refuelShipMax();
+    }
+
     /**
      * getter for shop entries
      *
