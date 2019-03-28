@@ -156,7 +156,9 @@ public class Universe {
                     "Crunk",
                     "Bob",
                     "Myrh",
-                    "Sen"
+                    "Sen",
+                    "Deku",
+                    "Tenzum"
             };
     private static final String[] SUFFIXES =
             {

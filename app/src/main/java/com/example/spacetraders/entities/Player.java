@@ -53,7 +53,7 @@ public class Player {
      * @param engineerSkill initial engineerSkill
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, 0, new Ship(ShipType.GNAT));
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 10000, 0, new Ship(ShipType.GNAT));
     }
 
     /**

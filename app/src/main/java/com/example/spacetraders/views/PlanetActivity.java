@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -104,6 +105,13 @@ public class PlanetActivity extends MenuBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
                 startActivityForResult(intent,0);
+            }
+        });
+
+        refuel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                model.refuelShipMax();
+                Log.d("Debug", "Refuel button clicked");
             }
         });
 
