@@ -111,6 +111,7 @@ public class PlanetActivity extends MenuBarActivity {
         refuel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 model.refuelShipMax();
+                updateFuelBar();
                 Log.d("Debug", "Refuel button clicked");
             }
         });
