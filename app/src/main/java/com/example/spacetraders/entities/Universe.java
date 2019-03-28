@@ -158,7 +158,10 @@ public class Universe {
                     "Myrh",
                     "Sen",
                     "Deku",
-                    "Tenzum"
+                    "Tenzum",
+                    "Rob",
+                    "Altair",
+                    "Strat"
             };
     private static final String[] SUFFIXES =
             {
@@ -181,7 +184,8 @@ public class Universe {
                     "'Xi",
                     "os",
                     "ellia",
-                    "'kir"
+                    "'kir",
+                    "adonia"
             };
 
 
