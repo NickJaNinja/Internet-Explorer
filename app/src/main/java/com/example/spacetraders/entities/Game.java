@@ -69,6 +69,10 @@ public class Game {
         return 1;
     }
 
+    public void refuelShipMax() {
+        player.refuelShipMax();
+    }
+
     /**
      * Passes a good, an amount, and a price all the way down to player
      * and ship to be able to carry out a transaction if valid
