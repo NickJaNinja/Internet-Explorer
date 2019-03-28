@@ -52,7 +52,7 @@ public class Ship {
      * @return 1 on success, 0 on fail
      */
     public int travel(int distance) {
-        int fuel = (int)(distance * DIST_TO_FUEL_MULT);
+        int fuel = (int) (distance * DIST_TO_FUEL_MULT);
         if (this.fuel - fuel < 0) {
             return 0;
         }
@@ -61,12 +61,21 @@ public class Ship {
     }
 
     /**
+     * gets maximum distance able to travel
+     *
+     * @return the max distance
+     */
+    public int getRange() {
+        return (int) (fuel / DIST_TO_FUEL_MULT);
+    }
+
+    /**
      * Refuel the ship based on a certain amount of money
      *
      * @param money The amount of money paid to refuel
      */
     public void refuel(int money) {
-        int fuel = (int) Math.floor((double)money / FUEL_TO_COST_MULT);
+        int fuel = (int) Math.floor((double) money / FUEL_TO_COST_MULT);
         this.fuel += fuel;
         if (this.fuel > type.getFuel()) {
             this.fuel = type.getFuel();
@@ -163,6 +172,6 @@ public class Ship {
      * @return the fuel percentage
      */
     public int getFuelPercentage() {
-        return 100*fuel/type.getFuel();
+        return 100 * fuel / type.getFuel();
     }
 }
