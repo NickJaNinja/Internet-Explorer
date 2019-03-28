@@ -20,6 +20,7 @@ import com.example.spacetraders.viewmodels.ShopViewModel;
 public class ShopActivity extends MenuBarActivity {
     private TextView cancel;
     private TextView confirm;
+    private TextView creditDisplay;
     private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
@@ -43,6 +44,7 @@ public class ShopActivity extends MenuBarActivity {
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         viewModel.setUpMarket();
 
+        creditDisplay = findViewById(R.id.credit_text_display);
 
         /*
         Set up our recycler view by grabbing the layout for a single item
@@ -102,6 +104,7 @@ public class ShopActivity extends MenuBarActivity {
         super.onResume();
         adapterForShop.setShopGoodsList(viewModel.getShopEntries());
         adapterForPlayer.setPlayerCargoList(viewModel.getPlayerEntries());
+        creditDisplay.setText(String.format("%d", model.getCredits()));
     }
 
     // android back button
