@@ -72,7 +72,7 @@ public class UniverseMapActivity extends GUIActivity{
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText("NAME: " + universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText("DISTANCE: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
+                        distance.setText("DISTANCE: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()) + " Ly");
                         coordinates.setText("COORDINATES: " + currentSolarSystem.getCoordinates().toString());
                     }
                 });

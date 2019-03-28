@@ -12,7 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".26"
+        android:layout_weight=".29"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -26,6 +26,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="SYSTEM MAP"
+            android:textColor="@color/colorText"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -115,7 +123,7 @@
         android:id="@+id/planet_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".64"
+        android:layout_weight=".61"
         android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
     <LinearLayout
