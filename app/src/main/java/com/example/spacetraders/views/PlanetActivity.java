@@ -1,8 +1,10 @@
 package com.example.spacetraders.views;
 
+import android.annotation.TargetApi;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.Menu;
@@ -35,11 +37,18 @@ public class PlanetActivity extends MenuBarActivity {
     private MediaPlayer mediaPlayer;
     private ImageView planetImage;
     private TextView name;
+    private LinearLayout layout;
 
+    private TextView map;
+
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planet);
+
+        layout = findViewById(R.id.linear_layout);
+        layout.getForeground().setAlpha(0);
 
         createMenuBar();
 
@@ -67,6 +76,14 @@ public class PlanetActivity extends MenuBarActivity {
         }
         mediaPlayer.start();
 
+        // pressing anywhere on layout undims layout
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layout.getForeground().setAlpha(0);
+            }
+        });
+
         // pressing market button
         market.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -79,8 +96,6 @@ public class PlanetActivity extends MenuBarActivity {
         upgrade.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mediaPlayer.stop();
-                Intent intent = new Intent(v.getContext(), UniverseMapActivity.class);
-                startActivityForResult(intent, 0);
             }
         });
 

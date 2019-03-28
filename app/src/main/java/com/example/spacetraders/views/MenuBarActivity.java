@@ -1,6 +1,10 @@
 package com.example.spacetraders.views;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -10,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.spacetraders.R;
 
@@ -20,6 +26,8 @@ public class MenuBarActivity extends GUIActivity {
     private ImageView status;
     private ProgressBar fuel;
     private ProgressBar health;
+
+    private TextView map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +43,34 @@ public class MenuBarActivity extends GUIActivity {
         health = findViewById(R.id.health_bar);
 
         status.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
+                // dimming screen
+                findViewById(R.id.linear_layout).getForeground().setAlpha(140);
+
+                // menubar popping up
                 LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
                         .getSystemService(LAYOUT_INFLATER_SERVICE);
                 View popupView = layoutInflater.inflate(R.layout.status_bar2, null);
                 final PopupWindow popupWindow = new PopupWindow(popupView,
                         ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
+                popupWindow.setBackgroundDrawable(new BitmapDrawable());
+                popupWindow.setOutsideTouchable(true);
+
                 //popupWindow.showAsDropDown(status, 0, v.getHeight());
-                popupWindow.showAsDropDown(status, -20, -400);
+                popupWindow.showAsDropDown(status, -105, -470);
+
+                map = popupWindow.getContentView().findViewById(R.id.map_button);
+
+                map.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), UniverseMapActivity.class);
+                        startActivityForResult(intent, 0);
+                    }
+                });
             }
         });
 
