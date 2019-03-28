@@ -13,11 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Player;
-import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.EditPlayerViewModel;
 
 public class EditPlayerActivity extends AppCompatActivity {
@@ -40,9 +37,6 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView engineerText;
     private TextView pilotText;
     private TextView pointsRemaining;
-
-    private Player p;
-    private Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,18 +182,8 @@ public class EditPlayerActivity extends AppCompatActivity {
         int fighter = Integer.parseInt(fighterText.getText().toString());
         int trader = Integer.parseInt(tradeText.getText().toString());
         int pilot = Integer.parseInt(pilotText.getText().toString());
-        if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot)) {
-            model = Model.getInstance();
-            p = new Player();
-            p.setName(name);
-            p.setEngineerSkill(engineer);
-            p.setFighterSkill(fighter);
-            p.setTraderSkill(trader);
-            p.setPilotSkill(pilot);
-            GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
-            model.createGame(diff, name, pilot, fighter, trader, engineer);
-            Log.d("Info", "OK Button Pressed, Player Created" + p.toString());
-
+        GameDifficulty diff = (GameDifficulty) gameDifficultySpinner.getSelectedItem();
+        if (editPlayerViewModel.onOk(name, fighter, trader, engineer, pilot, diff)) {
             Intent intent = new Intent(EditPlayerActivity.this, PlanetActivity.class);
             startActivity(intent);
         } else {
