@@ -53,9 +53,9 @@ public class UniverseMapActivity extends GUIActivity{
         distance.setText("0 Ly");
         coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
         range.setText(Model.getInstance().getRange() + " Ly");
-        
+
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 80) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < Model.getInstance().getMaxRange()) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 

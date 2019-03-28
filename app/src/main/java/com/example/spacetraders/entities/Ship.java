@@ -70,6 +70,15 @@ public class Ship {
     }
 
     /**
+     * gets maximum distance able to travel on a full tank
+     *
+     * @return the max distance
+     */
+    public double getMaxRange() {
+        return type.getFuel() / DIST_TO_FUEL_MULT;
+    }
+
+    /**
      * Refuel the ship based on a certain amount of money
      *
      * @param money The amount of money paid to refuel

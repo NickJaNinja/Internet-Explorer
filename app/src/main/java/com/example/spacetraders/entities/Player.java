@@ -219,6 +219,8 @@ public class Player {
 
     public int getRange() { return ship.getRange(); }
 
+    public double getMaxRange() { return ship.getMaxRange();}
+
     /**
      * setter for name
      *

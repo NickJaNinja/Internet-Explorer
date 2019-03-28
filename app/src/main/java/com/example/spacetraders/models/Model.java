@@ -121,6 +121,8 @@ public class Model {
 
     public int getRange() { return game.getRange(); }
 
+    public double getMaxRange() { return game.getMaxRange();}
+
     public SolarSystem[] getSolarSystems() {
         return game.getSolarSystems();
     }
