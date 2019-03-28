@@ -49,7 +49,7 @@ public class Game {
     }
 
     /**
-     *
+     * Used to fly between planets WITHIN a solar system
      *
      * @param to planet to fly to
      * @return 1 if planet is different from curr planet, 0 if planet is the same
