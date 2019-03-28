@@ -112,6 +112,15 @@ public class Model {
         return game.getCurrentShop();
     }
 
+    /**
+     * gets current fuel level
+     *
+     * @return
+     */
+    public int getFuelPercentage() { return game.getFuelPercentage(); }
+
+    public int getRange() { return game.getRange(); }
+
     public SolarSystem[] getSolarSystems() {
         return game.getSolarSystems();
     }

@@ -215,6 +215,10 @@ public class Player {
         return ship;
     }
 
+    public int getFuelPercentage() { return ship.getFuelPercentage(); }
+
+    public int getRange() { return ship.getRange(); }
+
     /**
      * setter for name
      *

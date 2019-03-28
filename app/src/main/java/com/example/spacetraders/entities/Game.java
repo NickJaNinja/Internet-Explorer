@@ -171,4 +171,8 @@ public class Game {
     public SolarSystem[] getSolarSystems() {
         return universe.getSolarSystems();
     }
+
+    public int getFuelPercentage() { return player.getFuelPercentage(); }
+
+    public int getRange() { return player.getRange(); }
 }

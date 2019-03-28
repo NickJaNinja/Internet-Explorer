@@ -28,6 +28,7 @@ public class UniverseMapActivity extends GUIActivity{
     private TextView nameOfPlanet;
     private TextView distance;
     private TextView coordinates;
+    private TextView range;
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
     private ImageView theCircle;
@@ -42,6 +43,7 @@ public class UniverseMapActivity extends GUIActivity{
         nameOfPlanet = findViewById(R.id.name_text);
         distance = findViewById(R.id.distance_text);
         coordinates = findViewById(R.id.coordinates_text);
+        range = findViewById(R.id.range_text);
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
         theCircle = findViewById(R.id.local_universe);
@@ -71,9 +73,10 @@ public class UniverseMapActivity extends GUIActivity{
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText("NAME: " + universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText("DISTANCE: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()) + " Ly");
-                        coordinates.setText("COORDINATES: " + currentSolarSystem.getCoordinates().toString());
+                        nameOfPlanet.setText("" + universeViewModel.getSolarSystems()[j].getName());
+                        distance.setText(universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()) + " Ly");
+                        coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
+                        range.setText(Model.getInstance().getRange() + " Ly");
                     }
                 });
             }
