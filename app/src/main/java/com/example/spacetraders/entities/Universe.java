@@ -193,9 +193,9 @@ public class Universe {
     /**
      * dimensions of universe
      */
-    private static final int MAXX = 500;
-    private static final int MAXY = 500;
-    private int numSolarSystems = 100;
+    private static final int MAXX = 600;
+    private static final int MAXY = 600;
+    private int numSolarSystems = 250;
 
     private SolarSystem[] solarSystems;
 
