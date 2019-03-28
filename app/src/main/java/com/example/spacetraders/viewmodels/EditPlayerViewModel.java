@@ -5,6 +5,9 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 
+import com.example.spacetraders.entities.GameDifficulty;
+import com.example.spacetraders.models.Model;
+
 public class EditPlayerViewModel extends AndroidViewModel {
 
     public EditPlayerViewModel(@NonNull Application app) {
@@ -23,7 +26,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param pilot pilot points
      * @return true if OK button can move to next screen
      */
-    public boolean onOk(String name, int fight, int trade, int eng, int pilot) {
+    public boolean onOk(String name, int fight, int trade, int eng, int pilot, GameDifficulty diff) {
         if (name == null || name.length() < 1) {
             toastText = "Please enter your pilot's name";
             return false;
@@ -33,6 +36,8 @@ public class EditPlayerViewModel extends AndroidViewModel {
             toastText = "Please use all of your skill points";
             return false;
         }
+        Model model = Model.getInstance();
+        model.createGame(diff, name, pilot, fight, trade, eng);
         return true;
     }
 
