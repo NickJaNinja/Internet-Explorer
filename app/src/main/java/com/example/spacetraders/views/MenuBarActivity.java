@@ -83,6 +83,10 @@ public class MenuBarActivity extends GUIActivity {
         });
 
         fuel.setMax(100);
+        updateFuelBar();
+    }
+
+    void updateFuelBar() {
         fuel.setProgress(Model.getInstance().getFuelPercentage());
     }
 }
