@@ -90,7 +90,7 @@ public class SolarSystemActivity extends GUIActivity {
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedPlanet = adapterForPlanets.getSelectedPlanet();
+
                 Toast toast = Toast.makeText(v.getContext(), selectedPlanet.getName().toString(), Toast.LENGTH_SHORT);
                 toast.show();
                 if (model.travelToPlanet(selectedPlanet) == 1) {
@@ -108,6 +108,12 @@ public class SolarSystemActivity extends GUIActivity {
     protected void onResume() {
         super.onResume();
         adapterForPlanets.setPlanetsList(viewModel.getPlanetsInRange());
+        adapterForPlanets.setOnClickListener(new PlanetAdapter.OnClickListener() {
+            @Override
+            public void onClicked(Planet planet) {
+                setSelectedPlanet(planet);
+            }
+        });
 
 
     }
