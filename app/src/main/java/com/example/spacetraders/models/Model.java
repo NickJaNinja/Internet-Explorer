@@ -44,6 +44,10 @@ public class Model implements Serializable {
         game = new Game(gd, p);
     }
 
+    public void loadGame(Game g) {
+        this.game = g;
+    }
+
     /**
      * Passes a good, an amount, and a price all the way down to player
      * and ship to be able to carry out a transaction if valid
@@ -56,6 +60,10 @@ public class Model implements Serializable {
     public int makeTransaction(ShopGoods sg, int amount, int price) {
         if (amount == 0) { return 0; }
         return game.makeTransaction(sg, amount, price);
+    }
+
+    public int getCredits() {
+        return game.getCredits();
     }
 
     public int travelToPlanet(Planet p) { return game.travelToPlanet(p); }

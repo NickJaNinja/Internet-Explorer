@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -10,6 +12,8 @@ public class Shop {
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
+    private RadicalPriceEvent randomEvent;
+    private final int NUM_RESOURCES = ShopGoods.values().length;
 
     /**
      * Constructor for shop
@@ -28,7 +32,12 @@ public class Shop {
      * Generates quantity and price for all goods in the shop
      */
     public void restock() {
+        Random rng = new Random();
+        double eventChance = rng.nextDouble();
+        int event = rng.nextInt(NUM_RESOURCES);  // 0 to (Number of resources)-1
+
         for (ShopGoods shopGood : ShopGoods.values()) {
+            // Calculate price
             int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
             int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
@@ -37,6 +46,20 @@ public class Shop {
             } else {
                 itemPrice -= var;
             }
+            // Interesting events
+            if (shopGood.getCr().equals(resourcesLevel)) {
+                itemPrice = (int)(itemPrice * 0.8);
+                Log.d("Debug", "Good's CR equals planet CR");
+            } else if (shopGood.getEr().equals(resourcesLevel)) {
+                itemPrice = (int)(itemPrice/0.8);
+                Log.d("Debug", "Good's CR does not equal planet CR");
+            }
+            if (event == shopGood.ordinal() && eventChance < 0.03) {
+                itemPrice *= 5;
+                randomEvent = shopGood.getIe();
+                Log.d("Debug", "RANDOM EXTREME PRICE EVENT");
+            }
+            // Stock items
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
                 // Item will be in stock
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
@@ -75,5 +98,9 @@ public class Shop {
             inv.add(entry);
         }
         return inv;
+    }
+
+    public RadicalPriceEvent getRandomEvent() {
+        return randomEvent;
     }
 }

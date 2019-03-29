@@ -87,6 +87,10 @@ public class Game implements Serializable {
         return player.makeTransaction(sg, amount, price) & currPlanet.makeTransaction(sg, amount);
     }
 
+    public int getCredits() {
+        return player.getCredits();
+    }
+
     /**
      * getter for game difficulty
      *
