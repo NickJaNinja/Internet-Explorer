@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * This class represents a planet
+ * This class represents a content_planet
  */
 public class Planet {
 
@@ -70,7 +70,7 @@ public class Planet {
     }
 
     /**
-     * gets name of planet.
+     * gets name of content_planet.
      *
      * @return String name
      */
@@ -79,7 +79,7 @@ public class Planet {
     }
 
     /**
-     * Gets whether or not the planet is in the habitable zone
+     * Gets whether or not the content_planet is in the habitable zone
      *
      * @return boolean in habitable zone
      */
@@ -166,9 +166,9 @@ public class Planet {
     }
 
     /**
-     * to string for planet
+     * to string for content_planet
      *
-     * @return string of planet info
+     * @return string of content_planet info
      */
     @Override
     public String toString() {

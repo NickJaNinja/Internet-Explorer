@@ -23,7 +23,7 @@ public class Game {
      */
     private SolarSystem currSystem;
     /**
-     * planet the player is on
+     * content_planet the player is on
      */
     private Planet currPlanet;
 
@@ -51,8 +51,8 @@ public class Game {
     /**
      * Used to fly between planets WITHIN a solar system
      *
-     * @param to planet to fly to
-     * @return 1 if planet is different from curr planet, 0 if planet is the same
+     * @param to content_planet to fly to
+     * @return 1 if content_planet is different from curr content_planet, 0 if content_planet is the same
      */
     public int travelToPlanet(Planet to) {
         currPlanet = to;
@@ -114,9 +114,9 @@ public class Game {
     }
 
     /**
-     * getter for current planet
+     * getter for current content_planet
      *
-     * @return current planet
+     * @return current content_planet
      */
     public Planet getCurrentPlanet() {
         return currPlanet;
@@ -162,7 +162,7 @@ public class Game {
     }
 
     /**
-     * setter for current planet
+     * setter for current content_planet
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;

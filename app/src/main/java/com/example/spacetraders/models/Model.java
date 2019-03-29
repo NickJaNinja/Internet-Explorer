@@ -95,9 +95,9 @@ public class Model {
     }
 
     /**
-     * getter for current planet
+     * getter for current content_planet
      *
-     * @return current planet
+     * @return current content_planet
      */
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();

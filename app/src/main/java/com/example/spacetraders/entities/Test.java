@@ -15,8 +15,8 @@ public class Test {
         System.out.println("\t--------------------------------");
         for (Star star: testSystem.getStars()) {
             System.out.println("\t" + star.getName());
-            for (Planet planet: testSystem.getPlanets()) {
-                if (planet.getParentStar().equals(star)) System.out.println("\t\t" + planet.getName());
+            for (Planet content_planet: testSystem.getPlanets()) {
+                if (content_planet.getParentStar().equals(star)) System.out.println("\t\t" + content_planet.getName());
             }
         }
         System.out.println();
@@ -37,10 +37,10 @@ public class Test {
         System.out.println();
         System.out.println("\tPlanet Details");
         System.out.println("\t--------------------------------");
-        for (Planet planet: testSystem.getPlanets()) {
-            System.out.println("\t" + planet.getName());
-            System.out.println("\t\tDistance from Star:\t" + df.format(planet.getDistanceFromParentStar()*8.3167) + " lm");
-            if (planet.getInHabitableZone()) {
+        for (Planet content_planet: testSystem.getPlanets()) {
+            System.out.println("\t" + content_planet.getName());
+            System.out.println("\t\tDistance from Star:\t" + df.format(content_planet.getDistanceFromParentStar()*8.3167) + " lm");
+            if (content_planet.getInHabitableZone()) {
                 System.out.println("\t\tStatus:\t\t\t\t\t\tinhabited");
             }
             else {

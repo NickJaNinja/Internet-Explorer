@@ -75,7 +75,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     // distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
                     // notifyDataSetChanged();
 
-                    // select planet
+                    // select content_planet
                     planetView.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             System.out.println("flag");
@@ -101,7 +101,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
 
-       // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
+       // planetViewHolder.distance.setText("" + content_planet.getDistanceFromParentStar());
 //        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
 //        notifyDataSetChanged();
 

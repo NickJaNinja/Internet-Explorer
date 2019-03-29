@@ -36,7 +36,7 @@ public class ShopActivity extends MenuBarActivity {
 
         setContentView(R.layout.market);
 
-        createMenuBar();
+        //createMenuBar();
 
         this.model = Model.getInstance();
 

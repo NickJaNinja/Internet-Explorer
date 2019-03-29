@@ -6,21 +6,17 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -47,12 +43,16 @@ public class PlanetActivity extends MenuBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.planet);
+        setContentView(R.layout.activity_planet);
 
         layout = findViewById(R.id.linear_layout);
-        layout.getForeground().setAlpha(0);
+        //layout.getForeground().setAlpha(0);
 
-        createMenuBar();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+        //createMenuBar();
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
@@ -111,13 +111,13 @@ public class PlanetActivity extends MenuBarActivity {
         refuel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 model.refuelShipMax();
-                updateFuelBar();
+                //updateFuelBar();
                 Log.d("Debug", "Refuel button clicked");
             }
         });
 
 
-        // rotate planet animation
+        // rotate content_planet animation
         planetImage = findViewById(R.id.planet_image);
         RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setRepeatCount(Animation.INFINITE);
@@ -125,6 +125,14 @@ public class PlanetActivity extends MenuBarActivity {
         rotate.setInterpolator(new LinearInterpolator());
         planetImage.startAnimation(rotate);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
 
     // android back button
     @Override

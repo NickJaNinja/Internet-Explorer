@@ -1,6 +1,5 @@
 package com.example.spacetraders.views;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
@@ -23,6 +22,7 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 
 public class MenuBarActivity extends GUIActivity {
+    /*
     private ImageView inventory;
     private ImageView status;
     private ProgressBar fuel;
@@ -44,11 +44,10 @@ public class MenuBarActivity extends GUIActivity {
         health = findViewById(R.id.health_bar);
 
         status.setOnClickListener(new View.OnClickListener() {
-            @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
                 // dimming screen
-                findViewById(R.id.linear_layout).getForeground().setAlpha(140);
+                //findViewById(R.id.linear_layout).getForeground().setAlpha(140);
 
                 // menubar popping up
                 LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
@@ -89,4 +88,5 @@ public class MenuBarActivity extends GUIActivity {
     void updateFuelBar() {
         fuel.setProgress(Model.getInstance().getFuelPercentage());
     }
+    */
 }

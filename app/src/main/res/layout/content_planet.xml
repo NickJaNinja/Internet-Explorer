@@ -6,14 +6,15 @@
     android:id="@+id/planet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_background">
+    android:background="@drawable/space_background"
+    tools:showIn="@layout/activity_planet">
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:foreground="@drawable/dim">
+        android:orientation="vertical">
+        <!--android:foreground="@drawable/dim"-->
 
         <ImageView
             android:id="@+id/planet_image"
@@ -103,6 +104,6 @@
             android:background="@color/colorText" />
     </LinearLayout>
 
-    <include layout="@layout/menu_bar"></include>
+    <!--<include layout="@layout/menu_bar"></include>-->
 
 </FrameLayout>
