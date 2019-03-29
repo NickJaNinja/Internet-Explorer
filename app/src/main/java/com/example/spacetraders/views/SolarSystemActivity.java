@@ -53,12 +53,7 @@ public class SolarSystemActivity extends GUIActivity {
 
         solarSystem = viewModel.getCurrentSolarSystem();
 
-      //  viewModel.setUpPlanets();
 
-
-
-      //  name.setText("Planet:" + currPlanet.getName());
-    //    distance.setText("" + currPlanet.getDistanceFromParentStar());
 
 
         recyclerViewPlanet = findViewById(R.id.planet_recycler_view);

@@ -27,10 +27,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
 
 
     public Planet[] getPlanetsInRange() {
-      /*  Planet[] planetsInRange;
-        for (int i = 0; i < currentSolarSystem.getPlanets().length; i++) {
-            System.out.println((currentSolarSystem.getPlanets())[i].getDistanceFromParentStar());
-        }*/
+
         return currentSolarSystem.getPlanets();
     }
 

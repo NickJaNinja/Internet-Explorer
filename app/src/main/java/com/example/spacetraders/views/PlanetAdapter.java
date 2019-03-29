@@ -60,7 +60,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             politicalSystem = itemView.findViewById(R.id.planet_political_system);
 
             planetView = itemView.findViewById(R.id.planet_image);
-         //   coordinates = itemView.findViewById(R.id.coordinates_text);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -71,16 +71,14 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         listener.onClicked(planetsList.get(position));
                     }
-                    // pname.setText(planetsList.get(getAdapterPosition()).getName());
-                    // distance.setText(""+ planetsList.get(getAdapterPosition()).getDistanceFromParentStar());
-                    // notifyDataSetChanged();
+
 
                     // select planet
                     planetView.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             System.out.println("flag");
                             Log.d("Debug", "Planet clicked");
-                           // selectedPlanet =
+
                         }
                     });
                     notifyDataSetChanged();
@@ -101,16 +99,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
 
-       // planetViewHolder.distance.setText("" + planet.getDistanceFromParentStar());
-//        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
-//        notifyDataSetChanged();
-
 
     }
 
-    public Planet getSelectedPlanet() {
-        return selectedPlanet;
-    }
+
 
 
     @Override
