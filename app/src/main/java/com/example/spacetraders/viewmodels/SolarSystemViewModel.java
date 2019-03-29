@@ -22,7 +22,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
     }
 
     public void setUpPlanets() {
-      planetsInRange = currentSolarSystem.getPlanets();
+        planetsInRange = currentSolarSystem.getPlanets();
     }
 
 

@@ -1,11 +1,12 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * This class represents the game
  */
-public class Game {
+public class Game implements Serializable {
     /**
      * the game difficulty
      */

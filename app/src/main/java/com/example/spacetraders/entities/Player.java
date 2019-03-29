@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  * @author Internet-Explorer
  * @version 1.0
  */
-public class Player {
+public class Player implements Serializable {
     private String name;
     private int pilotSkill;
     private int fighterSkill;

@@ -99,7 +99,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
 
-
     }
 
 

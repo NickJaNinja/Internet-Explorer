@@ -54,8 +54,6 @@ public class SolarSystemActivity extends GUIActivity {
         solarSystem = viewModel.getCurrentSolarSystem();
 
 
-
-
         recyclerViewPlanet = findViewById(R.id.planet_recycler_view);
         recyclerViewPlanet.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         recyclerViewPlanet.setHasFixedSize(true);
@@ -96,8 +94,6 @@ public class SolarSystemActivity extends GUIActivity {
             }
         });
 
-
-
     }
     @Override
     protected void onResume() {
@@ -113,6 +109,10 @@ public class SolarSystemActivity extends GUIActivity {
 
     }
 
+    /**
+     *
+     * @param p the selected destination planet
+     */
     public void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }

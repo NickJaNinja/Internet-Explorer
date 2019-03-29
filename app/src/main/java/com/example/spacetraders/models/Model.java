@@ -10,9 +10,10 @@ import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Model {
+public class Model implements Serializable {
     private Game game;
 
     /**
