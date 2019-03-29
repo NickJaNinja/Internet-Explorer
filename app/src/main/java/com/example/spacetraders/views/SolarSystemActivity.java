@@ -83,9 +83,12 @@ public class SolarSystemActivity extends GUIActivity {
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast toast = Toast.makeText(v.getContext(), selectedPlanet.getName().toString(), Toast.LENGTH_SHORT);
-                toast.show();
+                if(selectedPlanet == null) {
+                    Toast toast = Toast.makeText(v.getContext(),"No Planet Selected" , Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                Toast toast1 = Toast.makeText(v.getContext(), selectedPlanet.getName(), Toast.LENGTH_SHORT);
+                toast1.show();
                 if (model.travelToPlanet(selectedPlanet) == 1) {
                     Intent newIntent = new Intent(SolarSystemActivity.this, PlanetActivity.class);
                     startActivity(newIntent);
