@@ -48,10 +48,9 @@ public class UniverseMapActivity extends GUIActivity{
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
         theCircle = findViewById(R.id.local_universe);
 
-        currentSolarSystem = universeViewModel.getCurrentSystem();
-        nameOfPlanet.setText("" + currentSolarSystem.getName());
+        nameOfPlanet.setText("" + universeViewModel.getCurrentSystem().getName());
         distance.setText("0 Ly");
-        coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
+        coordinates.setText("" + universeViewModel.getCurrentSystem().getCoordinates().toString());
         range.setText(Model.getInstance().getRange() + " Ly");
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
@@ -79,8 +78,8 @@ public class UniverseMapActivity extends GUIActivity{
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText("" + universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText(universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()) + " Ly");
+                        nameOfPlanet.setText("" + currentSolarSystem.getName());
+                        distance.setText(currentSolarSystem.dist(universeViewModel.getCurrentSystem()) + " Ly");
                         coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
                     }
                 });
