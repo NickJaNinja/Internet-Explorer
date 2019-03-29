@@ -28,6 +28,7 @@ public class UniverseMapActivity extends GUIActivity{
     private TextView nameOfPlanet;
     private TextView distance;
     private TextView coordinates;
+    private TextView range;
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
     private ImageView theCircle;
@@ -42,12 +43,18 @@ public class UniverseMapActivity extends GUIActivity{
         nameOfPlanet = findViewById(R.id.name_text);
         distance = findViewById(R.id.distance_text);
         coordinates = findViewById(R.id.coordinates_text);
+        range = findViewById(R.id.range_text);
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
         theCircle = findViewById(R.id.local_universe);
 
+        nameOfPlanet.setText("" + universeViewModel.getCurrentSystem().getName());
+        distance.setText("0 Ly");
+        coordinates.setText("" + universeViewModel.getCurrentSystem().getCoordinates().toString());
+        range.setText(Model.getInstance().getRange() + " Ly");
+
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < 80) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < Model.getInstance().getMaxRange()) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
@@ -71,9 +78,9 @@ public class UniverseMapActivity extends GUIActivity{
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText("NAME: " + universeViewModel.getSolarSystems()[j].getName());
-                        distance.setText("DISTANCE: " + universeViewModel.getSolarSystems()[j].dist(universeViewModel.getCurrentSystem()));
-                        coordinates.setText("COORDINATES: " + currentSolarSystem.getCoordinates().toString());
+                        nameOfPlanet.setText("" + currentSolarSystem.getName());
+                        distance.setText(currentSolarSystem.dist(universeViewModel.getCurrentSystem()) + " Ly");
+                        coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
                     }
                 });
             }

@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
+import com.example.spacetraders.models.Model;
 
 public class MenuBarActivity extends GUIActivity {
     private ImageView inventory;
@@ -82,6 +83,10 @@ public class MenuBarActivity extends GUIActivity {
         });
 
         fuel.setMax(100);
-        fuel.setProgress(70);
+        updateFuelBar();
+    }
+
+    void updateFuelBar() {
+        fuel.setProgress(Model.getInstance().getFuelPercentage());
     }
 }

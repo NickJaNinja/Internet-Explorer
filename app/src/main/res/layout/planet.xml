@@ -6,7 +6,7 @@
     android:id="@+id/planet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_backgroiund">
+    android:background="@drawable/space_background">
 
     <LinearLayout
         android:id="@+id/linear_layout"
@@ -19,6 +19,7 @@
             android:id="@+id/planet_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/planet" />
 
         <TextView
