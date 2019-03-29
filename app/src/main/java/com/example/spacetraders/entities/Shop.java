@@ -57,6 +57,7 @@ public class Shop {
             if (event == shopGood.ordinal() && eventChance < 0.03) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
+                Log.d("Debug", "RANDOM EXTREME PRICE EVENT");
             }
             // Stock items
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
