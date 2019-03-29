@@ -49,15 +49,12 @@ public class Shop {
             // Interesting events
             if (shopGood.getCr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice * 0.8);
-                Log.d("Debug", "Good's CR equals planet CR");
             } else if (shopGood.getEr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice/0.8);
-                Log.d("Debug", "Good's CR does not equal planet CR");
             }
             if (event == shopGood.ordinal() && eventChance < 0.03) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
-                Log.d("Debug", "RANDOM EXTREME PRICE EVENT");
             }
             // Stock items
             if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
