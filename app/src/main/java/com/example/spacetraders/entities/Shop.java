@@ -39,7 +39,7 @@ public class Shop {
         for (ShopGoods shopGood : ShopGoods.values()) {
             // Calculate price
             int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
-                    * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
+                    * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
             int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
             if ((new Random()).nextInt(2) == 0) {
                 itemPrice += var;
