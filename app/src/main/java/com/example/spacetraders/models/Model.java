@@ -138,4 +138,6 @@ public class Model {
     public SolarSystem getCurrentSystem() {
         return game.getCurrentSystem();
     }
+
+    public boolean isOnWarpGatePlanet() {return game.isOnWarpGatePlanet();}
 }

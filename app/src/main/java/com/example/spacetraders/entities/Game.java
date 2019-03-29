@@ -181,4 +181,6 @@ public class Game {
     public int getRange() { return player.getRange(); }
 
     public double getMaxRange() { return player.getMaxRange();}
+
+    public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 }
