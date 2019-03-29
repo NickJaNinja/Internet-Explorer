@@ -57,7 +57,7 @@ public class Shop {
                 randomEvent = shopGood.getIe();
             }
             // Stock items
-            if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
+            if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
