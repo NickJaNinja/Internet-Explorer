@@ -52,6 +52,7 @@ public class UniverseMapActivity extends GUIActivity{
         distance.setText("0 Ly");
         coordinates.setText("" + universeViewModel.getCurrentSystem().getCoordinates().toString());
         range.setText(Model.getInstance().getRange() + " Ly");
+        engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
             if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < Model.getInstance().getMaxRange()
@@ -82,6 +83,13 @@ public class UniverseMapActivity extends GUIActivity{
                         nameOfPlanet.setText("" + currentSolarSystem.getName());
                         distance.setText(currentSolarSystem.dist(universeViewModel.getCurrentSystem()) + " Ly");
                         coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
+
+                        // make travel button red if system out of range, green if in range
+                        if (Model.getInstance().getRange() < currentSolarSystem.dist(universeViewModel.getCurrentSystem())) {
+                            engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64")); // red
+                        } else {
+                            engageWarpDrive.setBackgroundColor(Color.parseColor("#5FCA77")); // green
+                        }
                     }
                 });
             }
