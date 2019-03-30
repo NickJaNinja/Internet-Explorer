@@ -202,4 +202,13 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     public List<ShopEntry> getShopGoodsList() {
         return shopGoodsList;
     }
+
+    public int getCostOfGood(ShopGoods good) {
+        for (ShopEntry entry : shopGoodsList) {
+            if (entry.getGood().equals(good)) {
+                return entry.getPrice();
+            }
+        }
+        return -1;
+    }
 }

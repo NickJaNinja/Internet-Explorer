@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
+import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.models.Model;
 
 import java.util.ArrayList;
@@ -57,6 +58,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
+                    ShopEntry selectedEntry = playerCargoList.get(position);
+                    ShopGoods selectedGood = selectedEntry.getGood();
 
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
@@ -67,10 +70,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                             listener.onClicked(playerCargoList.get(position));
                         }
 
-                        int cost = Integer.parseInt(price.getText().toString());
+                        int cost = shopGoodsAdapter.getCostOfGood(selectedGood);
 
                         if (playerCargoList.get(position).getStock() > 0
-                                && model.makeTransaction(playerCargoList.get(position).getGood(), -1, cost) == 1) {
+                                && model.makeTransaction(selectedGood, -1, cost) == 1) {
                             playerCargoList = model.getPlayerEntries();
                             shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
                             notifyDataSetChanged();
