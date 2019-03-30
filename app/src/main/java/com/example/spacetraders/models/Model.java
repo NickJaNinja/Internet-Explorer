@@ -1,5 +1,6 @@
 package com.example.spacetraders.models;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.example.spacetraders.entities.Game;
@@ -12,6 +13,7 @@ import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,7 +25,7 @@ import java.util.List;
 
 public class Model {
     private Game game;
-    private final String saveFile = "../../../../SAVE_FILE.ser";
+    private final String filename = "SAVE_FILE.ser";
 
     /**
      * Singleton Pattern Code
@@ -53,11 +55,12 @@ public class Model {
         game = new Game(gd, p);
     }
 
-    public void loadGame() {
+    public void loadGame(Context context) {
+        game = null;
         try {
-            game = null;
+            File loadFile = new File(context.getFilesDir(), filename);
             FileInputStream fileIn =
-                    new FileInputStream(saveFile);
+                    new FileInputStream(loadFile);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             game = (Game) in.readObject();
             in.close();
@@ -70,8 +73,11 @@ public class Model {
         }
     }
 
-    public void saveGame() {
+    public void saveGame(Context context) {
         try {
+            File saveFile = new File(context.getFilesDir(), filename);
+            saveFile.createNewFile();
+            saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -179,5 +185,5 @@ public class Model {
         return game.getCurrentSystem();
     }
 
-    public boolean isOnWarpGatePlanet() {return game.isOnWarpGatePlanet();}
+    public boolean isOnWarpGatePlanet() { return game.isOnWarpGatePlanet(); }
 }
