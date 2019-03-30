@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -79,6 +80,8 @@ public class SolarSystemActivity extends GUIActivity {
         mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
         luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
+        thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
+
 
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +110,9 @@ public class SolarSystemActivity extends GUIActivity {
             @Override
             public void onClicked(Planet planet) {
                 setSelectedPlanet(planet);
+                if (selectedPlanet != null) {
+                    thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77")); // green
+                }
             }
         });
 
