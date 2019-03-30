@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.app.AlertDialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -100,6 +101,17 @@ public class ShopActivity extends MenuBarActivity {
             public void onClick(View v) {
                 viewModel.setUpMarket();
 
+                // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
+                AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
+
+// 2. Chain together various setter methods to set the dialog characteristics
+                builder.setMessage("hi how ya doing big fella")
+                        .setTitle("chungus.info");
+
+// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
+                AlertDialog dialog = builder.create();
+
+                dialog.show();
             }
         });
 
