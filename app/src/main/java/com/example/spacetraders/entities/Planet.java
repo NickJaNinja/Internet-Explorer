@@ -166,6 +166,10 @@ public class Planet implements Serializable {
         this.name += " [WARP GATE]";
     }
 
+    public void restockShop() {
+        shop.restock();
+    }
+
     /**
      * to string for content_planet
      *

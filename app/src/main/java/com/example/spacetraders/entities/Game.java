@@ -57,6 +57,7 @@ public class Game implements Serializable {
      */
     public int travelToPlanet(Planet to) {
         currPlanet = to;
+        currPlanet.restockShop();
         return 1;
     }
 
