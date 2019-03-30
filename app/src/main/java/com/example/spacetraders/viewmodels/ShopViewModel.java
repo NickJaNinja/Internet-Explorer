@@ -24,7 +24,7 @@ public class ShopViewModel extends AndroidViewModel {
     }
 
     /**
-     * initializes market
+     * initializes content_market
      */
     public void setUpMarket() {
         shopInventoryTemp = getShopEntries();

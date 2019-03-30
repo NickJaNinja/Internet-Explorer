@@ -286,6 +286,4 @@
 
     </LinearLayout>
 
-        <include layout="@layout/menu_bar"></include>
-
 </FrameLayout>

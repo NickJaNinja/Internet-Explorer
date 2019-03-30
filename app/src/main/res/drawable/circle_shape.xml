@@ -6,6 +6,6 @@
     android:thickness="10dp"
     android:useLevel="false">
 
-    <solid android:color="@color/colorPlusButton" />
+    <solid android:color="@color/colorHint" />
 
 </shape>

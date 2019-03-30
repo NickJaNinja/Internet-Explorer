@@ -6,20 +6,24 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class ShopActivity extends MenuBarActivity {
     private TextView cancel;
     private TextView confirm;
+    private TextView creditDisplay;
     private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
@@ -29,20 +33,27 @@ public class ShopActivity extends MenuBarActivity {
     private RecyclerView recyclerViewPlayer;
     private Model model;
     private MediaPlayer mediaPlayer;
+    private ProgressBar fuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_market);
 
-        setContentView(R.layout.market);
+        // toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
 
-        //createMenuBar();
+        fuel = findViewById(R.id.fuel_bar);
+        fuel.setProgress(Model.getInstance().getFuelPercentage());
 
         this.model = Model.getInstance();
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         viewModel.setUpMarket();
 
+        creditDisplay = findViewById(R.id.credit_text_display);
 
         /*
         Set up our recycler view by grabbing the layout for a single item
@@ -70,7 +81,7 @@ public class ShopActivity extends MenuBarActivity {
         adapterForPlayer.setShopGoodsAdapter(adapterForShop);
         adapterForShop.setPlayerCargoAdapter(adapterForPlayer);
 
-        // Connecting button instance variables with market.xml buttons
+        // Connecting button instance variables with content_markett_market.xml buttons
         confirm = findViewById(R.id.confirm_button);
         cancel = findViewById(R.id.cancel_button);
 
@@ -102,6 +113,40 @@ public class ShopActivity extends MenuBarActivity {
         super.onResume();
         adapterForShop.setShopGoodsList(viewModel.getShopEntries());
         adapterForPlayer.setPlayerCargoList(viewModel.getPlayerEntries());
+        creditDisplay.setText(String.format("%d", model.getCredits()));
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.universe_map_button:
+                Intent intent = new Intent(this, UniverseMapActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.system_map_button:
+                intent = new Intent(this, SolarSystemActivity.class);
+                startActivityForResult(intent,0);
+                return true;
+            case R.id.inventory_button:
+
+                // TODO inventory
+
+                return true;
+            case R.id.status_button:
+
+                // TODO status
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     // android back button

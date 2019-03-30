@@ -102,7 +102,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
 
 
-                        //remove from market
+                        //remove from content_market
                         //shopGoodsList.remove(shopGoodsList.get(position));
                         shopGoodsList.get(position).setStock(select.getStock() - 1);
 

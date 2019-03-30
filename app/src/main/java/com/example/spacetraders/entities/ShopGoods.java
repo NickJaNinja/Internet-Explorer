@@ -146,6 +146,7 @@ public enum ShopGoods {
             true);
 
     /**
+     * name = the name
      * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
      * MTLU = Minimum Tech Level to Use this resource (You can't sell on planets below this level)
      * TTP = Tech Level which produces the most of this item
@@ -189,6 +190,7 @@ public enum ShopGoods {
      * @param mth       the mth
      * @param isIllegal legal condition
      */
+
     ShopGoods(String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth, boolean isIllegal) {
         this.name = name;
         this.mtlp = mtlp;
@@ -320,5 +322,14 @@ public enum ShopGoods {
      */
     public boolean isIllegal() {
         return isIllegal;
+    }
+
+    /**
+     * getter for level of mtlp
+     *
+     * @return level of mtlp
+     */
+    public int getLevelofMtlp() {
+        return mtlp.getLevel();
     }
 }

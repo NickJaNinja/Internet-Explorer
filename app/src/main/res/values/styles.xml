@@ -18,7 +18,7 @@
     <style name="ToolBarStyle" parent="Theme.AppCompat">
         <item name="android:textColorPrimary">@color/colorText</item>
         <item name="android:textColorSecondary">@color/colorText</item>
-        <item name="android:background">@color/colorBackground</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
         <item name="actionMenuTextColor">@color/colorText</item>
         <!--
         <item name="actionOverflowButtonStyle">@style/ActionButtonOverflowStyle</item>

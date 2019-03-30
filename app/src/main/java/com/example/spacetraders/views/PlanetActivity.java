@@ -11,12 +11,14 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -36,6 +38,7 @@ public class PlanetActivity extends MenuBarActivity {
     private ImageView planetImage;
     private TextView name;
     private LinearLayout layout;
+    private ProgressBar fuel;
 
     private TextView map;
 
@@ -46,13 +49,15 @@ public class PlanetActivity extends MenuBarActivity {
         setContentView(R.layout.activity_planet);
 
         layout = findViewById(R.id.linear_layout);
-        //layout.getForeground().setAlpha(0);
 
+        // toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-        //createMenuBar();
+        fuel = findViewById(R.id.fuel_bar);
+        fuel.setProgress(Model.getInstance().getFuelPercentage());
+
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
@@ -62,7 +67,6 @@ public class PlanetActivity extends MenuBarActivity {
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
         refuel = findViewById(R.id.refuel_button);
-        leaveOrbit = findViewById(R.id.leave_orbit_button);
 
         // globally
 
@@ -86,7 +90,7 @@ public class PlanetActivity extends MenuBarActivity {
             }
         });
 
-        // pressing market button
+        // pressing content_market button
         market.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mediaPlayer.stop();
@@ -101,17 +105,10 @@ public class PlanetActivity extends MenuBarActivity {
             }
         });
 
-        leaveOrbit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
-                startActivityForResult(intent,0);
-            }
-        });
-
         refuel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 model.refuelShipMax();
-                //updateFuelBar();
+                fuel.setProgress(Model.getInstance().getFuelPercentage());
                 Log.d("Debug", "Refuel button clicked");
             }
         });
@@ -132,6 +129,34 @@ public class PlanetActivity extends MenuBarActivity {
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.universe_map_button:
+                Intent intent = new Intent(this, UniverseMapActivity.class);
+                startActivityForResult(intent, 0);
+                return true;
+            case R.id.system_map_button:
+                intent = new Intent(this, SolarSystemActivity.class);
+                startActivityForResult(intent,0);
+                return true;
+            case R.id.inventory_button:
+
+                // TODO inventory
+
+                return true;
+            case R.id.status_button:
+
+                // TODO status
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
     // android back button

@@ -86,6 +86,10 @@ public class Game {
         return player.makeTransaction(sg, amount, price) & currPlanet.makeTransaction(sg, amount);
     }
 
+    public int getCredits() {
+        return player.getCredits();
+    }
+
     /**
      * getter for game difficulty
      *
@@ -177,4 +181,6 @@ public class Game {
     public int getRange() { return player.getRange(); }
 
     public double getMaxRange() { return player.getMaxRange();}
+
+    public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 }
