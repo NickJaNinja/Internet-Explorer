@@ -1,5 +1,7 @@
 package com.example.spacetraders.models;
 
+import android.util.Log;
+
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
@@ -10,12 +12,18 @@ import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
 public class Model {
     private Game game;
-    private final String saveFile = "../../../../SAVE_FILE.txt";
+    private final String saveFile = "../../../../SAVE_FILE.ser";
 
     /**
      * Singleton Pattern Code
@@ -46,11 +54,33 @@ public class Model {
     }
 
     public void loadGame() {
-
+        try {
+            game = null;
+            FileInputStream fileIn =
+                    new FileInputStream(saveFile);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            game = (Game) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Game class not found.");
+            c.printStackTrace();
+        }
     }
 
     public void saveGame() {
-
+        try {
+            FileOutputStream fileOut =
+                    new FileOutputStream(saveFile);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(game);
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
     }
 
     /**
