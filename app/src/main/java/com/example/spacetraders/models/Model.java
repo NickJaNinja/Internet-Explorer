@@ -13,13 +13,6 @@ import com.example.spacetraders.entities.SolarSystem;
 import java.io.Serializable;
 import java.util.List;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
 public class Model implements Serializable {
     private Game game;
     private final String saveFile = "../../../../SAVE_FILE.txt";
@@ -53,32 +46,11 @@ public class Model implements Serializable {
     }
 
     public void loadGame() {
-        /*try {
-            // read object from file
-            FileInputStream fis = new FileInputStream(saveFile);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            game = (Game) ois.readObject();
-            ois.close();
-            fis.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+
     }
 
     public void saveGame() {
-        try {
-            // write object to file
-            FileOutputStream fos = new FileOutputStream(saveFile);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(game);
-            oos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     /**
