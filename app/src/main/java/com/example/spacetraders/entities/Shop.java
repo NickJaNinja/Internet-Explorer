@@ -40,7 +40,7 @@ public class Shop {
             // Calculate price
             int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getMtlp().getLevel()));
-            int var = (int) (shopGood.getBasePrice() * (new Random()).nextInt(shopGood.getVar() + 1) / 100.0);
+            int var = (int)(new Random().nextInt(shopGood.getVar() + 1) / 100.0);
             if ((new Random()).nextInt(2) == 0) {
                 itemPrice += var;
             } else {
@@ -49,18 +49,15 @@ public class Shop {
             // Interesting events
             if (shopGood.getCr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice * 0.8);
-                Log.d("Debug", "Good's CR equals planet CR");
             } else if (shopGood.getEr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice/0.8);
-                Log.d("Debug", "Good's CR does not equal planet CR");
             }
             if (event == shopGood.ordinal() && eventChance < 0.03) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
-                Log.d("Debug", "RANDOM EXTREME PRICE EVENT");
             }
             // Stock items
-            if (techLevel.getLevel() > shopGood.getMtlp().getLevel()) {
+            if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
                 int itemStock = new Random().nextInt(5051 - shopGood.getBasePrice()) + 10;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));

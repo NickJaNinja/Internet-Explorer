@@ -3,12 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorBackground"/>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ToolBarStyle"
         android:theme="@style/AppTheme.AppBarOverlay"/>
 
     <include
@@ -16,13 +23,13 @@
         layout="@layout/content_main" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/new_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Game" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/load_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Load Game"

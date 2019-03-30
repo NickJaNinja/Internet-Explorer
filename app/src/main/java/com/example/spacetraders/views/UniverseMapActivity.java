@@ -92,6 +92,12 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!Model.getInstance().isOnWarpGatePlanet()) {
+                    CharSequence text = "Not on planet with Warp Gate";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
                 if (currentSolarSystem == null) {
                     CharSequence text = "No System Selected";
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);

@@ -27,7 +27,7 @@ public class MainActivity extends GUIActivity {
         setContentView(R.layout.activity_main);
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        newButton = findViewById(R.id.save_button);
+        newButton = findViewById(R.id.new_button);
         loadButton = findViewById(R.id.load_button);
 
 
@@ -60,6 +60,7 @@ public class MainActivity extends GUIActivity {
         return true;
     }
 
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -73,5 +74,5 @@ public class MainActivity extends GUIActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

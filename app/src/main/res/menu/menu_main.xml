@@ -1,10 +1,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.spacetraders.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/universe_map_button"
+        android:orderInCategory="1"
+        android:title="UNIVERSE MAP"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/system_map_button"
+        android:orderInCategory="2"
+        android:title="SYSTEM MAP"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/inventory_button"
+        android:orderInCategory="3"
+        android:title="INVENTORY"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/status_button"
+        android:orderInCategory="4"
+        android:title="STATUS"
         app:showAsAction="never" />
 </menu>

@@ -276,9 +276,9 @@ public class Universe {
     }
 
     /**
-     * gets a random planet
+     * gets a random content_planet
      *
-     * @return random planet
+     * @return random content_planet
      */
     public Planet getRandomPlanet() {
         Planet plan = solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();

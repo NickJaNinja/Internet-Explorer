@@ -104,9 +104,9 @@ public class Model implements Serializable {
     }
 
     /**
-     * getter for current planet
+     * getter for current content_planet
      *
-     * @return current planet
+     * @return current content_planet
      */
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();
@@ -139,4 +139,6 @@ public class Model implements Serializable {
     public SolarSystem getCurrentSystem() {
         return game.getCurrentSystem();
     }
+
+    public boolean isOnWarpGatePlanet() {return game.isOnWarpGatePlanet();}
 }

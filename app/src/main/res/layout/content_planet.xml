@@ -6,14 +6,15 @@
     android:id="@+id/planet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space_background">
+    android:background="@drawable/space_background"
+    tools:showIn="@layout/activity_planet">
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:foreground="@drawable/dim">
+        android:orientation="vertical">
+        <!--android:foreground="@drawable/dim"-->
 
         <ImageView
             android:id="@+id/planet_image"
@@ -87,22 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorText" />
-
-        <TextView
-            android:id="@+id/leave_orbit_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="> LEAVE ORBIT"
-            android:textColor="@color/colorText"
-            android:textSize="24sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
     </LinearLayout>
 
-    <include layout="@layout/menu_bar"></include>
+    <!--<include layout="@layout/menu_bar"></include>-->
 
 </FrameLayout>
