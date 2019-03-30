@@ -83,12 +83,12 @@ public class PlanetActivity extends MenuBarActivity {
         mediaPlayer.start();
 
         // pressing anywhere on layout undims layout
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                layout.getForeground().setAlpha(0);
-            }
-        });
+        //layout.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        layout.getForeground().setAlpha(0);
+        //    }
+        //});
 
         // pressing content_market button
         market.setOnClickListener(new View.OnClickListener() {
