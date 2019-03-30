@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
@@ -57,17 +58,22 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onClicked(playerCargoList.get(position));
-                    }
+                    if (position == RecyclerView.NO_POSITION) {
+                        CharSequence text = "DO NOT CLICK THAT";
+                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        if (listener != null) {
+                            listener.onClicked(playerCargoList.get(position));
+                        }
 
-                    int cost = Integer.parseInt(price.getText().toString());
+                        int cost = Integer.parseInt(price.getText().toString());
 
-                    if (playerCargoList.get(position).getStock() > 0
-                            && model.makeTransaction(playerCargoList.get(position).getGood(), -1, cost) == 1) {
-                        playerCargoList = model.getPlayerEntries();
-                        shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
-                        notifyDataSetChanged();
+                        if (playerCargoList.get(position).getStock() > 0
+                                && model.makeTransaction(playerCargoList.get(position).getGood(), -1, cost) == 1) {
+                            playerCargoList = model.getPlayerEntries();
+                            shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
+                            notifyDataSetChanged();
                         /*
                         ShopEntry select = playerCargoList.get(position);
                         //add to shop inventory
@@ -107,6 +113,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, playerCargoList.size());
                         */
+                        }
                     }
                 }
             });
