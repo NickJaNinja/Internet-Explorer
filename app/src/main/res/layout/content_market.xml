@@ -246,40 +246,51 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
                     android:id="@+id/cancel_button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight=".5"
-                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
                     android:text="CANCEL"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:background="@color/colorCancelButton"
+                    android:textSize="18sp" />
 
+                <!--
                 <View
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:background="@color/colorText" />
+                    -->
 
-                <TextView
+                <Button
                     android:id="@+id/confirm_button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight=".5"
-                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
                     android:text="CONFIRM"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:background="@color/colorPlusButton"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
+            <!--
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorText" />
+                -->
 
         </LinearLayout>
 

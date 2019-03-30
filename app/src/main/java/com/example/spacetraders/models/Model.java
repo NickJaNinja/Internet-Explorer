@@ -48,7 +48,11 @@ public class Model {
      * Creates a new game
      *
      * @param gd game difficulty
-     * @param p  player
+     * @param name  player name
+     * @param pilot pilot level
+     * @param fight fight level
+     * @param trade trade level
+     * @param eng eng level
      */
     public void createGame(GameDifficulty gd, String name, int pilot, int fight, int trade, int eng) {
         Player p = new Player(name, pilot, fight, trade, eng);
