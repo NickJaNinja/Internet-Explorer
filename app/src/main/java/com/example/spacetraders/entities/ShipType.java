@@ -1,9 +1,11 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
+
 /**
  * This enum represents the various spaceship types
  */
-public enum ShipType {
+public enum ShipType implements Serializable {
     FLEA("Flea", 0, 0, 0, 2, 20, 0),
     GNAT("Gnat", 1, 0, 1, 15, 14, 0),
     FIREFLY("Firefly", 1, 1, 1, 20, 17, 0),

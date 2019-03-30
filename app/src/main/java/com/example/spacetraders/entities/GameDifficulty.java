@@ -1,9 +1,11 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
+
 /**
  * This class represents the various game difficulties
  */
-public enum GameDifficulty {
+public enum GameDifficulty implements Serializable {
     BEGINNER("Beginner"), EASY("Easy"), NORMAL("Normal"), HARD("Hard"), IMPOSSIBLE("Impossible");
 
     private final String name;

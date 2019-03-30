@@ -1,12 +1,13 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Random;
 
 /**
  * This class represents a solar system
  */
-public class SolarSystem {
+public class SolarSystem implements Serializable {
 
     private String name;
     private Coordinates coordinates;

@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Random;
@@ -7,7 +8,7 @@ import java.util.Random;
 /**
  * This class represents a content_planet
  */
-public class Planet {
+public class Planet implements Serializable {
 
     private String name;
     private Star parentStar;

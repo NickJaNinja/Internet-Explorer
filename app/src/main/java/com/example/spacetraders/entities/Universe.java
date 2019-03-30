@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
@@ -7,7 +8,7 @@ import java.util.HashSet;
 /**
  * This class represents the game universe
  */
-public class Universe {
+public class Universe implements Serializable {
     private static final String[] SOLARSYSTEMNAMES =
             {
                     "Acamar",

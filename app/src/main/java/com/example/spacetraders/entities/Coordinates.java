@@ -1,10 +1,11 @@
 package com.example.spacetraders.entities;
+import java.io.Serializable;
 import java.lang.Math;
 
 /**
  * This class represents the coordinates of a solar system
  */
-public class Coordinates {
+public class Coordinates implements Serializable {
     private int x;
     private int y;
 

@@ -1,9 +1,11 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
+
 /**
  * This enum represents the political systems
  */
-public enum PoliticalSystem {
+public enum PoliticalSystem implements Serializable {
     ANARCHY("Anarchy"),
     CAPITALIST_STATE("Capitalist State"),
     COMMUNIST_STATE("Communist State"),

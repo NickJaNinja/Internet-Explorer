@@ -1,12 +1,13 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.Random;
 import android.graphics.Color;
 
 /**
  * This class represents a star
  */
-public class Star {
+public class Star implements Serializable {
 
     private String name;
     private char classification;

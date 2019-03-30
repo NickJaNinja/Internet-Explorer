@@ -1,9 +1,11 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
+
 /**
  * This enum represents the various resource levels
  */
-public enum ResourcesLevel {
+public enum ResourcesLevel implements Serializable {
     NO_SPECIAL_RESOURCES(0, "No Special Resources"),
     MINERAL_RICH(1, "Mineral Rich"),
     MINERAL_POOR(2, "Mineral Poor"),

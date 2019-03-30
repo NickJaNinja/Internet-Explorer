@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
  * This class represents the player's ship
  */
 
-public class Ship {
+public class Ship implements Serializable {
     private ShipType type;
     private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;

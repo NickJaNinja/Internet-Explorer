@@ -13,8 +13,9 @@ import com.example.spacetraders.entities.SolarSystem;
 import java.io.Serializable;
 import java.util.List;
 
-public class Model implements Serializable {
+public class Model {
     private Game game;
+    private final String saveFile = "../../../../SAVE_FILE.txt";
 
     /**
      * Singleton Pattern Code
@@ -44,8 +45,12 @@ public class Model implements Serializable {
         game = new Game(gd, p);
     }
 
-    public void loadGame(Game g) {
-        this.game = g;
+    public void loadGame() {
+
+    }
+
+    public void saveGame() {
+
     }
 
     /**
