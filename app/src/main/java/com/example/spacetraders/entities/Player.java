@@ -41,7 +41,6 @@ public class Player implements Serializable {
         this.credits = credits;
         this.reputation = reputation;
         this.ship = ship;
-        //this.currPlanet =
     }
 
     /**

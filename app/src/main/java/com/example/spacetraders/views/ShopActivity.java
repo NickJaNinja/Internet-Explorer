@@ -113,7 +113,7 @@ public class ShopActivity extends MenuBarActivity {
         super.onResume();
         adapterForShop.setShopGoodsList(viewModel.getShopEntries());
         adapterForPlayer.setPlayerCargoList(viewModel.getPlayerEntries());
-        creditDisplay.setText(String.format("%d", model.getCredits()));
+        creditDisplay.setText(Integer.toString(model.getCredits()));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
