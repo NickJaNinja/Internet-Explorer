@@ -3,7 +3,9 @@ package com.example.spacetraders.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShopEntry {
+import java.io.Serializable;
+
+public class ShopEntry implements Serializable {
     private ShopGoods good;
     private int stock;
     private int price;

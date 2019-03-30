@@ -7,7 +7,9 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Random;
 
-public class Shop {
+import java.io.Serializable;
+
+public class Shop implements Serializable {
     private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
