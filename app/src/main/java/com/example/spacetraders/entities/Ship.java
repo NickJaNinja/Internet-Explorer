@@ -140,7 +140,11 @@ public class Ship {
             }
             int currPrc = item.getPrice();
             int avgPrc = currAmt * currPrc;
-            avgPrc += amount * price;
+            if (amount > 0) {
+                avgPrc += amount * price;
+            } else {
+                avgPrc += amount * currPrc;
+            }
             avgPrc /= (amount + currAmt);
             item.setStock(currAmt + amount);
             item.setPrice(avgPrc);
