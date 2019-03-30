@@ -91,6 +91,8 @@ public class Game implements Serializable {
         return player.getCredits();
     }
 
+    public int getCargoSpace() { return player.getCargoSpace(); }
+
     /**
      * getter for game difficulty
      *

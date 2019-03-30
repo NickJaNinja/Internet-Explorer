@@ -197,6 +197,8 @@ public class Player implements Serializable {
         return credits;
     }
 
+    public int getCargoSpace() { return ship.getCargoSpaces(); }
+
     /**
      * getter for reputation
      *
