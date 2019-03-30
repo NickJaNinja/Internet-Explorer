@@ -55,7 +55,7 @@ public class Model {
         game = new Game(gd, p);
     }
 
-    public void loadGame(Context context) {
+    public boolean loadGame(Context context) {
         game = null;
         try {
             File loadFile = new File(context.getFilesDir(), filename);
@@ -71,6 +71,7 @@ public class Model {
             System.out.println("Game class not found.");
             c.printStackTrace();
         }
+        return game != null;
     }
 
     public void saveGame(Context context) {

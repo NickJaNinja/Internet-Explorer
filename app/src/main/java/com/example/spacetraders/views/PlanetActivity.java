@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
@@ -125,9 +126,14 @@ public class PlanetActivity extends MenuBarActivity {
 
         load.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                model.loadGame(v.getContext());
-                Intent intent = new Intent(v.getContext(), PlanetActivity.class);
-                startActivity(intent);
+                if (model.loadGame(v.getContext())) {
+                    Intent intent = new Intent(v.getContext(), PlanetActivity.class);
+                    startActivity(intent);
+                } else {
+                    CharSequence text = "Load file not found";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 

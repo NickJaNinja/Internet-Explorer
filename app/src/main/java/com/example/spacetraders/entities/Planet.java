@@ -18,7 +18,7 @@ public class Planet implements Serializable {
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
     private int population;
-    private transient Shop shop;
+    private Shop shop;
     private boolean isWarpGate;
 
     /**

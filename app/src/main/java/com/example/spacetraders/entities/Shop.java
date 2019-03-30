@@ -2,12 +2,13 @@ package com.example.spacetraders.entities;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Random;
 
-public class Shop {
+public class Shop implements Serializable {
     private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private TechLevel techLevel;
     private ResourcesLevel resourcesLevel;
