@@ -58,8 +58,11 @@
                 android:layout_marginRight="16dp"
                 android:hint="eg. Bob the Destroyer"
                 android:textColor="#ffffff"
-                app:backgroundTint="#ffffff" />
-
+                app:backgroundTint="#ffffff"
+                android:maxLines="1"
+                android:lines="1"
+                android:maxLength="35"
+                android:text="temp text"></android.support.design.widget.TextInputEditText>
         </android.support.design.widget.TextInputLayout>
 
         <TextView
