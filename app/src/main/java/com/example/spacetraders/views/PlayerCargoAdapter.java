@@ -22,14 +22,16 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
      * a copy of the list of shop goods in the model
      */
 
+    private ShopActivity shopActivity;
     private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
     private Model model;
 
-    public PlayerCargoAdapter(List<ShopEntry> playerCargoList) {
+    public PlayerCargoAdapter(List<ShopEntry> playerCargoList, ShopActivity shopActivity) {
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
+        this.shopActivity = shopActivity;
     }
 
     @NonNull
@@ -58,7 +60,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    
+
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
                         Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
@@ -76,6 +78,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                                 && model.makeTransaction(selectedGood, -1, cost) == 1) {
                             playerCargoList = model.getPlayerEntries();
                             shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
+                            shopActivity.updateDisplay();
                             notifyDataSetChanged();
                         /*
                         ShopEntry select = playerCargoList.get(position);

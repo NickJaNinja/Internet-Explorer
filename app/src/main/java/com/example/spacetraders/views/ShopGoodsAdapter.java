@@ -24,14 +24,16 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * a copy of the list of shop goods in the model
      */
 
+    private ShopActivity shopActivity;
     private PlayerCargoAdapter playerCargoAdapter;
     private List<ShopEntry> shopGoodsList;
     private OnClickListener listener;
     private Model model;
 
-    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList) {
+    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
         this.shopGoodsList = shopGoodsList;
         this.model = Model.getInstance();
+        this.shopActivity = shopActivity;
     }
 
     @NonNull
@@ -77,6 +79,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 && model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
                             shopGoodsList = model.getShopEntries();
                             playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
+                            shopActivity.updateDisplay();
                             notifyDataSetChanged();
                         /*
                         ShopEntry select = shopGoodsList.get(position);

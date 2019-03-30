@@ -24,6 +24,7 @@ public class ShopActivity extends MenuBarActivity {
     private TextView cancel;
     private TextView confirm;
     private TextView creditDisplay;
+    private TextView cargoDisplay;
     private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
@@ -54,6 +55,7 @@ public class ShopActivity extends MenuBarActivity {
         viewModel.setUpMarket();
 
         creditDisplay = findViewById(R.id.credit_text_display);
+        cargoDisplay  = findViewById(R.id.cargo_text_display);
 
         /*
         Set up our recycler view by grabbing the layout for a single item
@@ -63,7 +65,7 @@ public class ShopActivity extends MenuBarActivity {
         recyclerViewShop.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntries());
+        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntries(), this);
         recyclerViewShop.setAdapter(adapterForShop);
 
 
@@ -75,13 +77,13 @@ public class ShopActivity extends MenuBarActivity {
         recyclerViewPlayer.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForPlayer = new PlayerCargoAdapter(viewModel.getShopEntries());
+        adapterForPlayer = new PlayerCargoAdapter(viewModel.getShopEntries(), this);
         recyclerViewPlayer.setAdapter(adapterForPlayer);
 
         adapterForPlayer.setShopGoodsAdapter(adapterForShop);
         adapterForShop.setPlayerCargoAdapter(adapterForPlayer);
 
-        // Connecting button instance variables with content_markett_market.xml buttons
+        // Connecting button instance variables with content_market.xml buttons
         confirm = findViewById(R.id.confirm_button);
         cancel = findViewById(R.id.cancel_button);
 
@@ -113,7 +115,7 @@ public class ShopActivity extends MenuBarActivity {
         super.onResume();
         adapterForShop.setShopGoodsList(viewModel.getShopEntries());
         adapterForPlayer.setPlayerCargoList(viewModel.getPlayerEntries());
-        creditDisplay.setText(Integer.toString(model.getCredits()));
+        updateDisplay();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -163,5 +165,10 @@ public class ShopActivity extends MenuBarActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+    public void updateDisplay() {
+        creditDisplay.setText(Integer.toString(model.getCredits()));
+        cargoDisplay.setText(Integer.toString(model.getCargoSpace()));
     }
 }

@@ -66,6 +66,10 @@ public class Model implements Serializable {
         return game.getCredits();
     }
 
+    public int getCargoSpace() {
+        return game.getCargoSpace();
+    }
+
     public int travelToPlanet(Planet p) { return game.travelToPlanet(p); }
 
     public int travelToSystem(SolarSystem to) {

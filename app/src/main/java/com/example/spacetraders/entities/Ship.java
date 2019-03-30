@@ -37,6 +37,8 @@ public class Ship {
         return type;
     }
 
+    public int getCargoSpaces() { return type.getNumCargoHolds() - inventory; }
+
     public int getInventory() {
         return inventory;
     }
