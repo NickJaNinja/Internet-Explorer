@@ -61,18 +61,23 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onClicked(shopGoodsList.get(position));
-                        //view.setBackgroundColor(Color.CYAN);
-                    }
+                    if (position == RecyclerView.NO_POSITION) {
+                        CharSequence text = "DO NOT CLICK THAT";
+                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        if (listener != null) {
+                            listener.onClicked(shopGoodsList.get(position));
+                            //view.setBackgroundColor(Color.CYAN);
+                        }
 
-                    int cost = Integer.parseInt(price.getText().toString());
+                        int cost = Integer.parseInt(price.getText().toString());
 
-                    if (shopGoodsList.get(position).getStock() > 0
-                            && model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
-                        shopGoodsList = model.getShopEntries();
-                        playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
-                        notifyDataSetChanged();
+                        if (shopGoodsList.get(position).getStock() > 0
+                                && model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
+                            shopGoodsList = model.getShopEntries();
+                            playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
+                            notifyDataSetChanged();
                         /*
                         ShopEntry select = shopGoodsList.get(position);
                         List<ShopEntry> tempPlayerCargo = playerCargoAdapter.getPlayerCargoList();
@@ -109,10 +114,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, shopGoodsList.size());
                         */
-                    } else {
-                        CharSequence text = "Not enough money or storage";
-                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
-                        toast.show();
+                        } else {
+                            CharSequence text = "Not enough money or storage";
+                            Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
                     }
                 }
             });

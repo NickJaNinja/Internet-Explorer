@@ -58,14 +58,14 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    ShopEntry selectedEntry = playerCargoList.get(position);
-                    ShopGoods selectedGood = selectedEntry.getGood();
-
+                    
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
                         Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
+                        ShopEntry selectedEntry = playerCargoList.get(position);
+                        ShopGoods selectedGood = selectedEntry.getGood();
                         if (listener != null) {
                             listener.onClicked(playerCargoList.get(position));
                         }
