@@ -58,7 +58,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    
+
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
                         Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
