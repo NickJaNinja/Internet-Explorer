@@ -5,6 +5,8 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
     android:background="@color/colorPrimaryDark"
     app:popupTheme="@style/ToolBarStyle"
     app:layout_collapseMode="pin">
@@ -25,6 +27,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight=".1"
                             android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
                             android:indeterminate="false"
                             android:progressDrawable="@drawable/circular_progress_bar"
                             android:background="@drawable/circle_shape"
@@ -39,30 +42,17 @@
                             android:layout_weight=".8">
 
                                 <ProgressBar
-                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:id="@+id/health_bar"
+                                    style="@style/CustomProgressBarHorizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
                                     android:max="100"
-                                    android:progress="100"
-                                    android:background="@color/colorHint"/>
-
-                                <ProgressBar
-                                    android:id="@+id/health_bar"
-                                    style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
-                                    android:background="@color/colorCancelButton"/>
+                                    android:progress="65"
+                                    />
 
                         </FrameLayout>
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".05"/>
 
                 </LinearLayout>
 
