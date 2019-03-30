@@ -18,7 +18,6 @@ public class Player implements Serializable {
     private int credits;
     private int reputation;
     private Ship ship;
-    //private Planet currPlanet;
 
     /**
      * constuctor with all parameters

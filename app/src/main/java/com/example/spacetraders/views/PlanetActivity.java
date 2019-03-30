@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
@@ -31,6 +32,8 @@ public class PlanetActivity extends MenuBarActivity {
     private TextView upgrade;
     private TextView refuel;
     private TextView leaveOrbit;
+    private TextView save;
+    private TextView load;
     private Planet planet;
     private ShopViewModel viewModel;
     private Model model;
@@ -67,6 +70,8 @@ public class PlanetActivity extends MenuBarActivity {
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
         refuel = findViewById(R.id.refuel_button);
+        save = findViewById(R.id.save_button);
+        load = findViewById(R.id.load_button);
 
         // globally
 
@@ -113,6 +118,24 @@ public class PlanetActivity extends MenuBarActivity {
             }
         });
 
+        save.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                model.saveGame(v.getContext());
+            }
+        });
+
+        load.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (model.loadGame(v.getContext())) {
+                    Intent intent = new Intent(v.getContext(), PlanetActivity.class);
+                    startActivity(intent);
+                } else {
+                    CharSequence text = "Load file not found";
+                    Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
 
         // rotate content_planet animation
         planetImage = findViewById(R.id.planet_image);

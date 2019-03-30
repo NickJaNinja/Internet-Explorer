@@ -33,17 +33,21 @@ public class MainActivity extends GUIActivity {
 
         newButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                Intent intent = new Intent(v.getContext(), EditPlayerActivity.class);
+                startActivity(intent);
             }
         });
 
-
-
         loadButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-              //  Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
-               // startActivityForResult(intent,0);
+                Model.getInstance().loadGame(v.getContext());
+                Intent intent;
+                if (Model.getInstance().getGame() == null) {
+                    intent = new Intent(v.getContext(), EditPlayerActivity.class);
+                } else {
+                    intent = new Intent(v.getContext(), PlanetActivity.class);
+                }
+                startActivity(intent);
             }
 
         });

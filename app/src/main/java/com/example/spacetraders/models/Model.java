@@ -1,5 +1,8 @@
 package com.example.spacetraders.models;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
@@ -10,12 +13,19 @@ import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
-public class Model implements Serializable {
+public class Model {
     private Game game;
-    private final String saveFile = "../../../../SAVE_FILE.txt";
+    private final String filename = "SAVE_FILE.ser";
 
     /**
      * Singleton Pattern Code
@@ -49,12 +59,39 @@ public class Model implements Serializable {
         game = new Game(gd, p);
     }
 
-    public void loadGame() {
-
+    public boolean loadGame(Context context) {
+        game = null;
+        try {
+            File loadFile = new File(context.getFilesDir(), filename);
+            FileInputStream fileIn =
+                    new FileInputStream(loadFile);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            game = (Game) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Game class not found.");
+            c.printStackTrace();
+        }
+        return game != null;
     }
 
-    public void saveGame() {
-
+    public void saveGame(Context context) {
+        try {
+            File saveFile = new File(context.getFilesDir(), filename);
+            saveFile.createNewFile();
+            saveFile.setWritable(true);
+            FileOutputStream fileOut =
+                    new FileOutputStream(saveFile);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(game);
+            out.close();
+            fileOut.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
     }
 
     /**
@@ -153,5 +190,5 @@ public class Model implements Serializable {
         return game.getCurrentSystem();
     }
 
-    public boolean isOnWarpGatePlanet() {return game.isOnWarpGatePlanet();}
+    public boolean isOnWarpGatePlanet() { return game.isOnWarpGatePlanet(); }
 }
