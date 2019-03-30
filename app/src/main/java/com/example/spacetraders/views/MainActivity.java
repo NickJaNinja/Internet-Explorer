@@ -1,10 +1,13 @@
 package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Game;
@@ -14,7 +17,9 @@ import com.example.spacetraders.viewmodels.MainViewModel;
 public class MainActivity extends GUIActivity {
     private MainViewModel mainViewModel;
 
-    private Game game;
+    private Model model;
+    private Button newButton;
+    private Button loadButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +27,30 @@ public class MainActivity extends GUIActivity {
         setContentView(R.layout.activity_main);
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
+        newButton = findViewById(R.id.save_button);
+        loadButton = findViewById(R.id.load_button);
+
+
+        newButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+              //  Intent intent = new Intent(v.getContext(), SolarSystemActivity.class);
+               // startActivityForResult(intent,0);
+            }
+
+        });
+
+
         // Should prob delete this later, seems like the view has too much access to data
-        mainViewModel.printUniverse(Model.getInstance().getGame());
+      //  mainViewModel.printUniverse(Model.getInstance().getGame());
     }
 
     @Override
