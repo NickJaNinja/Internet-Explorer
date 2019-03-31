@@ -18,13 +18,13 @@
             android:id="@+id/game_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:inputType="textPersonName"
-            android:text="Space Trader"
-            android:textStyle="bold"
-            android:gravity="center"
             android:layout_weight="2"
-            android:textColor="@color/colorText" />
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="SPACE TRADER"
+            android:textColor="@color/colorText"
+            android:textSize="50dp"
+            android:textStyle="bold" />
 
 
         <ImageView
