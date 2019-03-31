@@ -83,8 +83,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                         int cost = Integer.parseInt(price.getText().toString());
 
-                        if (shopGoodsList.get(position).getStock() > 0
-                                && model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
+                        if (shopGoodsList.get(position).getStock() > 0 ) {
 
                             Context context = itemView.getContext();
                             int itemStock = shopGoodsList.get(position).getStock();
@@ -100,13 +99,13 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             layout.setPadding(2, 2, 2, 2);
 
                             // seek bar for alert dialog to select how much to buy
-                            final SeekBar seek = new SeekBar(context);
-                            seek.setMax(itemStock - 1);
-                            seek.setKeyProgressIncrement(1);
+                            SeekBar seek = new SeekBar(context);
+                            seek.setMax((itemStock - 1));
+                            seek.setKeyProgressIncrement(10);
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            seekText.setText("Value of: ");
+                            seekText.setText("Value of: 1");
                             seekText.setPadding(40, 40, 40, 40);
                             seekText.setGravity(Gravity.CENTER);
                             seekText.setTextSize(20);
@@ -117,7 +116,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
                                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                                    seekText.setText("Value of : " + progress + 1);
+                                    seekText.setText("Value of : " + (progress + 1));
                                 }
 
                                 @Override
@@ -159,21 +158,22 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed) {
+                                    if (dialogConfirmed && model.makeTransaction(shopGoodsList.get(position).getGood(), seek.getProgress() + 1, cost) == 1) {
                                         // updating inventories and display
                                         shopGoodsList = model.getShopEntries();
                                         playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
                                         shopActivity.updateDisplay();
                                         notifyDataSetChanged();
-                                    } else {
+                                    } else if (!dialogConfirmed) {
+                                        CharSequence text = "Not enough money or storage";
+                                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                                        toast.show();
                                         return;
-                                    }
+                                    } else return;
                                 }
                             });
 
                             dialog.show();
-
-                            // TODO add 1 to amount of stock player wants to purchase to make it right
                         } else {
                             CharSequence text = "Not enough money or storage";
                             Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
