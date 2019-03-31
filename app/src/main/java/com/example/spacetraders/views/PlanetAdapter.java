@@ -98,6 +98,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
+     //  planetViewHolder.planetView.setImageResource(R.drawable.helloimeleven);
+
 
 
        // planetViewHolder.distance.setText("" + content_planet.getDistanceFromParentStar());

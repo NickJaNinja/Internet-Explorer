@@ -30,6 +30,7 @@ public class SolarSystemActivity extends GUIActivity {
     private TextView luminosity;
     private RecyclerView recyclerViewPlanet;
     private ImageView starView;
+    private ImageView planetImage;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
@@ -63,6 +64,7 @@ public class SolarSystemActivity extends GUIActivity {
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
         starView = findViewById(R.id.star_image);
+        planetImage = findViewById(R.id.planet_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
         radius = findViewById(R.id.star_radius);
@@ -81,6 +83,7 @@ public class SolarSystemActivity extends GUIActivity {
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
         luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
+       // planetImage.setImageResource(R.drawable.helloimseven);
 
 
         thrusterButton.setOnClickListener(new View.OnClickListener() {
