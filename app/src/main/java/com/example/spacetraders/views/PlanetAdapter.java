@@ -90,7 +90,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
         Planet planet = planetsList.get(position);
-        selectedPlanet = planet;
+       // selectedPlanet = planet;
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");

@@ -178,6 +178,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     public void onOkPressed(View view) {
 
         String name = nameField.getText().toString();
+        name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());
         int fighter = Integer.parseInt(fighterText.getText().toString());
         int trader = Integer.parseInt(tradeText.getText().toString());
