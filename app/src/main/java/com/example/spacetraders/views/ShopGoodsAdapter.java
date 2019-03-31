@@ -1,10 +1,16 @@
 package com.example.spacetraders.views;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -29,6 +35,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private List<ShopEntry> shopGoodsList;
     private OnClickListener listener;
     private Model model;
+    private AlertDialog dialog;
+    private boolean dialogConfirmed;
 
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
         this.shopGoodsList = shopGoodsList;
@@ -77,46 +85,95 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                         if (shopGoodsList.get(position).getStock() > 0
                                 && model.makeTransaction(shopGoodsList.get(position).getGood(), 1, cost) == 1) {
-                            shopGoodsList = model.getShopEntries();
-                            playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
-                            shopActivity.updateDisplay();
-                            notifyDataSetChanged();
-                        /*
-                        ShopEntry select = shopGoodsList.get(position);
-                        List<ShopEntry> tempPlayerCargo = playerCargoAdapter.getPlayerCargoList();
-                        if (tempPlayerCargo.contains(select)) {
-                            int selectIndex = tempPlayerCargo.indexOf(select);
-                            int currStock = tempPlayerCargo.get(selectIndex).getStock();
-                            tempPlayerCargo.get(selectIndex).setStock(currStock + 1);
-                        } else {
-                            select.setStock(1);
-                            select.setPrice(cost);
-                            playerCargoAdapter.getPlayerCargoList().add(select);
-                        }
 
-                        // add to player cargo
+                            Context context = itemView.getContext();
+                            int itemStock = shopGoodsList.get(position).getStock();
 
-                        for (int c = 0; c < list.size(); c++) {
-                            if (list.get(c) == select) {
-                               list.get(c).setStock(list.get(c).getStock() + 1);
-                            } else if (c == list.size() - 1) {
-                                select.setStock(1);
-                                playerCargoAdapter.getPlayerCargoList().add(select);
-                            }
-                        }
+                            dialogConfirmed = false;
 
+                            // master layout
+                            LinearLayout layout = new LinearLayout(context);
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            layout.setOrientation(LinearLayout.VERTICAL);
+                            layout.setLayoutParams(params);
+                            layout.setGravity(Gravity.CLIP_VERTICAL);
+                            layout.setPadding(2, 2, 2, 2);
 
-                        // playerCargoAdapter.getPlayerCargoList().add(select);
-                        playerCargoAdapter.notifyItemRangeInserted(playerCargoAdapter.getPlayerCargoList().size() - 1, playerCargoAdapter.getPlayerCargoList().size());
+                            // seek bar for alert dialog to select how much to buy
+                            final SeekBar seek = new SeekBar(context);
+                            seek.setMax(itemStock - 1);
+                            seek.setKeyProgressIncrement(1);
 
+                            // text view for seek bar
+                            TextView seekText = new TextView(context);
+                            seekText.setText("Value of: ");
+                            seekText.setPadding(40, 40, 40, 40);
+                            seekText.setGravity(Gravity.CENTER);
+                            seekText.setTextSize(20);
 
-                        //remove from content_market
-                        //shopGoodsList.remove(shopGoodsList.get(position));
-                        shopGoodsList.get(position).setStock(select.getStock() - 1);
+                            // text view changes with seek bar position change
+                            seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                                @Override
+                                public void onStartTrackingTouch(SeekBar seekBar) {}
 
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, shopGoodsList.size());
-                        */
+                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                    seekText.setText("Value of : " + progress + 1);
+                                }
+
+                                @Override
+                                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                                }
+                            });
+
+                            // adding seek and text view to master layout
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            seekTextParams.bottomMargin = 5;
+                            layout.addView(seekText, seekTextParams);
+                            LinearLayout.LayoutParams seekParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            seekParams.bottomMargin = 5;
+                            layout.addView(seek, seekParams);
+
+                            // asking user how much to buy
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                            builder.setTitle("chungus.info")
+                                    .setView(layout)
+                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                        // when positive button clicked dismiss dialog
+                                        @Override
+                                        public void onClick(DialogInterface d, int which) {
+                                            dialogConfirmed = true;
+                                            d.dismiss();
+                                        }
+                                    })
+                                    .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface d, int which) {
+                                            d.dismiss();
+                                        }
+                                    });
+
+                            dialog = builder.create();
+
+                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface dialog) {
+                                    if (dialogConfirmed) {
+                                        // updating inventories and display
+                                        shopGoodsList = model.getShopEntries();
+                                        playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
+                                        shopActivity.updateDisplay();
+                                        notifyDataSetChanged();
+                                    } else {
+                                        return;
+                                    }
+                                }
+                            });
+
+                            dialog.show();
+
+                            // TODO add 1 to amount of stock player wants to purchase to make it right
                         } else {
                             CharSequence text = "Not enough money or storage";
                             Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
@@ -148,50 +205,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
-    /*
-        public LinearLayout getLayout(int index, Context context) {
-            // layout containing line and the item layout
-            LinearLayout master_layout = new LinearLayout(context);
-            master_layout.setOrientation(LinearLayout.HORIZONTAL);
-
-            // creating a LinearLayout containing the item and info about it in TextViews
-            LinearLayout item_layout = new LinearLayout(master_layout.getContext());
-            item_layout.setOrientation(LinearLayout.HORIZONTAL);
-            LinearLayout.LayoutParams item_layout_params1 = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                    0.5f);
-            LinearLayout.LayoutParams item_layout_params2 = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                    0.25f);
-
-            // adding text views for each item in item_layout
-            TextView item_name = new TextView(master_layout.getContext());
-            item_name.setWidth(0);
-            item_name.setText(shopGoodsLis);
-            item_name.setLayoutParams(item_layout_params1);
-            TextView item_price = new TextView(master_layout.getContext());
-            item_price.setWidth(0);
-            item_price.setLayoutParams(item_layout_params2);
-            TextView item_stock = new TextView(master_layout.getContext());
-            item_stock.setWidth(0);
-            item_stock.setLayoutParams(item_layout_params2);
-
-            item_layout.addView(item_name);
-            item_layout.addView(item_price);
-            item_layout.addView(item_stock);
-
-            // creating a View with a horizontal white line
-            View line = new View(master_layout.getContext());
-            line.setMinimumHeight(1);
-            line.setBackgroundColor(Color.parseColor("#ffffff"));
-
-            // adding line and item_layout to master_layout
-            master_layout.addView(line);
-            master_layout.addView(item_layout);
-
-            return master_layout;
-        }
-        */
     public interface OnClickListener {
         void onClicked(ShopEntry goods);
     }

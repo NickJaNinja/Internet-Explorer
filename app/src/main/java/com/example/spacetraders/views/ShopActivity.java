@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -100,18 +101,6 @@ public class ShopActivity extends MenuBarActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewModel.setUpMarket();
-
-                // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
-                AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
-
-// 2. Chain together various setter methods to set the dialog characteristics
-                builder.setMessage("hi how ya doing big fella")
-                        .setTitle("chungus.info");
-
-// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
-                AlertDialog dialog = builder.create();
-
-                dialog.show();
             }
         });
 
