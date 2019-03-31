@@ -110,7 +110,9 @@ public class SolarSystemActivity extends GUIActivity {
             @Override
             public void onClicked(Planet planet) {
                 setSelectedPlanet(planet);
-                if (selectedPlanet != null) {
+                if (selectedPlanet == null) {
+                    thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
+                } else {
                     thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77")); // green
                 }
             }
