@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -79,6 +82,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                             System.out.println("flag");
                             Log.d("Debug", "Planet clicked");
 
+
                         }
                     });
                     notifyDataSetChanged();
@@ -98,7 +102,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
-     //  planetViewHolder.planetView.setImageResource(R.drawable.placeholder_planet);
+       planetViewHolder.planetView.setImageResource(R.drawable.input);
 
 
 

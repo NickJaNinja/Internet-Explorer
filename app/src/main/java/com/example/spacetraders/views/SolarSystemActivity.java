@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -117,6 +120,12 @@ public class SolarSystemActivity extends GUIActivity {
                     thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
                 } else {
                     thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77")); // green
+               /*     planetImage = findViewById(R.id.planet_image);
+                    RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    rotate.setRepeatCount(Animation.INFINITE);
+                    rotate.setDuration(3);
+                    rotate.setInterpolator(new LinearInterpolator());
+                    planetImage.startAnimation(rotate);*/
                 }
             }
         });
