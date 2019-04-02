@@ -83,7 +83,7 @@ public class PlanetActivity extends MenuBarActivity {
         try {
             mediaPlayer.prepare();
         } catch (Exception e) {
-            System.out.println(e);
+
         }
         mediaPlayer.start();
 
@@ -167,12 +167,12 @@ public class PlanetActivity extends MenuBarActivity {
                 return true;
             case R.id.inventory_button:
 
-                // TODO inventory
+
 
                 return true;
             case R.id.status_button:
 
-                // TODO status
+
 
                 return true;
             default:

@@ -10,7 +10,7 @@ public enum TechLevel implements Serializable {
     PRE_AGRICULTURE(0, "Pre-Agriculture"),
     AGRICULTURE(1, "Agriculture"),
     MEDIEVAL(2, "Medieval"),
-    RENAISSANCE(3, "Renasissance"),
+    RENAISSANCE(3, "Renaissance"),
     EARLY_INDUSTRIAL(4, "Early Industrial"),
     INDUSTRIAL(5, "Industrial"),
     POST_INDUSTRIAL(6, "Post-Industrial"),
