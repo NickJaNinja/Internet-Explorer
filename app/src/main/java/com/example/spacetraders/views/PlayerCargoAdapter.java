@@ -1,9 +1,15 @@
 package com.example.spacetraders.views;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -29,6 +35,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
+    private AlertDialog dialog;
     private Model model;
 
     /**
@@ -56,6 +63,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         private TextView name;
         private TextView price;
         private TextView stock;
+        private boolean dialogConfirmed;
 
         /**
          * ViewHolder Constructor
@@ -87,51 +95,135 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                         int cost = shopGoodsAdapter.getCostOfGood(selectedGood);
 
+                        /*
                         if (playerCargoList.get(position).getStock() > 0
                                 && model.makeTransaction(selectedGood, -1, cost) == 1) {
                             playerCargoList = model.getPlayerEntries();
                             shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
                             shopActivity.updateDisplay();
                             notifyDataSetChanged();
-                        /*
-                        ShopEntry select = playerCargoList.get(position);
-                        //add to shop inventory
-                        List<ShopEntry> list = shopGoodsAdapter.getShopGoodsList();
-                        if (list.contains(select)) {
-                            int selectIndex = list.indexOf(select);
-                            int currStock = list.get(selectIndex).getStock();
-                            list.get(selectIndex).setStock(currStock + 1);
-                        } else {
-                            select.setStock(1);
-                            select.setPrice(cost);
-                            shopGoodsAdapter.getShopGoodsList().add(select);
                         }
-
-                        for (int c = 0; c < list.size(); c++) {
-                            if (list.get(c) == select) {
-                                list.get(c).setStock(list.get(c).getStock() + 1);
-
-                            } else {
-                                select.setStock(1);
-                                shopGoodsAdapter.getShopGoodsList().add(select);
-                            }
-                        }
-
-                        shopGoodsAdapter.notifyItemRangeInserted(
-                                shopGoodsAdapter.getShopGoodsList().size() - 1,
-                                shopGoodsAdapter.getShopGoodsList().size());
-
-                        //remove from player inventory
-                        select = playerCargoList.get(position);
-                        select.setStock(select.getStock() - 1);
-                        if (select.getStock() == 0) {
-                            playerCargoList.remove(select);
-                        }
-
-                        // playerCargoList.remove(playerCargoList.get(position));
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, playerCargoList.size());
                         */
+
+                        if (playerCargoList.get(position).getStock() > 0 ) {
+
+                            Context context = itemView.getContext();
+                            int itemStock = playerCargoList.get(position).getStock();
+                            int itemPrice = playerCargoList.get(position).getPrice();
+
+                            dialogConfirmed = false;
+
+                            // master layout
+                            LinearLayout layout = new LinearLayout(context);
+                            LinearLayout.LayoutParams params =
+                                    new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT);
+                            layout.setOrientation(LinearLayout.VERTICAL);
+                            layout.setLayoutParams(params);
+                            layout.setGravity(Gravity.CLIP_VERTICAL);
+                            layout.setPadding(2, 2, 2, 2);
+
+                            // seek bar for alert dialog to select how much to buy
+                            SeekBar seek = new SeekBar(context);
+                            seek.setMax((itemStock - 1));
+                            seek.setKeyProgressIncrement(10);
+
+                            // text view for seek bar
+                            TextView seekText = new TextView(context);
+                            seekText.setText("AMOUNT TO SELL: 1");
+                            seekText.setTextColor(0xFFFFFFFF);
+                            seekText.setPadding(40, 40, 40, 40);
+                            seekText.setGravity(Gravity.CENTER);
+                            seekText.setTextSize(20);
+
+                            // text view for price
+                            TextView priceText = new TextView(context);
+                            priceText.setText("TOTAL SALE: ¥" +itemPrice);
+                            priceText.setTextColor(0xFFFFFFFF);
+                            priceText.setPadding(40, 40, 40, 40);
+                            priceText.setGravity(Gravity.CENTER);
+                            priceText.setTextSize(20);
+
+                            // text views change with seek bar position change
+                            seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                                @Override
+                                public void onStartTrackingTouch(SeekBar seekBar) {}
+
+                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                    seekText.setText("AMOUNT TO SELL: " + (progress + 1));
+                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice * (progress + 1)));
+                                }
+
+                                @Override
+                                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                                }
+                            });
+
+                            // adding seek and text views to master layout
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            priceTextParams.bottomMargin = 5;
+                            layout.addView(priceText, priceTextParams);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            seekTextParams.bottomMargin = 5;
+                            layout.addView(seekText, seekTextParams);
+                            LinearLayout.LayoutParams seekParams =
+                                    new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT);
+                            seekParams.bottomMargin = 5;
+                            layout.addView(seek, seekParams);
+
+                            // asking user how much to buy
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+
+                            builder.setView(layout)
+                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                        // when positive button clicked dismiss dialog
+                                        @Override
+                                        public void onClick(DialogInterface d, int which) {
+                                            dialogConfirmed = true;
+                                            d.dismiss();
+                                        }
+                                    })
+                                    .setNegativeButton("CANCEL",
+                                            new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface d, int which) {
+                                                    d.dismiss();
+                                                }
+                                            });
+
+                            dialog = builder.create();
+
+                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface dialog) {
+                                    if (dialogConfirmed && model.makeTransaction(
+                                            selectedGood, -seek.getProgress() - 1,
+                                            cost) == 1) {
+                                        // updating inventories and display
+                                        playerCargoList = model.getPlayerEntries();
+                                        shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
+                                        shopActivity.updateDisplay();
+                                        notifyDataSetChanged();
+                                    } else if (dialogConfirmed) {
+                                        CharSequence text = "Not enough money or storage";
+                                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                                Toast.LENGTH_SHORT);
+                                        toast.show();
+                                        return;
+                                    } else return;
+                                }
+                            });
+
+                            dialog.show();
+                        } else {
+                            CharSequence text = "Not enough money or storage";
+                            Toast toast = Toast.makeText(itemView.getContext(), text,
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
                         }
                     }
                 }

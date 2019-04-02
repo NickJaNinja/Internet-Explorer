@@ -20,16 +20,6 @@ public class EditPlayerActivity extends AppCompatActivity {
     private EditPlayerViewModel editPlayerViewModel;
 
     private EditText nameField;
-    private Button fightPlus;
-    private Button fightMinus;
-    private Button tradePlus;
-    private Button tradeMinus;
-    private Button engineerPlus;
-    private Button engineerMinus;
-    private Button pilotPlus;
-    private Button pilotMinus;
-    private Button reset;
-    private Button exit;
     private Spinner gameDifficultySpinner;
     private TextView fighterText;
     private TextView tradeText;
@@ -40,6 +30,16 @@ public class EditPlayerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Button fightPlus;
+        Button fightMinus;
+        Button tradePlus;
+        Button tradeMinus;
+        Button engineerPlus;
+        Button engineerMinus;
+        Button pilotPlus;
+        Button pilotMinus;
+        Button reset;
+        Button exit;
         setContentView(R.layout.config);
         editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 

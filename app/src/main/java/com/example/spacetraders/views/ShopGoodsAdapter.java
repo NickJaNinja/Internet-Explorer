@@ -155,7 +155,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // asking user how much to buy
                             AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
-                            
+
                             builder.setView(layout)
                                     .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
