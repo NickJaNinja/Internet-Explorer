@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Adapts the list of shopgood in player's inventory to be a list of graphical elements in view
+ * Adapts the list of shop good in player's inventory to be a list of graphical elements in view
  */
 public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         .PlayerCargoViewHolder> {
