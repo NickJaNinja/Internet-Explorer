@@ -24,7 +24,8 @@
                 android:id="@+id/planet_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_info_details" />
+                app:srcCompat="@android:drawable/ic_menu_info_details"
+                android:contentDescription="image"/>
 
             <TextView
                 android:id="@+id/market_text"
@@ -34,7 +35,8 @@
                 android:gravity="center"
                 android:text="MARKET"
                 android:textColor="@color/colorText"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:contentDescription="image"/>
 
             <View
                 android:layout_width="match_parent"
