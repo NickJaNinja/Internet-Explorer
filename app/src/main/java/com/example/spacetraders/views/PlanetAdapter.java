@@ -94,6 +94,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
+        double multiple = 8.3167;
         //bind the planet data for one planet
         Planet planet = planetsList.get(position);
        // selectedPlanet = planet;
@@ -101,7 +102,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
         planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
-                * 8.3167) + " Lm");
+                * multiple) + " Lm");
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");

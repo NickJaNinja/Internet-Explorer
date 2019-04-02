@@ -18,6 +18,7 @@ public class Player implements Serializable {
     private int credits;
     private int reputation;
     private Ship ship;
+    private static final int defaultCredit = 10000;
 
     /**
      * constructor with all parameters
@@ -44,7 +45,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * constructor with default values for credit = 1000 & ship = GNAT
+     * constructor with default values for credit = 10000 & ship = GNAT
      *
      * @param name          player's name
      * @param pilotSkill    initial pilotSkill
@@ -54,7 +55,8 @@ public class Player implements Serializable {
      */
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
                   int engineerSkill) {
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 10000, 0,
+
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, defaultCredit, 0,
                 new Ship(ShipType.GNAT));
     }
 

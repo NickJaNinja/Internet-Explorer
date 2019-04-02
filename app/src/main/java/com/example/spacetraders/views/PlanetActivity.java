@@ -133,12 +133,17 @@ public class PlanetActivity extends MenuBarActivity {
         });
 
         // rotate content_planet animation
+        int duration = 300000;
+        int degree = 360;
+        float pivotValue = 0.5f;
+
+
         planetImage = findViewById(R.id.planet_image);
-        RotateAnimation rotate = new RotateAnimation(0, 360,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
-                0.5f);
+        RotateAnimation rotate = new RotateAnimation(0, degree,
+                Animation.RELATIVE_TO_SELF, pivotValue, Animation.RELATIVE_TO_SELF,
+                pivotValue);
         rotate.setRepeatCount(Animation.INFINITE);
-        rotate.setDuration(300000);
+        rotate.setDuration(duration);
         rotate.setInterpolator(new LinearInterpolator());
         planetImage.startAnimation(rotate);
     }

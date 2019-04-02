@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
-import com.example.spacetraders.viewmodels.MainViewModel;
 
 public class MainActivity extends GUIActivity {
     private Model model;
