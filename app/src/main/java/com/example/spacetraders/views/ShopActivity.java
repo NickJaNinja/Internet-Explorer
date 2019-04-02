@@ -171,6 +171,10 @@ public class ShopActivity extends MenuBarActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    /**
+     * After a transaction,
+     * update player's credit and cargo space in ship displayed in market
+     */
     public void updateDisplay() {
         creditDisplay.setText(Integer.toString(model.getCredits()));
         cargoDisplay.setText(Integer.toString(model.getCargoSpace()));
