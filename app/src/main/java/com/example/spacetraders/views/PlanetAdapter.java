@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +22,10 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * Adapts the list of planets in the model to be a list of graphical elements in view
+ */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
     private List<Planet> planetsList;
@@ -42,13 +49,16 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     }
 
-
+    /**
+     * This is a holder for the widgets associated with a single entry in the list of planets
+     */
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
         private TextView pname;
         private TextView economy;
         private TextView distance;
         private TextView techLevel;
         private TextView politicalSystem;
+        //planet image on the left
         private ImageView planetView;
 
         public PlanetViewHolder(@NonNull View itemView) {
@@ -79,6 +89,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                             System.out.println("flag");
                             Log.d("Debug", "Planet clicked");
 
+
                         }
                     });
                     notifyDataSetChanged();
@@ -89,8 +100,9 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
+        //bind the planet data for one planet
         Planet planet = planetsList.get(position);
-        selectedPlanet = planet;
+       // selectedPlanet = planet;
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
@@ -98,11 +110,13 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
+        planetViewHolder.planetView.setImageResource(R.drawable.input);
+
 
 
        // planetViewHolder.distance.setText("" + content_planet.getDistanceFromParentStar());
-//        planetViewHolder.coordinates.setText(system.getCoordinates().toString());
-//        notifyDataSetChanged();
+       // planetViewHolder.coordinates.setText(system.getCoordinates().toString());
+       // notifyDataSetChanged();
 
 
 

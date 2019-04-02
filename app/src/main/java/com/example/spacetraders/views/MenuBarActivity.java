@@ -50,7 +50,7 @@ public class MenuBarActivity extends GUIActivity {
                 // dimming screen
                 //findViewById(R.id.linear_layout).getForeground().setAlpha(140);
 
-                // menubar popping up
+                // menu bar popping up
                 LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
                         .getSystemService(LAYOUT_INFLATER_SERVICE);
                 View popupView = layoutInflater.inflate(R.layout.status_bar2, null);

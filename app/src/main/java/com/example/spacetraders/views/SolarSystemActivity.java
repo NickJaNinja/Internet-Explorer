@@ -2,10 +2,14 @@ package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -29,6 +33,7 @@ public class SolarSystemActivity extends GUIActivity {
     private TextView luminosity;
     private RecyclerView recyclerViewPlanet;
     private ImageView starView;
+    private ImageView planetImage;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
@@ -41,10 +46,6 @@ public class SolarSystemActivity extends GUIActivity {
 
         super.onCreate(savedInstanceState);
 
-
-      //  FrameLayout layout = new FrameLayout(this);
-      //  View.inflate(this, R.layout.content_planet, layout);
-      //  View.inflate(this, R.layout.menu_bar, layout);
 
         setContentView(R.layout.solar_system_map);
 
@@ -61,6 +62,7 @@ public class SolarSystemActivity extends GUIActivity {
         adapterForPlanets = new PlanetAdapter(viewModel.getPlanetsInRange());
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
+
         starView = findViewById(R.id.star_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
@@ -69,9 +71,11 @@ public class SolarSystemActivity extends GUIActivity {
         surfaceTemp = findViewById(R.id.star_surface_temperature);
         luminosity = findViewById(R.id.star_luminosity);
         thrusterButton = findViewById(R.id.thrusters_button);
+        planetImage = findViewById(R.id.planet_image);
 
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
+
 
         name.setText(solarSystem.getName() + "");
         classification.setText(solarSystem.getStars()[0].getClassification() + " Class Star");
@@ -79,6 +83,10 @@ public class SolarSystemActivity extends GUIActivity {
         mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
         luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
+
+        //initialize button color to red
+        thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
+
 
         thrusterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +115,18 @@ public class SolarSystemActivity extends GUIActivity {
             @Override
             public void onClicked(Planet planet) {
                 setSelectedPlanet(planet);
+                if (selectedPlanet == null) {
+                    thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
+                } else {
+                    //change button color to green after clicking on a planet
+                    thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77"));
+               /*     planetImage = findViewById(R.id.planet_image);
+                    RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    rotate.setRepeatCount(Animation.INFINITE);
+                    rotate.setDuration(3);
+                    rotate.setInterpolator(new LinearInterpolator());
+                    planetImage.startAnimation(rotate);*/
+                }
             }
         });
 
@@ -114,7 +134,7 @@ public class SolarSystemActivity extends GUIActivity {
     }
 
     /**
-     *
+     * set planet selected
      * @param p the selected destination planet
      */
     public void setSelectedPlanet(Planet p) {

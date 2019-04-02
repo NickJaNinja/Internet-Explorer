@@ -1,39 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ff"
+    android:background="@drawable/space_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+   >
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorBackground"/>
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--android:foreground="@drawable/dim"-->
+        <EditText
+            android:id="@+id/game_name"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/ToolBarStyle"
-        android:theme="@style/AppTheme.AppBarOverlay"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="SPACE TRADER"
+            android:textColor="@color/colorText"
+            android:textSize="50dp"
+            android:textStyle="bold" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_main" />
 
-    <Button
-        android:id="@+id/new_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Game" />
+        <ImageView
+            android:id="@+id/bob_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="4"
+            android:src="@drawable/robert_waters_jr_0" />
 
-    <Button
-        android:id="@+id/load_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Load Game"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="left|center" />
+        <Button
+            android:id="@+id/new_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="NEW GAME" />
 
-</android.support.design.widget.CoordinatorLayout>
+        <Button
+            android:id="@+id/load_button"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="LOAD GAME" /><!--  android:background="@color/colorHint"-->
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

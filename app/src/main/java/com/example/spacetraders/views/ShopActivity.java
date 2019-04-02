@@ -1,6 +1,7 @@
 package com.example.spacetraders.views;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -9,12 +10,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -100,18 +104,6 @@ public class ShopActivity extends MenuBarActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 viewModel.setUpMarket();
-
-                // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
-                AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
-
-// 2. Chain together various setter methods to set the dialog characteristics
-                builder.setMessage("hi how ya doing big fella")
-                        .setTitle("chungus.info");
-
-// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
-                AlertDialog dialog = builder.create();
-
-                dialog.show();
             }
         });
 
@@ -179,6 +171,10 @@ public class ShopActivity extends MenuBarActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    /**
+     * After a transaction,
+     * update player's credit and cargo space in ship displayed in market
+     */
     public void updateDisplay() {
         creditDisplay.setText(Integer.toString(model.getCredits()));
         cargoDisplay.setText(Integer.toString(model.getCargoSpace()));

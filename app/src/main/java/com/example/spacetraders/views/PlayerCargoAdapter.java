@@ -16,6 +16,9 @@ import com.example.spacetraders.models.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Adapts the list of shopgood in player's inventory to be a list of graphical elements in view
+ */
 public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.PlayerCargoViewHolder> {
 
     /**
@@ -129,7 +132,6 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
     @Override
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder, int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-
         playerCargoViewHolder.price.setText(shopEntry.getPrice() + "");
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
@@ -147,6 +149,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
         notifyDataSetChanged();
     }
 
+    /**
+     *
+     * @return list of shopgoods in player's inventory
+     */
     public List<ShopEntry> getPlayerCargoList() {
         return playerCargoList;
     }

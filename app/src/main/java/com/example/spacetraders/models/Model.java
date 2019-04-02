@@ -59,6 +59,7 @@ public class Model {
         game = new Game(gd, p);
     }
 
+
     public boolean loadGame(Context context) {
         game = null;
         try {
@@ -108,19 +109,38 @@ public class Model {
         return game.makeTransaction(sg, amount, price);
     }
 
+    /**
+     *
+     * @return player's credit
+     */
     public int getCredits() {
         return game.getCredits();
     }
 
+    /**
+     *
+     * @return available cargo space in ship
+     */
     public int getCargoSpace() {
         return game.getCargoSpace();
     }
 
+    /**
+     * travel between planets
+     * @param p destination planet
+     * @return 1 if travel succeed or 0 if fail
+     */
     public int travelToPlanet(Planet p) { return game.travelToPlanet(p); }
 
+    /**
+     * travel between solar system
+     * @param to destination solar system
+     * @return 1 if travel succeed or 0 if fail
+     */
     public int travelToSystem(SolarSystem to) {
         return game.travelToSystem(to);
     }
+
 
     public void refuelShipMax() {
         game.refuelShipMax();
@@ -186,6 +206,10 @@ public class Model {
         return game.getSolarSystems();
     }
 
+    /**
+     *
+     * @return current solarSystem
+     */
     public SolarSystem getCurrentSystem() {
         return game.getCurrentSystem();
     }
