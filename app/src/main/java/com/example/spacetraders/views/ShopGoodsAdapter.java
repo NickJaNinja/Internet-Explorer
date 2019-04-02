@@ -21,7 +21,7 @@ import com.example.spacetraders.models.Model;
 
 import java.util.List;
 /**
- * Adapts the list of shopgoods in market to be a list of graphical elements in view
+ * Adapts the list of shop goods in market to be a list of graphical elements in view
  */
 public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
 
@@ -240,7 +240,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @return a list of shopgoods in players inventory
+     * @return a list of shop goods in players inventory
      */
     public PlayerCargoAdapter getPlayerCargoAdapter() {
         return playerCargoAdapter;
@@ -252,7 +252,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @return a list of shopgoods in market
+     * @return a list of shop goods in market
      */
     public List<ShopEntry> getShopGoodsList() {
         return shopGoodsList;
@@ -260,8 +260,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @param good  a shopgood
-     * @return the shopgood price OR -1 if fail
+     * @param good  a shop good
+     * @return the shop good price OR -1 if fail
      */
     public int getCostOfGood(ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {

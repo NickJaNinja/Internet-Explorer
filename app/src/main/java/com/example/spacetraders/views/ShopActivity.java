@@ -42,7 +42,7 @@ public class ShopActivity extends MenuBarActivity {
         setContentView(R.layout.activity_market);
 
         // toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 

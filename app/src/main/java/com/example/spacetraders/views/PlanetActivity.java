@@ -1,7 +1,6 @@
 package com.example.spacetraders.views;
 
 import android.annotation.TargetApi;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -17,7 +16,6 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.models.Model;
-import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class PlanetActivity extends MenuBarActivity {
     private Model model;
@@ -45,6 +42,7 @@ public class PlanetActivity extends MenuBarActivity {
         ImageView planetImage;
         TextView name;
 
+        model = Model.getInstance();
         setContentView(R.layout.activity_planet);
 
         // toolbar
@@ -53,9 +51,9 @@ public class PlanetActivity extends MenuBarActivity {
         setSupportActionBar(toolbar);
 
         fuel = findViewById(R.id.fuel_bar);
-        fuel.setProgress(Model.getInstance().getFuelPercentage());
+        fuel.setProgress(model.getFuelPercentage());
 
-        model = Model.getInstance();
+
         planet = model.getCurrentPlanet();
         name = findViewById(R.id.planet_name_text);
 
@@ -105,7 +103,7 @@ public class PlanetActivity extends MenuBarActivity {
         refuel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 model.refuelShipMax();
-                fuel.setProgress(Model.getInstance().getFuelPercentage());
+                fuel.setProgress(model.getFuelPercentage());
                 Log.d("Debug", "Refuel button clicked");
             }
         });

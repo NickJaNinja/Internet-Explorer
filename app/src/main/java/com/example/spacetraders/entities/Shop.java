@@ -37,7 +37,7 @@ public class Shop implements Serializable {
 
         for (ShopGoods shopGood : ShopGoods.values()) {
             // Calculate price
-            int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
+            int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
             int var = (int)(rng.nextInt(shopGood.getVar() + 1) / 100.0);
             if (rng.nextInt(2) == 0) {
@@ -58,7 +58,7 @@ public class Shop implements Serializable {
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
-                int itemStock = (int) rng.nextInt(5051 - shopGood.getBasePrice())/125;
+                int itemStock = rng.nextInt(5051 - shopGood.getBasePrice())/125;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             } else {
                 // Item will not be in stock
