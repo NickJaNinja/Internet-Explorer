@@ -62,6 +62,11 @@ public class Game implements Serializable {
         return 1;
     }
 
+    /**
+     * Travels between solar systems
+     * @param to solar system to travel towards
+     * @return 1 on success, 0 on fail
+     */
     public int travelToSystem(SolarSystem to) {
         int distance = universe.distanceBetweenSystems(currSystem, to);
         if (player.travel(distance) == 0) {
@@ -72,6 +77,9 @@ public class Game implements Serializable {
         return 1;
     }
 
+    /**
+     * Refuels the ship back to maximum fuel
+     */
     public void refuelShipMax() {
         player.refuelShipMax();
     }
@@ -89,10 +97,18 @@ public class Game implements Serializable {
         return player.makeTransaction(sg, amount, price) & currPlanet.makeTransaction(sg, amount);
     }
 
+    /**
+     * Gets the amount of credits the player has
+     * @return player credits
+     */
     public int getCredits() {
         return player.getCredits();
     }
 
+    /**
+     * Gets the remaining amount of cargo space in the ship
+     * @return cargo space
+     */
     public int getCargoSpace() { return player.getCargoSpace(); }
 
     /**
@@ -140,52 +156,69 @@ public class Game implements Serializable {
         return currSystem;
     }
 
+    /**
+     * Gets the current shop
+     * @return current shop
+     */
     public Shop getCurrentShop() {
         return currPlanet.getShop();
     }
 
+    /**
+     * Gets the shops entries (what is in stock)
+     * @return shop entries
+     */
     public List<ShopEntry> getShopEntries() {
         return currPlanet.getShopEntries();
     }
 
+    /**
+     * Gets the player's entries (inventory)
+     * @return player entries
+     */
     public List<ShopEntry> getPlayerEntries() {
         return player.getPlayerEntries();
     }
 
     /**
-     * setter for game difficulty
-     *
-     * @param difficulty the new difficulty
-     */
-    public void setGameDifficulty(GameDifficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    /**
-     * setter for universe
-     *
-     * @param universe the new universe
-     */
-    public void setUniverse(Universe universe) {
-        this.universe = universe;
-    }
-
-    /**
      * setter for current content_planet
+     * @param newCurr new current planet
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
     }
 
+    /**
+     * Gets all of the solar systems
+     * @return the solar systems
+     */
     public SolarSystem[] getSolarSystems() {
         return universe.getSolarSystems();
     }
 
+    /**
+     * Gets the ships's fuel as a percentage of its capacity
+     * @return fuel percentage
+     */
     public int getFuelPercentage() { return player.getFuelPercentage(); }
 
+    /**
+     * Gets the range in light-years that the player can fly
+     * given the player might not be at maximum fuel
+     * @return the range
+     */
     public int getRange() { return player.getRange(); }
 
+    /**
+     * Gets the range in light-years that the player can fly
+     * assuming fuel is at max
+     * @return the range
+     */
     public double getMaxRange() { return player.getMaxRange();}
 
+    /**
+     * Finds out whether the current planet is a warp gate or not
+     * @return true if warp gate, false otherwise
+     */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 }
