@@ -15,7 +15,7 @@ enum GameDifficulty: String {
     case EASY = "Easy"
     case NORMAL = "Normal"
     case HARD = "Hard"
-    case IMPOSSIBL = "Impossible"
+    case IMPOSSIBLE = "Impossible"
     
     var final name: String?
     

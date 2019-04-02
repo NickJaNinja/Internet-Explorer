@@ -50,7 +50,6 @@ public class Coordinates implements Serializable {
      * @return the hashcode
      */
     public int hashCode() {
-        //copied this from stackoverflow
         int tmp = y + (x + 1) / 2;
         return x + tmp * tmp;
     }
