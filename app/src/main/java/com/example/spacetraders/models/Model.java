@@ -73,7 +73,6 @@ public class Model {
         } catch (IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException c) {
-            System.out.println("Game class not found.");
             c.printStackTrace();
         }
         return game != null;
