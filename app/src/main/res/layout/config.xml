@@ -104,7 +104,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onMinusPressed"
                         android:text="—"
                         android:textStyle="normal" />
 
@@ -308,7 +307,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="+"
                         android:textStyle="normal" />
 
