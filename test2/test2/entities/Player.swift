@@ -23,7 +23,7 @@ class Player {
     var ship: Ship = ShipType.GNAT;
     
     /**
-     * constuctor with all parameters
+     * constructor with all parameters
      *
      * @param name player's name
      * @param pilotSkill initial pilotSkill
@@ -44,7 +44,7 @@ class Player {
     }
     
     /**
-     * constuctor with default values for credit = 1000 & ship = GNAT
+     * constructor with default values for credit = 1000 & ship = GNAT
      *
      * @param name player's name
      * @param pilotSkill initial pilotSkill
