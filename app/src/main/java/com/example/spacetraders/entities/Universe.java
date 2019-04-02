@@ -172,9 +172,9 @@ public class Universe implements Serializable {
     @Override
     public String toString() {
         String str = "Universe: " + solarSystems.length + " solar systems\n ";
-        for (SolarSystem s : solarSystems) {
+        /*for (SolarSystem s : solarSystems) {
             str += s.toString();
-        }
+        }*/
         return str;
     }
 

@@ -2,26 +2,19 @@ package com.example.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Debug;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Game;
-import com.example.spacetraders.entities.SolarSystem;
-import com.example.spacetraders.entities.Universe;
-import com.example.spacetraders.models.Model;
-import com.example.spacetraders.viewmodels.UniverseViewModel;
-
-import android.graphics.Color;
 import android.widget.Toast;
 
-import java.util.List;
+import com.example.spacetraders.R;
+import com.example.spacetraders.entities.SolarSystem;
+import com.example.spacetraders.models.Model;
+import com.example.spacetraders.viewmodels.UniverseViewModel;
 
 public class UniverseMapActivity extends GUIActivity{
 

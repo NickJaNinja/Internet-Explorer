@@ -1,7 +1,5 @@
 package com.example.spacetraders.entities;
 
-import android.util.Log;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -92,9 +90,10 @@ public class Shop implements Serializable {
      */
     public List<ShopEntry> getInventoryAsList() {
         List<ShopEntry> inv = new ArrayList<>();
-        for (ShopEntry entry : shopGoodsStockMap.values()) {
+        /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
-        }
+        }*/
+        inv.addAll(shopGoodsStockMap.values());
         return inv;
     }
 

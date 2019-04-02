@@ -75,7 +75,7 @@ public class PlanetActivity extends MenuBarActivity {
         try {
             mediaPlayer.prepare();
         } catch (Exception e) {
-
+            Log.d("debug", "yo");
         }
         mediaPlayer.start();
 

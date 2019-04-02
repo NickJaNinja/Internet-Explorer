@@ -175,9 +175,10 @@ public class Ship implements Serializable {
      */
     public List<ShopEntry> getInventoryCargo() {
         List<ShopEntry> inv = new ArrayList<>();
-        for (ShopEntry entry : cargo.values()) {
+        /*for (ShopEntry entry : cargo.values()) {
             inv.add(entry);
-        }
+        }*/
+        inv.addAll(cargo.values());
         return inv;
     }
 
