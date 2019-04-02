@@ -75,7 +75,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
-                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
                         if (listener != null) {
@@ -94,7 +95,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // master layout
                             LinearLayout layout = new LinearLayout(context);
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams params =
+                                    new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT);
                             layout.setOrientation(LinearLayout.VERTICAL);
                             layout.setLayoutParams(params);
                             layout.setGravity(Gravity.CLIP_VERTICAL);
@@ -117,7 +121,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
-                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                public void onProgressChanged(SeekBar seekBar, int progress,
+                                                              boolean fromUser) {
                                     seekText.setText("Value of : " + (progress + 1));
                                 }
 
@@ -128,10 +133,16 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             });
 
                             // adding seek and text view to master layout
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekTextParams =
+                                    new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
-                            LinearLayout.LayoutParams seekParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekParams =
+                                    new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekParams.bottomMargin = 5;
                             layout.addView(seek, seekParams);
 
@@ -140,7 +151,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             builder.setTitle("chungus.info")
                                     .setView(layout)
-                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("CONFIRM",
+                                            new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
@@ -148,7 +160,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                             d.dismiss();
                                         }
                                     })
-                                    .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton("CANCEL",
+                                            new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
                                             d.dismiss();
@@ -160,15 +173,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed && model.makeTransaction(shopGoodsList.get(position).getGood(), seek.getProgress() + 1, cost) == 1) {
+                                    if (dialogConfirmed && model.makeTransaction(
+                                            shopGoodsList.get(position).getGood(),
+                                            seek.getProgress() + 1, cost) == 1) {
                                         // updating inventories and display
                                         shopGoodsList = model.getShopEntries();
-                                        playerCargoAdapter.setPlayerCargoList(model.getPlayerEntries());
+                                        playerCargoAdapter.setPlayerCargoList(
+                                                model.getPlayerEntries());
                                         shopActivity.updateDisplay();
                                         notifyDataSetChanged();
                                     } else if (!dialogConfirmed) {
                                         CharSequence text = "Not enough money or storage";
-                                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                                Toast.LENGTH_SHORT);
                                         toast.show();
                                         return;
                                     } else return;
@@ -178,7 +195,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             dialog.show();
                         } else {
                             CharSequence text = "Not enough money or storage";
-                            Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(itemView.getContext(), text,
+                                    Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     }

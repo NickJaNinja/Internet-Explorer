@@ -35,7 +35,8 @@ public class Star implements Serializable {
     }
 
     /**
-     * Generates a classification for the star. Chances based on Harvard's spectral classification model
+     * Generates a classification for the star. Chances based on Harvard's spectral classification
+     * model
      * (https://en.wikipedia.org/wiki/Stellar_classification), but altered slightly to increase
      * coolness factor.
      *
@@ -115,7 +116,8 @@ public class Star implements Serializable {
      * @param radius      solar radius of star
      */
     private void calculateLuminosityAndMass(int temperature, double radius) {
-        // by definition of solar temperature: T☉ = T (in K) / T of Earth (in K)   where T of Earth is 5,778 K
+        // by definition of solar temperature: T☉ = T (in K) / T of Earth (in K)   where T of Earth
+        // is 5,778 K
         double solarTemp = temperature / 5778.0;
 
         // by Stefan-Boltzman Law: L☉ = R☉^2 * T☉^4
