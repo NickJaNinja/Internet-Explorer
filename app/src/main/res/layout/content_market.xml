@@ -47,6 +47,7 @@
                 android:id="@+id/buy_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:text="BUY"
                 android:textColor="@color/colorText"
@@ -114,6 +115,7 @@
                 android:id="@+id/sell_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:text="SELL"
                 android:textColor="@color/colorText"
@@ -191,9 +193,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".5"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:text="CREDIT: "
-                    android:gravity="left"
+                    android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
 
@@ -202,8 +205,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".5"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
 
@@ -224,8 +228,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".5"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:text="CARGO SPACE: "
-                    android:gravity="left"
+                    android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
 
@@ -235,7 +240,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".5"
                     android:layout_marginLeft="8dp"
-                    android:gravity="right"
+                    android:layout_marginStart="8dp"
+                    android:gravity="end"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
 

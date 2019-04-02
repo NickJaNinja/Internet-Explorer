@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
@@ -50,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="NAME:"
-                android:gravity="left"
+                android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -59,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:gravity="right"
+                android:gravity="end"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -80,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="DISTANCE:"
-                android:gravity="left"
+                android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -89,7 +87,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:gravity="right"
+                android:gravity="end"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -110,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="COORDINATES: "
-                android:gravity="left"
+                android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -119,7 +117,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:gravity="right"
+                android:gravity="end"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -181,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="CURRENT RANGE:"
-                android:gravity="left"
+                android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -190,7 +188,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:gravity="right"
+                android:gravity="end"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 

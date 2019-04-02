@@ -232,7 +232,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     }
 
     // CAN USE THIS INSTEAD OF 8 LISTENERS IN onCreate()
-    // ISSUE: Linking the skill buttons to their respective textviews
+    // ISSUE: Linking the skill buttons to their respective text views
     /*
     public void onPlusPressed(View view) {
         Log.d("Edit", "Skill Plus Button Pressed");

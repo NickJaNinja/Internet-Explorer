@@ -16,9 +16,9 @@ public class MainViewModel extends AndroidViewModel {
 
 
     // remove later, only use this for m6
-    public void printUniverse(Game g) {
+    /*public void printUniverse(Game g) {
         largeLog("Info", Model.getInstance().getGame().getUniverse().toString());
-    }
+    }*/
 
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {

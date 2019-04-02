@@ -23,7 +23,7 @@ public class Ship implements Serializable {
      */
     public Ship(ShipType type) {
         this.type = type;
-        cargo = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
+        cargo = new EnumMap<>(ShopGoods.class);
         inventory = 0;
         fuel = type.getFuel();
     }
