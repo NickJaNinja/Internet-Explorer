@@ -55,8 +55,10 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem()) < Model.getInstance().getMaxRange()
-                    && !universeViewModel.getSolarSystems()[i].equals(universeViewModel.getCurrentSystem())) {
+            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
+                    < Model.getInstance().getMaxRange()
+                    && !universeViewModel.getSolarSystems()[i].equals(
+                            universeViewModel.getCurrentSystem())) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
@@ -66,11 +68,17 @@ public class UniverseMapActivity extends GUIActivity{
                         FrameLayout.LayoutParams.WRAP_CONTENT
                 );
                 //factor is for converting dp to px
-                float factor = relativeLayout.getContext().getResources().getDisplayMetrics().density;
-                layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
-                layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(universeViewModel.getCurrentSystem(), universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
+                float factor = relativeLayout.getContext().getResources().getDisplayMetrics()
+                        .density;
+                layoutParams.leftMargin = (int) (universeViewModel.xCoordOfSystem(
+                        universeViewModel.getCurrentSystem(),
+                        universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
+                layoutParams.topMargin = (int) (universeViewModel.yCoordOfSystem(
+                        universeViewModel.getCurrentSystem(),
+                        universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
                 //color
-                imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i].getStars()[0].getColor());
+                imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
+                        .getStars()[0].getColor());
 
                 relativeLayout.addView(imageView, layoutParams);
 
@@ -81,20 +89,23 @@ public class UniverseMapActivity extends GUIActivity{
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText("" + currentSolarSystem.getName());
-                        distance.setText(currentSolarSystem.dist(universeViewModel.getCurrentSystem()) + " Ly");
+                        distance.setText(currentSolarSystem.dist(
+                                universeViewModel.getCurrentSystem()) + " Ly");
                         coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
 
                         // make travel button red if system out of range, green if in range
-                        if (Model.getInstance().getRange() < currentSolarSystem.dist(universeViewModel.getCurrentSystem())) {
-                            engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64")); // red
+                        if (Model.getInstance().getRange() < currentSolarSystem.dist(
+                                universeViewModel.getCurrentSystem())) {
+                            engageWarpDrive.setBackgroundColor(Color.parseColor(
+                                    "#D25A64")); // red
                         } else {
-                            engageWarpDrive.setBackgroundColor(Color.parseColor("#5FCA77")); // green
+                            engageWarpDrive.setBackgroundColor(Color.parseColor(
+                                    "#5FCA77")); // green
                         }
                     }
                 });
             }
         }
-
 
 
 
@@ -113,23 +124,15 @@ public class UniverseMapActivity extends GUIActivity{
                     toast.show();
                     return;
                 }
-                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
                 if (Model.getInstance().travelToSystem(currentSolarSystem) == 0) {
                     CharSequence text = "Not Enough Fuel";
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                     return;
                 }
-
-                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
-                Intent newIntent = new Intent(UniverseMapActivity.this, PlanetActivity.class);
-                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
+                Intent newIntent = new Intent(UniverseMapActivity.this,
+                        PlanetActivity.class);
                 startActivity(newIntent);
-                //Log.d("Debug", "current Solar System>>>>>>>>>>>>>" + currentSolarSystem);
-                //Log.d("Debug", "universeViewModel.getCurrentSystem()>>>>>>>>>>>>>>>>>>" + universeViewModel.getCurrentSystem());
             }
         });
 

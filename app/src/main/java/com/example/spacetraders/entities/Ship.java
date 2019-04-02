@@ -14,9 +14,8 @@ public class Ship implements Serializable {
     private EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
     private int fuel;
-    private final int FUEL_TO_COST_MULT = 5;
-    private final double DIST_TO_FUEL_MULT = 0.2;
-
+    private final int FUEL_TO_COST_MULTI = 5;
+    private final double DIST_TO_FUEL_MULTI = 0.2;
     /**
      * Constructor for the ship
      *
@@ -55,7 +54,7 @@ public class Ship implements Serializable {
      * @return 1 on success, 0 on fail
      */
     public int travel(int distance) {
-        int fuel = (int) (distance * DIST_TO_FUEL_MULT);
+        int fuel = (int) (distance * DIST_TO_FUEL_MULTI);
         if (this.fuel - fuel < 0) {
             return 0;
         }
@@ -69,7 +68,7 @@ public class Ship implements Serializable {
      * @return the max distance
      */
     public int getRange() {
-        return (int) (fuel / DIST_TO_FUEL_MULT);
+        return (int) (fuel / DIST_TO_FUEL_MULTI);
     }
 
     /**
@@ -78,7 +77,7 @@ public class Ship implements Serializable {
      * @return the max distance
      */
     public double getMaxRange() {
-        return type.getFuel() / DIST_TO_FUEL_MULT;
+        return type.getFuel() / DIST_TO_FUEL_MULTI;
     }
 
     /**
@@ -87,7 +86,7 @@ public class Ship implements Serializable {
      * @param money The amount of money paid to refuel
      */
     public void refuel(int money) {
-        int fuel = (int) Math.floor((double) money / FUEL_TO_COST_MULT);
+        int fuel = (int) Math.floor((double) money / FUEL_TO_COST_MULTI);
         this.fuel += fuel;
         if (this.fuel > type.getFuel()) {
             this.fuel = type.getFuel();
@@ -101,7 +100,7 @@ public class Ship implements Serializable {
      * @return Amount of purchasable fuel
      */
     public int getPurchasableFuel(int credits) {
-        int fuelAmount = credits / FUEL_TO_COST_MULT;
+        int fuelAmount = credits / FUEL_TO_COST_MULTI;
         return fuelAmount;
     }
 
@@ -112,7 +111,7 @@ public class Ship implements Serializable {
      */
     public int getFullRefuelCost() {
         int fuelRemaining = type.getFuel() - this.fuel;
-        return fuelRemaining * FUEL_TO_COST_MULT;
+        return fuelRemaining * FUEL_TO_COST_MULTI;
     }
 
     /**
