@@ -103,7 +103,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         SolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
-        planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar() * 8.3167) + " Lm");
+        planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
+                * 8.3167) + " Lm");
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");

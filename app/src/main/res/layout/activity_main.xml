@@ -23,7 +23,7 @@
             android:inputType="textPersonName"
             android:text="SPACE TRADER"
             android:textColor="@color/colorText"
-            android:textSize="50dp"
+            android:textSize="50sp"
             android:textStyle="bold" />
 
 

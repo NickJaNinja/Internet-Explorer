@@ -26,7 +26,8 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param pilot pilot points
      * @return true if OK button can move to next screen
      */
-    public boolean onOk(String name, int fight, int trade, int eng, int pilot, GameDifficulty diff) {
+    public boolean onOk(String name, int fight, int trade, int eng, int pilot,
+                        GameDifficulty diff) {
         if (name == null || name.length() < 1) {
             toastText = "Please enter your pilot's name";
             return false;
