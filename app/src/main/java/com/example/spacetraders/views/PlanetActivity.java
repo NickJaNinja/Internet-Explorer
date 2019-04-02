@@ -28,44 +28,36 @@ import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class PlanetActivity extends MenuBarActivity {
-    private TextView market;
-    private TextView upgrade;
-    private TextView refuel;
-    private TextView leaveOrbit;
-    private TextView save;
-    private TextView load;
-    private Planet planet;
-    private ShopViewModel viewModel;
     private Model model;
     private MediaPlayer mediaPlayer;
-    private ImageView planetImage;
-    private TextView name;
-    private LinearLayout layout;
     private ProgressBar fuel;
-
-    private TextView map;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TextView market;
+        TextView upgrade;
+        TextView refuel;
+        TextView save;
+        TextView load;
+        Planet planet;
+        ImageView planetImage;
+        TextView name;
+
         setContentView(R.layout.activity_planet);
 
-        layout = findViewById(R.id.linear_layout);
-
         // toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         fuel = findViewById(R.id.fuel_bar);
         fuel.setProgress(Model.getInstance().getFuelPercentage());
 
-
-        viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
         model = Model.getInstance();
         planet = model.getCurrentPlanet();
-        name = (TextView)findViewById(R.id.planet_name_text);
+        name = findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
@@ -187,7 +179,7 @@ public class PlanetActivity extends MenuBarActivity {
     // android back button
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }
 
