@@ -283,7 +283,6 @@ public class Universe implements Serializable {
      */
     public Planet getRandomPlanet() {
         Planet plan = solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();
-        System.out.println("RANDOM PLANET: " + plan.toString());
         return plan;
     }
 

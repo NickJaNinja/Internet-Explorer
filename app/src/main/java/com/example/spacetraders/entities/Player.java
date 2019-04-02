@@ -31,7 +31,8 @@ public class Player implements Serializable {
      * @param reputation    initial reputation level
      * @param ship          initial ship
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill, int credits, int reputation, Ship ship) {
+    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill,
+                  int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
@@ -51,15 +52,18 @@ public class Player implements Serializable {
      * @param traderSkill   initial traderSkill
      * @param engineerSkill initial engineerSkill
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 10000, 0, new Ship(ShipType.GNAT));
+    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
+                  int engineerSkill) {
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 10000, 0,
+                new Ship(ShipType.GNAT));
     }
 
     /**
      * Create a base player
      */
     public Player() {
-        this("", 0, 0, 0, 0, 1000, 0, new Ship(ShipType.GNAT));
+        this("", 0, 0, 0, 0,
+                1000, 0, new Ship(ShipType.GNAT));
     }
 
     /**

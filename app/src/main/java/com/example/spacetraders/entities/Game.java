@@ -53,7 +53,8 @@ public class Game implements Serializable {
      * Used to fly between planets WITHIN a solar system
      *
      * @param to content_planet to fly to
-     * @return 1 if content_planet is different from curr content_planet, 0 if content_planet is the same
+     * @return 1 if content_planet is different from curr content_planet, 0 if content_planet is
+     * the same
      */
     public int travelToPlanet(Planet to) {
         currPlanet = to;

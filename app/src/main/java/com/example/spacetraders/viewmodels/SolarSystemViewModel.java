@@ -40,7 +40,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
     }
 
     public void setPlanet(Planet p) {
-        model.getGame().setCurrentPlanet(p);
+        model.setCurrentPlanet(p);
     }
 
 }

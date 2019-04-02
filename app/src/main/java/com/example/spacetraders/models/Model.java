@@ -54,7 +54,8 @@ public class Model {
      * @param trade trade level
      * @param eng eng level
      */
-    public void createGame(GameDifficulty gd, String name, int pilot, int fight, int trade, int eng) {
+    public void createGame(GameDifficulty gd, String name, int pilot, int fight, int trade,
+                           int eng) {
         Player p = new Player(name, pilot, fight, trade, eng);
         game = new Game(gd, p);
     }
@@ -73,7 +74,6 @@ public class Model {
         } catch (IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException c) {
-            System.out.println("Game class not found.");
             c.printStackTrace();
         }
         return game != null;
@@ -180,6 +180,15 @@ public class Model {
      */
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();
+    }
+
+    /**
+     * setter for current content_planet
+     *
+     * @return current content_planet
+     */
+    public void setCurrentPlanet(Planet newCurr) {
+        this.game.setCurrentPlanet(newCurr);
     }
 
     /**

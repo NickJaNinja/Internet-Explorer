@@ -139,7 +139,9 @@ public class PlanetActivity extends MenuBarActivity {
 
         // rotate content_planet animation
         planetImage = findViewById(R.id.planet_image);
-        RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        RotateAnimation rotate = new RotateAnimation(0, 360,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
+                0.5f);
         rotate.setRepeatCount(Animation.INFINITE);
         rotate.setDuration(300000);
         rotate.setInterpolator(new LinearInterpolator());

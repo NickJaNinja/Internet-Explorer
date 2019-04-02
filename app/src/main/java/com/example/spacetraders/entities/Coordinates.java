@@ -41,7 +41,8 @@ public class Coordinates implements Serializable {
      * @return the integer distance
      */
     public int dist(Coordinates c) {
-        return (int) Math.sqrt((this.x-c.getX())*(this.x-c.getX())+(this.y-c.getY())*(this.y-c.getY()));
+        return (int) Math.sqrt((this.x-c.getX())*(this.x-c.getX())+(this.y-c.getY())
+                *(this.y-c.getY()));
     }
 
     /**
@@ -61,7 +62,8 @@ public class Coordinates implements Serializable {
      * @return if they are the same coordinates
      */
     public boolean isEqual(Object obj) {
-        if (obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x && ((Coordinates) obj).getY() == this.y) {
+        if (obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x
+                && ((Coordinates) obj).getY() == this.y) {
             return true;
         }
         return false;
