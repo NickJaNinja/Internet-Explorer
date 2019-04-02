@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/planet" />
+            android:src="@drawable/planet"
+            android:contentDescription="image"/>
 
         <TextView
             android:id="@+id/planet_name_text"

@@ -53,7 +53,7 @@ public class Test {
         }
         */
 
-        Universe universe = new Universe();
+        /*Universe universe = new Universe();
         for (int i = 0; i < universe.getSolarSystems().length; i++) {
             System.out.println(universe.getSolarSystems()[i].getName());
             System.out.println("\tSystem Overview");
@@ -98,7 +98,7 @@ public class Test {
             }
         }
         System.out.println();
-        System.out.println("Total number of inhabited planets: " + inhabitedPlanetsNum);
+        System.out.println("Total number of inhabited planets: " + inhabitedPlanetsNum);*/
     }
 }
 

@@ -142,14 +142,16 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:background="@drawable/circle" />
+                android:background="@drawable/circle"
+                android:contentDescription="image"/>
 
             <ImageView
 
                 android:layout_width="28dp"
                 android:layout_height="40dp"
                 android:background="@drawable/spaceship"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:contentDescription="image"/>
 
 
         </FrameLayout>
