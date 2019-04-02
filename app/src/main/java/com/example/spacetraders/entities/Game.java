@@ -182,20 +182,43 @@ public class Game implements Serializable {
 
     /**
      * setter for current content_planet
+     * @param newCurr new current planet
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
     }
 
+    /**
+     * Gets all of the solar systems
+     * @return the solar systems
+     */
     public SolarSystem[] getSolarSystems() {
         return universe.getSolarSystems();
     }
 
+    /**
+     * Gets the ships's fuel as a percentage of its capacity
+     * @return fuel percentage
+     */
     public int getFuelPercentage() { return player.getFuelPercentage(); }
 
+    /**
+     * Gets the range in light-years that the player can fly
+     * given the player might not be at maximum fuel
+     * @return the range
+     */
     public int getRange() { return player.getRange(); }
 
+    /**
+     * Gets the range in light-years that the player can fly
+     * assuming fuel is at max
+     * @return the range
+     */
     public double getMaxRange() { return player.getMaxRange();}
 
+    /**
+     * Finds out whether the current planet is a warp gate or not
+     * @return true if warp gate, false otherwise
+     */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 }
