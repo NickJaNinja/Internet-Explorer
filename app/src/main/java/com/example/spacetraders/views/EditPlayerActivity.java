@@ -70,17 +70,21 @@ public class EditPlayerActivity extends AppCompatActivity {
         exit = findViewById(R.id.cancel_button);
 
         // Making game difficulty adapter
-        ArrayAdapter<GameDifficulty> difficultyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
+        ArrayAdapter<GameDifficulty> difficultyAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, GameDifficulty.values());
         difficultyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gameDifficultySpinner.setAdapter(difficultyAdapter);
 
         // Skill point buttons
         fightPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(fighterText.getText().toString()),
+                int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
+                        fighterText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
-                fighterText.setText(String.format("%d", Integer.parseInt((String) fighterText.getText()) + skillChange));
-                pointsRemaining.setText(String.format("%d", Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
+                fighterText.setText(String.format("%d", Integer.parseInt(
+                        (String) fighterText.getText()) + skillChange));
+                pointsRemaining.setText(String.format("%d", Integer.parseInt(
+                        pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed(v);
             }
         });
