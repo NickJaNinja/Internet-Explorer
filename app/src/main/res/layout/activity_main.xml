@@ -25,7 +25,8 @@
             android:textColor="@color/colorText"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:hint="SPACE TRADER"/>
+            android:hint="SPACE TRADER"
+            android:autofullHints="SPACE TRADER"/>
 
 
         <ImageView
