@@ -87,7 +87,7 @@ public class PlanetActivity extends MenuBarActivity {
         }
         mediaPlayer.start();
 
-        // pressing anywhere on layout un-dims layout
+        // pressing anywhere on layout un dims layout
         //layout.setOnClickListener(new View.OnClickListener() {
         //    @Override
         //    public void onClick(View v) {
