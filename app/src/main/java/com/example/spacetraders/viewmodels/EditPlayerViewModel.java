@@ -36,6 +36,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot,
                         GameDifficulty diff) {
+        Model model = Model.getInstance();
         if (name == null || name.length() < 1) {
             toastText = "Please enter your pilot's name";
             return false;
@@ -45,7 +46,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
             toastText = "Please use all of your skill points";
             return false;
         }
-        Model model = Model.getInstance();
+
         model.createGame(diff, name, pilot, fight, trade, eng);
         return true;
     }

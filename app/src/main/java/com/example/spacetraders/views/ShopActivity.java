@@ -1,7 +1,5 @@
 package com.example.spacetraders.views;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -10,15 +8,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
@@ -26,8 +21,6 @@ import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class ShopActivity extends MenuBarActivity {
-    private TextView cancel;
-    private TextView confirm;
     private TextView creditDisplay;
     private TextView cargoDisplay;
     private ListView buyList;
@@ -35,19 +28,22 @@ public class ShopActivity extends MenuBarActivity {
     private PlayerCargoAdapter adapterForPlayer;
     //private Shop shop;
     private ShopViewModel viewModel;
-    private RecyclerView recyclerViewShop;
-    private RecyclerView recyclerViewPlayer;
     private Model model;
     private MediaPlayer mediaPlayer;
-    private ProgressBar fuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ProgressBar fuel;
+        RecyclerView recyclerViewShop;
+        RecyclerView recyclerViewPlayer;
+        TextView cancel;
+        TextView confirm;
+
         setContentView(R.layout.activity_market);
 
         // toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 

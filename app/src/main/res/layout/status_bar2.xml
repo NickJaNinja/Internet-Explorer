@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackground"
     android:orientation="vertical">
 
@@ -17,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" UNIVERSE MAP"
-        android:gravity="left"
+        android:gravity="start"
         android:textColor="@color/colorText"
         android:textSize="24sp" />
 
@@ -31,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" SHIP"
-        android:gravity="left"
+        android:gravity="start"
         android:textColor="@color/colorText"
         android:textSize="24sp" />
 
@@ -45,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" WALLET"
-        android:gravity="left"
+        android:gravity="start"
         android:textColor="@color/colorText"
         android:textSize="24sp" />
 

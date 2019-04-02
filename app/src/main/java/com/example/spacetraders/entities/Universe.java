@@ -39,7 +39,8 @@ public class Universe implements Serializable {
                     "Tenzum",
                     "Rob",
                     "Altair",
-                    "Strat"
+                    "Strat",
+                    "Lik"
             };
     private static final String[] SUFFIXES =
             {
@@ -63,7 +64,8 @@ public class Universe implements Serializable {
                     "os",
                     "ellia",
                     "'kir",
-                    "adonia"
+                    "adonia",
+                    "avarius"
             };
 
 
@@ -71,9 +73,9 @@ public class Universe implements Serializable {
     /**
      * dimensions of universe
      */
-    private static final int MAXX = 600;
-    private static final int MAXY = 600;
-    private int numSolarSystems = 250;
+    private static final int MAX_X = 600;
+    private static final int MAX_Y = 600;
+    private static final int MAX_SYSTEMS = 250;
 
     private SolarSystem[] solarSystems;
 
@@ -81,20 +83,20 @@ public class Universe implements Serializable {
      * Constructor for Universe
      */
     public Universe() {
-        Set<Coordinates> coordSet = new HashSet<>();
+        Set<Coordinates> cordSet = new HashSet<>();
         Set<String> nameSet = new HashSet<>();
-        this.solarSystems = new SolarSystem[numSolarSystems];
+        this.solarSystems = new SolarSystem[MAX_SYSTEMS];
 
-        for (int i = 0; i < numSolarSystems; i++) {
+        for (int i = 0; i < MAX_SYSTEMS; i++) {
             //keep making random names and coordinates until we find one that hasn't been used yet
             //choose coordinates
-            int randX = r.nextInt(MAXX);
-            int randY = r.nextInt(MAXY);
-            Coordinates randCoords = new Coordinates(randX, randY);
-            while (coordSet.contains(randCoords)) {
-                randX = r.nextInt(MAXX);
-                randY = r.nextInt(MAXY);
-                randCoords = new Coordinates(randX, randY);
+            int randX = r.nextInt(MAX_X);
+            int randY = r.nextInt(MAX_Y);
+            Coordinates randCords = new Coordinates(randX, randY);
+            while (cordSet.contains(randCords)) {
+                randX = r.nextInt(MAX_X);
+                randY = r.nextInt(MAX_Y);
+                randCords = new Coordinates(randX, randY);
             }
             //choose name
             int randPrefixIndex = r.nextInt(PREFIXES.length);
@@ -108,19 +110,23 @@ public class Universe implements Serializable {
                 randNameNumber = 1 + r.nextInt(100);
                 name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
             }
-            coordSet.add(randCoords);
+            cordSet.add(randCords);
             nameSet.add(name);
-            this.solarSystems[i] = new SolarSystem(name, randCoords);
+            this.solarSystems[i] = new SolarSystem(name, randCords);
         }
     }
 
-    /*
-        ONLY NEED IF TRAVEL BETWEEN PLANETS IS NOT INSTANTANEOUS
+    /**
+     * Gets the distance between two planets
+     *
+     * @param from planet 1
+     * @param to planet 2
+     * @return distance between the planets
      */
     public int distanceBetweenPlanets(Planet from, Planet to) {
-        double fromCoords = from.getDistanceFromParentStar();
-        double toCoords = to.getDistanceFromParentStar();
-        int distance = (int)Math.abs(fromCoords - toCoords);
+        double fromCords = from.getDistanceFromParentStar();
+        double toCords = to.getDistanceFromParentStar();
+        int distance = (int)Math.abs(fromCords - toCords);
         return distance;
     }
 
@@ -132,9 +138,9 @@ public class Universe implements Serializable {
      * @return the distance
      */
     public int distanceBetweenSystems(SolarSystem from, SolarSystem to) {
-        Coordinates fromCoords = from.getCoordinates();
-        Coordinates toCoords = to.getCoordinates();
-        return fromCoords.dist(toCoords);
+        Coordinates fromCords = from.getCoordinates();
+        Coordinates toCords = to.getCoordinates();
+        return fromCords.dist(toCords);
     }
     /**
      * getter for solar systems
@@ -171,11 +177,7 @@ public class Universe implements Serializable {
      */
     @Override
     public String toString() {
-        String str = "Universe: " + solarSystems.length + " solar systems\n ";
-        for (SolarSystem s : solarSystems) {
-            str += s.toString();
-        }
-        return str;
+        return "Universe: " + solarSystems.length + " solar systems\n ";
     }
 
 }

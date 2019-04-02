@@ -11,15 +11,16 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 
 public class MainActivity extends GUIActivity {
-    private MainViewModel mainViewModel;
-
     private Model model;
-    private Button newButton;
-    private Button loadButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MainViewModel mainViewModel;
+        Button newButton;
+        Button loadButton;
+
         setContentView(R.layout.activity_main);
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 

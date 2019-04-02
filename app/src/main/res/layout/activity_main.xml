@@ -1,12 +1,8 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ff"
     android:background="@drawable/space_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linear_layout"
@@ -25,7 +21,8 @@
             android:textColor="@color/colorText"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:hint="SPACE TRADER"/>
+            android:hint="SPACE TRADER"
+            android:autofillHints="SPACE TRADER"/>
 
 
         <ImageView

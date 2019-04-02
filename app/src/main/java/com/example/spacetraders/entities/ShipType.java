@@ -106,7 +106,7 @@ public enum ShipType implements Serializable {
 
 
     /**
-     * @return the display string representation of the shiptype
+     * @return the display string representation of the ship type
      */
     public String toString() {
         return name;

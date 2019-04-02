@@ -1,7 +1,6 @@
 package com.example.spacetraders.views;
 
 import android.annotation.TargetApi;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -17,7 +16,6 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,47 +23,39 @@ import android.widget.Toast;
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.models.Model;
-import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class PlanetActivity extends MenuBarActivity {
-    private TextView market;
-    private TextView upgrade;
-    private TextView refuel;
-    private TextView leaveOrbit;
-    private TextView save;
-    private TextView load;
-    private Planet planet;
-    private ShopViewModel viewModel;
     private Model model;
     private MediaPlayer mediaPlayer;
-    private ImageView planetImage;
-    private TextView name;
-    private LinearLayout layout;
     private ProgressBar fuel;
-
-    private TextView map;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TextView market;
+        TextView upgrade;
+        TextView refuel;
+        TextView save;
+        TextView load;
+        Planet planet;
+        ImageView planetImage;
+        TextView name;
+
+        model = Model.getInstance();
         setContentView(R.layout.activity_planet);
 
-        layout = findViewById(R.id.linear_layout);
-
         // toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         fuel = findViewById(R.id.fuel_bar);
-        fuel.setProgress(Model.getInstance().getFuelPercentage());
+        fuel.setProgress(model.getFuelPercentage());
 
 
-        viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
-        model = Model.getInstance();
         planet = model.getCurrentPlanet();
-        name = (TextView)findViewById(R.id.planet_name_text);
+        name = findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);
         upgrade = findViewById(R.id.upgrade_button);
@@ -83,7 +73,7 @@ public class PlanetActivity extends MenuBarActivity {
         try {
             mediaPlayer.prepare();
         } catch (Exception e) {
-
+            Log.d("debug", "yo");
         }
         mediaPlayer.start();
 
@@ -113,7 +103,7 @@ public class PlanetActivity extends MenuBarActivity {
         refuel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 model.refuelShipMax();
-                fuel.setProgress(Model.getInstance().getFuelPercentage());
+                fuel.setProgress(model.getFuelPercentage());
                 Log.d("Debug", "Refuel button clicked");
             }
         });
@@ -192,7 +182,7 @@ public class PlanetActivity extends MenuBarActivity {
     // android back button
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }
 

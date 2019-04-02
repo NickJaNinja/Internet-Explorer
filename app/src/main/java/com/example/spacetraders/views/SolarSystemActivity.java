@@ -7,11 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,27 +21,25 @@ import com.example.spacetraders.viewmodels.SolarSystemViewModel;
 import java.text.DecimalFormat;
 
 public class SolarSystemActivity extends GUIActivity {
-    private TextView name;
-    private TextView classification;
-    private TextView radius;
-    private TextView mass;
-    private TextView surfaceTemp;
-    private TextView luminosity;
-    private RecyclerView recyclerViewPlanet;
-    private ImageView starView;
-    private ImageView planetImage;
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
-    private SolarSystem solarSystem;
     private Planet selectedPlanet;
     private Button thrusterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
+        TextView name;
+        TextView classification;
+        TextView radius;
+        TextView mass;
+        TextView surfaceTemp;
+        TextView luminosity;
+        RecyclerView recyclerViewPlanet;
+        ImageView starView;
+        ImageView planetImage;
+        SolarSystem solarSystem;
 
         setContentView(R.layout.solar_system_map);
 

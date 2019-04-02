@@ -23,7 +23,7 @@ public class Ship implements Serializable {
      */
     public Ship(ShipType type) {
         this.type = type;
-        cargo = new EnumMap<ShopGoods, ShopEntry>(ShopGoods.class);
+        cargo = new EnumMap<>(ShopGoods.class);
         inventory = 0;
         fuel = type.getFuel();
     }
@@ -175,9 +175,10 @@ public class Ship implements Serializable {
      */
     public List<ShopEntry> getInventoryCargo() {
         List<ShopEntry> inv = new ArrayList<>();
-        for (ShopEntry entry : cargo.values()) {
+        /*for (ShopEntry entry : cargo.values()) {
             inv.add(entry);
-        }
+        }*/
+        inv.addAll(cargo.values());
         return inv;
     }
 
