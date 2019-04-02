@@ -22,7 +22,7 @@
             android:textSize="50sp"
             android:textStyle="bold"
             android:hint="SPACE TRADER"
-            android:autofullHints="SPACE TRADER"/>
+            android:autofillHints="SPACE TRADER"/>
 
 
         <ImageView
