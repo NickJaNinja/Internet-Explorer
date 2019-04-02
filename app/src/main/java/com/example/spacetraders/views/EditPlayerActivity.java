@@ -44,6 +44,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.config);
         editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setHomeButtonEnabled(false);

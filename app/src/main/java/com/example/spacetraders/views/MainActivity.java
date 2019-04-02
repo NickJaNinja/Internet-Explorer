@@ -29,7 +29,7 @@ public class MainActivity extends GUIActivity {
 
         newButton = findViewById(R.id.new_button);
         loadButton = findViewById(R.id.load_button);
-
+        model = Model.getInstance();
 
         newButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -40,9 +40,9 @@ public class MainActivity extends GUIActivity {
 
         loadButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Model.getInstance().loadGame(v.getContext());
+                model.loadGame(v.getContext());
                 Intent intent;
-                if (Model.getInstance().getGame() == null) {
+                if (model.getGame() == null) {
                     intent = new Intent(v.getContext(), EditPlayerActivity.class);
                 } else {
                     intent = new Intent(v.getContext(), PlanetActivity.class);
