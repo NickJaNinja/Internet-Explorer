@@ -30,6 +30,7 @@ public class MainActivity extends GUIActivity {
         model = Model.getInstance();
 
         newButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), EditPlayerActivity.class);
                 startActivity(intent);
@@ -37,6 +38,7 @@ public class MainActivity extends GUIActivity {
         });
 
         loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 model.loadGame(v.getContext());
                 Intent intent;
