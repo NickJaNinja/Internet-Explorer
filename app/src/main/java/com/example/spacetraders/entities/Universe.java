@@ -39,7 +39,8 @@ public class Universe implements Serializable {
                     "Tenzum",
                     "Rob",
                     "Altair",
-                    "Strat"
+                    "Strat",
+                    "Lik"
             };
     private static final String[] SUFFIXES =
             {
@@ -63,7 +64,8 @@ public class Universe implements Serializable {
                     "os",
                     "ellia",
                     "'kir",
-                    "adonia"
+                    "adonia",
+                    "avarius"
             };
 
 
