@@ -84,12 +84,13 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             //view.setBackgroundColor(Color.CYAN);
                         }
 
-                        int cost = Integer.parseInt(price.getText().toString());
+                        int cost = Integer.parseInt(price.getText().toString().substring(1, price.getText().toString().length()));
 
                         if (shopGoodsList.get(position).getStock() > 0 ) {
 
                             Context context = itemView.getContext();
                             int itemStock = shopGoodsList.get(position).getStock();
+                            int itemPrice = shopGoodsList.get(position).getPrice();
 
                             dialogConfirmed = false;
 
@@ -111,19 +112,28 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            seekText.setText("Value of: 1");
+                            seekText.setText("AMOUNT TO PURCHASE: 1");
+                            seekText.setTextColor(0xFFFFFFFF);
                             seekText.setPadding(40, 40, 40, 40);
                             seekText.setGravity(Gravity.CENTER);
                             seekText.setTextSize(20);
 
-                            // text view changes with seek bar position change
+                            // text view for price
+                            TextView priceText = new TextView(context);
+                            priceText.setText("TOTAL PRICE: ¥" +itemPrice);
+                            priceText.setTextColor(0xFFFFFFFF);
+                            priceText.setPadding(40, 40, 40, 40);
+                            priceText.setGravity(Gravity.CENTER);
+                            priceText.setTextSize(20);
+
+                            // text views change with seek bar position change
                             seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
-                                public void onProgressChanged(SeekBar seekBar, int progress,
-                                                              boolean fromUser) {
-                                    seekText.setText("Value of : " + (progress + 1));
+                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                    seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
+                                    priceText.setText("TOTAL PRICE: ¥" +(itemPrice * (progress + 1)));
                                 }
 
                                 @Override
@@ -132,11 +142,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 }
                             });
 
-                            // adding seek and text view to master layout
-                            LinearLayout.LayoutParams seekTextParams =
-                                    new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT);
+                            // adding seek and text views to master layout
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            priceTextParams.bottomMargin = 5;
+                            layout.addView(priceText, priceTextParams);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
                             LinearLayout.LayoutParams seekParams =
@@ -147,12 +157,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             layout.addView(seek, seekParams);
 
                             // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
-                            builder.setTitle("chungus.info")
-                                    .setView(layout)
-                                    .setPositiveButton("CONFIRM",
-                                            new DialogInterface.OnClickListener() {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+                            
+                            builder.setView(layout)
+                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
@@ -182,7 +190,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                                 model.getPlayerEntries());
                                         shopActivity.updateDisplay();
                                         notifyDataSetChanged();
-                                    } else if (!dialogConfirmed) {
+                                    } else if (dialogConfirmed) {
                                         CharSequence text = "Not enough money or storage";
                                         Toast toast = Toast.makeText(itemView.getContext(), text,
                                                 Toast.LENGTH_SHORT);
@@ -209,7 +217,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
-        shopGoodsViewHolder.price.setText(shopEntry.getPrice() + "");
+        shopGoodsViewHolder.price.setText("¥" +shopEntry.getPrice());
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
         shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
     }

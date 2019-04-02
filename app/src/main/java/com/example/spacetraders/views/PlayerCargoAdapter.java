@@ -32,6 +32,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     private OnClickListener listener;
     private Model model;
 
+    /**
+     * Constructor
+     *
+     * @param playerCargoList the player cargo list
+     * @param shopActivity the shop activity
+     */
     public PlayerCargoAdapter(List<ShopEntry> playerCargoList, ShopActivity shopActivity) {
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
@@ -52,7 +58,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         private TextView price;
         private TextView stock;
 
-
+        /**
+         * ViewHolder Constructor
+         * @param itemView
+         */
         public PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
@@ -131,6 +140,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         }
     }
 
+    /**
+     * ViewHolder constructor
+     * @param playerCargoViewHolder the player cargo viewHolder
+     * @param position the position of the shop entry
+     */
     @Override
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
@@ -141,25 +155,19 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
     }
 
-
+    /**
+     * Gets the number of things that will be in the adapter
+     * @return number of items
+     */
     @Override
     public int getItemCount() {
         return playerCargoList.size();
     }
 
-    public void setShopGoodsList(List<ShopEntry> shopEntries) {
-        playerCargoList = shopEntries;
-        notifyDataSetChanged();
-    }
-
     /**
-     *
-     * @return list of shopgoods in player's inventory
+     * Sets the player cargo list
+     * @param playerCargo player cargo
      */
-    public List<ShopEntry> getPlayerCargoList() {
-        return playerCargoList;
-    }
-
     public void setPlayerCargoList(List<ShopEntry> playerCargo) {
         playerCargoList = playerCargo;
         notifyDataSetChanged();
