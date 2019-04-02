@@ -79,10 +79,13 @@ public class SolarSystemActivity extends GUIActivity {
 
         name.setText(solarSystem.getName() + "");
         classification.setText(solarSystem.getStars()[0].getClassification() + " Class Star");
-        radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()*1.58125E-5) + " Ly");
+        radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
+                *1.58125E-5) + " Ly");
         mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
-        surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature()) + " K");
-        luminosity.setText("Luminosity: " + dfe.format(solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
+        surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
+                + " K");
+        luminosity.setText("Luminosity: " + dfe.format(
+                solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
 
         //initialize button color to red
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
@@ -92,13 +95,16 @@ public class SolarSystemActivity extends GUIActivity {
             @Override
             public void onClick(View v) {
                 if(selectedPlanet == null) {
-                    Toast toast = Toast.makeText(v.getContext(),"No Planet Selected" , Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(v.getContext(),"No Planet Selected" ,
+                            Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    Toast toast1 = Toast.makeText(v.getContext(), selectedPlanet.getName(), Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(v.getContext(), selectedPlanet.getName(),
+                            Toast.LENGTH_SHORT);
                     toast1.show();
                     if (model.travelToPlanet(selectedPlanet) == 1) {
-                        Intent newIntent = new Intent(SolarSystemActivity.this, PlanetActivity.class);
+                        Intent newIntent = new Intent(SolarSystemActivity.this,
+                                PlanetActivity.class);
                         startActivity(newIntent);
 
                     }
@@ -121,7 +127,8 @@ public class SolarSystemActivity extends GUIActivity {
                     //change button color to green after clicking on a planet
                     thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77"));
                /*     planetImage = findViewById(R.id.planet_image);
-                    RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF,
+                    0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
                     rotate.setRepeatCount(Animation.INFINITE);
                     rotate.setDuration(3);
                     rotate.setInterpolator(new LinearInterpolator());

@@ -149,12 +149,14 @@ public enum ShopGoods implements Serializable {
 
     /**
      * name = the name
-     * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
+     * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this
+     * level)
      * MTLU = Minimum Tech Level to Use this resource (You can't sell on planets below this level)
      * TTP = Tech Level which produces the most of this item
      * IPL = Price increase per tech level
      * Var = variance is the maximum percentage that the price can vary above or below the base
-     * IE = Radical price increase event, when this even happens on a content_planet, the price may increase astronomically
+     * IE = Radical price increase event, when this even happens on a content_planet, the price may
+     * increase astronomically
      * CR = When this condition is present, the price of this resource is unusually low
      * ER = When this condition is present, the resource is expensive
      * MTL = Min price offered in space trade with random trader (not on a content_planet)
@@ -193,7 +195,9 @@ public enum ShopGoods implements Serializable {
      * @param isIllegal legal condition
      */
 
-    ShopGoods(String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl, int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth, boolean isIllegal) {
+    ShopGoods(String name, TechLevel mtlp, TechLevel mtlu, TechLevel ttp, int basePrice, int ipl,
+              int var, RadicalPriceEvent ie, ResourcesLevel cr, ResourcesLevel er, int mtl, int mth,
+              boolean isIllegal) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
