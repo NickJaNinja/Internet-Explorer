@@ -89,8 +89,10 @@ public class SolarSystem implements Serializable {
             }
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
 
-            if (planets[i].getDistanceFromParentStar() > planets[i].getParentStar().getInnerHZRadius()
-                    && planets[i].getDistanceFromParentStar() < planets[i].getParentStar().getOuterHZRadius()) {
+            if (planets[i].getDistanceFromParentStar() >
+                    planets[i].getParentStar().getInnerHZRadius()
+                    && planets[i].getDistanceFromParentStar()
+                    < planets[i].getParentStar().getOuterHZRadius()) {
                 planets[i].setInHabitableZone(true);
             } else {
                 planets[i].setInHabitableZone(false);
@@ -113,10 +115,10 @@ public class SolarSystem implements Serializable {
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         if (planets[0].equals(planet)) { // first content_planet
-            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius(); // TODO think of better way to generate distance from first content_planet to parent star
+            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius();
         } else { // planets' after first
             // by Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0; // TODO add slight random variation so this is less exact
+            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0;
         }
     }
 

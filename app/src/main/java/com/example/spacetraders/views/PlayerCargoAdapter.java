@@ -19,7 +19,8 @@ import java.util.List;
 /**
  * Adapts the list of shopgood in player's inventory to be a list of graphical elements in view
  */
-public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.PlayerCargoViewHolder> {
+public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
+        .PlayerCargoViewHolder> {
 
     /**
      * a copy of the list of shop goods in the model
@@ -66,7 +67,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
 
                     if (position == RecyclerView.NO_POSITION) {
                         CharSequence text = "DO NOT CLICK THAT";
-                        Toast toast = Toast.makeText(itemView.getContext(), text, Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
                         ShopEntry selectedEntry = playerCargoList.get(position);
@@ -130,7 +132,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder, int position) {
+    public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
+                                 int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
         playerCargoViewHolder.price.setText(shopEntry.getPrice() + "");
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());

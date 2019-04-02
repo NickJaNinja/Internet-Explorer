@@ -30,7 +30,8 @@ public enum ShipType implements Serializable {
      *
      * @param name name of ship type
      */
-    ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds, int fuel, int numCrew) {
+    ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds,
+             int fuel, int numCrew) {
         this.name = name;
         this.numWeapons = numWeapons;
         this.numShields = numShields;
