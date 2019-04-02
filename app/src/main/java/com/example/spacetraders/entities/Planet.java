@@ -1,7 +1,6 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Random;
 

@@ -1,13 +1,11 @@
 package com.example.spacetraders.models;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
-import com.example.spacetraders.entities.Ship;
 import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
@@ -17,10 +15,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.List;
 
 public class Model {

@@ -1,6 +1,5 @@
 package com.example.spacetraders.entities;
 import java.io.Serializable;
-import java.lang.Math;
 
 /**
  * This class represents the coordinates of a solar system
@@ -61,7 +60,7 @@ public class Coordinates implements Serializable {
      * @param obj some other object
      * @return if they are the same coordinates
      */
-    public boolean isEqual(Object obj) {
+    public boolean equals(Object obj) {
         if (obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x
                 && ((Coordinates) obj).getY() == this.y) {
             return true;
@@ -74,7 +73,7 @@ public class Coordinates implements Serializable {
      *
      * @return string of coordinates info
      */
-    @Override
+    //@Override
     public String toString() {
         return "(" + x + "," + y + ")";
     }
