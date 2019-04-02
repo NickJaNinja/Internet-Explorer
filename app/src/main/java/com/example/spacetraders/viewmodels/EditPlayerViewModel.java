@@ -8,8 +8,15 @@ import android.support.annotation.NonNull;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.models.Model;
 
+/**
+ * ViewModel for player configuration
+ */
 public class EditPlayerViewModel extends AndroidViewModel {
 
+    /**
+     *  VM constructor
+     * @param app the app
+     */
     public EditPlayerViewModel(@NonNull Application app) {
         super(app);
     }
@@ -24,6 +31,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param trade trader points
      * @param eng   engineering points
      * @param pilot pilot points
+     * @param diff game difficulty
      * @return true if OK button can move to next screen
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot, GameDifficulty diff) {
@@ -54,6 +62,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * Returns false if button should not do anything,
      * true if skill point value should change
      *
+     * @param curr current number of skill points in this skill
      * @param pointsRemaining skill points left unspent
      * @param sign            +1 if plus button, -1 if minus button
      * @return amount to change skill point value by
