@@ -21,10 +21,8 @@ public class UniverseMapActivity extends GUIActivity{
     private TextView nameOfPlanet;
     private TextView distance;
     private TextView coordinates;
-    private TextView range;
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
-    private ImageView theCircle;
     private SolarSystem currentSolarSystem = null;
 
     @Override
@@ -36,10 +34,10 @@ public class UniverseMapActivity extends GUIActivity{
         nameOfPlanet = findViewById(R.id.name_text);
         distance = findViewById(R.id.distance_text);
         coordinates = findViewById(R.id.coordinates_text);
-        range = findViewById(R.id.range_text);
+        TextView range = findViewById(R.id.range_text);
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
-        theCircle = findViewById(R.id.local_universe);
+        ImageView theCircle = findViewById(R.id.local_universe);
 
         nameOfPlanet.setText("" + universeViewModel.getCurrentSystem().getName());
         distance.setText("0 Ly");
