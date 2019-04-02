@@ -52,7 +52,7 @@ public class ShopActivity extends MenuBarActivity {
         setSupportActionBar(toolbar);
 
         fuel = findViewById(R.id.fuel_bar);
-        fuel.setProgress(Model.getInstance().getFuelPercentage());
+        fuel.setProgress(model.getFuelPercentage());
 
         this.model = Model.getInstance();
 

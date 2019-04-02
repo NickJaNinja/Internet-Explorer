@@ -182,6 +182,15 @@ public class Model {
     }
 
     /**
+     * setter for current content_planet
+     *
+     * @return current content_planet
+     */
+    public void setCurrentPlanet(Planet newCurr) {
+        this.game.setCurrentPlanet(newCurr);
+    }
+
+    /**
      * getter for shop
      *
      * @return shop
