@@ -21,8 +21,6 @@ import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 public class ShopActivity extends MenuBarActivity {
-    private TextView cancel;
-    private TextView confirm;
     private TextView creditDisplay;
     private TextView cargoDisplay;
     private ListView buyList;
@@ -30,15 +28,18 @@ public class ShopActivity extends MenuBarActivity {
     private PlayerCargoAdapter adapterForPlayer;
     //private Shop shop;
     private ShopViewModel viewModel;
-    private RecyclerView recyclerViewShop;
-    private RecyclerView recyclerViewPlayer;
     private Model model;
     private MediaPlayer mediaPlayer;
-    private ProgressBar fuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ProgressBar fuel;
+        RecyclerView recyclerViewShop;
+        RecyclerView recyclerViewPlayer;
+        TextView cancel;
+        TextView confirm;
+
         setContentView(R.layout.activity_market);
 
         // toolbar
