@@ -37,6 +37,7 @@ public class PlanetActivity extends MenuBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView market;
+        TextView shipyard;
         TextView upgrade;
         TextView refuel;
         TextView save;
@@ -61,6 +62,7 @@ public class PlanetActivity extends MenuBarActivity {
         name = findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);
+        shipyard = findViewById(R.id.shipyard_button);
         upgrade = findViewById(R.id.upgrade_button);
         refuel = findViewById(R.id.refuel_button);
         save = findViewById(R.id.save_button);
@@ -94,6 +96,14 @@ public class PlanetActivity extends MenuBarActivity {
             public void onClick(View v) {
                 mediaPlayer.stop();
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        shipyard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShipyardActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
