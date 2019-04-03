@@ -33,7 +33,7 @@ public class Shop implements Serializable {
     /**
      * Generates quantity and price for all goods in the shop
      */
-    public void restock() {
+    public final void restock() {
         Random rng = new Random();
         double eventChance = rng.nextDouble();
         int event = rng.nextInt(NUM_RESOURCES);  // 0 to (Number of resources)-1
@@ -46,7 +46,6 @@ public class Shop implements Serializable {
             final double EVENT_CHANCE = 0.03;
             final int BOUND = 5051;
             final int STOCK_DIVIDE = 125;
-
 
             int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
@@ -117,7 +116,6 @@ public class Shop implements Serializable {
         List<ShopEntry> inv = new ArrayList<>();
         for (ShopEntry entry : shopGoodsStockMap.values()) {
             if (entry.getStock() >= 1) {
-                System.out.println("hi there");
                 inv.add(entry);
             }
         }

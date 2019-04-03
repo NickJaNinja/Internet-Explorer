@@ -10,15 +10,15 @@ public class Game implements Serializable {
     /**
      * the game difficulty
      */
-    private GameDifficulty difficulty;
+    private final GameDifficulty difficulty;
     /**
      * the player
      */
-    private Player player;
+    private final Player player;
     /**
      * the universe
      */
-    private Universe universe;
+    private final Universe universe;
     /**
      * the solar system
      */

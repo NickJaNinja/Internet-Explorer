@@ -5,8 +5,8 @@ import java.io.Serializable;
  * This class represents the coordinates of a solar system
  */
 public class Coordinates implements Serializable {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     /**
      * Constructor coordinates

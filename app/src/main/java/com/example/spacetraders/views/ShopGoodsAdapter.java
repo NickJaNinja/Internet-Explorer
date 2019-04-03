@@ -45,7 +45,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      */
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
         for (ShopEntry entry : shopGoodsList) {
-            if (entry.getStock() == 0) shopGoodsList.remove(entry);
+            if (entry.getStock() == 0) {
+                shopGoodsList.remove(entry);
+            }
         }
         this.shopGoodsList = shopGoodsList;
         this.model = Model.getInstance();

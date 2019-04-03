@@ -27,7 +27,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     private List<Planet> planetsList;
     private OnClickListener listener;
-    private Model model;
+    private final Model model;
     private Planet selectedPlanet;
 
     /**
@@ -54,7 +54,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * This is a holder for the widgets associated with a single entry in the list of planets
      */
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
-        private TextView pname;
+        private final TextView pname;
         private TextView economy;
         private TextView distance;
         private TextView techLevel;

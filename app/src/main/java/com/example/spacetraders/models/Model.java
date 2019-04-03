@@ -32,7 +32,7 @@ public class Model {
      * anywhere, which will allow our View models to access
      * the "back end"  more easily
      */
-    private static Model instance = new Model();
+    private static final Model instance = new Model();
 
     /**
      * getter for instance

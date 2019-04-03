@@ -44,13 +44,21 @@ public class Star implements Serializable {
      */
     private char generateClassification() {
         float roll = r.nextFloat() * 100;
-        if (roll > 60) return 'M'; // 40% chance
-        else if (roll <= 60 && roll > 35) return 'K';// 25% chance
-        else if (roll <= 35 && roll > 24) return 'G';// 11% chance
-        else if (roll <= 24 && roll > 10) return 'F';// 14% chance
-        else if (roll <= 10 && roll > 2.7f) return 'A';// 7.3% chance
-        else if (roll <= 2.7f && roll > 0.4f) return 'B';// 2.3% chance
-        else return 'O';// 0.4% chance
+        if (roll > 60) {
+            return 'M'; // 40% chance
+        } else if (roll <= 60 && roll > 35) {
+            return 'K';// 25% chance
+        } else if (roll <= 35 && roll > 24) {
+            return 'G';// 11% chance
+        } else if (roll <= 24 && roll > 10) {
+            return 'F';// 14% chance
+        } else if (roll <= 10 && roll > 2.7f) {
+            return 'A';// 7.3% chance
+        } else if (roll <= 2.7f && roll > 0.4f) {
+            return 'B';// 2.3% chance
+        } else {
+            return 'O';// 0.4% chance
+        }
     }
 
     /**

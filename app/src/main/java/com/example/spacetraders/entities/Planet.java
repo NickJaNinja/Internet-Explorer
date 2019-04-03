@@ -10,14 +10,14 @@ import java.util.Random;
 public class Planet implements Serializable {
 
     private String name;
-    private Star parentStar;
-    private TechLevel techLevel;
-    private ResourcesLevel resourcesLevel;
-    private PoliticalSystem politicalSystem;
+    private final Star parentStar;
+    private final TechLevel techLevel;
+    private final ResourcesLevel resourcesLevel;
+    private final PoliticalSystem politicalSystem;
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
     private int population;
-    private Shop shop;
+    private final Shop shop;
     private boolean isWarpGate;
 
     /**
