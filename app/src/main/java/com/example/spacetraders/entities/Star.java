@@ -9,8 +9,8 @@ import android.graphics.Color;
  */
 public class Star implements Serializable {
 
-    private String name;
-    private char classification;
+    private final String name;
+    private final char classification;
     private int temperature; // in Kelvin (K)
     private double mass; // in solar masses (M☉)
     private double radius; // in solar radii (R☉)
@@ -19,7 +19,7 @@ public class Star implements Serializable {
     private double outerHZRadius; // in AUs
 
 
-    private Random r = new Random();
+    private final Random r = new Random();
 
     /**
      * Constructor for Star.

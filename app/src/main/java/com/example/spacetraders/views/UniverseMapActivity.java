@@ -26,7 +26,7 @@ public class UniverseMapActivity extends GUIActivity{
     private TextView coordinates;
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
-    private SolarSystem currentSolarSystem = null;
+    private SolarSystem currentSolarSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

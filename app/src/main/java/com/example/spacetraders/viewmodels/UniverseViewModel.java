@@ -12,7 +12,7 @@ import com.example.spacetraders.entities.SolarSystem;
  * a class that is responsible for preparing and managing the data for universe
  */
 public class UniverseViewModel extends AndroidViewModel {
-    private Model model;
+    private final Model model;
     private final double COORDINATE = 195.0;
 
     /**

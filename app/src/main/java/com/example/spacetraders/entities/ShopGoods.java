@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * shop goods enum
  */
-public enum ShopGoods implements Serializable {
+public enum ShopGoods {
     WATER("Water",
             TechLevel.PRE_AGRICULTURE,
             TechLevel.PRE_AGRICULTURE,

@@ -69,14 +69,14 @@ public class Universe implements Serializable {
             };
 
 
-    private Random r = new Random();
+    private final Random r = new Random();
     /**
      * dimensions of universe
      */
     private static final int MAX_X = 600;
     private static final int MAX_Y = 600;
 
-    private SolarSystem[] solarSystems;
+    private final SolarSystem[] solarSystems;
 
     /**
      * Constructor for Universe
