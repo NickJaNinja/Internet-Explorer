@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ShopViewModel extends AndroidViewModel {
 
-    private Model model;
+    private final Model model;
     private List<ShopEntry> shopInventoryTemp;
     private List<ShopEntry> playerInventoryTemp;
     private Shop shop;

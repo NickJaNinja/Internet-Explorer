@@ -55,12 +55,12 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      */
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
         private final TextView pname;
-        private TextView economy;
-        private TextView distance;
-        private TextView techLevel;
-        private TextView politicalSystem;
+        private final TextView economy;
+        private final TextView distance;
+        private final TextView techLevel;
+        private final TextView politicalSystem;
         //planet image on the left
-        private ImageView planetView;
+        private final ImageView planetView;
 
         /**
          * planet view holder

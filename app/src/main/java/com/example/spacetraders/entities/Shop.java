@@ -10,9 +10,9 @@ import java.util.Random;
  * shop class
  */
 public class Shop implements Serializable {
-    private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
-    private TechLevel techLevel;
-    private ResourcesLevel resourcesLevel;
+    private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
+    private final TechLevel techLevel;
+    private final ResourcesLevel resourcesLevel;
     private PoliticalSystem politicalSystem;
     private RadicalPriceEvent randomEvent;
     private final int NUM_RESOURCES = ShopGoods.values().length;

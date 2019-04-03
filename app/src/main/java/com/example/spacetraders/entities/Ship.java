@@ -10,8 +10,8 @@ import java.util.List;
  */
 
 public class Ship implements Serializable {
-    private ShipType type;
-    private EnumMap<ShopGoods, ShopEntry> cargo;
+    private final ShipType type;
+    private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
     private int fuel;
     private final int FUEL_TO_COST_MULTI = 5;

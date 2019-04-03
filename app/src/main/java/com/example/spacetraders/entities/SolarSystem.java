@@ -8,12 +8,12 @@ import java.util.Random;
  */
 public class SolarSystem implements Serializable {
 
-    private String name;
-    private Coordinates coordinates;
+    private final String name;
+    private final Coordinates coordinates;
     private Star[] stars;
     private Planet[] planets;
 
-    private Random r = new Random();
+    private final Random r = new Random();
 
     /**
      * Constructor for Solar System. Randomizes all stats.

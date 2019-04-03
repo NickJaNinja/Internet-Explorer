@@ -12,8 +12,8 @@ import com.example.spacetraders.models.Model;
  * solar system view model
  */
 public class SolarSystemViewModel extends AndroidViewModel {
-    private Model model;
-    private SolarSystem currentSolarSystem;
+    private final Model model;
+    private final SolarSystem currentSolarSystem;
     private Planet[] planetsInRange;
 
     /**

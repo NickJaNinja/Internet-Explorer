@@ -29,11 +29,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * a copy of the list of shop goods in the model
      */
 
-    private ShopActivity shopActivity;
+    private final ShopActivity shopActivity;
     private PlayerCargoAdapter playerCargoAdapter;
     private List<ShopEntry> shopGoodsList;
     private OnClickListener listener;
-    private Model model;
+    private final Model model;
     private AlertDialog dialog;
     private boolean dialogConfirmed;
 
@@ -64,9 +64,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     }
 
     public class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private TextView price;
-        private TextView stock;
+        private final TextView name;
+        private final TextView price;
+        private final TextView stock;
 
         /**
          * shop goods view holder
