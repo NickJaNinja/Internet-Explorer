@@ -38,12 +38,14 @@ public class Shop implements Serializable {
         for (ShopGoods shopGood : ShopGoods.values()) {
             // Calculate price
 
-            double divide = 100.0;
+            final double DIVIDE = 100.0;
+            final double PRICE_CONSTANT = 0.8;
+            final double EVENT_CHANCE = 0.03;
 
 
             int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
-            int var = (int)(rng.nextInt(shopGood.getVar() + 1) / divide);
+            int var = (int)(rng.nextInt(shopGood.getVar() + 1) / DIVIDE);
             if (rng.nextInt(2) == 0) {
                 itemPrice += var;
             } else {
@@ -51,11 +53,11 @@ public class Shop implements Serializable {
             }
             // Interesting events
             if (shopGood.getCr().equals(resourcesLevel)) {
-                itemPrice = (int)(itemPrice * 0.8);
+                itemPrice = (int)(itemPrice * PRICE_CONSTANT);
             } else if (shopGood.getEr().equals(resourcesLevel)) {
-                itemPrice = (int)(itemPrice / 0.8);
+                itemPrice = (int)(itemPrice / PRICE_CONSTANT);
             }
-            if (event == shopGood.ordinal() && eventChance < 0.03) {
+            if (event == shopGood.ordinal() && eventChance < EVENT_CHANCE) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
             }
