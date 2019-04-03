@@ -16,13 +16,11 @@ public class MainActivity extends GUIActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        MainViewModel mainViewModel;
+        
         Button newButton;
         Button loadButton;
 
         setContentView(R.layout.activity_main);
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
         newButton = findViewById(R.id.new_button);
         loadButton = findViewById(R.id.load_button);
