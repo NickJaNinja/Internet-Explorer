@@ -19,7 +19,6 @@ import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.models.Model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -151,6 +150,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
+                                @Override
                                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO SELL: " + (progress + 1));
                                     priceText.setText("TOTAL SALE: ¥" +(itemPrice * (progress + 1)));

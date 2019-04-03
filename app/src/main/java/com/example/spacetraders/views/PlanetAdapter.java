@@ -6,9 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -85,6 +82,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
                     // select content_planet
                     planetView.setOnClickListener(new View.OnClickListener() {
+                        @Override
                         public void onClick(View v) {
                             Log.d("Debug", "Planet clicked");
                         }
@@ -97,6 +95,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     @Override
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
+        double multiple = 8.3167;
         //bind the planet data for one planet
         Planet planet = planetsList.get(position);
        // selectedPlanet = planet;
@@ -104,7 +103,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
         planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
-                * 8.3167) + " Lm");
+                * multiple) + " Lm");
         planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
         planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");

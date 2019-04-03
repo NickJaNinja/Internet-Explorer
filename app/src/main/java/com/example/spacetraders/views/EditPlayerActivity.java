@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -77,6 +76,7 @@ public class EditPlayerActivity extends AppCompatActivity {
 
         // Skill point buttons
         fightPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         fighterText.getText().toString()),
@@ -89,6 +89,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         fightMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(fighterText.getText().toString()),
@@ -101,6 +102,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         tradePlus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
@@ -113,6 +115,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         tradeMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
@@ -125,6 +128,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         engineerPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
@@ -137,6 +141,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         engineerMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
@@ -149,6 +154,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         pilotPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
@@ -161,6 +167,7 @@ public class EditPlayerActivity extends AppCompatActivity {
             }
         });
         pilotMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
@@ -175,6 +182,7 @@ public class EditPlayerActivity extends AppCompatActivity {
 
         // Resets player configuration screen
         reset.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 nameField.setText(null);
                 gameDifficultySpinner.setSelection(0);
@@ -189,6 +197,7 @@ public class EditPlayerActivity extends AppCompatActivity {
 
         // Exits the app
         exit.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 finish();
             }
@@ -202,7 +211,6 @@ public class EditPlayerActivity extends AppCompatActivity {
      * @param view the view
      */
     public void onOkPressed(View view) {
-
         String name = nameField.getText().toString();
         name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());
@@ -233,7 +241,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     }
 
     // CAN USE THIS INSTEAD OF 8 LISTENERS IN onCreate()
-    // ISSUE: Linking the skill buttons to their respective textviews
+    // ISSUE: Linking the skill buttons to their respective text views
     /*
     public void onPlusPressed(View view) {
         Log.d("Edit", "Skill Plus Button Pressed");
@@ -246,7 +254,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     }
     */
 
-    // . ..█ (͡° ͜ʖ ͡°)
+    // . ..█ (͡°  ͜ʖ ͡°)
     // ███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
     // ▂▄▅█████████▅▄▃▂
     // I███████████████████].

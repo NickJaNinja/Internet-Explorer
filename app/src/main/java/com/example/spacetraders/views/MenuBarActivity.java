@@ -1,6 +1,6 @@
 package com.example.spacetraders.views;
 
-import android.app.Activity;
+/*import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.models.Model;
+import com.example.spacetraders.models.Model;*/
 
 public class MenuBarActivity extends GUIActivity {
     /*

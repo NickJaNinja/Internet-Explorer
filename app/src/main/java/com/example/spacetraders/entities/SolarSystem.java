@@ -1,7 +1,6 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -204,13 +203,13 @@ public class SolarSystem implements Serializable {
     @Override
     public String toString() {
         String str = "Solar System: " + name + " at " + coordinates + "\nSuns: ";
-        for (Star s : stars) {
+        /*for (Star s : stars) {
             str += s + ", ";
         }
         str += "Planets: ";
         for (Planet p : planets) {
             str += p + ", ";
-        }
+        }*/
         return str + "\n";
     }
 

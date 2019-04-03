@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 
 import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
-import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.models.Model;
 
 import java.util.List;

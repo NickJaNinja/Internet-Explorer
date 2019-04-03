@@ -3,28 +3,25 @@ package com.example.spacetraders.views;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.view.ViewGroup;
 import android.widget.Toast;
-
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.models.Model;
 
-import java.util.ArrayList;
 import java.util.List;
 /**
- * Adapts the list of shopgoods in market to be a list of graphical elements in view
+ * Adapts the list of shop goods in market to be a list of graphical elements in view
  */
 public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.ShopGoodsViewHolder> {
 
@@ -134,6 +131,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
+                                @Override
                                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
                                     priceText.setText("TOTAL PRICE: ¥" +(itemPrice * (progress + 1)));
@@ -246,7 +244,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @return a list of shopgoods in players inventory
+     * @return a list of shop goods in players inventory
      */
     public PlayerCargoAdapter getPlayerCargoAdapter() {
         return playerCargoAdapter;
@@ -258,7 +256,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @return a list of shopgoods in market
+     * @return a list of shop goods in market
      */
     public List<ShopEntry> getShopGoodsList() {
         return shopGoodsList;
@@ -266,8 +264,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     /**
      *
-     * @param good  a shopgood
-     * @return the shopgood price OR -1 if fail
+     * @param good  a shop good
+     * @return the shop good price OR -1 if fail
      */
     public int getCostOfGood(ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {

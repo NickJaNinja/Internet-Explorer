@@ -1,7 +1,5 @@
 package com.example.spacetraders.entities;
 
-import android.util.Log;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -39,9 +37,13 @@ public class Shop implements Serializable {
 
         for (ShopGoods shopGood : ShopGoods.values()) {
             // Calculate price
-            int itemPrice = (int) (shopGood.getBasePrice() + shopGood.getIpl()
+
+            double divide = 100.0;
+
+
+            int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
                     * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
-            int var = (int)(rng.nextInt(shopGood.getVar() + 1) / 100.0);
+            int var = (int)(rng.nextInt(shopGood.getVar() + 1) / divide);
             if (rng.nextInt(2) == 0) {
                 itemPrice += var;
             } else {
@@ -51,7 +53,7 @@ public class Shop implements Serializable {
             if (shopGood.getCr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice * 0.8);
             } else if (shopGood.getEr().equals(resourcesLevel)) {
-                itemPrice = (int)(itemPrice/0.8);
+                itemPrice = (int)(itemPrice / 0.8);
             }
             if (event == shopGood.ordinal() && eventChance < 0.03) {
                 itemPrice *= 5;
@@ -60,7 +62,7 @@ public class Shop implements Serializable {
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
-                int itemStock = (int) rng.nextInt(5051 - shopGood.getBasePrice())/125;
+                int itemStock = rng.nextInt(5051 - shopGood.getBasePrice())/125;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             } else {
                 // Item will not be in stock
@@ -92,9 +94,10 @@ public class Shop implements Serializable {
      */
     public List<ShopEntry> getInventoryAsList() {
         List<ShopEntry> inv = new ArrayList<>();
-        for (ShopEntry entry : shopGoodsStockMap.values()) {
+        /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
-        }
+        }*/
+        inv.addAll(shopGoodsStockMap.values());
         return inv;
     }
 

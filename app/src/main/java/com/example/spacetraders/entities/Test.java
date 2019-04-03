@@ -1,7 +1,5 @@
 package com.example.spacetraders.entities;
 
-import java.text.DecimalFormat;
-
 /**
  * sorry I don't know how to do junits lads.
  */

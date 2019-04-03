@@ -22,7 +22,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
     }
 
     private String toastText;
-
+    private final int TOTALPOINTS = 16;
     /**
      * Checks to see if player is configured correctly
      *
@@ -36,16 +36,17 @@ public class EditPlayerViewModel extends AndroidViewModel {
      */
     public boolean onOk(String name, int fight, int trade, int eng, int pilot,
                         GameDifficulty diff) {
+        Model model = Model.getInstance();
         if (name == null || name.length() < 1) {
             toastText = "Please enter your pilot's name";
             return false;
         }
         int sum = fight + trade + eng + pilot;
-        if (sum != 16) {
+        if (sum != TOTALPOINTS) {
             toastText = "Please use all of your skill points";
             return false;
         }
-        Model model = Model.getInstance();
+
         model.createGame(diff, name, pilot, fight, trade, eng);
         return true;
     }
