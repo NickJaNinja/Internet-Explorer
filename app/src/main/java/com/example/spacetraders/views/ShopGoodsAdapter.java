@@ -150,9 +150,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
                                 @Override
-                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                public void onProgressChanged(SeekBar seekBar,
+                                                              int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
-                                    priceText.setText("TOTAL PRICE: ¥" +(itemPrice * (progress + 1)));
+                                    priceText.setText("TOTAL PRICE: ¥" +
+                                            (itemPrice * (progress + 1)));
                                 }
 
                                 @Override
@@ -162,10 +164,14 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             });
 
                             // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.
+                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             priceTextParams.bottomMargin = 5;
                             layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.
+                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
                             LinearLayout.LayoutParams seekParams =
@@ -176,10 +182,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             layout.addView(seek, seekParams);
 
                             // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                    R.style.AlertDialogTheme);
 
                             builder.setView(layout)
-                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("CONFIRM",
+                                            new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {

@@ -123,7 +123,8 @@ public class SolarSystem implements Serializable {
         final double DISTANCE_CONSTANT3 = 2.0;
         if (planets[0].equals(planet)) {
             // first content_planet
-            return r.nextDouble() * (DISTANCE_CONSTANT1 - DISTANCE_CONSTANT2) + DISTANCE_CONSTANT2 + stars[0].getRadius();
+            return r.nextDouble() * (DISTANCE_CONSTANT1 - DISTANCE_CONSTANT2) +
+                    DISTANCE_CONSTANT2 + stars[0].getRadius();
         } else {
             // planets' after first
             // by Titius-Bode Law

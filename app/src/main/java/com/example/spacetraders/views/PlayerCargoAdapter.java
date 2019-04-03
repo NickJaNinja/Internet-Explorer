@@ -156,9 +156,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
                                 @Override
-                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                public void onProgressChanged(SeekBar seekBar,
+                                                              int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO SELL: " + (progress + 1));
-                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice * (progress + 1)));
+                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice *
+                                            (progress + 1)));
                                 }
 
                                 @Override
@@ -168,10 +170,14 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             });
 
                             // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout
+                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             priceTextParams.bottomMargin = 5;
                             layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout
+                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
                             LinearLayout.LayoutParams seekParams =
@@ -182,10 +188,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             layout.addView(seek, seekParams);
 
                             // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                    R.style.AlertDialogTheme);
 
                             builder.setView(layout)
-                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("CONFIRM",
+                                            new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
@@ -245,7 +253,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry.getGood()) +"(¥" +shopEntry.getPrice() +")");
+        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+                .getGood()) +"(¥" +shopEntry.getPrice() +")");
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
 
