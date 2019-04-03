@@ -133,9 +133,9 @@ public class PlanetActivity extends MenuBarActivity {
         });
 
         // rotate content_planet animation
-        int duration = 300000;
-        int degree = 360;
-        float pivotValue = 0.5f;
+        final int duration = 300000;
+        final int degree = 360;
+        final float pivotValue = 0.5f;
 
 
         planetImage = findViewById(R.id.planet_image);

@@ -47,7 +47,10 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries();
     }
 
-    
+    public List<ShopEntry> getShopEntriesFiltered() {
+        return model.getShopEntriesFiltered();
+    }
+
     public List<ShopEntry> getPlayerEntries() {
         return model.getPlayerEntries();
     }

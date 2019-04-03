@@ -151,6 +151,8 @@ public class Model {
         return game.getShopEntries();
     }
 
+    public List<ShopEntry> getShopEntriesFiltered() { return game.getShopEntriesFiltered(); }
+
     /**
      * getter for player entities
      *
