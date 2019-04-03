@@ -23,6 +23,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
 
     private String toastText;
     private final int TOTAL_POINTS = 16;
+
     /**
      * Checks to see if player is configured correctly
      *

@@ -84,7 +84,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             //view.setBackgroundColor(Color.CYAN);
                         }
 
-                        int cost = Integer.parseInt(price.getText().toString().substring(1, price.getText().toString().length()));
+                        int cost = Integer.parseInt(price.getText().toString().substring(1));
 
                         if (shopGoodsList.get(position).getStock() > 0 ) {
 
@@ -196,8 +196,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                         Toast toast = Toast.makeText(itemView.getContext(), text,
                                                 Toast.LENGTH_SHORT);
                                         toast.show();
-                                        return;
-                                    } else return;
+                                    }
                                 }
                             });
 

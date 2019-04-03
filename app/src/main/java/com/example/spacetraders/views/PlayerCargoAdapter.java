@@ -219,8 +219,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                         Toast toast = Toast.makeText(itemView.getContext(), text,
                                                 Toast.LENGTH_SHORT);
                                         toast.show();
-                                        return;
-                                    } else return;
+                                    }
                                 }
                             });
 

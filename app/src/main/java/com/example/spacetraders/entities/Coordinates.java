@@ -63,11 +63,8 @@ public class Coordinates implements Serializable {
      * @return if they are the same coordinates
      */
     public boolean equals(Object obj) {
-        if (obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x
-                && ((Coordinates) obj).getY() == this.y) {
-            return true;
-        }
-        return false;
+        return obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x
+                && ((Coordinates) obj).getY() == this.y;
     }
 
     /**

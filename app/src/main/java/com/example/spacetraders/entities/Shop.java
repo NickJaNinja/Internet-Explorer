@@ -97,11 +97,10 @@ public class Shop implements Serializable {
      * @return the shop entry list
      */
     public List<ShopEntry> getInventoryAsList() {
-        List<ShopEntry> inv = new ArrayList<>();
         /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
         }*/
-        inv.addAll(shopGoodsStockMap.values());
+        List<ShopEntry> inv = new ArrayList<>(shopGoodsStockMap.values());
         return inv;
     }
 

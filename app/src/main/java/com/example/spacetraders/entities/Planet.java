@@ -31,12 +31,8 @@ public class Planet implements Serializable {
         this.parentStar = parentStar;
         Random r = new Random();
 
-        if (distanceFromParentStar > parentStar.getInnerHZRadius() && distanceFromParentStar
-                < parentStar.getOuterHZRadius()) {
-            this.inHabitableZone = true;
-        } else {
-            this.inHabitableZone = false;
-        }
+        this.inHabitableZone = (distanceFromParentStar > parentStar.getInnerHZRadius()
+                && distanceFromParentStar < parentStar.getOuterHZRadius());
 
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];
