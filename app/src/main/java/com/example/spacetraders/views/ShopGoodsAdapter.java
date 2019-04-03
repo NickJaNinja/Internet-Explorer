@@ -128,6 +128,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
+                                @Override
                                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
                                     priceText.setText("TOTAL PRICE: ¥" +(itemPrice * (progress + 1)));

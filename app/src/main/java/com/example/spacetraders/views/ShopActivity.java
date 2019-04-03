@@ -90,6 +90,7 @@ public class ShopActivity extends MenuBarActivity {
 
         //confirm transaction
         confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 viewModel.setMarketsEntriesToTemp();
                 viewModel.setUpMarket();
@@ -98,6 +99,7 @@ public class ShopActivity extends MenuBarActivity {
 
         //cancel transaction
         cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 viewModel.setUpMarket();
             }
@@ -118,6 +120,7 @@ public class ShopActivity extends MenuBarActivity {
         updateDisplay();
     }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
