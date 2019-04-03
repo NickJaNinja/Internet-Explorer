@@ -100,8 +100,7 @@ public class Ship implements Serializable {
      * @return Amount of purchasable fuel
      */
     public int getPurchasableFuel(int credits) {
-        int fuelAmount = credits / FUEL_TO_COST_MULTI;
-        return fuelAmount;
+        return credits / FUEL_TO_COST_MULTI;
     }
 
     /**
