@@ -22,6 +22,9 @@ import android.widget.Toast;
 import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;*/
 
+/**
+ * why is this class all commented out
+ */
 public class MenuBarActivity extends GUIActivity {
     /*
     private ImageView inventory;

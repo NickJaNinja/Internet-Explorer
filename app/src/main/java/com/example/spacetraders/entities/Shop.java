@@ -41,6 +41,8 @@ public class Shop implements Serializable {
             final double DIVIDE = 100.0;
             final double PRICE_CONSTANT = 0.8;
             final double EVENT_CHANCE = 0.03;
+            final int BOUND = 5051;
+            final int STOCK_DIVIDE = 125;
 
 
             int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
@@ -64,7 +66,7 @@ public class Shop implements Serializable {
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
-                int itemStock = rng.nextInt(5051 - shopGood.getBasePrice())/125;
+                int itemStock = rng.nextInt(BOUND - shopGood.getBasePrice())/STOCK_DIVIDE;
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             } else {
                 // Item will not be in stock
@@ -95,11 +97,10 @@ public class Shop implements Serializable {
      * @return the shop entry list
      */
     public List<ShopEntry> getInventoryAsList() {
-        List<ShopEntry> inv = new ArrayList<>();
         /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
         }*/
-        inv.addAll(shopGoodsStockMap.values());
+        List<ShopEntry> inv = new ArrayList<>(shopGoodsStockMap.values());
         return inv;
     }
 
