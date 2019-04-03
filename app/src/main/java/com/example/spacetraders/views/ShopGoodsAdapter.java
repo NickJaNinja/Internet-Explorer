@@ -41,6 +41,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private boolean dialogConfirmed;
 
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
+        for (ShopEntry entry : shopGoodsList) {
+            if (entry.getStock() == 0) shopGoodsList.remove(entry);
+        }
         this.shopGoodsList = shopGoodsList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;

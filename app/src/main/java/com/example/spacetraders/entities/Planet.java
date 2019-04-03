@@ -158,6 +158,8 @@ public class Planet implements Serializable {
 
     public List<ShopEntry> getShopEntries() { return shop.getInventoryAsList(); }
 
+    public List<ShopEntry> getShopEntriesFiltered() { return shop.getInventoryAsListFiltered(); }
+
     public boolean getIsWarpGate() {
         return this.isWarpGate;
     }

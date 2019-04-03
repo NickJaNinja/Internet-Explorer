@@ -172,6 +172,10 @@ public class Game implements Serializable {
         return currPlanet.getShopEntries();
     }
 
+    public List<ShopEntry> getShopEntriesFiltered() {
+        return currPlanet.getShopEntriesFiltered();
+    }
+
     /**
      * Gets the player's entries (inventory)
      * @return player entries

@@ -98,6 +98,17 @@ public class Shop implements Serializable {
         return inv;
     }
 
+    public List<ShopEntry> getInventoryAsListFiltered() {
+        List<ShopEntry> inv = new ArrayList<>();
+        for (ShopEntry entry : shopGoodsStockMap.values()) {
+            if (entry.getStock() >= 1) {
+                System.out.println("hi there");
+                inv.add(entry);
+            }
+        }
+        return inv;
+    }
+
     public RadicalPriceEvent getRandomEvent() {
         return randomEvent;
     }

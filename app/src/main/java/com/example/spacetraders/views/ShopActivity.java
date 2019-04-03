@@ -70,7 +70,7 @@ public class ShopActivity extends MenuBarActivity {
         recyclerViewShop.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntries(), this);
+        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntriesFiltered(), this);
         recyclerViewShop.setAdapter(adapterForShop);
 
 
