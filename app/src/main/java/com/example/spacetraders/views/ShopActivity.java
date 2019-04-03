@@ -20,6 +20,9 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
+/**
+ * Shope activity class
+ */
 public class ShopActivity extends MenuBarActivity {
     private TextView creditDisplay;
     private TextView cargoDisplay;

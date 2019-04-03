@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * shop entry class
+ */
 public class ShopEntry implements Serializable {
     private ShopGoods good;
     private int stock;

@@ -10,6 +10,9 @@ import com.example.spacetraders.models.Model;
 
 import java.util.List;
 
+/**
+ * shop view model
+ */
 public class ShopViewModel extends AndroidViewModel {
 
     private Model model;
@@ -17,6 +20,11 @@ public class ShopViewModel extends AndroidViewModel {
     private List<ShopEntry> playerInventoryTemp;
     private Shop shop;
 
+    /**
+     * shop view model
+     *
+     * @param app application
+     */
     public ShopViewModel(@NonNull Application app) {
         super(app);
         model = Model.getInstance();
@@ -30,6 +38,11 @@ public class ShopViewModel extends AndroidViewModel {
         //playerInventoryTemp = getPlayerEntries();
     }
 
+    /**
+     * add item to player inventory temp
+     *
+     * @param shopEntry shop entry
+     */
     public void addItemToPlayerInventoryTemp(ShopEntry shopEntry) {
         playerInventoryTemp.add(shopEntry);
     }

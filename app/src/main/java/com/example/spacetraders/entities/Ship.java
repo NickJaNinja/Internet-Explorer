@@ -37,12 +37,27 @@ public class Ship implements Serializable {
         return type;
     }
 
+    /**
+     * get cargo spaces
+     *
+     * @return cargo spaces
+     */
     public int getCargoSpaces() { return type.getNumCargoHolds() - inventory; }
 
+    /**
+     * get inventory
+     *
+     * @return inventory
+     */
     public int getInventory() {
         return inventory;
     }
 
+    /**
+     * get cargo
+     *
+     * @return enum map of shop goods and shop entry
+     */
     public EnumMap<ShopGoods, ShopEntry> getCargo() {
         return cargo;
     }

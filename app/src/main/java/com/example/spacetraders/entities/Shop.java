@@ -6,6 +6,9 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * shop class
+ */
 public class Shop implements Serializable {
     private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private TechLevel techLevel;
@@ -80,6 +83,7 @@ public class Shop implements Serializable {
      *
      * @param good   the good to decrease stock
      * @param amount the amount to decrease
+     * @return 1 if decreased stock
      */
     public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
@@ -104,6 +108,11 @@ public class Shop implements Serializable {
         return inv;
     }
 
+    /**
+     * get inventory as list filtered
+     *
+     * @return list of shop entry
+     */
     public List<ShopEntry> getInventoryAsListFiltered() {
         List<ShopEntry> inv = new ArrayList<>();
         for (ShopEntry entry : shopGoodsStockMap.values()) {
@@ -115,6 +124,11 @@ public class Shop implements Serializable {
         return inv;
     }
 
+    /**
+     * get random event
+     *
+     * @return radical price event
+     */
     public RadicalPriceEvent getRandomEvent() {
         return randomEvent;
     }
