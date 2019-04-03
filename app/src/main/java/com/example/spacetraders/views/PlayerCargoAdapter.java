@@ -112,6 +112,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             int itemPrice = playerCargoList.get(position).getPrice();
 
                             dialogConfirmed = false;
+                            final int PADDING40 = 40;
+                            final int SIZE = 20;
+                            final int COLOR = 0xFFFFFFFF;
+
 
                             // master layout
                             LinearLayout layout = new LinearLayout(context);
@@ -132,18 +136,19 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             // text view for seek bar
                             TextView seekText = new TextView(context);
                             seekText.setText("AMOUNT TO SELL: 1");
-                            seekText.setTextColor(0xFFFFFFFF);
-                            seekText.setPadding(40, 40, 40, 40);
+
+                            seekText.setTextColor(COLOR);
+                            seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             seekText.setGravity(Gravity.CENTER);
-                            seekText.setTextSize(20);
+                            seekText.setTextSize(SIZE);
 
                             // text view for price
                             TextView priceText = new TextView(context);
                             priceText.setText("TOTAL SALE: ¥" +itemPrice);
-                            priceText.setTextColor(0xFFFFFFFF);
-                            priceText.setPadding(40, 40, 40, 40);
+                            priceText.setTextColor(COLOR);
+                            priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
-                            priceText.setTextSize(20);
+                            priceText.setTextSize(SIZE);
 
                             // text views change with seek bar position change
                             seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

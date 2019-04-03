@@ -21,6 +21,7 @@ public class Coordinates implements Serializable {
 
     /**
      * getter for x
+     * @return x coordinate
      */
     public int getX() {
         return x;
@@ -28,6 +29,7 @@ public class Coordinates implements Serializable {
 
     /**
      * getter for y
+     * @return y coordinate
      */
     public int getY() {
         return y;
