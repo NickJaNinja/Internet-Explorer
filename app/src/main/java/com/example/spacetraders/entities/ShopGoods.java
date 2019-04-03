@@ -2,6 +2,9 @@ package com.example.spacetraders.entities;
 
 import java.io.Serializable;
 
+/**
+ * shop goods enum
+ */
 public enum ShopGoods implements Serializable {
     WATER("Water",
             TechLevel.PRE_AGRICULTURE,

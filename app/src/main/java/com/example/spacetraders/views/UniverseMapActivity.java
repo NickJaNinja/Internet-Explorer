@@ -16,6 +16,9 @@ import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
+/**
+ * universe map activity class
+ */
 public class UniverseMapActivity extends GUIActivity{
 
     private TextView nameOfPlanet;

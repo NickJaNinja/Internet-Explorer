@@ -37,6 +37,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private AlertDialog dialog;
     private boolean dialogConfirmed;
 
+    /**
+     * constructor
+     *
+     * @param shopGoodsList list of shop goods list
+     * @param shopActivity shop activity
+     */
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
         for (ShopEntry entry : shopGoodsList) {
             if (entry.getStock() == 0) shopGoodsList.remove(entry);
@@ -60,7 +66,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         private TextView price;
         private TextView stock;
 
-
+        /**
+         * shop goods view holder
+         *
+         * @param itemView view
+         */
         public ShopGoodsViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
@@ -234,15 +244,31 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return shopGoodsList.size();
     }
 
+    /**
+     * set shop goods list
+     *
+     * @param shopEntries list of shop entries
+     */
     public void setShopGoodsList(List<ShopEntry> shopEntries) {
         shopGoodsList = shopEntries;
         notifyDataSetChanged();
     }
 
     public interface OnClickListener {
+
+        /**
+         * on click
+         *
+         * @param goods shop entry
+         */
         void onClicked(ShopEntry goods);
     }
 
+    /**
+     * set on click listener
+     *
+     * @param listener on lick listener
+     */
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
     }
@@ -255,6 +281,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         return playerCargoAdapter;
     }
 
+    /**
+     * set player cargo adapter
+     *
+     * @param pca player cargo adpter
+     */
     public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
         playerCargoAdapter = pca;
     }

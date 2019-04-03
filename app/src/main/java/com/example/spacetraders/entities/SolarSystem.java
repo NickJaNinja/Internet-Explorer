@@ -100,6 +100,11 @@ public class SolarSystem implements Serializable {
         getClosestToSun().setIsWarpGate(true);
     }
 
+    /**
+     * get closest to sum
+     *
+     * @return planet
+     */
     public Planet getClosestToSun() {
         double m = planets[0].getDistanceFromParentStar();
         Planet p = planets[0];
