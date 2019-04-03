@@ -73,28 +73,26 @@ public class ShopEntry implements Serializable {
     }
 
     /**
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//     * setter for stock
-//     *
-//     * @param amount the new stock
-//     */
-//    public void setStock(int amount) {
-//        this.stock = amount;
-//    }
-//
-//    /**
-//     * Makes this object into a list of Strings
-//     * -name
-//     * -stock
-//     * -price
-//     *
-//     * @return The list of strings of instance data
-//     */
-//    public List<String> toStringList() {
-//        List<String> list = new ArrayList<>();
-//        list.add(good.getName());
-//        list.add((stock == 0) ? " - " : Integer.toString(stock));
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+     * setter for stock
+     *
+     * @param amount the new stock
+     */
+    public void setStock(int amount) {
+        this.stock = amount;
+    }
+
+    /**
+     * Makes this object into a list of Strings
+     * -name
+     * -stock
+     * -price
+     *
+     * @return The list of strings of instance data
+     */
+    public List<String> toStringList() {
+        List<String> list = new ArrayList<>();
+        list.add(good.getName());
+        list.add((stock == 0) ? " - " : Integer.toString(stock));
         list.add(Integer.toString(price));
         return list;
     }

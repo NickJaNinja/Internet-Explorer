@@ -300,19 +300,17 @@ public enum ShopGoods {
      * @return cr
      */
     public ResourcesLevel getCr() {
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//        return cr;
-//    }
-//
-//    /**
-//     * getter for er
-//     *
-//     * @return er
-//     */
-//    public ResourcesLevel getEr() {
-//        return er;
-//    }
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+        return cr;
+    }
+
+    /**
+     * getter for er
+     *
+     * @return er
+     */
+    public ResourcesLevel getEr() {
+        return er;
+    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**

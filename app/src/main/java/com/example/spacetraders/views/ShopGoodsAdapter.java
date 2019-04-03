@@ -266,26 +266,23 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     interface OnClickListener {
 
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//        /**
-//         * on click
-//         *
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-////         * @param goods shop entry
-////         */
-////        void onClicked(ShopEntry goods);
-//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//    }
+        /**
+         * on click
+         *
+         * @param goods shop entry
+         */
+        void onClicked(ShopEntry goods);
+    }
 //
 //    /**
 //     * set on click listener
 //     *
 //     * @param listener on lick listener
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     */
-    public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
-    }
+//     */
+//    public void setOnClickListener(OnClickListener listener) {
+//        this.listener = listener;
+//    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
@@ -300,21 +297,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /**
      * set player cargo adapter
      *
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//     * @param pca player cargo adpter
-//     */
-//    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
-//        playerCargoAdapter = pca;
-//    }
-//
+     * @param pca player cargo adpter
+     */
+    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
+        playerCargoAdapter = pca;
+    }
+
 //    /**
 //     *
 //     * @return a list of shop goods in market
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     */
-    public List<ShopEntry> getShopGoodsList() {
-        return shopGoodsList;
-    }
+//     */
+//    public List<ShopEntry> getShopGoodsList() {
+//        return shopGoodsList;
+//    }
 
     /**
      *

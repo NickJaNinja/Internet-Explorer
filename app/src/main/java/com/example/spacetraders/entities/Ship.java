@@ -104,19 +104,17 @@ public class Ship implements Serializable {
     /**
      * Refuel the ship based on a certain amount of money
      *
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//     * @param money The amount of money paid to refuel
-//     */
-//    public void refuel(int money) {
-//        int fuel = (int) Math.floor((double) money / FUEL_TO_COST_MULTI);
-//        this.fuel += fuel;
-//        if (this.fuel > type.getFuel()) {
-//            this.fuel = type.getFuel();
-//        }
-//    }
-//
-//    /**
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+     * @param money The amount of money paid to refuel
+     */
+    public void refuel(int money) {
+        int fuel = (int) Math.floor((double) money / FUEL_TO_COST_MULTI);
+        this.fuel += fuel;
+        if (this.fuel > type.getFuel()) {
+            this.fuel = type.getFuel();
+        }
+    }
+
+    /**
      * Calculate the amount you can refuel based on given credits
      *
      * @param credits Amount of money

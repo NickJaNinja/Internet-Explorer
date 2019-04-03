@@ -324,26 +324,23 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         */
     interface OnClickListener {
 
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//        /**
-//         * on clicked
-//         *
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-////         * @param goods shope entry goods
-////         */
-////        void onClicked(ShopEntry goods);
-//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//    }
+        /**
+         * on clicked
+         *
+         * @param goods shope entry goods
+         */
+        void onClicked(ShopEntry goods);
+    }
 //
 //    /**
 //     * set on click listener
 //     *
 //     * @param listener on click listener
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     */
-    public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
-    }
+//     */
+//    public void setOnClickListener(OnClickListener listener) {
+//        this.listener = listener;
+//    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**

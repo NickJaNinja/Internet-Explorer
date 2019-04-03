@@ -110,13 +110,11 @@ public class Game implements Serializable {
     }
 
     /**
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//     * Gets the remaining amount of cargo space in the ship
-//     *
-//     * @return cargo space
-//     */
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-////    public int getCargoSpace() { return player.getCargoSpace(); }
+     * Gets the remaining amount of cargo space in the ship
+     *
+     * @return cargo space
+     */
+    public int getCargoSpace() { return player.getCargoSpace(); }
 ////
 ////    /**
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
@@ -126,10 +124,10 @@ public class Game implements Serializable {
 //     *
 //     * @return difficulty
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     */
-    public GameDifficulty getGameDifficulty() {
-        return difficulty;
-    }
+//     */
+//    public GameDifficulty getGameDifficulty() {
+//        return difficulty;
+//    }
 
     /**
      * getter for player

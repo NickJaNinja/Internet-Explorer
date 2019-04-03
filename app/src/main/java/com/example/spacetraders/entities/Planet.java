@@ -125,22 +125,21 @@ public class Planet implements Serializable {
     /**
      * Gets political system
      *
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//     * @return political system
-//     */
-//    public PoliticalSystem getPoliticalSystem() {
-//        return politicalSystem;
-//    }
+     * @return political system
+     */
+    public PoliticalSystem getPoliticalSystem() {
+        return politicalSystem;
+    }
 //
 //    /**
 //     * Gets if in habitable zone
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     *
-     * @return if in habitable zone
-     */
-    public boolean isInHabitableZone() {
-        return inHabitableZone;
-    }
+//     *
+//     * @return if in habitable zone
+//     */
+//    public boolean isInHabitableZone() {
+//        return inHabitableZone;
+//    }
 
     /**
      * make transaction

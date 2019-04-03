@@ -17,7 +17,7 @@ public class ShopViewModel extends AndroidViewModel {
 
     private final Model model;
     private List<ShopEntry> shopInventoryTemp;
-    // --Commented out by Inspection (4/2/19, 11:03 P// --Commented out by Inspection (4/2/19, 11:03 PM):M):private List<ShopEntry> playerInventoryTemp;
+    // private List<ShopEntry> playerInventoryTemp;
     private Shop shop;
 
     /**
@@ -55,10 +55,10 @@ public class ShopViewModel extends AndroidViewModel {
 //     *
 //     * @param shopEntry shop entry
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-     */
-    public void addItemToShopInventoryTemp(ShopEntry shopEntry) {
-        shopInventoryTemp.add(shopEntry);
-    }
+//     */
+//    public void addItemToShopInventoryTemp(ShopEntry shopEntry) {
+//        shopInventoryTemp.add(shopEntry);
+//    }
 
     /**
      * Takes in a shop and finds the items in its stock

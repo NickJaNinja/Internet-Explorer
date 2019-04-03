@@ -59,13 +59,12 @@ public class SolarSystemViewModel extends AndroidViewModel {
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
 //// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
 //
-//    /**
-//     * get current solar system
-//     *
-//     * @return solar system
-//     */
-//    public SolarSystem getCurrentSolarSystem() {
-// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
+    /**
+     * get current solar system
+     *
+     * @return solar system
+     */
+    public SolarSystem getCurrentSolarSystem() {
         return currentSolarSystem;
     }
 
