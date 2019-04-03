@@ -4,6 +4,12 @@ package com.example.spacetraders.entities;
  * sorry I don't know how to do junits lads.
  */
 public class Test {
+
+    /**
+     * main method
+     *
+     * @param args string array
+     */
     public static void main(String args[]) {
         int inhabitedPlanetsNum = 0;
         /*

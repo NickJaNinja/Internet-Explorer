@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+<<<<<<< HEAD
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
@@ -8,6 +9,9 @@ import com.example.spacetraders.models.Model;
 
 import java.util.List;
 
+/**
+ * ship adapter class
+ */
 public class ShipAdapter {
 /*
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {

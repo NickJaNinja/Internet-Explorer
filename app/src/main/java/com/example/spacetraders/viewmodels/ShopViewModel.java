@@ -47,6 +47,11 @@ public class ShopViewModel extends AndroidViewModel {
         playerInventoryTemp.add(shopEntry);
     }
 
+    /**
+     * add item to shop inventory temp
+     *
+     * @param shopEntry shop entry
+     */
     public void addItemToShopInventoryTemp(ShopEntry shopEntry) {
         shopInventoryTemp.add(shopEntry);
     }
@@ -60,14 +65,27 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getShopEntries();
     }
 
+    /**
+     * get shop entries filtered
+     *
+     * @return list of shop entries filtered
+     */
     public List<ShopEntry> getShopEntriesFiltered() {
         return model.getShopEntriesFiltered();
     }
 
+    /**
+     * get player entries
+     *
+     * @return list of player entries
+     */
     public List<ShopEntry> getPlayerEntries() {
         return model.getPlayerEntries();
     }
 
+    /**
+     * set market entries to temp
+     */
     public void setMarketsEntriesToTemp() {
 
     }

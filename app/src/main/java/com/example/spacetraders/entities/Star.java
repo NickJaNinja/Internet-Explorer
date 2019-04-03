@@ -53,6 +53,11 @@ public class Star implements Serializable {
         else return 'O';// 0.4% chance
     }
 
+    /**
+     * get color
+     *
+     * @return color
+     */
     public int getColor() {
         switch (this.classification) {
             case 'M':
