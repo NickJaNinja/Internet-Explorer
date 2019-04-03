@@ -70,7 +70,7 @@ public class SolarSystemActivity extends GUIActivity {
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
 
-
+        
         name.setText(solarSystem.getName() + "");
         classification.setText(solarSystem.getStars()[0].getClassification() + " Class Star");
         radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()

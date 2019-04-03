@@ -94,6 +94,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             dialogConfirmed = false;
 
+                            //magic number
+                            final int PADDING2 = 2;
+                            final int PADDING40 = 40;
+                            final int SIZE = 20;
+                            final int COLOR = 0xFFFFFFFF;
+
                             // master layout
                             LinearLayout layout = new LinearLayout(context);
                             LinearLayout.LayoutParams params =
@@ -103,7 +109,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             layout.setOrientation(LinearLayout.VERTICAL);
                             layout.setLayoutParams(params);
                             layout.setGravity(Gravity.CLIP_VERTICAL);
-                            layout.setPadding(2, 2, 2, 2);
+                            layout.setPadding(PADDING2, PADDING2, PADDING2, PADDING2);
 
                             // seek bar for alert dialog to select how much to buy
                             SeekBar seek = new SeekBar(context);
@@ -113,18 +119,18 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             // text view for seek bar
                             TextView seekText = new TextView(context);
                             seekText.setText("AMOUNT TO PURCHASE: 1");
-                            seekText.setTextColor(0xFFFFFFFF);
-                            seekText.setPadding(40, 40, 40, 40);
+                            seekText.setTextColor(COLOR);
+                            seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             seekText.setGravity(Gravity.CENTER);
-                            seekText.setTextSize(20);
+                            seekText.setTextSize(SIZE);
 
                             // text view for price
                             TextView priceText = new TextView(context);
                             priceText.setText("TOTAL PRICE: ¥" +itemPrice);
-                            priceText.setTextColor(0xFFFFFFFF);
-                            priceText.setPadding(40, 40, 40, 40);
+                            priceText.setTextColor(COLOR);
+                            priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
-                            priceText.setTextSize(20);
+                            priceText.setTextSize(SIZE);
 
                             // text views change with seek bar position change
                             seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

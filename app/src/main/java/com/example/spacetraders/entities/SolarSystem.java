@@ -114,13 +114,15 @@ public class SolarSystem implements Serializable {
 
     private double generateDistanceFromParentStar(Planet planet, int planetNumber) {
         final double DISTANCE_CONSTANT1 = 20.0;
+        final double DISTANCE_CONSTANT2 = 0.15;
+        final double DISTANCE_CONSTANT3 = 2.0;
         if (planets[0].equals(planet)) {
             // first content_planet
-            return r.nextDouble() * (20.0 - .15) + .15 + stars[0].getRadius();
+            return r.nextDouble() * (DISTANCE_CONSTANT1 - DISTANCE_CONSTANT2) + DISTANCE_CONSTANT2 + stars[0].getRadius();
         } else {
             // planets' after first
             // by Titius-Bode Law
-            return planets[planetNumber - 1].getDistanceFromParentStar() * 2.0;
+            return planets[planetNumber - 1].getDistanceFromParentStar() * DISTANCE_CONSTANT3;
         }
     }
 
@@ -130,7 +132,8 @@ public class SolarSystem implements Serializable {
      * @return int number of planets
      */
     private int generateNumPlanets() {
-        return r.nextInt(13) + 1; // random int from 1 to 13
+        final int BOUND = 13;
+        return r.nextInt(BOUND) + 1; // random int from 1 to 13
     }
 
     /**
