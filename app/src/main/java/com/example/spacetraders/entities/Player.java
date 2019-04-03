@@ -153,33 +153,37 @@ public class Player implements Serializable {
         return 1;*/
     }
 
-    /**
-     * getter for name
-     *
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for name
+//     *
+//     * @return name
+//     */
+//    public String getName() {
+//        return name;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
-    /**
-     * getter for pilotSkill
+//    /**
+//     * getter for pilotSkill
+//
+//     *
+//     * @return pilotSkill
+//     */
+//    public int getPilotSkill() {
+//        return pilotSkill;
+//    }
 
-     *
-     * @return pilotSkill
-     */
-    public int getPilotSkill() {
-        return pilotSkill;
-    }
-
-    /**
-     * getter for fighterSkill
-     *
-     * @return fighterSkill
-     */
-    public int getFighterSkill() {
-        return fighterSkill;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for fighterSkill
+//     *
+//     * @return fighterSkill
+//     */
+//    public int getFighterSkill() {
+//        return fighterSkill;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
     /**
      * getter for traderSkill
@@ -190,14 +194,16 @@ public class Player implements Serializable {
         return traderSkill;
     }
 
-    /**
-     * getter for engineerSkill
-     *
-     * @return engineerSkill
-     */
-    public int getEngineerSkill() {
-        return engineerSkill;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for engineerSkill
+//     *
+//     * @return engineerSkill
+//     */
+//    public int getEngineerSkill() {
+//        return engineerSkill;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
 
     /**

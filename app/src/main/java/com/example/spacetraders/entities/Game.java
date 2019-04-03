@@ -7,6 +7,7 @@ import java.util.List;
  * This class represents the game
  */
 public class Game implements Serializable {
+
     /**
      * the game difficulty
      */
@@ -129,23 +130,27 @@ public class Game implements Serializable {
 //        return difficulty;
 //    }
 
-    /**
-     * getter for player
-     *
-     * @return player
-     */
-    public Player getPlayer() {
-        return player;
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * getter for player
+//     *
+//     * @return player
+//     */
+//    public Player getPlayer() {
+//        return player;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
-    /**
-     * getter for universe
-     *
-     * @return universe
-     */
-    public Universe getUniverse() {
-        return universe;
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * getter for universe
+//     *
+//     * @return universe
+//     */
+//    public Universe getUniverse() {
+//        return universe;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
     /**
      * getter for current content_planet
@@ -165,14 +170,16 @@ public class Game implements Serializable {
         return currSystem;
     }
 
-    /**
-     * Gets the current shop
-     *
-     * @return current shop
-     */
-    public Shop getCurrentShop() {
-        return currPlanet.getShop();
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * Gets the current shop
+//     *
+//     * @return current shop
+//     */
+//    public Shop getCurrentShop() {
+//        return currPlanet.getShop();
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
     /**
      * Gets the shops entries (what is in stock)

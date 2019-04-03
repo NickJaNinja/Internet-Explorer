@@ -8,7 +8,7 @@ import java.util.List;
  * shop entry class
  */
 public class ShopEntry implements Serializable {
-    private ShopGoods good;
+    private final ShopGoods good;
     private int stock;
     private int price;
 

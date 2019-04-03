@@ -8,8 +8,8 @@ import android.widget.Button;
  * GUI activity class
  */
 public class GUIActivity extends AppCompatActivity {
-    // --Commented out by Inspecti// --Commented out by Inspection (4/2/19, 11:03 PM):on (4/2/19, 11:03 PM):private Button inventory;
-    private Button status;
+    private Button inventory;
+    // --Commented out by Inspection (4/3/19, 8:05 AM):private Button status;
 
     /**
      * on create
