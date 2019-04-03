@@ -24,6 +24,9 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
+/**
+ * planet activity class
+ */
 public class PlanetActivity extends MenuBarActivity {
     private Model model;
     private MediaPlayer mediaPlayer;

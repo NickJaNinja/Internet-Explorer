@@ -31,12 +31,8 @@ public class Planet implements Serializable {
         this.parentStar = parentStar;
         Random r = new Random();
 
-        if (distanceFromParentStar > parentStar.getInnerHZRadius() && distanceFromParentStar
-                < parentStar.getOuterHZRadius()) {
-            this.inHabitableZone = true;
-        } else {
-            this.inHabitableZone = false;
-        }
+        this.inHabitableZone = (distanceFromParentStar > parentStar.getInnerHZRadius()
+                && distanceFromParentStar < parentStar.getOuterHZRadius());
 
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];
@@ -142,6 +138,13 @@ public class Planet implements Serializable {
         return inHabitableZone;
     }
 
+    /**
+     * make transaction
+     *
+     * @param sg shop goods
+     * @param amount amount
+     * @return decrese stock
+     */
     public int makeTransaction(ShopGoods sg, int amount) {
         return shop.decreaseStock(sg, amount);
     }
@@ -155,19 +158,42 @@ public class Planet implements Serializable {
         return shop;
     }
 
+    /**
+     * get shop entries
+     *
+     * @return list of shop entries
+     */
     public List<ShopEntry> getShopEntries() { return shop.getInventoryAsList(); }
 
+    /**
+     * get shop entries filtered
+     *
+     * @return list of shop entries filtered
+     */
     public List<ShopEntry> getShopEntriesFiltered() { return shop.getInventoryAsListFiltered(); }
 
+    /**
+     * get is warp gate
+     *
+     * @return boolean
+     */
     public boolean getIsWarpGate() {
         return this.isWarpGate;
     }
 
+    /**
+     * set is warp gate
+     *
+     * @param b boolean b
+     */
     public void setIsWarpGate(boolean b) {
         this.isWarpGate = b;
         this.name += " [WARP GATE]";
     }
 
+    /**
+     * restock shop
+     */
     public void restockShop() {
         shop.restock();
     }

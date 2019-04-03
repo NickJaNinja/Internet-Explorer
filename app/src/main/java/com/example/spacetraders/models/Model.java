@@ -19,6 +19,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
+/**
+ * model class
+ */
 public class Model {
     private Game game;
     private final String filename = "SAVE_FILE.ser";
@@ -56,7 +59,12 @@ public class Model {
         game = new Game(gd, p);
     }
 
-
+    /**
+     * lead game
+     *
+     * @param context context
+     * @return game != null
+     */
     public boolean loadGame(Context context) {
         game = null;
         try {
@@ -75,6 +83,11 @@ public class Model {
         return game != null;
     }
 
+    /**
+     * save game
+     *
+     * @param context context
+     */
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
@@ -106,6 +119,7 @@ public class Model {
     }
 
     /**
+     * get credits
      *
      * @return player's credit
      */
@@ -114,6 +128,7 @@ public class Model {
     }
 
     /**
+     * get credits
      *
      * @return available cargo space in ship
      */
@@ -123,6 +138,7 @@ public class Model {
 
     /**
      * travel between planets
+     *
      * @param p destination planet
      * @return 1 if travel succeed or 0 if fail
      */
@@ -130,6 +146,7 @@ public class Model {
 
     /**
      * travel between solar system
+     *
      * @param to destination solar system
      * @return 1 if travel succeed or 0 if fail
      */
@@ -137,7 +154,9 @@ public class Model {
         return game.travelToSystem(to);
     }
 
-
+    /**
+     * refuel ship max
+     */
     public void refuelShipMax() {
         game.refuelShipMax();
     }
@@ -151,6 +170,11 @@ public class Model {
         return game.getShopEntries();
     }
 
+    /**
+     * get shop entries filtered
+     *
+     * @return list of shop entries filtered
+     */
     public List<ShopEntry> getShopEntriesFiltered() { return game.getShopEntriesFiltered(); }
 
     /**
@@ -183,7 +207,7 @@ public class Model {
     /**
      * setter for current content_planet
      *
-     * @return current content_planet
+     * @param newCurr planet new curr
      */
     public void setCurrentPlanet(Planet newCurr) {
         this.game.setCurrentPlanet(newCurr);
@@ -201,19 +225,35 @@ public class Model {
     /**
      * gets current fuel level
      *
-     * @return
+     * @return fuel percentage
      */
     public int getFuelPercentage() { return game.getFuelPercentage(); }
 
+    /**
+     * get range
+     *
+     * @return range
+     */
     public int getRange() { return game.getRange(); }
 
+    /**
+     * get max range
+     *
+     * @return range
+     */
     public double getMaxRange() { return game.getMaxRange();}
 
+    /**
+     * get list of solar system
+     *
+     * @return list of solar system
+     */
     public SolarSystem[] getSolarSystems() {
         return game.getSolarSystems();
     }
 
     /**
+     * get current system
      *
      * @return current solarSystem
      */
@@ -221,5 +261,10 @@ public class Model {
         return game.getCurrentSystem();
     }
 
+    /**
+     * is on warp gate planet
+     *
+     * @return if player is on warp gate planet
+     */
     public boolean isOnWarpGatePlanet() { return game.isOnWarpGatePlanet(); }
 }

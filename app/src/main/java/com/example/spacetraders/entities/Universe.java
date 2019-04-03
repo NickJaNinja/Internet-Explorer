@@ -126,8 +126,7 @@ public class Universe implements Serializable {
     public int distanceBetweenPlanets(Planet from, Planet to) {
         double fromCords = from.getDistanceFromParentStar();
         double toCords = to.getDistanceFromParentStar();
-        int distance = (int)Math.abs(fromCords - toCords);
-        return distance;
+        return (int)Math.abs(fromCords - toCords);
     }
 
     /**
@@ -158,16 +157,6 @@ public class Universe implements Serializable {
      */
     public SolarSystem getRandomSolarSystem() {
         return solarSystems[r.nextInt(solarSystems.length)];
-    }
-
-    /**
-     * gets a random content_planet
-     *
-     * @return random content_planet
-     */
-    public Planet getRandomPlanet() {
-        Planet plan = solarSystems[r.nextInt(solarSystems.length)].getRandomPlanet();
-        return plan;
     }
 
     /**

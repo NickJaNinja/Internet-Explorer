@@ -23,7 +23,7 @@ public class MainActivity extends GUIActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         Button newButton;
         Button loadButton;
 

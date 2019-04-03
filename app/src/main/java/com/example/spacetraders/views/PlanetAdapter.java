@@ -30,6 +30,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     private Model model;
     private Planet selectedPlanet;
 
+    /**
+     * constructor
+     * @param planets list of planets
+     */
     public PlanetAdapter(Planet[] planets) {
         this.planetsList = Arrays.asList(planets);
         this.model = Model.getInstance();
@@ -58,6 +62,11 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         //planet image on the left
         private ImageView planetView;
 
+        /**
+         * planet view holder
+         *
+         * @param itemView view
+         */
         public PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
             pname = itemView.findViewById(R.id.planet_name);
@@ -119,17 +128,33 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         return planetsList.size();
     }
 
+    /**
+     * set planet list
+     *
+     * @param p list of planet
+     */
     public void setPlanetsList(Planet[] p) {
         planetsList = Arrays.asList(p);
         notifyDataSetChanged();
     }
 
-
-
+    /**
+     * interface on click listener
+     */
     public interface OnClickListener {
+
+        /**
+         * on clicked
+         * @param planet planet
+         */
         void onClicked(Planet planet);
     }
 
+    /**
+     * set on click listener
+     *
+     * @param listener listener
+     */
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
     }
