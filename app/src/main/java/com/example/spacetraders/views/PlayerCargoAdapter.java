@@ -67,7 +67,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
         /**
          * ViewHolder Constructor
-         * @param itemView
+         * @param itemView view
          */
         public PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -315,17 +315,38 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         }
         */
     public interface OnClickListener {
+
+        /**
+         * on clicked
+         *
+         * @param goods shope entry goods
+         */
         void onClicked(ShopEntry goods);
     }
 
+    /**
+     * set on click listener
+     *
+     * @param listener on click listener
+     */
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
     }
 
+    /**
+     * get shop goods adapter
+     *
+     * @return shop goods adapter
+     */
     public ShopGoodsAdapter getShopGoodsAdapter() {
         return shopGoodsAdapter;
     }
 
+    /**
+     * set shop goods adapter
+     *
+     * @param sga shop goods adapter
+     */
     public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
     }

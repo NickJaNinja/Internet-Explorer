@@ -139,9 +139,14 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     }
 
     /**
-     * on click listener
+     * interface on click listener
      */
     public interface OnClickListener {
+
+        /**
+         * on clicked
+         * @param planet planet
+         */
         void onClicked(Planet planet);
     }
 
