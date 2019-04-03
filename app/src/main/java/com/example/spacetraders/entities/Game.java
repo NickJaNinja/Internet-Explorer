@@ -30,12 +30,12 @@ public class Game implements Serializable {
     private Planet currPlanet;
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
-//    /**
-//     * Constructor for the game
-//     */
-//    public Game() {
-//        this(GameDifficulty.BEGINNER, null);
-//    }
+    /**
+     * Constructor for the game
+     */
+    public Game() {
+        this(GameDifficulty.BEGINNER, null);
+    }
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**

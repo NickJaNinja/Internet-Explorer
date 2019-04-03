@@ -144,12 +144,12 @@ public class ShopActivity extends MenuBarActivity {
                 return true;
             case R.id.inventory_button:
 
-                // TODO inventory
+                // TO-DO inventory
 
                 return true;
             case R.id.status_button:
 
-                // TODO status
+                // TO-DO status
 
                 return true;
             default:

@@ -66,7 +66,7 @@ public class Model {
      * @return game != null
      */
     public boolean loadGame(Context context) {
-        game = null;
+        game = new Game();
         try {
             File loadFile = new File(context.getFilesDir(), filename);
             FileInputStream fileIn =

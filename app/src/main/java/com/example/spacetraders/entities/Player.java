@@ -32,7 +32,8 @@ public class Player implements Serializable {
      * @param reputation    initial reputation level
      * @param ship          initial ship
      */
-    private Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill,
+    private Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
+                   int engineerSkill,
                    int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
