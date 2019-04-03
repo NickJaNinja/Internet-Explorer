@@ -34,14 +34,16 @@ public enum ResourcesLevel {
         this.name = name;
     }
 
-    /**
-     * getter for level
-     *
-     * @return level
-     */
-    public int getLevel() {
-        return level;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for level
+//     *
+//     * @return level
+//     */
+//    public int getLevel() {
+//        return level;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for name

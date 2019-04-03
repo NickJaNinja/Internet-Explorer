@@ -69,7 +69,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
          * ViewHolder Constructor
          * @param itemView view
          */
-        public PlayerCargoViewHolder(@NonNull View itemView) {
+        PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.price_text);
@@ -214,9 +214,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed && model.makeTransaction(
+                                    if (dialogConfirmed && (model.makeTransaction(
                                             selectedGood, -seek.getProgress() - 1,
-                                            cost) == 1) {
+                                            cost) == 1)) {
                                         // updating inventories and display
                                         playerCargoList = model.getPlayerEntries();
                                         shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
@@ -322,33 +322,39 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
             return master_layout;
         }
         */
-    public interface OnClickListener {
+    interface OnClickListener {
 
-        /**
-         * on clicked
-         *
-         * @param goods shope entry goods
-         */
-        void onClicked(ShopEntry goods);
-    }
-
-    /**
-     * set on click listener
-     *
-     * @param listener on click listener
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//        /**
+//         * on clicked
+//         *
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////         * @param goods shope entry goods
+////         */
+////        void onClicked(ShopEntry goods);
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//    }
+//
+//    /**
+//     * set on click listener
+//     *
+//     * @param listener on click listener
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      */
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
     }
 
-    /**
-     * get shop goods adapter
-     *
-     * @return shop goods adapter
-     */
-    public ShopGoodsAdapter getShopGoodsAdapter() {
-        return shopGoodsAdapter;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get shop goods adapter
+//     *
+//     * @return shop goods adapter
+//     */
+//    public ShopGoodsAdapter getShopGoodsAdapter() {
+//        return shopGoodsAdapter;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * set shop goods adapter

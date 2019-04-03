@@ -13,7 +13,7 @@ public class Shop implements Serializable {
     private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private final TechLevel techLevel;
     private final ResourcesLevel resourcesLevel;
-    private PoliticalSystem politicalSystem;
+    // --Commented out by Inspection (4/2/19, 11:03 PM):private PoliticalSystem politicalSystem;
     private RadicalPriceEvent randomEvent;
     private final int NUM_RESOURCES = ShopGoods.values().length;
 
@@ -47,8 +47,8 @@ public class Shop implements Serializable {
             final int BOUND = 5051;
             final int STOCK_DIVIDE = 125;
 
-            int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
-                    * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
+            int itemPrice = (shopGood.getBasePrice() + (shopGood.getIpl()
+                    * (techLevel.getLevel() - shopGood.getLevelofMtlp())));
             int var = (int)(rng.nextInt(shopGood.getVar() + 1) / DIVIDE);
             if (rng.nextInt(2) == 0) {
                 itemPrice += var;
@@ -61,7 +61,7 @@ public class Shop implements Serializable {
             } else if (shopGood.getEr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice / PRICE_CONSTANT);
             }
-            if (event == shopGood.ordinal() && eventChance < EVENT_CHANCE) {
+            if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
             }
@@ -103,8 +103,7 @@ public class Shop implements Serializable {
         /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
         }*/
-        List<ShopEntry> inv = new ArrayList<>(shopGoodsStockMap.values());
-        return inv;
+        return new ArrayList<>(shopGoodsStockMap.values());
     }
 
     /**
@@ -122,12 +121,14 @@ public class Shop implements Serializable {
         return inv;
     }
 
-    /**
-     * get random event
-     *
-     * @return radical price event
-     */
-    public RadicalPriceEvent getRandomEvent() {
-        return randomEvent;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get random event
+//     *
+//     * @return radical price event
+//     */
+//    public RadicalPriceEvent getRandomEvent() {
+//        return randomEvent;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 }

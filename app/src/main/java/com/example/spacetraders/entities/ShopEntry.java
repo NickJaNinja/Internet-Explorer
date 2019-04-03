@@ -34,14 +34,16 @@ public class ShopEntry implements Serializable {
         return good;
     }
 
-    /**
-     * setter for good
-     *
-     * @param good the new good
-     */
-    public void setGood(ShopGoods good) {
-        this.good = good;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * setter for good
+//     *
+//     * @param good the new good
+//     */
+//    public void setGood(ShopGoods good) {
+//        this.good = good;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for price
@@ -71,26 +73,28 @@ public class ShopEntry implements Serializable {
     }
 
     /**
-     * setter for stock
-     *
-     * @param amount the new stock
-     */
-    public void setStock(int amount) {
-        this.stock = amount;
-    }
-
-    /**
-     * Makes this object into a list of Strings
-     * -name
-     * -stock
-     * -price
-     *
-     * @return The list of strings of instance data
-     */
-    public List<String> toStringList() {
-        List<String> list = new ArrayList<>();
-        list.add(good.getName());
-        list.add((stock == 0) ? " - " : Integer.toString(stock));
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     * setter for stock
+//     *
+//     * @param amount the new stock
+//     */
+//    public void setStock(int amount) {
+//        this.stock = amount;
+//    }
+//
+//    /**
+//     * Makes this object into a list of Strings
+//     * -name
+//     * -stock
+//     * -price
+//     *
+//     * @return The list of strings of instance data
+//     */
+//    public List<String> toStringList() {
+//        List<String> list = new ArrayList<>();
+//        list.add(good.getName());
+//        list.add((stock == 0) ? " - " : Integer.toString(stock));
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
         list.add(Integer.toString(price));
         return list;
     }

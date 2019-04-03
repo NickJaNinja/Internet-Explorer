@@ -26,7 +26,7 @@ import com.example.spacetraders.viewmodels.ShopViewModel;
 public class ShopActivity extends MenuBarActivity {
     private TextView creditDisplay;
     private TextView cargoDisplay;
-    private ListView buyList;
+    // --Commented out by Inspection (4/2/19, 11:03 PM):private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
     //private Shop shop;

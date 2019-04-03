@@ -73,7 +73,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
          *
          * @param itemView view
          */
-        public ShopGoodsViewHolder(@NonNull View itemView) {
+        ShopGoodsViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.price_text);
@@ -208,9 +208,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed && model.makeTransaction(
+                                    if (dialogConfirmed && (model.makeTransaction(
                                             shopGoodsList.get(position).getGood(),
-                                            seek.getProgress() + 1, cost) == 1) {
+                                            seek.getProgress() + 1, cost) == 1)) {
                                         // updating inventories and display
                                         shopGoodsList = model.getShopEntries();
                                         playerCargoAdapter.setPlayerCargoList(
@@ -264,45 +264,53 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
-    public interface OnClickListener {
+    interface OnClickListener {
 
-        /**
-         * on click
-         *
-         * @param goods shop entry
-         */
-        void onClicked(ShopEntry goods);
-    }
-
-    /**
-     * set on click listener
-     *
-     * @param listener on lick listener
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//        /**
+//         * on click
+//         *
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////         * @param goods shop entry
+////         */
+////        void onClicked(ShopEntry goods);
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//    }
+//
+//    /**
+//     * set on click listener
+//     *
+//     * @param listener on lick listener
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      */
     public void setOnClickListener(OnClickListener listener) {
         this.listener = listener;
     }
 
-    /**
-     *
-     * @return a list of shop goods in players inventory
-     */
-    public PlayerCargoAdapter getPlayerCargoAdapter() {
-        return playerCargoAdapter;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     *
+//     * @return a list of shop goods in players inventory
+//     */
+//    public PlayerCargoAdapter getPlayerCargoAdapter() {
+//        return playerCargoAdapter;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * set player cargo adapter
      *
-     * @param pca player cargo adpter
-     */
-    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
-        playerCargoAdapter = pca;
-    }
-
-    /**
-     *
-     * @return a list of shop goods in market
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     * @param pca player cargo adpter
+//     */
+//    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
+//        playerCargoAdapter = pca;
+//    }
+//
+//    /**
+//     *
+//     * @return a list of shop goods in market
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      */
     public List<ShopEntry> getShopGoodsList() {
         return shopGoodsList;

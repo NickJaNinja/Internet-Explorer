@@ -88,10 +88,10 @@ public class SolarSystem implements Serializable {
             }
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
 
-            if (planets[i].getDistanceFromParentStar() >
-                    planets[i].getParentStar().getInnerHZRadius()
-                    && planets[i].getDistanceFromParentStar()
-                    < planets[i].getParentStar().getOuterHZRadius()) {
+            if ((planets[i].getDistanceFromParentStar() >
+                    planets[i].getParentStar().getInnerHZRadius())
+                    && (planets[i].getDistanceFromParentStar()
+                    < planets[i].getParentStar().getOuterHZRadius())) {
                 planets[i].setInHabitableZone(true);
             } else {
                 planets[i].setInHabitableZone(false);
@@ -123,7 +123,7 @@ public class SolarSystem implements Serializable {
         final double DISTANCE_CONSTANT3 = 2.0;
         if (planets[0].equals(planet)) {
             // first content_planet
-            return r.nextDouble() * (DISTANCE_CONSTANT1 - DISTANCE_CONSTANT2) +
+            return (r.nextDouble() * (DISTANCE_CONSTANT1 - DISTANCE_CONSTANT2)) +
                     DISTANCE_CONSTANT2 + stars[0].getRadius();
         } else {
             // planets' after first
@@ -178,14 +178,16 @@ public class SolarSystem implements Serializable {
         return planets;
     }
 
-    /**
-     * gets a random star
-     *
-     * @return random star
-     */
-    public Star getRandomStar() {
-        return stars[r.nextInt(stars.length)];
-    }
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//    /**
+//     * gets a random star
+//     *
+//     * @return random star
+//     */
+//    public Star getRandomStar() {
+//        return stars[r.nextInt(stars.length)];
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
 
     /**
      * gets a random content_planet

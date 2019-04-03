@@ -28,12 +28,14 @@ public class Game implements Serializable {
      */
     private Planet currPlanet;
 
-    /**
-     * Constructor for the game
-     */
-    public Game() {
-        this(GameDifficulty.BEGINNER, null);
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * Constructor for the game
+//     */
+//    public Game() {
+//        this(GameDifficulty.BEGINNER, null);
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * Constructor for the game
@@ -108,16 +110,22 @@ public class Game implements Serializable {
     }
 
     /**
-     * Gets the remaining amount of cargo space in the ship
-     *
-     * @return cargo space
-     */
-    public int getCargoSpace() { return player.getCargoSpace(); }
-
-    /**
-     * getter for game difficulty
-     *
-     * @return difficulty
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     * Gets the remaining amount of cargo space in the ship
+//     *
+//     * @return cargo space
+//     */
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////    public int getCargoSpace() { return player.getCargoSpace(); }
+////
+////    /**
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////     * getter for game difficulty
+////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     *
+//     * @return difficulty
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      */
     public GameDifficulty getGameDifficulty() {
         return difficulty;

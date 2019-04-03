@@ -225,14 +225,20 @@ public enum ShopGoods {
         return name;
     }
 
-    /**
-     * getter for mtlp
-     *
-     * @return mtlp
-     */
-    public TechLevel getMtlp() {
-        return mtlp;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for mtlp
+//     *
+//     * @return mtlp
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////     */
+////    public TechLevel getMtlp() {
+////        return mtlp;
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////    }
+////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for mtlu
@@ -294,35 +300,41 @@ public enum ShopGoods {
      * @return cr
      */
     public ResourcesLevel getCr() {
-        return cr;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//        return cr;
+//    }
+//
+//    /**
+//     * getter for er
+//     *
+//     * @return er
+//     */
+//    public ResourcesLevel getEr() {
+//        return er;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for er
-     *
-     * @return er
-     */
-    public ResourcesLevel getEr() {
-        return er;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for mtl
+//     *
+//     * @return mtl
+//     */
+//    public int getMtl() {
+//        return mtl;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for mtl
-     *
-     * @return mtl
-     */
-    public int getMtl() {
-        return mtl;
-    }
-
-    /**
-     * getter for mth
-     *
-     * @return mth
-     */
-    public int getMth() {
-        return mth;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for mth
+//     *
+//     * @return mth
+//     */
+//    public int getMth() {
+//        return mth;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for isIllegal

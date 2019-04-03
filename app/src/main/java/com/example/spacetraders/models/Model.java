@@ -213,14 +213,16 @@ public class Model {
         this.game.setCurrentPlanet(newCurr);
     }
 
-    /**
-     * getter for shop
-     *
-     * @return shop
-     */
-    public Shop getShop() {
-        return game.getCurrentShop();
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for shop
+//     *
+//     * @return shop
+//     */
+//    public Shop getShop() {
+//        return game.getCurrentShop();
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * gets current fuel level
@@ -266,5 +268,5 @@ public class Model {
      *
      * @return if player is on warp gate planet
      */
-    public boolean isOnWarpGatePlanet() { return game.isOnWarpGatePlanet(); }
+    public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 }

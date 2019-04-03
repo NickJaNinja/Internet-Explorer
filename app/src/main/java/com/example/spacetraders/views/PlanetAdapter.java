@@ -28,7 +28,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     private List<Planet> planetsList;
     private OnClickListener listener;
     private final Model model;
-    private Planet selectedPlanet;
+    // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
     /**
      * constructor
@@ -67,7 +67,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
          *
          * @param itemView view
          */
-        public PlanetViewHolder(@NonNull View itemView) {
+        PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
             pname = itemView.findViewById(R.id.planet_name);
             economy = itemView.findViewById(R.id.planet_economy);
@@ -84,7 +84,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                    if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
                         listener.onClicked(planetsList.get(position));
                     }
 

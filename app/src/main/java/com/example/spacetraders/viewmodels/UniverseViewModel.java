@@ -51,8 +51,8 @@ public class UniverseViewModel extends AndroidViewModel {
      * @return the x coordinate of the system
      */
     public double xCoordOfSystem(SolarSystem center, SolarSystem goal) {
-        return COORDINATE + (goal.getCoordinates().getX()-center.getCoordinates()
-                .getX())*COORDINATE/Model.getInstance().getMaxRange();
+        return COORDINATE + (((goal.getCoordinates().getX() - center.getCoordinates()
+                .getX()) * COORDINATE) / Model.getInstance().getMaxRange());
     }
 
     /**
@@ -64,8 +64,8 @@ public class UniverseViewModel extends AndroidViewModel {
      */
     public double yCoordOfSystem(SolarSystem center, SolarSystem goal) {
         final int  CONSTANT = 30;
-        return  CONSTANT + COORDINATE - (goal.getCoordinates().getY()-center
-                .getCoordinates().getY())*COORDINATE/Model.getInstance().getMaxRange();
+        return (CONSTANT + COORDINATE) - (((goal.getCoordinates().getY() - center
+                .getCoordinates().getY()) * COORDINATE) / Model.getInstance().getMaxRange());
     }
 
 }

@@ -17,7 +17,7 @@ public class ShopViewModel extends AndroidViewModel {
 
     private final Model model;
     private List<ShopEntry> shopInventoryTemp;
-    private List<ShopEntry> playerInventoryTemp;
+    // --Commented out by Inspection (4/2/19, 11:03 P// --Commented out by Inspection (4/2/19, 11:03 PM):M):private List<ShopEntry> playerInventoryTemp;
     private Shop shop;
 
     /**
@@ -38,19 +38,23 @@ public class ShopViewModel extends AndroidViewModel {
         //playerInventoryTemp = getPlayerEntries();
     }
 
-    /**
-     * add item to player inventory temp
-     *
-     * @param shopEntry shop entry
-     */
-    public void addItemToPlayerInventoryTemp(ShopEntry shopEntry) {
-        playerInventoryTemp.add(shopEntry);
-    }
-
-    /**
-     * add item to shop inventory temp
-     *
-     * @param shopEntry shop entry
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * add item to player inventory temp
+//     *
+//     * @param shopEntry shop entry
+//     */
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////    public void addItemToPlayerInventoryTemp(ShopEntry shopEntry) {
+////        playerInventoryTemp.add(shopEntry);
+////    }
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//
+//    /**
+//     * add item to shop inventory temp
+//     *
+//     * @param shopEntry shop entry
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      */
     public void addItemToShopInventoryTemp(ShopEntry shopEntry) {
         shopInventoryTemp.add(shopEntry);

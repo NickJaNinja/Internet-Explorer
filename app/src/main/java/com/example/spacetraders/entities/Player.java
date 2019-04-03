@@ -32,8 +32,8 @@ public class Player implements Serializable {
      * @param reputation    initial reputation level
      * @param ship          initial ship
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill,
-                  int credits, int reputation, Ship ship) {
+    private Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill,
+                   int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
@@ -60,37 +60,41 @@ public class Player implements Serializable {
                 new Ship(ShipType.GNAT));
     }
 
-    /**
-     * Create a base player
-     */
-    public Player() {
-        this("", 0, 0, 0, 0,
-                1000, 0, new Ship(ShipType.GNAT));
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * Create a base player
+//     */
+//    public Player() {
+//        this("", 0, 0, 0, 0,
+//                1000, 0, new Ship(ShipType.GNAT));
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * Travel a given distance and remove fuel from ship
      *
      * @param distance Distance to travel
-     * @return 1 on success, 0 otherwise
-     */
-    public int travel(int distance) {
-        return ship.travel(distance);
-    }
-
-    /**
-     * Doesn't completely refuel the ship
-     * Used if player wants to refuel by a custom amount
-     *
-     * @param creditAmount Amount of credits put towards refueling
-     */
-    public void refuelShipPartial(int creditAmount) {
-        if (creditAmount >= ship.getFullRefuelCost()) {
-            refuelShipMax();
-        }
-        if (creditAmount > this.credits) {
-            ship.refuel(this.credits);
-            this.credits -= this.credits;
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     * @return 1 on success, 0 otherwise
+//     */
+//    public int travel(int distance) {
+//        return ship.travel(distance);
+//    }
+//
+//    /**
+//     * Doesn't completely refuel the ship
+//     * Used if player wants to refuel by a custom amount
+//     *
+//     * @param creditAmount Amount of credits put towards refueling
+//     */
+//    public void refuelShipPartial(int creditAmount) {
+//        if (creditAmount >= ship.getFullRefuelCost()) {
+//            refuelShipMax();
+//        }
+//        if (creditAmount > this.credits) {
+//            ship.refuel(this.credits);
+//            this.credits -= this.credits;
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
         } else {
             ship.refuel(creditAmount);
             this.credits -= creditAmount;
@@ -129,7 +133,7 @@ public class Player implements Serializable {
      * @return 1 if transaction occurred, 0 otherwise
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
-        if (credits < amount * price) {
+        if (credits < (amount * price)) {
             return 0;
         }
         if (ship.addCargo(sg, amount, price) == 0) {
@@ -153,32 +157,40 @@ public class Player implements Serializable {
         return 1;*/
     }
 
-    /**
-     * getter for name
-     *
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * getter for pilotSkill
-     *
-     * @return pilotSkill
-     */
-    public int getPilotSkill() {
-        return pilotSkill;
-    }
-
-    /**
-     * getter for fighterSkill
-     *
-     * @return fighterSkill
-     */
-    public int getFighterSkill() {
-        return fighterSkill;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for name
+//     *
+//     * @return name
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////     */
+////    public String getName() {
+////        return name;
+////    }
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//
+//    /**
+//     * getter for pilotSkill
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     *
+//     * @return pilotSkill
+//     */
+//    public int getPilotSkill() {
+//        return pilotSkill;
+//    }
+//
+//// --Commented out by Inspection START (4/2/19, 11:03 PM):
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//    /**
+//     * getter for fighterSkill
+//     *
+//     * @return fighterSkill
+//     */
+//    public int getFighterSkill() {
+//        return fighterSkill;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for traderSkill
@@ -189,33 +201,47 @@ public class Player implements Serializable {
         return traderSkill;
     }
 
-    /**
-     * getter for engineerSkill
-     *
-     * @return engineerSkill
-     */
-    public int getEngineerSkill() {
-        return engineerSkill;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////    /**
+////     * getter for engineerSkill
+////     *
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////     * @return engineerSkill
+//////     */
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////////    public int getEngineerSkill() {
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+////        return engineerSkill;
+////    }
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for credits
      *
-     * @return credits
-     */
-    public int getCredits() {
-        return credits;
-    }
-
-    /**
-     * get cargo space
-     *
-     * @return cargo space
-     */
-    public int getCargoSpace() { return ship.getCargoSpaces(); }
-
-    /**
-     * getter for reputation
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//     * @return credits
+//     */
+//// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////    public int getCredits() {
+////        return credits;
+////    }
+////
+////    /**
+////     * get cargo space
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     *
+//     * @return cargo space
+//     */
+//    public int getCargoSpace() { return ship.getCargoSpaces(); }
+//
+//    /**
+//     * getter for reputation
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
      *
      * @return reputation
      */
@@ -228,29 +254,37 @@ public class Player implements Serializable {
      *
      * @return ship
      */
-    public Ship getShip() {
-        return ship;
-    }
-
-    /**
-     * get fuel percentage
-     *
-     * @return fuel percentage
-     */
-    public int getFuelPercentage() { return ship.getFuelPercentage(); }
-
-    /**
-     * get rage
-     *
-     * @return ragne
-     */
-    public int getRange() { return ship.getRange(); }
-
-    /**
-     * get max range
-     *
-     * @return max range
-     */
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//// --Commented out by Inspection START (4/2/19, 11:03 PM):
+////    public Ship getShip() {
+////        return ship;
+////    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////
+//////    /**
+//////     * get fuel percentage
+//////     *
+//////     * @return fuel percentage
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     */
+//    public int getFuelPercentage() { return ship.getFuelPercentage(); }
+//
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get rage
+//     *
+//     * @return ragne
+//     */
+//    public int getRange() { return ship.getRange(); }
+//
+//    /**
+//     * get max range
+//     *
+//     * @return max range
+//     */
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
     public double getMaxRange() { return ship.getMaxRange();}
 
     /**
