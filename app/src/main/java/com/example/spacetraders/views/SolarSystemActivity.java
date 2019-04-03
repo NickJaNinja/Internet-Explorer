@@ -20,6 +20,9 @@ import com.example.spacetraders.viewmodels.SolarSystemViewModel;
 
 import java.text.DecimalFormat;
 
+/**
+ * solar system activity
+ */
 public class SolarSystemActivity extends GUIActivity {
     private Model model;
     private SolarSystemViewModel viewModel;
