@@ -170,6 +170,11 @@ public class Model {
         return game.getShopEntries();
     }
 
+    /**
+     * get shop entries filtered
+     *
+     * @return list of shop entries filtered
+     */
     public List<ShopEntry> getShopEntriesFiltered() { return game.getShopEntriesFiltered(); }
 
     /**

@@ -111,6 +111,11 @@ public class Player implements Serializable {
         }
     }
 
+    /**
+     * getPlayerEntries
+     *
+     * @return get list of player entries
+     */
     public List<ShopEntry> getPlayerEntries() {
         return ship.getInventoryCargo();
     }
@@ -202,6 +207,11 @@ public class Player implements Serializable {
         return credits;
     }
 
+    /**
+     * get cargo space
+     *
+     * @return cargo space
+     */
     public int getCargoSpace() { return ship.getCargoSpaces(); }
 
     /**
@@ -222,10 +232,25 @@ public class Player implements Serializable {
         return ship;
     }
 
+    /**
+     * get fuel percentage
+     *
+     * @return fuel percentage
+     */
     public int getFuelPercentage() { return ship.getFuelPercentage(); }
 
+    /**
+     * get rage
+     *
+     * @return ragne
+     */
     public int getRange() { return ship.getRange(); }
 
+    /**
+     * get max range
+     *
+     * @return max range
+     */
     public double getMaxRange() { return ship.getMaxRange();}
 
     /**
