@@ -84,7 +84,7 @@ public class Universe implements Serializable {
     public Universe() {
         Set<Coordinates> cordSet = new HashSet<>();
         Set<String> nameSet = new HashSet<>();
-        int MAX_SYSTEMS = 250;
+        final int MAX_SYSTEMS = 250;
         this.solarSystems = new SolarSystem[MAX_SYSTEMS];
 
         for (int i = 0; i < MAX_SYSTEMS; i++) {
