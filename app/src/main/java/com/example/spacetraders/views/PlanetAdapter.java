@@ -82,6 +82,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
                     // select content_planet
                     planetView.setOnClickListener(new View.OnClickListener() {
+                        @Override
                         public void onClick(View v) {
                             Log.d("Debug", "Planet clicked");
                         }

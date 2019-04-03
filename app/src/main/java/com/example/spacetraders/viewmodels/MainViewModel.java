@@ -5,9 +5,6 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.spacetraders.entities.Game;
-import com.example.spacetraders.models.Model;
-
 public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application app) {

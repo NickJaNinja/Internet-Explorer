@@ -87,6 +87,7 @@ public class PlanetActivity extends MenuBarActivity {
 
         // pressing content_market button
         market.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 mediaPlayer.stop();
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
@@ -95,12 +96,14 @@ public class PlanetActivity extends MenuBarActivity {
         });
 
         upgrade.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 mediaPlayer.stop();
             }
         });
 
         refuel.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 model.refuelShipMax();
                 fuel.setProgress(model.getFuelPercentage());
@@ -109,12 +112,14 @@ public class PlanetActivity extends MenuBarActivity {
         });
 
         save.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 model.saveGame(v.getContext());
             }
         });
 
         load.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 if (model.loadGame(v.getContext())) {
                     Intent intent = new Intent(v.getContext(), PlanetActivity.class);
