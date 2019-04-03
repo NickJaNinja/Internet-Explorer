@@ -63,6 +63,21 @@
             android:background="@color/colorText" />
 
         <TextView
+            android:id="@+id/shipyard_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="> SHIPYARD"
+            android:textColor="@color/colorText"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorText" />
+
+        <TextView
             android:id="@+id/upgrade_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
