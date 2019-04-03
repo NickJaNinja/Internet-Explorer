@@ -118,14 +118,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
         planetViewHolder.planetView.setImageResource(R.drawable.input);
 
-
-
-       // planetViewHolder.distance.setText("" + content_planet.getDistanceFromParentStar());
-       // planetViewHolder.coordinates.setText(system.getCoordinates().toString());
-       // notifyDataSetChanged();
-
-
-
     }
 
 
