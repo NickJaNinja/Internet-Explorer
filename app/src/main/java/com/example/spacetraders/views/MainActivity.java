@@ -1,6 +1,5 @@
 package com.example.spacetraders.views;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,9 +9,17 @@ import android.widget.Button;
 import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 
+/**
+ * main activity
+ */
 public class MainActivity extends GUIActivity {
     private Model model;
 
+    /**
+     * on create
+     *
+     * @param savedInstanceState bundle of saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +61,12 @@ public class MainActivity extends GUIActivity {
       //  mainViewModel.printUniverse(Model.getInstance().getGame());
     }
 
+    /**
+     * on create options menu
+     *
+     * @param menu menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
