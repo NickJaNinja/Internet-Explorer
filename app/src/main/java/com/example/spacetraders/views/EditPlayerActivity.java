@@ -16,6 +16,9 @@ import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.R;
 import com.example.spacetraders.viewmodels.EditPlayerViewModel;
 
+/**
+ * .
+ */
 public class EditPlayerActivity extends AppCompatActivity {
     private EditPlayerViewModel editPlayerViewModel;
 
@@ -27,6 +30,10 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView pilotText;
     private TextView pointsRemaining;
 
+    /**
+     * .
+     * @param savedInstanceState .
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
