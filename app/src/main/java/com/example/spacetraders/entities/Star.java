@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import android.graphics.Color;
 
@@ -17,7 +19,13 @@ public class Star implements Serializable {
     private double luminosity; // in solar luminosity (L☉)
     private double innerHZRadius; // in AUs
     private double outerHZRadius; // in AUs
-
+    private static final float O_STAR = 0.4f;
+    private static final float B_STAR = 2.7f;
+    private static final float A_STAR = 10f;
+    private static final float F_STAR = 24f;
+    private static final float G_STAR = 35f;
+    private static final float K_STAR = 60f;
+    private static final float M_STAR = 100f;
 
     private Random r = new Random();
 
@@ -44,13 +52,14 @@ public class Star implements Serializable {
      */
     private char generateClassification() {
         float roll = r.nextFloat() * 100;
-        if (roll > 60) return 'M'; // 40% chance
-        else if (roll <= 60 && roll > 35) return 'K';// 25% chance
-        else if (roll <= 35 && roll > 24) return 'G';// 11% chance
-        else if (roll <= 24 && roll > 10) return 'F';// 14% chance
-        else if (roll <= 10 && roll > 2.7f) return 'A';// 7.3% chance
-        else if (roll <= 2.7f && roll > 0.4f) return 'B';// 2.3% chance
-        else return 'O';// 0.4% chance
+        float classes[] = {O_STAR, B_STAR, A_STAR, F_STAR, G_STAR, K_STAR, M_STAR};
+        char classNames[] = {'O', 'B', 'A', 'F', 'G', 'K', 'M'};
+        for (int i = 0; i < classes.length; i++) {
+            if (roll <= classes[i]) {
+                return classNames[i];
+            }
+        }
+        return '\0';
     }
 
     /**
