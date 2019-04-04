@@ -9,7 +9,7 @@ import android.widget.Button;
  */
 public class GUIActivity extends AppCompatActivity {
     private Button inventory;
-    private Button status;
+    // --Commented out by Inspection (4/3/19, 8:05 AM):private Button status;
 
     /**
      * on create

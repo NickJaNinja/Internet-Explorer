@@ -10,8 +10,8 @@ import java.util.List;
  */
 
 public class Ship implements Serializable {
-    private ShipType type;
-    private EnumMap<ShopGoods, ShopEntry> cargo;
+    private final ShipType type;
+    private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
     private int fuel;
     private final int FUEL_TO_COST_MULTI = 5;
@@ -28,14 +28,16 @@ public class Ship implements Serializable {
         fuel = type.getFuel();
     }
 
-    /**
-     * getter for ship type
-     *
-     * @return type of ship
-     */
-    public ShipType getShipType() {
-        return type;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for ship type
+//     *
+//     * @return type of ship
+//     */
+//    public ShipType getShipType() {
+//        return type;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * get cargo spaces
@@ -44,23 +46,27 @@ public class Ship implements Serializable {
      */
     public int getCargoSpaces() { return type.getNumCargoHolds() - inventory; }
 
-    /**
-     * get inventory
-     *
-     * @return inventory
-     */
-    public int getInventory() {
-        return inventory;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get inventory
+//     *
+//     * @return inventory
+//     */
+//    public int getInventory() {
+//        return inventory;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * get cargo
-     *
-     * @return enum map of shop goods and shop entry
-     */
-    public EnumMap<ShopGoods, ShopEntry> getCargo() {
-        return cargo;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get cargo
+//     *
+//     * @return enum map of shop goods and shop entry
+//     */
+//    public EnumMap<ShopGoods, ShopEntry> getCargo() {
+//        return cargo;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * Reduces ship fuel based on distance travelled
@@ -70,7 +76,7 @@ public class Ship implements Serializable {
      */
     public int travel(int distance) {
         int fuel = (int) (distance * DIST_TO_FUEL_MULTI);
-        if (this.fuel - fuel < 0) {
+        if ((this.fuel - fuel) < 0) {
             return 0;
         }
         this.fuel -= fuel;
@@ -140,7 +146,7 @@ public class Ship implements Serializable {
      */
     public int addCargo(ShopGoods good, int amount, int price) {
         //if (cargo.get(good) == null) { return 0; }
-        if (inventory + amount > type.getNumCargoHolds()) {
+        if ((inventory + amount) > type.getNumCargoHolds()) {
             return 0;
         }
         if (cargo.get(good) == null) {
@@ -149,7 +155,7 @@ public class Ship implements Serializable {
         } else {
             ShopEntry item = cargo.get(good);
             int currAmt = item.getStock();
-            if (currAmt + amount <= 0) {
+            if ((currAmt + amount) <= 0) {
                 cargo.remove(good);
                 inventory += amount;
                 return 1;
@@ -191,8 +197,7 @@ public class Ship implements Serializable {
         /*for (ShopEntry entry : cargo.values()) {
             inv.add(entry);
         }*/
-        List<ShopEntry> inv = new ArrayList<>(cargo.values());
-        return inv;
+        return new ArrayList<>(cargo.values());
     }
 
     /**
@@ -201,6 +206,6 @@ public class Ship implements Serializable {
      * @return the fuel percentage
      */
     public int getFuelPercentage() {
-        return 100 * fuel / type.getFuel();
+        return (100 * fuel) / type.getFuel();
     }
 }

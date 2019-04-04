@@ -10,14 +10,14 @@ import java.util.Random;
 public class Planet implements Serializable {
 
     private String name;
-    private Star parentStar;
-    private TechLevel techLevel;
-    private ResourcesLevel resourcesLevel;
-    private PoliticalSystem politicalSystem;
+    private final Star parentStar;
+    private final TechLevel techLevel;
+    private final ResourcesLevel resourcesLevel;
+    private final PoliticalSystem politicalSystem;
     private double distanceFromParentStar; // in AUs
     private boolean inHabitableZone;
-    private int population;
-    private Shop shop;
+    // --Commented out by Inspection (4/2/19, 11:03 PM):private int population;
+    private final Shop shop;
     private boolean isWarpGate;
 
     /**
@@ -31,8 +31,8 @@ public class Planet implements Serializable {
         this.parentStar = parentStar;
         Random r = new Random();
 
-        this.inHabitableZone = (distanceFromParentStar > parentStar.getInnerHZRadius()
-                && distanceFromParentStar < parentStar.getOuterHZRadius());
+        this.inHabitableZone = ((distanceFromParentStar > parentStar.getInnerHZRadius())
+                && (distanceFromParentStar < parentStar.getOuterHZRadius()));
 
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];
@@ -75,14 +75,16 @@ public class Planet implements Serializable {
         return name;
     }
 
-    /**
-     * Gets whether or not the content_planet is in the habitable zone
-     *
-     * @return boolean in habitable zone
-     */
-    public boolean getInHabitableZone() {
-        return inHabitableZone;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * Gets whether or not the content_planet is in the habitable zone
+//     *
+//     * @return boolean in habitable zone
+//     */
+//    public boolean getInHabitableZone() {
+//        return inHabitableZone;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * Gets distance from parent star
@@ -128,15 +130,16 @@ public class Planet implements Serializable {
     public PoliticalSystem getPoliticalSystem() {
         return politicalSystem;
     }
-
-    /**
-     * Gets if in habitable zone
-     *
-     * @return if in habitable zone
-     */
-    public boolean isInHabitableZone() {
-        return inHabitableZone;
-    }
+//
+//    /**
+//     * Gets if in habitable zone
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     *
+//     * @return if in habitable zone
+//     */
+//    public boolean isInHabitableZone() {
+//        return inHabitableZone;
+//    }
 
     /**
      * make transaction

@@ -16,8 +16,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- Style to replace actionbar overflow icon. set item 'android:actionOverflowButtonStyle' in AppTheme -->
-    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+    <!-- Style to replace actionbar overflow icon. set item 'android:actionOverflowButtonStyle'
+    in AppTheme -->
+    <style name="MyActionButtonOverflow"
+        parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
         <item name="android:src">@drawable/spaceship_small</item>
         <item name="android:background">?android:attr/actionBarItemBackground</item>
         <item name="android:contentDescription">"Lala"</item>
@@ -67,7 +69,8 @@
     <style name="Widget.ProgressBar.Vertical">
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/vertical_progress_bar</item>
-        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal</item>
         <item name="android:minWidth">1dip</item>
         <item name="android:maxWidth">12dip</item>
     </style>

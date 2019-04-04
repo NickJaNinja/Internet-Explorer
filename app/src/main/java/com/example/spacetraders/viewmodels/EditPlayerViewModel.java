@@ -22,7 +22,6 @@ public class EditPlayerViewModel extends AndroidViewModel {
     }
 
     private String toastText;
-    private final int TOTAL_POINTS = 16;
 
     /**
      * Checks to see if player is configured correctly
@@ -38,11 +37,12 @@ public class EditPlayerViewModel extends AndroidViewModel {
     public boolean onOk(String name, int fight, int trade, int eng, int pilot,
                         GameDifficulty diff) {
         Model model = Model.getInstance();
-        if (name == null || name.length() < 1) {
+        if ((name == null) || (name.length() < 1)) {
             toastText = "Please enter your pilot's name";
             return false;
         }
         int sum = fight + trade + eng + pilot;
+        int TOTAL_POINTS = 16;
         if (sum != TOTAL_POINTS) {
             toastText = "Please use all of your skill points";
             return false;
@@ -71,7 +71,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @return amount to change skill point value by
      */
     public int onSkill(int curr, int pointsRemaining, int sign) {
-        if (pointsRemaining - sign < 0 || (curr == 0 && sign < 0)) {
+        if (((pointsRemaining - sign) < 0) || ((curr == 0) && (sign < 0))) {
             return 0;
         } else if (sign < 0) {
             return -1;
@@ -86,8 +86,11 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @return the color to use
      */
     public int onAnyButton(int currSkillRem) {
-        if (currSkillRem == 0) return Color.parseColor("#FF5FCA77");
-        else return Color.parseColor("#FFA500");
+        if (currSkillRem == 0) {
+            return Color.parseColor("#FF5FCA77");
+        } else {
+            return Color.parseColor("#FFA500");
+        }
     }
 
 }

@@ -73,11 +73,11 @@ public class SolarSystemActivity extends GUIActivity {
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
 
-
+        final double RADIUS_CONSTANT = 1.58125E-5;
         name.setText(solarSystem.getName() + "");
         classification.setText(solarSystem.getStars()[0].getClassification() + " Class Star");
         radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
-                *1.58125E-5) + " Ly");
+                * RADIUS_CONSTANT) + " Ly");
         mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
         surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
                 + " K");
@@ -141,7 +141,7 @@ public class SolarSystemActivity extends GUIActivity {
      * set planet selected
      * @param p the selected destination planet
      */
-    public void setSelectedPlanet(Planet p) {
+    private void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }
 

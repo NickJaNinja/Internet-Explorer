@@ -12,9 +12,9 @@ import com.example.spacetraders.models.Model;
  * solar system view model
  */
 public class SolarSystemViewModel extends AndroidViewModel {
-    private Model model;
-    private SolarSystem currentSolarSystem;
-    private Planet[] planetsInRange;
+    private final Model model;
+    private final SolarSystem currentSolarSystem;
+    // --Commented out by Inspection (4/2/19, 11:04 PM):private Planet[] planetsInRange;
 
     /**
      * solar system view model
@@ -25,14 +25,16 @@ public class SolarSystemViewModel extends AndroidViewModel {
         super(app);
         model = Model.getInstance();
         currentSolarSystem = model.getCurrentSystem();
-        planetsInRange = currentSolarSystem.getPlanets();
-    }
-
-    /**
-     * set up planets
-     */
-    public void setUpPlanets() {
-        planetsInRange = currentSolarSystem.getPlanets();
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//        planetsInRange = currentSolarSystem.getPlanets();
+//    }
+//
+//    /**
+//     * set up planets
+//     */
+//    public void setUpPlanets() {
+//        planetsInRange = currentSolarSystem.getPlanets();
+// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
     }
 
     /**
@@ -45,15 +47,18 @@ public class SolarSystemViewModel extends AndroidViewModel {
         return currentSolarSystem.getPlanets();
     }
 
-    /**
-     * get current planets
-     *
-     * @return planet
-     */
-    public Planet getCurrentPlanet() {
-        return model.getCurrentPlanet();
-    }
-
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//    /**
+//     * get current planets
+//     *
+//     * @return planet
+//     */
+//    public Planet getCurrentPlanet() {
+//        return model.getCurrentPlanet();
+//    }
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
+//
     /**
      * get current solar system
      *

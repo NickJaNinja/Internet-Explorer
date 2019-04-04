@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * This class represents the various game difficulties
  */
-public enum GameDifficulty implements Serializable {
+public enum GameDifficulty {
     BEGINNER("Beginner"), EASY("Easy"), NORMAL("Normal"), HARD("Hard"), IMPOSSIBLE("Impossible");
 
     private final String name;

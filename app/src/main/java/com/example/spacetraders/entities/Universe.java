@@ -69,14 +69,14 @@ public class Universe implements Serializable {
             };
 
 
-    private Random r = new Random();
+    private final Random r = new Random();
     /**
      * dimensions of universe
      */
     private static final int MAX_X = 600;
     private static final int MAX_Y = 600;
 
-    private SolarSystem[] solarSystems;
+    private final SolarSystem[] solarSystems;
 
     /**
      * Constructor for Universe
@@ -84,7 +84,7 @@ public class Universe implements Serializable {
     public Universe() {
         Set<Coordinates> cordSet = new HashSet<>();
         Set<String> nameSet = new HashSet<>();
-        int MAX_SYSTEMS = 250;
+        final int MAX_SYSTEMS = 250;
         this.solarSystems = new SolarSystem[MAX_SYSTEMS];
 
         for (int i = 0; i < MAX_SYSTEMS; i++) {
@@ -116,18 +116,20 @@ public class Universe implements Serializable {
         }
     }
 
-    /**
-     * Gets the distance between two planets
-     *
-     * @param from planet 1
-     * @param to planet 2
-     * @return distance between the planets
-     */
-    public int distanceBetweenPlanets(Planet from, Planet to) {
-        double fromCords = from.getDistanceFromParentStar();
-        double toCords = to.getDistanceFromParentStar();
-        return (int)Math.abs(fromCords - toCords);
-    }
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//    /**
+//     * Gets the distance between two planets
+//     *
+//     * @param from planet 1
+//     * @param to planet 2
+//     * @return distance between the planets
+//     */
+//    public int distanceBetweenPlanets(Planet from, Planet to) {
+//        double fromCords = from.getDistanceFromParentStar();
+//        double toCords = to.getDistanceFromParentStar();
+//        return (int)Math.abs(fromCords - toCords);
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
 
     /**
      * Finds the 2D distance between two solar systems
