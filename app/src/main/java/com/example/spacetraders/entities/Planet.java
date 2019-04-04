@@ -146,7 +146,7 @@ public class Planet implements Serializable {
      *
      * @param sg shop goods
      * @param amount amount
-     * @return decrese stock
+     * @return decrease stock
      */
     public int makeTransaction(ShopGoods sg, int amount) {
         return shop.decreaseStock(sg, amount);

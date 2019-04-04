@@ -36,7 +36,7 @@ public class SolarSystem implements Serializable {
     private int generateNumStars() {
         //int roll = r.nextInt(10) + 1;
         //if (roll < 5) return 2; // 4 in 10 chance for binary star system
-        //else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
+        //else if (roll > 8) return 3; // 2 in 10 chance for t r i n a r y star system
         //else return 1; // 6 in 10 chance for unary star system
         return 1;
     }
@@ -127,7 +127,7 @@ public class SolarSystem implements Serializable {
                     DISTANCE_CONSTANT2 + stars[0].getRadius();
         } else {
             // planets' after first
-            // by Titius-Bode Law
+            // by T i t i u s-Bode Law
             return planets[planetNumber - 1].getDistanceFromParentStar() * DISTANCE_CONSTANT3;
         }
     }

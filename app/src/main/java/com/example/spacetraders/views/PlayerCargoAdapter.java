@@ -327,7 +327,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         /**
          * on clicked
          *
-         * @param goods shope entry goods
+         * @param goods shop entry goods
          */
         void onClicked(ShopEntry goods);
     }
