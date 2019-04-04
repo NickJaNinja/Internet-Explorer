@@ -116,15 +116,15 @@ class Ship implements Serializable {
         }
     }
 
-    /**
-     * Calculate the amount you can refuel based on given credits
-     *
-     * @param credits Amount of money
-     * @return Amount of purchasable fuel
-     */
-    public int getPurchasableFuel(int credits) {
-        return credits / FUEL_TO_COST_MULTI;
-    }
+//    /**
+//     * Calculate the amount you can refuel based on given credits
+//     *
+//     * @param credits Amount of money
+//     * @return Amount of purchasable fuel
+//     */
+//    public int getPurchasableFuel(int credits) {
+//        return credits / FUEL_TO_COST_MULTI;
+//    }
 
     /**
      * Calculate cost to refuel the ship

@@ -238,23 +238,23 @@ public enum ShopGoods {
 //// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for m t l u
-     *
-     * @return m t l u
-     */
-    public TechLevel getMtlu() {
-        return mtlu;
-    }
-
-    /**
-     * getter for itp
-     *
-     * @return name
-     */
-    public TechLevel getTtp() {
-        return ttp;
-    }
+//    /**
+//     * getter for m t l u
+//     *
+//     * @return m t l u
+//     */
+//    public TechLevel getMtlu() {
+//        return mtlu;
+//    }
+//
+//    /**
+//     * getter for itp
+//     *
+//     * @return name
+//     */
+//    public TechLevel getTtp() {
+//        return ttp;
+//    }
 
     /**
      * getter for base price
@@ -283,14 +283,14 @@ public enum ShopGoods {
         return var;
     }
 
-    /**
-     * getter for ie
-     *
-     * @return ie
-     */
-    public RadicalPriceEvent getIe() {
-        return ie;
-    }
+//    /**
+//     * getter for ie
+//     *
+//     * @return ie
+//     */
+//    public RadicalPriceEvent getIe() {
+//        return ie;
+//    }
 
     /**
      * getter for cr
@@ -332,14 +332,14 @@ public enum ShopGoods {
 //    }
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for isIllegal
-     *
-     * @return isIllegal
-     */
-    public boolean isIllegal() {
-        return isIllegal;
-    }
+//    /**
+//     * getter for isIllegal
+//     *
+//     * @return isIllegal
+//     */
+//    public boolean isIllegal() {
+//        return isIllegal;
+//    }
 
     /**
      * getter for level of m t l p

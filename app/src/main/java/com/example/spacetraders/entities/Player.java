@@ -259,14 +259,14 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
-    /**
-     * setter for name
-     *
-     * @param name player's name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+//    /**
+//     * setter for name
+//     *
+//     * @param name player's name
+//     */
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
 //    /**
 //     * setter for pilotSkill
