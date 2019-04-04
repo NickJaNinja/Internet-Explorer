@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/pageTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -41,7 +40,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/playerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
@@ -70,7 +68,6 @@
         </android.support.design.widget.TextInputLayout>
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -140,7 +137,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/pilotText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -201,7 +197,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/fighterText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -261,7 +256,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/traderText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -320,7 +314,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/engineerText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -341,7 +334,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
@@ -351,7 +343,6 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/textView5"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -375,7 +366,6 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -433,7 +423,6 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/ok_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
