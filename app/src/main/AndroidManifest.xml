@@ -30,10 +30,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.GUIActivity"
-            android:parentActivityName=".views.MainActivity"
-            tools:targetApi="jelly_bean" />
-        <activity
             android:name=".views.ShopActivity"
             android:parentActivityName=".views.MainActivity" />
         <activity
