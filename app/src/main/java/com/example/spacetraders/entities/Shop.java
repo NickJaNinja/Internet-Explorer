@@ -91,12 +91,31 @@ public class Shop implements Serializable {
      */
     public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
+
+        int newAmount;
+        if (e != null) {
+            newAmount = e.getStock() - amount;
+            if (newAmount < 0) {
+                return 0;
+            } else {
+                e.setStock(newAmount);
+                return 1;
+            }
+        } else {
+            return 0;
+        }
+
+        /*
+        int newAmount = e.getStock() - amount;
+
         int newAmount = Objects.requireNonNull(e).getStock() - amount;
+
         if (newAmount < 0) {
             return 0;
         }
         shopGoodsStockMap.get(good).setStock(newAmount);
         return 1;
+        */
     }
 
     /**
