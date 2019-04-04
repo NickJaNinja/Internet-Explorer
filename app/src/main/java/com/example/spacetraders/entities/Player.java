@@ -20,7 +20,10 @@ public class Player implements Serializable {
     private int reputation;
     private Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
+
     private static final double DIFF_MULTI = 0.9;
+
+
 
     /**
      * constructor with all parameters
@@ -62,14 +65,6 @@ public class Player implements Serializable {
         this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, DEFAULT_CREDIT, 0,
                 new Ship(ShipType.GNAT));
     }
-
-    /*
-     * Create a base player
-     */
-    /*public Player() {
-        this("", 0, 0, 0, 0,
-                DEFAULT_CREDIT, 0, new Ship(ShipType.GNAT));
-    }*/
 
     /**
      * Travel a given distance and remove fuel from ship
