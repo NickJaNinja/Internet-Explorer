@@ -167,7 +167,7 @@ public class SolarSystem implements Serializable {
      * @return array of stars
      */
     public Star[] getStars() {
-        return stars.clone();
+        return this.stars.clone();
     }
 
     /**

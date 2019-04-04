@@ -2,8 +2,8 @@ package com.example.spacetraders.entities;
 
 import java.io.Serializable;
 import java.util.Random;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Collection;
 import android.support.annotation.NonNull;
 
 /**
@@ -83,8 +83,8 @@ public class Universe implements Serializable {
      * Constructor for Universe
      */
     public Universe() {
-        Set<Coordinates> cordSet_ = new HashSet<>();
-        Set<String> nameSet_ = new HashSet<>();
+        Collection<Coordinates> cordSet_ = new HashSet<>();
+        Collection<String> nameSet_ = new HashSet<>();
         final int MAX_SYSTEMS = 250;
         this.solarSystems = new SolarSystem[MAX_SYSTEMS];
 
