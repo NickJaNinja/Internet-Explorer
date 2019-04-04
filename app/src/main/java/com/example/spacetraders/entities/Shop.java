@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -90,7 +91,7 @@ public class Shop implements Serializable {
      */
     public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
-        int newAmount = e.getStock() - amount;
+        int newAmount = Objects.requireNonNull(e).getStock() - amount;
         if (newAmount < 0) {
             return 0;
         }
