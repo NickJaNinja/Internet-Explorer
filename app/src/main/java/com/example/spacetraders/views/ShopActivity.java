@@ -94,7 +94,8 @@ public class ShopActivity extends MenuBarActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.setMarketsEntriesToTemp();
+                //implements later setMarketsEntriesToTemp();
+                //   viewModel.setMarketsEntriesToTemp();
                 viewModel.setUpMarket();
             }
         });
