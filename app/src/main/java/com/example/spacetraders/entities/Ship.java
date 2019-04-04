@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
-
+import android.support.annotation.NonNull;
 /**
  * This class represents the player's ship
  */
@@ -182,6 +182,7 @@ public class Ship implements Serializable {
      * @return string of ship
      */
     @Override
+    @NonNull
     public String toString() {
         return "Ship{" +
                 "type=" + type +

@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -215,6 +216,7 @@ public class SolarSystem implements Serializable {
      * @return string of solar system info
      */
     @Override
+    @NonNull
     public String toString() {
         String str = "Solar System: " + name + " at " + coordinates + "\nSuns: ";
         /*for (Star s : stars) {

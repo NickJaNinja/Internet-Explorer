@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.Planet;
-import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 
 

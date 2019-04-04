@@ -6,7 +6,6 @@ import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
-import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
@@ -91,7 +90,9 @@ public class Model {
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
-            saveFile.createNewFile();
+            if (saveFile.createNewFile()){
+                saveFile = saveFile;
+            }
             saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
