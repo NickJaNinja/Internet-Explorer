@@ -1,8 +1,6 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import android.graphics.Color;
 

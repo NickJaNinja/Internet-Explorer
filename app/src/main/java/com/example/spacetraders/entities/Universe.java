@@ -149,7 +149,7 @@ public class Universe implements Serializable {
      * @return array of solar systems
      */
     public SolarSystem[] getSolarSystems() {
-        return solarSystems;
+        return solarSystems.clone();
     }
 
     /**
