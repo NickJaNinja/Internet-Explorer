@@ -167,7 +167,7 @@ public class SolarSystem implements Serializable {
      * @return array of stars
      */
     public Star[] getStars() {
-        return stars;
+        return stars.clone();
     }
 
     /**
@@ -176,7 +176,7 @@ public class SolarSystem implements Serializable {
      * @return array of planets
      */
     public Planet[] getPlanets() {
-        return planets;
+        return planets.clone();
     }
 
 // --Commented out by Inspection START (4/2/19, 11:04 PM):

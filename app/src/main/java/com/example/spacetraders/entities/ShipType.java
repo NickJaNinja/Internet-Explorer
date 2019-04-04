@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+
 /**
  * This enum represents the various spaceship types
  */
