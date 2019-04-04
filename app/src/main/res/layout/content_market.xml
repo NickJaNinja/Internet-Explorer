@@ -267,6 +267,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
                     android:text="CANCEL"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:textColor="@color/colorText"
                     android:background="@color/colorCancelButton"
                     android:textSize="18sp" />
@@ -287,6 +288,8 @@
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
                     android:text="CONFIRM"
+                    style="?android:attr/buttonBarButtonStyle"
+
                     android:textColor="@color/colorText"
                     android:background="@color/colorPlusButton"
                     android:textSize="18sp" />

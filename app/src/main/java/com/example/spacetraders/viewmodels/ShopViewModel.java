@@ -30,7 +30,7 @@ public class ShopViewModel extends AndroidViewModel {
         model = Model.getInstance();
     }
 
-    /*
+    /**
      * initializes content_market
      */
     public void setUpMarket() {

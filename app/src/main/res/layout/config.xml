@@ -414,6 +414,7 @@
                 android:gravity="center"
                 android:text="✖"
                 android:textSize="18sp"
+                style="?android:attr/buttonBarButtonStyle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -428,6 +429,7 @@
                 android:gravity="center"
                 android:text="↻"
                 android:textSize="18sp"
+                style="?android:attr/buttonBarButtonStyle"
                 android:textStyle="bold" />
 
             <Button
@@ -444,6 +446,7 @@
                 android:background="#676767"
                 android:onClick="onOkPressed"
                 android:text="CONTINUE"
+                style="?android:attr/buttonBarButtonStyle"
                 android:textColor="#ffffff" />
         </LinearLayout>
 
