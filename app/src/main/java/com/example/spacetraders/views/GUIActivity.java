@@ -7,7 +7,7 @@ import android.widget.Button;
  * GUI activity class
  */
 public class GUIActivity extends AppCompatActivity {
-    private Button inventory;
+    //private Button inventory;
     // --Commented out by Inspection (4/3/19, 8:05 AM):private Button status;
 
 //    /**
