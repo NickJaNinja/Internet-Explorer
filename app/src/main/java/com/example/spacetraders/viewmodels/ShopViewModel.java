@@ -16,7 +16,7 @@ import java.util.List;
 public class ShopViewModel extends AndroidViewModel {
 
     private final Model model;
-    private List<ShopEntry> shopInventoryTemp;
+    //private List<ShopEntry> shopInventoryTemp;
     // private List<ShopEntry> playerInventoryTemp;
     private Shop shop;
 
@@ -30,13 +30,13 @@ public class ShopViewModel extends AndroidViewModel {
         model = Model.getInstance();
     }
 
-    /**
+    /*
      * initializes content_market
      */
-    public void setUpMarket() {
-        shopInventoryTemp = getShopEntries();
+    /*public void setUpMarket() {
+        //shopInventoryTemp = getShopEntries();
         //playerInventoryTemp = getPlayerEntries();
-    }
+    }*/
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
