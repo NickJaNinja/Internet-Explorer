@@ -55,7 +55,7 @@ public class ShopActivity extends MenuBarActivity {
         fuel.setProgress(model.getFuelPercentage());
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
-        viewModel.setUpMarket();
+     //   viewModel.setUpMarket();
 
         creditDisplay = findViewById(R.id.credit_text_display);
         cargoDisplay  = findViewById(R.id.cargo_text_display);
@@ -91,11 +91,12 @@ public class ShopActivity extends MenuBarActivity {
         cancel = findViewById(R.id.cancel_button);
 
         //confirm transaction
+
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //implements later setMarketsEntriesToTemp();
-                //   viewModel.setMarketsEntriesToTemp();
+                   viewModel.setMarketsEntriesToTemp();
                 viewModel.setUpMarket();
             }
         });

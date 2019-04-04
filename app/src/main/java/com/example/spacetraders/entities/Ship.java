@@ -154,21 +154,27 @@ public class Ship implements Serializable {
             inventory += amount;
         } else {
             ShopEntry item = cargo.get(good);
-            int currAmt = item.getStock();
-            if ((currAmt + amount) <= 0) {
+            int currentAmount;
+            if (item != null) {
+                currentAmount = item.getStock();
+            } else {
+                currentAmount = 0;
+            }
+
+            if ((currentAmount + amount) <= 0) {
                 cargo.remove(good);
                 inventory += amount;
                 return 1;
             }
             int currPrc = item.getPrice();
-            int avgPrc = currAmt * currPrc;
+            int avgPrc = currentAmount * currPrc;
             if (amount > 0) {
                 avgPrc += amount * price;
             } else {
                 avgPrc += amount * currPrc;
             }
-            avgPrc /= (amount + currAmt);
-            item.setStock(currAmt + amount);
+            avgPrc /= (amount + currentAmount);
+            item.setStock(currentAmount + amount);
             item.setPrice(avgPrc);
             inventory += amount;
             cargo.put(good, item);
