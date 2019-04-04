@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Objects;
+
 import android.support.annotation.NonNull;
 /**
  * This class represents the player's ship
@@ -154,7 +156,7 @@ public class Ship implements Serializable {
             inventory += amount;
         } else {
             ShopEntry item = cargo.get(good);
-            int currAmt = item.getStock();
+            int currAmt = Objects.requireNonNull(item).getStock();
             if ((currAmt + amount) <= 0) {
                 cargo.remove(good);
                 inventory += amount;

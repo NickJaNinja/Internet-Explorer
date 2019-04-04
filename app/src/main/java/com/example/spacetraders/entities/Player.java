@@ -3,7 +3,6 @@ package com.example.spacetraders.entities;
 import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.List;
-import java.lang.Math;
 
 /**
  * This class represents the player
