@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -166,7 +167,7 @@ public class SolarSystem implements Serializable {
      * @return array of stars
      */
     public Star[] getStars() {
-        return stars;
+        return stars.clone();
     }
 
     /**
@@ -175,7 +176,7 @@ public class SolarSystem implements Serializable {
      * @return array of planets
      */
     public Planet[] getPlanets() {
-        return planets;
+        return planets.clone();
     }
 
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
@@ -215,6 +216,7 @@ public class SolarSystem implements Serializable {
      * @return string of solar system info
      */
     @Override
+    @NonNull
     public String toString() {
         String str = "Solar System: " + name + " at " + coordinates + "\nSuns: ";
         /*for (Star s : stars) {

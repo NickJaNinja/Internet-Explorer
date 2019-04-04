@@ -1,8 +1,10 @@
 package com.example.spacetraders;
 
 /**
+
  * sorry I don't know how to do Junit lads.
- */
+**/
+
 class Test {
 
     /**
@@ -45,10 +47,17 @@ class Test {
             System.out.println("\t" + content_planet.getName());
             System.out.println("\t\tDistance from Star:\t" + df.format(content_planet.getDistanceFromParentStar()*8.3167) + " lm");
             if (content_planet.getInHabitableZone()) {
+
                 System.out.println("\t\tStatus:\t\t\t\t\t\t i n h a b i t e d");
             }
             else {
                 System.out.println("\t\t Status:\t\t\t\t\t\t u n i n h a b i t e d");
+
+                System.out.println("\t\tStatus:\t\t\t\t\t\t inhabited");
+            }
+            else {
+                System.out.println("\t\tStatus:\t\t\t\t\t\t uninhabited");
+
             }
             System.out.println("\t\tPopulation:\t\t\t\t\t[NOT IMPLEMENTED]");
             System.out.println("\t\tPolitical System:\t\t\t[NOT IMPLEMENTED]");
@@ -90,14 +99,22 @@ class Test {
                 System.out.println("\t" + planet.getName());
                 System.out.println("\t\tDistance from Star:\t" + df.format(planet.getDistanceFromParentStar() * 8.3167) + " lm");
                 if (planet.getInHabitableZone()) {
+
                     System.out.println("\t\tStatus:\t\t\t\t\t\ t i n h a b i t e d");
+
+                    System.out.println("\t\tStatus:\t\t\t\t\t\t inhabited");
+
                     System.out.println("\t\tPopulation:\t\t\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tPolitical System:\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tTech Level:\t\t\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tResource Level:\t\t\t\t[NOT IMPLEMENTED]");
                     inhabitedPlanetsNum++;
                 } else {
+
                     System.out.println("\t\tStatus:\t\t\t\t\t\ t u n i n h a b i t e d");
+
+                    System.out.println("\t\tStatus:\t\t\t\t\t\t un inhabited");
+
                 }
             }
         }

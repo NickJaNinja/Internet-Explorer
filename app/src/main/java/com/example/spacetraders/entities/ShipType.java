@@ -1,6 +1,6 @@
 package com.example.spacetraders.entities;
 
-import java.io.Serializable;
+import android.support.annotation.NonNull;
 
 /**
  * This enum represents the various spaceship types
@@ -108,6 +108,8 @@ public enum ShipType {
     /**
      * @return the display string representation of the ship type
      */
+    @Override
+    @NonNull
     public String toString() {
         return name;
     }
