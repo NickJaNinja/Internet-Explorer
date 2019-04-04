@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 import java.io.Serializable;
+import android.support.annotation.NonNull;
 
 /**
  * This class represents the coordinates of a solar system
@@ -73,6 +74,7 @@ public class Coordinates implements Serializable {
      * @return string of coordinates info
      */
     @Override
+    @NonNull
     public String toString() {
         return "(" + x + "," + y + ")";
     }

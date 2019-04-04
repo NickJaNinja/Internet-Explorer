@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
+import android.support.annotation.NonNull;
 
 /**
  * This class represents the game universe
@@ -167,6 +168,7 @@ public class Universe implements Serializable {
      * @return string of universe info
      */
     @Override
+    @NonNull
     public String toString() {
         return "Universe: " + solarSystems.length + " solar systems\n ";
     }

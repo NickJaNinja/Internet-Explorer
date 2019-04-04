@@ -90,7 +90,9 @@ public class Model {
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
-            saveFile.createNewFile();
+            if (saveFile.createNewFile()){
+                saveFile = saveFile;
+            }
             saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);

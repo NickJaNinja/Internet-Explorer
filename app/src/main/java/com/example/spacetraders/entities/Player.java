@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.List;
 
@@ -341,6 +342,7 @@ public class Player implements Serializable {
      * @return string of player info
      */
     @Override
+    @NonNull
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +

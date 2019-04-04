@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
+import android.support.annotation.NonNull;
 import java.util.Random;
 import android.graphics.Color;
 
@@ -259,6 +260,7 @@ public class Star implements Serializable {
      * @return string of star info
      */
     @Override
+    @NonNull
     public String toString() {
         return name;
     }

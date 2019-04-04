@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
+
 /**
  * This class represents the various game difficulties
  */
@@ -20,6 +22,8 @@ public enum GameDifficulty {
     /**
      * @return the display string representation of the course
      */
+    @Override
+    @NonNull
     public String toString() {
         return name;
     }
