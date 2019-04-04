@@ -76,24 +76,24 @@ public class Player implements Serializable {
         return ship.travel(distance);
     }
 
-    /**
-     * Doesn't completely refuel the ship
-     * Used if player wants to refuel by a custom amount
-     *
-     * @param creditAmount Amount of credits put towards refueling
-     */
-    public void refuelShipPartial(int creditAmount) {
-        if (creditAmount >= ship.getFullRefuelCost()) {
-            refuelShipMax();
-        }
-        if (creditAmount > this.credits) {
-            ship.refuel(this.credits);
-            this.credits -= this.credits;
-        } else {
-            ship.refuel(creditAmount);
-            this.credits -= creditAmount;
-        }
-    }
+//    /**
+//     * Doesn't completely refuel the ship
+//     * Used if player wants to refuel by a custom amount
+//     *
+//     * @param creditAmount Amount of credits put towards refueling
+//     */
+//    public void refuelShipPartial(int creditAmount) {
+//        if (creditAmount >= ship.getFullRefuelCost()) {
+//            refuelShipMax();
+//        }
+//        if (creditAmount > this.credits) {
+//            ship.refuel(this.credits);
+//            this.credits -= this.credits;
+//        } else {
+//            ship.refuel(creditAmount);
+//            this.credits -= creditAmount;
+//        }
+//    }
 
     /**
      * Refuels ship to have a full tank
@@ -183,14 +183,14 @@ public class Player implements Serializable {
 //    }
 // --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
-    /**
-     * getter for traderSkill
-     *
-     * @return traderSkill
-     */
-    public int getTraderSkill() {
-        return traderSkill;
-    }
+//    /**
+//     * getter for traderSkill
+//     *
+//     * @return traderSkill
+//     */
+//    public int getTraderSkill() {
+//        return traderSkill;
+//    }
 
 // --Commented out by Inspection START (4/3/19, 8:05 AM):
 //    /**
@@ -220,23 +220,23 @@ public class Player implements Serializable {
      */
     public int getCargoSpace() { return ship.getCargoSpaces(); }
 
-    /**
-     * getter for reputation
-     *
-     * @return reputation
-     */
-    public int getReputation() {
-        return reputation;
-    }
+//    /**
+//     * getter for reputation
+//     *
+//     * @return reputation
+//     */
+//    public int getReputation() {
+//        return reputation;
+//    }
 
-    /**
-     * getter for ship
-     *
-     * @return ship
-     */
-    public Ship getShip() {
-        return ship;
-    }
+//    /**
+//     * getter for ship
+//     *
+//     * @return ship
+//     */
+//    public Ship getShip() {
+//        return ship;
+//    }
 
     /**
      * get fuel percentage
@@ -268,69 +268,69 @@ public class Player implements Serializable {
         this.name = name;
     }
 
-    /**
-     * setter for pilotSkill
-     *
-     * @param pilotSkill player's pilotSkill
-     */
-    public void setPilotSkill(int pilotSkill) {
-        this.pilotSkill = pilotSkill;
-    }
+//    /**
+//     * setter for pilotSkill
+//     *
+//     * @param pilotSkill player's pilotSkill
+//     */
+//    public void setPilotSkill(int pilotSkill) {
+//        this.pilotSkill = pilotSkill;
+//    }
 
-    /**
-     * setter for fighterSkill
-     *
-     * @param fighterSkill player's fighterSkill
-     */
-    public void setFighterSkill(int fighterSkill) {
-        this.fighterSkill = fighterSkill;
-    }
+//    /**
+//     * setter for fighterSkill
+//     *
+//     * @param fighterSkill player's fighterSkill
+//     */
+//    public void setFighterSkill(int fighterSkill) {
+//        this.fighterSkill = fighterSkill;
+//    }
 
-    /**
-     * setter for traderSkill
-     *
-     * @param traderSkill player's traderSkill
-     */
-    public void setTraderSkill(int traderSkill) {
-        this.traderSkill = traderSkill;
-    }
+//    /**
+//     * setter for traderSkill
+//     *
+//     * @param traderSkill player's traderSkill
+//     */
+//    public void setTraderSkill(int traderSkill) {
+//        this.traderSkill = traderSkill;
+//    }
 
-    /**
-     * setter for engineerSkill
-     *
-     * @param engineerSkill player's engineerSkill
-     */
-    public void setEngineerSkill(int engineerSkill) {
-        this.engineerSkill = engineerSkill;
-    }
+//    /**
+//     * setter for engineerSkill
+//     *
+//     * @param engineerSkill player's engineerSkill
+//     */
+//    public void setEngineerSkill(int engineerSkill) {
+//        this.engineerSkill = engineerSkill;
+//    }
 
-    /**
-     * getter for credits
-     * w
-     *
-     * @param credits player's credits
-     */
-    public void setCredits(int credits) {
-        this.credits = credits;
-    }
+//    /**
+//     * getter for credits
+//     * w
+//     *
+//     * @param credits player's credits
+//     */
+//    public void setCredits(int credits) {
+//        this.credits = credits;
+//    }
 
-    /**
-     * getter for reputation
-     *
-     * @param reputation the reputation
-     */
-    public void setReputation(int reputation) {
-        this.reputation = reputation;
-    }
+//    /**
+//     * getter for reputation
+//     *
+//     * @param reputation the reputation
+//     */
+//    public void setReputation(int reputation) {
+//        this.reputation = reputation;
+//    }
 
-    /**
-     * setter for ship
-     *
-     * @param ship player's ship
-     */
-    public void setShip(Ship ship) {
-        this.ship = ship;
-    }
+//    /**
+//     * setter for ship
+//     *
+//     * @param ship player's ship
+//     */
+//    public void setShip(Ship ship) {
+//        this.ship = ship;
+//    }
 
     /**
      * to string for player
