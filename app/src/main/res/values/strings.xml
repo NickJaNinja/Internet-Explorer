@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">SpaceTraders</string>
     <string name="action_settings">Settings</string>
-    <string name="this_is_a_string_name"> LEAVE MARKET</string>
+    <string name="this_is_a_string_name">LEAVE MARKET</string>
+    <string name="we">SPACE TRADER</string>
+    <string name="are">NEW GAME</string>
+    <string name="gonna">LOAD GAME</string>
+    <string name="get">image</string>
+    <string name="an">Create A New Character</string>
+    <string name="big">Pilot Name</string>
+    <string name="fat">eg.Bob the Destroyer</string>
+    <string name="A">temp text</string>
+    <string name="in">LEAVE MARKET</string>
+    <string name="CS">LEAVE MARKET</string>
+    <string name="twothreefourzero"> LEAVE MARKET</string>
+
 </resources>
