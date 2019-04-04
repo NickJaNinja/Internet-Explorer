@@ -402,7 +402,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFD25A64"
                 android:gravity="center"
-                android:text="✖"
+                android:text="@string/OOHHH"
                 android:textSize="18sp"
                 style="?android:attr/buttonBarButtonStyle"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -417,7 +417,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFA500"
                 android:gravity="center"
-                android:text="↻"
+                android:text="@string/NNOOO"
                 android:textSize="18sp"
                 style="?android:attr/buttonBarButtonStyle"
                 android:textStyle="bold" />

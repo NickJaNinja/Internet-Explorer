@@ -57,6 +57,12 @@
     <string name="NOODLES">COORDINATES: </string>
     <string name="PASTA">ENGAGE WARP DRIVE</string>
     <string name="MARSHMALLOWS">CURRENT RANGE</string>
+    <string name="PLANET">PLANET</string>
+    <string name="OOHHH">✖</string>
+    <string name="NNOOO">↻</string>
+    <string name="PPHHH">MAP</string>
+    <string name="SSQQQ">MAP</string>
+
 
 
 </resources>
