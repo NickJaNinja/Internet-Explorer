@@ -134,7 +134,7 @@ public class Star implements Serializable {
         // is 5,778 K
         double solarTemp = temperature / 5778.0;
 
-        // by Stefan-Boltzman Law: L☉ = R☉^2 * T☉^4
+        // by Stefan-B o l t z m a n Law: L☉ = R☉^2 * T☉^4
         luminosity = ((radius * radius) * (solarTemp * solarTemp * solarTemp * solarTemp));
 
         // by Mass-Luminosity Relation: M☉ = L☉^(1/a)   where a = 3.5 for most main seq stars

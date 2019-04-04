@@ -54,7 +54,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * This is a holder for the widgets associated with a single entry in the list of planets
      */
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
-        private final TextView pname;
+        private final TextView planetName;
         private final TextView economy;
         private final TextView distance;
         private final TextView techLevel;
@@ -69,7 +69,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
          */
         PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
-            pname = itemView.findViewById(R.id.planet_name);
+            planetName = itemView.findViewById(R.id.planet_name);
             economy = itemView.findViewById(R.id.planet_economy);
             distance = itemView.findViewById(R.id.planet_distance_from_star);
             techLevel = itemView.findViewById(R.id.planet_tech_level);
@@ -109,7 +109,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         Planet planet = planetsList.get(position);
        // selectedPlanet = planet;
         //rSolarSystem system = model.getCurrentSystem();
-        planetViewHolder.pname.setText(planet.getName() + "");
+        planetViewHolder.planetName.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
         planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
                 * MULTIPLE) + " Lm");

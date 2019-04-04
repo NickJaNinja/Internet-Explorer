@@ -1,7 +1,7 @@
 package com.example.spacetraders;
 
 /**
- * sorry I don't know how to do junits lads.
+ * sorry I don't know how to do Junit lads.
  */
 class Test {
 
@@ -13,7 +13,7 @@ class Test {
     public static void main(String args[]) {
         int inhabitedPlanetsNum = 0;
         /*
-        SolarSystem testSystem = new SolarSystem("Alpha Centauri",new Coordinates(0, 0));
+        SolarSystem testSystem = new SolarSystem("Alpha  C e n t a u r i",new Coordinates(0, 0));
         System.out.println(testSystem.getName());
         System.out.println("\tSystem Overview");
         System.out.println("\t--------------------------------");
@@ -45,10 +45,10 @@ class Test {
             System.out.println("\t" + content_planet.getName());
             System.out.println("\t\tDistance from Star:\t" + df.format(content_planet.getDistanceFromParentStar()*8.3167) + " lm");
             if (content_planet.getInHabitableZone()) {
-                System.out.println("\t\tStatus:\t\t\t\t\t\tinhabited");
+                System.out.println("\t\tStatus:\t\t\t\t\t\t i n h a b i t e d");
             }
             else {
-                System.out.println("\t\tStatus:\t\t\t\t\t\tuninhabited");
+                System.out.println("\t\t Status:\t\t\t\t\t\t u n i n h a b i t e d");
             }
             System.out.println("\t\tPopulation:\t\t\t\t\t[NOT IMPLEMENTED]");
             System.out.println("\t\tPolitical System:\t\t\t[NOT IMPLEMENTED]");
@@ -90,14 +90,14 @@ class Test {
                 System.out.println("\t" + planet.getName());
                 System.out.println("\t\tDistance from Star:\t" + df.format(planet.getDistanceFromParentStar() * 8.3167) + " lm");
                 if (planet.getInHabitableZone()) {
-                    System.out.println("\t\tStatus:\t\t\t\t\t\tinhabited");
+                    System.out.println("\t\tStatus:\t\t\t\t\t\ t i n h a b i t e d");
                     System.out.println("\t\tPopulation:\t\t\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tPolitical System:\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tTech Level:\t\t\t\t\t[NOT IMPLEMENTED]");
                     System.out.println("\t\tResource Level:\t\t\t\t[NOT IMPLEMENTED]");
                     inhabitedPlanetsNum++;
                 } else {
-                    System.out.println("\t\tStatus:\t\t\t\t\t\tuninhabited");
+                    System.out.println("\t\tStatus:\t\t\t\t\t\ t u n i n h a b i t e d");
                 }
             }
         }
