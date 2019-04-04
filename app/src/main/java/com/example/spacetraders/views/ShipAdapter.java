@@ -3,8 +3,8 @@ package com.example.spacetraders.views;
 //import android.support.v7.widget.RecyclerView;
 //import android.widget.TextView;
 //
-//import com.example.spacetraders.entities.Planet;
-//import com.example.spacetraders.models.Model;
+//import com.example.space traders.entities.Planet;
+//import com.example.space traders.models.Model;
 //
 //import java.util.List;
 
