@@ -60,8 +60,14 @@
     <string name="PLANET">PLANET</string>
     <string name="OOHHH">✖</string>
     <string name="NNOOO">↻</string>
-    <string name="PPHHH">MAP</string>
-    <string name="SSQQQ">MAP</string>
+    <string name="PPHHH">> MARKET</string>
+    <string name="SSQQQ">> SHIPYARD</string>
+    <string name="MNMS">> UPGRADE</string>
+    <string name="PREZELS">> REFUEL</string>
+    <string name="CHEERIOS">> SAVE</string>
+    <string name="PANCAKE">> LOAD</string>
+    <string name="MAPLE_SYRUP">✖</string>
+    <string name="PEACHES">✖</string>
 
 
 
