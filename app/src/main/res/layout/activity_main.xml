@@ -28,7 +28,7 @@
             android:layout_marginTop="10dp"
             android:layout_weight="4"
             android:src="@drawable/robert_waters_jr_0"
-            android:contentDescription="image"/>
+            android:contentDescription="@string/get"/>
 
         <Button
             android:id="@+id/new_button"

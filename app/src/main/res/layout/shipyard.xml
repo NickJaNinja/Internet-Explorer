@@ -43,7 +43,7 @@
                 android:layout_gravity="start"
                 android:layout_weight=".45"
                 android:adjustViewBounds="false"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
         </LinearLayout>
 
