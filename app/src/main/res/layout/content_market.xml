@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_menu_info_details"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:text="MARKET"
                 android:textColor="@color/colorText"
                 android:textSize="30sp"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
             <View
                 android:layout_width="match_parent"

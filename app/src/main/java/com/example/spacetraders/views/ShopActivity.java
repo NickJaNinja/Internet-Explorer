@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,7 @@ import com.example.spacetraders.viewmodels.ShopViewModel;
 /**
  * Shop activity class
  */
-public class ShopActivity extends MenuBarActivity {
+public class ShopActivity extends AppCompatActivity {
     private TextView creditDisplay;
     private TextView cargoDisplay;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private ListView buyList;
