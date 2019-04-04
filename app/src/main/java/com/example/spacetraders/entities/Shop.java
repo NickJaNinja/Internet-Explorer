@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -10,10 +12,9 @@ import java.util.Random;
  * shop class
  */
 public class Shop implements Serializable {
-    private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
-    private TechLevel techLevel;
-    private ResourcesLevel resourcesLevel;
-    private PoliticalSystem politicalSystem;
+    private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
+    private final TechLevel techLevel;
+    private final ResourcesLevel resourcesLevel;
     private RadicalPriceEvent randomEvent;
     private final int NUM_RESOURCES = ShopGoods.values().length;
 
@@ -33,7 +34,7 @@ public class Shop implements Serializable {
     /**
      * Generates quantity and price for all goods in the shop
      */
-    public void restock() {
+    public final void restock() {
         Random rng = new Random();
         double eventChance = rng.nextDouble();
         int event = rng.nextInt(NUM_RESOURCES);  // 0 to (Number of resources)-1
@@ -47,9 +48,8 @@ public class Shop implements Serializable {
             final int BOUND = 5051;
             final int STOCK_DIVIDE = 125;
 
-
-            int itemPrice = (shopGood.getBasePrice() + shopGood.getIpl()
-                    * (techLevel.getLevel() - shopGood.getLevelofMtlp()));
+            int itemPrice = (shopGood.getBasePrice() + (shopGood.getIpl()
+                    * (techLevel.getLevel() - shopGood.getLevelofMtlp())));
             int var = (int)(rng.nextInt(shopGood.getVar() + 1) / DIVIDE);
             if (rng.nextInt(2) == 0) {
                 itemPrice += var;
@@ -62,9 +62,10 @@ public class Shop implements Serializable {
             } else if (shopGood.getEr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice / PRICE_CONSTANT);
             }
-            if (event == shopGood.ordinal() && eventChance < EVENT_CHANCE) {
+            if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
+                Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName());
             }
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
@@ -104,8 +105,7 @@ public class Shop implements Serializable {
         /*for (ShopEntry entry : shopGoodsStockMap.values()) {
             inv.add(entry);
         }*/
-        List<ShopEntry> inv = new ArrayList<>(shopGoodsStockMap.values());
-        return inv;
+        return new ArrayList<>(shopGoodsStockMap.values());
     }
 
     /**
@@ -117,19 +117,20 @@ public class Shop implements Serializable {
         List<ShopEntry> inv = new ArrayList<>();
         for (ShopEntry entry : shopGoodsStockMap.values()) {
             if (entry.getStock() >= 1) {
-                System.out.println("hi there");
                 inv.add(entry);
             }
         }
         return inv;
     }
 
-    /**
-     * get random event
-     *
-     * @return radical price event
-     */
-    public RadicalPriceEvent getRandomEvent() {
-        return randomEvent;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get random event
+//     *
+//     * @return radical price event
+//     */
+//    public RadicalPriceEvent getRandomEvent() {
+//        return randomEvent;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 }

@@ -141,7 +141,7 @@ public class SolarSystemActivity extends GUIActivity {
      * set planet selected
      * @param p the selected destination planet
      */
-    public void setSelectedPlanet(Planet p) {
+    private void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }
 

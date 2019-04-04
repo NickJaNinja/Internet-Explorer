@@ -32,8 +32,9 @@ public class Player implements Serializable {
      * @param reputation    initial reputation level
      * @param ship          initial ship
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill,
-                  int credits, int reputation, Ship ship) {
+    private Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
+                   int engineerSkill,
+                   int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
@@ -129,7 +130,7 @@ public class Player implements Serializable {
      * @return 1 if transaction occurred, 0 otherwise
      */
     public int makeTransaction(ShopGoods sg, int amount, int price) {
-        if (credits < amount * price) {
+        if (credits < (amount * price)) {
             return 0;
         }
         if (ship.addCargo(sg, amount, price) == 0) {
@@ -153,32 +154,37 @@ public class Player implements Serializable {
         return 1;*/
     }
 
-    /**
-     * getter for name
-     *
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for name
+//     *
+//     * @return name
+//     */
+//    public String getName() {
+//        return name;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
-    /**
-     * getter for pilotSkill
-     *
-     * @return pilotSkill
-     */
-    public int getPilotSkill() {
-        return pilotSkill;
-    }
+//    /**
+//     * getter for pilotSkill
+//
+//     *
+//     * @return pilotSkill
+//     */
+//    public int getPilotSkill() {
+//        return pilotSkill;
+//    }
 
-    /**
-     * getter for fighterSkill
-     *
-     * @return fighterSkill
-     */
-    public int getFighterSkill() {
-        return fighterSkill;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for fighterSkill
+//     *
+//     * @return fighterSkill
+//     */
+//    public int getFighterSkill() {
+//        return fighterSkill;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
 
     /**
      * getter for traderSkill
@@ -189,14 +195,17 @@ public class Player implements Serializable {
         return traderSkill;
     }
 
-    /**
-     * getter for engineerSkill
-     *
-     * @return engineerSkill
-     */
-    public int getEngineerSkill() {
-        return engineerSkill;
-    }
+// --Commented out by Inspection START (4/3/19, 8:05 AM):
+//    /**
+//     * getter for engineerSkill
+//     *
+//     * @return engineerSkill
+//     */
+//    public int getEngineerSkill() {
+//        return engineerSkill;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:05 AM)
+
 
     /**
      * getter for credits

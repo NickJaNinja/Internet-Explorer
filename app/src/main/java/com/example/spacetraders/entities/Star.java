@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import android.graphics.Color;
 
@@ -9,17 +11,23 @@ import android.graphics.Color;
  */
 public class Star implements Serializable {
 
-    private String name;
-    private char classification;
+    private final String name;
+    private final char classification;
     private int temperature; // in Kelvin (K)
     private double mass; // in solar masses (M☉)
     private double radius; // in solar radii (R☉)
     private double luminosity; // in solar luminosity (L☉)
     private double innerHZRadius; // in AUs
     private double outerHZRadius; // in AUs
+    private static final float O_STAR = 0.4f;
+    private static final float B_STAR = 2.7f;
+    private static final float A_STAR = 10f;
+    private static final float F_STAR = 24f;
+    private static final float G_STAR = 35f;
+    private static final float K_STAR = 60f;
+    private static final float M_STAR = 100f;
 
-
-    private Random r = new Random();
+    private final Random r = new Random();
 
     /**
      * Constructor for Star.
@@ -44,13 +52,14 @@ public class Star implements Serializable {
      */
     private char generateClassification() {
         float roll = r.nextFloat() * 100;
-        if (roll > 60) return 'M'; // 40% chance
-        else if (roll <= 60 && roll > 35) return 'K';// 25% chance
-        else if (roll <= 35 && roll > 24) return 'G';// 11% chance
-        else if (roll <= 24 && roll > 10) return 'F';// 14% chance
-        else if (roll <= 10 && roll > 2.7f) return 'A';// 7.3% chance
-        else if (roll <= 2.7f && roll > 0.4f) return 'B';// 2.3% chance
-        else return 'O';// 0.4% chance
+        float classes[] = {O_STAR, B_STAR, A_STAR, F_STAR, G_STAR, K_STAR, M_STAR};
+        char classNames[] = {'O', 'B', 'A', 'F', 'G', 'K', 'M'};
+        for (int i = 0; i < classes.length; i++) {
+            if (roll <= classes[i]) {
+                return classNames[i];
+            }
+        }
+        return '\0';
     }
 
     /**
@@ -87,30 +96,30 @@ public class Star implements Serializable {
     private void generateTemperatureAndRadius(char classification) {
         if (classification == 'M') {
             temperature = r.nextInt(3701) + 2400; // 2,400–3,700 K
-            radius = r.nextDouble() * (.71 - .12) + .12; // ≤ 0.7 R☉ (capped at 0.12 R☉)
+            radius = (r.nextDouble() * (.71 - .12)) + .12; // ≤ 0.7 R☉ (capped at 0.12 R☉)
         }
         if (classification == 'K') {
             temperature = r.nextInt(5201) + 3700; // 3,700–5,200 K
-            radius = r.nextDouble() * (.97 - .7) + .7; // 0.7–0.96 R☉
+            radius = (r.nextDouble() * (.97 - .7)) + .7; // 0.7–0.96 R☉
         }
         if (classification == 'G') {
             temperature = r.nextInt(6001) + 5200; // 5,200–6,000 K
-            radius = r.nextDouble() * (1.16 - .96) + .96; // 0.96–1.15 R☉
+            radius = (r.nextDouble() * (1.16 - .96)) + .96; // 0.96–1.15 R☉
         }
         if (classification == 'F') {
             temperature = r.nextInt(7501) + 6000;  // 6,000–7,500 K
-            radius = r.nextDouble() * (1.41 - 1.15) + 1.15; // 1.15–1.4 R☉
+            radius = (r.nextDouble() * (1.41 - 1.15)) + 1.15; // 1.15–1.4 R☉
         }
         if (classification == 'A') {
             temperature = r.nextInt(10001) + 7500; // 7,500–10,000 K
-            radius = r.nextDouble() * (1.81 - 1.4) + 1.4; // 1.4–1.8 R☉
+            radius = (r.nextDouble() * (1.81 - 1.4)) + 1.4; // 1.4–1.8 R☉
         }
         if (classification == 'B') {
             temperature = r.nextInt(30001) + 10000; // 10,000–30,000 K
-            radius = r.nextDouble() * (6.61 - 1.8) + 1.8; // 1.8–6.6 R☉
+            radius = (r.nextDouble() * (6.61 - 1.8)) + 1.8; // 1.8–6.6 R☉
         } else { // 'O'
             temperature = r.nextInt(100000) + 30000; // ≥ 30,000 K (capped at 99,999 K)
-            radius = r.nextDouble() * (100 - 6.6) + 6.6; // ≥ 6.6 R☉ (capped at 99.99 R☉)
+            radius = (r.nextDouble() * (100 - 6.6)) + 6.6; // ≥ 6.6 R☉ (capped at 99.99 R☉)
         }
     }
 
@@ -170,14 +179,16 @@ public class Star implements Serializable {
         return temperature;
     }
 
-    /**
-     * gets solar mass of star.
-     *
-     * @return double mass
-     */
-    public double getMass() {
-        return mass;
-    }
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//    /**
+//     * gets solar mass of star.
+//     *
+//     * @return double mass
+//     */
+//    public double getMass() {
+//        return mass;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
 
     /**
      * gets mass of star in kilograms.
@@ -206,14 +217,16 @@ public class Star implements Serializable {
         return radius * 695500;
     }
 
-    /**
-     * gets solar luminosity of star.
-     *
-     * @return double luminosity.
-     */
-    public double getLuminosity() {
-        return luminosity;
-    }
+// --Commented out by Inspection START (4/2/19, 11:04 PM):
+//    /**
+//     * gets solar luminosity of star.
+//     *
+//     * @return double luminosity.
+//     */
+//    public double getLuminosity() {
+//        return luminosity;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:04 PM)
 
     /**
      * gets luminosity of star in Watts.

@@ -7,18 +7,19 @@ import java.util.List;
  * This class represents the game
  */
 public class Game implements Serializable {
+
     /**
      * the game difficulty
      */
-    private GameDifficulty difficulty;
+    private final GameDifficulty difficulty;
     /**
      * the player
      */
-    private Player player;
+    private final Player player;
     /**
      * the universe
      */
-    private Universe universe;
+    private final Universe universe;
     /**
      * the solar system
      */
@@ -28,12 +29,14 @@ public class Game implements Serializable {
      */
     private Planet currPlanet;
 
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
     /**
      * Constructor for the game
      */
     public Game() {
         this(GameDifficulty.BEGINNER, null);
     }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * Constructor for the game
@@ -113,33 +116,41 @@ public class Game implements Serializable {
      * @return cargo space
      */
     public int getCargoSpace() { return player.getCargoSpace(); }
+////
+////    /**
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//////     * getter for game difficulty
+////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     *
+//     * @return difficulty
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     */
+//    public GameDifficulty getGameDifficulty() {
+//        return difficulty;
+//    }
 
-    /**
-     * getter for game difficulty
-     *
-     * @return difficulty
-     */
-    public GameDifficulty getGameDifficulty() {
-        return difficulty;
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * getter for player
+//     *
+//     * @return player
+//     */
+//    public Player getPlayer() {
+//        return player;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
-    /**
-     * getter for player
-     *
-     * @return player
-     */
-    public Player getPlayer() {
-        return player;
-    }
-
-    /**
-     * getter for universe
-     *
-     * @return universe
-     */
-    public Universe getUniverse() {
-        return universe;
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * getter for universe
+//     *
+//     * @return universe
+//     */
+//    public Universe getUniverse() {
+//        return universe;
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
     /**
      * getter for current content_planet
@@ -159,14 +170,16 @@ public class Game implements Serializable {
         return currSystem;
     }
 
-    /**
-     * Gets the current shop
-     *
-     * @return current shop
-     */
-    public Shop getCurrentShop() {
-        return currPlanet.getShop();
-    }
+// --Commented out by Inspection START (4/3/19, 8:04 AM):
+//    /**
+//     * Gets the current shop
+//     *
+//     * @return current shop
+//     */
+//    public Shop getCurrentShop() {
+//        return currPlanet.getShop();
+//    }
+// --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
     /**
      * Gets the shops entries (what is in stock)

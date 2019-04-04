@@ -26,7 +26,7 @@ import com.example.spacetraders.viewmodels.ShopViewModel;
 public class ShopActivity extends MenuBarActivity {
     private TextView creditDisplay;
     private TextView cargoDisplay;
-    private ListView buyList;
+    // --Commented out by Inspection (4/2/19, 11:03 PM):private ListView buyList;
     private ShopGoodsAdapter adapterForShop;
     private PlayerCargoAdapter adapterForPlayer;
     //private Shop shop;
@@ -144,12 +144,12 @@ public class ShopActivity extends MenuBarActivity {
                 return true;
             case R.id.inventory_button:
 
-                // TODO inventory
+                // TO-DO inventory
 
                 return true;
             case R.id.status_button:
 
-                // TODO status
+                // TO-DO status
 
                 return true;
             default:

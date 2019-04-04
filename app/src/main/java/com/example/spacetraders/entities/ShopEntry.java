@@ -8,7 +8,7 @@ import java.util.List;
  * shop entry class
  */
 public class ShopEntry implements Serializable {
-    private ShopGoods good;
+    private final ShopGoods good;
     private int stock;
     private int price;
 
@@ -34,14 +34,16 @@ public class ShopEntry implements Serializable {
         return good;
     }
 
-    /**
-     * setter for good
-     *
-     * @param good the new good
-     */
-    public void setGood(ShopGoods good) {
-        this.good = good;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * setter for good
+//     *
+//     * @param good the new good
+//     */
+//    public void setGood(ShopGoods good) {
+//        this.good = good;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for price

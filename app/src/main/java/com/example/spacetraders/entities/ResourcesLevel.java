@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * This enum represents the various resource levels
  */
-public enum ResourcesLevel implements Serializable {
+public enum ResourcesLevel {
     NO_SPECIAL_RESOURCES(0, "No Special Resources"),
     MINERAL_RICH(1, "Mineral Rich"),
     MINERAL_POOR(2, "Mineral Poor"),
@@ -34,14 +34,16 @@ public enum ResourcesLevel implements Serializable {
         this.name = name;
     }
 
-    /**
-     * getter for level
-     *
-     * @return level
-     */
-    public int getLevel() {
-        return level;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for level
+//     *
+//     * @return level
+//     */
+//    public int getLevel() {
+//        return level;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * getter for name

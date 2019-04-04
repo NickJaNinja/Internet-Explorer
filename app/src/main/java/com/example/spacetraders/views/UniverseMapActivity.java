@@ -26,7 +26,7 @@ public class UniverseMapActivity extends GUIActivity{
     private TextView coordinates;
     private Button engageWarpDrive;
     private UniverseViewModel universeViewModel;
-    private SolarSystem currentSolarSystem = null;
+    private SolarSystem currentSolarSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +49,10 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if (universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
-                    < Model.getInstance().getMaxRange()
+            if ((universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
+                    < Model.getInstance().getMaxRange())
                     && !universeViewModel.getSolarSystems()[i].equals(
-                            universeViewModel.getCurrentSystem())) {
+                    universeViewModel.getCurrentSystem())) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
@@ -106,7 +106,7 @@ public class UniverseMapActivity extends GUIActivity{
         engageWarpDrive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!Model.getInstance().isOnWarpGatePlanet()) {
+                if (Model.getInstance().isOnWarpGatePlanet()) {
                     CharSequence text = "Not on planet with Warp Gate";
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
                     toast.show();

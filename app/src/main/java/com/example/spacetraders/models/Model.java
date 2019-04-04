@@ -32,7 +32,7 @@ public class Model {
      * anywhere, which will allow our View models to access
      * the "back end"  more easily
      */
-    private static Model instance = new Model();
+    private static final Model instance = new Model();
 
     /**
      * getter for instance
@@ -66,7 +66,7 @@ public class Model {
      * @return game != null
      */
     public boolean loadGame(Context context) {
-        game = null;
+        game = new Game();
         try {
             File loadFile = new File(context.getFilesDir(), filename);
             FileInputStream fileIn =
@@ -213,14 +213,16 @@ public class Model {
         this.game.setCurrentPlanet(newCurr);
     }
 
-    /**
-     * getter for shop
-     *
-     * @return shop
-     */
-    public Shop getShop() {
-        return game.getCurrentShop();
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * getter for shop
+//     *
+//     * @return shop
+//     */
+//    public Shop getShop() {
+//        return game.getCurrentShop();
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * gets current fuel level
@@ -266,5 +268,5 @@ public class Model {
      *
      * @return if player is on warp gate planet
      */
-    public boolean isOnWarpGatePlanet() { return game.isOnWarpGatePlanet(); }
+    public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 }

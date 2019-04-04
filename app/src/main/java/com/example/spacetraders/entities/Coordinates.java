@@ -5,8 +5,8 @@ import java.io.Serializable;
  * This class represents the coordinates of a solar system
  */
 public class Coordinates implements Serializable {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     /**
      * Constructor coordinates
@@ -42,8 +42,8 @@ public class Coordinates implements Serializable {
      * @return the integer distance
      */
     public int dist(Coordinates c) {
-        return (int) Math.sqrt((this.x-c.getX())*(this.x-c.getX())+(this.y-c.getY())
-                *(this.y-c.getY()));
+        return (int) Math.sqrt(((this.x - c.getX()) * (this.x - c.getX())) + ((this.y - c.getY())
+                * (this.y - c.getY())));
     }
 
     /**
@@ -52,8 +52,8 @@ public class Coordinates implements Serializable {
      * @return the hashcode
      */
     public int hashCode() {
-        int tmp = y + (x + 1) / 2;
-        return x + tmp * tmp;
+        int tmp = y + ((x + 1) / 2);
+        return x + (tmp * tmp);
     }
 
     /**
@@ -63,8 +63,8 @@ public class Coordinates implements Serializable {
      * @return if they are the same coordinates
      */
     public boolean equals(Object obj) {
-        return obj instanceof Coordinates && ((Coordinates) obj).getX() == this.x
-                && ((Coordinates) obj).getY() == this.y;
+        return (obj instanceof Coordinates) && (((Coordinates) obj).getX() == this.x)
+                && (((Coordinates) obj).getY() == this.y);
     }
 
     /**

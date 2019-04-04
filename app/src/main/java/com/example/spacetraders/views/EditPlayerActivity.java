@@ -92,7 +92,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         (String) fighterText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         fightMinus.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +105,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         Integer.parseInt((String) fighterText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         tradePlus.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +118,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         Integer.parseInt((String) tradeText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         tradeMinus.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +131,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         Integer.parseInt((String) tradeText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         engineerPlus.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +144,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         Integer.parseInt((String) engineerText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         engineerMinus.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +157,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         (String) engineerText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         pilotPlus.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +170,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         pilotText.getText().toString()) + skillChange));
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
         pilotMinus.setOnClickListener(new View.OnClickListener() {
@@ -183,7 +183,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                         (String) pilotText.getText()) + skillChange));
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
 
@@ -198,7 +198,7 @@ public class EditPlayerActivity extends AppCompatActivity {
                 tradeText.setText(String.format("%d", 4));
                 engineerText.setText(String.format("%d", 4));
                 pointsRemaining.setText(String.format("%d", 0));
-                onAnyButtonPressed(v);
+                onAnyButtonPressed();
             }
         });
 
@@ -240,9 +240,8 @@ public class EditPlayerActivity extends AppCompatActivity {
      * whenever a plus or minus button is pressed, changes the currSkillRem Text View background
      * color to green if it is 0, otherwise keeps it orange
      *
-     * @param view the view
      */
-    public void onAnyButtonPressed(View view) {
+    private void onAnyButtonPressed() {
         int currSkillRem = Integer.valueOf(pointsRemaining.getText().toString());
         pointsRemaining.setBackgroundColor(editPlayerViewModel.onAnyButton(currSkillRem));
     }

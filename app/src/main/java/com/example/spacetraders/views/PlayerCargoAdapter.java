@@ -31,12 +31,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * a copy of the list of shop goods in the model
      */
 
-    private ShopActivity shopActivity;
+    private final ShopActivity shopActivity;
     private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
     private AlertDialog dialog;
-    private Model model;
+    private final Model model;
 
     /**
      * Constructor
@@ -60,16 +60,16 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     }
 
     public class PlayerCargoViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private TextView price;
-        private TextView stock;
+        private final TextView name;
+        private final TextView price;
+        private final TextView stock;
         private boolean dialogConfirmed;
 
         /**
          * ViewHolder Constructor
          * @param itemView view
          */
-        public PlayerCargoViewHolder(@NonNull View itemView) {
+        PlayerCargoViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.price_text);
@@ -156,9 +156,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
                                 @Override
-                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                public void onProgressChanged(SeekBar seekBar,
+                                                              int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO SELL: " + (progress + 1));
-                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice * (progress + 1)));
+                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice *
+                                            (progress + 1)));
                                 }
 
                                 @Override
@@ -168,10 +170,14 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             });
 
                             // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout
+                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             priceTextParams.bottomMargin = 5;
                             layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout
+                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
                             LinearLayout.LayoutParams seekParams =
@@ -182,10 +188,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             layout.addView(seek, seekParams);
 
                             // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                    R.style.AlertDialogTheme);
 
                             builder.setView(layout)
-                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("CONFIRM",
+                                            new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
@@ -206,9 +214,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed && model.makeTransaction(
+                                    if (dialogConfirmed && (model.makeTransaction(
                                             selectedGood, -seek.getProgress() - 1,
-                                            cost) == 1) {
+                                            cost) == 1)) {
                                         // updating inventories and display
                                         playerCargoList = model.getPlayerEntries();
                                         shopGoodsAdapter.setShopGoodsList(model.getShopEntries());
@@ -245,7 +253,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry.getGood()) +"(¥" +shopEntry.getPrice() +")");
+        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+                .getGood()) +"(¥" +shopEntry.getPrice() +")");
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
 
@@ -313,7 +322,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
             return master_layout;
         }
         */
-    public interface OnClickListener {
+    interface OnClickListener {
 
         /**
          * on clicked
@@ -322,24 +331,27 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
          */
         void onClicked(ShopEntry goods);
     }
+//
+//    /**
+//     * set on click listener
+//     *
+//     * @param listener on click listener
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     */
+//    public void setOnClickListener(OnClickListener listener) {
+//        this.listener = listener;
+//    }
 
-    /**
-     * set on click listener
-     *
-     * @param listener on click listener
-     */
-    public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
-    }
-
-    /**
-     * get shop goods adapter
-     *
-     * @return shop goods adapter
-     */
-    public ShopGoodsAdapter getShopGoodsAdapter() {
-        return shopGoodsAdapter;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     * get shop goods adapter
+//     *
+//     * @return shop goods adapter
+//     */
+//    public ShopGoodsAdapter getShopGoodsAdapter() {
+//        return shopGoodsAdapter;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * set shop goods adapter

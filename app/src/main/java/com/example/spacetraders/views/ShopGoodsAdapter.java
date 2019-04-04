@@ -29,11 +29,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * a copy of the list of shop goods in the model
      */
 
-    private ShopActivity shopActivity;
+    private final ShopActivity shopActivity;
     private PlayerCargoAdapter playerCargoAdapter;
     private List<ShopEntry> shopGoodsList;
     private OnClickListener listener;
-    private Model model;
+    private final Model model;
     private AlertDialog dialog;
     private boolean dialogConfirmed;
 
@@ -45,7 +45,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      */
     public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
         for (ShopEntry entry : shopGoodsList) {
-            if (entry.getStock() == 0) shopGoodsList.remove(entry);
+            if (entry.getStock() == 0) {
+                shopGoodsList.remove(entry);
+            }
         }
         this.shopGoodsList = shopGoodsList;
         this.model = Model.getInstance();
@@ -62,16 +64,16 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     }
 
     public class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private TextView price;
-        private TextView stock;
+        private final TextView name;
+        private final TextView price;
+        private final TextView stock;
 
         /**
          * shop goods view holder
          *
          * @param itemView view
          */
-        public ShopGoodsViewHolder(@NonNull View itemView) {
+        ShopGoodsViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_text);
             price = itemView.findViewById(R.id.price_text);
@@ -148,9 +150,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 public void onStartTrackingTouch(SeekBar seekBar) {}
 
                                 @Override
-                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                public void onProgressChanged(SeekBar seekBar,
+                                                              int progress, boolean fromUser) {
                                     seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
-                                    priceText.setText("TOTAL PRICE: ¥" +(itemPrice * (progress + 1)));
+                                    priceText.setText("TOTAL PRICE: ¥" +
+                                            (itemPrice * (progress + 1)));
                                 }
 
                                 @Override
@@ -160,10 +164,14 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             });
 
                             // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.
+                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             priceTextParams.bottomMargin = 5;
                             layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.
+                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
                             seekTextParams.bottomMargin = 5;
                             layout.addView(seekText, seekTextParams);
                             LinearLayout.LayoutParams seekParams =
@@ -174,10 +182,12 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             layout.addView(seek, seekParams);
 
                             // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogTheme);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                    R.style.AlertDialogTheme);
 
                             builder.setView(layout)
-                                    .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("CONFIRM",
+                                            new DialogInterface.OnClickListener() {
                                         // when positive button clicked dismiss dialog
                                         @Override
                                         public void onClick(DialogInterface d, int which) {
@@ -198,9 +208,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
-                                    if (dialogConfirmed && model.makeTransaction(
+                                    if (dialogConfirmed && (model.makeTransaction(
                                             shopGoodsList.get(position).getGood(),
-                                            seek.getProgress() + 1, cost) == 1) {
+                                            seek.getProgress() + 1, cost) == 1)) {
                                         // updating inventories and display
                                         shopGoodsList = model.getShopEntries();
                                         playerCargoAdapter.setPlayerCargoList(
@@ -254,7 +264,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
-    public interface OnClickListener {
+    interface OnClickListener {
 
         /**
          * on click
@@ -263,23 +273,26 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
          */
         void onClicked(ShopEntry goods);
     }
+//
+//    /**
+//     * set on click listener
+//     *
+//     * @param listener on lick listener
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+//     */
+//    public void setOnClickListener(OnClickListener listener) {
+//        this.listener = listener;
+//    }
 
-    /**
-     * set on click listener
-     *
-     * @param listener on lick listener
-     */
-    public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
-    }
-
-    /**
-     *
-     * @return a list of shop goods in players inventory
-     */
-    public PlayerCargoAdapter getPlayerCargoAdapter() {
-        return playerCargoAdapter;
-    }
+// --Commented out by Inspection START (4/2/19, 11:03 PM):
+//    /**
+//     *
+//     * @return a list of shop goods in players inventory
+//     */
+//    public PlayerCargoAdapter getPlayerCargoAdapter() {
+//        return playerCargoAdapter;
+//    }
+// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
      * set player cargo adapter
@@ -290,13 +303,13 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         playerCargoAdapter = pca;
     }
 
-    /**
-     *
-     * @return a list of shop goods in market
-     */
-    public List<ShopEntry> getShopGoodsList() {
-        return shopGoodsList;
-    }
+//    /**
+//     *
+//     * @return a list of shop goods in market
+//     */
+//    public List<ShopEntry> getShopGoodsList() {
+//        return shopGoodsList;
+//    }
 
     /**
      *

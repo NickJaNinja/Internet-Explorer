@@ -7,8 +7,6 @@ import com.example.spacetraders.R;
 /**
  * ship yard activity
  */
-
-
 public class ShipyardActivity extends GUIActivity {
 
     @Override
@@ -19,5 +17,4 @@ public class ShipyardActivity extends GUIActivity {
 
 
     }
-
 }
