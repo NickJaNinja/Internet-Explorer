@@ -22,7 +22,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
     }
 
     private String toastText;
-    private final int TOTAL_POINTS = 16;
+
 
     /**
      * Checks to see if player is configured correctly
@@ -42,6 +42,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
             toastText = "Please enter your pilot's name";
             return false;
         }
+        final int TOTAL_POINTS = 16;
         int sum = fight + trade + eng + pilot;
         if (sum != TOTAL_POINTS) {
             toastText = "Please use all of your skill points";
