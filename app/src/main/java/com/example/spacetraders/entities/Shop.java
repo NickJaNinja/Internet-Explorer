@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -63,6 +65,7 @@ public class Shop implements Serializable {
             if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
+                Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName());
             }
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
