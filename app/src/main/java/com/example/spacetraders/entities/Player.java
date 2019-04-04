@@ -21,6 +21,10 @@ public class Player implements Serializable {
     private Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
 
+    private static final double DIFF_MULTI = 0.9;
+
+
+
     /**
      * constructor with all parameters
      *

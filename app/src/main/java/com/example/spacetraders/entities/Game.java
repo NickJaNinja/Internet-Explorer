@@ -255,4 +255,10 @@ public class Game implements Serializable {
      * @return true if warp gate, false otherwise
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
+
+    @Override
+    //A make no sense toString to get rid of warning
+    public String toString() {
+        return difficulty.toString();
+    }
 }
