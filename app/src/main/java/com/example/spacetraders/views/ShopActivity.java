@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,7 +20,7 @@ import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 /**
- * Shope activity class
+ * Shop activity class
  */
 public class ShopActivity extends MenuBarActivity {
     private TextView creditDisplay;

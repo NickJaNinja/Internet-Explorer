@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
+import android.support.annotation.NonNull;
 
 /**
  * This class represents the game universe
@@ -82,8 +83,8 @@ public class Universe implements Serializable {
      * Constructor for Universe
      */
     public Universe() {
-        Set<Coordinates> cordSet = new HashSet<>();
-        Set<String> nameSet = new HashSet<>();
+        Set<Coordinates> cordSet_ = new HashSet<>();
+        Set<String> nameSet_ = new HashSet<>();
         final int MAX_SYSTEMS = 250;
         this.solarSystems = new SolarSystem[MAX_SYSTEMS];
 
@@ -93,7 +94,7 @@ public class Universe implements Serializable {
             int randX = r.nextInt(MAX_X);
             int randY = r.nextInt(MAX_Y);
             Coordinates randCords = new Coordinates(randX, randY);
-            while (cordSet.contains(randCords)) {
+            while (cordSet_.contains(randCords)) {
                 randX = r.nextInt(MAX_X);
                 randY = r.nextInt(MAX_Y);
                 randCords = new Coordinates(randX, randY);
@@ -104,14 +105,14 @@ public class Universe implements Serializable {
             int randNameNumber = 1 + r.nextInt(100);
             String name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + "-"
                     + randNameNumber;
-            while (nameSet.contains(name)) {
+            while (nameSet_.contains(name)) {
                 randPrefixIndex = r.nextInt(PREFIXES.length);
                 randSuffixIndex = r.nextInt(SUFFIXES.length);
                 randNameNumber = 1 + r.nextInt(100);
                 name = PREFIXES[randPrefixIndex] + SUFFIXES[randSuffixIndex] + randNameNumber;
             }
-            cordSet.add(randCords);
-            nameSet.add(name);
+            cordSet_.add(randCords);
+            nameSet_.add(name);
             this.solarSystems[i] = new SolarSystem(name, randCords);
         }
     }
@@ -149,7 +150,7 @@ public class Universe implements Serializable {
      * @return array of solar systems
      */
     public SolarSystem[] getSolarSystems() {
-        return solarSystems;
+        return solarSystems.clone();
     }
 
     /**
@@ -167,6 +168,7 @@ public class Universe implements Serializable {
      * @return string of universe info
      */
     @Override
+    @NonNull
     public String toString() {
         return "Universe: " + solarSystems.length + " solar systems\n ";
     }

@@ -1,7 +1,5 @@
 package com.example.spacetraders.entities;
 
-import java.io.Serializable;
-
 /**
  * This enum represents the political systems
  */

@@ -298,7 +298,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /**
      * set player cargo adapter
      *
-     * @param pca player cargo adpter
+     * @param pca player cargo adapter
      */
     public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
         playerCargoAdapter = pca;

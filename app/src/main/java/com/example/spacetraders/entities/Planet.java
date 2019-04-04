@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
@@ -146,7 +147,7 @@ public class Planet implements Serializable {
      *
      * @param sg shop goods
      * @param amount amount
-     * @return decrese stock
+     * @return decrease stock
      */
     public int makeTransaction(ShopGoods sg, int amount) {
         return shop.decreaseStock(sg, amount);
@@ -207,6 +208,7 @@ public class Planet implements Serializable {
      * @return string of content_planet info
      */
     @Override
+    @NonNull
     public String toString() {
         return name + " (" + techLevel + ", " + resourcesLevel + ")";
     }

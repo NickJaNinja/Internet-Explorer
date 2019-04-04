@@ -1,5 +1,6 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -36,7 +37,7 @@ public class SolarSystem implements Serializable {
     private int generateNumStars() {
         //int roll = r.nextInt(10) + 1;
         //if (roll < 5) return 2; // 4 in 10 chance for binary star system
-        //else if (roll > 8) return 3; // 2 in 10 chance for trinary star system
+        //else if (roll > 8) return 3; // 2 in 10 chance for t r i n a r y star system
         //else return 1; // 6 in 10 chance for unary star system
         return 1;
     }
@@ -127,7 +128,7 @@ public class SolarSystem implements Serializable {
                     DISTANCE_CONSTANT2 + stars[0].getRadius();
         } else {
             // planets' after first
-            // by Titius-Bode Law
+            // by T i t i u s-Bode Law
             return planets[planetNumber - 1].getDistanceFromParentStar() * DISTANCE_CONSTANT3;
         }
     }
@@ -166,7 +167,7 @@ public class SolarSystem implements Serializable {
      * @return array of stars
      */
     public Star[] getStars() {
-        return stars;
+        return stars.clone();
     }
 
     /**
@@ -175,7 +176,7 @@ public class SolarSystem implements Serializable {
      * @return array of planets
      */
     public Planet[] getPlanets() {
-        return planets;
+        return planets.clone();
     }
 
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
@@ -215,6 +216,7 @@ public class SolarSystem implements Serializable {
      * @return string of solar system info
      */
     @Override
+    @NonNull
     public String toString() {
         String str = "Solar System: " + name + " at " + coordinates + "\nSuns: ";
         /*for (Star s : stars) {
