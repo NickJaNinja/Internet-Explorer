@@ -101,8 +101,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                         if (shopGoodsList.get(position).getStock() > 0 ) {
 
                             Context context = itemView.getContext();
-                            int itemStock = shopGoodsList.get(position).getStock();
                             int itemPrice = shopGoodsList.get(position).getPrice();
+                            int itemStock = shopGoodsList.get(position).getStock();
 
                             dialogConfirmed = false;
 
@@ -125,7 +125,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // seek bar for alert dialog to select how much to buy
                             SeekBar seek = new SeekBar(context);
-                            seek.setMax((itemStock - 1));
+                            seek.setMax(Math.min(Math.min(shopGoodsList.get(position).getStock(),
+                                    model.getCargoSpace()), model.getCredits()/itemPrice) - 1);
                             seek.setKeyProgressIncrement(10);
 
                             // text view for seek bar
