@@ -19,7 +19,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Create A New Character"
+            android:text="@string/an"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#ffffff"
@@ -45,7 +45,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingStart="5dp"
-                android:text="Pilot Name"
+                android:text="@string/big"
                 android:textAllCaps="true"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#ffffff"
@@ -58,13 +58,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:hint="eg. Bob the Destroyer"
+                android:hint="@string/fat"
                 android:textColor="#ffffff"
                 app:backgroundTint="#ffffff"
                 android:maxLines="1"
                 android:lines="1"
                 android:maxLength="35"
-                android:text="temp text"></android.support.design.widget.TextInputEditText>
+                android:text="@string/A"></android.support.design.widget.TextInputEditText>
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="center_horizontal"
-            android:text="SKILLS"
+            android:text="@string/in"
             android:textColor="#ffffff"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/pilotSkillLayout"
@@ -106,7 +106,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="—"
+                        android:text="@string/CS"
                         android:textStyle="normal" />
 
                     <TextView
@@ -117,7 +117,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="4"
+                        android:text="@string/twothreefourzero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -131,7 +131,7 @@
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
                         android:onClick="onPlusPressed"
-                        android:text="+"
+                        android:text="@string/aawwww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -140,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="PILOT"
+                    android:text="@string/awww"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/pilotSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/pilotSkillLayout"
@@ -166,7 +166,7 @@
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
                         android:onClick="onPlusPressed"
-                        android:text="—"
+                        android:text="@string/CS"
                         android:textStyle="normal" />
 
                     <TextView
@@ -177,7 +177,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="4"
+                        android:text="@string/twothreefourzero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -191,7 +191,7 @@
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
                         android:onClick="onPlusPressed"
-                        android:text="+"
+                        android:text="@string/aawwww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -200,7 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="FIGHTER"
+                    android:text="@string/i"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/fighterSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/fighterSkillLayout"
@@ -225,7 +225,7 @@
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
                         android:onClick="onPlusPressed"
-                        android:text="—"
+                        android:text="@string/CS"
                         android:textStyle="normal" />
 
                     <TextView
@@ -236,7 +236,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="4"
+                        android:text="@string/twothreefourzero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -250,7 +250,7 @@
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
                         android:onClick="onPlusPressed"
-                        android:text="+"
+                        android:text="@string/aawwww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -259,7 +259,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="TRADER"
+                    android:text="@string/donot"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/traderSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/traderSkillLayout"
@@ -284,7 +284,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="—"
+                        android:text="@string/CS"
                         android:textStyle="normal" />
 
                     <TextView
@@ -295,7 +295,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="4"
+                        android:text="@string/twothreefourzero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -308,7 +308,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="+"
+                        android:text="@string/aawwww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -319,7 +319,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:gravity="center_horizontal"
-                    android:text="ENGINEER"
+                    android:text="@string/like"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/engineerSkillLayout"
                     app:layout_constraintHorizontal_bias="0.549"
@@ -338,7 +338,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
                     android:gravity="center_horizontal"
-                    android:text="SKILL POINTS"
+                    android:text="@string/these"
                     android:textColor="#ffffff"
                     android:textSize="20sp" />
 
@@ -346,7 +346,7 @@
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="REMAINING"
+                    android:text="@string/inspection"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -359,7 +359,7 @@
                     android:layout_marginTop="15dp"
                     android:background="#FF5FCA77"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="0"
+                    android:text="@string/results"
                     android:textSize="30sp" />
             </LinearLayout>
 
@@ -370,7 +370,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="DIFFICULTY"
+            android:text="@string/and"
             android:textColor="#ffffff"
             android:textSize="20sp"
             app:layout_constraintHorizontal_bias="0.483" />
@@ -434,7 +434,7 @@
                 android:layout_weight="1"
                 android:background="#676767"
                 android:onClick="onOkPressed"
-                android:text="CONTINUE"
+                android:text="@string/why"
                 style="?android:attr/buttonBarButtonStyle"
                 android:textColor="#ffffff" />
         </LinearLayout>

@@ -14,12 +14,12 @@
             android:layout_weight="2"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="SPACE TRADER"
+            android:text="@string/we"
             android:textColor="@color/colorText"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:hint="SPACE TRADER"
-            android:autofillHints="SPACE TRADER"/>
+            android:hint="@string/we"
+            android:autofillHints="@string/we"/>
 
 
         <ImageView
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="NEW GAME" />
+            android:text="@string/are" />
 
         <Button
             android:id="@+id/load_button"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="LOAD GAME" /><!--  android:background="@color/colorHint"-->
+            android:text="@string/gonna" /><!--  android:background="@color/colorHint"-->
 
 
     </LinearLayout>
