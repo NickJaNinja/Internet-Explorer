@@ -15,7 +15,7 @@ public class Shop implements Serializable {
     private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private final TechLevel techLevel;
     private final ResourcesLevel resourcesLevel;
-    private RadicalPriceEvent randomEvent;
+    //private RadicalPriceEvent randomEvent;
     private final int NUM_RESOURCES = ShopGoods.values().length;
 
     /**
@@ -65,7 +65,7 @@ public class Shop implements Serializable {
             if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {
                 int temp = itemPrice;
                 itemPrice *= 5;
-                randomEvent = shopGood.getIe();
+                //randomEvent = shopGood.getIe();
                 Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName()
                         + temp + "," + itemPrice);
             }

@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
+import java.io.ObjectOutput;
 
 /**
  * model class
@@ -90,13 +91,11 @@ public class Model {
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
-            if (saveFile.createNewFile()){
-                saveFile = saveFile;
-            }
+            saveFile.createNewFile();
             saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
-            ObjectOutputStream out_ = new ObjectOutputStream(fileOut);
+            ObjectOutput out_ = new ObjectOutputStream(fileOut);
             out_.writeObject(game);
             out_.close();
             fileOut.close();

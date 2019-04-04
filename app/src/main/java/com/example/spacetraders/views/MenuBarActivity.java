@@ -19,8 +19,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.spacetraders.R;
-import com.example.spacetraders.models.Model;*/
+//import com.example.space traders.R;
+//import com.example.space traders.models.Model;*/
 
 /**
  * why is this class all commented out
