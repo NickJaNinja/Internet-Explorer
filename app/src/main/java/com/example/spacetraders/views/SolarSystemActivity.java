@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -22,7 +23,7 @@ import java.text.DecimalFormat;
 /**
  * solar system activity
  */
-public class SolarSystemActivity extends GUIActivity {
+public class SolarSystemActivity extends AppCompatActivity {
     private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;

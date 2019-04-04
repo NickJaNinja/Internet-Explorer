@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 /**
  * This class represents the game universe
  */
-public class Universe implements Serializable {
+ class Universe implements Serializable {
 
     private static final String[] PREFIXES =
             {
