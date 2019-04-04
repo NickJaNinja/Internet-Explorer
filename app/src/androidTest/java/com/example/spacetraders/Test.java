@@ -1,4 +1,4 @@
-package com.example.spacetraders.entities;
+package com.example.spacetraders;
 
 /**
  * sorry I don't know how to do junits lads.
