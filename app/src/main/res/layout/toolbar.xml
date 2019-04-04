@@ -42,7 +42,6 @@
                             android:layout_weight=".8">
 
                                 <ProgressBar
-                                    android:id="@+id/health_bar"
                                     style="@style/CustomProgressBarHorizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
