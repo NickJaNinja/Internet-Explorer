@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="MARKET"
+                android:text="@string/did"
                 android:textColor="@color/colorText"
                 android:textSize="30sp"
                 android:contentDescription="@string/get"/>
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="BUY"
+                android:text="@string/daniel"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -64,7 +64,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
-                    android:text="ITEM"
+                    android:text="@string/have"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -72,7 +72,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="STOCK"
+                    android:text="@string/to"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -80,7 +80,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="PRICE"
+                    android:text="@string/hard"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="SELL"
+                android:text="@string/code"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
-                    android:text="ITEM"
+                    android:text="@string/have"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -136,7 +136,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="STOCK"
+                    android:text="@string/to"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="PRICE"
+                    android:text="@string/hard"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -185,7 +185,7 @@
                     android:layout_weight=".5"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="CREDIT: "
+                    android:text="@string/strings"
                     android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
@@ -219,7 +219,7 @@
                     android:layout_weight=".5"
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
-                    android:text="CARGO SPACE: "
+                    android:text="@string/SUGAR"
                     android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
@@ -256,7 +256,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
-                    android:text="CANCEL"
+                    android:text="@string/OREOS"
                     style="?android:attr/buttonBarButtonStyle"
                     android:textColor="@color/colorText"
                     android:background="@color/colorCancelButton"
@@ -277,7 +277,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
-                    android:text="CONFIRM"
+                    android:text="@string/REESE"
                     style="?android:attr/buttonBarButtonStyle"
 
                     android:textColor="@color/colorText"

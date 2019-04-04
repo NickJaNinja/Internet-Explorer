@@ -29,7 +29,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="PLANET"
+            android:text="@string/PLANET"
             android:textColor="@color/colorText"
             android:textSize="30sp" />
 

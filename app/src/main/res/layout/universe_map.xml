@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="LOCAL UNIVERSE MAP"
+            android:text="@string/KETCHUP"
             android:textColor="@color/colorText"
             android:textSize="30sp" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="NAME:"
+                android:text="@string/SUSHI"
                 android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
@@ -76,7 +76,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="DISTANCE:"
+                android:text="@string/SASHIMI"
                 android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
@@ -106,7 +106,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="COORDINATES: "
+                android:text="@string/NOODLES"
                 android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/colorPlusButton"
-            android:text="ENGAGE WARP DRIVE"
+            android:text="@string/PASTA"
             android:textColor="#ffffff" />
 
         <View
@@ -177,7 +177,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="CURRENT RANGE:"
+                android:text="@string/MARSHMALLOWS"
                 android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />

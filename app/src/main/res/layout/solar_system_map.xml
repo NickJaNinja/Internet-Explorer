@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="SYSTEM MAP"
+            android:text="@string/FROYO"
             android:textColor="@color/colorText"
             android:textSize="30sp" />
 
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/colorPlusButton"
-            android:text="ENGAGE THRUSTERS"
+            android:text="@string/SHIPS"
             android:textColor="#ffffff" />
 
     </LinearLayout>
