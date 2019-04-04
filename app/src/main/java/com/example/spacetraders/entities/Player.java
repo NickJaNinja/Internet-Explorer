@@ -3,6 +3,7 @@ package com.example.spacetraders.entities;
 import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.List;
+import java.lang.Math;
 
 /**
  * This class represents the player
@@ -20,6 +21,7 @@ public class Player implements Serializable {
     private int reputation;
     private Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
+    private static final double DIFF_MULT = 0.9;
 
     /**
      * constructor with all parameters
@@ -62,13 +64,13 @@ public class Player implements Serializable {
                 new Ship(ShipType.GNAT));
     }
 
-    /**
+    /*
      * Create a base player
      */
-    public Player() {
+    /*public Player() {
         this("", 0, 0, 0, 0,
-                1000, 0, new Ship(ShipType.GNAT));
-    }
+                DEFAULT_CREDIT, 0, new Ship(ShipType.GNAT));
+    }*/
 
     /**
      * Travel a given distance and remove fuel from ship
