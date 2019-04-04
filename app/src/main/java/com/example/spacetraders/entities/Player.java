@@ -12,12 +12,12 @@ import java.util.List;
  */
 public class Player implements Serializable {
     private String name;
-    private int pilotSkill;
-    private int fighterSkill;
-    private int traderSkill;
-    private int engineerSkill;
-    private int credits;
-    private int reputation;
+    private final int pilotSkill;
+    private final int fighterSkill;
+    private final int traderSkill;
+    private final int engineerSkill;
+    private  int credits;
+    private final int reputation;
     private Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
 
@@ -348,6 +348,7 @@ public class Player implements Serializable {
                 ", engineerSkill=" + engineerSkill +
                 ", credits=" + credits +
                 ", ship=" + ship +
+                ", reputation=" + reputation +
                 '}';
     }
 }

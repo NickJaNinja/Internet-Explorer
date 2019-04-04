@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -257,6 +259,7 @@ public class Game implements Serializable {
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 
     @Override
+    @NonNull
     //A make no sense toString to get rid of warning
     public String toString() {
         return difficulty.toString();

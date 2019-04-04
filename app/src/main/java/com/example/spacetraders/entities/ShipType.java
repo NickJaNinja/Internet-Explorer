@@ -110,6 +110,7 @@ public enum ShipType {
      */
     @Override
     @NonNull
+    //remove + numGadgets later
     public String toString() {
         return name + numGadgets;
     }
