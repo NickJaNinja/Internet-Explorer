@@ -40,8 +40,8 @@ public class SolarSystemActivity extends GUIActivity {
         TextView surfaceTemp;
         TextView luminosity;
         RecyclerView recyclerViewPlanet;
-        ImageView starView;
-        ImageView planetImage;
+       // ImageView starView;
+       // ImageView planetImage;
         SolarSystem solarSystem;
 
         setContentView(R.layout.solar_system_map);
@@ -60,7 +60,7 @@ public class SolarSystemActivity extends GUIActivity {
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
 
-        starView = findViewById(R.id.star_image);
+        //starView = findViewById(R.id.star_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
         radius = findViewById(R.id.star_radius);
@@ -68,7 +68,7 @@ public class SolarSystemActivity extends GUIActivity {
         surfaceTemp = findViewById(R.id.star_surface_temperature);
         luminosity = findViewById(R.id.star_luminosity);
         thrusterButton = findViewById(R.id.thrusters_button);
-        planetImage = findViewById(R.id.planet_image);
+       // planetImage = findViewById(R.id.planet_image);
 
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");

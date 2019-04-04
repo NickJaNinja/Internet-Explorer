@@ -18,7 +18,7 @@ public class Player implements Serializable {
     private int credits;
     private int reputation;
     private Ship ship;
-    private static final int defaultCredit = 10000;
+    private static final int DEFAULT_CREDIT = 10000;
 
     /**
      * constructor with all parameters
@@ -57,7 +57,7 @@ public class Player implements Serializable {
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
                   int engineerSkill) {
 
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, defaultCredit, 0,
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, DEFAULT_CREDIT, 0,
                 new Ship(ShipType.GNAT));
     }
 
@@ -251,7 +251,7 @@ public class Player implements Serializable {
     /**
      * get rage
      *
-     * @return ragne
+     * @return range
      */
     public int getRange() { return ship.getRange(); }
 

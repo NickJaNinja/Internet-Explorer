@@ -72,7 +72,7 @@ public class Coordinates implements Serializable {
      *
      * @return string of coordinates info
      */
-    //@Override
+    @Override
     public String toString() {
         return "(" + x + "," + y + ")";
     }
