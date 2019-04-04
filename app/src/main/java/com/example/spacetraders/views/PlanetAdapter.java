@@ -26,7 +26,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     private List<Planet> planetsList;
     private OnClickListener listener;
-    private final Model model;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
     /**
@@ -35,7 +34,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      */
     public PlanetAdapter(Planet[] planets) {
         this.planetsList = Arrays.asList(planets);
-        this.model = Model.getInstance();
     }
 
     @NonNull
