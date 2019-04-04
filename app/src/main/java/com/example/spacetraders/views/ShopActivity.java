@@ -20,7 +20,7 @@ import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
 /**
- * Shope activity class
+ * Shop activity class
  */
 public class ShopActivity extends MenuBarActivity {
     private TextView creditDisplay;

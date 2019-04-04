@@ -66,7 +66,8 @@ public class Shop implements Serializable {
                 int temp = itemPrice;
                 itemPrice *= 5;
                 randomEvent = shopGood.getIe();
-                Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName() + temp + "," + itemPrice);
+                Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName()
+                        + temp + "," + itemPrice);
             }
             // Stock items
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {

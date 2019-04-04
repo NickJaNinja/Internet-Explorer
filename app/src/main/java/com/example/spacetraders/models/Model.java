@@ -94,9 +94,9 @@ public class Model {
             saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(game);
-            out.close();
+            ObjectOutputStream out_ = new ObjectOutputStream(fileOut);
+            out_.writeObject(game);
+            out_.close();
             fileOut.close();
         } catch (IOException i) {
             i.printStackTrace();
