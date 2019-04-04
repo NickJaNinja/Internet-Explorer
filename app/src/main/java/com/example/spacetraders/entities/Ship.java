@@ -11,7 +11,7 @@ import android.support.annotation.NonNull;
  * This class represents the player's ship
  */
 
-public class Ship implements Serializable {
+class Ship implements Serializable {
     private final ShipType type;
     private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
@@ -116,15 +116,15 @@ public class Ship implements Serializable {
         }
     }
 
-    /**
-     * Calculate the amount you can refuel based on given credits
-     *
-     * @param credits Amount of money
-     * @return Amount of purchasable fuel
-     */
-    public int getPurchasableFuel(int credits) {
-        return credits / FUEL_TO_COST_MULTI;
-    }
+//    /**
+//     * Calculate the amount you can refuel based on given credits
+//     *
+//     * @param credits Amount of money
+//     * @return Amount of purchasable fuel
+//     */
+//    public int getPurchasableFuel(int credits) {
+//        return credits / FUEL_TO_COST_MULTI;
+//    }
 
     /**
      * Calculate cost to refuel the ship
