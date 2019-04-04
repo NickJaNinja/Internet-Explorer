@@ -108,7 +108,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         //bind the planet data for one planet
         Planet planet = planetsList.get(position);
        // selectedPlanet = planet;
-        //SolarSystem system = model.getCurrentSystem();
+        //rSolarSystem system = model.getCurrentSystem();
         planetViewHolder.pname.setText(planet.getName() + "");
         DecimalFormat df = new DecimalFormat("#.##");
         planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
