@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">SpaceTraders</string>
-    <string name="action_settings">Settings</string>
     <string name="this_is_a_string_name">LEAVE MARKET</string>
     <string name="we">SPACE TRADER</string>
     <string name="are">NEW GAME</string>
@@ -66,8 +65,8 @@
     <string name="PREZELS">> REFUEL</string>
     <string name="CHEERIOS">> SAVE</string>
     <string name="PANCAKE">> LOAD</string>
-    <string name="MAPLE_SYRUP">✖</string>
-    <string name="PEACHES">✖</string>
+    <string name="MAPLE_SYRUP">HEY</string>
+    <string name="PEACHES">YOU</string>
 
 
 

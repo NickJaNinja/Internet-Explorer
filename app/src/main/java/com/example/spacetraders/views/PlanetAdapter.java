@@ -26,8 +26,8 @@ import java.util.List;
  */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
-    private List<Planet> planetsList;
-    private OnClickListener listener;
+    List<Planet> planetsList;
+    OnClickListener listener;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
     /**
@@ -53,13 +53,13 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * This is a holder for the widgets associated with a single entry in the list of planets
      */
     public class PlanetViewHolder extends RecyclerView.ViewHolder {
-        private final TextView planetName;
-        private final TextView economy;
-        private final TextView distance;
-        private final TextView techLevel;
-        private final TextView politicalSystem;
+        final TextView planetName;
+        final TextView economy;
+        final TextView distance;
+        final TextView techLevel;
+        final TextView politicalSystem;
         //planet image on the left
-        private final ImageView planetView;
+        final ImageView planetView;
 
         /**
          * planet view holder

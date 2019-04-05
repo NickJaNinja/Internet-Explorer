@@ -20,15 +20,15 @@ import com.example.spacetraders.viewmodels.EditPlayerViewModel;
  * .
  */
 public class EditPlayerActivity extends AppCompatActivity {
-    private EditPlayerViewModel editPlayerViewModel;
+    EditPlayerViewModel editPlayerViewModel;
 
-    private EditText nameField;
-    private Spinner gameDifficultySpinner;
-    private TextView fighterText;
-    private TextView tradeText;
-    private TextView engineerText;
-    private TextView pilotText;
-    private TextView pointsRemaining;
+    EditText nameField;
+    Spinner gameDifficultySpinner;
+    TextView fighterText;
+    TextView tradeText;
+    TextView engineerText;
+    TextView pilotText;
+    TextView pointsRemaining;
 
     /**
      * .
@@ -241,7 +241,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      * color to green if it is 0, otherwise keeps it orange
      *
      */
-    private void onAnyButtonPressed() {
+    void onAnyButtonPressed() {
         int currSkillRem = Integer.valueOf(pointsRemaining.getText().toString());
         pointsRemaining.setBackgroundColor(editPlayerViewModel.onAnyButton(currSkillRem));
     }
