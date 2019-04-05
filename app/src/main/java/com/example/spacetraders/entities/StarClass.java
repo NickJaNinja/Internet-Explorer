@@ -47,7 +47,7 @@ public enum StarClass {
         return this.classification;
     }
 
-    public float getChance() {
+    private float getChance() {
         return this.chance;
     }
 
