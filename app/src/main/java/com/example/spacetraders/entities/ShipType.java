@@ -2,18 +2,21 @@ package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * This enum represents the various spaceship types
  */
 public enum ShipType {
-    FLEA("Flea", 0, 0, 0, 2, 20, 0),
-    GNAT("Gnat", 1, 0, 1, 15, 14, 0),
-    FIREFLY("Firefly", 1, 1, 1, 20, 17, 0),
-    MOSQUITO("Mosquito", 2, 1, 1, 14, 13, 0), //"strong hull"
-    HORNET("Hornet", 3, 2, 1, 20, 16, 2), //strong hull
-    GRASSHOPPER("Grasshopper", 2, 2, 3, 30, 15, 3),
-    TERMITE("Termite", 1, 3, 2, 60, 13, 3),//strong hull
-    WASP("Wasp", 3, 2, 2, 35, 14, 3);//strong hull
+    FLEA("Flea", 0, 0, 0, 2, 20, 0, 1000),
+    GNAT("Gnat", 1, 0, 1, 15, 14, 0, 5000),
+    FIREFLY("Firefly", 1, 1, 1, 20, 17, 0, 10000),
+    MOSQUITO("Mosquito", 2, 1, 1, 14, 13, 0, 15000), //"strong hull"
+    HORNET("Hornet", 3, 2, 1, 20, 16, 2, 20000), //strong hull
+    GRASSHOPPER("Grasshopper", 2, 2, 3, 30, 15, 3, 30000),
+    TERMITE("Termite", 1, 3, 2, 60, 13, 3, 50000),//strong hull
+    WASP("Wasp", 3, 2, 2, 35, 14, 3, 100000);//strong hull
 
     private final String name;
     private final int numWeapons;
@@ -22,6 +25,7 @@ public enum ShipType {
     private final int numCargoHolds;
     private final int fuel;
     private final int numCrew;
+    private final int cost;
 
     /**
      * Constructor for the enumeration
@@ -29,7 +33,7 @@ public enum ShipType {
      * @param name name of ship type
      */
     ShipType(String name, int numWeapons, int numShields, int numGadgets, int numCargoHolds,
-             int fuel, int numCrew) {
+             int fuel, int numCrew, int cost) {
         this.name = name;
         this.numWeapons = numWeapons;
         this.numShields = numShields;
@@ -37,6 +41,7 @@ public enum ShipType {
         this.numCargoHolds = numCargoHolds;
         this.fuel = fuel;
         this.numCrew = numCrew;
+        this.cost = cost;
     }
 
     /**
@@ -71,17 +76,17 @@ public enum ShipType {
      *
      * @return numGadgets
      */
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//    public int getNumGadgets() {
-//        return numGadgets;
-//    }
-//
-//    /**
-//     * getter for numCargoHolds
-//     *
-//     * @return numCargoHolds
-//     */
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
+
+    public int getNumGadgets() {
+        return numGadgets;
+    }
+
+    /**
+     * getter for numCargoHolds
+     *
+     * @return numCargoHolds
+     */
+
     public int getNumCargoHolds() {
         return numCargoHolds;
     }
@@ -102,6 +107,27 @@ public enum ShipType {
      */
     public int getNumCrew() {
         return numCrew;
+    }
+
+    /**
+     * getter for cost
+     *
+     * @return cost
+     */
+    public int getCost() {
+        return cost;
+    }
+
+    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+        List<ShipType> ships = new LinkedList();
+        ShipType[] shipTypes = ShipType.values();
+
+        int techLevelNum = techLevel.getLevel();
+        for (int i = techLevelNum; i != 0; i--) {
+            ships.add(shipTypes[techLevelNum - i]);
+        }
+
+        return ships;
     }
 
 

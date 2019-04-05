@@ -263,6 +263,10 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
+    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+        return ship.getShipsBasedOnTechLevel(techLevel);
+    }
+
     /**
      * setter for name
      *

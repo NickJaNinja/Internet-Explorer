@@ -255,4 +255,12 @@ public class Game implements Serializable {
      * @return true if warp gate, false otherwise
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
+
+    public List getShipsBasedOnTechLevel() {
+        return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
+    }
+
+    public void setShipType(ShipType shipType) {
+        player.getShip().setShipType(shipType);
+    }
 }
