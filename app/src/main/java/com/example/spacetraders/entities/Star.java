@@ -11,20 +11,13 @@ import android.graphics.Color;
 public class Star implements Serializable {
 
     private final String name;
-    private final char classification;
+    private StarClass starClass;
     private int temperature; // in Kelvin (K)
     private double mass; // in solar masses (M☉)
     private double radius; // in solar radii (R☉)
     private double luminosity; // in solar luminosity (L☉)
     private double innerHZRadius; // in AUs
     private double outerHZRadius; // in AUs
-    private static final float O_STAR = 0.4f;
-    private static final float B_STAR = 2.7f;
-    private static final float A_STAR = 10f;
-    private static final float F_STAR = 24f;
-    private static final float G_STAR = 35f;
-    private static final float K_STAR = 60f;
-    private static final float M_STAR = 100f;
 
     private final Random r = new Random();
 
@@ -35,8 +28,8 @@ public class Star implements Serializable {
      */
     public Star(String name) {
         this.name = name;
-        classification = generateClassification();
-        generateTemperatureAndRadius(classification);
+        generateClassification();
+        generateTemperatureAndRadius();
         calculateLuminosityAndMass(temperature, radius);
         calculateHabitableZone(luminosity);
     }
@@ -46,19 +39,18 @@ public class Star implements Serializable {
      * model
      * (https://en.wikipedia.org/wiki/Stellar_classification), but altered slightly to increase
      * coolness factor.
-     *
-     * @return char classification of star
      */
-    private char generateClassification() {
-        float roll = r.nextFloat() * 100;
-        float classes[] = {O_STAR, B_STAR, A_STAR, F_STAR, G_STAR, K_STAR, M_STAR};
-        char classNames[] = {'O', 'B', 'A', 'F', 'G', 'K', 'M'};
+    private void generateClassification() {
+        float roll = r.nextFloat();
+        StarClass[] values = StarClass.values();
+        float classes[] = starClass.getChancesAsArray();
         for (int i = 0; i < classes.length; i++) {
             if (roll <= classes[i]) {
-                return classNames[i];
+                this.starClass = values[i];
+                return;
             }
         }
-        return '\0';
+        this.starClass = values[values.length-1];
     }
 
     /**
@@ -67,59 +59,21 @@ public class Star implements Serializable {
      * @return color
      */
     public int getColor() {
-        switch (this.classification) {
-            case 'M':
-                return Color.parseColor("#FF0000");
-            case 'K':
-                return Color.parseColor("#FF9833");
-            case 'G':
-                return Color.parseColor("#FFFF00");
-            case 'F':
-                return Color.parseColor("#FFFFED");
-            case 'A':
-                return Color.parseColor("#FBF8FF");
-            case 'B':
-                return Color.parseColor("#BBCCFF");
-            default: // 'O'
-                return Color.parseColor("#9BB0FF");
-        }
+        return starClass.getColor();
     }
 
     /**
      * Sets temperature and radius for star based on classification at a random
      * value between the min and max as defined in Harvard's spectral classification model
      * (https://en.wikipedia.org/wiki/Stellar_classification).
-     *
-     * @param classification the classification of the star
      */
-    private void generateTemperatureAndRadius(char classification) {
-        if (classification == 'M') {
-            temperature = r.nextInt(3701) + 2400; // 2,400–3,700 K
-            radius = (r.nextDouble() * (.71 - .12)) + .12; // ≤ 0.7 R☉ (capped at 0.12 R☉)
-        }
-        if (classification == 'K') {
-            temperature = r.nextInt(5201) + 3700; // 3,700–5,200 K
-            radius = (r.nextDouble() * (.97 - .7)) + .7; // 0.7–0.96 R☉
-        }
-        if (classification == 'G') {
-            temperature = r.nextInt(6001) + 5200; // 5,200–6,000 K
-            radius = (r.nextDouble() * (1.16 - .96)) + .96; // 0.96–1.15 R☉
-        }
-        if (classification == 'F') {
-            temperature = r.nextInt(7501) + 6000;  // 6,000–7,500 K
-            radius = (r.nextDouble() * (1.41 - 1.15)) + 1.15; // 1.15–1.4 R☉
-        }
-        if (classification == 'A') {
-            temperature = r.nextInt(10001) + 7500; // 7,500–10,000 K
-            radius = (r.nextDouble() * (1.81 - 1.4)) + 1.4; // 1.4–1.8 R☉
-        }
-        if (classification == 'B') {
-            temperature = r.nextInt(30001) + 10000; // 10,000–30,000 K
-            radius = (r.nextDouble() * (6.61 - 1.8)) + 1.8; // 1.8–6.6 R☉
-        } else { // 'O'
-            temperature = r.nextInt(100000) + 30000; // ≥ 30,000 K (capped at 99,999 K)
-            radius = (r.nextDouble() * (100 - 6.6)) + 6.6; // ≥ 6.6 R☉ (capped at 99.99 R☉)
-        }
+    private void generateTemperatureAndRadius() {
+        int tempMin = starClass.getTempLower();
+        int tempMax = starClass.getTempUpper();
+        double radMin = starClass.getRadiusLower();
+        double radMax = starClass.getRadiusUpper();
+        this.temperature = r.nextInt(tempMax-tempMin) + tempMin;
+        this.radius = r.nextDouble()*(radMax - radMin) + radMin;
     }
 
     /**
@@ -131,13 +85,15 @@ public class Star implements Serializable {
     private void calculateLuminosityAndMass(int temperature, double radius) {
         // by definition of solar temperature: T☉ = T (in K) / T of Earth (in K)   where T of Earth
         // is 5,778 K
-        double solarTemp = temperature / 5778.0;
+        final double SOLAR_TEMP_CONVERSION = 5778;
+        final double MASS_POWER = 3.5;
+        double solarTemp = temperature / SOLAR_TEMP_CONVERSION;
 
         // by Stefan-B o l t z m a n Law: L☉ = R☉^2 * T☉^4
         luminosity = ((radius * radius) * (solarTemp * solarTemp * solarTemp * solarTemp));
 
         // by Mass-Luminosity Relation: M☉ = L☉^(1/a)   where a = 3.5 for most main seq stars
-        mass = Math.pow(solarTemp, 1.0 / 3.5);
+        mass = Math.pow(solarTemp, 1.0 / MASS_POWER);
     }
 
     /**
@@ -147,8 +103,11 @@ public class Star implements Serializable {
      */
     private void calculateHabitableZone(double luminosity) {
         // source: http://www.planetarybiology.com/calculating_habitable_zone.html
-        innerHZRadius = Math.pow(luminosity / 1.1, .5); // inner radius = (L☉/1.1)^(1/2)
-        outerHZRadius = Math.pow(luminosity / 0.53, .5); // outer radius = (L☉/0.53)^(1/2)
+        final double INNER_DENOMINATOR = 1.1;
+        final double HALF = 0.5;
+        final double OUTER_DENOMINATOR = 0.53;
+        innerHZRadius = Math.pow(luminosity / INNER_DENOMINATOR, HALF); // inner radius = (L☉/1.1)^(1/2)
+        outerHZRadius = Math.pow(luminosity / OUTER_DENOMINATOR, HALF); // outer radius = (L☉/0.53)^(1/2)
     }
 
     /**
@@ -161,21 +120,16 @@ public class Star implements Serializable {
     }
 
     /**
-     * gets classification of star.
-     *
-     * @return char classification
-     */
-    public char getClassification() {
-        return classification;
-    }
-
-    /**
      * gets temperature of star in Kelvin.
      *
      * @return int temperature
      */
     public int getTemperature() {
         return temperature;
+    }
+
+    public char getClassification() {
+        return starClass.getClassification();
     }
 
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
@@ -195,7 +149,8 @@ public class Star implements Serializable {
      * @return double mass
      */
     public double getMassInKg() {
-        return mass * 1.989e30;
+        final double MASS_CONVERSION = 1.989e30;
+        return mass * MASS_CONVERSION;
     }
 
     /**
@@ -213,7 +168,8 @@ public class Star implements Serializable {
      * @return double radius
      */
     public double getRadiusInKm() {
-        return radius * 695500;
+        final double RADIUS_CONVERSION = 695500;
+        return radius * RADIUS_CONVERSION;
     }
 
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
@@ -233,7 +189,8 @@ public class Star implements Serializable {
      * @return double luminosity.
      */
     public double getLuminosityInWatts() {
-        return luminosity * 3.828e26;
+        final double LUMINOSITY_CONVERSION = 3.828e26;
+        return luminosity * LUMINOSITY_CONVERSION;
     }
 
     /**
