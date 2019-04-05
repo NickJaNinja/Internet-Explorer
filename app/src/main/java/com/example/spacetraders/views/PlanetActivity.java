@@ -98,49 +98,31 @@ public class PlanetActivity extends AppCompatActivity {
         //});
 
         // pressing content_market button
-        market.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        market.setOnClickListener((View v)-> {
                 mediaPlayer.stop();
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
-            }
         });
 
-        shipyard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        shipyard.setOnClickListener((View v)-> {
                 Intent intent = new Intent(v.getContext(), ShipyardActivity.class);
                 startActivityForResult(intent, 0);
-            }
         });
 
-        upgrade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.stop();
-            }
-        });
+        upgrade.setOnClickListener((View v)->
+                mediaPlayer.stop()
+        );
 
-        refuel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        refuel.setOnClickListener((View v)-> {
                 model.refuelShipMax();
                 fuel.setProgress(model.getFuelPercentage());
                 Log.d("Debug", "Refuel button clicked");
-            }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                model.saveGame(v.getContext());
-            }
-        });
+        save.setOnClickListener((View v)->
+                model.saveGame(v.getContext()));
 
-        load.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        load.setOnClickListener((View v)-> {
                 if (model.loadGame(v.getContext())) {
                     Intent intent = new Intent(v.getContext(), PlanetActivity.class);
                     startActivity(intent);
@@ -149,7 +131,6 @@ public class PlanetActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                 }
-            }
         });
 
         // rotate content_planet animation

@@ -96,21 +96,15 @@ public class ShopActivity extends AppCompatActivity {
 
         //confirm transaction
 
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        confirm.setOnClickListener((View v)-> {
                 //implements later setMarketsEntriesToTemp();
                    //viewModel.setMarketsEntriesToTemp();
                 //viewModel.setUpMarket();
-            }
         });
 
         //cancel transaction
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cancel.setOnClickListener((View v)-> {
                 //viewModel.setUpMarket();
-            }
         });
 
         // music

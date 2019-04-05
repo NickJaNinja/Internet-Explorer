@@ -130,7 +130,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aww_aww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -139,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/aww"
+                    android:text="@string/aww_aww"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/pilotSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/pilotSkillLayout"
@@ -188,7 +188,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aww_aww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -245,7 +245,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aww_aww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -303,7 +303,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aww_aww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>

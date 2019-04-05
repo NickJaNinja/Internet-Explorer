@@ -94,9 +94,7 @@ public class SolarSystemActivity extends AppCompatActivity {
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
 
 
-        thrusterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        thrusterButton.setOnClickListener((View v)-> {
                 if(selectedPlanet == null) {
                     Toast toast = Toast.makeText(v.getContext(),"No Planet Selected" ,
                             Toast.LENGTH_SHORT);
@@ -112,7 +110,6 @@ public class SolarSystemActivity extends AppCompatActivity {
 
                     }
                 }
-            }
         });
 
     }
@@ -120,9 +117,7 @@ public class SolarSystemActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         adapterForPlanets.setPlanetsList(viewModel.getPlanetsInRange());
-        adapterForPlanets.setOnClickListener(new PlanetAdapter.OnClickListener() {
-            @Override
-            public void onClicked(Planet planet) {
+        adapterForPlanets.setOnClickListener((Planet planet) ->{
                 setSelectedPlanet(planet);
                 if (selectedPlanet == null) {
                     thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
@@ -137,7 +132,6 @@ public class SolarSystemActivity extends AppCompatActivity {
                     rotate.setInterpolator(new LinearInterpolator());
                     planetImage.startAnimation(rotate);*/
                 }
-            }
         });
 
 
