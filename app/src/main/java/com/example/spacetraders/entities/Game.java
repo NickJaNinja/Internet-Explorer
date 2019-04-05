@@ -268,8 +268,14 @@ public class Game implements Serializable {
      *
      * @return true if warp gate, false otherwise
      */
-    public boolean isOnWarpGatePlanet() {
-        return currPlanet.getIsWarpGate();
+    public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
+
+    public List getShipsBasedOnTechLevel() {
+        return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
+    }
+
+    public void setShipType(ShipType shipType) {
+        player.setShipType(shipType);
     }
 
     /**
@@ -286,5 +292,9 @@ public class Game implements Serializable {
     //A make no sense toString to get rid of warning
     public String toString() {
         return difficulty.toString();
+    }
+
+    public void setCredits(int credits) {
+        player.setCredits(credits);
     }
 }
