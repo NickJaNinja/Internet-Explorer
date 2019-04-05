@@ -25,9 +25,9 @@ import java.util.List;
  * Adapts the list of planets in the model to be a list of graphical elements in view
  */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
-
-    private List<Planet> planetsList;
-    private OnClickListener listener;
+    PlanetAdapter.NestedClass nested;
+  //  private List<Planet> planetsList;
+    // private OnClickListener listener;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
     /**
@@ -35,7 +35,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * @param planets list of planets
      */
     public PlanetAdapter(Planet[] planets) {
-        this.planetsList = Arrays.asList(planets);
+         nested = new NestedClass();
+        //this.planetsList = Arrays.asList(planets);
     }
 
     @NonNull
@@ -82,8 +83,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
-                        listener.onClicked(planetsList.get(position));
+                    if ((nested.listener != null) && (position != RecyclerView.NO_POSITION)) {
+                        nested.listener.onClicked(nested.planetsList.get(position));
                     }
 
 
@@ -104,7 +105,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     public void onBindViewHolder(@NonNull PlanetViewHolder planetViewHolder, int position) {
         final double MULTIPLE = 8.3167;
         //bind the planet data for one planet
-        Planet planet = planetsList.get(position);
+        Planet planet = nested.planetsList.get(position);
 
         //rSolarSystem system = model.getCurrentSystem();
         planetViewHolder.planetName.setText(planet.getName());
@@ -124,7 +125,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     @Override
     public int getItemCount() {
-        return planetsList.size();
+        return nested.planetsList.size();
     }
 
     /**
@@ -133,7 +134,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * @param p list of planet
      */
     public void setPlanetsList(Planet[] p) {
-        planetsList = Arrays.asList(p);
+        nested.planetsList = Arrays.asList(p);
         notifyDataSetChanged();
     }
 
@@ -155,8 +156,12 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * @param listener listener
      */
     public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
+        nested.listener = listener;
     }
 
 
+    private  final class NestedClass {
+        private List<Planet> planetsList;
+        private OnClickListener listener;
+    }
 }
