@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShipType;
-import com.example.spacetraders.models.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +28,6 @@ import java.util.List;
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
     private final List<ShipType> ships;
-    //private ShipAdapter.OnClickListener listener;
-    private Model model;
     private ShipType selected;
     private final EventHandler handler;
     private final ArrayList<View> viewHolderList;
@@ -100,7 +97,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
                     // give "selected" background
                     view.setBackgroundColor(Color.parseColor("#664B4B4C"));
 
-                    handler.handle(getAdapterPosition()); // make purchase button green
+                    handler.handle(); // make purchase button green
                 }
             });
         }
@@ -136,6 +133,6 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
     }
 
     public interface EventHandler {
-        void handle(int position); // if u need know position. If no, just create method without params
+        void handle(); // if u need know position. If no, just create method without params
     }
 }

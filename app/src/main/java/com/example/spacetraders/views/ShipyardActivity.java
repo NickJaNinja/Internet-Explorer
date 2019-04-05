@@ -114,7 +114,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
     }
 
     @Override
-    public void handle (int position) {
+    public void handle() {
         purchaseButton.setBackgroundColor(Color.parseColor("#5FCA77")); // green
     }
 }
