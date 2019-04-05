@@ -20,7 +20,7 @@ import com.example.spacetraders.viewmodels.EditPlayerViewModel;
  * .
  */
 public class EditPlayerActivity extends AppCompatActivity {
-    private EditPlayerViewModel editPlayerViewModel;
+    EditPlayerViewModel editPlayerViewModel;
 
     private EditText nameField;
     private Spinner gameDifficultySpinner;

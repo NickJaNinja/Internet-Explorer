@@ -31,12 +31,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * a copy of the list of shop goods in the model
      */
 
-    private final ShopActivity shopActivity;
-    private ShopGoodsAdapter shopGoodsAdapter;
-    private List<ShopEntry> playerCargoList;
-    private OnClickListener listener;
-    private AlertDialog dialog;
-    private final Model model;
+    final ShopActivity shopActivity;
+    ShopGoodsAdapter shopGoodsAdapter;
+    List<ShopEntry> playerCargoList;
+    OnClickListener listener;
+    AlertDialog dialog;
+    final Model model;
 
     /**
      * Constructor
@@ -60,10 +60,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     }
 
     public class PlayerCargoViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView price;
-        private final TextView stock;
-        private boolean dialogConfirmed;
+        final TextView name;
+        final TextView price;
+        final TextView stock;
+        boolean dialogConfirmed;
 
         /**
          * ViewHolder Constructor
