@@ -71,7 +71,7 @@ public class PlanetActivity extends AppCompatActivity {
 
         // globally
 
-        name.setText(planet.getName());
+        name.setText(model.getNameOfCurrentPlanet());
 
         // music
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);

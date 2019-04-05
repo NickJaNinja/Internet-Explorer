@@ -32,6 +32,7 @@ public class Game implements Serializable {
     private Planet currPlanet;
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
+
     /**
      * Constructor for the game
      */
@@ -117,7 +118,9 @@ public class Game implements Serializable {
      *
      * @return cargo space
      */
-    public int getCargoSpace() { return player.getCargoSpace(); }
+    public int getCargoSpace() {
+        return player.getCargoSpace();
+    }
 ////
 ////    /**
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
@@ -233,7 +236,9 @@ public class Game implements Serializable {
      *
      * @return fuel percentage
      */
-    public int getFuelPercentage() { return player.getFuelPercentage(); }
+    public int getFuelPercentage() {
+        return player.getFuelPercentage();
+    }
 
     /**
      * Gets the range in light-years that the player can fly
@@ -241,7 +246,9 @@ public class Game implements Serializable {
      *
      * @return the range
      */
-    public int getRange() { return player.getRange(); }
+    public int getRange() {
+        return player.getRange();
+    }
 
     /**
      * Gets the range in light-years that the player can fly
@@ -249,14 +256,27 @@ public class Game implements Serializable {
      *
      * @return the range
      */
-    public double getMaxRange() { return player.getMaxRange();}
+    public double getMaxRange() {
+        return player.getMaxRange();
+    }
 
     /**
      * Finds out whether the current planet is a warp gate or not
      *
      * @return true if warp gate, false otherwise
      */
-    public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
+    public boolean isOnWarpGatePlanet() {
+        return currPlanet.getIsWarpGate();
+    }
+
+    /**
+     * gets name of current planet
+     *
+     * @return the name
+     */
+    public String getNameOfCurrentPlanet() {
+        return this.currPlanet.getName();
+    }
 
     @Override
     @NonNull

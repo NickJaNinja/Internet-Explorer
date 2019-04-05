@@ -152,7 +152,8 @@ public enum ShopGoods {
      * name = the name
      * M T L P = Minimum Tech Level to Produce this resource (You can't buy on planets below this
      * level)
-     * M T L U = Minimum Tech Level to Use this resource (You can't sell on planets below this level)
+     * M T L U =
+     * Minimum Tech Level to Use this resource (You can't sell on planets below this level)
      * TTP = Tech Level which produces the most of this item
      * IPL = Price increase per tech level
      * Var = variance is the maximum percentage that the price can vary above or below the base
