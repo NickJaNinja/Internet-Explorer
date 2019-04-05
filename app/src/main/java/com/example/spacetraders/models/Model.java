@@ -10,16 +10,15 @@ import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
-import com.example.spacetraders.entities.TechLevel;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.List;
-import java.io.ObjectOutput;
 
 /**
  * model class

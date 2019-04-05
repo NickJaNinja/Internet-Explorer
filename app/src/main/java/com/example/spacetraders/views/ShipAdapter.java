@@ -9,7 +9,6 @@ package com.example.spacetraders.views;
 //import java.util.List;
 
 import android.support.annotation.NonNull;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +16,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.models.Model;
 
-import org.w3c.dom.Text;
-
-import java.util.Arrays;
 import java.util.List;
 
 /**
