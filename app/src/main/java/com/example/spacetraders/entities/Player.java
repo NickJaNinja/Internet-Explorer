@@ -18,7 +18,7 @@ public class Player implements Serializable {
     private final int engineerSkill;
     private int credits;
     private final int reputation;
-    private Ship ship;
+    private final Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
 
    // private static final double DIFF_MULTI = 0.9;
