@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
-    private List<ShipType> ships;
+    private final List<ShipType> ships;
     //private ShipAdapter.OnClickListener listener;
     private Model model;
     private ShipType selected;
