@@ -11,17 +11,17 @@ import java.util.List;
  * @version 1.0
  */
 public class Player implements Serializable {
-    private String name;
+    private final String name;
     private final int pilotSkill;
     private final int fighterSkill;
     private final int traderSkill;
     private final int engineerSkill;
-    private  int credits;
+    private int credits;
     private final int reputation;
     private Ship ship;
     private static final int DEFAULT_CREDIT = 10000;
 
-    private static final double DIFF_MULTI = 0.9;
+   // private static final double DIFF_MULTI = 0.9;
 
 
 

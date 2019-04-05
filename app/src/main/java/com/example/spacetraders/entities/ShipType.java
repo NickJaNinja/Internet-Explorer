@@ -110,8 +110,8 @@ public enum ShipType {
      */
     @Override
     @NonNull
-    //remove + numGadgets later
+    //remove + numGadgets + numCrew + numShields + numWeapons later
     public String toString() {
-        return name + numGadgets;
+        return name + numGadgets + numCrew + numShields + numWeapons;
     }
 }

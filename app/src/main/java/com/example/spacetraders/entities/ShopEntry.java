@@ -1,8 +1,8 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 /**
  * shop entry class

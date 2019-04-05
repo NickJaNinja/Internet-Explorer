@@ -353,6 +353,6 @@ public enum ShopGoods {
     @Override
     // A make no sense toString to get rid of warning
     public String toString() {
-        return "" + mtl + mth;
+        return "" + mtl + mth + mtlu + ttp + ie + cr + isIllegal;
     }
 }
