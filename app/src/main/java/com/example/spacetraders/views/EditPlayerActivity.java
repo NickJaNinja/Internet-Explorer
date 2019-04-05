@@ -21,6 +21,7 @@ import com.example.spacetraders.viewmodels.EditPlayerViewModel;
  * .
  */
 public class EditPlayerActivity extends AppCompatActivity {
+/*
     private EditPlayerViewModel editPlayerViewModel;
 
     private EditText nameField;
@@ -30,7 +31,8 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView engineerText;
     private TextView pilotText;
     private TextView pointsRemaining;
-
+*/
+    final NestedClass nested = new NestedClass();
     /**
      * .
      * @param savedInstanceState .
@@ -49,7 +51,8 @@ public class EditPlayerActivity extends AppCompatActivity {
         Button reset;
         Button exit;
         setContentView(R.layout.config);
-        editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
+       // editPlayerViewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
+        nested.setEditPlayerViewModel(ViewModelProviders.of(this).get(EditPlayerViewModel.class));
 
 
         if (getSupportActionBar() != null) {
@@ -58,7 +61,8 @@ public class EditPlayerActivity extends AppCompatActivity {
         }
 
         // Connecting button instance variables with xml buttons
-        nameField = findViewById(R.id.playerNameInput);
+       // nameField = findViewById(R.id.playerNameInput);
+        nested.setNameField(findViewById(R.id.playerNameInput));
         fightPlus = findViewById(R.id.fighterSkillAdd);
         fightMinus = findViewById(R.id.fighterSkillSubtract);
         tradePlus = findViewById(R.id.traderSkillAdd);
@@ -67,12 +71,22 @@ public class EditPlayerActivity extends AppCompatActivity {
         engineerMinus = findViewById(R.id.engineerSkillSubtract);
         pilotPlus = findViewById(R.id.pilotSkillAdd);
         pilotMinus = findViewById(R.id.pilotSkillSubtract);
+        /*
         gameDifficultySpinner = findViewById(R.id.difficulty_spinner);
         fighterText = findViewById(R.id.fighterSkill);
         tradeText = findViewById(R.id.traderSkill);
         engineerText = findViewById(R.id.engineerSkill);
         pilotText = findViewById(R.id.pilotSkill);
         pointsRemaining = findViewById(R.id.skill_points_value);
+        */
+        nested.setGameDifficultySpinner( findViewById(R.id.difficulty_spinner));
+        nested.setFighterText(findViewById(R.id.fighterSkill));
+        nested.setTradeText(findViewById(R.id.traderSkill));
+        nested.setEngineerText( findViewById(R.id.engineerSkill));
+        nested.setPilotText(findViewById(R.id.pilotSkill));
+        nested.setPointsRemaining(findViewById(R.id.skill_points_value));
+
+
         reset = findViewById(R.id.reset_button);
         exit = findViewById(R.id.cancel_button);
 
@@ -80,10 +94,12 @@ public class EditPlayerActivity extends AppCompatActivity {
         ArrayAdapter<GameDifficulty> difficultyAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, GameDifficulty.values());
         difficultyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        gameDifficultySpinner.setAdapter(difficultyAdapter);
+       // gameDifficultySpinner.setAdapter(difficultyAdapter);
+        nested.getGameDifficultySpinner().setAdapter(difficultyAdapter);
 
         // Skill point buttons
         fightPlus.setOnClickListener((View v)-> {
+             /*
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         fighterText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -92,8 +108,20 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+
+            int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
+                    nested.getFighterText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
+            nested.getFighterText().setText(String.format("%d", Integer.parseInt(
+                    (String) nested.getFighterText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+                    nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
+
         });
         fightMinus.setOnClickListener((View v)-> {
+          /*
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(fighterText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -102,8 +130,18 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+            int skillChange = nested.getEditPlayerViewModel().onSkill(
+                    Integer.parseInt(nested.getFighterText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
+            nested.getFighterText().setText(String.format("%d",
+                    Integer.parseInt((String) nested.getFighterText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d",
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
         });
         tradePlus.setOnClickListener((View v)-> {
+              /*
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -112,8 +150,18 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+            int skillChange = nested.getEditPlayerViewModel().onSkill(
+                    Integer.parseInt(nested.getTradeText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
+            nested.getTradeText().setText(String.format("%d",
+                    Integer.parseInt((String) nested.getTradeText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d",
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
         });
         tradeMinus.setOnClickListener((View v)-> {
+              /*
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -122,8 +170,20 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+
+            int skillChange = nested.getEditPlayerViewModel().onSkill(
+                    Integer.parseInt(nested.getTradeText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
+            nested.getTradeText().setText(String.format("%d",
+                    Integer.parseInt((String) nested.getTradeText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d",
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
+
         });
         engineerPlus.setOnClickListener((View v)-> {
+               /*
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -132,8 +192,19 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+            int skillChange = nested.getEditPlayerViewModel().onSkill(
+                    Integer.parseInt(nested.getEngineerText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
+            nested.getEngineerText().setText(String.format("%d",
+                    Integer.parseInt((String) nested.getEngineerText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d",
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
+
         });
         engineerMinus.setOnClickListener((View v)-> {
+               /*
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -142,8 +213,19 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+            int skillChange = nested.getEditPlayerViewModel().onSkill(
+                    Integer.parseInt(nested.getEngineerText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
+            nested.getEngineerText().setText(String.format("%d", Integer.parseInt(
+                    (String) nested.getEngineerText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+                    nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
+
         });
         pilotPlus.setOnClickListener((View v)-> {
+              /*
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -152,8 +234,19 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+                */
+            int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
+                    nested.getPilotText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
+            nested.getPilotText().setText(String.format("%d", Integer.parseInt(
+                    nested.getPilotText().getText().toString()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+                    nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
+
         });
         pilotMinus.setOnClickListener((View v)-> {
+              /*
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -162,10 +255,20 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
+*/
+            int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
+                    nested.getPilotText().getText().toString()),
+                    Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
+            nested.getPilotText().setText(String.format("%d", Integer.parseInt(
+                    (String) nested.getPilotText().getText()) + skillChange));
+            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+                    nested.getPointsRemaining().getText().toString()) - skillChange));
+            onAnyButtonPressed();
         });
 
         // Resets player configuration screen
         reset.setOnClickListener((View v)-> {
+              /*
                 nameField.setText(null);
                 gameDifficultySpinner.setSelection(0);
                 pilotText.setText(String.format("%d", 4));
@@ -174,6 +277,17 @@ public class EditPlayerActivity extends AppCompatActivity {
                 engineerText.setText(String.format("%d", 4));
                 pointsRemaining.setText(String.format("%d", 0));
                 onAnyButtonPressed();
+                */
+            nested.getNameField().setText(null);
+            nested.getGameDifficultySpinner().setSelection(0);
+            nested.getPilotText().setText(String.format("%d", 4));
+            nested.getFighterText().setText(String.format("%d", 4));
+          nested.getTradeText().setText(String.format("%d", 4));
+            nested.getEngineerText().setText(String.format("%d", 4));
+            nested.getPointsRemaining().setText(String.format("%d", 0));
+            onAnyButtonPressed();
+
+
         });
 
         // Exits the app
@@ -189,6 +303,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      * @param view the view
      */
     public void onOkPressed(@Nullable View view) {
+      /*
         String name = nameField.getText().toString();
         name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());
@@ -205,6 +320,25 @@ public class EditPlayerActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
             toast.show();
         }
+        */
+
+
+        String name = nested.getNameField().getText().toString();
+        name = name.replace("\n", " ");
+        int engineer = Integer.parseInt(nested.getEngineerText().getText().toString());
+        int fighter = Integer.parseInt(nested.getFighterText().getText().toString());
+        int trader = Integer.parseInt(nested.getTradeText().getText().toString());
+        int pilot = Integer.parseInt(nested.getPilotText().getText().toString());
+        GameDifficulty diff = (GameDifficulty) nested.getGameDifficultySpinner().getSelectedItem();
+        if (nested.getEditPlayerViewModel().onOk(name, fighter, trader, engineer, pilot, diff)) {
+            Intent intent = new Intent(EditPlayerActivity.this, PlanetActivity.class);
+            startActivity(intent);
+        } else {
+            CharSequence text = nested.getEditPlayerViewModel().getToastText();
+
+            Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     /**
@@ -213,8 +347,90 @@ public class EditPlayerActivity extends AppCompatActivity {
      *
      */
     private void onAnyButtonPressed() {
+      /*
         int currSkillRem = Integer.valueOf(pointsRemaining.getText().toString());
         pointsRemaining.setBackgroundColor(editPlayerViewModel.onAnyButton(currSkillRem));
+    */
+        int currSkillRem = Integer.valueOf(nested.getPointsRemaining().getText().toString());
+        nested.getPointsRemaining().setBackgroundColor(nested.getEditPlayerViewModel().onAnyButton(currSkillRem));
+
+    }
+
+
+
+    final class NestedClass {
+        private EditPlayerViewModel editPlayerViewModel;
+        private EditText nameField;
+        private Spinner gameDifficultySpinner;
+        private TextView fighterText;
+        private TextView tradeText;
+        private TextView engineerText;
+        private TextView pilotText;
+        private TextView pointsRemaining;
+
+        EditPlayerViewModel getEditPlayerViewModel() {
+            return editPlayerViewModel;
+        }
+
+         EditText getNameField() {
+            return nameField;
+        }
+
+         Spinner getGameDifficultySpinner() {
+            return gameDifficultySpinner;
+        }
+
+         TextView getEngineerText() {
+            return engineerText;
+        }
+
+         TextView getFighterText() {
+            return fighterText;
+        }
+
+        TextView getPilotText() {
+            return pilotText;
+        }
+
+         TextView getPointsRemaining() {
+            return pointsRemaining;
+        }
+
+         TextView getTradeText() {
+            return tradeText;
+        }
+
+         void setEditPlayerViewModel(EditPlayerViewModel editPlayerViewModel) {
+            this.editPlayerViewModel = editPlayerViewModel;
+        }
+
+        void setEngineerText(TextView engineerText) {
+            this.engineerText = engineerText;
+        }
+
+         void setFighterText(TextView fighterText) {
+            this.fighterText = fighterText;
+        }
+
+         void setGameDifficultySpinner(Spinner gameDifficultySpinner) {
+            this.gameDifficultySpinner = gameDifficultySpinner;
+        }
+
+         void setNameField(EditText nameField) {
+            this.nameField = nameField;
+        }
+
+        void setPilotText(TextView pilotText) {
+            this.pilotText = pilotText;
+        }
+
+        void setPointsRemaining(TextView pointsRemaining) {
+            this.pointsRemaining = pointsRemaining;
+        }
+
+         void setTradeText(TextView tradeText) {
+            this.tradeText = tradeText;
+        }
     }
 
     // CAN USE THIS INSTEAD OF 8 LISTENERS IN onCreate()
