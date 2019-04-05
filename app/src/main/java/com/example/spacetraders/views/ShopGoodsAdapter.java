@@ -330,7 +330,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      */
     public int getCostOfGood(@Nullable ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {
-            if (entry.getGood().equals(good)) {
+            if (entry.getGood() != null && entry.getGood().equals(good)) {
                 return entry.getPrice();
             }
         }

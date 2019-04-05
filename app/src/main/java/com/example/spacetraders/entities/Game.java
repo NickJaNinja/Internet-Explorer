@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This class represents the game
@@ -83,7 +84,7 @@ public class Game implements Serializable {
         if (player.travel(distance) == 0) {
             return 0;
         }
-        currPlanet = to.getClosestToSun();
+        currPlanet = Objects.requireNonNull(to).getClosestToSun();
         currSystem = to;
         return 1;
     }

@@ -27,6 +27,8 @@ import com.example.spacetraders.R;
 //import com.example.space traders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
+import java.util.Objects;
+
 /**
  * planet activity class
  */
@@ -176,7 +178,7 @@ public class PlanetActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
+        switch (Objects.requireNonNull(item).getItemId()) {
             case R.id.universe_map_button:
                 Intent intent = new Intent(this, UniverseMapActivity.class);
                 startActivityForResult(intent, 0);

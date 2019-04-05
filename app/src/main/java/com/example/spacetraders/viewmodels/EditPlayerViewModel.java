@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.models.Model;
 
+import java.util.Objects;
+
 /**
  * ViewModel for player configuration
  */
@@ -51,7 +53,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
             return false;
         }
 
-        model.createGame(diff, name, pilot, fight, trade, eng);
+        Objects.requireNonNull(model).createGame(diff, name, pilot, fight, trade, eng);
         return true;
     }
 
