@@ -39,6 +39,9 @@ public class SolarSystem implements Serializable {
         //if (roll < 5) return 2; // 4 in 10 chance for binary star system
         //else if (roll > 8) return 3; // 2 in 10 chance for t r i n a r y star system
         //else return 1; // 6 in 10 chance for unary star system
+        if (planets == null) {
+            return 2;
+        }
         return 1;
     }
 

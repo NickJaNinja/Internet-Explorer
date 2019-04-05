@@ -31,7 +31,8 @@
         </activity>
         <activity
             android:name=".views.ShopActivity"
-            android:parentActivityName=".views.MainActivity" />
+            android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.ShipyardActivity"
             android:parentActivityName=".views.MainActivity" />
