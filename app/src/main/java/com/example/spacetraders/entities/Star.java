@@ -42,7 +42,7 @@ public class Star implements Serializable {
     private void generateClassification() {
         float roll = r.nextFloat();
         StarClass[] values = StarClass.values();
-        float classes[] = starClass.getChancesAsArray();
+        float classes[] = StarClass.getChancesAsArray();
         for (int i = 0; i < classes.length; i++) {
             if (roll <= classes[i]) {
                 this.starClass = values[i];

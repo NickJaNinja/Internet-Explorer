@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0
  */
 public class Player implements Serializable {
-    private final String name;
+    private String name;
     private final int pilotSkill;
     private final int fighterSkill;
     private final int traderSkill;
@@ -255,14 +255,22 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
-//    /**
-//     * setter for name
-//     *
-//     * @param name player's name
-//     */
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+        return ship.getShipsBasedOnTechLevel(techLevel);
+    }
+
+    /**
+     * setter for name
+     *
+     * @param name player's name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setShipType(ShipType shipType) {
+        ship.setShipType(shipType);
+    }
 
 //    /**
 //     * setter for pilotSkill
@@ -346,5 +354,9 @@ public class Player implements Serializable {
                 ", ship=" + ship +
                 ", reputation=" + reputation +
                 '}';
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 }

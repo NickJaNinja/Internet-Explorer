@@ -34,7 +34,7 @@ public enum StarClass {
         this.radiusUpper = radiusUpper;
     }
 
-    public float[] getChancesAsArray() {
+    public static float[] getChancesAsArray() {
         StarClass[] values = StarClass.values();
         float chances[] = new float[values.length];
         for (int i = 0; i < values.length; i++) {

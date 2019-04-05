@@ -12,7 +12,7 @@ import android.support.annotation.NonNull;
  */
 
 class Ship implements Serializable {
-    private final ShipType type;
+    private ShipType type;
     private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
     private int fuel;
@@ -136,6 +136,10 @@ class Ship implements Serializable {
         return fuelRemaining * FUEL_TO_COST_MULTI;
     }
 
+    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+        return this.type.getShipsBasedOnTechLevel(techLevel);
+    }
+
     /**
      * Add good of a certain amount to cargo, where each good is at a certain price
      * Amount * Price = Total $ of the transaction
@@ -212,4 +216,6 @@ class Ship implements Serializable {
     public int getFuelPercentage() {
         return (100 * fuel) / type.getFuel();
     }
+
+    public void setShipType(ShipType shipType) { this.type = shipType; }
 }

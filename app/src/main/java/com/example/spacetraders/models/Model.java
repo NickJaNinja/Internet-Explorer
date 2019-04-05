@@ -6,9 +6,11 @@ import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
+import com.example.spacetraders.entities.TechLevel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -272,12 +274,15 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
-    /**
-     * gets name of current planet
-     *
-     * @return the name
-     */
-    public String getNameOfCurrentPlanet() {
-        return this.game.getNameOfCurrentPlanet();
+    public List getShipsBasedOnTechLevel() {
+        return game.getShipsBasedOnTechLevel();
+    }
+
+    public void setShipType(ShipType shipType) {
+        game.setShipType(shipType);
+    }
+
+    public void setCredits(int credits) {
+        game.setCredits(credits);
     }
 }
