@@ -9,6 +9,8 @@ import com.example.spacetraders.models.Model;
 
 import com.example.spacetraders.entities.SolarSystem;
 
+import java.util.Objects;
+
 /**
  * a class that is responsible for preparing and managing the data for universe
  */
@@ -55,7 +57,7 @@ public class UniverseViewModel extends AndroidViewModel {
      */
 
     public double xCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
-        return COORDINATE + (((goal.getCoordinates().getX() - center.getCoordinates()
+        return COORDINATE + (((Objects.requireNonNull(goal).getCoordinates().getX() - Objects.requireNonNull(center).getCoordinates()
                 .getX()) * COORDINATE) / Model.getInstance().getMaxRange());
 
     }
@@ -69,7 +71,7 @@ public class UniverseViewModel extends AndroidViewModel {
      */
     public double yCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
         final int  CONSTANT = 30;
-        return (CONSTANT + COORDINATE) - (((goal.getCoordinates().getY() - center
+        return (CONSTANT + COORDINATE) - (((Objects.requireNonNull(goal).getCoordinates().getY() - Objects.requireNonNull(center)
                 .getCoordinates().getY()) * COORDINATE) / Model.getInstance().getMaxRange());
     }
 

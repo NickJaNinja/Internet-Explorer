@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 import java.io.Serializable;
+import java.util.Objects;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -44,7 +46,7 @@ public class Coordinates implements Serializable {
      * @return the integer distance
      */
     public int dist(@Nullable Coordinates c) {
-        return (int) Math.sqrt(((this.x - c.getX()) * (this.x - c.getX())) + ((this.y - c.getY())
+        return (int) Math.sqrt(((this.x - Objects.requireNonNull(c).getX()) * (this.x - c.getX())) + ((this.y - c.getY())
                 * (this.y - c.getY())));
     }
 

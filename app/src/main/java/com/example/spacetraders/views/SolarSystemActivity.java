@@ -25,11 +25,11 @@ import java.text.DecimalFormat;
  * solar system activity
  */
 public class SolarSystemActivity extends AppCompatActivity {
-    Model model;
+    private Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
-    Planet selectedPlanet;
-    Button thrusterButton;
+    private Planet selectedPlanet;
+    private Button thrusterButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -147,7 +147,7 @@ public class SolarSystemActivity extends AppCompatActivity {
      * set planet selected
      * @param p the selected destination planet
      */
-    void setSelectedPlanet(Planet p) {
+    private void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }
 

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -218,7 +219,7 @@ public class SolarSystem implements Serializable {
      * @return the distance
      */
     public int dist(@Nullable SolarSystem s) {
-        return coordinates.dist(s.getCoordinates());
+        return coordinates.dist(Objects.requireNonNull(s).getCoordinates());
     }
 
     /**

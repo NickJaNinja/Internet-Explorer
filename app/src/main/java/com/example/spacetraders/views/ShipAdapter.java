@@ -22,16 +22,17 @@ import com.example.spacetraders.entities.ShipType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * ship adapter class
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
-    final List<ShipType> ships;
-    ShipType selected;
-    final EventHandler handler;
-    final ArrayList<View> viewHolderList;
+    private final List<ShipType> ships;
+    private ShipType selected;
+    private final EventHandler handler;
+    private final ArrayList<View> viewHolderList;
 
 
     /**
@@ -106,12 +107,12 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
 
     @Override
     public int getItemCount() {
-        return ships.size();
+        return Objects.requireNonNull(ships).size();
     }
 
     @Override
     public void onBindViewHolder(@NonNull ShipAdapter.ShipViewHolder shipViewHolder, int position) {
-        ShipType ship = ships.get(position);
+        ShipType ship = Objects.requireNonNull(ships).get(position);
 
         shipViewHolder.name.setText(ship.getName());
         shipViewHolder.weapon.setText(String.valueOf(ship.getNumWeapons()));

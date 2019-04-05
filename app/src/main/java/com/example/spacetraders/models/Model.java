@@ -21,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * model class
@@ -72,7 +73,7 @@ public class Model {
     public boolean loadGame(@Nullable Context context) {
         game = new Game();
         try {
-            File loadFile = new File(context.getFilesDir(), filename);
+            File loadFile = new File(Objects.requireNonNull(context).getFilesDir(), filename);
             FileInputStream fileIn =
                     new FileInputStream(loadFile);
             ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -94,7 +95,7 @@ public class Model {
      */
     public void saveGame(@Nullable Context context) {
         try {
-            File saveFile = new File(context.getFilesDir(), filename);
+            File saveFile = new File(Objects.requireNonNull(context).getFilesDir(), filename);
             if (!saveFile.createNewFile() || !saveFile.setWritable(true)) {
                 // SHOULD RETURN -1 ON FAIL OR SOMETHING
                 return;

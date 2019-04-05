@@ -21,12 +21,14 @@ import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.viewmodels.ShipyardViewModel;
 import com.example.spacetraders.models.Model;
 
+import java.util.Objects;
+
 /**
  * ship yard activity
  */
 public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.EventHandler {
 
-    ShipAdapter adapterForShips;
+    private ShipAdapter adapterForShips;
     private TextView purchaseButton;
 
     @Override
@@ -90,7 +92,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
     @Override
     public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
+        switch (Objects.requireNonNull(item).getItemId()) {
             case R.id.universe_map_button:
                 Intent intent = new Intent(this, UniverseMapActivity.class);
                 startActivityForResult(intent, 0);

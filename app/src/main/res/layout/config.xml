@@ -64,7 +64,7 @@
                 android:maxLines="1"
                 android:lines="1"
                 android:maxLength="35"
-                android:text="@string/A"></android.support.design.widget.TextInputEditText>
+                android:text="@string/A"/>
         </android.support.design.widget.TextInputLayout>
 
         <TextView

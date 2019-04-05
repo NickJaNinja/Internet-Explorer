@@ -30,13 +30,13 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * a copy of the list of shop goods in the model
      */
 
-    final ShopActivity shopActivity;
-    PlayerCargoAdapter playerCargoAdapter;
-    List<ShopEntry> shopGoodsList;
-    OnClickListener listener;
-    final Model model;
-    AlertDialog dialog;
-    boolean dialogConfirmed;
+    private final ShopActivity shopActivity;
+    private PlayerCargoAdapter playerCargoAdapter;
+    private List<ShopEntry> shopGoodsList;
+    private OnClickListener listener;
+    private final Model model;
+    private AlertDialog dialog;
+    private boolean dialogConfirmed;
 
     /**
      * constructor
@@ -330,7 +330,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      */
     public int getCostOfGood(@Nullable ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {
-            if (entry.getGood().equals(good)) {
+            if (entry.getGood() != null && entry.getGood().equals(good)) {
                 return entry.getPrice();
             }
         }
