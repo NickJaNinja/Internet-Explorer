@@ -2,8 +2,6 @@ package com.example.spacetraders.entities;
 
 import android.graphics.Color;
 
-import java.util.Random;
-
 public enum StarClass {
     O('O', 0.004f, Color.parseColor("#9BB0FF"), 30000, 99999, 6.6,  99.99),
     B('B', 0.027f, Color.parseColor("#BBCCFF"), 10000, 30000, 1.8,  6.6),
@@ -21,7 +19,7 @@ public enum StarClass {
     private final double radiusLower;
     private final double radiusUpper;
 
-    private final Random r = new Random();
+    //private final Random r = new Random();
 
     StarClass(char classification, float chance, int color, int tempLower,
               int tempUpper, double radiusLower, double radiusUpper) {
