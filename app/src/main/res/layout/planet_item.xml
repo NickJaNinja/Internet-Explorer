@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textColor="@color/colorText"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/planet_distance_from_star"
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textColor="@color/colorHint"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/planet_political_system"
@@ -42,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textColor="@color/colorHint"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/planet_tech_level"
@@ -50,7 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textColor="@color/colorHint"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textIsSelectable="true"/>
 
         <TextView
             android:id="@+id/planet_economy"
@@ -58,7 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:textColor="@color/colorHint"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textIsSelectable="true"/>
 
         <View
                  android:layout_width="match_parent"

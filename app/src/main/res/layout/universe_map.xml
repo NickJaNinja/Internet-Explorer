@@ -58,7 +58,8 @@
                 android:layout_weight=".5"
                 android:gravity="end"
                 android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textIsSelectable="true"/>
 
         </LinearLayout>
 
@@ -88,7 +89,8 @@
                 android:layout_weight=".5"
                 android:gravity="end"
                 android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textIsSelectable="true"/>
 
         </LinearLayout>
 
@@ -118,7 +120,8 @@
                 android:layout_weight=".5"
                 android:gravity="end"
                 android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textIsSelectable="true"/>
 
         </LinearLayout>
 
@@ -189,7 +192,8 @@
                 android:layout_weight=".5"
                 android:gravity="end"
                 android:textColor="@color/colorText"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textIsSelectable="true"/>
 
         </LinearLayout>
 

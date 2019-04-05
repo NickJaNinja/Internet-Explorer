@@ -140,9 +140,7 @@ import android.support.annotation.NonNull;
      * @return the distance
      */
     public int distanceBetweenSystems(SolarSystem from, SolarSystem to) {
-        Coordinates fromCords = from.getCoordinates();
-        Coordinates toCords = to.getCoordinates();
-        return fromCords.dist(toCords);
+        return from.dist(to);
     }
     /**
      * getter for solar systems
