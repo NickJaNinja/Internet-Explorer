@@ -283,16 +283,16 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         void onClicked(ShopEntry goods);
     }
 
-    /**
+    /*
      * set on click listener
      *
      * @param listener on click listener
      *
      */
 
-    public void setOnClickListener(@Nullable OnClickListener listener) {
-        this.listener = listener;
-    }
+    //public void setOnClickListener(@Nullable OnClickListener listener) {
+    //    this.listener = listener;
+    //}
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**

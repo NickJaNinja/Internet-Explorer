@@ -279,9 +279,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //     */
 
-    public void setOnClickListener(@Nullable OnClickListener listener) {
+    /*public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
-    }
+    }*/
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
