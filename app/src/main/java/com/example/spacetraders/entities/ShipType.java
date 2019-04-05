@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -49,6 +50,7 @@ public enum ShipType {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }
@@ -118,7 +120,8 @@ public enum ShipType {
         return cost;
     }
 
-    public List<ShipType> getShipsBasedOnTechLevel(TechLevel techLevel) {
+    @Nullable
+    public List<ShipType> getShipsBasedOnTechLevel(@Nullable TechLevel techLevel) {
         List<ShipType> ships = new LinkedList<>();
         ShipType[] shipTypes = ShipType.values();
 

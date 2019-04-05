@@ -1,7 +1,10 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -22,7 +25,7 @@ public class SolarSystem implements Serializable {
      * @param name        name of solar system
      * @param coordinates the coordinates of the solar system
      */
-    public SolarSystem(String name, Coordinates coordinates) {
+    public SolarSystem(@Nullable String name, @Nullable Coordinates coordinates) {
         this.name = name;
         this.coordinates = coordinates;
         createStars(generateNumStars());
@@ -109,6 +112,7 @@ public class SolarSystem implements Serializable {
      *
      * @return planet
      */
+    @Nullable
     public Planet getClosestToSun() {
         double m = planets[0].getDistanceFromParentStar();
         Planet p = planets[0];
@@ -151,6 +155,7 @@ public class SolarSystem implements Serializable {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }
@@ -160,6 +165,7 @@ public class SolarSystem implements Serializable {
      *
      * @return coordinates
      */
+    @Nullable
     public Coordinates getCoordinates() {
         return coordinates;
     }
@@ -169,6 +175,7 @@ public class SolarSystem implements Serializable {
      *
      * @return array of stars
      */
+    @Nullable
     public Star[] getStars() {
         return this.stars.clone();
     }
@@ -178,6 +185,7 @@ public class SolarSystem implements Serializable {
      *
      * @return array of planets
      */
+    @Nullable
     public Planet[] getPlanets() {
         return planets.clone();
     }
@@ -198,6 +206,7 @@ public class SolarSystem implements Serializable {
      *
      * @return random content_planet
      */
+    @Nullable
     public Planet getRandomPlanet() {
         return planets[r.nextInt(planets.length)];
     }
@@ -209,8 +218,8 @@ public class SolarSystem implements Serializable {
      * @param s the other solar system
      * @return the distance
      */
-    public int dist(SolarSystem s) {
-        return coordinates.dist(s.getCoordinates());
+    public int dist(@Nullable SolarSystem s) {
+        return coordinates.dist(Objects.requireNonNull(s).getCoordinates());
     }
 
     /**

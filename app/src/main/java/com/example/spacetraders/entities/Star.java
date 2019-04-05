@@ -2,6 +2,9 @@ package com.example.spacetraders.entities;
 
 import java.io.Serializable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -25,7 +28,7 @@ public class Star implements Serializable {
      *
      * @param name name
      */
-    public Star(String name) {
+    public Star(@Nullable String name) {
         this.name = name;
         generateClassification();
         generateTemperatureAndRadius();
@@ -43,7 +46,7 @@ public class Star implements Serializable {
         float roll = r.nextFloat();
         StarClass[] values = StarClass.values();
         float classes[] = StarClass.getChancesAsArray();
-        for (int i = 0; i < classes.length; i++) {
+        for (int i = 0; i < Objects.requireNonNull(classes).length; i++) {
             if (roll <= classes[i]) {
                 this.starClass = values[i];
                 return;
@@ -114,6 +117,7 @@ public class Star implements Serializable {
      *
      * @return String name
      */
+    @Nullable
     public String getName() {
         return name;
     }

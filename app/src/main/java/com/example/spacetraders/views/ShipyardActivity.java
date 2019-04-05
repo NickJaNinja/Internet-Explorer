@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,8 @@ import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.viewmodels.ShipyardViewModel;
 import com.example.spacetraders.models.Model;
 
+import java.util.Objects;
+
 /**
  * ship yard activity
  */
@@ -29,7 +32,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
     private TextView purchaseButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_shipyard);
@@ -56,9 +59,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
         purchaseButton = findViewById(R.id.purchase_button);
         purchaseButton.setBackgroundColor(Color.parseColor("#D25A64")); // red
 
-        purchaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        purchaseButton.setOnClickListener((View view)-> {
                 ShipType selected = adapterForShips.getSelected();
                 if (selected == null) {
                     CharSequence text = "Select a ship";
@@ -75,21 +76,20 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
                     Model.getInstance().setCredits(Model.getInstance().getCredits() -
                             adapterForShips.getSelected().getCost());
                 }
-            }
         });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@Nullable Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
+        switch (Objects.requireNonNull(item).getItemId()) {
             case R.id.universe_map_button:
                 Intent intent = new Intent(this, UniverseMapActivity.class);
                 startActivityForResult(intent, 0);
@@ -114,7 +114,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
     }
 
     @Override
-    public void handle (int position) {
+    public void handle() {
         purchaseButton.setBackgroundColor(Color.parseColor("#5FCA77")); // green
     }
 }

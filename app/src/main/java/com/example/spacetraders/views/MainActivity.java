@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
      * @param savedInstanceState bundle of saved instance state
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Button newButton;
@@ -34,17 +35,12 @@ public class MainActivity extends AppCompatActivity {
         loadButton = findViewById(R.id.load_button);
         model = Model.getInstance();
 
-        newButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        newButton.setOnClickListener((View v)-> {
                 Intent intent = new Intent(v.getContext(), EditPlayerActivity.class);
                 startActivity(intent);
-            }
         });
 
-        loadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        loadButton.setOnClickListener((View v) ->{
                 model.loadGame(v.getContext());
                 Intent intent;
                 if (model.getGame() == null) {
@@ -53,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(v.getContext(), PlanetActivity.class);
                 }
                 startActivity(intent);
-            }
 
         });
 
@@ -69,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
      * @return true
      */
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@Nullable Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;

@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,8 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.ShopViewModel;
 
+import java.util.Objects;
+
 /**
  * Shop activity class
  */
@@ -35,7 +38,7 @@ public class ShopActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ProgressBar fuel;
         RecyclerView recyclerViewShop;
@@ -93,21 +96,15 @@ public class ShopActivity extends AppCompatActivity {
 
         //confirm transaction
 
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        confirm.setOnClickListener((View v)-> {
                 //implements later setMarketsEntriesToTemp();
                    //viewModel.setMarketsEntriesToTemp();
                 //viewModel.setUpMarket();
-            }
         });
 
         //cancel transaction
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cancel.setOnClickListener((View v)-> {
                 //viewModel.setUpMarket();
-            }
         });
 
         // music
@@ -126,16 +123,16 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@Nullable Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
+        switch (Objects.requireNonNull(item).getItemId()) {
             case R.id.universe_map_button:
                 Intent intent = new Intent(this, UniverseMapActivity.class);
                 startActivityForResult(intent, 0);
@@ -161,7 +158,7 @@ public class ShopActivity extends AppCompatActivity {
 
     // android back button
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+    public boolean onKeyDown(int keyCode, @Nullable KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
             // stop music
             mediaPlayer.stop();
@@ -180,9 +177,9 @@ public class ShopActivity extends AppCompatActivity {
      * update player's credit and cargo space in ship displayed in market
      */
     public void updateDisplay() {
-        String asoz = Integer.toString(model.getCredits());
-        creditDisplay.setText(asoz);
-        String aopxn = Integer.toString(model.getCargoSpace());
-        cargoDisplay.setText(aopxn);
+        String asz = Integer.toString(model.getCredits());
+        creditDisplay.setText(asz);
+        String aop = Integer.toString(model.getCargoSpace());
+        cargoDisplay.setText(aop);
     }
 }

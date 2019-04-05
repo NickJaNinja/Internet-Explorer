@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -44,7 +45,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param playerCargoList the player cargo list
      * @param shopActivity the shop activity
      */
-    public PlayerCargoAdapter(List<ShopEntry> playerCargoList, ShopActivity shopActivity) {
+    public PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;
@@ -75,10 +76,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
             price = itemView.findViewById(R.id.price_text);
             stock = itemView.findViewById(R.id.stock_text);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener((View view) ->{
                     int position = getAdapterPosition();
 
                     if (position == RecyclerView.NO_POSITION) {
@@ -135,8 +133,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            String aahhower = "AMOUNT TO SELL: 1";
-                            seekText.setText(aahhower);
+                            String aah = "AMOUNT TO SELL: 1";
+                            seekText.setText(aah);
 
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
@@ -145,8 +143,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            String qwoehr = "TOTAL SALE: ¥" +itemPrice;
-                            priceText.setText(qwoehr);
+                            String qwo = "TOTAL SALE: ¥" +itemPrice;
+                            priceText.setText(qwo);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -162,9 +160,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                                               int progress, boolean fromUser) {
                                     String as = "AMOUNT TO SELL: " + (progress + 1);
                                     seekText.setText(as);
-                                    String asoi = "TOTAL SALE: ¥" +(itemPrice *
+                                    String aso = "TOTAL SALE: ¥" +(itemPrice *
                                             (progress + 1));
-                                    priceText.setText(asoi);
+                                    priceText.setText(aso);
                                 }
 
                                 @Override
@@ -197,27 +195,19 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             builder.setView(layout)
                                     .setPositiveButton("CONFIRM",
-                                            new DialogInterface.OnClickListener() {
-                                        // when positive button clicked dismiss dialog
-                                        @Override
-                                        public void onClick(DialogInterface d, int which) {
+                                            // when positive button clicked dismiss dialog
+                                            (DialogInterface d, int which) ->{
                                             dialogConfirmed = true;
                                             d.dismiss();
-                                        }
                                     })
                                     .setNegativeButton("CANCEL",
-                                            new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface d, int which) {
-                                                    d.dismiss();
-                                                }
-                                            });
+                                            (DialogInterface d, int which)->
+                                                    d.dismiss()
+                                            );
 
                             dialog = builder.create();
 
-                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                                @Override
-                                public void onDismiss(DialogInterface dialog) {
+                            dialog.setOnDismissListener((DialogInterface dialog) ->{
                                     if (dialogConfirmed && (model.makeTransaction(
                                             selectedGood, -seek.getProgress() - 1,
                                             cost) == 1)) {
@@ -232,7 +222,6 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                                 Toast.LENGTH_SHORT);
                                         toast.show();
                                     }
-                                }
                             });
 
                             dialog.show();
@@ -243,7 +232,6 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             toast.show();
                         }
                     }
-                }
             });
         }
     }
@@ -257,9 +245,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        String aoix = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+        String aoi = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
-        playerCargoViewHolder.price.setText(aoix);
+        playerCargoViewHolder.price.setText(aoi);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(
                 String.valueOf(shopEntry.getStock()));
@@ -279,7 +267,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * Sets the player cargo list
      * @param playerCargo player cargo
      */
-    public void setPlayerCargoList(List<ShopEntry> playerCargo) {
+    public void setPlayerCargoList(@Nullable List<ShopEntry> playerCargo) {
         playerCargoList = playerCargo;
         notifyDataSetChanged();
     }
@@ -295,16 +283,16 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         void onClicked(ShopEntry goods);
     }
 
-    /**
+    /*
      * set on click listener
      *
      * @param listener on click listener
      *
      */
 
-    public void setOnClickListener(OnClickListener listener) {
-        this.listener = listener;
-    }
+    //public void setOnClickListener(@Nullable OnClickListener listener) {
+    //    this.listener = listener;
+    //}
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
@@ -322,7 +310,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      *
      * @param sga shop goods adapter
      */
-    public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
+    public void setShopGoodsAdapter(@Nullable ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
     }
 }

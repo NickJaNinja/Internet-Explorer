@@ -58,9 +58,9 @@ class Shop implements Serializable {
                 itemPrice -= var;
             }
             // Interesting events
-            if (shopGood.getCr().equals(resourcesLevel)) {
+            if (shopGood.getCr() != null && shopGood.getCr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice * PRICE_CONSTANT);
-            } else if (shopGood.getEr().equals(resourcesLevel)) {
+            } else if (shopGood.getEr() != null && shopGood.getEr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice / PRICE_CONSTANT);
             }
             if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {

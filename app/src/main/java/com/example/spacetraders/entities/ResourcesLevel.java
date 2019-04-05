@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.Nullable;
+
 /**
  * This enum represents the various resource levels
  */
@@ -45,6 +47,7 @@ public enum ResourcesLevel {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }

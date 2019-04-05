@@ -64,7 +64,7 @@
                 android:maxLines="1"
                 android:lines="1"
                 android:maxLength="35"
-                android:text="@string/A"></android.support.design.widget.TextInputEditText>
+                android:text="@string/A"/>
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -117,7 +117,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/twothreefourzero"
+                        android:text="@string/two_three_four_zero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -130,7 +130,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aawwww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -139,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/awww"
+                    android:text="@string/aww_aww"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/pilotSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/pilotSkillLayout"
@@ -175,7 +175,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/twothreefourzero"
+                        android:text="@string/two_three_four_zero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -188,7 +188,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aawwww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -232,7 +232,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/twothreefourzero"
+                        android:text="@string/two_three_four_zero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -245,7 +245,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aawwww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -254,7 +254,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/donot"
+                    android:text="@string/doNot"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="@+id/traderSkillLayout"
                     app:layout_constraintStart_toStartOf="@+id/traderSkillLayout"
@@ -290,7 +290,7 @@
                         android:layout_weight=".33"
                         android:background="#676767"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/twothreefourzero"
+                        android:text="@string/two_three_four_zero"
                         android:textColor="#ffffff"
                         android:textSize="30sp"
                         tools:layout_editor_absoluteX="205dp"
@@ -303,7 +303,7 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aawwww"
+                        android:text="@string/aww"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -397,7 +397,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFD25A64"
                 android:gravity="center"
-                android:text="@string/OOHHH"
+                android:text="@string/OHH"
                 android:textSize="18sp"
                 style="?android:attr/buttonBarButtonStyle"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -412,7 +412,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFA500"
                 android:gravity="center"
-                android:text="@string/NNOOO"
+                android:text="@string/NOo"
                 android:textSize="18sp"
                 style="?android:attr/buttonBarButtonStyle"
                 android:textStyle="bold" />

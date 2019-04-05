@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param shopGoodsList list of shop goods list
      * @param shopActivity shop activity
      */
-    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
+    public ShopGoodsAdapter(@Nullable List<ShopEntry> shopGoodsList, @Nullable ShopActivity shopActivity) {
         for (ShopEntry entry : shopGoodsList) {
             if (entry.getStock() == 0) {
                 shopGoodsList.remove(entry);
@@ -79,10 +80,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
             price = itemView.findViewById(R.id.price_text);
             stock = itemView.findViewById(R.id.stock_text);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener((View view) ->{
                     int position = getAdapterPosition();
 
                     if (position == RecyclerView.NO_POSITION) {
@@ -131,8 +129,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            String axoin = "AMOUNT TO PURCHASE: 1";
-                            seekText.setText(axoin);
+                            String axo = "AMOUNT TO PURCHASE: 1";
+                            seekText.setText(axo);
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             seekText.setGravity(Gravity.CENTER);
@@ -140,8 +138,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            String amoin = "TOTAL PRICE: ¥" +itemPrice;
-                            priceText.setText(amoin);
+                            String amo = "TOTAL PRICE: ¥" +itemPrice;
+                            priceText.setText(amo);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -155,11 +153,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar,
                                                               int progress, boolean fromUser) {
-                                    String cmoinn = "AMOUNT TO PURCHASE: " + (progress + 1);
-                                    seekText.setText(cmoinn);
-                                    String cqoin = "TOTAL PRICE: ¥" +
+                                    String cmo = "AMOUNT TO PURCHASE: " + (progress + 1);
+                                    seekText.setText(cmo);
+                                    String cqo = "TOTAL PRICE: ¥" +
                                             (itemPrice * (progress + 1));
-                                    priceText.setText(cqoin);
+                                    priceText.setText(cqo);
                                 }
 
                                 @Override
@@ -192,27 +190,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             builder.setView(layout)
                                     .setPositiveButton("CONFIRM",
-                                            new DialogInterface.OnClickListener() {
-                                        // when positive button clicked dismiss dialog
-                                        @Override
-                                        public void onClick(DialogInterface d, int which) {
+                                            // when positive button clicked dismiss dialog
+                                            (DialogInterface d, int which) ->{
                                             dialogConfirmed = true;
                                             d.dismiss();
-                                        }
                                     })
                                     .setNegativeButton("CANCEL",
-                                            new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface d, int which) {
-                                            d.dismiss();
-                                        }
-                                    });
+                                            (DialogInterface d, int which) ->
+                                            d.dismiss()
+                                    );
 
                             dialog = builder.create();
 
-                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                                @Override
-                                public void onDismiss(DialogInterface dialog) {
+                            dialog.setOnDismissListener((DialogInterface dialog) ->{
                                     if (dialogConfirmed && (model.makeTransaction(
                                             shopGoodsList.get(position).getGood(),
                                             seek.getProgress() + 1, cost) == 1)) {
@@ -228,7 +218,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                                 Toast.LENGTH_SHORT);
                                         toast.show();
                                     }
-                                }
                             });
 
                             dialog.show();
@@ -239,7 +228,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             toast.show();
                         }
                     }
-                }
             });
 
         }
@@ -248,11 +236,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
-        String mcmioh = "¥" +shopEntry.getPrice();
-        shopGoodsViewHolder.price.setText(mcmioh);
+        String mcm = "¥" +shopEntry.getPrice();
+        shopGoodsViewHolder.price.setText(mcm);
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        String maiohe = shopEntry.getStock() + "";
-        shopGoodsViewHolder.stock.setText(maiohe);
+        String mai = shopEntry.getStock() + "";
+        shopGoodsViewHolder.stock.setText(mai);
     }
 
 
@@ -266,7 +254,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      *
      * @param shopEntries list of shop entries
      */
-    public void setShopGoodsList(List<ShopEntry> shopEntries) {
+    public void setShopGoodsList(@Nullable List<ShopEntry> shopEntries) {
         shopGoodsList = shopEntries;
         notifyDataSetChanged();
     }
@@ -291,9 +279,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //     */
 
-    public void setOnClickListener(OnClickListener listener) {
+    /*public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
-    }
+    }*/
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
@@ -310,7 +298,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      *
      * @param pca player cargo adapter
      */
-    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
+    public void setPlayerCargoAdapter(@Nullable PlayerCargoAdapter pca) {
         playerCargoAdapter = pca;
     }
 
@@ -327,9 +315,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param good  a shop good
      * @return the shop good price OR -1 if fail
      */
-    public int getCostOfGood(ShopGoods good) {
+    public int getCostOfGood(@Nullable ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {
-            if (entry.getGood().equals(good)) {
+            if (entry.getGood() != null && entry.getGood().equals(good)) {
                 return entry.getPrice();
             }
         }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -26,6 +27,8 @@ import com.example.spacetraders.R;
 //import com.example.space traders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
+import java.util.Objects;
+
 /**
  * planet activity class
  */
@@ -36,7 +39,7 @@ public class PlanetActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView market;
         TextView shipyard;
@@ -95,49 +98,31 @@ public class PlanetActivity extends AppCompatActivity {
         //});
 
         // pressing content_market button
-        market.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        market.setOnClickListener((View v)-> {
                 mediaPlayer.stop();
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
                 startActivityForResult(intent, 0);
-            }
         });
 
-        shipyard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        shipyard.setOnClickListener((View v)-> {
                 Intent intent = new Intent(v.getContext(), ShipyardActivity.class);
                 startActivityForResult(intent, 0);
-            }
         });
 
-        upgrade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.stop();
-            }
-        });
+        upgrade.setOnClickListener((View v)->
+                mediaPlayer.stop()
+        );
 
-        refuel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        refuel.setOnClickListener((View v)-> {
                 model.refuelShipMax();
                 fuel.setProgress(model.getFuelPercentage());
                 Log.d("Debug", "Refuel button clicked");
-            }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                model.saveGame(v.getContext());
-            }
-        });
+        save.setOnClickListener((View v)->
+                model.saveGame(v.getContext()));
 
-        load.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        load.setOnClickListener((View v)-> {
                 if (model.loadGame(v.getContext())) {
                     Intent intent = new Intent(v.getContext(), PlanetActivity.class);
                     startActivity(intent);
@@ -146,7 +131,6 @@ public class PlanetActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                 }
-            }
         });
 
         // rotate content_planet animation
@@ -166,16 +150,16 @@ public class PlanetActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@Nullable Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
+        switch (Objects.requireNonNull(item).getItemId()) {
             case R.id.universe_map_button:
                 Intent intent = new Intent(this, UniverseMapActivity.class);
                 startActivityForResult(intent, 0);
@@ -203,7 +187,7 @@ public class PlanetActivity extends AppCompatActivity {
 
     // android back button
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+    public boolean onKeyDown(int keyCode, @Nullable KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }

@@ -3,6 +3,7 @@ package com.example.spacetraders.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.models.Model;
@@ -64,6 +65,7 @@ public class ShopViewModel extends AndroidViewModel {
      *
      * @return a list of shop entries
      */
+    @Nullable
     public List<ShopEntry> getShopEntries() {
         return model.getShopEntries();
     }
@@ -73,6 +75,7 @@ public class ShopViewModel extends AndroidViewModel {
      *
      * @return list of shop entries filtered
      */
+    @Nullable
     public List<ShopEntry> getShopEntriesFiltered() {
         return model.getShopEntriesFiltered();
     }
@@ -82,6 +85,7 @@ public class ShopViewModel extends AndroidViewModel {
      *
      * @return list of player entries
      */
+    @Nullable
     public List<ShopEntry> getPlayerEntries() {
         return model.getPlayerEntries();
     }

@@ -1,6 +1,9 @@
 package com.example.spacetraders.entities;
 import java.io.Serializable;
+import java.util.Objects;
+
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 /**
  * This class represents the coordinates of a solar system
@@ -42,8 +45,8 @@ public class Coordinates implements Serializable {
      * @param c The other coordinates
      * @return the integer distance
      */
-    public int dist(Coordinates c) {
-        return (int) Math.sqrt(((this.x - c.getX()) * (this.x - c.getX())) + ((this.y - c.getY())
+    public int dist(@Nullable Coordinates c) {
+        return (int) Math.sqrt(((this.x - Objects.requireNonNull(c).getX()) * (this.x - c.getX())) + ((this.y - c.getY())
                 * (this.y - c.getY())));
     }
 

@@ -3,10 +3,13 @@ package com.example.spacetraders.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
+
+import java.util.Objects;
 
 /**
  * solar system view model
@@ -25,7 +28,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
         super(app);
 
         model = Model.getInstance();
-        currentSolarSystem = model.getCurrentSystem();
+        currentSolarSystem = Objects.requireNonNull(model).getCurrentSystem();
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
 //        planetsInRange = currentSolarSystem.getPlanets();
 //    }
@@ -43,6 +46,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
      *
      * @return list of planets in range
      */
+    @Nullable
     public Planet[] getPlanetsInRange() {
 
         return currentSolarSystem.getPlanets();
@@ -65,6 +69,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
      *
      * @return solar system
      */
+    @Nullable
     public SolarSystem getCurrentSolarSystem() {
         return currentSolarSystem;
     }

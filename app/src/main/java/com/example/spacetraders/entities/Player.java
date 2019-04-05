@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -55,7 +57,7 @@ public class Player implements Serializable {
      * @param traderSkill   initial traderSkill
      * @param engineerSkill initial engineerSkill
      */
-    public Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
+    public Player(@Nullable String name, int pilotSkill, int fighterSkill, int traderSkill,
                   int engineerSkill) {
 
         this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill,
@@ -110,6 +112,7 @@ public class Player implements Serializable {
      *
      * @return get list of player entries
      */
+    @Nullable
     public List<ShopEntry> getPlayerEntries() {
         return ship.getInventoryCargo();
     }
@@ -122,7 +125,7 @@ public class Player implements Serializable {
      * @param price  the price of each good
      * @return 1 if transaction occurred, 0 otherwise
      */
-    public int makeTransaction(ShopGoods sg, int amount, int price) {
+    public int makeTransaction(@Nullable ShopGoods sg, int amount, int price) {
         if (credits < (amount * price)) {
             return 0;
         }
@@ -255,7 +258,8 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
-    public List<ShipType> getShipsBasedOnTechLevel(TechLevel techLevel) {
+    @Nullable
+    public List<ShipType> getShipsBasedOnTechLevel(@Nullable TechLevel techLevel) {
         return ship.getShipsBasedOnTechLevel(techLevel);
     }
 
@@ -268,7 +272,7 @@ public class Player implements Serializable {
 //        this.name = name;
 //    }
 
-    public void setShipType(ShipType shipType) {
+    public void setShipType(@Nullable ShipType shipType) {
         ship.setShipType(shipType);
     }
 

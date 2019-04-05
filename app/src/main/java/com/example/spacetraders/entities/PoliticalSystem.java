@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.Nullable;
+
 /**
  * This enum represents the political systems
  */
@@ -38,6 +40,7 @@ public enum PoliticalSystem {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }

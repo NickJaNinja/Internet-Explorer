@@ -77,7 +77,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="@string/SASHIMI"
+                android:text="@string/SASH"
                 android:gravity="start"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
@@ -131,7 +131,7 @@
             android:background="@color/colorText" />
 
         <FrameLayout
-            android:id="@+id/mapframe"
+            android:id="@+id/mapFrame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
 //import java.util.ArrayList;
 //import java.util.List;
@@ -19,7 +21,7 @@ public class ShopEntry implements Serializable {
      * @param s the stock
      * @param p the price
      */
-    public ShopEntry(ShopGoods g, int s, int p) {
+    public ShopEntry(@Nullable ShopGoods g, int s, int p) {
         this.good = g;
         this.stock = s;
         this.price = p;
@@ -30,6 +32,7 @@ public class ShopEntry implements Serializable {
      *
      * @return good
      */
+    @Nullable
     public ShopGoods getGood() {
         return good;
     }

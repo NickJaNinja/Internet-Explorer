@@ -4,9 +4,12 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.models.Model;
+
+import java.util.Objects;
 
 /**
  * ViewModel for player configuration
@@ -35,8 +38,8 @@ public class EditPlayerViewModel extends AndroidViewModel {
      * @param diff game difficulty
      * @return true if OK button can move to next screen
      */
-    public boolean onOk(String name, int fight, int trade, int eng, int pilot,
-                        GameDifficulty diff) {
+    public boolean onOk(@Nullable String name, int fight, int trade, int eng, int pilot,
+                        @Nullable GameDifficulty diff) {
         Model model = Model.getInstance();
         if ((name == null) || (name.length() < 1)) {
             toastText = "Please enter your pilot's name";
@@ -50,7 +53,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
             return false;
         }
 
-        model.createGame(diff, name, pilot, fight, trade, eng);
+        Objects.requireNonNull(model).createGame(diff, name, pilot, fight, trade, eng);
         return true;
     }
 
@@ -59,6 +62,7 @@ public class EditPlayerViewModel extends AndroidViewModel {
      *
      * @return value of toastText
      */
+    @Nullable
     public String getToastText() {
         return toastText;
     }

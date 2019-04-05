@@ -3,6 +3,7 @@ package com.example.spacetraders.views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,7 +36,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      * @param savedInstanceState .
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Button fightPlus;
         Button fightMinus;
@@ -82,9 +83,7 @@ public class EditPlayerActivity extends AppCompatActivity {
         gameDifficultySpinner.setAdapter(difficultyAdapter);
 
         // Skill point buttons
-        fightPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        fightPlus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         fighterText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -93,11 +92,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        fightMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        fightMinus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(fighterText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -106,11 +102,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        tradePlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        tradePlus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -119,11 +112,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        tradeMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        tradeMinus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(tradeText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -132,11 +122,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        engineerPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        engineerPlus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -145,11 +132,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d",
                         Integer.parseInt(pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        engineerMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        engineerMinus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(
                         Integer.parseInt(engineerText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -158,11 +142,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        pilotPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        pilotPlus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), 1);
@@ -171,11 +152,8 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
-        pilotMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        pilotMinus.setOnClickListener((View v)-> {
                 int skillChange = editPlayerViewModel.onSkill(Integer.parseInt(
                         pilotText.getText().toString()),
                         Integer.parseInt(pointsRemaining.getText().toString()), -1);
@@ -184,13 +162,10 @@ public class EditPlayerActivity extends AppCompatActivity {
                 pointsRemaining.setText(String.format("%d", Integer.parseInt(
                         pointsRemaining.getText().toString()) - skillChange));
                 onAnyButtonPressed();
-            }
         });
 
         // Resets player configuration screen
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        reset.setOnClickListener((View v)-> {
                 nameField.setText(null);
                 gameDifficultySpinner.setSelection(0);
                 pilotText.setText(String.format("%d", 4));
@@ -199,16 +174,12 @@ public class EditPlayerActivity extends AppCompatActivity {
                 engineerText.setText(String.format("%d", 4));
                 pointsRemaining.setText(String.format("%d", 0));
                 onAnyButtonPressed();
-            }
         });
 
         // Exits the app
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        exit.setOnClickListener((View v)->
+                finish()
+        );
     }
 
     /**
@@ -217,7 +188,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      *
      * @param view the view
      */
-    public void onOkPressed(View view) {
+    public void onOkPressed(@Nullable View view) {
         String name = nameField.getText().toString();
         name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());
