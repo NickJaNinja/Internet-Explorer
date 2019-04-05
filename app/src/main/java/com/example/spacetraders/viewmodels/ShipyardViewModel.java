@@ -18,6 +18,6 @@ public class ShipyardViewModel extends AndroidViewModel {
     }
 
     public List getShipsBasedOnTechLevel() {
-        return Model.getInstance().getShipsBasedOnTechLevel();
+        return model.getShipsBasedOnTechLevel();
     }
 }
