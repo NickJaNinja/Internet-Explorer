@@ -20,8 +20,6 @@ import com.example.spacetraders.models.Model;
 public class ShipyardActivity extends AppCompatActivity {
 
     private ShipAdapter adapterForShips;
-    private ShipyardViewModel viewModel;
-    private TextView purchaseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class ShipyardActivity extends AppCompatActivity {
 
         setContentView(R.layout.shipyard);
 
-        viewModel = ViewModelProviders.of(this).get(ShipyardViewModel.class);
+        ShipyardViewModel viewModel = ViewModelProviders.of(this).get(ShipyardViewModel.class);
 
         /*
         Set up our recycler view by grabbing the layout for a single item
@@ -45,7 +43,7 @@ public class ShipyardActivity extends AppCompatActivity {
         recyclerViewShips.setAdapter(adapterForShips);
 
         // purchase button
-        purchaseButton = findViewById(R.id.purchase_button);
+        TextView purchaseButton = findViewById(R.id.purchase_button);
 
         purchaseButton.setOnClickListener(new View.OnClickListener() {
 
