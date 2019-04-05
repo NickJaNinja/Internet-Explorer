@@ -208,14 +208,14 @@ public class Model {
         return game.getCurrentPlanet();
     }
 
-    /**
-     * setter for current content_planet
-     *
-     * @param newCurr planet new curr
-     */
-    public void setCurrentPlanet(Planet newCurr) {
-        this.game.setCurrentPlanet(newCurr);
-    }
+//    /**
+//     * setter for current content_planet
+//     *
+//     * @param newCurr planet new curr
+//     */
+//    public void setCurrentPlanet(Planet newCurr) {
+//        this.game.setCurrentPlanet(newCurr);
+//    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
