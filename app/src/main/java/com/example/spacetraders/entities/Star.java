@@ -3,7 +3,6 @@ package com.example.spacetraders.entities;
 import java.io.Serializable;
 import android.support.annotation.NonNull;
 import java.util.Random;
-import android.graphics.Color;
 
 /**
  * This class represents a star
