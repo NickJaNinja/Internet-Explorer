@@ -199,7 +199,8 @@
                     android:layout_marginLeft="8dp"
                     android:gravity="end"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textIsSelectable="true"/>
 
             </LinearLayout>
 
@@ -233,7 +234,8 @@
                     android:layout_marginStart="8dp"
                     android:gravity="end"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textIsSelectable="true"/>
 
             </LinearLayout>
 

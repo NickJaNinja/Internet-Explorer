@@ -30,13 +30,13 @@ public class ShopViewModel extends AndroidViewModel {
         model = Model.getInstance();
     }
 
-    /**
+    /*
      * initializes content_market
      */
-    public void setUpMarket() {
+    /*public void setUpMarket() {
         //shopInventoryTemp = getShopEntries();
         //playerInventoryTemp = getPlayerEntries();
-    }
+    }*/
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
