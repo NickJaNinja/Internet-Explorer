@@ -10,13 +10,14 @@ import java.util.List;
 
 public class ShipyardViewModel extends AndroidViewModel {
 
+    private final Model model;
+
     public ShipyardViewModel(@NonNull Application app) {
         super(app);
-        Model model = Model.getInstance();
+        model = Model.getInstance();
     }
 
     public List getShipsBasedOnTechLevel() {
-        Model model;
         return model.getShipsBasedOnTechLevel();
     }
 }
