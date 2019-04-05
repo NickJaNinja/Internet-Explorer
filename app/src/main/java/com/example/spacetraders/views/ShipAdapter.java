@@ -28,10 +28,10 @@ import java.util.List;
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
-    final List<ShipType> ships;
-    ShipType selected;
-    final EventHandler handler;
-    final ArrayList<View> viewHolderList;
+    private final List<ShipType> ships;
+    private ShipType selected;
+    private final EventHandler handler;
+    private final ArrayList<View> viewHolderList;
 
 
     /**

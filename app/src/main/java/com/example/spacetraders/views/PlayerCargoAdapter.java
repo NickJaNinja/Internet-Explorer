@@ -32,12 +32,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * a copy of the list of shop goods in the model
      */
 
-    final ShopActivity shopActivity;
-    ShopGoodsAdapter shopGoodsAdapter;
-    List<ShopEntry> playerCargoList;
-    OnClickListener listener;
-    AlertDialog dialog;
-    final Model model;
+    private final ShopActivity shopActivity;
+    private ShopGoodsAdapter shopGoodsAdapter;
+    private List<ShopEntry> playerCargoList;
+    private OnClickListener listener;
+    private AlertDialog dialog;
+    private final Model model;
 
     /**
      * Constructor
