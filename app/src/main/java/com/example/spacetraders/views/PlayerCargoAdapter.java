@@ -261,7 +261,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
         playerCargoViewHolder.price.setText(aoix);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
-        playerCargoViewHolder.stock.setText(shopEntry.getStock());
+        playerCargoViewHolder.stock.setText(
+                String.valueOf(shopEntry.getStock()));
 
     }
 
