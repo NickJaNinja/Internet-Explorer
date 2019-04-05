@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
@@ -27,7 +29,7 @@ public class Planet implements Serializable {
      * @param name       name
      * @param parentStar the parent star
      */
-    public Planet(String name, Star parentStar) {
+    public Planet(@Nullable String name, @Nullable Star parentStar) {
         this.name = name;
         this.parentStar = parentStar;
         Random r = new Random();
@@ -72,6 +74,7 @@ public class Planet implements Serializable {
      *
      * @return String name
      */
+    @Nullable
     public String getName() {
         return name;
     }
@@ -101,6 +104,7 @@ public class Planet implements Serializable {
      *
      * @return Star parent star
      */
+    @Nullable
     public Star getParentStar() {
         return parentStar;
     }
@@ -110,6 +114,7 @@ public class Planet implements Serializable {
      *
      * @return tech level
      */
+    @Nullable
     public TechLevel getTechLevel() {
         return techLevel;
     }
@@ -119,6 +124,7 @@ public class Planet implements Serializable {
      *
      * @return the resources level
      */
+    @Nullable
     public ResourcesLevel getResourcesLevel() {
         return resourcesLevel;
     }
@@ -128,6 +134,7 @@ public class Planet implements Serializable {
      *
      * @return political system
      */
+    @Nullable
     public PoliticalSystem getPoliticalSystem() {
         return politicalSystem;
     }
@@ -149,7 +156,7 @@ public class Planet implements Serializable {
      * @param amount amount
      * @return decrease stock
      */
-    public int makeTransaction(ShopGoods sg, int amount) {
+    public int makeTransaction(@Nullable ShopGoods sg, int amount) {
         return shop.decreaseStock(sg, amount);
     }
 
@@ -167,6 +174,7 @@ public class Planet implements Serializable {
      *
      * @return list of shop entries
      */
+    @Nullable
     public List<ShopEntry> getShopEntries() { return shop.getInventoryAsList(); }
 
     /**
@@ -174,6 +182,7 @@ public class Planet implements Serializable {
      *
      * @return list of shop entries filtered
      */
+    @Nullable
     public List<ShopEntry> getShopEntriesFiltered() { return shop.getInventoryAsListFiltered(); }
 
     /**

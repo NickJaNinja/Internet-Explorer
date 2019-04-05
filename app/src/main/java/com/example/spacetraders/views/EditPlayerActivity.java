@@ -3,6 +3,7 @@ package com.example.spacetraders.views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,7 +36,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      * @param savedInstanceState .
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Button fightPlus;
         Button fightMinus;
@@ -217,7 +218,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      *
      * @param view the view
      */
-    public void onOkPressed(View view) {
+    public void onOkPressed(@Nullable View view) {
         String name = nameField.getText().toString();
         name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());

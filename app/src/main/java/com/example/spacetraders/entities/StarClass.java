@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import android.graphics.Color;
+import android.support.annotation.Nullable;
 
 public enum StarClass {
     O('O', 0.004f, Color.parseColor("#9BB0FF"), 30000, 99999, 6.6,  99.99),
@@ -32,6 +33,7 @@ public enum StarClass {
         this.radiusUpper = radiusUpper;
     }
 
+    @Nullable
     public static float[] getChancesAsArray() {
         StarClass[] values = StarClass.values();
         float chances[] = new float[values.length];

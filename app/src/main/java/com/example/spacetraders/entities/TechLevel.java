@@ -1,6 +1,8 @@
 package com.example.spacetraders.entities;
 
 
+import android.support.annotation.Nullable;
+
 /**
  * This enum represents the various tech levels
  */
@@ -43,6 +45,7 @@ public enum TechLevel {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }

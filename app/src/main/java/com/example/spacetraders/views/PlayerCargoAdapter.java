@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -44,7 +45,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param playerCargoList the player cargo list
      * @param shopActivity the shop activity
      */
-    public PlayerCargoAdapter(List<ShopEntry> playerCargoList, ShopActivity shopActivity) {
+    public PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;
@@ -279,7 +280,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * Sets the player cargo list
      * @param playerCargo player cargo
      */
-    public void setPlayerCargoList(List<ShopEntry> playerCargo) {
+    public void setPlayerCargoList(@Nullable List<ShopEntry> playerCargo) {
         playerCargoList = playerCargo;
         notifyDataSetChanged();
     }
@@ -302,7 +303,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      *
      */
 
-    public void setOnClickListener(OnClickListener listener) {
+    public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
     }
 
@@ -322,7 +323,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      *
      * @param sga shop goods adapter
      */
-    public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
+    public void setShopGoodsAdapter(@Nullable ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
     }
 }

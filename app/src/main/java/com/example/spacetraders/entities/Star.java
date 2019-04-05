@@ -2,6 +2,8 @@ package com.example.spacetraders.entities;
 
 import java.io.Serializable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.util.Random;
 
 /**
@@ -25,7 +27,7 @@ public class Star implements Serializable {
      *
      * @param name name
      */
-    public Star(String name) {
+    public Star(@Nullable String name) {
         this.name = name;
         generateClassification();
         generateTemperatureAndRadius();
@@ -114,6 +116,7 @@ public class Star implements Serializable {
      *
      * @return String name
      */
+    @Nullable
     public String getName() {
         return name;
     }

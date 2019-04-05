@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,7 +38,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * constructor
      * @param planets list of planets
      */
-    public PlanetAdapter(Planet[] planets) {
+    public PlanetAdapter(@Nullable Planet[] planets) {
         this.planetsList = Arrays.asList(planets);
         viewHolderList = new ArrayList<>();
     }
@@ -138,7 +139,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      *
      * @param p list of planet
      */
-    public void setPlanetsList(Planet[] p) {
+    public void setPlanetsList(@Nullable Planet[] p) {
         planetsList = Arrays.asList(p);
         notifyDataSetChanged();
     }
@@ -152,7 +153,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
          * on clicked
          * @param planet planet
          */
-        void onClicked(Planet planet);
+        void onClicked(@Nullable Planet planet);
     }
 
     /**
@@ -160,7 +161,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      *
      * @param listener listener
      */
-    public void setOnClickListener(OnClickListener listener) {
+    public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
     }
 

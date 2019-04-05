@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param shopGoodsList list of shop goods list
      * @param shopActivity shop activity
      */
-    public ShopGoodsAdapter(List<ShopEntry> shopGoodsList, ShopActivity shopActivity) {
+    public ShopGoodsAdapter(@Nullable List<ShopEntry> shopGoodsList, @Nullable ShopActivity shopActivity) {
         for (ShopEntry entry : shopGoodsList) {
             if (entry.getStock() == 0) {
                 shopGoodsList.remove(entry);
@@ -266,7 +267,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      *
      * @param shopEntries list of shop entries
      */
-    public void setShopGoodsList(List<ShopEntry> shopEntries) {
+    public void setShopGoodsList(@Nullable List<ShopEntry> shopEntries) {
         shopGoodsList = shopEntries;
         notifyDataSetChanged();
     }
@@ -291,7 +292,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //     */
 
-    public void setOnClickListener(OnClickListener listener) {
+    public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
     }
 
@@ -310,7 +311,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      *
      * @param pca player cargo adapter
      */
-    public void setPlayerCargoAdapter(PlayerCargoAdapter pca) {
+    public void setPlayerCargoAdapter(@Nullable PlayerCargoAdapter pca) {
         playerCargoAdapter = pca;
     }
 
@@ -327,7 +328,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param good  a shop good
      * @return the shop good price OR -1 if fail
      */
-    public int getCostOfGood(ShopGoods good) {
+    public int getCostOfGood(@Nullable ShopGoods good) {
         for (ShopEntry entry : shopGoodsList) {
             if (entry.getGood().equals(good)) {
                 return entry.getPrice();

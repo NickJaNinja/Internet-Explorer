@@ -1,6 +1,7 @@
 package com.example.spacetraders.entities;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.io.Serializable;
 import java.util.List;
@@ -47,7 +48,7 @@ public class Game implements Serializable {
      * @param difficulty difficulty of game
      * @param player     the player
      */
-    public Game(GameDifficulty difficulty, Player player) {
+    public Game(@Nullable GameDifficulty difficulty, @Nullable Player player) {
         this.difficulty = difficulty;
         this.player = player;
         this.universe = new Universe();
@@ -62,7 +63,7 @@ public class Game implements Serializable {
      * @return 1 if content_planet is different from curr content_planet, 0 if content_planet is
      * the same
      */
-    public int travelToPlanet(Planet to) {
+    public int travelToPlanet(@Nullable Planet to) {
         if(to == null) {
             return 2;
         }
@@ -77,7 +78,7 @@ public class Game implements Serializable {
      * @param to solar system to travel towards
      * @return 1 on success, 0 on fail
      */
-    public int travelToSystem(SolarSystem to) {
+    public int travelToSystem(@Nullable SolarSystem to) {
         int distance = universe.distanceBetweenSystems(currSystem, to);
         if (player.travel(distance) == 0) {
             return 0;
@@ -103,7 +104,7 @@ public class Game implements Serializable {
      * @param price  the price of each good
      * @return 1 if transaction occurred, 0 otherwise
      */
-    public int makeTransaction(ShopGoods sg, int amount, int price) {
+    public int makeTransaction(@Nullable ShopGoods sg, int amount, int price) {
         return player.makeTransaction(sg, amount, price) & currPlanet.makeTransaction(sg, amount);
     }
 
@@ -165,6 +166,7 @@ public class Game implements Serializable {
      *
      * @return current content_planet
      */
+    @Nullable
     public Planet getCurrentPlanet() {
         return currPlanet;
     }
@@ -174,6 +176,7 @@ public class Game implements Serializable {
      *
      * @return current system
      */
+    @Nullable
     public SolarSystem getCurrentSystem() {
         return currSystem;
     }
@@ -194,6 +197,7 @@ public class Game implements Serializable {
      *
      * @return shop entries
      */
+    @Nullable
     public List<ShopEntry> getShopEntries() {
         return currPlanet.getShopEntries();
     }
@@ -203,6 +207,7 @@ public class Game implements Serializable {
      *
      * @return shop entries filtered
      */
+    @Nullable
     public List<ShopEntry> getShopEntriesFiltered() {
         return currPlanet.getShopEntriesFiltered();
     }
@@ -212,6 +217,7 @@ public class Game implements Serializable {
      *
      * @return player entries
      */
+    @Nullable
     public List<ShopEntry> getPlayerEntries() {
         return player.getPlayerEntries();
     }
@@ -231,6 +237,7 @@ public class Game implements Serializable {
      *
      * @return the solar systems
      */
+    @Nullable
     public SolarSystem[] getSolarSystems() {
         return universe.getSolarSystems();
     }
@@ -271,11 +278,12 @@ public class Game implements Serializable {
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 
+    @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
     }
 
-    public void setShipType(ShipType shipType) {
+    public void setShipType(@Nullable ShipType shipType) {
         player.setShipType(shipType);
     }
 
