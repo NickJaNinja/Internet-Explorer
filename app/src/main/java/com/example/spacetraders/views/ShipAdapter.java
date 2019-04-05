@@ -104,7 +104,8 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
         shipViewHolder.cargo.setText(String.valueOf(ship.getNumCargoHolds()));
         shipViewHolder.maxFuel.setText(String.valueOf(ship.getFuel()));
         shipViewHolder.crew.setText(String.valueOf(ship.getNumCrew()));
-        shipViewHolder.cost.setText("¥" +ship.getCost());
+        String pshet = "¥" +ship.getCost();
+        shipViewHolder.cost.setText(pshet);
     }
 
     public ShipType getSelected() {
