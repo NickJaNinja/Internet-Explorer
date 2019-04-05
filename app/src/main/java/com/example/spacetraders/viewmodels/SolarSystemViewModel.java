@@ -12,7 +12,7 @@ import com.example.spacetraders.models.Model;
  * solar system view model
  */
 public class SolarSystemViewModel extends AndroidViewModel {
-    private final Model model;
+   // private final Model model;
     private final SolarSystem currentSolarSystem;
     // --Commented out by Inspection (4/2/19, 11:04 PM):private Planet[] planetsInRange;
 
@@ -23,7 +23,8 @@ public class SolarSystemViewModel extends AndroidViewModel {
      */
     public SolarSystemViewModel(@NonNull Application app) {
         super(app);
-        model = Model.getInstance();
+
+         Model model = Model.getInstance();
         currentSolarSystem = model.getCurrentSystem();
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
 //        planetsInRange = currentSolarSystem.getPlanets();
@@ -68,13 +69,13 @@ public class SolarSystemViewModel extends AndroidViewModel {
         return currentSolarSystem;
     }
 
-    /**
+    /*
      * set planet
      *
      * @param p planet
      */
-    public void setPlanet(Planet p) {
+   /* public void setPlanet(Planet p) {
         model.setCurrentPlanet(p);
-    }
+    }*/
 
 }

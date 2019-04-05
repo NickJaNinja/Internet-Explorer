@@ -210,6 +210,6 @@ public class Planet implements Serializable {
     @Override
     @NonNull
     public String toString() {
-        return name + " (" + techLevel + ", " + resourcesLevel + ")";
+        return name + " (" + techLevel + ", " + resourcesLevel + inHabitableZone +")";
     }
 }

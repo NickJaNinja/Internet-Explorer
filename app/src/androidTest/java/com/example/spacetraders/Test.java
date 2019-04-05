@@ -13,7 +13,7 @@ class Test {
      * @param args string array
      */
     public static void main(String args[]) {
-        int inhabitedPlanetsNum = 0;
+        //int inhabitedPlanetsNum = 0;
         /*
         SolarSystem testSystem = new SolarSystem("Alpha  C e n t a u r i",new Coordinates(0, 0));
         System.out.println(testSystem.getName());

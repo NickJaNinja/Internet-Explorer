@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Planet;
+//import com.example.space traders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
 /**
@@ -43,7 +43,7 @@ public class PlanetActivity extends AppCompatActivity {
         TextView refuel;
         TextView save;
         TextView load;
-        Planet planet;
+      //  Planet planet;
         ImageView planetImage;
         TextView name;
 
@@ -59,7 +59,7 @@ public class PlanetActivity extends AppCompatActivity {
         fuel.setProgress(model.getFuelPercentage());
 
 
-        planet = model.getCurrentPlanet();
+       // planet = model.getCurrentPlanet();
         name = findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);
