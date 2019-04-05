@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0
  */
 public class Player implements Serializable {
-    private String name;
+    private final String name;
     private final int pilotSkill;
     private final int fighterSkill;
     private final int traderSkill;

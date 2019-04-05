@@ -1,6 +1,7 @@
 package com.example.spacetraders.models;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
@@ -283,5 +284,11 @@ public class Model {
 
     public void setCredits(int credits) {
         game.setCredits(credits);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Model toString to avoid warning";
     }
 }
