@@ -33,8 +33,8 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
     //private ShipAdapter.OnClickListener listener;
     private Model model;
     private ShipType selected;
-    private EventHandler handler;
-    private ArrayList<View> viewHolderList;
+    private final EventHandler handler;
+    private final ArrayList<View> viewHolderList;
 
 
     /**
