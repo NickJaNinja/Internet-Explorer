@@ -278,14 +278,14 @@ public class Game implements Serializable {
         player.setShipType(shipType);
     }
 
-    /**
-     * gets name of current planet
-     *
-     * @return the name
-     */
-    public String getNameOfCurrentPlanet() {
-        return this.currPlanet.getName();
-    }
+//    /**
+//     * gets name of current planet
+//     *
+//     * @return the name
+//     */
+//    public String getNameOfCurrentPlanet() {
+//        return this.currPlanet.getName();
+//    }
 
     @Override
     @NonNull
