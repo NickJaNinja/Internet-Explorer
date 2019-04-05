@@ -120,6 +120,7 @@ class Test {
         }
         System.out.println();
         System.out.println("Total number of inhabited planets: " + inhabitedPlanetsNum);*/
+        System.out.print("TEST");
     }
 }
 
