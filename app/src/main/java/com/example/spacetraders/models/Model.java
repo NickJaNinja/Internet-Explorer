@@ -91,8 +91,10 @@ public class Model {
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
-            saveFile.createNewFile();
-            saveFile.setWritable(true);
+            if (!saveFile.createNewFile() || !saveFile.setWritable(true)) {
+                // SHOULD RETURN -1 ON FAIL OR SOMETHING
+                return;
+            }
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
             ObjectOutput out_ = new ObjectOutputStream(fileOut);
