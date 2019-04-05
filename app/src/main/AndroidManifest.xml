@@ -35,7 +35,8 @@
             tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.ShipyardActivity"
-            android:parentActivityName=".views.MainActivity" />
+            android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.EditPlayerActivity"
             android:parentActivityName=".views.MainActivity" />
