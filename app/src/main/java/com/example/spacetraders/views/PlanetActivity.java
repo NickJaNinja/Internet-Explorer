@@ -43,7 +43,7 @@ public class PlanetActivity extends AppCompatActivity {
         TextView refuel;
         TextView save;
         TextView load;
-        Planet planet;
+        //Planet planet;
         ImageView planetImage;
         TextView name;
 
@@ -59,7 +59,7 @@ public class PlanetActivity extends AppCompatActivity {
         fuel.setProgress(model.getFuelPercentage());
 
 
-        planet = model.getCurrentPlanet();
+        //planet = model.getCurrentPlanet();
         name = findViewById(R.id.planet_name_text);
 
         market = findViewById(R.id.market_button);

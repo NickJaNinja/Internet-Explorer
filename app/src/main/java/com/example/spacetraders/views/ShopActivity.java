@@ -98,7 +98,7 @@ public class ShopActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //implements later setMarketsEntriesToTemp();
                    viewModel.setMarketsEntriesToTemp();
-                viewModel.setUpMarket();
+                //viewModel.setUpMarket();
             }
         });
 
@@ -106,7 +106,7 @@ public class ShopActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.setUpMarket();
+                //viewModel.setUpMarket();
             }
         });
 
