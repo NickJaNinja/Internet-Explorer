@@ -44,16 +44,13 @@
             android:name=".views.UniverseMapActivity"
             android:parentActivityName=".views.MainActivity" />
         <activity
-            android:name=".views.MenuBarActivity"
-            android:parentActivityName=".views.MainActivity" />
-        <activity
             android:name=".views.SolarSystemActivity"
             android:parentActivityName=".views.MainActivity"
             tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.PlanetActivity"
             android:parentActivityName=".views.MainActivity"
-        ></activity>
+        />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
