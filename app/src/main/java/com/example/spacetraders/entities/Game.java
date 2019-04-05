@@ -216,15 +216,16 @@ public class Game implements Serializable {
         return player.getPlayerEntries();
     }
 
-    /**
+    /*
      * setter for current content_planet
      *
      * @param newCurr new current planet
      */
+    /*
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
     }
-
+*/
     /**
      * Gets all of the solar systems
      *
@@ -268,23 +269,33 @@ public class Game implements Serializable {
      *
      * @return true if warp gate, false otherwise
      */
-    public boolean isOnWarpGatePlanet() {
-        return currPlanet.getIsWarpGate();
+    public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
+
+    public List getShipsBasedOnTechLevel() {
+        return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
     }
 
-    /**
-     * gets name of current planet
-     *
-     * @return the name
-     */
-    public String getNameOfCurrentPlanet() {
-        return this.currPlanet.getName();
+    public void setShipType(ShipType shipType) {
+        player.setShipType(shipType);
     }
+
+//    /**
+//     * gets name of current planet
+//     *
+//     * @return the name
+//     */
+//    public String getNameOfCurrentPlanet() {
+//        return this.currPlanet.getName();
+//    }
 
     @Override
     @NonNull
     //A make no sense toString to get rid of warning
     public String toString() {
         return difficulty.toString();
+    }
+
+    public void setCredits(int credits) {
+        player.setCredits(credits);
     }
 }

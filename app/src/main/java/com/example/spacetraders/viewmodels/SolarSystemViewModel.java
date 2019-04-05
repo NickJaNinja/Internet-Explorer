@@ -23,6 +23,7 @@ public class SolarSystemViewModel extends AndroidViewModel {
      */
     public SolarSystemViewModel(@NonNull Application app) {
         super(app);
+
         model = Model.getInstance();
         currentSolarSystem = model.getCurrentSystem();
 // --Commented out by Inspection START (4/2/19, 11:04 PM):
@@ -68,13 +69,17 @@ public class SolarSystemViewModel extends AndroidViewModel {
         return currentSolarSystem;
     }
 
-    /**
+    /*
      * set planet
      *
      * @param p planet
      */
-    public void setPlanet(Planet p) {
+   /* public void setPlanet(Planet p) {
         model.setCurrentPlanet(p);
-    }
-
+    }*/
+   @NonNull
+   @Override
+   public String toString() {
+        return model.toString();
+   }
 }

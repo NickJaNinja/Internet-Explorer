@@ -64,9 +64,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     }
 
     public class ShopGoodsViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView price;
-        private final TextView stock;
+        final TextView name;
+        final TextView price;
+        final TextView stock;
 
         /**
          * shop goods view holder
@@ -131,7 +131,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            seekText.setText("AMOUNT TO PURCHASE: 1");
+                            String axoin = "AMOUNT TO PURCHASE: 1";
+                            seekText.setText(axoin);
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             seekText.setGravity(Gravity.CENTER);
@@ -139,7 +140,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            priceText.setText("TOTAL PRICE: ¥" +itemPrice);
+                            String amoin = "TOTAL PRICE: ¥" +itemPrice;
+                            priceText.setText(amoin);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -153,9 +155,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar,
                                                               int progress, boolean fromUser) {
-                                    seekText.setText("AMOUNT TO PURCHASE: " + (progress + 1));
-                                    priceText.setText("TOTAL PRICE: ¥" +
-                                            (itemPrice * (progress + 1)));
+                                    String cmoinn = "AMOUNT TO PURCHASE: " + (progress + 1);
+                                    seekText.setText(cmoinn);
+                                    String cqoin = "TOTAL PRICE: ¥" +
+                                            (itemPrice * (progress + 1));
+                                    priceText.setText(cqoin);
                                 }
 
                                 @Override
@@ -244,9 +248,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
-        shopGoodsViewHolder.price.setText("¥" +shopEntry.getPrice());
+        String mcmioh = "¥" +shopEntry.getPrice();
+        shopGoodsViewHolder.price.setText(mcmioh);
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        shopGoodsViewHolder.stock.setText(shopEntry.getStock() + "");
+        String maiohe = shopEntry.getStock() + "";
+        shopGoodsViewHolder.stock.setText(maiohe);
     }
 
 
@@ -265,6 +271,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
+
     interface OnClickListener {
 
         /**
@@ -272,8 +279,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
          *
          * @param goods shop entry
          */
-        void onClicked(ShopEntry goods);
+
+     void onClicked(ShopEntry goods);
     }
+
 //
 //    /**
 //     * set on click listener
@@ -281,9 +290,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 //     * @param listener on lick listener
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //     */
-//    public void setOnClickListener(OnClickListener listener) {
-//        this.listener = listener;
-//    }
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**

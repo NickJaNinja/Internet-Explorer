@@ -41,12 +41,14 @@ public class UniverseMapActivity extends AppCompatActivity {
         TextView range = findViewById(R.id.range_text);
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
-        ImageView theCircle = findViewById(R.id.local_universe);
+       // ImageView theCircle = findViewById(R.id.local_universe);
 
-        nameOfPlanet.setText("" + universeViewModel.getCurrentSystem().getName());
-        distance.setText("0 Ly");
-        coordinates.setText("" + universeViewModel.getCurrentSystem().getCoordinates().toString());
-        range.setText(Model.getInstance().getRange() + " Ly");
+        nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
+        String joisco = "0 Ly";
+        distance.setText(joisco);
+        coordinates.setText(universeViewModel.getCurrentSystem().getCoordinates().toString());
+        String yonxw = Model.getInstance().getRange() + " Ly";
+        range.setText(yonxw);
         engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
@@ -83,10 +85,11 @@ public class UniverseMapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText("" + currentSolarSystem.getName());
-                        distance.setText(currentSolarSystem.dist(
-                                universeViewModel.getCurrentSystem()) + " Ly");
-                        coordinates.setText("" + currentSolarSystem.getCoordinates().toString());
+                        nameOfPlanet.setText(currentSolarSystem.getName());
+                        String slkent = currentSolarSystem.dist(
+                                universeViewModel.getCurrentSystem()) + " Ly";
+                        distance.setText(slkent);
+                        coordinates.setText(currentSolarSystem.getCoordinates().toString());
 
                         // make travel button red if system out of range, green if in range
                         if (Model.getInstance().getRange() < currentSolarSystem.dist(

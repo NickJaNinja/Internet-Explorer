@@ -4,7 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
-import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.models.Model;
 
@@ -18,7 +17,7 @@ public class ShopViewModel extends AndroidViewModel {
     private final Model model;
     //private List<ShopEntry> shopInventoryTemp;
     // private List<ShopEntry> playerInventoryTemp;
-    private Shop shop;
+    //private Shop shop;
 
     /**
      * shop view model

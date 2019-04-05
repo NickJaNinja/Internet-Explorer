@@ -255,6 +255,10 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
+    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+        return ship.getShipsBasedOnTechLevel(techLevel);
+    }
+
 //    /**
 //     * setter for name
 //     *
@@ -263,6 +267,10 @@ public class Player implements Serializable {
 //    public void setName(String name) {
 //        this.name = name;
 //    }
+
+    public void setShipType(ShipType shipType) {
+        ship.setShipType(shipType);
+    }
 
 //    /**
 //     * setter for pilotSkill
@@ -346,5 +354,9 @@ public class Player implements Serializable {
                 ", ship=" + ship +
                 ", reputation=" + reputation +
                 '}';
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 }

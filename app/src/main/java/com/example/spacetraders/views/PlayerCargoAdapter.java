@@ -60,10 +60,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     }
 
     public class PlayerCargoViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView price;
-        private final TextView stock;
-        private boolean dialogConfirmed;
+        final TextView name;
+        final TextView price;
+        final TextView stock;
+        boolean dialogConfirmed;
 
         /**
          * ViewHolder Constructor
@@ -135,7 +135,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            seekText.setText("AMOUNT TO SELL: 1");
+                            String aahhower = "AMOUNT TO SELL: 1";
+                            seekText.setText(aahhower);
 
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
@@ -144,7 +145,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            priceText.setText("TOTAL SALE: ¥" +itemPrice);
+                            String qwoehr = "TOTAL SALE: ¥" +itemPrice;
+                            priceText.setText(qwoehr);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -158,9 +160,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar,
                                                               int progress, boolean fromUser) {
-                                    seekText.setText("AMOUNT TO SELL: " + (progress + 1));
-                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice *
-                                            (progress + 1)));
+                                    String as = "AMOUNT TO SELL: " + (progress + 1);
+                                    seekText.setText(as);
+                                    String asoi = "TOTAL SALE: ¥" +(itemPrice *
+                                            (progress + 1));
+                                    priceText.setText(asoi);
                                 }
 
                                 @Override
@@ -253,10 +257,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry
-                .getGood()) +"(¥" +shopEntry.getPrice() +")");
+        String aoix = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+                .getGood()) +"(¥" +shopEntry.getPrice() +")";
+        playerCargoViewHolder.price.setText(aoix);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
-        playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
+        playerCargoViewHolder.stock.setText(
+                String.valueOf(shopEntry.getStock()));
 
     }
 
@@ -278,50 +284,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         notifyDataSetChanged();
     }
 
-    /*
-        public LinearLayout getLayout(int index, Context context) {
-            // layout containing line and the item layout
-            LinearLayout master_layout = new LinearLayout(context);
-            master_layout.setOrientation(LinearLayout.HORIZONTAL);
 
-            // creating a LinearLayout containing the item and info about it in TextViews
-            LinearLayout item_layout = new LinearLayout(master_layout.getContext());
-            item_layout.setOrientation(LinearLayout.HORIZONTAL);
-            LinearLayout.LayoutParams item_layout_params1 = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                    0.5f);
-            LinearLayout.LayoutParams item_layout_params2 = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,
-                    0.25f);
-
-            // adding text views for each item in item_layout
-            TextView item_name = new TextView(master_layout.getContext());
-            item_name.setWidth(0);
-            item_name.setText(shopGoodsLis);
-            item_name.setLayoutParams(item_layout_params1);
-            TextView item_price = new TextView(master_layout.getContext());
-            item_price.setWidth(0);
-            item_price.setLayoutParams(item_layout_params2);
-            TextView item_stock = new TextView(master_layout.getContext());
-            item_stock.setWidth(0);
-            item_stock.setLayoutParams(item_layout_params2);
-
-            item_layout.addView(item_name);
-            item_layout.addView(item_price);
-            item_layout.addView(item_stock);
-
-            // creating a View with a horizontal white line
-            View line = new View(master_layout.getContext());
-            line.setMinimumHeight(1);
-            line.setBackgroundColor(Color.parseColor("#ffffff"));
-
-            // adding line and item_layout to master_layout
-            master_layout.addView(line);
-            master_layout.addView(item_layout);
-
-            return master_layout;
-        }
-        */
     interface OnClickListener {
 
         /**
@@ -331,16 +294,17 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
          */
         void onClicked(ShopEntry goods);
     }
-//
-//    /**
-//     * set on click listener
-//     *
-//     * @param listener on click listener
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//     */
-//    public void setOnClickListener(OnClickListener listener) {
-//        this.listener = listener;
-//    }
+
+    /**
+     * set on click listener
+     *
+     * @param listener on click listener
+     *
+     */
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**

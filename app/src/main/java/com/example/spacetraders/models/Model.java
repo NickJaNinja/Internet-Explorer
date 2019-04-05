@@ -1,11 +1,13 @@
 package com.example.spacetraders.models;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
@@ -15,9 +17,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.List;
-import java.io.ObjectOutput;
 
 /**
  * model class
@@ -206,14 +208,14 @@ public class Model {
         return game.getCurrentPlanet();
     }
 
-    /**
-     * setter for current content_planet
-     *
-     * @param newCurr planet new curr
-     */
-    public void setCurrentPlanet(Planet newCurr) {
-        this.game.setCurrentPlanet(newCurr);
-    }
+//    /**
+//     * setter for current content_planet
+//     *
+//     * @param newCurr planet new curr
+//     */
+//    public void setCurrentPlanet(Planet newCurr) {
+//        this.game.setCurrentPlanet(newCurr);
+//    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
@@ -272,12 +274,21 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
-    /**
-     * gets name of current planet
-     *
-     * @return the name
-     */
-    public String getNameOfCurrentPlanet() {
-        return this.game.getNameOfCurrentPlanet();
+    public List getShipsBasedOnTechLevel() {
+        return game.getShipsBasedOnTechLevel();
+    }
+
+    public void setShipType(ShipType shipType) {
+        game.setShipType(shipType);
+    }
+
+    public void setCredits(int credits) {
+        game.setCredits(credits);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Model toString to avoid warning";
     }
 }
