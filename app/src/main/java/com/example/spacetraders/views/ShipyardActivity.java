@@ -59,9 +59,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
         purchaseButton = findViewById(R.id.purchase_button);
         purchaseButton.setBackgroundColor(Color.parseColor("#D25A64")); // red
 
-        purchaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        purchaseButton.setOnClickListener((View view)-> {
                 ShipType selected = adapterForShips.getSelected();
                 if (selected == null) {
                     CharSequence text = "Select a ship";
@@ -78,7 +76,6 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
                     Model.getInstance().setCredits(Model.getInstance().getCredits() -
                             adapterForShips.getSelected().getCost());
                 }
-            }
         });
     }
 

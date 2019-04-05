@@ -80,10 +80,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
             price = itemView.findViewById(R.id.price_text);
             stock = itemView.findViewById(R.id.stock_text);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener((View view) ->{
                     int position = getAdapterPosition();
 
                     if (position == RecyclerView.NO_POSITION) {
@@ -193,27 +190,19 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             builder.setView(layout)
                                     .setPositiveButton("CONFIRM",
-                                            new DialogInterface.OnClickListener() {
-                                        // when positive button clicked dismiss dialog
-                                        @Override
-                                        public void onClick(DialogInterface d, int which) {
+                                            // when positive button clicked dismiss dialog
+                                            (DialogInterface d, int which) ->{
                                             dialogConfirmed = true;
                                             d.dismiss();
-                                        }
                                     })
                                     .setNegativeButton("CANCEL",
-                                            new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface d, int which) {
-                                            d.dismiss();
-                                        }
-                                    });
+                                            (DialogInterface d, int which) ->
+                                            d.dismiss()
+                                    );
 
                             dialog = builder.create();
 
-                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                                @Override
-                                public void onDismiss(DialogInterface dialog) {
+                            dialog.setOnDismissListener((DialogInterface dialog) ->{
                                     if (dialogConfirmed && (model.makeTransaction(
                                             shopGoodsList.get(position).getGood(),
                                             seek.getProgress() + 1, cost) == 1)) {
@@ -229,7 +218,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                                 Toast.LENGTH_SHORT);
                                         toast.show();
                                     }
-                                }
                             });
 
                             dialog.show();
@@ -240,7 +228,6 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             toast.show();
                         }
                     }
-                }
             });
 
         }

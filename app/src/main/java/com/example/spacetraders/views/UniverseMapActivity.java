@@ -82,9 +82,7 @@ public class UniverseMapActivity extends AppCompatActivity {
 
                 int j = i;
 
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                imageView.setOnClickListener((View v)-> {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText(currentSolarSystem.getName());
                         String slk = currentSolarSystem.dist(
@@ -101,16 +99,13 @@ public class UniverseMapActivity extends AppCompatActivity {
                             engageWarpDrive.setBackgroundColor(Color.parseColor(
                                     "#5FCA77")); // green
                         }
-                    }
                 });
             }
         }
 
 
 
-        engageWarpDrive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        engageWarpDrive.setOnClickListener((View v)-> {
                 if (Model.getInstance().isOnWarpGatePlanet()) {
                     CharSequence text = "Not on planet with Warp Gate";
                     Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
@@ -132,7 +127,6 @@ public class UniverseMapActivity extends AppCompatActivity {
                 Intent newIntent = new Intent(UniverseMapActivity.this,
                         PlanetActivity.class);
                 startActivity(newIntent);
-            }
         });
 
 

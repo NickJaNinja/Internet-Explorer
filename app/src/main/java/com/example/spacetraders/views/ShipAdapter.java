@@ -85,9 +85,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
 
             viewHolderList.add(itemView);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener((View view) ->{
                     selected = ships.get(getAdapterPosition());
 
                     // give all views "unselected background"
@@ -100,7 +98,6 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
                     view.setBackgroundColor(Color.parseColor("#664B4B4C"));
 
                     handler.handle(); // make purchase button green
-                }
             });
         }
     }

@@ -81,10 +81,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
             viewHolderList.add(itemView);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener((View view)-> {
                     int position = getAdapterPosition();
 
                     if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
@@ -101,7 +98,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     view.setBackgroundColor(Color.parseColor("#22FFFFFF"));
 
                     notifyDataSetChanged();
-                }
             });
         }
     }

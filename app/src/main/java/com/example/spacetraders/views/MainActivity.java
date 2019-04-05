@@ -35,17 +35,12 @@ public class MainActivity extends AppCompatActivity {
         loadButton = findViewById(R.id.load_button);
         model = Model.getInstance();
 
-        newButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        newButton.setOnClickListener((View v)-> {
                 Intent intent = new Intent(v.getContext(), EditPlayerActivity.class);
                 startActivity(intent);
-            }
         });
 
-        loadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        loadButton.setOnClickListener((View v) ->{
                 model.loadGame(v.getContext());
                 Intent intent;
                 if (model.getGame() == null) {
@@ -54,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(v.getContext(), PlanetActivity.class);
                 }
                 startActivity(intent);
-            }
 
         });
 
