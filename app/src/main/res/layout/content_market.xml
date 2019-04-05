@@ -258,7 +258,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
-                    android:text="@string/OREOS"
+                    android:text="@string/OREO"
                     style="?android:attr/buttonBarButtonStyle"
                     android:textColor="@color/colorText"
                     android:background="@color/colorCancelButton"

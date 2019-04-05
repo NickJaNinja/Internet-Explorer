@@ -75,19 +75,19 @@ public class SolarSystemActivity extends AppCompatActivity {
 
         final double RADIUS_CONSTANT = 1.58125E-5;
         name.setText(solarSystem.getName());
-        String moihw = solarSystem.getStars()[0].getClassification() + " Class Star";
-        classification.setText(moihw);
-        String qoih = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
+        String moi = solarSystem.getStars()[0].getClassification() + " Class Star";
+        classification.setText(moi);
+        String qoi = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
                 * RADIUS_CONSTANT) + " Ly";
-        radius.setText(qoih);
-        String mvoiy = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
-        mass.setText(mvoiy);
-        String zpiug = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
+        radius.setText(qoi);
+        String mvo = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
+        mass.setText(mvo);
+        String zpi = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
                 + " K";
-        surfaceTemp.setText(zpiug);
-        String xoiy = "Luminosity: " + dfe.format(
+        surfaceTemp.setText(zpi);
+        String xoi = "Luminosity: " + dfe.format(
                 solarSystem.getStars()[0].getLuminosityInWatts()) + " W";
-        luminosity.setText(xoiy);
+        luminosity.setText(xoi);
 
         //initialize button color to red
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));

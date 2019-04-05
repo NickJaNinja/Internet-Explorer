@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:layout_gravity="start"
-                android:text="@string/FRAPPCHINO"
+                android:text="@string/FRA"
                 android:textColor="@color/colorHint"
                 android:textSize="20sp" />
 

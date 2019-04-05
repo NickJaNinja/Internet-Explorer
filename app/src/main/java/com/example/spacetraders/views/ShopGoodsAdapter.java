@@ -131,8 +131,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            String axoin = "AMOUNT TO PURCHASE: 1";
-                            seekText.setText(axoin);
+                            String axo = "AMOUNT TO PURCHASE: 1";
+                            seekText.setText(axo);
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             seekText.setGravity(Gravity.CENTER);
@@ -140,8 +140,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            String amoin = "TOTAL PRICE: ¥" +itemPrice;
-                            priceText.setText(amoin);
+                            String amo = "TOTAL PRICE: ¥" +itemPrice;
+                            priceText.setText(amo);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -155,11 +155,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar,
                                                               int progress, boolean fromUser) {
-                                    String cmoinn = "AMOUNT TO PURCHASE: " + (progress + 1);
-                                    seekText.setText(cmoinn);
-                                    String cqoin = "TOTAL PRICE: ¥" +
+                                    String cmo = "AMOUNT TO PURCHASE: " + (progress + 1);
+                                    seekText.setText(cmo);
+                                    String cqo = "TOTAL PRICE: ¥" +
                                             (itemPrice * (progress + 1));
-                                    priceText.setText(cqoin);
+                                    priceText.setText(cqo);
                                 }
 
                                 @Override
@@ -248,11 +248,11 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
         ShopEntry shopEntry = shopGoodsList.get(position);
-        String mcmioh = "¥" +shopEntry.getPrice();
-        shopGoodsViewHolder.price.setText(mcmioh);
+        String mcm = "¥" +shopEntry.getPrice();
+        shopGoodsViewHolder.price.setText(mcm);
         shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        String maiohe = shopEntry.getStock() + "";
-        shopGoodsViewHolder.stock.setText(maiohe);
+        String mai = shopEntry.getStock() + "";
+        shopGoodsViewHolder.stock.setText(mai);
     }
 
 
