@@ -28,9 +28,9 @@ import com.example.spacetraders.models.Model;
  * planet activity class
  */
 public class PlanetActivity extends AppCompatActivity {
-    private Model model;
-    private MediaPlayer mediaPlayer;
-    private ProgressBar fuel;
+    Model model;
+    MediaPlayer mediaPlayer;
+    ProgressBar fuel;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override

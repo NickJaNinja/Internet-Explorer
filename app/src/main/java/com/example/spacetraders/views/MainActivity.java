@@ -14,7 +14,7 @@ import com.example.spacetraders.models.Model;
  * main activity
  */
 public class MainActivity extends AppCompatActivity {
-    private Model model;
+    Model model;
 
     /**
      * on create

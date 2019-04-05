@@ -44,7 +44,8 @@
             android:parentActivityName=".views.MainActivity" />
         <activity
             android:name=".views.SolarSystemActivity"
-            android:parentActivityName=".views.MainActivity" />
+            android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.PlanetActivity"
             android:parentActivityName=".views.MainActivity"

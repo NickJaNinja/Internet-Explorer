@@ -24,11 +24,11 @@ import java.text.DecimalFormat;
  * solar system activity
  */
 public class SolarSystemActivity extends AppCompatActivity {
-    private Model model;
+    Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
-    private Planet selectedPlanet;
-    private Button thrusterButton;
+    Planet selectedPlanet;
+    Button thrusterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,15 +74,20 @@ public class SolarSystemActivity extends AppCompatActivity {
         DecimalFormat df = new DecimalFormat("#.##");
 
         final double RADIUS_CONSTANT = 1.58125E-5;
-        name.setText(solarSystem.getName() + "");
-        classification.setText(solarSystem.getStars()[0].getClassification() + " Class Star");
-        radius.setText("Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
-                * RADIUS_CONSTANT) + " Ly");
-        mass.setText("Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg");
-        surfaceTemp.setText("Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
-                + " K");
-        luminosity.setText("Luminosity: " + dfe.format(
-                solarSystem.getStars()[0].getLuminosityInWatts()) + " W");
+        name.setText(solarSystem.getName());
+        String moihw = solarSystem.getStars()[0].getClassification() + " Class Star";
+        classification.setText(moihw);
+        String qoih = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
+                * RADIUS_CONSTANT) + " Ly";
+        radius.setText(qoih);
+        String mvoiy = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
+        mass.setText(mvoiy);
+        String zpiug = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
+                + " K";
+        surfaceTemp.setText(zpiug);
+        String xoiy = "Luminosity: " + dfe.format(
+                solarSystem.getStars()[0].getLuminosityInWatts()) + " W";
+        luminosity.setText(xoiy);
 
         //initialize button color to red
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
@@ -141,7 +146,7 @@ public class SolarSystemActivity extends AppCompatActivity {
      * set planet selected
      * @param p the selected destination planet
      */
-    private void setSelectedPlanet(Planet p) {
+    void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }
 

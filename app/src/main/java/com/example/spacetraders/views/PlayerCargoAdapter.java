@@ -31,12 +31,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * a copy of the list of shop goods in the model
      */
 
-    private final ShopActivity shopActivity;
-    private ShopGoodsAdapter shopGoodsAdapter;
-    private List<ShopEntry> playerCargoList;
-    private OnClickListener listener;
-    private AlertDialog dialog;
-    private final Model model;
+    final ShopActivity shopActivity;
+    ShopGoodsAdapter shopGoodsAdapter;
+    List<ShopEntry> playerCargoList;
+    OnClickListener listener;
+    AlertDialog dialog;
+    final Model model;
 
     /**
      * Constructor
@@ -60,10 +60,10 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     }
 
     public class PlayerCargoViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView price;
-        private final TextView stock;
-        private boolean dialogConfirmed;
+        final TextView name;
+        final TextView price;
+        final TextView stock;
+        boolean dialogConfirmed;
 
         /**
          * ViewHolder Constructor
@@ -135,7 +135,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            seekText.setText("AMOUNT TO SELL: 1");
+                            String aahhower = "AMOUNT TO SELL: 1";
+                            seekText.setText(aahhower);
 
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
@@ -144,7 +145,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            priceText.setText("TOTAL SALE: ¥" +itemPrice);
+                            String qwoehr = "TOTAL SALE: ¥" +itemPrice;
+                            priceText.setText(qwoehr);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -158,9 +160,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar,
                                                               int progress, boolean fromUser) {
-                                    seekText.setText("AMOUNT TO SELL: " + (progress + 1));
-                                    priceText.setText("TOTAL SALE: ¥" +(itemPrice *
-                                            (progress + 1)));
+                                    String as = "AMOUNT TO SELL: " + (progress + 1);
+                                    seekText.setText(as);
+                                    String asoi = "TOTAL SALE: ¥" +(itemPrice *
+                                            (progress + 1));
+                                    priceText.setText(asoi);
                                 }
 
                                 @Override
@@ -253,10 +257,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        playerCargoViewHolder.price.setText("¥" +shopGoodsAdapter.getCostOfGood(shopEntry
-                .getGood()) +"(¥" +shopEntry.getPrice() +")");
+        String aoix = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+                .getGood()) +"(¥" +shopEntry.getPrice() +")";
+        playerCargoViewHolder.price.setText(aoix);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
-        playerCargoViewHolder.stock.setText(shopEntry.getStock() + "");
+        playerCargoViewHolder.stock.setText(shopEntry.getStock());
 
     }
 
