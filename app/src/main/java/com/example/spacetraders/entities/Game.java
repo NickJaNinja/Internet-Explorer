@@ -279,6 +279,18 @@ public class Game implements Serializable {
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 
+    public int getLandType() {
+        return currPlanet.getLandType();
+    }
+
+    public int getColorBack() {
+        return currPlanet.getColorBack();
+    }
+
+    public int getColorFront() {
+        return currPlanet.getColorFront();
+    }
+
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());

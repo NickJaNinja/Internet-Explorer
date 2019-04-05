@@ -12,13 +12,25 @@
         android:orientation="vertical">
         <!--android:foreground="@drawable/dim"-->
 
-        <ImageView
-            android:id="@+id/planet_image"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/planet"
-            android:contentDescription="@string/get"/>
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/planet_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/planet_back"
+                android:contentDescription="@string/get"/>
+
+            <ImageView
+                android:id="@+id/planet_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/get"/>
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/planet_name_text"

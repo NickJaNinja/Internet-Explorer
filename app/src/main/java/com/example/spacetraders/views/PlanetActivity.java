@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.models.Model;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * planet activity class
@@ -49,7 +51,8 @@ public class PlanetActivity extends AppCompatActivity {
         TextView load;
         //Planet planet;
 
-        ImageView planetImage;
+        ImageView planetBack;
+        ImageView planetFront;
         TextView name;
 
         model = Model.getInstance();
@@ -133,20 +136,38 @@ public class PlanetActivity extends AppCompatActivity {
                 }
         });
 
+
+        planetBack = findViewById(R.id.planet_back);
+        planetFront = findViewById(R.id.planet_front);
+
+        // set land type
+        int landType = model.getLandType();
+        if (landType == 1) planetFront.setImageResource(R.drawable.planet_land_a);
+        else if (landType == 2) planetFront.setImageResource(R.drawable.planet_land_b);
+
+
+        // change colors of planet
+        planetBack.setColorFilter(model.getColorBack());
+        planetFront.setColorFilter(model.getColorFront());
+
+        // random initial rotation of planet
+        Random r = new Random();
+        int initialRotationRoll = r.nextInt(360);
+        planetFront.setRotation(initialRotationRoll);
+        planetBack.setRotation(initialRotationRoll);
+
         // rotate content_planet animation
         final int duration = 300000;
         final int degree = 360;
         final float pivotValue = 0.5f;
-
-
-        planetImage = findViewById(R.id.planet_image);
         RotateAnimation rotate = new RotateAnimation(0, degree,
                 Animation.RELATIVE_TO_SELF, pivotValue, Animation.RELATIVE_TO_SELF,
                 pivotValue);
         rotate.setRepeatCount(Animation.INFINITE);
         rotate.setDuration(duration);
         rotate.setInterpolator(new LinearInterpolator());
-        planetImage.startAnimation(rotate);
+        planetBack.startAnimation(rotate);
+        planetFront.startAnimation(rotate);
     }
 
     @Override

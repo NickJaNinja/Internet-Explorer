@@ -284,6 +284,18 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
+    public int getLandType() {
+        return game.getLandType();
+    }
+
+    public int getColorBack() {
+        return game.getColorBack();
+    }
+
+    public int getColorFront() {
+        return game.getColorFront();
+    }
+
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         return game.getShipsBasedOnTechLevel();

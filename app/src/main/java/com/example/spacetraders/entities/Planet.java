@@ -1,7 +1,10 @@
 package com.example.spacetraders.entities;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.example.spacetraders.R;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +25,9 @@ public class Planet implements Serializable {
     // --Commented out by Inspection (4/2/19, 11:03 PM):private int population;
     private final Shop shop;
     private boolean isWarpGate;
+    private int landType;
+    private int colorBack;
+    private int colorFront;
 
     /**
      * Constructor for Planet, randomizes levels
@@ -49,6 +55,17 @@ public class Planet implements Serializable {
         shop = new Shop(techLevel, resourcesLevel);
 
         this.isWarpGate = false;
+
+        int landTypeRoll = r.nextInt(10);
+        if (landTypeRoll <= 2) landType = 1; // a: 30%
+        else if (landTypeRoll <= 7) landType = 2;// b: 50%
+        else landType = 0;// no land: 20%
+
+        // generate colors of planet
+        colorBack = Color.argb(255, r.nextInt(256),
+                r.nextInt(256), r.nextInt(256));
+        colorFront = Color.argb(255, r.nextInt(256),
+                r.nextInt(256), r.nextInt(256));
     }
 
     /**
@@ -220,5 +237,17 @@ public class Planet implements Serializable {
     @NonNull
     public String toString() {
         return name + " (" + techLevel + ", " + resourcesLevel + inHabitableZone +")";
+    }
+
+    public int getLandType() {
+        return landType;
+    }
+
+    public int getColorBack() {
+        return colorBack;
+    }
+
+    public int getColorFront() {
+        return colorFront;
     }
 }
