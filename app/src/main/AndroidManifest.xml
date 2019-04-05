@@ -42,6 +42,9 @@
             android:name=".views.UniverseMapActivity"
             android:parentActivityName=".views.MainActivity" />
         <activity
+            android:name=".views.MenuBarActivity"
+            android:parentActivityName=".views.MainActivity" />
+        <activity
             android:name=".views.SolarSystemActivity"
             android:parentActivityName=".views.MainActivity" />
         <activity
