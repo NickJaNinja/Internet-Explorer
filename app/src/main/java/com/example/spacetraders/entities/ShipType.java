@@ -118,8 +118,8 @@ public enum ShipType {
         return cost;
     }
 
-    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
-        List<ShipType> ships = new LinkedList();
+    public List<ShipType> getShipsBasedOnTechLevel(TechLevel techLevel) {
+        List<ShipType> ships = new LinkedList<>();
         ShipType[] shipTypes = ShipType.values();
 
         int techLevelNum = techLevel.getLevel();

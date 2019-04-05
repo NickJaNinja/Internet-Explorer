@@ -136,7 +136,7 @@ class Ship implements Serializable {
         return fuelRemaining * FUEL_TO_COST_MULTI;
     }
 
-    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+    public List<ShipType> getShipsBasedOnTechLevel(TechLevel techLevel) {
         return this.type.getShipsBasedOnTechLevel(techLevel);
     }
 

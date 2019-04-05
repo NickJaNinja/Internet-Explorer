@@ -271,7 +271,7 @@ public class Game implements Serializable {
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 
-    public List getShipsBasedOnTechLevel() {
+    public List<ShipType> getShipsBasedOnTechLevel() {
         return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
     }
 

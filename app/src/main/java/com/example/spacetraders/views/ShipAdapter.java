@@ -41,7 +41,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
      * constructor
      * @param ships ships
      */
-    public ShipAdapter(List ships, EventHandler handler) {
+    public ShipAdapter(List<ShipType> ships, EventHandler handler) {
         this.ships = ships;
         this.handler = handler;
         viewHolderList = new ArrayList<>();

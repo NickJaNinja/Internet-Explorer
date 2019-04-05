@@ -274,7 +274,7 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
-    public List getShipsBasedOnTechLevel() {
+    public List<ShipType> getShipsBasedOnTechLevel() {
         return game.getShipsBasedOnTechLevel();
     }
 

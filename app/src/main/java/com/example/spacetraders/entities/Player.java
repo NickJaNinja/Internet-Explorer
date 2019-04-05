@@ -255,7 +255,7 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
-    public List getShipsBasedOnTechLevel(TechLevel techLevel) {
+    public List<ShipType> getShipsBasedOnTechLevel(TechLevel techLevel) {
         return ship.getShipsBasedOnTechLevel(techLevel);
     }
 

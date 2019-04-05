@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
+import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.models.Model;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class ShipyardViewModel extends AndroidViewModel {
         model = Model.getInstance();
     }
 
-    public List getShipsBasedOnTechLevel() {
+    public List<ShipType> getShipsBasedOnTechLevel() {
         return model.getShipsBasedOnTechLevel();
     }
 }
