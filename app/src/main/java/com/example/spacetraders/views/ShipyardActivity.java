@@ -26,7 +26,7 @@ import com.example.spacetraders.models.Model;
  */
 public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.EventHandler {
 
-    private ShipAdapter adapterForShips;
+    ShipAdapter adapterForShips;
     private TextView purchaseButton;
 
     @Override

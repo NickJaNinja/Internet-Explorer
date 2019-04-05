@@ -23,12 +23,12 @@ import com.example.spacetraders.viewmodels.UniverseViewModel;
  */
 public class UniverseMapActivity extends AppCompatActivity {
 
-    private TextView nameOfPlanet;
-    private TextView distance;
-    private TextView coordinates;
-    private Button engageWarpDrive;
-    private UniverseViewModel universeViewModel;
-    private SolarSystem currentSolarSystem;
+    TextView nameOfPlanet;
+    TextView distance;
+    TextView coordinates;
+    Button engageWarpDrive;
+    UniverseViewModel universeViewModel;
+    SolarSystem currentSolarSystem;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -28,10 +28,10 @@ import java.util.List;
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
-    private final List<ShipType> ships;
-    private ShipType selected;
-    private final EventHandler handler;
-    private final ArrayList<View> viewHolderList;
+    final List<ShipType> ships;
+    ShipType selected;
+    final EventHandler handler;
+    final ArrayList<View> viewHolderList;
 
 
     /**
@@ -57,14 +57,14 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
      * This is a holder for the widgets associated with a single entry in the list of ships
      */
     public class ShipViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView weapon;
-        private final TextView shields;
-        private final TextView gadgets;
-        private final TextView cargo;
-        private final TextView maxFuel;
-        private final TextView crew;
-        private final TextView cost;
+        final TextView name;
+        final TextView weapon;
+        final TextView shields;
+        final TextView gadgets;
+        final TextView cargo;
+        final TextView maxFuel;
+        final TextView crew;
+        final TextView cost;
 
         /**
          * ship view holder

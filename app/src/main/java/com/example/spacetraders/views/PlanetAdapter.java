@@ -29,8 +29,8 @@ import java.util.List;
  */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
-    private List<Planet> planetsList;
-    private OnClickListener listener;
+    List<Planet> planetsList;
+    OnClickListener listener;
     private ArrayList<View> viewHolderList;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
