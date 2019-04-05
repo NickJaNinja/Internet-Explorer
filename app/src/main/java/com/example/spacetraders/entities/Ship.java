@@ -11,7 +11,7 @@ import android.support.annotation.NonNull;
  * This class represents the player's ship
  */
 
-public class Ship implements Serializable {
+class Ship implements Serializable {
     private final ShipType type;
     private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;
@@ -116,15 +116,15 @@ public class Ship implements Serializable {
         }
     }
 
-    /**
-     * Calculate the amount you can refuel based on given credits
-     *
-     * @param credits Amount of money
-     * @return Amount of purchasable fuel
-     */
-    public int getPurchasableFuel(int credits) {
-        return credits / FUEL_TO_COST_MULTI;
-    }
+//    /**
+//     * Calculate the amount you can refuel based on given credits
+//     *
+//     * @param credits Amount of money
+//     * @return Amount of purchasable fuel
+//     */
+//    public int getPurchasableFuel(int credits) {
+//        return credits / FUEL_TO_COST_MULTI;
+//    }
 
     /**
      * Calculate cost to refuel the ship
@@ -156,21 +156,22 @@ public class Ship implements Serializable {
             inventory += amount;
         } else {
             ShopEntry item = cargo.get(good);
-            int currAmt = Objects.requireNonNull(item).getStock();
-            if ((currAmt + amount) <= 0) {
+
+            int currentAmount = Objects.requireNonNull(item).getStock();
+            if ((currentAmount + amount) <= 0) {
                 cargo.remove(good);
                 inventory += amount;
                 return 1;
             }
             int currPrc = item.getPrice();
-            int avgPrc = currAmt * currPrc;
+            int avgPrc = currentAmount * currPrc;
             if (amount > 0) {
                 avgPrc += amount * price;
             } else {
                 avgPrc += amount * currPrc;
             }
-            avgPrc /= (amount + currAmt);
-            item.setStock(currAmt + amount);
+            avgPrc /= (amount + currentAmount);
+            item.setStock(currentAmount + amount);
             item.setPrice(avgPrc);
             inventory += amount;
             cargo.put(good, item);

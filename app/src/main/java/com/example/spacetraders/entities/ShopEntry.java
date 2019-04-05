@@ -1,8 +1,8 @@
 package com.example.spacetraders.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 /**
  * shop entry class
@@ -81,21 +81,21 @@ public class ShopEntry implements Serializable {
         this.stock = amount;
     }
 
-    /**
-     * Makes this object into a list of Strings
-     * -name
-     * -stock
-     * -price
-     *
-     * @return The list of strings of instance data
-     */
-    public List<String> toStringList() {
-        List<String> list = new ArrayList<>();
-        list.add(good.getName());
-        list.add((stock == 0) ? " - " : Integer.toString(stock));
-        list.add(Integer.toString(price));
-        return list;
-    }
+//    /**
+//     * Makes this object into a list of Strings
+//     * -name
+//     * -stock
+//     * -price
+//     *
+//     * @return The list of strings of instance data
+//     */
+//    public List<String> toStringList() {
+//        List<String> list = new ArrayList<>();
+//        list.add(good.getName());
+//        list.add((stock == 0) ? " - " : Integer.toString(stock));
+//        list.add(Integer.toString(price));
+//        return list;
+//    }
 
 
 }

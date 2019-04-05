@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="SHIPYARD"
+            android:text="@string/NERDS"
             android:textColor="@color/colorText"
             android:textSize="30sp" />
 
@@ -43,7 +43,7 @@
                 android:layout_gravity="start"
                 android:layout_weight=".45"
                 android:adjustViewBounds="false"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
         </LinearLayout>
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/colorPlusButton"
-            android:text="PURCHASE"
+            android:text="@string/CHIPS"
             android:textColor="#ffffff" />
 
     </LinearLayout>

@@ -153,14 +153,14 @@ public class Planet implements Serializable {
         return shop.decreaseStock(sg, amount);
     }
 
-    /**
-     * Gets shop
-     *
-     * @return shop
-     */
-    public Shop getShop() {
-        return shop;
-    }
+//    /**
+//     * Gets shop
+//     *
+//     * @return shop
+//     */
+//    public Shop getShop() {
+//        return shop;
+//    }
 
     /**
      * get shop entries

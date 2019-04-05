@@ -87,12 +87,13 @@ public class ShopViewModel extends AndroidViewModel {
         return model.getPlayerEntries();
     }
 
-    /*
+    /**
      * set market entries to temp
      *
+     */
 
     public void setMarketsEntriesToTemp() {
 
     }
-    */
+
 }

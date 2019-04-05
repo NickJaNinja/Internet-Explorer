@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -27,7 +28,7 @@ import com.example.spacetraders.models.Model;
 /**
  * planet activity class
  */
-public class PlanetActivity extends MenuBarActivity {
+public class PlanetActivity extends AppCompatActivity {
     private Model model;
     private MediaPlayer mediaPlayer;
     private ProgressBar fuel;
@@ -70,7 +71,7 @@ public class PlanetActivity extends MenuBarActivity {
 
         // globally
 
-        name.setText(planet.getName());
+        name.setText(model.getNameOfCurrentPlanet());
 
         // music
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);

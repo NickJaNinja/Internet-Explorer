@@ -269,4 +269,13 @@ public class Model {
      * @return if player is on warp gate planet
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
+
+    /**
+     * gets name of current planet
+     *
+     * @return the name
+     */
+    public String getNameOfCurrentPlanet() {
+        return this.game.getNameOfCurrentPlanet();
+    }
 }

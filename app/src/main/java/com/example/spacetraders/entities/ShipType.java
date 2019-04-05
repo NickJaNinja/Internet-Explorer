@@ -39,38 +39,38 @@ public enum ShipType {
         this.numCrew = numCrew;
     }
 
-    /**
-     * getter for name
-     *
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * getter for numWeapons
-     *
-     * @return numWeapons
-     */
-    public int getNumWeapons() {
-        return numWeapons;
-    }
-
-    /**
-     * getter for numShields
-     *
-     * @return numShields
-     */
-    public int getNumShields() {
-        return numShields;
-    }
-
-    /**
-     * getter for numGadgets
-     *
-     * @return numGadgets
-     */
+//    /**
+//     * getter for name
+//     *
+//     * @return name
+//     */
+//    public String getName() {
+//        return name;
+//    }
+//
+//    /**
+//     * getter for numWeapons
+//     *
+//     * @return numWeapons
+//     */
+//    public int getNumWeapons() {
+//        return numWeapons;
+//    }
+//
+//    /**
+//     * getter for numShields
+//     *
+//     * @return numShields
+//     */
+//    public int getNumShields() {
+//        return numShields;
+//    }
+//
+//    /**
+//     * getter for numGadgets
+//     *
+//     * @return numGadgets
+//     */
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    public int getNumGadgets() {
 //        return numGadgets;
@@ -95,14 +95,14 @@ public enum ShipType {
         return fuel;
     }
 
-    /**
-     * getter for numCrew
-     *
-     * @return numCrew
-     */
-    public int getNumCrew() {
-        return numCrew;
-    }
+//    /**
+//     * getter for numCrew
+//     *
+//     * @return numCrew
+//     */
+//    public int getNumCrew() {
+//        return numCrew;
+//    }
 
 
     /**
@@ -110,7 +110,8 @@ public enum ShipType {
      */
     @Override
     @NonNull
+    //remove + numGadgets + numCrew + numShields + numWeapons later
     public String toString() {
-        return name;
+        return name + numGadgets + numCrew + numShields + numWeapons;
     }
 }

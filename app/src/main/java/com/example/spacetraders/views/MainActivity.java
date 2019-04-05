@@ -2,6 +2,7 @@ package com.example.spacetraders.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import com.example.spacetraders.models.Model;
 /**
  * main activity
  */
-public class MainActivity extends GUIActivity {
+public class MainActivity extends AppCompatActivity {
     private Model model;
 
     /**
