@@ -26,9 +26,7 @@ import com.example.spacetraders.models.Model;
 public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.EventHandler {
 
     private ShipAdapter adapterForShips;
-    private ShipyardViewModel viewModel;
     private TextView purchaseButton;
-    private RecyclerView recyclerViewShips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +34,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
 
         setContentView(R.layout.activity_shipyard);
 
-        viewModel = ViewModelProviders.of(this).get(ShipyardViewModel.class);
+        ShipyardViewModel viewModel = ViewModelProviders.of(this).get(ShipyardViewModel.class);
 
         // toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,7 +44,7 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
         /*
         Set up our recycler view by grabbing the layout for a single item
         */
-        recyclerViewShips = findViewById(R.id.ship_recycler_view);
+        RecyclerView recyclerViewShips = findViewById(R.id.ship_recycler_view);
         recyclerViewShips.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewShips.setHasFixedSize(true);
 
