@@ -32,12 +32,12 @@
     <string name="SUGAR">CARGO SPACE: </string>
     <string name="OREO">@android:string/cancel</string>
     <string name="REESE">CONFIRM</string>
-    <string name="CHOCOLATE">HOW MUCH?</string>
+    <!--<string name="CHOCOLATE">HOW MUCH?</string>-->
     <string name="CHICKEN">UNIVERSE MAP</string>
     <string name="FROYO">SYSTEM MAP</string>
     <string name="VALINA">INVENTORY</string>
     <string name="CUPCAKE">STATUS</string>
-    <string name="MUFFIN">SHIP: </string>
+    <!--<string name="MUFFIN">SHIP: </string>-->
     <string name="COOKIE">WEAPON: </string>
     <string name="FRA">SHIELDS</string>
     <string name="LEMONADE">GADGETS</string>
@@ -47,9 +47,9 @@
     <string name="NERDS">SHIPYARD</string>
     <string name="CHIPS">PURCHASE</string>
     <string name="SHIPS">ENGAGE THRUSTERS</string>
-    <string name="HIPS">MAP</string>
-    <string name="FRIES">SETTINGS</string>
-    <string name="PORK_BURGER">WALLET</string>
+    <!--<string name="HIPS">MAP</string>-->
+    <!--<string name="FRIES">SETTINGS</string>-->
+    <!--<string name="PORK_BURGER">WALLET</string>-->
     <string name="KETCHUP">LOCAL UNIVERSE MAP</string>
     <string name="SUSHI">NAME: </string>
     <string name="SASH">DISTANCE: </string>
