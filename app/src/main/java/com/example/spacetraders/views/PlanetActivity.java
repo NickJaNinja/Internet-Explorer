@@ -22,15 +22,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spacetraders.R;
+
+//import com.example.space traders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
 /**
  * planet activity class
  */
 public class PlanetActivity extends AppCompatActivity {
-    Model model;
-    MediaPlayer mediaPlayer;
-    ProgressBar fuel;
+    private Model model;
+    private MediaPlayer mediaPlayer;
+    private ProgressBar fuel;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -43,6 +45,7 @@ public class PlanetActivity extends AppCompatActivity {
         TextView save;
         TextView load;
         //Planet planet;
+
         ImageView planetImage;
         TextView name;
 
@@ -58,9 +61,10 @@ public class PlanetActivity extends AppCompatActivity {
         fuel.setProgress(model.getFuelPercentage());
 
 
-        //planet = model.getCurrentPlanet();
-        name = findViewById(R.id.planet_name_text);
 
+        //planet = model.getCurrentPlanet();
+
+        name = findViewById(R.id.planet_name_text);
         market = findViewById(R.id.market_button);
         shipyard = findViewById(R.id.shipyard_button);
         upgrade = findViewById(R.id.upgrade_button);

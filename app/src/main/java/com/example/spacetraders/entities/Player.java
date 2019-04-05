@@ -259,14 +259,14 @@ public class Player implements Serializable {
         return ship.getShipsBasedOnTechLevel(techLevel);
     }
 
-    /**
-     * setter for name
-     *
-     * @param name player's name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+//    /**
+//     * setter for name
+//     *
+//     * @param name player's name
+//     */
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public void setShipType(ShipType shipType) {
         ship.setShipType(shipType);

@@ -22,12 +22,12 @@ import com.example.spacetraders.viewmodels.UniverseViewModel;
  */
 public class UniverseMapActivity extends AppCompatActivity {
 
-    TextView nameOfPlanet;
-    TextView distance;
-    TextView coordinates;
-    Button engageWarpDrive;
-    UniverseViewModel universeViewModel;
-    SolarSystem currentSolarSystem;
+    private TextView nameOfPlanet;
+    private TextView distance;
+    private TextView coordinates;
+    private Button engageWarpDrive;
+    private UniverseViewModel universeViewModel;
+    private SolarSystem currentSolarSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class UniverseMapActivity extends AppCompatActivity {
         TextView range = findViewById(R.id.range_text);
         engageWarpDrive = findViewById(R.id.warp_button);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
-        ImageView theCircle = findViewById(R.id.local_universe);
+       // ImageView theCircle = findViewById(R.id.local_universe);
 
         nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
         String joisco = "0 Ly";

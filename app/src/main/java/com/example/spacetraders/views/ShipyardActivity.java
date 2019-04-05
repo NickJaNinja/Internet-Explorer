@@ -1,21 +1,18 @@
 package com.example.spacetraders.views;
+
 import android.arch.lifecycle.ViewModelProviders;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.viewmodels.ShipyardViewModel;
-import com.example.spacetraders.viewmodels.ShopViewModel;
 import com.example.spacetraders.models.Model;
-
-import com.example.spacetraders.views.ShipAdapter;
 
 /**
  * ship yard activity
