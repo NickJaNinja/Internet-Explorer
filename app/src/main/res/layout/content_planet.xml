@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/planet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/space_background"
     tools:showIn="@layout/activity_planet">
 
     <LinearLayout
-        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -20,7 +18,7 @@
             android:layout_height="300dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/planet"
-            android:contentDescription="image"/>
+            android:contentDescription="@string/get"/>
 
         <TextView
             android:id="@+id/planet_name_text"
@@ -31,7 +29,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="PLANET"
+            android:text="@string/PLANET"
             android:textColor="@color/colorText"
             android:textSize="30sp" />
 
@@ -53,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> MARKET"
+            android:text="@string/PPHHH"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
@@ -68,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> SHIPYARD"
+            android:text="@string/SSQQQ"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
@@ -83,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> UPGRADE"
+            android:text="@string/MNMS"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
@@ -98,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> REFUEL"
+            android:text="@string/PREZELS"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
@@ -113,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> SAVE"
+            android:text="@string/CHEERIOS"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 
@@ -128,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:text="> LOAD"
+            android:text="@string/PANCAKE"
             android:textColor="@color/colorText"
             android:textSize="24sp" />
 

@@ -3,21 +3,21 @@
     <item
         android:id="@+id/universe_map_button"
         android:orderInCategory="1"
-        android:title="UNIVERSE MAP"
+        android:title="@string/CHICKEN"
         app:showAsAction="never" />
     <item
         android:id="@+id/system_map_button"
         android:orderInCategory="2"
-        android:title="SYSTEM MAP"
+        android:title="@string/FROYO"
         app:showAsAction="never" />
     <item
         android:id="@+id/inventory_button"
         android:orderInCategory="3"
-        android:title="INVENTORY"
+        android:title="@string/VALINA"
         app:showAsAction="never" />
     <item
         android:id="@+id/status_button"
         android:orderInCategory="4"
-        android:title="STATUS"
+        android:title="@string/CUPCAKE"
         app:showAsAction="never" />
 </menu>

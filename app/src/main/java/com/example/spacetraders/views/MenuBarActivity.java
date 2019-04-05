@@ -22,10 +22,12 @@ import android.widget.Toast;
 //import com.example.space traders.R;
 //import com.example.space traders.models.Model;*/
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * why is this class all commented out
  */
-public class MenuBarActivity extends GUIActivity {
+public class MenuBarActivity extends AppCompatActivity {
     /*
     private ImageView inventory;
     private ImageView status;

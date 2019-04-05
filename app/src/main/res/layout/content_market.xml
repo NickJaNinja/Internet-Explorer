@@ -9,7 +9,6 @@
     tools:showIn="@layout/activity_market">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -25,18 +24,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_menu_info_details"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
             <TextView
-                android:id="@+id/market_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="MARKET"
+                android:text="@string/did"
                 android:textColor="@color/colorText"
                 android:textSize="30sp"
-                android:contentDescription="image"/>
+                android:contentDescription="@string/get"/>
 
             <View
                 android:layout_width="match_parent"
@@ -44,12 +42,11 @@
                 android:background="@color/colorText" />
 
             <TextView
-                android:id="@+id/buy_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="BUY"
+                android:text="@string/daniel"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -64,29 +61,26 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/buy_item_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
-                    android:text="ITEM"
+                    android:text="@string/have"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/buy_stock_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="STOCK"
+                    android:text="@string/to"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/buy_price_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="PRICE"
+                    android:text="@string/hard"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -112,12 +106,11 @@
                 android:background="@color/colorText" />
 
             <TextView
-                android:id="@+id/sell_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:text="SELL"
+                android:text="@string/code"
                 android:textColor="@color/colorText"
                 android:textSize="24sp" />
 
@@ -132,29 +125,26 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/sell_item_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".4"
-                    android:text="ITEM"
+                    android:text="@string/have"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/sell_stock_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="STOCK"
+                    android:text="@string/to"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/sell_price_hint_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".3"
-                    android:text="PRICE"
+                    android:text="@string/hard"
                     android:textColor="@color/colorHint"
                     android:textSize="20sp" />
 
@@ -195,7 +185,7 @@
                     android:layout_weight=".5"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:text="CREDIT: "
+                    android:text="@string/strings"
                     android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
@@ -209,7 +199,8 @@
                     android:layout_marginLeft="8dp"
                     android:gravity="end"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textIsSelectable="true"/>
 
             </LinearLayout>
 
@@ -229,7 +220,7 @@
                     android:layout_weight=".5"
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
-                    android:text="CARGO SPACE: "
+                    android:text="@string/SUGAR"
                     android:gravity="start"
                     android:textColor="@color/colorText"
                     android:textSize="24sp" />
@@ -243,7 +234,8 @@
                     android:layout_marginStart="8dp"
                     android:gravity="end"
                     android:textColor="@color/colorText"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textIsSelectable="true"/>
 
             </LinearLayout>
 
@@ -266,7 +258,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
-                    android:text="CANCEL"
+                    android:text="@string/OREOS"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:textColor="@color/colorText"
                     android:background="@color/colorCancelButton"
                     android:textSize="18sp" />
@@ -286,7 +279,9 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center"
-                    android:text="CONFIRM"
+                    android:text="@string/REESE"
+                    style="?android:attr/buttonBarButtonStyle"
+
                     android:textColor="@color/colorText"
                     android:background="@color/colorPlusButton"
                     android:textSize="18sp" />

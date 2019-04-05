@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
+
 import java.util.Random;
 
 /**
@@ -15,7 +16,7 @@ public class Shop implements Serializable {
     private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private final TechLevel techLevel;
     private final ResourcesLevel resourcesLevel;
-    private RadicalPriceEvent randomEvent;
+    //private RadicalPriceEvent randomEvent;
     private final int NUM_RESOURCES = ShopGoods.values().length;
 
     /**
@@ -65,7 +66,7 @@ public class Shop implements Serializable {
             if ((event == shopGood.ordinal()) && (eventChance < EVENT_CHANCE)) {
                 int temp = itemPrice;
                 itemPrice *= 5;
-                randomEvent = shopGood.getIe();
+                //randomEvent = shopGood.getIe();
                 Log.d("Info", "PRICE EVENT. Prices 5x higher for: " + shopGood.getName()
                         + temp + "," + itemPrice);
             }
@@ -90,12 +91,31 @@ public class Shop implements Serializable {
      */
     public int decreaseStock(ShopGoods good, int amount) {
         ShopEntry e = shopGoodsStockMap.get(good);
+
+        int newAmount;
+        if (e != null) {
+            newAmount = e.getStock() - amount;
+            if (newAmount < 0) {
+                return 0;
+            } else {
+                e.setStock(newAmount);
+                return 1;
+            }
+        } else {
+            return 0;
+        }
+
+        /*
         int newAmount = e.getStock() - amount;
+
+        int newAmount = Objects.requireNonNull(e).getStock() - amount;
+
         if (newAmount < 0) {
             return 0;
         }
         shopGoodsStockMap.get(good).setStock(newAmount);
         return 1;
+        */
     }
 
     /**

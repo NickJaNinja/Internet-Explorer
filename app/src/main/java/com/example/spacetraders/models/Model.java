@@ -93,10 +93,10 @@ public class Model {
     public void saveGame(Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
-            if (saveFile.createNewFile()){
-                saveFile = saveFile;
+            if (!saveFile.createNewFile() || !saveFile.setWritable(true)) {
+                // SHOULD RETURN -1 ON FAIL OR SOMETHING
+                return;
             }
-            saveFile.setWritable(true);
             FileOutputStream fileOut =
                     new FileOutputStream(saveFile);
             ObjectOutput out_ = new ObjectOutputStream(fileOut);
@@ -280,5 +280,9 @@ public class Model {
 
     public void setShipType(ShipType shipType) {
         game.setShipType(shipType);
+    }
+
+    public void setCredits(int credits) {
+        game.setCredits(credits);
     }
 }

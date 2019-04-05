@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 /**
  * This class represents the game universe
  */
-public class Universe implements Serializable {
+ class Universe implements Serializable {
 
     private static final String[] PREFIXES =
             {
@@ -140,9 +140,7 @@ public class Universe implements Serializable {
      * @return the distance
      */
     public int distanceBetweenSystems(SolarSystem from, SolarSystem to) {
-        Coordinates fromCords = from.getCoordinates();
-        Coordinates toCords = to.getCoordinates();
-        return fromCords.dist(toCords);
+        return from.dist(to);
     }
     /**
      * getter for solar systems

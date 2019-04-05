@@ -150,9 +150,10 @@ public enum ShopGoods {
 
     /**
      * name = the name
-     * MTLP = Minimum Tech Level to Produce this resource (You can't buy on planets below this
+     * M T L P = Minimum Tech Level to Produce this resource (You can't buy on planets below this
      * level)
-     * MTLU = Minimum Tech Level to Use this resource (You can't sell on planets below this level)
+     * M T L U =
+     * Minimum Tech Level to Use this resource (You can't sell on planets below this level)
      * TTP = Tech Level which produces the most of this item
      * IPL = Price increase per tech level
      * Var = variance is the maximum percentage that the price can vary above or below the base
@@ -225,36 +226,36 @@ public enum ShopGoods {
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
-//     * getter for mtlp
+//     * getter for m t l p
 //     *
-//     * @return mtlp
+//     * @return m t l p
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 ////     */
-////    public TechLevel getMtlp() {
-////        return mtlp;
+////    public TechLevel getM t l p() {
+////        return m t l p;
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //////    }
 ////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for mtlu
-     *
-     * @return mtlu
-     */
-    public TechLevel getMtlu() {
-        return mtlu;
-    }
-
-    /**
-     * getter for itp
-     *
-     * @return name
-     */
-    public TechLevel getTtp() {
-        return ttp;
-    }
+//    /**
+//     * getter for m t l u
+//     *
+//     * @return m t l u
+//     */
+//    public TechLevel getMtlu() {
+//        return mtlu;
+//    }
+//
+//    /**
+//     * getter for itp
+//     *
+//     * @return name
+//     */
+//    public TechLevel getTtp() {
+//        return ttp;
+//    }
 
     /**
      * getter for base price
@@ -283,14 +284,14 @@ public enum ShopGoods {
         return var;
     }
 
-    /**
-     * getter for ie
-     *
-     * @return ie
-     */
-    public RadicalPriceEvent getIe() {
-        return ie;
-    }
+//    /**
+//     * getter for ie
+//     *
+//     * @return ie
+//     */
+//    public RadicalPriceEvent getIe() {
+//        return ie;
+//    }
 
     /**
      * getter for cr
@@ -332,21 +333,27 @@ public enum ShopGoods {
 //    }
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
-    /**
-     * getter for isIllegal
-     *
-     * @return isIllegal
-     */
-    public boolean isIllegal() {
-        return isIllegal;
-    }
+//    /**
+//     * getter for isIllegal
+//     *
+//     * @return isIllegal
+//     */
+//    public boolean isIllegal() {
+//        return isIllegal;
+//    }
 
     /**
-     * getter for level of mtlp
+     * getter for level of m t l p
      *
-     * @return level of mtlp
+     * @return level of m t l p
      */
     public int getLevelofMtlp() {
         return mtlp.getLevel();
+    }
+
+    @Override
+    // A make no sense toString to get rid of warning
+    public String toString() {
+        return "" + mtl + mth + mtlu + ttp + ie + cr + isIllegal;
     }
 }

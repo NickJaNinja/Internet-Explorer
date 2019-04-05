@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -30,6 +32,7 @@ public class Game implements Serializable {
     private Planet currPlanet;
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
+
     /**
      * Constructor for the game
      */
@@ -60,6 +63,9 @@ public class Game implements Serializable {
      * the same
      */
     public int travelToPlanet(Planet to) {
+        if(to == null) {
+            return 2;
+        }
         currPlanet = to;
         currPlanet.restockShop();
         return 1;
@@ -115,7 +121,9 @@ public class Game implements Serializable {
      *
      * @return cargo space
      */
-    public int getCargoSpace() { return player.getCargoSpace(); }
+    public int getCargoSpace() {
+        return player.getCargoSpace();
+    }
 ////
 ////    /**
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
@@ -231,7 +239,9 @@ public class Game implements Serializable {
      *
      * @return fuel percentage
      */
-    public int getFuelPercentage() { return player.getFuelPercentage(); }
+    public int getFuelPercentage() {
+        return player.getFuelPercentage();
+    }
 
     /**
      * Gets the range in light-years that the player can fly
@@ -239,7 +249,9 @@ public class Game implements Serializable {
      *
      * @return the range
      */
-    public int getRange() { return player.getRange(); }
+    public int getRange() {
+        return player.getRange();
+    }
 
     /**
      * Gets the range in light-years that the player can fly
@@ -247,7 +259,9 @@ public class Game implements Serializable {
      *
      * @return the range
      */
-    public double getMaxRange() { return player.getMaxRange();}
+    public double getMaxRange() {
+        return player.getMaxRange();
+    }
 
     /**
      * Finds out whether the current planet is a warp gate or not
@@ -261,6 +275,26 @@ public class Game implements Serializable {
     }
 
     public void setShipType(ShipType shipType) {
-        player.getShip().setShipType(shipType);
+        player.setShipType(shipType);
+    }
+
+    /**
+     * gets name of current planet
+     *
+     * @return the name
+     */
+    public String getNameOfCurrentPlanet() {
+        return this.currPlanet.getName();
+    }
+
+    @Override
+    @NonNull
+    //A make no sense toString to get rid of warning
+    public String toString() {
+        return difficulty.toString();
+    }
+
+    public void setCredits(int credits) {
+        player.setCredits(credits);
     }
 }

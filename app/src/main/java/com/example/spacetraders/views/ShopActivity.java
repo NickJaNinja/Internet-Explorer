@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,7 @@ import com.example.spacetraders.viewmodels.ShopViewModel;
 /**
  * Shop activity class
  */
-public class ShopActivity extends MenuBarActivity {
+public class ShopActivity extends AppCompatActivity {
     private TextView creditDisplay;
     private TextView cargoDisplay;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private ListView buyList;
@@ -55,7 +56,7 @@ public class ShopActivity extends MenuBarActivity {
         fuel.setProgress(model.getFuelPercentage());
 
         viewModel = ViewModelProviders.of(this).get(ShopViewModel.class);
-        viewModel.setUpMarket();
+     //   viewModel.setUpMarket();
 
         creditDisplay = findViewById(R.id.credit_text_display);
         cargoDisplay  = findViewById(R.id.cargo_text_display);
@@ -91,11 +92,13 @@ public class ShopActivity extends MenuBarActivity {
         cancel = findViewById(R.id.cancel_button);
 
         //confirm transaction
+
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.setMarketsEntriesToTemp();
-                viewModel.setUpMarket();
+                //implements later setMarketsEntriesToTemp();
+                   //viewModel.setMarketsEntriesToTemp();
+                //viewModel.setUpMarket();
             }
         });
 
@@ -103,7 +106,7 @@ public class ShopActivity extends MenuBarActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.setUpMarket();
+                //viewModel.setUpMarket();
             }
         });
 

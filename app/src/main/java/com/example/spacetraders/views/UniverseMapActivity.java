@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -19,7 +20,7 @@ import com.example.spacetraders.viewmodels.UniverseViewModel;
 /**
  * universe map activity class
  */
-public class UniverseMapActivity extends GUIActivity{
+public class UniverseMapActivity extends AppCompatActivity {
 
     private TextView nameOfPlanet;
     private TextView distance;

@@ -2,13 +2,13 @@ package com.example.spacetraders.views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.viewmodels.ShipyardViewModel;
@@ -20,7 +20,7 @@ import com.example.spacetraders.views.ShipAdapter;
 /**
  * ship yard activity
  */
-public class ShipyardActivity extends GUIActivity {
+public class ShipyardActivity extends AppCompatActivity {
 
     private ShipAdapter adapterForShips;
     private ShipyardViewModel viewModel;
@@ -56,12 +56,19 @@ public class ShipyardActivity extends GUIActivity {
             public void onClick(View view) {
                 ShipType selected = adapterForShips.getSelected();
                 if (selected == null) {
-                    CharSequence text = "You must select a ship";
+                    CharSequence text = "Select a ship";
+                    Toast toast = Toast.makeText(view.getContext(), text,
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                } else if (Model.getInstance().getCredits() < selected.getCost()) {
+                    CharSequence text = "Not enough credits";
                     Toast toast = Toast.makeText(view.getContext(), text,
                             Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
                     Model.getInstance().setShipType(selected);
+                    Model.getInstance().setCredits(Model.getInstance().getCredits() -
+                            adapterForShips.getSelected().getCost());
                 }
             }
         });
