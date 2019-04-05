@@ -27,22 +27,26 @@ public class Player implements Serializable {
 
     /**
      * constructor with all parameters
-     *  @param name          player's name
+     *
+     * @param name          player's name
      * @param pilotSkill    initial pilotSkill
      * @param fighterSkill  initial fighterSkill
      * @param traderSkill   initial traderSkill
      * @param engineerSkill initial engineerSkill
+     * @param credits       initial credits
+     * @param reputation    initial reputation level
      * @param ship          initial ship
      */
     private Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
-                   int engineerSkill, Ship ship) {
+                   int engineerSkill,
+                   int credits, int reputation, Ship ship) {
         this.name = name;
         this.pilotSkill = pilotSkill;
         this.fighterSkill = fighterSkill;
         this.traderSkill = traderSkill;
         this.engineerSkill = engineerSkill;
-        this.credits = Player.DEFAULT_CREDIT;
-        this.reputation = 0;
+        this.credits = credits;
+        this.reputation = reputation;
         this.ship = ship;
     }
 
@@ -58,7 +62,7 @@ public class Player implements Serializable {
     public Player(String name, int pilotSkill, int fighterSkill, int traderSkill,
                   int engineerSkill) {
 
-        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, DEFAULT_CREDIT,
+        this(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, DEFAULT_CREDIT, 0,
                 new Ship(ShipType.GNAT));
     }
 
