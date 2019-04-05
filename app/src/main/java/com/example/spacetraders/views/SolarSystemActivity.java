@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,14 +25,14 @@ import java.text.DecimalFormat;
  * solar system activity
  */
 public class SolarSystemActivity extends AppCompatActivity {
-    private Model model;
+    Model model;
     private SolarSystemViewModel viewModel;
     private PlanetAdapter adapterForPlanets;
-    private Planet selectedPlanet;
-    private Button thrusterButton;
+    Planet selectedPlanet;
+    Button thrusterButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView name;
         TextView classification;
@@ -75,19 +76,19 @@ public class SolarSystemActivity extends AppCompatActivity {
 
         final double RADIUS_CONSTANT = 1.58125E-5;
         name.setText(solarSystem.getName());
-        String moihw = solarSystem.getStars()[0].getClassification() + " Class Star";
-        classification.setText(moihw);
-        String qoih = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
+        String moi = solarSystem.getStars()[0].getClassification() + " Class Star";
+        classification.setText(moi);
+        String qoi = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
                 * RADIUS_CONSTANT) + " Ly";
-        radius.setText(qoih);
-        String mvoiy = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
-        mass.setText(mvoiy);
-        String zpiug = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
+        radius.setText(qoi);
+        String mvo = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
+        mass.setText(mvo);
+        String zpi = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
                 + " K";
-        surfaceTemp.setText(zpiug);
-        String xoiy = "Luminosity: " + dfe.format(
+        surfaceTemp.setText(zpi);
+        String xoi = "Luminosity: " + dfe.format(
                 solarSystem.getStars()[0].getLuminosityInWatts()) + " W";
-        luminosity.setText(xoiy);
+        luminosity.setText(xoi);
 
         //initialize button color to red
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
@@ -146,7 +147,7 @@ public class SolarSystemActivity extends AppCompatActivity {
      * set planet selected
      * @param p the selected destination planet
      */
-    private void setSelectedPlanet(Planet p) {
+    void setSelectedPlanet(Planet p) {
         this.selectedPlanet = p;
     }
 

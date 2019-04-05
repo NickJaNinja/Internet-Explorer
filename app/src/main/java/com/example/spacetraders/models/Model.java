@@ -2,6 +2,7 @@ package com.example.spacetraders.models;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
@@ -41,6 +42,7 @@ public class Model {
      *
      * @return instance
      */
+    @Nullable
     public static Model getInstance() {
         return instance;
     }
@@ -55,7 +57,7 @@ public class Model {
      * @param trade trade level
      * @param eng eng level
      */
-    public void createGame(GameDifficulty gd, String name, int pilot, int fight, int trade,
+    public void createGame(@Nullable GameDifficulty gd, @Nullable String name, int pilot, int fight, int trade,
                            int eng) {
         Player p = new Player(name, pilot, fight, trade, eng);
         game = new Game(gd, p);
@@ -67,7 +69,7 @@ public class Model {
      * @param context context
      * @return game != null
      */
-    public boolean loadGame(Context context) {
+    public boolean loadGame(@Nullable Context context) {
         game = new Game();
         try {
             File loadFile = new File(context.getFilesDir(), filename);
@@ -90,7 +92,7 @@ public class Model {
      *
      * @param context context
      */
-    public void saveGame(Context context) {
+    public void saveGame(@Nullable Context context) {
         try {
             File saveFile = new File(context.getFilesDir(), filename);
             if (!saveFile.createNewFile() || !saveFile.setWritable(true)) {
@@ -117,7 +119,7 @@ public class Model {
      * @param price  the price of each good
      * @return 1 if transaction occurred, 0 otherwise
      */
-    public int makeTransaction(ShopGoods sg, int amount, int price) {
+    public int makeTransaction(@Nullable ShopGoods sg, int amount, int price) {
         if (amount == 0) { return 0; }
         return game.makeTransaction(sg, amount, price);
     }
@@ -146,7 +148,7 @@ public class Model {
      * @param p destination planet
      * @return 1 if travel succeed or 0 if fail
      */
-    public int travelToPlanet(Planet p) { return game.travelToPlanet(p); }
+    public int travelToPlanet(@Nullable Planet p) { return game.travelToPlanet(p); }
 
     /**
      * travel between solar system
@@ -154,7 +156,7 @@ public class Model {
      * @param to destination solar system
      * @return 1 if travel succeed or 0 if fail
      */
-    public int travelToSystem(SolarSystem to) {
+    public int travelToSystem(@Nullable SolarSystem to) {
         return game.travelToSystem(to);
     }
 
@@ -170,6 +172,7 @@ public class Model {
      *
      * @return shop entries
      */
+    @Nullable
     public List<ShopEntry> getShopEntries() {
         return game.getShopEntries();
     }
@@ -179,6 +182,7 @@ public class Model {
      *
      * @return list of shop entries filtered
      */
+    @Nullable
     public List<ShopEntry> getShopEntriesFiltered() { return game.getShopEntriesFiltered(); }
 
     /**
@@ -186,6 +190,7 @@ public class Model {
      *
      * @return player entities
      */
+    @Nullable
     public List<ShopEntry> getPlayerEntries() {
         return game.getPlayerEntries();
     }
@@ -195,6 +200,7 @@ public class Model {
      *
      * @return game
      */
+    @Nullable
     public Game getGame() {
         return game;
     }
@@ -204,6 +210,7 @@ public class Model {
      *
      * @return current content_planet
      */
+    @Nullable
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();
     }
@@ -254,6 +261,7 @@ public class Model {
      *
      * @return list of solar system
      */
+    @Nullable
     public SolarSystem[] getSolarSystems() {
         return game.getSolarSystems();
     }
@@ -263,6 +271,7 @@ public class Model {
      *
      * @return current solarSystem
      */
+    @Nullable
     public SolarSystem getCurrentSystem() {
         return game.getCurrentSystem();
     }
@@ -274,11 +283,12 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
+    @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         return game.getShipsBasedOnTechLevel();
     }
 
-    public void setShipType(ShipType shipType) {
+    public void setShipType(@Nullable ShipType shipType) {
         game.setShipType(shipType);
     }
 

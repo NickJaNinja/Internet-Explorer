@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,11 +26,11 @@ import com.example.spacetraders.models.Model;
  */
 public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.EventHandler {
 
-    private ShipAdapter adapterForShips;
+    ShipAdapter adapterForShips;
     private TextView purchaseButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_shipyard);
@@ -80,14 +81,14 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@Nullable Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.universe_map_button:

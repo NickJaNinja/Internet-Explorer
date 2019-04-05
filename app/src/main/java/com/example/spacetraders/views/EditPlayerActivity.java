@@ -3,6 +3,7 @@ package com.example.spacetraders.views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,22 +21,22 @@ import com.example.spacetraders.viewmodels.EditPlayerViewModel;
  * .
  */
 public class EditPlayerActivity extends AppCompatActivity {
-    private EditPlayerViewModel editPlayerViewModel;
+    EditPlayerViewModel editPlayerViewModel;
 
-    private EditText nameField;
-    private Spinner gameDifficultySpinner;
-    private TextView fighterText;
-    private TextView tradeText;
-    private TextView engineerText;
-    private TextView pilotText;
-    private TextView pointsRemaining;
+    EditText nameField;
+    Spinner gameDifficultySpinner;
+    TextView fighterText;
+    TextView tradeText;
+    TextView engineerText;
+    TextView pilotText;
+    TextView pointsRemaining;
 
     /**
      * .
      * @param savedInstanceState .
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Button fightPlus;
         Button fightMinus;
@@ -217,7 +218,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      *
      * @param view the view
      */
-    public void onOkPressed(View view) {
+    public void onOkPressed(@Nullable View view) {
         String name = nameField.getText().toString();
         name = name.replace("\n", " ");
         int engineer = Integer.parseInt(engineerText.getText().toString());
@@ -241,7 +242,7 @@ public class EditPlayerActivity extends AppCompatActivity {
      * color to green if it is 0, otherwise keeps it orange
      *
      */
-    private void onAnyButtonPressed() {
+    void onAnyButtonPressed() {
         int currSkillRem = Integer.valueOf(pointsRemaining.getText().toString());
         pointsRemaining.setBackgroundColor(editPlayerViewModel.onAnyButton(currSkillRem));
     }

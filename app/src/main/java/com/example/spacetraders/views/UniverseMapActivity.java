@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,15 +23,15 @@ import com.example.spacetraders.viewmodels.UniverseViewModel;
  */
 public class UniverseMapActivity extends AppCompatActivity {
 
-    private TextView nameOfPlanet;
-    private TextView distance;
-    private TextView coordinates;
-    private Button engageWarpDrive;
-    private UniverseViewModel universeViewModel;
-    private SolarSystem currentSolarSystem;
+    TextView nameOfPlanet;
+    TextView distance;
+    TextView coordinates;
+    Button engageWarpDrive;
+    UniverseViewModel universeViewModel;
+    SolarSystem currentSolarSystem;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.universe_map);
@@ -44,11 +45,11 @@ public class UniverseMapActivity extends AppCompatActivity {
        // ImageView theCircle = findViewById(R.id.local_universe);
 
         nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
-        String joisco = "0 Ly";
-        distance.setText(joisco);
+        String joi = "0 Ly";
+        distance.setText(joi);
         coordinates.setText(universeViewModel.getCurrentSystem().getCoordinates().toString());
-        String yonxw = Model.getInstance().getRange() + " Ly";
-        range.setText(yonxw);
+        String yox = Model.getInstance().getRange() + " Ly";
+        range.setText(yox);
         engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
@@ -59,7 +60,7 @@ public class UniverseMapActivity extends AppCompatActivity {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
-                FrameLayout relativeLayout = findViewById(R.id.mapframe);
+                FrameLayout relativeLayout = findViewById(R.id.mapFrame);
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.WRAP_CONTENT,
                         FrameLayout.LayoutParams.WRAP_CONTENT
@@ -86,9 +87,9 @@ public class UniverseMapActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText(currentSolarSystem.getName());
-                        String slkent = currentSolarSystem.dist(
+                        String slk = currentSolarSystem.dist(
                                 universeViewModel.getCurrentSystem()) + " Ly";
-                        distance.setText(slkent);
+                        distance.setText(slk);
                         coordinates.setText(currentSolarSystem.getCoordinates().toString());
 
                         // make travel button red if system out of range, green if in range

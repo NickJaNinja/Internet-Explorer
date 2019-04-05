@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -31,12 +32,12 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * a copy of the list of shop goods in the model
      */
 
-    private final ShopActivity shopActivity;
-    private ShopGoodsAdapter shopGoodsAdapter;
-    private List<ShopEntry> playerCargoList;
-    private OnClickListener listener;
-    private AlertDialog dialog;
-    private final Model model;
+    final ShopActivity shopActivity;
+    ShopGoodsAdapter shopGoodsAdapter;
+    List<ShopEntry> playerCargoList;
+    OnClickListener listener;
+    AlertDialog dialog;
+    final Model model;
 
     /**
      * Constructor
@@ -44,7 +45,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param playerCargoList the player cargo list
      * @param shopActivity the shop activity
      */
-    public PlayerCargoAdapter(List<ShopEntry> playerCargoList, ShopActivity shopActivity) {
+    public PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;
@@ -135,8 +136,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            String aahhower = "AMOUNT TO SELL: 1";
-                            seekText.setText(aahhower);
+                            String aah = "AMOUNT TO SELL: 1";
+                            seekText.setText(aah);
 
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
@@ -145,8 +146,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            String qwoehr = "TOTAL SALE: ¥" +itemPrice;
-                            priceText.setText(qwoehr);
+                            String qwo = "TOTAL SALE: ¥" +itemPrice;
+                            priceText.setText(qwo);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -162,9 +163,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                                               int progress, boolean fromUser) {
                                     String as = "AMOUNT TO SELL: " + (progress + 1);
                                     seekText.setText(as);
-                                    String asoi = "TOTAL SALE: ¥" +(itemPrice *
+                                    String aso = "TOTAL SALE: ¥" +(itemPrice *
                                             (progress + 1));
-                                    priceText.setText(asoi);
+                                    priceText.setText(aso);
                                 }
 
                                 @Override
@@ -257,9 +258,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        String aoix = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+        String aoi = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
-        playerCargoViewHolder.price.setText(aoix);
+        playerCargoViewHolder.price.setText(aoi);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(
                 String.valueOf(shopEntry.getStock()));
@@ -279,7 +280,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * Sets the player cargo list
      * @param playerCargo player cargo
      */
-    public void setPlayerCargoList(List<ShopEntry> playerCargo) {
+    public void setPlayerCargoList(@Nullable List<ShopEntry> playerCargo) {
         playerCargoList = playerCargo;
         notifyDataSetChanged();
     }
@@ -302,7 +303,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      *
      */
 
-    public void setOnClickListener(OnClickListener listener) {
+    public void setOnClickListener(@Nullable OnClickListener listener) {
         this.listener = listener;
     }
 
@@ -322,7 +323,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      *
      * @param sga shop goods adapter
      */
-    public void setShopGoodsAdapter(ShopGoodsAdapter sga) {
+    public void setShopGoodsAdapter(@Nullable ShopGoodsAdapter sga) {
         shopGoodsAdapter = sga;
     }
 }

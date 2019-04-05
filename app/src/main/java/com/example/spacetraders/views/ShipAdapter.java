@@ -10,6 +10,7 @@ package com.example.spacetraders.views;
 
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,17 +28,17 @@ import java.util.List;
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
 
-    private final List<ShipType> ships;
-    private ShipType selected;
-    private final EventHandler handler;
-    private final ArrayList<View> viewHolderList;
+    final List<ShipType> ships;
+    ShipType selected;
+    final EventHandler handler;
+    final ArrayList<View> viewHolderList;
 
 
     /**
      * constructor
      * @param ships ships
      */
-    public ShipAdapter(List<ShipType> ships, EventHandler handler) {
+    public ShipAdapter(@Nullable List<ShipType> ships, @Nullable EventHandler handler) {
         this.ships = ships;
         this.handler = handler;
         viewHolderList = new ArrayList<>();
@@ -56,14 +57,14 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
      * This is a holder for the widgets associated with a single entry in the list of ships
      */
     public class ShipViewHolder extends RecyclerView.ViewHolder {
-        private final TextView name;
-        private final TextView weapon;
-        private final TextView shields;
-        private final TextView gadgets;
-        private final TextView cargo;
-        private final TextView maxFuel;
-        private final TextView crew;
-        private final TextView cost;
+        final TextView name;
+        final TextView weapon;
+        final TextView shields;
+        final TextView gadgets;
+        final TextView cargo;
+        final TextView maxFuel;
+        final TextView crew;
+        final TextView cost;
 
         /**
          * ship view holder
@@ -119,8 +120,8 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
         shipViewHolder.cargo.setText(String.valueOf(ship.getNumCargoHolds()));
         shipViewHolder.maxFuel.setText(String.valueOf(ship.getFuel()));
         shipViewHolder.crew.setText(String.valueOf(ship.getNumCrew()));
-        String pshet = "¥" +ship.getCost();
-        shipViewHolder.cost.setText(pshet);
+        String psh = "¥" +ship.getCost();
+        shipViewHolder.cost.setText(psh);
     }
 
     /**
@@ -128,6 +129,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
      *
      * @return selected
      */
+    @Nullable
     public ShipType getSelected() {
         return selected;
     }

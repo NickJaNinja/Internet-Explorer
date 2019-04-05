@@ -3,6 +3,7 @@ package com.example.spacetraders.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.example.spacetraders.models.Model;
 
@@ -30,6 +31,7 @@ public class UniverseViewModel extends AndroidViewModel {
      *
      * @return list of solar systems
      */
+    @Nullable
     public SolarSystem[] getSolarSystems() {
         return model.getSolarSystems();
     }
@@ -39,6 +41,7 @@ public class UniverseViewModel extends AndroidViewModel {
      *
      * @return current solar system
      */
+    @Nullable
     public SolarSystem getCurrentSystem() {
         return model.getCurrentSystem();
     }
@@ -51,7 +54,7 @@ public class UniverseViewModel extends AndroidViewModel {
      * @return the x coordinate of the system
      */
 
-    public double xCoordinatorOfSystem(SolarSystem center, SolarSystem goal) {
+    public double xCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
         return COORDINATE + (((goal.getCoordinates().getX() - center.getCoordinates()
                 .getX()) * COORDINATE) / Model.getInstance().getMaxRange());
 
@@ -64,7 +67,7 @@ public class UniverseViewModel extends AndroidViewModel {
      * @param goal solar system in the goal
      * @return the x coordinate of the system
      */
-    public double yCoordinatorOfSystem(SolarSystem center, SolarSystem goal) {
+    public double yCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
         final int  CONSTANT = 30;
         return (CONSTANT + COORDINATE) - (((goal.getCoordinates().getY() - center
                 .getCoordinates().getY()) * COORDINATE) / Model.getInstance().getMaxRange());

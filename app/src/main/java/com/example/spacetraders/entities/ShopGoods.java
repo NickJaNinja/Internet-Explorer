@@ -1,5 +1,7 @@
 package com.example.spacetraders.entities;
 
+import android.support.annotation.Nullable;
+
 /**
  * shop goods enum
  */
@@ -220,6 +222,7 @@ public enum ShopGoods {
      *
      * @return name
      */
+    @Nullable
     public String getName() {
         return name;
     }
@@ -298,6 +301,7 @@ public enum ShopGoods {
      *
      * @return cr
      */
+    @Nullable
     public ResourcesLevel getCr() {
         return cr;
     }
@@ -307,6 +311,7 @@ public enum ShopGoods {
      *
      * @return er
      */
+    @Nullable
     public ResourcesLevel getEr() {
         return er;
     }
