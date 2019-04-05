@@ -130,7 +130,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="@string/aawwww"
                         android:textStyle="normal" />
 
@@ -165,7 +164,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="@string/CS"
                         android:textStyle="normal" />
 
@@ -190,7 +188,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="@string/aawwww"
                         android:textStyle="normal" />
 
@@ -224,7 +221,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorMinusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="@string/CS"
                         android:textStyle="normal" />
 
@@ -249,7 +245,6 @@
                         android:layout_weight=".33"
                         android:background="@color/colorPlusButton"
                         android:gravity="center_horizontal|center_vertical"
-                        android:onClick="onPlusPressed"
                         android:text="@string/aawwww"
                         android:textStyle="normal" />
 
