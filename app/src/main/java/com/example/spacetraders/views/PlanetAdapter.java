@@ -1,5 +1,6 @@
 package com.example.spacetraders.views;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.example.spacetraders.entities.Planet;
 
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     private List<Planet> planetsList;
     private OnClickListener listener;
+    private ArrayList<View> viewHolderList;
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
     /**
@@ -36,6 +39,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      */
     public PlanetAdapter(Planet[] planets) {
         this.planetsList = Arrays.asList(planets);
+        viewHolderList = new ArrayList<>();
     }
 
     @NonNull
@@ -75,6 +79,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             politicalSystem = itemView.findViewById(R.id.planet_political_system);
             planetView = itemView.findViewById(R.id.planet_image);
 
+            viewHolderList.add(itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -86,14 +91,15 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                         listener.onClicked(planetsList.get(position));
                     }
 
+                    // give all views "unselected background"
+                    for(int i = 0; i < viewHolderList.size(); i++) {
+                        viewHolderList.get(i).setBackgroundColor(
+                                Color.parseColor("#00000000"));
+                    }
 
-                    // select content_planet
-                    planetView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Log.d("Debug", "Planet clicked");
-                        }
-                    });
+                    // give "selected" background
+                    view.setBackgroundColor(Color.parseColor("#22FFFFFF"));
+
                     notifyDataSetChanged();
                 }
             });
