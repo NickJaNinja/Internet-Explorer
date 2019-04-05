@@ -8,7 +8,9 @@ package com.example.spacetraders.views;
 //
 //import java.util.List;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.example.spacetraders.R;
 import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.models.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,13 +33,19 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
     //private ShipAdapter.OnClickListener listener;
     private Model model;
     private ShipType selected;
+    private EventHandler handler;
+    private ArrayList<View> viewHolderList;
 
 
     /**
      * constructor
      * @param ships ships
      */
-    public ShipAdapter(List ships) { this.ships = ships; }
+    public ShipAdapter(List ships, EventHandler handler) {
+        this.ships = ships;
+        this.handler = handler;
+        viewHolderList = new ArrayList<>();
+    }
 
     @NonNull
     @Override
@@ -76,13 +85,23 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
             crew = itemView.findViewById(R.id.ship_crew_display);
             cost = itemView.findViewById(R.id.ship_cost_display);
 
-
+            viewHolderList.add(itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View view) {
                     selected = ships.get(getAdapterPosition());
+
+                    // give all views "unselected background"
+                    for(int i = 0; i < viewHolderList.size(); i++) {
+                        viewHolderList.get(i).setBackgroundColor(
+                                Color.parseColor("#00000000"));
+                    }
+
+                    // give "selected" background
+                    view.setBackgroundColor(Color.parseColor("#664B4B4C"));
+
+                    handler.handle(getAdapterPosition()); // make purchase button green
                 }
             });
         }
@@ -90,7 +109,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
 
     @Override
     public int getItemCount() {
-        return ships.size(); // TODO create size call for shiptype
+        return ships.size();
     }
 
     @Override
@@ -108,7 +127,16 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
         shipViewHolder.cost.setText(pshet);
     }
 
+    /**
+     * gets selected ship
+     *
+     * @return selected
+     */
     public ShipType getSelected() {
         return selected;
+    }
+
+    public interface EventHandler {
+        void handle(int position); // if u need know position. If no, just create method without params
     }
 }
