@@ -180,7 +180,9 @@ public class ShopActivity extends AppCompatActivity {
      * update player's credit and cargo space in ship displayed in market
      */
     public void updateDisplay() {
-        creditDisplay.setText(Integer.toString(model.getCredits()));
-        cargoDisplay.setText(Integer.toString(model.getCargoSpace()));
+        String asoz = Integer.toString(model.getCredits());
+        creditDisplay.setText(asoz);
+        String aopxn = Integer.toString(model.getCargoSpace());
+        cargoDisplay.setText(aopxn);
     }
 }
