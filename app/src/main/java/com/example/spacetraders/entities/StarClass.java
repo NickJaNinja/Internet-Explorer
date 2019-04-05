@@ -8,7 +8,7 @@ public enum StarClass {
     A('A', 0.10f,  Color.parseColor("#FBF8FF"), 7500,  10000, 1.4,  1.8),
     F('F', 0.24f,  Color.parseColor("#FFFFED"), 6000,  7500,  1.15, 1.4),
     G('G', 0.35f,  Color.parseColor("#FFFF00"), 5200,  6000,  0.96, 1.15),
-    K('K', 0.60f,  Color.parseColor(s"#FF9833"), 3700,  5200,  0.7,  0.96),
+    K('K', 0.60f,  Color.parseColor("#FF9833"), 3700,  5200,  0.7,  0.96),
     M('M', 1.00f,  Color.parseColor("#FF0000"), 2400,  3700,  0.12, 0.7);
 
     private final char classification;
