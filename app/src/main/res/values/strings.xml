@@ -30,7 +30,7 @@
     <string name="code">SELL</string>
     <string name="strings">CREDIT: </string>
     <string name="SUGAR">CARGO SPACE: </string>
-    <string name="OREO">CANCEL</string>
+    <string name="OREO">@android:string/cancel</string>
     <string name="REESE">CONFIRM</string>
     <string name="CHOCOLATE">HOW MUCH?</string>
     <string name="CHICKEN">UNIVERSE MAP</string>
