@@ -135,8 +135,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for seek bar
                             TextView seekText = new TextView(context);
-                            String aahhower = "AMOUNT TO SELL: 1";
-                            seekText.setText(aahhower);
+                            String aah = "AMOUNT TO SELL: 1";
+                            seekText.setText(aah);
 
                             seekText.setTextColor(COLOR);
                             seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
@@ -145,8 +145,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                             // text view for price
                             TextView priceText = new TextView(context);
-                            String qwoehr = "TOTAL SALE: ¥" +itemPrice;
-                            priceText.setText(qwoehr);
+                            String qwo = "TOTAL SALE: ¥" +itemPrice;
+                            priceText.setText(qwo);
                             priceText.setTextColor(COLOR);
                             priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
                             priceText.setGravity(Gravity.CENTER);
@@ -162,9 +162,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                                               int progress, boolean fromUser) {
                                     String as = "AMOUNT TO SELL: " + (progress + 1);
                                     seekText.setText(as);
-                                    String asoi = "TOTAL SALE: ¥" +(itemPrice *
+                                    String aso = "TOTAL SALE: ¥" +(itemPrice *
                                             (progress + 1));
-                                    priceText.setText(asoi);
+                                    priceText.setText(aso);
                                 }
 
                                 @Override
@@ -257,9 +257,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
         ShopEntry shopEntry = playerCargoList.get(position);
-        String aoix = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+        String aoi = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
-        playerCargoViewHolder.price.setText(aoix);
+        playerCargoViewHolder.price.setText(aoi);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(
                 String.valueOf(shopEntry.getStock()));

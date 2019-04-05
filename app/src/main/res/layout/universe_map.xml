@@ -131,7 +131,7 @@
             android:background="@color/colorText" />
 
         <FrameLayout
-            android:id="@+id/mapframe"
+            android:id="@+id/mapFrame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

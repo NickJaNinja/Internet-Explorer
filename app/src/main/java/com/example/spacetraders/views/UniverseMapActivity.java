@@ -59,7 +59,7 @@ public class UniverseMapActivity extends AppCompatActivity {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.solarsystemsquare);
 
-                FrameLayout relativeLayout = findViewById(R.id.mapframe);
+                FrameLayout relativeLayout = findViewById(R.id.mapFrame);
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.WRAP_CONTENT,
                         FrameLayout.LayoutParams.WRAP_CONTENT

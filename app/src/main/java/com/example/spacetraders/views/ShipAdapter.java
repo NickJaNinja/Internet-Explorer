@@ -119,8 +119,8 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
         shipViewHolder.cargo.setText(String.valueOf(ship.getNumCargoHolds()));
         shipViewHolder.maxFuel.setText(String.valueOf(ship.getFuel()));
         shipViewHolder.crew.setText(String.valueOf(ship.getNumCrew()));
-        String pshet = "¥" +ship.getCost();
-        shipViewHolder.cost.setText(pshet);
+        String psh = "¥" +ship.getCost();
+        shipViewHolder.cost.setText(psh);
     }
 
     /**
