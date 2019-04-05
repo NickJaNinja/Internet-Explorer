@@ -108,13 +108,14 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         Planet planet = planetsList.get(position);
        // selectedPlanet = planet;
         //rSolarSystem system = model.getCurrentSystem();
-        planetViewHolder.planetName.setText(planet.getName() + "");
+        planetViewHolder.planetName.setText(planet.getName());
         DecimalFormat df = new DecimalFormat("#.##");
-        planetViewHolder.distance.setText(df.format(planet.getDistanceFromParentStar()
-                * MULTIPLE) + " Lm");
-        planetViewHolder.economy.setText(planet.getResourcesLevel().getName() + "");
-        planetViewHolder.techLevel.setText(planet.getTechLevel().getName() + "");
-        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName() + "");
+        String stupidStrings = df.format(planet.getDistanceFromParentStar()
+                * MULTIPLE) + " Lm";
+        planetViewHolder.distance.setText(stupidStrings);
+        planetViewHolder.economy.setText(planet.getResourcesLevel().getName());
+        planetViewHolder.techLevel.setText(planet.getTechLevel().getName());
+        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName());
         planetViewHolder.planetView.setImageResource(R.drawable.input);
 
     }
