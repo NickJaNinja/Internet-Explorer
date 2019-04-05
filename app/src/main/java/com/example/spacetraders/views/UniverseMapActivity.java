@@ -44,11 +44,11 @@ public class UniverseMapActivity extends AppCompatActivity {
        // ImageView theCircle = findViewById(R.id.local_universe);
 
         nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
-        String joisco = "0 Ly";
-        distance.setText(joisco);
+        String joi = "0 Ly";
+        distance.setText(joi);
         coordinates.setText(universeViewModel.getCurrentSystem().getCoordinates().toString());
-        String yonxw = Model.getInstance().getRange() + " Ly";
-        range.setText(yonxw);
+        String yox = Model.getInstance().getRange() + " Ly";
+        range.setText(yox);
         engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
         for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
@@ -86,9 +86,9 @@ public class UniverseMapActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText(currentSolarSystem.getName());
-                        String slkent = currentSolarSystem.dist(
+                        String slk = currentSolarSystem.dist(
                                 universeViewModel.getCurrentSystem()) + " Ly";
-                        distance.setText(slkent);
+                        distance.setText(slk);
                         coordinates.setText(currentSolarSystem.getCoordinates().toString());
 
                         // make travel button red if system out of range, green if in range
