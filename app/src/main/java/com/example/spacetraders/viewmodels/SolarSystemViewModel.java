@@ -77,5 +77,9 @@ public class SolarSystemViewModel extends AndroidViewModel {
    /* public void setPlanet(Planet p) {
         model.setCurrentPlanet(p);
     }*/
-
+   @NonNull
+   @Override
+   public String toString() {
+        return model.toString();
+   }
 }

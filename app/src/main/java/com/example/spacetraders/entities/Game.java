@@ -216,15 +216,16 @@ public class Game implements Serializable {
         return player.getPlayerEntries();
     }
 
-    /**
+    /*
      * setter for current content_planet
      *
      * @param newCurr new current planet
      */
+    /*
     public void setCurrentPlanet(Planet newCurr) {
         this.currPlanet = newCurr;
     }
-
+*/
     /**
      * Gets all of the solar systems
      *

@@ -73,7 +73,6 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             distance = itemView.findViewById(R.id.planet_distance_from_star);
             techLevel = itemView.findViewById(R.id.planet_tech_level);
             politicalSystem = itemView.findViewById(R.id.planet_political_system);
-
             planetView = itemView.findViewById(R.id.planet_image);
 
 
@@ -106,7 +105,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         final double MULTIPLE = 8.3167;
         //bind the planet data for one planet
         Planet planet = planetsList.get(position);
-       // selectedPlanet = planet;
+
         //rSolarSystem system = model.getCurrentSystem();
         planetViewHolder.planetName.setText(planet.getName());
         DecimalFormat df = new DecimalFormat("#.##");

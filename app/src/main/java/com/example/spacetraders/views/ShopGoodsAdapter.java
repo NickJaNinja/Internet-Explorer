@@ -271,6 +271,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         notifyDataSetChanged();
     }
 
+
     interface OnClickListener {
 
         /**
@@ -278,8 +279,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
          *
          * @param goods shop entry
          */
-        void onClicked(ShopEntry goods);
+
+     void onClicked(ShopEntry goods);
     }
+
 //
 //    /**
 //     * set on click listener
@@ -287,9 +290,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 //     * @param listener on lick listener
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 //     */
-//    public void setOnClickListener(OnClickListener listener) {
-//        this.listener = listener;
-//    }
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
 
 // --Commented out by Inspection START (4/2/19, 11:03 PM):
 //    /**
