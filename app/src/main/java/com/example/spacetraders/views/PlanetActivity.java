@@ -22,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spacetraders.R;
-import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.models.Model;
 
 /**
