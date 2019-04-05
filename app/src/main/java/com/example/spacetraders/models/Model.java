@@ -10,7 +10,6 @@ import com.example.spacetraders.entities.ShipType;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.SolarSystem;
-import com.example.spacetraders.entities.TechLevel;
 
 import java.io.File;
 import java.io.FileInputStream;
