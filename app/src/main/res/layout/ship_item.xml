@@ -40,7 +40,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -66,7 +67,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -92,7 +94,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -118,7 +121,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -144,7 +148,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -170,7 +175,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -196,7 +202,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
@@ -222,7 +229,8 @@
                 android:layout_weight=".5"
                 android:layout_gravity="start"
                 android:textColor="@color/colorText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textIsSelectable="true" />
 
 
         </LinearLayout>
