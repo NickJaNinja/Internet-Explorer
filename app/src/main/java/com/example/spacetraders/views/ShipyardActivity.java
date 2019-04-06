@@ -61,20 +61,22 @@ public class ShipyardActivity extends AppCompatActivity implements ShipAdapter.E
 
         purchaseButton.setOnClickListener((View view)-> {
                 ShipType selected = adapterForShips.getSelected();
-                if (selected == null) {
-                    CharSequence text = "Select a ship";
-                    Toast toast = Toast.makeText(view.getContext(), text,
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                } else if (Model.getInstance().getCredits() < selected.getCost()) {
-                    CharSequence text = "Not enough credits";
-                    Toast toast = Toast.makeText(view.getContext(), text,
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                } else {
-                    Model.getInstance().setShipType(selected);
-                    Model.getInstance().setCredits(Model.getInstance().getCredits() -
-                            adapterForShips.getSelected().getCost());
+                if (Model.getInstance() != null) {
+                    if (selected == null) {
+                        CharSequence text = "Select a ship";
+                        Toast toast = Toast.makeText(view.getContext(), text,
+                                Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else if (Model.getInstance().getCredits() < selected.getCost()) {
+                        CharSequence text = "Not enough credits";
+                        Toast toast = Toast.makeText(view.getContext(), text,
+                                Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        Model.getInstance().setShipType(selected);
+                        Model.getInstance().setCredits(Model.getInstance().getCredits() -
+                                adapterForShips.getSelected().getCost());
+                    }
                 }
         });
     }

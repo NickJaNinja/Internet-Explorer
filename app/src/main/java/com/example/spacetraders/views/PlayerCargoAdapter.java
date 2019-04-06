@@ -285,7 +285,9 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         String aoi = "¥" + nested.getShopGoodsAdapter().getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
         playerCargoViewHolder.price.setText(aoi);
-        playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
+        if (shopEntry.getGood() != null) {
+            playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
+        }
         playerCargoViewHolder.stock.setText(
                 String.valueOf(shopEntry.getStock()));
 
@@ -387,9 +389,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
             this.dialog = dialog;
         }
 
-        public void setListener(OnClickListener listener) {
-            this.listener = listener;
-        }
+// --Commented out by Inspection START (4/5/19, 8:26 PM):
+//        public void setListener(OnClickListener listener) {
+//            this.listener = listener;
+//        }
+// --Commented out by Inspection STOP (4/5/19, 8:26 PM)
 
         public void setModel(Model model) {
             this.model = model;

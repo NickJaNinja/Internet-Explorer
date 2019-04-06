@@ -44,45 +44,46 @@ public class UniverseMapActivity extends AppCompatActivity {
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
        // ImageView theCircle = findViewById(R.id.local_universe);
 
-        nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
-        String joi = "0 Ly";
-        distance.setText(joi);
-        coordinates.setText(universeViewModel.getCurrentSystem().getCoordinates().toString());
-        String yox = Model.getInstance().getRange() + " Ly";
-        range.setText(yox);
-        engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
+        if (universeViewModel.getCurrentSystem() != null && universeViewModel.getCurrentSystem().getCoordinates() != null && Model.getInstance() != null && universeViewModel != null) {
+            nameOfPlanet.setText(universeViewModel.getCurrentSystem().getName());
+            String joi = "0 Ly";
+            distance.setText(joi);
+            coordinates.setText(universeViewModel.getCurrentSystem().getCoordinates().toString());
+            String yox = Model.getInstance().getRange() + " Ly";
+            range.setText(yox);
+            engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
-        for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-            if ((universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
-                    < Model.getInstance().getMaxRange())
-                    && !universeViewModel.getSolarSystems()[i].equals(
-                    universeViewModel.getCurrentSystem())) {
-                ImageView imageView = new ImageView(this);
-                imageView.setImageResource(R.drawable.solarsystemsquare);
+            for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
+                if ((universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
+                        < Model.getInstance().getMaxRange())
+                        && !universeViewModel.getSolarSystems()[i].equals(
+                        universeViewModel.getCurrentSystem())) {
+                    ImageView imageView = new ImageView(this);
+                    imageView.setImageResource(R.drawable.solarsystemsquare);
 
-                FrameLayout relativeLayout = findViewById(R.id.mapFrame);
-                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                        FrameLayout.LayoutParams.WRAP_CONTENT,
-                        FrameLayout.LayoutParams.WRAP_CONTENT
-                );
-                //factor is for converting dp to px
-                float factor = relativeLayout.getContext().getResources().getDisplayMetrics()
-                        .density;
-                layoutParams.leftMargin = (int) (universeViewModel.xCoordinatorOfSystem(
-                        universeViewModel.getCurrentSystem(),
-                        universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
-                layoutParams.topMargin = (int) (universeViewModel.yCoordinatorOfSystem(
-                        universeViewModel.getCurrentSystem(),
-                        universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
-                //color
-                imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
-                        .getStars()[0].getColor());
+                    FrameLayout relativeLayout = findViewById(R.id.mapFrame);
+                    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.WRAP_CONTENT,
+                            FrameLayout.LayoutParams.WRAP_CONTENT
+                    );
+                    //factor is for converting dp to px
+                    float factor = relativeLayout.getContext().getResources().getDisplayMetrics()
+                            .density;
+                    layoutParams.leftMargin = (int) (universeViewModel.xCoordinatorOfSystem(
+                            universeViewModel.getCurrentSystem(),
+                            universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
+                    layoutParams.topMargin = (int) (universeViewModel.yCoordinatorOfSystem(
+                            universeViewModel.getCurrentSystem(),
+                            universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
+                    //color
+                    imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
+                            .getStars()[0].getColor());
 
-                relativeLayout.addView(imageView, layoutParams);
+                    relativeLayout.addView(imageView, layoutParams);
 
-                int j = i;
+                    int j = i;
 
-                imageView.setOnClickListener((View v)-> {
+                    imageView.setOnClickListener((View v) -> {
                         currentSolarSystem = universeViewModel.getSolarSystems()[j];
                         nameOfPlanet.setText(currentSolarSystem.getName());
                         String slk = currentSolarSystem.dist(
@@ -99,7 +100,8 @@ public class UniverseMapActivity extends AppCompatActivity {
                             engageWarpDrive.setBackgroundColor(Color.parseColor(
                                     "#5FCA77")); // green
                         }
-                });
+                    });
+                }
             }
         }
 

@@ -124,9 +124,11 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         String stupidStrings = df.format(planet.getDistanceFromParentStar()
                 * MULTIPLE) + " Lm";
         planetViewHolder.distance.setText(stupidStrings);
-        planetViewHolder.economy.setText(planet.getResourcesLevel().getName());
-        planetViewHolder.techLevel.setText(planet.getTechLevel().getName());
-        planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName());
+        if (planet.getTechLevel() != null && planet.getResourcesLevel() != null && planet.getPoliticalSystem() != null) {
+            planetViewHolder.economy.setText(planet.getResourcesLevel().getName());
+            planetViewHolder.techLevel.setText(planet.getTechLevel().getName());
+            planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName());
+        }
         planetViewHolder.planetView.setImageResource(R.drawable.input);
 
     }

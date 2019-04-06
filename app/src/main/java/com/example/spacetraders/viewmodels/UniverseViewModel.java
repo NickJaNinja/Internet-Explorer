@@ -57,9 +57,11 @@ public class UniverseViewModel extends AndroidViewModel {
      */
 
     public double xCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
-        return COORDINATE + (((Objects.requireNonNull(goal).getCoordinates().getX() - Objects.requireNonNull(center).getCoordinates()
-                .getX()) * COORDINATE) / Model.getInstance().getMaxRange());
-
+        if (Objects.requireNonNull(goal).getCoordinates() != null && Model.getInstance() != null) {
+            return COORDINATE + (((Objects.requireNonNull(goal).getCoordinates().getX() - Objects.requireNonNull(center).getCoordinates()
+                    .getX()) * COORDINATE) / Model.getInstance().getMaxRange());
+        }
+        return 0;
     }
 
     /**
@@ -70,9 +72,11 @@ public class UniverseViewModel extends AndroidViewModel {
      * @return the x coordinate of the system
      */
     public double yCoordinatorOfSystem(@Nullable SolarSystem center, @Nullable SolarSystem goal) {
-        final int  CONSTANT = 30;
-        return (CONSTANT + COORDINATE) - (((Objects.requireNonNull(goal).getCoordinates().getY() - Objects.requireNonNull(center)
-                .getCoordinates().getY()) * COORDINATE) / Model.getInstance().getMaxRange());
+        final int CONSTANT = 30;
+        if (Objects.requireNonNull(goal).getCoordinates() != null && Model.getInstance() != null) {
+            return (CONSTANT + COORDINATE) - (((Objects.requireNonNull(goal).getCoordinates().getY() - Objects.requireNonNull(center)
+                    .getCoordinates().getY()) * COORDINATE) / Model.getInstance().getMaxRange());
+        }
+        return 0;
     }
-
 }
