@@ -1,7 +1,7 @@
 package com.example.spacetraders.entities;
 
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 

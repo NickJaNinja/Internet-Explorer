@@ -27,8 +27,8 @@ import java.util.List;
  * Adapts the list of planets in the model to be a list of graphical elements in view
  */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
-
-    private final NestedClass nested = new NestedClass();
+    ///DO NOT MAKE nested private->will create n synthetic Accessor warning
+    final NestedClass nested = new NestedClass();
   //  private List<Planet> planetsList;
     // private OnClickListener listener;
 

@@ -28,21 +28,23 @@ import java.util.Objects;
  * ship adapter class
  */
 public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder> {
-
+///DO NOT MAKE nested private->will create n synthetic Accessor warning
+    final NestedClass nested = new NestedClass();
+    /*
     private final List<ShipType> ships;
     private ShipType selected;
     private final EventHandler handler;
     private final ArrayList<View> viewHolderList;
-
+*/
 
     /**
      * constructor
      * @param ships ships
      */
     public ShipAdapter(@Nullable List<ShipType> ships, @Nullable EventHandler handler) {
-        this.ships = ships;
-        this.handler = handler;
-        viewHolderList = new ArrayList<>();
+        nested.setShips(ships);
+        nested.setHandler(handler);
+        nested.setViewHolderList( new ArrayList<>());
     }
 
     @NonNull
@@ -83,8 +85,9 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
             crew = itemView.findViewById(R.id.ship_crew_display);
             cost = itemView.findViewById(R.id.ship_cost_display);
 
-            viewHolderList.add(itemView);
+            nested.getViewHolderList().add(itemView);
 
+           /*
             itemView.setOnClickListener((View view) ->{
                     selected = ships.get(getAdapterPosition());
 
@@ -100,16 +103,34 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
                     handler.handle(); // make purchase button green
             });
         }
+        */
+
+            itemView.setOnClickListener((View view) ->{
+                nested.setSelected(nested.getShips().get(getAdapterPosition()));
+
+                // give all views "unselected background"
+                for(int i = 0; i < nested.getViewHolderList().size(); i++) {
+                    nested.getViewHolderList().get(i).setBackgroundColor(
+                            Color.parseColor("#00000000"));
+                }
+
+                // give "selected" background
+                view.setBackgroundColor(Color.parseColor("#664B4B4C"));
+
+                nested.getHandler().handle(); // make purchase button green
+            });
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return Objects.requireNonNull(ships).size();
+        return Objects.requireNonNull(nested.getShips()).size();
     }
 
     @Override
     public void onBindViewHolder(@NonNull ShipAdapter.ShipViewHolder shipViewHolder, int position) {
-        ShipType ship = Objects.requireNonNull(ships).get(position);
+        ShipType ship = Objects.requireNonNull(nested.getShips()).get(position);
 
         shipViewHolder.name.setText(ship.getName());
         shipViewHolder.weapon.setText(String.valueOf(ship.getNumWeapons()));
@@ -129,10 +150,51 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
      */
     @Nullable
     public ShipType getSelected() {
-        return selected;
+        return nested.getSelected();
     }
 
     public interface EventHandler {
         void handle(); // if u need know position. If no, just create method without params
+    }
+
+
+    final class NestedClass {
+        private List<ShipType> ships;
+        private ShipType selected;
+        private EventHandler handler;
+        private ArrayList<View> viewHolderList;
+
+        EventHandler getHandler() {
+            return handler;
+        }
+
+        void setViewHolderList(ArrayList<View> viewHolderList) {
+            this.viewHolderList = viewHolderList;
+        }
+
+        ArrayList<View> getViewHolderList() {
+            return viewHolderList;
+        }
+
+        List<ShipType> getShips() {
+            return ships;
+        }
+
+        void setHandler(EventHandler handler) {
+            this.handler = handler;
+        }
+
+         ShipType getSelected() {
+            return selected;
+        }
+
+        void setSelected(ShipType selected) {
+            this.selected = selected;
+        }
+
+         void setShips(List<ShipType> ships) {
+            this.ships = ships;
+        }
+
     }
 }

@@ -39,6 +39,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     private AlertDialog dialog;
     private final Model model;
 */
+    ///DO NOT MAKE nested private->will create n synthetic Accessor warning
     final NestedClass nested = new NestedClass();
     /**
      * Constructor
@@ -46,7 +47,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param playerCargoList the player cargo list
      * @param shopActivity the shop activity
      */
-    public PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
+     PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
        /*
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
