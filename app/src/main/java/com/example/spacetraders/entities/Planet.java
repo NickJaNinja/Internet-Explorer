@@ -4,8 +4,6 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.spacetraders.R;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
