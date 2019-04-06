@@ -29,7 +29,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     /**
      * a copy of the list of shop goods in the model
      */
-
+/*
     private final ShopActivity shopActivity;
     private PlayerCargoAdapter playerCargoAdapter;
     private List<ShopEntry> shopGoodsList;
@@ -37,7 +37,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
     private final Model model;
     private AlertDialog dialog;
     private boolean dialogConfirmed;
-
+*/
+    final NestedClass nested = new NestedClass();
     /**
      * constructor
      *
@@ -50,9 +51,15 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                 shopGoodsList.remove(entry);
             }
         }
+       /*
         this.shopGoodsList = shopGoodsList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;
+    */
+        nested.setShopGoodsList(shopGoodsList);
+        nested.setModel(Model.getInstance());
+        nested.setShopActivity(shopActivity);
+
     }
 
     @NonNull
@@ -81,125 +88,125 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
             stock = itemView.findViewById(R.id.stock_text);
 
             itemView.setOnClickListener((View view) ->{
-                    int position = getAdapterPosition();
+                int position = getAdapterPosition();
 
-                    if (position == RecyclerView.NO_POSITION) {
-                        CharSequence text = "DO NOT CLICK THAT";
-                        Toast toast = Toast.makeText(itemView.getContext(), text,
-                                Toast.LENGTH_SHORT);
-                        toast.show();
-                    } else {
-                        if (listener != null) {
-                            listener.onClicked(shopGoodsList.get(position));
-                            //view.setBackgroundColor(Color.CYAN);
-                        }
+                if (position == RecyclerView.NO_POSITION) {
+                    CharSequence text = "DO NOT CLICK THAT";
+                    Toast toast = Toast.makeText(itemView.getContext(), text,
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    if (nested.getListener() != null) {
+                        nested.getListener().onClicked(nested.getShopGoodsList().get(position));
 
-                        int cost = Integer.parseInt(price.getText().toString().substring(1));
+                    }
 
-                        if (shopGoodsList.get(position).getStock() > 0 ) {
+                    int cost = Integer.parseInt(price.getText().toString().substring(1));
 
-                            Context context = itemView.getContext();
-                            int itemPrice = shopGoodsList.get(position).getPrice();
-                            int itemStock = shopGoodsList.get(position).getStock();
+                    if (nested.getShopGoodsList().get(position).getStock() > 0 ) {
 
-                            dialogConfirmed = false;
+                        Context context = itemView.getContext();
+                        int itemPrice = nested.getShopGoodsList().get(position).getPrice();
+                        int itemStock = nested.getShopGoodsList().get(position).getStock();
 
-                            //magic number
-                            final int PADDING2 = 2;
-                            final int PADDING40 = 40;
-                            final int SIZE = 20;
-                            final int COLOR = 0xFFFFFFFF;
+                        nested.setDialogConfirmed( false);
 
-                            // master layout
-                            LinearLayout layout = new LinearLayout(context);
-                            LinearLayout.LayoutParams params =
-                                    new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT);
-                            layout.setOrientation(LinearLayout.VERTICAL);
-                            layout.setLayoutParams(params);
-                            layout.setGravity(Gravity.CLIP_VERTICAL);
-                            layout.setPadding(PADDING2, PADDING2, PADDING2, PADDING2);
+                        //magic number
+                        final int PADDING2 = 2;
+                        final int PADDING40 = 40;
+                        final int SIZE = 20;
+                        final int COLOR = 0xFFFFFFFF;
 
-                            // seek bar for alert dialog to select how much to buy
-                            SeekBar seek = new SeekBar(context);
-                            seek.setMax(Math.min(Math.min(shopGoodsList.get(position).getStock(),
-                                    model.getCargoSpace()), model.getCredits()/itemPrice) - 1);
-                            seek.setKeyProgressIncrement(10);
+                        // master layout
+                        LinearLayout layout = new LinearLayout(context);
+                        LinearLayout.LayoutParams params =
+                                new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                        layout.setOrientation(LinearLayout.VERTICAL);
+                        layout.setLayoutParams(params);
+                        layout.setGravity(Gravity.CLIP_VERTICAL);
+                        layout.setPadding(PADDING2, PADDING2, PADDING2, PADDING2);
 
-                            // text view for seek bar
-                            TextView seekText = new TextView(context);
-                            String axo = "AMOUNT TO PURCHASE: 1";
-                            seekText.setText(axo);
-                            seekText.setTextColor(COLOR);
-                            seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
-                            seekText.setGravity(Gravity.CENTER);
-                            seekText.setTextSize(SIZE);
+                        // seek bar for alert dialog to select how much to buy
+                        SeekBar seek = new SeekBar(context);
+                        seek.setMax(Math.min(Math.min(nested.getShopGoodsList().get(position).getStock(),
+                                nested.getModel().getCargoSpace()), nested.getModel().getCredits()/itemPrice) - 1);
+                        seek.setKeyProgressIncrement(10);
 
-                            // text view for price
-                            TextView priceText = new TextView(context);
-                            String amo = "TOTAL PRICE: ¥" +itemPrice;
-                            priceText.setText(amo);
-                            priceText.setTextColor(COLOR);
-                            priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
-                            priceText.setGravity(Gravity.CENTER);
-                            priceText.setTextSize(SIZE);
+                        // text view for seek bar
+                        TextView seekText = new TextView(context);
+                        String axo = "AMOUNT TO PURCHASE: 1";
+                        seekText.setText(axo);
+                        seekText.setTextColor(COLOR);
+                        seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
+                        seekText.setGravity(Gravity.CENTER);
+                        seekText.setTextSize(SIZE);
 
-                            // text views change with seek bar position change
-                            seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                                @Override
-                                public void onStartTrackingTouch(SeekBar seekBar) {}
+                        // text view for price
+                        TextView priceText = new TextView(context);
+                        String amo = "TOTAL PRICE: ¥" +itemPrice;
+                        priceText.setText(amo);
+                        priceText.setTextColor(COLOR);
+                        priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
+                        priceText.setGravity(Gravity.CENTER);
+                        priceText.setTextSize(SIZE);
 
-                                @Override
-                                public void onProgressChanged(SeekBar seekBar,
-                                                              int progress, boolean fromUser) {
-                                    String cmo = "AMOUNT TO PURCHASE: " + (progress + 1);
-                                    seekText.setText(cmo);
-                                    String cqo = "TOTAL PRICE: ¥" +
-                                            (itemPrice * (progress + 1));
-                                    priceText.setText(cqo);
-                                }
+                        // text views change with seek bar position change
+                        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                            @Override
+                            public void onStartTrackingTouch(SeekBar seekBar) {}
 
-                                @Override
-                                public void onStopTrackingTouch(SeekBar seekBar) {
+                            @Override
+                            public void onProgressChanged(SeekBar seekBar,
+                                                          int progress, boolean fromUser) {
+                                String cmo = "AMOUNT TO PURCHASE: " + (progress + 1);
+                                seekText.setText(cmo);
+                                String cqo = "TOTAL PRICE: ¥" +
+                                        (itemPrice * (progress + 1));
+                                priceText.setText(cqo);
+                            }
 
-                                }
-                            });
+                            @Override
+                            public void onStopTrackingTouch(SeekBar seekBar) {
 
-                            // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout.
-                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                    LinearLayout.LayoutParams.WRAP_CONTENT);
-                            priceTextParams.bottomMargin = 5;
-                            layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout.
-                                    LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                    LinearLayout.LayoutParams.WRAP_CONTENT);
-                            seekTextParams.bottomMargin = 5;
-                            layout.addView(seekText, seekTextParams);
-                            LinearLayout.LayoutParams seekParams =
-                                    new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT);
-                            seekParams.bottomMargin = 5;
-                            layout.addView(seek, seekParams);
+                            }
+                        });
 
-                            // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
-                                    R.style.AlertDialogTheme);
+                        // adding seek and text views to master layout
+                        LinearLayout.LayoutParams priceTextParams = new LinearLayout.
+                                LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                        priceTextParams.bottomMargin = 5;
+                        layout.addView(priceText, priceTextParams);
+                        LinearLayout.LayoutParams seekTextParams = new LinearLayout.
+                                LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                        seekTextParams.bottomMargin = 5;
+                        layout.addView(seekText, seekTextParams);
+                        LinearLayout.LayoutParams seekParams =
+                                new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                        seekParams.bottomMargin = 5;
+                        layout.addView(seek, seekParams);
 
-                            builder.setView(layout)
-                                    .setPositiveButton("CONFIRM",
-                                            // when positive button clicked dismiss dialog
-                                            (DialogInterface d, int which) ->{
-                                            dialogConfirmed = true;
+                        // asking user how much to buy
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                R.style.AlertDialogTheme);
+
+                        builder.setView(layout)
+                                .setPositiveButton("CONFIRM",
+                                        // when positive button clicked dismiss dialog
+                                        (DialogInterface d, int which) ->{
+                                            nested.setDialogConfirmed(true);
                                             d.dismiss();
-                                    })
-                                    .setNegativeButton("CANCEL",
-                                            (DialogInterface d, int which) ->
-                                            d.dismiss()
-                                    );
-
+                                        })
+                                .setNegativeButton("CANCEL",
+                                        (DialogInterface d, int which) ->
+                                                d.dismiss()
+                                );
+                            /*
                             dialog = builder.create();
 
                             dialog.setOnDismissListener((DialogInterface dialog) ->{
@@ -221,13 +228,36 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
                             });
 
                             dialog.show();
-                        } else {
-                            CharSequence text = "Not enough money or storage";
-                            Toast toast = Toast.makeText(itemView.getContext(), text,
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
+                            */
+                        nested.setDialog (builder.create());
+
+                        nested.getDialog().setOnDismissListener((DialogInterface dialog) ->{
+                            if ((nested.isDialogConfirmed()) && (nested.getModel().makeTransaction(
+                                    nested.getShopGoodsList().get(position).getGood(),
+                                    seek.getProgress() + 1, cost) == 1)) {
+                                // updating inventories and display
+                                nested.setShopGoodsList(nested.getModel().getShopEntries());
+                                nested.getPlayerCargoAdapter().setPlayerCargoList(
+                                        nested.getModel().getPlayerEntries());
+                                nested.getShopActivity().updateDisplay();
+                                notifyDataSetChanged();
+                            } else if (nested.isDialogConfirmed()) {
+                                CharSequence text = "Not enough money or storage";
+                                Toast toast = Toast.makeText(itemView.getContext(), text,
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        });
+
+                        nested.getDialog().show();
+
+                    } else {
+                        CharSequence text = "Not enough money or storage";
+                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                Toast.LENGTH_SHORT);
+                        toast.show();
                     }
+                }
             });
 
         }
@@ -235,12 +265,10 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     @Override
     public void onBindViewHolder(@NonNull ShopGoodsViewHolder shopGoodsViewHolder, int position) {
-        ShopEntry shopEntry = shopGoodsList.get(position);
+        ShopEntry shopEntry = nested.getShopGoodsList().get(position);
         String mcm = "¥" +shopEntry.getPrice();
         shopGoodsViewHolder.price.setText(mcm);
-        if (shopEntry.getGood() != null) {
-            shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
-        }
+        shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
         String mai = shopEntry.getStock() + "";
         shopGoodsViewHolder.stock.setText(mai);
     }
@@ -248,7 +276,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
 
     @Override
     public int getItemCount() {
-        return shopGoodsList.size();
+        return nested.getShopGoodsList().size();
     }
 
     /**
@@ -257,7 +285,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param shopEntries list of shop entries
      */
     public void setShopGoodsList(@Nullable List<ShopEntry> shopEntries) {
-        shopGoodsList = shopEntries;
+        nested.setShopGoodsList(shopEntries);
         notifyDataSetChanged();
     }
 
@@ -270,7 +298,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
          * @param goods shop entry
          */
 
-     void onClicked(ShopEntry goods);
+        void onClicked(ShopEntry goods);
     }
 
 //
@@ -301,7 +329,7 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param pca player cargo adapter
      */
     public void setPlayerCargoAdapter(@Nullable PlayerCargoAdapter pca) {
-        playerCargoAdapter = pca;
+        nested.setPlayerCargoAdapter(pca);
     }
 
 //    /**
@@ -318,11 +346,80 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @return the shop good price OR -1 if fail
      */
     public int getCostOfGood(@Nullable ShopGoods good) {
-        for (ShopEntry entry : shopGoodsList) {
+        for (ShopEntry entry : nested.getShopGoodsList()) {
             if (entry.getGood() != null && entry.getGood().equals(good)) {
                 return entry.getPrice();
             }
         }
         return -1;
     }
+
+    final class NestedClass {
+        private ShopActivity shopActivity;
+        private PlayerCargoAdapter playerCargoAdapter;
+        private List<ShopEntry> shopGoodsList;
+        private OnClickListener listener;
+        private Model model;
+        private AlertDialog dialog;
+        private boolean dialogConfirmed;
+
+        void setShopActivity(ShopActivity shopActivity) {
+            this.shopActivity = shopActivity;
+        }
+
+        ShopActivity getShopActivity() {
+            return shopActivity;
+        }
+
+        void setListener(OnClickListener listener) {
+            this.listener = listener;
+        }
+
+        void setModel(Model model) {
+            this.model = model;
+        }
+
+        void setDialog(AlertDialog dialog) {
+            this.dialog = dialog;
+        }
+
+        OnClickListener getListener() {
+            return listener;
+        }
+
+        Model getModel() {
+            return model;
+        }
+
+        List<ShopEntry> getShopGoodsList() {
+            return shopGoodsList;
+        }
+
+        AlertDialog getDialog() {
+            return dialog;
+        }
+
+        PlayerCargoAdapter getPlayerCargoAdapter() {
+            return playerCargoAdapter;
+        }
+
+        void setPlayerCargoAdapter(PlayerCargoAdapter playerCargoAdapter) {
+            this.playerCargoAdapter = playerCargoAdapter;
+        }
+
+        boolean isDialogConfirmed() {
+            return dialogConfirmed;
+        }
+
+        void setDialogConfirmed(boolean dialogConfirmed) {
+            this.dialogConfirmed = dialogConfirmed;
+        }
+
+        void setShopGoodsList(List<ShopEntry> shopGoodsList) {
+            this.shopGoodsList = shopGoodsList;
+        }
+
+
+    }
 }
+

@@ -34,7 +34,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
 
 
-    private final ArrayList<View> viewHolderList;
+    //private final ArrayList<View> viewHolderList;
 
     // --Commented out by Inspection (4/2/19, 11:03 PM):private Planet selectedPlanet;
 
@@ -48,7 +48,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
          nested.setPlanetsList(Arrays.asList(planets));
         //this.planetsList = Arrays.asList(planets);
 
-        viewHolderList = new ArrayList<>();
+        nested.setViewHolderList ( new ArrayList<>());
     }
 
     @NonNull
@@ -90,7 +90,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             planetBack = itemView.findViewById(R.id.planet_back);
             planetFront = itemView.findViewById(R.id.planet_front);
 
-            viewHolderList.add(itemView);
+            nested.getViewHolderList().add(itemView);
 
             itemView.setOnClickListener((View view)-> {
                     int position = getAdapterPosition();
@@ -100,8 +100,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                     }
 
                     // give all views "unselected background"
-                    for(int i = 0; i < viewHolderList.size(); i++) {
-                        viewHolderList.get(i).setBackgroundColor(
+                    for(int i = 0; i < nested.getViewHolderList().size(); i++) {
+                        nested.getViewHolderList().get(i).setBackgroundColor(
                                 Color.parseColor("#00000000"));
                     }
 
@@ -185,9 +185,19 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
       final class NestedClass {
         private List<Planet> planetsList;
         private OnClickListener listener;
+        private ArrayList<View> viewHolderList;
       //  private final NestedClass instance = new NestedClass();
 
-        List<Planet> getPlanetsList() {
+
+    ArrayList<View> getViewHolderList() {
+        return viewHolderList;
+    }
+
+    void setViewHolderList(ArrayList<View> viewHolderList) {
+        this.viewHolderList = viewHolderList;
+    }
+
+    List<Planet> getPlanetsList() {
             return planetsList;
         }
         OnClickListener getListener() {

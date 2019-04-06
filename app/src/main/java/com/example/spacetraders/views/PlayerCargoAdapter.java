@@ -84,14 +84,14 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
             stock = itemView.findViewById(R.id.stock_text);
 
             itemView.setOnClickListener((View view) ->{
-                    int position = getAdapterPosition();
+                int position = getAdapterPosition();
 
-                    if (position == RecyclerView.NO_POSITION) {
-                        CharSequence text = "DO NOT CLICK THAT";
-                        Toast toast = Toast.makeText(itemView.getContext(), text,
-                                Toast.LENGTH_SHORT);
-                        toast.show();
-                    } else {
+                if (position == RecyclerView.NO_POSITION) {
+                    CharSequence text = "DO NOT CLICK THAT";
+                    Toast toast = Toast.makeText(itemView.getContext(), text,
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
                       /*
                         ShopEntry selectedEntry = playerCargoList.get(position);
                         ShopGoods selectedGood = selectedEntry.getGood();
@@ -101,13 +101,13 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
 
                         int cost = shopGoodsAdapter.getCostOfGood(selectedGood);
                        */
-                        ShopEntry selectedEntry = nested.getPlayerCargoList().get(position);
-                        ShopGoods selectedGood = selectedEntry.getGood();
-                        if (nested.getListener() != null) {
-                            nested.getListener().onClicked(nested.getPlayerCargoList().get(position));
-                        }
+                    ShopEntry selectedEntry = nested.getPlayerCargoList().get(position);
+                    ShopGoods selectedGood = selectedEntry.getGood();
+                    if (nested.getListener() != null) {
+                        nested.getListener().onClicked(nested.getPlayerCargoList().get(position));
+                    }
 
-                        int cost = nested.getShopGoodsAdapter().getCostOfGood(selectedGood);
+                    int cost = nested.getShopGoodsAdapter().getCostOfGood(selectedGood);
 
 
                         /*
@@ -120,107 +120,107 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                         }
                         */
 
-                        if (nested.getPlayerCargoList().get(position).getStock() > 0 ) {
+                    if (nested.getPlayerCargoList().get(position).getStock() > 0 ) {
 
-                            Context context = itemView.getContext();
-                            int itemStock = nested.getPlayerCargoList().get(position).getStock();
-                            int itemPrice = nested.getPlayerCargoList().get(position).getPrice();
+                        Context context = itemView.getContext();
+                        int itemStock = nested.getPlayerCargoList().get(position).getStock();
+                        int itemPrice = nested.getPlayerCargoList().get(position).getPrice();
 
-                            dialogConfirmed = false;
-                            final int PADDING40 = 40;
-                            final int SIZE = 20;
-                            final int COLOR = 0xFFFFFFFF;
+                        dialogConfirmed = false;
+                        final int PADDING40 = 40;
+                        final int SIZE = 20;
+                        final int COLOR = 0xFFFFFFFF;
 
 
-                            // master layout
-                            LinearLayout layout = new LinearLayout(context);
-                            LinearLayout.LayoutParams params =
-                                    new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT);
-                            layout.setOrientation(LinearLayout.VERTICAL);
-                            layout.setLayoutParams(params);
-                            layout.setGravity(Gravity.CLIP_VERTICAL);
-                            layout.setPadding(2, 2, 2, 2);
+                        // master layout
+                        LinearLayout layout = new LinearLayout(context);
+                        LinearLayout.LayoutParams params =
+                                new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                        layout.setOrientation(LinearLayout.VERTICAL);
+                        layout.setLayoutParams(params);
+                        layout.setGravity(Gravity.CLIP_VERTICAL);
+                        layout.setPadding(2, 2, 2, 2);
 
-                            // seek bar for alert dialog to select how much to buy
-                            SeekBar seek = new SeekBar(context);
-                            seek.setMax((itemStock - 1));
-                            seek.setKeyProgressIncrement(10);
+                        // seek bar for alert dialog to select how much to buy
+                        SeekBar seek = new SeekBar(context);
+                        seek.setMax((itemStock - 1));
+                        seek.setKeyProgressIncrement(10);
 
-                            // text view for seek bar
-                            TextView seekText = new TextView(context);
-                            String aah = "AMOUNT TO SELL: 1";
-                            seekText.setText(aah);
+                        // text view for seek bar
+                        TextView seekText = new TextView(context);
+                        String aah = "AMOUNT TO SELL: 1";
+                        seekText.setText(aah);
 
-                            seekText.setTextColor(COLOR);
-                            seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
-                            seekText.setGravity(Gravity.CENTER);
-                            seekText.setTextSize(SIZE);
+                        seekText.setTextColor(COLOR);
+                        seekText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
+                        seekText.setGravity(Gravity.CENTER);
+                        seekText.setTextSize(SIZE);
 
-                            // text view for price
-                            TextView priceText = new TextView(context);
-                            String qwo = "TOTAL SALE: ¥" +itemPrice;
-                            priceText.setText(qwo);
-                            priceText.setTextColor(COLOR);
-                            priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
-                            priceText.setGravity(Gravity.CENTER);
-                            priceText.setTextSize(SIZE);
+                        // text view for price
+                        TextView priceText = new TextView(context);
+                        String qwo = "TOTAL SALE: ¥" +itemPrice;
+                        priceText.setText(qwo);
+                        priceText.setTextColor(COLOR);
+                        priceText.setPadding(PADDING40, PADDING40, PADDING40, PADDING40);
+                        priceText.setGravity(Gravity.CENTER);
+                        priceText.setTextSize(SIZE);
 
-                            // text views change with seek bar position change
-                            seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                                @Override
-                                public void onStartTrackingTouch(SeekBar seekBar) {}
+                        // text views change with seek bar position change
+                        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                            @Override
+                            public void onStartTrackingTouch(SeekBar seekBar) {}
 
-                                @Override
-                                public void onProgressChanged(SeekBar seekBar,
-                                                              int progress, boolean fromUser) {
-                                    String as = "AMOUNT TO SELL: " + (progress + 1);
-                                    seekText.setText(as);
-                                    String aso = "TOTAL SALE: ¥" +(itemPrice *
-                                            (progress + 1));
-                                    priceText.setText(aso);
-                                }
+                            @Override
+                            public void onProgressChanged(SeekBar seekBar,
+                                                          int progress, boolean fromUser) {
+                                String as = "AMOUNT TO SELL: " + (progress + 1);
+                                seekText.setText(as);
+                                String aso = "TOTAL SALE: ¥" +(itemPrice *
+                                        (progress + 1));
+                                priceText.setText(aso);
+                            }
 
-                                @Override
-                                public void onStopTrackingTouch(SeekBar seekBar) {
+                            @Override
+                            public void onStopTrackingTouch(SeekBar seekBar) {
 
-                                }
-                            });
+                            }
+                        });
 
-                            // adding seek and text views to master layout
-                            LinearLayout.LayoutParams priceTextParams = new LinearLayout
-                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                    LinearLayout.LayoutParams.WRAP_CONTENT);
-                            priceTextParams.bottomMargin = 5;
-                            layout.addView(priceText, priceTextParams);
-                            LinearLayout.LayoutParams seekTextParams = new LinearLayout
-                                    .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                    LinearLayout.LayoutParams.WRAP_CONTENT);
-                            seekTextParams.bottomMargin = 5;
-                            layout.addView(seekText, seekTextParams);
-                            LinearLayout.LayoutParams seekParams =
-                                    new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT);
-                            seekParams.bottomMargin = 5;
-                            layout.addView(seek, seekParams);
+                        // adding seek and text views to master layout
+                        LinearLayout.LayoutParams priceTextParams = new LinearLayout
+                                .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                        priceTextParams.bottomMargin = 5;
+                        layout.addView(priceText, priceTextParams);
+                        LinearLayout.LayoutParams seekTextParams = new LinearLayout
+                                .LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                        seekTextParams.bottomMargin = 5;
+                        layout.addView(seekText, seekTextParams);
+                        LinearLayout.LayoutParams seekParams =
+                                new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                        seekParams.bottomMargin = 5;
+                        layout.addView(seek, seekParams);
 
-                            // asking user how much to buy
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context,
-                                    R.style.AlertDialogTheme);
+                        // asking user how much to buy
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context,
+                                R.style.AlertDialogTheme);
 
-                            builder.setView(layout)
-                                    .setPositiveButton("CONFIRM",
-                                            // when positive button clicked dismiss dialog
-                                            (DialogInterface d, int which) ->{
+                        builder.setView(layout)
+                                .setPositiveButton("CONFIRM",
+                                        // when positive button clicked dismiss dialog
+                                        (DialogInterface d, int which) ->{
                                             dialogConfirmed = true;
                                             d.dismiss();
-                                    })
-                                    .setNegativeButton("CANCEL",
-                                            (DialogInterface d, int which)->
-                                                    d.dismiss()
-                                            );
+                                        })
+                                .setNegativeButton("CANCEL",
+                                        (DialogInterface d, int which)->
+                                                d.dismiss()
+                                );
                             /*
                             dialog = builder.create();
                             dialog.setOnDismissListener((DialogInterface dialog) ->{
@@ -242,33 +242,33 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                             dialog.show();
                             */
 
-                            nested.setDialog(builder.create());
-                            nested.getDialog().setOnDismissListener((DialogInterface dialog) ->{
-                                if (dialogConfirmed && (nested.getModel().makeTransaction(
-                                        selectedGood, -seek.getProgress() - 1,
-                                        cost) == 1)) {
-                                    // updating inventories and display
-                                    nested.setPlayerCargoList(nested.getModel().getPlayerEntries());
-                                    nested.getShopGoodsAdapter().setShopGoodsList(nested.getModel().getShopEntries());
-                                    nested.getShopActivity().updateDisplay();
-                                    notifyDataSetChanged();
-                                } else if (dialogConfirmed) {
-                                    CharSequence text = "Not enough money or storage";
-                                    Toast toast = Toast.makeText(itemView.getContext(), text,
-                                            Toast.LENGTH_SHORT);
-                                    toast.show();
-                                }
-                            });
-                            nested.getDialog().show();
+                        nested.setDialog(builder.create());
+                        nested.getDialog().setOnDismissListener((DialogInterface dialog) ->{
+                            if (dialogConfirmed && (nested.getModel().makeTransaction(
+                                    selectedGood, -seek.getProgress() - 1,
+                                    cost) == 1)) {
+                                // updating inventories and display
+                                nested.setPlayerCargoList(nested.getModel().getPlayerEntries());
+                                nested.getShopGoodsAdapter().setShopGoodsList(nested.getModel().getShopEntries());
+                                nested.getShopActivity().updateDisplay();
+                                notifyDataSetChanged();
+                            } else if (dialogConfirmed) {
+                                CharSequence text = "Not enough money or storage";
+                                Toast toast = Toast.makeText(itemView.getContext(), text,
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        });
+                        nested.getDialog().show();
 
 
-                        } else {
-                            CharSequence text = "Not enough money or storage";
-                            Toast toast = Toast.makeText(itemView.getContext(), text,
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
+                    } else {
+                        CharSequence text = "Not enough money or storage";
+                        Toast toast = Toast.makeText(itemView.getContext(), text,
+                                Toast.LENGTH_SHORT);
+                        toast.show();
                     }
+                }
             });
         }
     }
@@ -285,9 +285,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         String aoi = "¥" + nested.getShopGoodsAdapter().getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
         playerCargoViewHolder.price.setText(aoi);
-        if (shopEntry.getGood() != null) {
-            playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
-        }
+        playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
         playerCargoViewHolder.stock.setText(
                 String.valueOf(shopEntry.getStock()));
 
@@ -361,53 +359,51 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
         private AlertDialog dialog;
         private Model model;
 
-        public AlertDialog getDialog() {
+        AlertDialog getDialog() {
             return dialog;
         }
 
-        public List<ShopEntry> getPlayerCargoList() {
+        List<ShopEntry> getPlayerCargoList() {
             return playerCargoList;
         }
 
-        public Model getModel() {
+        Model getModel() {
             return model;
         }
 
-        public OnClickListener getListener() {
+        OnClickListener getListener() {
             return listener;
         }
 
-        public ShopActivity getShopActivity() {
+        ShopActivity getShopActivity() {
             return shopActivity;
         }
 
-        public ShopGoodsAdapter getShopGoodsAdapter() {
+        ShopGoodsAdapter getShopGoodsAdapter() {
             return shopGoodsAdapter;
         }
 
-        public void setDialog(AlertDialog dialog) {
+        void setDialog(AlertDialog dialog) {
             this.dialog = dialog;
         }
 
-// --Commented out by Inspection START (4/5/19, 8:26 PM):
-//        public void setListener(OnClickListener listener) {
-//            this.listener = listener;
-//        }
-// --Commented out by Inspection STOP (4/5/19, 8:26 PM)
+        void setListener(OnClickListener listener) {
+            this.listener = listener;
+        }
 
-        public void setModel(Model model) {
+        void setModel(Model model) {
             this.model = model;
         }
 
-        public void setPlayerCargoList(List<ShopEntry> playerCargoList) {
+        void setPlayerCargoList(List<ShopEntry> playerCargoList) {
             this.playerCargoList = playerCargoList;
         }
 
-        public void setShopActivity(ShopActivity shopActivity) {
+        void setShopActivity(ShopActivity shopActivity) {
             this.shopActivity = shopActivity;
         }
 
-        public void setShopGoodsAdapter(ShopGoodsAdapter shopGoodsAdapter) {
+        void setShopGoodsAdapter(ShopGoodsAdapter shopGoodsAdapter) {
             this.shopGoodsAdapter = shopGoodsAdapter;
         }
 
