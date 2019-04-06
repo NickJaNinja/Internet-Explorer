@@ -142,7 +142,9 @@ public class PlanetActivity extends AppCompatActivity {
 
         // set land type
         int landType = model.getLandType();
-        if (landType == 1) planetFront.setImageResource(R.drawable.planet_land_a);
+        if (landType == 1) {
+            planetFront.setImageResource(R.drawable.planet_land_a);
+        }
         else if (landType == 2) planetFront.setImageResource(R.drawable.planet_land_b);
 
 
@@ -168,6 +170,7 @@ public class PlanetActivity extends AppCompatActivity {
         rotate.setInterpolator(new LinearInterpolator());
         planetBack.startAnimation(rotate);
         planetFront.startAnimation(rotate);
+
     }
 
     @Override
