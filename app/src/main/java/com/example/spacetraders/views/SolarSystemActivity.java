@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,8 +42,7 @@ public class SolarSystemActivity extends AppCompatActivity {
         TextView surfaceTemp;
         TextView luminosity;
         RecyclerView recyclerViewPlanet;
-       // ImageView starView;
-       // ImageView planetImage;
+        ImageView starView;
         SolarSystem solarSystem;
 
         setContentView(R.layout.solar_system_map);
@@ -61,7 +61,7 @@ public class SolarSystemActivity extends AppCompatActivity {
         recyclerViewPlanet.setAdapter(adapterForPlanets);
 
 
-        //starView = findViewById(R.id.star_image);
+        starView = findViewById(R.id.star_image);
         name = findViewById(R.id.star_name);
         classification = findViewById(R.id.star_classification);
         radius = findViewById(R.id.star_radius);
@@ -69,7 +69,6 @@ public class SolarSystemActivity extends AppCompatActivity {
         surfaceTemp = findViewById(R.id.star_surface_temperature);
         luminosity = findViewById(R.id.star_luminosity);
         thrusterButton = findViewById(R.id.thrusters_button);
-       // planetImage = findViewById(R.id.planet_image);
 
         DecimalFormat dfe = new DecimalFormat("#.#E0");
         DecimalFormat df = new DecimalFormat("#.##");
@@ -111,6 +110,10 @@ public class SolarSystemActivity extends AppCompatActivity {
                     }
                 }
         });
+
+
+        // star color
+        starView.setColorFilter(model.getCurrentSystem().getStars()[0].getColor());
 
     }
     @Override
