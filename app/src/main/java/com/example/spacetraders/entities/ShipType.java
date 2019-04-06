@@ -10,7 +10,7 @@ import java.util.List;
  * This enum represents the various spaceship types
  */
 public enum ShipType {
-    FLEA("Flea", 0, 0, 0, 2, 20, 0, 1000),
+    FLEA("Flea", 0, 0, 0, 2, 70, 0, 1000),
     GNAT("Gnat", 1, 0, 1, 15, 14, 0, 5000),
     FIREFLY("Firefly", 1, 1, 1, 20, 17, 0, 10000),
     MOSQUITO("Mosquito", 2, 1, 1, 14, 13, 0, 15000), //"strong hull"
