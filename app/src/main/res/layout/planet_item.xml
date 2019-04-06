@@ -3,16 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorBackground"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/planet_image"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_weight=".5"
-        android:adjustViewBounds="false"
-        android:contentDescription="@string/get"/>
+        android:layout_weight=".5">
+
+        <ImageView
+            android:id="@+id/planet_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/planet_back"
+            android:contentDescription="@string/get"/>
+
+        <ImageView
+            android:id="@+id/planet_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:contentDescription="@string/get"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -72,11 +93,13 @@
             android:textColor="@color/colorHint"
             android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorText" />
+    </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText" />
 
 </LinearLayout>

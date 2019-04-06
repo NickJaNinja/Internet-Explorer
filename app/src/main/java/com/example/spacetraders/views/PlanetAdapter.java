@@ -72,7 +72,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         final TextView techLevel;
         final TextView politicalSystem;
         //planet image on the left
-        final ImageView planetView;
+        final ImageView planetBack;
+        final ImageView planetFront;
 
         /**
          * planet view holder
@@ -86,10 +87,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             distance = itemView.findViewById(R.id.planet_distance_from_star);
             techLevel = itemView.findViewById(R.id.planet_tech_level);
             politicalSystem = itemView.findViewById(R.id.planet_political_system);
-            planetView = itemView.findViewById(R.id.planet_image);
+            planetBack = itemView.findViewById(R.id.planet_back);
+            planetFront = itemView.findViewById(R.id.planet_front);
 
             viewHolderList.add(itemView);
-            //planetView.setImageDrawable(viewHolderList.get(getAdapterPosition()).getBackground());
 
             itemView.setOnClickListener((View view)-> {
                     int position = getAdapterPosition();
@@ -129,7 +130,10 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             planetViewHolder.techLevel.setText(planet.getTechLevel().getName());
             planetViewHolder.politicalSystem.setText(planet.getPoliticalSystem().getName());
         }
-        planetViewHolder.planetView.setImageResource(R.drawable.input);
+        // planet image
+        planetViewHolder.planetFront.setImageResource(planet.getLandType());
+        planetViewHolder.planetBack.setColorFilter(planet.getColorBack());
+        planetViewHolder.planetFront.setColorFilter(planet.getColorFront());
 
     }
 

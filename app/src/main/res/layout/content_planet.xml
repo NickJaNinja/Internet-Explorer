@@ -21,6 +21,8 @@
                 android:id="@+id/planet_back"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:src="@drawable/planet_back"
                 android:contentDescription="@string/get"/>
 
@@ -28,6 +30,8 @@
                 android:id="@+id/planet_front"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:contentDescription="@string/get"/>
 
         </FrameLayout>
@@ -39,7 +43,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="@string/PLANET"
             android:textColor="@color/colorText"

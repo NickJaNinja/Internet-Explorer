@@ -1,8 +1,11 @@
 package com.example.spacetraders.entities;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.example.spacetraders.R;
 
 import java.io.Serializable;
 import java.util.List;
@@ -56,9 +59,9 @@ public class Planet implements Serializable {
         this.isWarpGate = false;
 
         int landTypeRoll = r.nextInt(10);
-        if (landTypeRoll <= 2) landType = 1; // a: 30%
-        else if (landTypeRoll <= 7) landType = 2;// b: 50%
-        else landType = 0;// no land: 20%
+        if (landTypeRoll <= 3) landType = R.drawable.planet_land_a; // a: 40%
+        else if (landTypeRoll <= 7) landType = R.drawable.planet_land_b;// b: 50%
+        else landType = 0;// no land: 10%
 
         // generate colors of planet
         colorBack = Color.argb(255, r.nextInt(256),

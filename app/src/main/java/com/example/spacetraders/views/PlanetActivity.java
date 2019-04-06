@@ -141,12 +141,7 @@ public class PlanetActivity extends AppCompatActivity {
         planetFront = findViewById(R.id.planet_front);
 
         // set land type
-        int landType = model.getLandType();
-        if (landType == 1) {
-            planetFront.setImageResource(R.drawable.planet_land_a);
-        }
-        else if (landType == 2) planetFront.setImageResource(R.drawable.planet_land_b);
-
+        planetFront.setImageResource(model.getLandType());
 
         // change colors of planet
         planetBack.setColorFilter(model.getColorBack());
