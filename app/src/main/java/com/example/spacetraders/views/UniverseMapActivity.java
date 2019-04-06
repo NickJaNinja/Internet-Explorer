@@ -53,56 +53,61 @@ public class UniverseMapActivity extends AppCompatActivity {
             range.setText(yox);
             engageWarpDrive.setBackgroundColor(Color.parseColor("#D25A64"));
 
-            for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
-                if ((universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
-                        < Model.getInstance().getMaxRange())
-                        && !universeViewModel.getSolarSystems()[i].equals(
-                        universeViewModel.getCurrentSystem())) {
-                    ImageView imageView = new ImageView(this);
-                    imageView.setImageResource(R.drawable.solarsystemsquare);
+            if (universeViewModel != null && universeViewModel.getCurrentSystem() != null && universeViewModel.getSolarSystems() != null) {
+                for (int i = 0; i < universeViewModel.getSolarSystems().length; i++) {
+                    if ((universeViewModel.getSolarSystems()[i].dist(universeViewModel.getCurrentSystem())
+                            < Model.getInstance().getMaxRange())
+                            && !universeViewModel.getSolarSystems()[i].equals(
+                            universeViewModel.getCurrentSystem())) {
+                        ImageView imageView = new ImageView(this);
+                        imageView.setImageResource(R.drawable.solarsystemsquare);
 
-                    FrameLayout relativeLayout = findViewById(R.id.mapFrame);
-                    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                            FrameLayout.LayoutParams.WRAP_CONTENT,
-                            FrameLayout.LayoutParams.WRAP_CONTENT
-                    );
-                    //factor is for converting dp to px
-                    float factor = relativeLayout.getContext().getResources().getDisplayMetrics()
-                            .density;
-                    layoutParams.leftMargin = (int) (universeViewModel.xCoordinatorOfSystem(
-                            universeViewModel.getCurrentSystem(),
-                            universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
-                    layoutParams.topMargin = (int) (universeViewModel.yCoordinatorOfSystem(
-                            universeViewModel.getCurrentSystem(),
-                            universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
-                    //color
-                    imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
-                            .getStars()[0].getColor());
+                        FrameLayout relativeLayout = findViewById(R.id.mapFrame);
+                        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                                FrameLayout.LayoutParams.WRAP_CONTENT,
+                                FrameLayout.LayoutParams.WRAP_CONTENT
+                        );
+                        //factor is for converting dp to px
+                        float factor = relativeLayout.getContext().getResources().getDisplayMetrics()
+                                .density;
+                        layoutParams.leftMargin = (int) (universeViewModel.xCoordinatorOfSystem(
+                                universeViewModel.getCurrentSystem(),
+                                universeViewModel.getSolarSystems()[i]) * factor); //Your X coordinate
+                        layoutParams.topMargin = (int) (universeViewModel.yCoordinatorOfSystem(
+                                universeViewModel.getCurrentSystem(),
+                                universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
+                        //color
+                        if (universeViewModel.getSolarSystems()[i] != null && universeViewModel.getSolarSystems()[i].getStars() != null)
+                        imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
+                                .getStars()[0].getColor());
 
-                    relativeLayout.addView(imageView, layoutParams);
+                        relativeLayout.addView(imageView, layoutParams);
 
-                    int j = i;
+                        int j = i;
 
-                    imageView.setOnClickListener((View v) -> {
-                        currentSolarSystem = universeViewModel.getSolarSystems()[j];
-                        nameOfPlanet.setText(currentSolarSystem.getName());
-                        String slk = currentSolarSystem.dist(
-                                universeViewModel.getCurrentSystem()) + " Ly";
-                        distance.setText(slk);
-                        coordinates.setText(currentSolarSystem.getCoordinates().toString());
+                        imageView.setOnClickListener((View v) -> {
+                            currentSolarSystem = universeViewModel.getSolarSystems()[j];
+                            nameOfPlanet.setText(currentSolarSystem.getName());
+                            String slk = currentSolarSystem.dist(
+                                    universeViewModel.getCurrentSystem()) + " Ly";
+                            distance.setText(slk);
+                            if (currentSolarSystem.getCoordinates() != null) {
+                                coordinates.setText(currentSolarSystem.getCoordinates().toString());
+                            }
 
-                        // TODO draw a line between ship and star when star is selected
+                            // TODO draw a line between ship and star when star is selected
 
-                        // make travel button red if system out of range, green if in range
-                        if (Model.getInstance().getRange() < currentSolarSystem.dist(
-                                universeViewModel.getCurrentSystem())) {
-                            engageWarpDrive.setBackgroundColor(Color.parseColor(
-                                    "#D25A64")); // red
-                        } else {
-                            engageWarpDrive.setBackgroundColor(Color.parseColor(
-                                    "#5FCA77")); // green
-                        }
-                    });
+                            // make travel button red if system out of range, green if in range
+                            if (Model.getInstance().getRange() < currentSolarSystem.dist(
+                                    universeViewModel.getCurrentSystem())) {
+                                engageWarpDrive.setBackgroundColor(Color.parseColor(
+                                        "#D25A64")); // red
+                            } else {
+                                engageWarpDrive.setBackgroundColor(Color.parseColor(
+                                        "#5FCA77")); // green
+                            }
+                        });
+                    }
                 }
             }
         }

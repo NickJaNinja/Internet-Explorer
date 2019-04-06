@@ -268,7 +268,9 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
         ShopEntry shopEntry = nested.getShopGoodsList().get(position);
         String mcm = "¥" +shopEntry.getPrice();
         shopGoodsViewHolder.price.setText(mcm);
-        shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
+        if (shopEntry.getGood() != null) {
+            shopGoodsViewHolder.name.setText(shopEntry.getGood().getName());
+        }
         String mai = shopEntry.getStock() + "";
         shopGoodsViewHolder.stock.setText(mai);
     }

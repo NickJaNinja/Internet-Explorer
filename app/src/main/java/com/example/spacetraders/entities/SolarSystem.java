@@ -91,20 +91,23 @@ public class SolarSystem implements Serializable {
                 int roll = r.nextInt(stars.length);
                 planets[i] = new Planet(stars[roll].getName() + (i + 1), stars[roll]);
             } else { // if unary star system
-                planets[i] = new Planet(stars[0].getName() + ((char) ('a'+i)), stars[0]);
+                planets[i] = new Planet(stars[0].getName() + ((char) ('a' + i)), stars[0]);
             }
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
-
-            if ((planets[i].getDistanceFromParentStar() >
-                    planets[i].getParentStar().getInnerHZRadius())
-                    && (planets[i].getDistanceFromParentStar()
-                    < planets[i].getParentStar().getOuterHZRadius())) {
-                planets[i].setInHabitableZone(true);
-            } else {
-                planets[i].setInHabitableZone(false);
+            if (planets[i].getParentStar() != null) {
+                if ((planets[i].getDistanceFromParentStar() >
+                        planets[i].getParentStar().getInnerHZRadius())
+                        && (planets[i].getDistanceFromParentStar()
+                        < planets[i].getParentStar().getOuterHZRadius())) {
+                    planets[i].setInHabitableZone(true);
+                } else {
+                    planets[i].setInHabitableZone(false);
+                }
             }
         }
-        getClosestToSun().setIsWarpGate(true);
+        if (getClosestToSun() != null) {
+            getClosestToSun().setIsWarpGate(true);
+        }
     }
 
     /**

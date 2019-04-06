@@ -74,20 +74,22 @@ public class SolarSystemActivity extends AppCompatActivity {
         DecimalFormat df = new DecimalFormat("#.##");
 
         final double RADIUS_CONSTANT = 1.58125E-5;
-        name.setText(solarSystem.getName());
-        String moi = solarSystem.getStars()[0].getClassification() + " Class Star";
-        classification.setText(moi);
-        String qoi = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
-                * RADIUS_CONSTANT) + " Ly";
-        radius.setText(qoi);
-        String mvo = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
-        mass.setText(mvo);
-        String zpi = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
-                + " K";
-        surfaceTemp.setText(zpi);
-        String xoi = "Luminosity: " + dfe.format(
-                solarSystem.getStars()[0].getLuminosityInWatts()) + " W";
-        luminosity.setText(xoi);
+        if (solarSystem != null && solarSystem.getStars() != null && solarSystem.getStars()[0] != null) {
+            name.setText(solarSystem.getName());
+            String moi = solarSystem.getStars()[0].getClassification() + " Class Star";
+            classification.setText(moi);
+            String qoi = "Radius: " + df.format(solarSystem.getStars()[0].getRadiusInKm()
+                    * RADIUS_CONSTANT) + " Ly";
+            radius.setText(qoi);
+            String mvo = "Mass: " + dfe.format(solarSystem.getStars()[0].getMassInKg()) + " kg";
+            mass.setText(mvo);
+            String zpi = "Temp: " + dfe.format(solarSystem.getStars()[0].getTemperature())
+                    + " K";
+            surfaceTemp.setText(zpi);
+            String xoi = "Luminosity: " + dfe.format(
+                    solarSystem.getStars()[0].getLuminosityInWatts()) + " W";
+            luminosity.setText(xoi);
+        }
 
         //initialize button color to red
         thrusterButton.setBackgroundColor(Color.parseColor("#D25A64"));
@@ -111,15 +113,18 @@ public class SolarSystemActivity extends AppCompatActivity {
                 }
         });
 
-
         // star color
-        starView.setColorFilter(model.getCurrentSystem().getStars()[0].getColor());
+        if (model.getCurrentSystem() != null && model.getCurrentSystem().getStars() != null && model.getCurrentSystem().getStars()[0] != null) {
+            starView.setColorFilter(model.getCurrentSystem().getStars()[0].getColor());
+        }
 
     }
     @Override
     protected void onResume() {
         super.onResume();
-        adapterForPlanets.setPlanetsList(viewModel.getPlanetsInRange());
+        if (viewModel.getPlanetsInRange() != null) {
+            adapterForPlanets.setPlanetsList(viewModel.getPlanetsInRange());
+        }
         adapterForPlanets.setOnClickListener((Planet planet) ->{
                 setSelectedPlanet(planet);
                 if (selectedPlanet == null) {
