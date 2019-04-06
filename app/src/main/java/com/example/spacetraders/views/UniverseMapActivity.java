@@ -91,6 +91,8 @@ public class UniverseMapActivity extends AppCompatActivity {
                         distance.setText(slk);
                         coordinates.setText(currentSolarSystem.getCoordinates().toString());
 
+                        // TODO draw a line between ship and star when star is selected
+
                         // make travel button red if system out of range, green if in range
                         if (Model.getInstance().getRange() < currentSolarSystem.dist(
                                 universeViewModel.getCurrentSystem())) {
