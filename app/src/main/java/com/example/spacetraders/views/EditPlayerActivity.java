@@ -32,7 +32,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     private TextView pilotText;
     private TextView pointsRemaining;
 */
-    final NestedClass nested = new NestedClass();
+    private final NestedClass nested = new NestedClass();
     /**
      * .
      * @param savedInstanceState .

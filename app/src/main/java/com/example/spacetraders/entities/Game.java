@@ -293,7 +293,10 @@ public class Game implements Serializable {
 
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
-        return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
+        if (this.getCurrentPlanet() != null) {
+            return player.getShipsBasedOnTechLevel(this.getCurrentPlanet().getTechLevel());
+        }
+        return null;
     }
 
     public void setShipType(@Nullable ShipType shipType) {

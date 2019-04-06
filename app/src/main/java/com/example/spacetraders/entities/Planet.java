@@ -23,9 +23,9 @@ public class Planet implements Serializable {
     // --Commented out by Inspection (4/2/19, 11:03 PM):private int population;
     private final Shop shop;
     private boolean isWarpGate;
-    private int landType;
-    private int colorBack;
-    private int colorFront;
+    private final int landType;
+    private final int colorBack;
+    private final int colorFront;
 
     /**
      * Constructor for Planet, randomizes levels
@@ -37,9 +37,10 @@ public class Planet implements Serializable {
         this.name = name;
         this.parentStar = parentStar;
         Random r = new Random();
-
-        this.inHabitableZone = ((distanceFromParentStar > parentStar.getInnerHZRadius())
-                && (distanceFromParentStar < parentStar.getOuterHZRadius()));
+        if (parentStar != null) {
+            this.inHabitableZone = ((distanceFromParentStar > parentStar.getInnerHZRadius())
+                    && (distanceFromParentStar < parentStar.getOuterHZRadius()));
+        }
 
         int techPick = r.nextInt(TechLevel.values().length);
         this.techLevel = TechLevel.values()[techPick];

@@ -78,8 +78,9 @@ public class PlanetActivity extends AppCompatActivity {
         load = findViewById(R.id.load_button);
 
         // globally
-
-        name.setText(model.getCurrentPlanet().getName());
+        if (model.getCurrentPlanet() != null) {
+            name.setText(model.getCurrentPlanet().getName());
+        }
 
         // music
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.shopping_spree_planet);

@@ -28,7 +28,7 @@ import java.util.List;
  */
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
 
-    final NestedClass nested = new NestedClass();
+    private final NestedClass nested = new NestedClass();
   //  private List<Planet> planetsList;
     // private OnClickListener listener;
 
