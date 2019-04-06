@@ -43,7 +43,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
      * @param planets list of planets
      */
 
-    public PlanetAdapter(Planet[] planets) {
+    public PlanetAdapter(@Nullable Planet[] planets) {
          //nested = new NestedClass();
          nested.setPlanetsList(Arrays.asList(planets));
         //this.planetsList = Arrays.asList(planets);

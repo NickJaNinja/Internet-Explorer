@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SpaceTraders</string>
-    <string name="this_is_a_string_name">LEAVE MARKET</string>
+    <!--<string name="this_is_a_string_name">LEAVE MARKET</string>-->
     <string name="we">SPACE TRADER</string>
     <string name="are">NEW GAME</string>
     <string name="gonna">LOAD GAME</string>
