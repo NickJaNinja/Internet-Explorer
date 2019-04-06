@@ -31,14 +31,15 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     /**
      * a copy of the list of shop goods in the model
      */
-
+/*
     private final ShopActivity shopActivity;
     private ShopGoodsAdapter shopGoodsAdapter;
     private List<ShopEntry> playerCargoList;
     private OnClickListener listener;
     private AlertDialog dialog;
     private final Model model;
-
+*/
+    final NestedClass nested = new NestedClass();
     /**
      * Constructor
      *
@@ -46,9 +47,15 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param shopActivity the shop activity
      */
     public PlayerCargoAdapter(@Nullable List<ShopEntry> playerCargoList, @Nullable ShopActivity shopActivity) {
+       /*
         this.playerCargoList = playerCargoList;
         this.model = Model.getInstance();
         this.shopActivity = shopActivity;
+        */
+        nested.setPlayerCargoList(playerCargoList);
+        nested.setModel(Model.getInstance());
+        nested.setShopActivity(shopActivity);
+
     }
 
     @NonNull
@@ -85,6 +92,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                 Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
+                      /*
                         ShopEntry selectedEntry = playerCargoList.get(position);
                         ShopGoods selectedGood = selectedEntry.getGood();
                         if (listener != null) {
@@ -92,6 +100,15 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                         }
 
                         int cost = shopGoodsAdapter.getCostOfGood(selectedGood);
+                       */
+                        ShopEntry selectedEntry = nested.getPlayerCargoList().get(position);
+                        ShopGoods selectedGood = selectedEntry.getGood();
+                        if (nested.getListener() != null) {
+                            nested.getListener().onClicked(nested.getPlayerCargoList().get(position));
+                        }
+
+                        int cost = nested.getShopGoodsAdapter().getCostOfGood(selectedGood);
+
 
                         /*
                         if (playerCargoList.get(position).getStock() > 0
@@ -103,11 +120,11 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                         }
                         */
 
-                        if (playerCargoList.get(position).getStock() > 0 ) {
+                        if (nested.getPlayerCargoList().get(position).getStock() > 0 ) {
 
                             Context context = itemView.getContext();
-                            int itemStock = playerCargoList.get(position).getStock();
-                            int itemPrice = playerCargoList.get(position).getPrice();
+                            int itemStock = nested.getPlayerCargoList().get(position).getStock();
+                            int itemPrice = nested.getPlayerCargoList().get(position).getPrice();
 
                             dialogConfirmed = false;
                             final int PADDING40 = 40;
@@ -204,9 +221,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                             (DialogInterface d, int which)->
                                                     d.dismiss()
                                             );
-
+                            /*
                             dialog = builder.create();
-
                             dialog.setOnDismissListener((DialogInterface dialog) ->{
                                     if (dialogConfirmed && (model.makeTransaction(
                                             selectedGood, -seek.getProgress() - 1,
@@ -223,8 +239,29 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
                                         toast.show();
                                     }
                             });
-
                             dialog.show();
+                            */
+
+                            nested.setDialog(builder.create());
+                            nested.getDialog().setOnDismissListener((DialogInterface dialog) ->{
+                                if (dialogConfirmed && (nested.getModel().makeTransaction(
+                                        selectedGood, -seek.getProgress() - 1,
+                                        cost) == 1)) {
+                                    // updating inventories and display
+                                    nested.setPlayerCargoList(nested.getModel().getPlayerEntries());
+                                    nested.getShopGoodsAdapter().setShopGoodsList(nested.getModel().getShopEntries());
+                                    nested.getShopActivity().updateDisplay();
+                                    notifyDataSetChanged();
+                                } else if (dialogConfirmed) {
+                                    CharSequence text = "Not enough money or storage";
+                                    Toast toast = Toast.makeText(itemView.getContext(), text,
+                                            Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+                            });
+                            nested.getDialog().show();
+
+
                         } else {
                             CharSequence text = "Not enough money or storage";
                             Toast toast = Toast.makeText(itemView.getContext(), text,
@@ -244,8 +281,8 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
     @Override
     public void onBindViewHolder(@NonNull PlayerCargoViewHolder playerCargoViewHolder,
                                  int position) {
-        ShopEntry shopEntry = playerCargoList.get(position);
-        String aoi = "¥" +shopGoodsAdapter.getCostOfGood(shopEntry
+        ShopEntry shopEntry = nested.getPlayerCargoList().get(position);
+        String aoi = "¥" + nested.getShopGoodsAdapter().getCostOfGood(shopEntry
                 .getGood()) +"(¥" +shopEntry.getPrice() +")";
         playerCargoViewHolder.price.setText(aoi);
         playerCargoViewHolder.name.setText(shopEntry.getGood().getName());
@@ -260,7 +297,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      */
     @Override
     public int getItemCount() {
-        return playerCargoList.size();
+        return nested.getPlayerCargoList().size();
     }
 
     /**
@@ -268,7 +305,7 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param playerCargo player cargo
      */
     public void setPlayerCargoList(@Nullable List<ShopEntry> playerCargo) {
-        playerCargoList = playerCargo;
+        nested.setPlayerCargoList(playerCargo);
         notifyDataSetChanged();
     }
 
@@ -311,6 +348,64 @@ public class PlayerCargoAdapter extends RecyclerView.Adapter<PlayerCargoAdapter
      * @param sga shop goods adapter
      */
     public void setShopGoodsAdapter(@Nullable ShopGoodsAdapter sga) {
-        shopGoodsAdapter = sga;
+        nested.setShopGoodsAdapter(sga);
+    }
+
+    final class NestedClass {
+        private ShopActivity shopActivity;
+        private ShopGoodsAdapter shopGoodsAdapter;
+        private List<ShopEntry> playerCargoList;
+        private OnClickListener listener;
+        private AlertDialog dialog;
+        private Model model;
+
+        public AlertDialog getDialog() {
+            return dialog;
+        }
+
+        public List<ShopEntry> getPlayerCargoList() {
+            return playerCargoList;
+        }
+
+        public Model getModel() {
+            return model;
+        }
+
+        public OnClickListener getListener() {
+            return listener;
+        }
+
+        public ShopActivity getShopActivity() {
+            return shopActivity;
+        }
+
+        public ShopGoodsAdapter getShopGoodsAdapter() {
+            return shopGoodsAdapter;
+        }
+
+        public void setDialog(AlertDialog dialog) {
+            this.dialog = dialog;
+        }
+
+        public void setListener(OnClickListener listener) {
+            this.listener = listener;
+        }
+
+        public void setModel(Model model) {
+            this.model = model;
+        }
+
+        public void setPlayerCargoList(List<ShopEntry> playerCargoList) {
+            this.playerCargoList = playerCargoList;
+        }
+
+        public void setShopActivity(ShopActivity shopActivity) {
+            this.shopActivity = shopActivity;
+        }
+
+        public void setShopGoodsAdapter(ShopGoodsAdapter shopGoodsAdapter) {
+            this.shopGoodsAdapter = shopGoodsAdapter;
+        }
+
     }
 }

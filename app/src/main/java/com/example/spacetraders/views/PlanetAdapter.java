@@ -89,6 +89,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             planetView = itemView.findViewById(R.id.planet_image);
 
             viewHolderList.add(itemView);
+            //planetView.setImageDrawable(viewHolderList.get(getAdapterPosition()).getBackground());
 
             itemView.setOnClickListener((View view)-> {
                     int position = getAdapterPosition();
