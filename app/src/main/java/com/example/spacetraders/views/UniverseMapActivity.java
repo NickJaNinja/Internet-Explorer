@@ -80,8 +80,8 @@ public class UniverseMapActivity extends AppCompatActivity {
                                 universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
                         //color
                         if (universeViewModel.getSolarSystems()[i] != null && universeViewModel.getSolarSystems()[i].getStars() != null)
-                        imageView.setBackgroundColor(Objects.requireNonNull(universeViewModel.getSolarSystems()[i]
-                                .getStars()[0]).getColor());
+                        imageView.setBackgroundColor(Objects.requireNonNull(Objects.requireNonNull(universeViewModel.getSolarSystems())[i]
+                                .getStars())[0].getColor());
 
                         relativeLayout.addView(imageView, layoutParams);
 
