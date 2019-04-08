@@ -18,6 +18,8 @@ import com.example.spacetraders.entities.SolarSystem;
 import com.example.spacetraders.models.Model;
 import com.example.spacetraders.viewmodels.UniverseViewModel;
 
+import java.util.Objects;
+
 /**
  * universe map activity class
  */
@@ -78,8 +80,8 @@ public class UniverseMapActivity extends AppCompatActivity {
                                 universeViewModel.getSolarSystems()[i]) * factor); //Your Y coordinate
                         //color
                         if (universeViewModel.getSolarSystems()[i] != null && universeViewModel.getSolarSystems()[i].getStars() != null)
-                        imageView.setBackgroundColor(universeViewModel.getSolarSystems()[i]
-                                .getStars()[0].getColor());
+                        imageView.setBackgroundColor(Objects.requireNonNull(universeViewModel.getSolarSystems()[i]
+                                .getStars()[0]).getColor());
 
                         relativeLayout.addView(imageView, layoutParams);
 

@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -72,7 +73,7 @@ public class ShopActivity extends AppCompatActivity {
         recyclerViewShop.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view
-        adapterForShop = new ShopGoodsAdapter(viewModel.getShopEntriesFiltered(), this);
+        adapterForShop = new ShopGoodsAdapter(Objects.requireNonNull(Objects.requireNonNull(viewModel).getShopEntriesFiltered()), this);
         recyclerViewShop.setAdapter(adapterForShop);
 
 

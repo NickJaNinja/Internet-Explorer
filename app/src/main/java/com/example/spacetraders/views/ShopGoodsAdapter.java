@@ -45,8 +45,8 @@ public class ShopGoodsAdapter extends RecyclerView.Adapter<ShopGoodsAdapter.Shop
      * @param shopGoodsList list of shop goods list
      * @param shopActivity shop activity
      */
-    public ShopGoodsAdapter(@Nullable List<ShopEntry> shopGoodsList, @Nullable ShopActivity shopActivity) {
-        for (ShopEntry entry : shopGoodsList) {
+    public ShopGoodsAdapter(@NonNull List<ShopEntry> shopGoodsList, @Nullable ShopActivity shopActivity) {
+        for (ShopEntry entry :  shopGoodsList) {
             if (entry.getStock() == 0) {
                 shopGoodsList.remove(entry);
             }

@@ -96,9 +96,9 @@ public class SolarSystem implements Serializable {
             planets[i].setDistanceFromParentStar(generateDistanceFromParentStar(planets[i], i));
             if (planets[i].getParentStar() != null) {
                 if ((planets[i].getDistanceFromParentStar() >
-                        planets[i].getParentStar().getInnerHZRadius())
+                        Objects.requireNonNull(planets[i].getParentStar()).getInnerHZRadius())
                         && (planets[i].getDistanceFromParentStar()
-                        < planets[i].getParentStar().getOuterHZRadius())) {
+                        < Objects.requireNonNull(planets[i].getParentStar()).getOuterHZRadius())) {
                     planets[i].setInHabitableZone(true);
                 } else {
                     planets[i].setInHabitableZone(false);

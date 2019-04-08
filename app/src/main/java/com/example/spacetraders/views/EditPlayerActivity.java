@@ -17,6 +17,8 @@ import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.R;
 import com.example.spacetraders.viewmodels.EditPlayerViewModel;
 
+import java.util.Locale;
+
 /**
  * .
  */
@@ -113,9 +115,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
                     nested.getFighterText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
-            nested.getFighterText().setText(String.format("%d", Integer.parseInt(
+            nested.getFighterText().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     (String) nested.getFighterText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
 
@@ -134,9 +136,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(
                     Integer.parseInt(nested.getFighterText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
-            nested.getFighterText().setText(String.format("%d",
+            nested.getFighterText().setText(String.format(Locale.US,"%d",
                     Integer.parseInt((String) nested.getFighterText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d",
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d",
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
         });
@@ -154,9 +156,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(
                     Integer.parseInt(nested.getTradeText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
-            nested.getTradeText().setText(String.format("%d",
+            nested.getTradeText().setText(String.format(Locale.US,"%d",
                     Integer.parseInt((String) nested.getTradeText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d",
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d",
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
         });
@@ -175,9 +177,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(
                     Integer.parseInt(nested.getTradeText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
-            nested.getTradeText().setText(String.format("%d",
+            nested.getTradeText().setText(String.format(Locale.US,"%d",
                     Integer.parseInt((String) nested.getTradeText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d",
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d",
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
 
@@ -196,9 +198,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(
                     Integer.parseInt(nested.getEngineerText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
-            nested.getEngineerText().setText(String.format("%d",
+            nested.getEngineerText().setText(String.format(Locale.US,"%d",
                     Integer.parseInt((String) nested.getEngineerText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d",
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d",
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
 
@@ -217,9 +219,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(
                     Integer.parseInt(nested.getEngineerText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
-            nested.getEngineerText().setText(String.format("%d", Integer.parseInt(
+            nested.getEngineerText().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     (String) nested.getEngineerText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
 
@@ -238,9 +240,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
                     nested.getPilotText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), 1);
-            nested.getPilotText().setText(String.format("%d", Integer.parseInt(
+            nested.getPilotText().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     nested.getPilotText().getText().toString()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
 
@@ -259,9 +261,9 @@ public class EditPlayerActivity extends AppCompatActivity {
             int skillChange = nested.getEditPlayerViewModel().onSkill(Integer.parseInt(
                     nested.getPilotText().getText().toString()),
                     Integer.parseInt(nested.getPointsRemaining().getText().toString()), -1);
-            nested.getPilotText().setText(String.format("%d", Integer.parseInt(
+            nested.getPilotText().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     (String) nested.getPilotText().getText()) + skillChange));
-            nested.getPointsRemaining().setText(String.format("%d", Integer.parseInt(
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d", Integer.parseInt(
                     nested.getPointsRemaining().getText().toString()) - skillChange));
             onAnyButtonPressed();
         });
@@ -280,11 +282,11 @@ public class EditPlayerActivity extends AppCompatActivity {
                 */
             nested.getNameField().setText(null);
             nested.getGameDifficultySpinner().setSelection(0);
-            nested.getPilotText().setText(String.format("%d", 4));
-            nested.getFighterText().setText(String.format("%d", 4));
-          nested.getTradeText().setText(String.format("%d", 4));
-            nested.getEngineerText().setText(String.format("%d", 4));
-            nested.getPointsRemaining().setText(String.format("%d", 0));
+            nested.getPilotText().setText(String.format(Locale.US,"%d", 4));
+            nested.getFighterText().setText(String.format(Locale.US,"%d", 4));
+          nested.getTradeText().setText(String.format(Locale.US,"%d", 4));
+            nested.getEngineerText().setText(String.format(Locale.US,"%d", 4));
+            nested.getPointsRemaining().setText(String.format(Locale.US,"%d", 0));
             onAnyButtonPressed();
 
 
