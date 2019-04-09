@@ -241,14 +241,26 @@ public class Planet implements Serializable {
         return name + " (" + techLevel + ", " + resourcesLevel + inHabitableZone +")";
     }
 
+    /**
+     *
+     * @return land type
+     */
     public int getLandType() {
         return landType;
     }
 
+    /**
+     *
+     * @return back color
+     */
     public int getColorBack() {
         return colorBack;
     }
 
+    /**
+     *
+     * @return front color
+     */
     public int getColorFront() {
         return colorFront;
     }

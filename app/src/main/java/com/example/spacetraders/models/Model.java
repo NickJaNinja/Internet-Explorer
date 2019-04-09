@@ -284,27 +284,51 @@ public class Model {
      */
     public boolean isOnWarpGatePlanet() { return !game.isOnWarpGatePlanet(); }
 
+    /**
+     *
+     * @return land type
+     */
     public int getLandType() {
         return game.getLandType();
     }
 
+    /**
+     *
+     * @return back color
+     */
     public int getColorBack() {
         return game.getColorBack();
     }
 
+    /**
+     *
+     * @return front color
+     */
     public int getColorFront() {
         return game.getColorFront();
     }
 
+    /**
+     *
+     * @return list of ship based on tech level
+     */
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         return game.getShipsBasedOnTechLevel();
     }
 
+    /**
+     *
+     * @param shipType player's ship type
+     */
     public void setShipType(@Nullable ShipType shipType) {
         game.setShipType(shipType);
     }
 
+    /**
+     *
+     * @param credits player's credit
+     */
     public void setCredits(int credits) {
         game.setCredits(credits);
     }

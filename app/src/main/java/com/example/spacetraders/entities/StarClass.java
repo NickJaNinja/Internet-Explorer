@@ -3,7 +3,9 @@ package com.example.spacetraders.entities;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 
-
+/**
+ *  Enum Star Class
+ */
 public enum StarClass {
     O('O', 0.004f, Color.parseColor("#9BB0FF"), 30000, 99999, 6.6,  99.99),
     B('B', 0.027f, Color.parseColor("#BBCCFF"), 10000, 30000, 1.8,  6.6),
@@ -34,6 +36,10 @@ public enum StarClass {
         this.radiusUpper = radiusUpper;
     }
 
+    /**
+     *
+     * @return list of chances
+     */
     public static @NonNull
     float[] getChancesAsArray() {
         StarClass[] values = StarClass.values();
@@ -44,6 +50,10 @@ public enum StarClass {
         return chances;
     }
 
+    /**
+     *
+     * @return classification
+     */
     public char getClassification() {
         return this.classification;
     }
@@ -52,22 +62,42 @@ public enum StarClass {
         return this.chance;
     }
 
+    /**
+     *
+     * @return color
+     */
     public int getColor() {
         return this.color;
     }
 
+    /**
+     *
+     * @return lower bound temperature
+     */
     public int getTempLower() {
         return tempLower;
     }
 
+    /**
+     *
+     * @return upper bound temperature
+     */
     public int getTempUpper() {
         return tempUpper;
     }
 
+    /**
+     *
+     * @return lower bound radius
+     */
     public double getRadiusLower() {
         return radiusLower;
     }
 
+    /**
+     *
+     * @return upper bound temperature
+     */
     public double getRadiusUpper() {
         return radiusUpper;
     }
