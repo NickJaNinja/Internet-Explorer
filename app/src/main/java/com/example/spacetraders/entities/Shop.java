@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * shop class
  */
-class Shop implements Serializable {
+public class Shop implements Serializable {
     private final EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
     private final TechLevel techLevel;
     private final ResourcesLevel resourcesLevel;
