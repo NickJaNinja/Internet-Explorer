@@ -40,6 +40,7 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
     /**
      * constructor
      * @param ships ships
+     * @param handler event handler
      */
     public ShipAdapter(@Nullable List<ShipType> ships, @Nullable EventHandler handler) {
         nested.setShips(ships);
@@ -153,7 +154,13 @@ public class ShipAdapter extends RecyclerView.Adapter<ShipAdapter.ShipViewHolder
         return nested.getSelected();
     }
 
+    /**
+     * interface
+     */
     public interface EventHandler {
+        /**
+         * the handle method
+         */
         void handle(); // if u need know position. If no, just create method without params
     }
 

@@ -120,6 +120,11 @@ public enum ShipType {
         return cost;
     }
 
+    /**
+     *
+     * @param techLevel tech level
+     * @return lists of ships based on tech level
+     */
     public @NonNull List<ShipType> getShipsBasedOnTechLevel(@Nullable TechLevel techLevel) {
         List<ShipType> ships = new LinkedList<>();
         ShipType[] shipTypes = ShipType.values();

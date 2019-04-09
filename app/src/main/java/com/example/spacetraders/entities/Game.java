@@ -65,12 +65,15 @@ public class Game implements Serializable {
      * the same
      */
     public int travelToPlanet(@Nullable Planet to) {
-        if(to == null) {
-            return 2;
+        if (to == null) {
+
+            return 0;
+        } else {
+            currPlanet = to;
+            currPlanet.restockShop();
+            return 1;
         }
-        currPlanet = to;
-        currPlanet.restockShop();
-        return 1;
+
     }
 
     /**
@@ -279,18 +282,34 @@ public class Game implements Serializable {
      */
     public boolean isOnWarpGatePlanet() {return currPlanet.getIsWarpGate();}
 
+    /**
+     *
+     * @return land type
+     */
     public int getLandType() {
         return currPlanet.getLandType();
     }
 
+    /**
+     *
+     * @return back color
+     */
     public int getColorBack() {
         return currPlanet.getColorBack();
     }
 
+    /**
+     *
+     * @return front color
+     */
     public int getColorFront() {
         return currPlanet.getColorFront();
     }
 
+
+    /**
+     * @return list of ships based on tech level
+     */
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel() {
         if (this.getCurrentPlanet() != null) {
@@ -299,6 +318,10 @@ public class Game implements Serializable {
         return null;
     }
 
+    /**
+     * set player's ship type
+     * @param shipType player's ship type
+     */
     public void setShipType(@Nullable ShipType shipType) {
         player.setShipType(shipType);
     }
@@ -319,6 +342,10 @@ public class Game implements Serializable {
         return difficulty.toString();
     }
 
+    /**
+     * set player's credit
+     * @param credits player's credit
+     */
     public void setCredits(int credits) {
         player.setCredits(credits);
     }

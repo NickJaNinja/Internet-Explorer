@@ -132,13 +132,6 @@ public class SolarSystemActivity extends AppCompatActivity {
                 } else {
                     //change button color to green after clicking on a planet
                     thrusterButton.setBackgroundColor(Color.parseColor("#5FCA77"));
-               /*     planetImage = findViewById(R.id.planet_image);
-                    RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF,
-                    0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                    rotate.setRepeatCount(Animation.INFINITE);
-                    rotate.setDuration(3);
-                    rotate.setInterpolator(new LinearInterpolator());
-                    planetImage.startAnimation(rotate);*/
                 }
         });
 

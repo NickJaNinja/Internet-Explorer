@@ -131,6 +131,10 @@ public class Star implements Serializable {
         return temperature;
     }
 
+    /**
+     *
+     * @return classification
+     */
     public char getClassification() {
         return starClass.getClassification();
     }

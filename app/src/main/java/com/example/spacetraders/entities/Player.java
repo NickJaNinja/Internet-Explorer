@@ -258,6 +258,11 @@ public class Player implements Serializable {
      */
     public double getMaxRange() { return ship.getMaxRange();}
 
+    /**
+     *
+     * @param techLevel tech level
+     * @return list of ships base on tech level
+     */
     @Nullable
     public List<ShipType> getShipsBasedOnTechLevel(@Nullable TechLevel techLevel) {
         return ship.getShipsBasedOnTechLevel(techLevel);
@@ -272,6 +277,10 @@ public class Player implements Serializable {
 //        this.name = name;
 //    }
 
+    /**
+     *
+     * @param shipType player's ship type
+     */
     public void setShipType(@Nullable ShipType shipType) {
         ship.setShipType(shipType);
     }
@@ -360,6 +369,10 @@ public class Player implements Serializable {
                 '}';
     }
 
+    /**
+     *
+     * @param credits player's credit
+     */
     public void setCredits(int credits) {
         this.credits = credits;
     }
