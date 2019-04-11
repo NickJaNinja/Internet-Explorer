@@ -42,11 +42,10 @@ public class Shop implements Serializable {
 
         for (ShopGoods shopGood : ShopGoods.values()) {
             // Calculate price
-
             final double DIVIDE = 100.0;
             final double PRICE_CONSTANT = 0.8;
             final double EVENT_CHANCE = 0.03;
-            final int BOUND = 5051;
+            final int BOUND = 5601;
             final int STOCK_DIVIDE = 125;
 
             int itemPrice = (shopGood.getBasePrice() + (shopGood.getIpl()
@@ -57,7 +56,7 @@ public class Shop implements Serializable {
             } else {
                 itemPrice -= var;
             }
-            // Interesting events
+            // Interesting events to change shop good price
             if (shopGood.getCr() != null && shopGood.getCr().equals(resourcesLevel)) {
                 itemPrice = (int)(itemPrice * PRICE_CONSTANT);
             } else if (shopGood.getEr() != null && shopGood.getEr().equals(resourcesLevel)) {
@@ -74,6 +73,9 @@ public class Shop implements Serializable {
             if (techLevel.getLevel() > shopGood.getLevelofMtlp()) {
                 // Item will be in stock
                 int itemStock = rng.nextInt(BOUND - shopGood.getBasePrice())/STOCK_DIVIDE;
+                if (itemStock <= 0) {
+                    itemStock = 1;
+                }
                 shopGoodsStockMap.put(shopGood, new ShopEntry(shopGood, itemStock, itemPrice));
             } else {
                 // Item will not be in stock

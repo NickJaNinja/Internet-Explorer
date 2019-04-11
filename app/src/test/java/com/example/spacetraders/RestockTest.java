@@ -1,54 +1,81 @@
 package com.example.spacetraders;
 
-import android.view.Display;
-
-import com.example.spacetraders.entities.Game;
-import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.ResourcesLevel;
 import com.example.spacetraders.entities.Shop;
 import com.example.spacetraders.entities.ShopEntry;
-import com.example.spacetraders.entities.ShopGoods;
 import com.example.spacetraders.entities.TechLevel;
-import com.example.spacetraders.models.Model;
 
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.EnumMap;
+import java.util.List;
 
 /**
  * Restock test
 **/
 
-class RestockTest {
-
-    private Shop shop;
-    private TechLevel techLevel;
-    private ResourcesLevel resourceLevel;
-    private EnumMap<ShopGoods, ShopEntry> shopGoodsStockMap;
-
-    @Test
-    public void CRTest() {
-
-    }
-
-    @Test
-    public void ERTest() {
-
-    }
+public class RestockTest {
 
     @Test
     public void itemInStockTest() {
-
+        System.out.println("----- Item in Stock Test -----");
+        // Test if stock > 0 for items
+        Shop shop1 = new Shop(TechLevel.AGRICULTURE, ResourcesLevel.NO_SPECIAL_RESOURCES);
+        Shop shop2 = new Shop(TechLevel.HI_TECH,     ResourcesLevel.LIFELESS);
+        List<ShopEntry> inv1 = shop1.getInventoryAsList();
+        List<ShopEntry> inv2 = shop2.getInventoryAsList();
+        for (ShopEntry entry : inv1) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            if ("Water".equals(entry.getGood().getName()) || "Furs".equals(entry.getGood().getName()))
+                Assert.assertNotEquals(entry.getStock(), 0);
+        }
+        for (ShopEntry entry : inv2) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            Assert.assertNotEquals(entry.getStock(), 0);
+        }
+        shop1.restock();
+        shop2.restock();
+        inv1 = shop1.getInventoryAsList();
+        inv2 = shop2.getInventoryAsList();
+        for (ShopEntry entry : inv1) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            if ("Water".equals(entry.getGood().getName()) || "Furs".equals(entry.getGood().getName()))
+                Assert.assertNotEquals(entry.getStock(), 0);
+        }
+        for (ShopEntry entry : inv2) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            Assert.assertNotEquals(entry.getStock(), 0);
+        }
     }
 
     @Test
     public void itemNotInStockTest() {
-
-    }
-
-    public void buildShop(TechLevel tl, ResourcesLevel rl) {
-        shop = new Shop(tl, rl);
+        System.out.println("--- Item not in Stock Test ---");
+        // Test if stock > 0 for items
+        Shop shop1 = new Shop(TechLevel.AGRICULTURE, ResourcesLevel.NO_SPECIAL_RESOURCES);
+        Shop shop2 = new Shop(TechLevel.HI_TECH,     ResourcesLevel.LIFELESS);
+        List<ShopEntry> inv1 = shop1.getInventoryAsList();
+        List<ShopEntry> inv2 = shop2.getInventoryAsList();
+        for (ShopEntry entry : inv1) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            if (!"Water".equals(entry.getGood().getName()) && !"Furs".equals(entry.getGood().getName()))
+                Assert.assertEquals(entry.getStock(), 0);
+        }
+        for (ShopEntry entry : inv2) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            Assert.assertNotEquals(entry.getStock(), 0);
+        }
+        inv1 = shop1.getInventoryAsList();
+        inv2 = shop2.getInventoryAsList();
+        for (ShopEntry entry : inv1) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            if (!"Water".equals(entry.getGood().getName()) && !"Furs".equals(entry.getGood().getName()))
+                Assert.assertEquals(entry.getStock(), 0);
+        }
+        for (ShopEntry entry : inv2) {
+            Assert.assertNotEquals(entry.getPrice(), 0);
+            Assert.assertNotEquals(entry.getStock(), 0);
+        }
     }
 }
 
