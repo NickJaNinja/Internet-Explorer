@@ -11,7 +11,7 @@ import android.support.annotation.NonNull;
  * This class represents the player's ship
  */
 
-class Ship implements Serializable {
+public class Ship implements Serializable {
     private ShipType type;
     private final EnumMap<ShopGoods, ShopEntry> cargo;
     private int inventory;

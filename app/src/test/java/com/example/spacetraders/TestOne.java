@@ -1,25 +1,14 @@
 package com.example.spacetraders;
-
-
-
-
-import android.content.Context;
-
-
 import com.example.spacetraders.entities.Game;
 import com.example.spacetraders.entities.GameDifficulty;
 import com.example.spacetraders.entities.Planet;
 import com.example.spacetraders.entities.Player;
+import com.example.spacetraders.entities.Ship;
 import com.example.spacetraders.entities.ShopEntry;
 import com.example.spacetraders.entities.SolarSystem;
-
-import com.example.spacetraders.models.Model;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -32,7 +21,7 @@ public class TestOne {
     private Planet originPlanet;
     private Planet[] planets;
     private List<ShopEntry> originShopEntry;
-   // private Model model = Model.getInstance();
+    private Player player;
     private int len;
     private Planet destination;
     private Game game;
@@ -40,14 +29,14 @@ public class TestOne {
 
     @Before
     public void setUp(){
-        Player player = new Player("test",3,4,4,5);
+        player = new Player("test",3,4,4,5);
         game = new Game(GameDifficulty.BEGINNER, player);
         currentSolaySystem = game.getCurrentSystem() ;
         planets = currentSolaySystem.getPlanets();
         len = planets.length;
         while (len <= 4) {
             game = new Game(GameDifficulty.BEGINNER, player);
-            currentSolaySystem = game.getCurrentSystem() ;
+            currentSolaySystem = game.getCurrentSystem();
             planets = currentSolaySystem.getPlanets();
             len = planets.length;
         }
@@ -60,6 +49,12 @@ public class TestOne {
     public void planetNULL(){
         originPlanet = game.getCurrentPlanet();
         originShopEntry = game.getShopEntries();
+      //  int originCredit = game.getCredits();
+        Ship originShip = player.getShip();
+        Player originPlayer = game.getPlayer();
+        SolarSystem originalSystem = game.getCurrentSystem();
+
+
         result = game.travelToPlanet(null);
         resultPlanet = game.getCurrentPlanet();
         resultShopEntry = game.getShopEntries();
@@ -67,6 +62,10 @@ public class TestOne {
         Assert.assertSame(originPlanet, resultPlanet);
         System.out.println();
         Assert.assertArrayEquals(originShopEntry.toArray(), resultShopEntry.toArray());
+     //   Assert.assertEquals(originCredit,game.getCredits());
+        Assert.assertEquals(originShip,player.getShip());
+        Assert.assertSame(originPlayer, game.getPlayer());
+        Assert.assertSame(originalSystem, game.getCurrentSystem());
 
        // System.out.println("你好😡");
     }
@@ -74,6 +73,11 @@ public class TestOne {
     @Test(timeout = TIMEOUT)
     public void planetNonNULL(){
         destination = planets[len - 3];
+        Ship originShip = player.getShip();
+        Player originPlayer = game.getPlayer();
+        SolarSystem originalSystem = game.getCurrentSystem();
+
+
         result = game.travelToPlanet(destination);
         resultPlanet = game.getCurrentPlanet();
         resultShopEntry = game.getShopEntries();
@@ -81,13 +85,21 @@ public class TestOne {
         Assert.assertArrayEquals(destination.getShopEntries().toArray(), resultShopEntry.toArray());
         Assert.assertSame(destination,resultPlanet);
         Assert.assertNotEquals(originPlanet,resultPlanet);;
-       // System.out.print("谢谢😡");
+        Assert.assertEquals(originShip,player.getShip());
+        Assert.assertSame(originPlayer, game.getPlayer());
+        Assert.assertSame(originalSystem, game.getCurrentSystem());
+
+        // System.out.print("谢谢😡");
 
     }
 
     @Test(timeout = TIMEOUT)
     public void planetEqualPlanet(){
         destination = originPlanet ;
+        Ship originShip = player.getShip();
+        Player originPlayer = game.getPlayer();
+        SolarSystem originalSystem = game.getCurrentSystem();
+
         result = game.travelToPlanet(destination);
         resultPlanet = game.getCurrentPlanet();
         resultShopEntry = game.getShopEntries();
@@ -95,7 +107,11 @@ public class TestOne {
         Assert.assertSame(originPlanet,resultPlanet);
         Assert.assertSame(destination,resultPlanet);
         Assert.assertArrayEquals(destination.getShopEntries().toArray(), resultShopEntry.toArray());
-       // System.out.print("再见😡");
+        Assert.assertEquals(originShip,player.getShip());
+        Assert.assertSame(originPlayer, game.getPlayer());
+        Assert.assertSame(originalSystem, game.getCurrentSystem());
+
+        // System.out.print("再见😡");
     }
 
 
