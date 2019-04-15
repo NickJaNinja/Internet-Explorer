@@ -10,8 +10,6 @@ import com.example.spacetraders.entities.TechLevel;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class InventoryAsListFilteredTest {
 
     /**
@@ -29,34 +27,44 @@ public class InventoryAsListFilteredTest {
     }
 
     /**
-     * stock and price of unfiltered list matches filtered list
+     * all entries in unfiltered list have zero stock
      */
     @Test
-    public void unfilteredListSameAsFilteredListTest() {
+    public void allZeroStockTest() {
         Shop shop = new Shop(TechLevel.PRE_AGRICULTURE, ResourcesLevel.NO_SPECIAL_RESOURCES);
 
-        List<ShopEntry> listFiltered = shop.getInventoryAsListFiltered();
         List<ShopEntry> listUnfiltered = shop.getInventoryAsList();
 
         for (int i = 0; i < listUnfiltered.size(); i++) {
             if (listUnfiltered.get(i).getStock() != 0) {
-                Assert.assertEquals(listUnfiltered.get(i).getStock(), listFiltered.get(i).getStock());
-                Assert.assertEquals(listUnfiltered.get(i).getPrice(), listFiltered.get(i).getPrice());
+                listUnfiltered.get(i).setStock(0);
+            }
+        }
+
+        List<ShopEntry> listFiltered = shop.getInventoryAsListFiltered();
+
+        for (int i = 0; i < listUnfiltered.size(); i++) {
+            for (int j = 0; j < listFiltered.size(); j++) {
+                if (listUnfiltered.get(i).getGood() == listFiltered.get(i).getGood() &&
+                        listUnfiltered.get(i).getStock() != 0) {
+                    Assert.assertEquals(listUnfiltered.get(i).getStock(), listFiltered.get(i).getStock());
+                    Assert.assertEquals(listUnfiltered.get(i).getPrice(), listFiltered.get(i).getPrice());
+                }
             }
         }
     }
 
     /**
-     * ensures no change when filtering a list without zero stock items
+     * no entries in unfiltered list have zero stock
      */
     @Test
-    public void noChangeFilteredList() {
+    public void noZeroStockTest() {
         Shop shop = new Shop(TechLevel.PRE_AGRICULTURE, ResourcesLevel.NO_SPECIAL_RESOURCES);
 
         List<ShopEntry> listUnfiltered = shop.getInventoryAsList();
 
         for (int i = 0; i < listUnfiltered.size(); i++) {
-            if (listUnfiltered.get(i).getStock() != 0) {
+            if (listUnfiltered.get(i).getStock() == 0) {
                 listUnfiltered.get(i).setStock(1);
             }
         }
@@ -64,11 +72,13 @@ public class InventoryAsListFilteredTest {
         List<ShopEntry> listFiltered = shop.getInventoryAsListFiltered();
 
         for (int i = 0; i < listUnfiltered.size(); i++) {
-            if (listUnfiltered.get(i).getStock() != 0) {
-                Assert.assertEquals(listUnfiltered.get(i).getStock(), listFiltered.get(i).getStock());
-                Assert.assertEquals(listUnfiltered.get(i).getPrice(), listFiltered.get(i).getPrice());
+            for (int j = 0; j < listFiltered.size(); j++) {
+                if (listUnfiltered.get(i).getGood() == listFiltered.get(i).getGood() &&
+                        listUnfiltered.get(i).getStock() != 0) {
+                    Assert.assertEquals(listUnfiltered.get(i).getStock(), listFiltered.get(i).getStock());
+                    Assert.assertEquals(listUnfiltered.get(i).getPrice(), listFiltered.get(i).getPrice());
+                }
             }
         }
     }
-
 }
