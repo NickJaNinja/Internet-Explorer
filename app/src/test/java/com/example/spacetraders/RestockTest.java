@@ -9,12 +9,14 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Restock test
 **/
 
 public class RestockTest {
+    Random rn = new Random();
 
     @Test
     public void itemInStockTest() {
