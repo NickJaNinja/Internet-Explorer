@@ -30,15 +30,15 @@ public class Ship implements Serializable {
         fuel = type.getFuel();
     }
 
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//    /**
-//     * getter for ship type
-//     *
-//     * @return type of ship
-//     */
-//    public ShipType getShipType() {
-//        return type;
-//    }
+
+    /**
+     * getter for ship type
+     *
+     * @return type of ship
+     */
+    public ShipType getShipType() {
+        return type;
+    }
 // --Commented out by Inspection STOP (4/2/19, 11:03 PM)
 
     /**
