@@ -143,15 +143,15 @@ public class Game implements Serializable {
 //        return difficulty;
 //    }
 
-// --Commented out by Inspection START (4/3/19, 8:04 AM):
-//    /**
-//     * getter for player
-//     *
-//     * @return player
-//     */
-//    public Player getPlayer() {
-//        return player;
-//    }
+
+    /**
+     * getter for player
+     *
+     * @return player
+     */
+    public Player getPlayer() {
+        return player;
+    }
 // --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
 // --Commented out by Inspection START (4/3/19, 8:04 AM):
