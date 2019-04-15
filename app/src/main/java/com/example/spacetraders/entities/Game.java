@@ -129,19 +129,12 @@ public class Game implements Serializable {
     public int getCargoSpace() {
         return player.getCargoSpace();
     }
-////
-////    /**
-// --Commented out by Inspection START (4/2/19, 11:03 PM):
-//////     * getter for game difficulty
-////// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//     *
-//     * @return difficulty
-// --Commented out by Inspection STOP (4/2/19, 11:03 PM)
-//     */
-//    public GameDifficulty getGameDifficulty() {
-//        return difficulty;
-//    }
+
+
+
+    public GameDifficulty getGameDifficulty() {
+        return difficulty;
+    }
 
 
     /**
@@ -154,15 +147,15 @@ public class Game implements Serializable {
     }
 // --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
-// --Commented out by Inspection START (4/3/19, 8:04 AM):
-//    /**
-//     * getter for universe
-//     *
-//     * @return universe
-//     */
-//    public Universe getUniverse() {
-//        return universe;
-//    }
+
+    /**
+     * getter for universe
+     *
+     * @return universe
+     */
+    public Universe getUniverse() {
+        return universe;
+    }
 // --Commented out by Inspection STOP (4/3/19, 8:04 AM)
 
     /**
@@ -349,4 +342,10 @@ public class Game implements Serializable {
     public void setCredits(int credits) {
         player.setCredits(credits);
     }
+
+    public void setCurrPlanet (Planet planet) {
+        currPlanet = planet;
+    }
+
+
 }
