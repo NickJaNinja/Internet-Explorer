@@ -39,10 +39,12 @@
             tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.EditPlayerActivity"
-            android:parentActivityName=".views.MainActivity" />
+            android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.UniverseMapActivity"
-            android:parentActivityName=".views.MainActivity" />
+            android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".views.SolarSystemActivity"
             android:parentActivityName=".views.MainActivity"
@@ -50,6 +52,7 @@
         <activity
             android:name=".views.PlanetActivity"
             android:parentActivityName=".views.MainActivity"
+            tools:targetApi="jelly_bean"
         />
         <meta-data
             android:name="preloaded_fonts"
