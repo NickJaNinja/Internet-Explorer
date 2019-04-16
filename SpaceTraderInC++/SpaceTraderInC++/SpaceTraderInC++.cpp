@@ -11,6 +11,12 @@
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+std::string playerName;
+std::string pilotSkill;
+std::string fighterSkill;
+std::string traderSkill;
+std::string engineerSkill;
+std::string difficulty;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -188,9 +194,16 @@ LRESULT CALLBACK WndProc(HWND m_hwnd, UINT message, WPARAM wParam, LPARAM lParam
             {
 			case 1006:
 				{
-					std::string input;
-					GetWindowText(GetDlgItem (m_hwnd, 1000), (LPWSTR) reinterpret_cast <char*> ((char*)input.c_str()), 100);
-					MessageBox(m_hwnd, (LPWSTR) input.c_str(), L"", MB_OK);
+					GetWindowText(GetDlgItem (m_hwnd, 1000), (LPWSTR) reinterpret_cast <char*> ((char*)playerName.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)pilotSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)fighterSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)traderSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)engineerSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)difficulty.c_str()), 100);
+
+					//std::string output;
+					//output = playerName.c_str() +'\n' +std::to_string(pilotSkill.c_str());
+					MessageBox(m_hwnd, (LPWSTR) playerName.c_str(), L"", MB_OK);
 				}
 				break;
             case IDM_ABOUT:
