@@ -20,7 +20,7 @@ class Player {
     var traderSkill: Int = 4;
     var engineerSkill: Int = 4;
     var credits: Int = 1000;
-    var ship: Ship = ShipType.GNAT;
+    //var ship: Ship = ShipType.GNAT;
     
     /**
      * constuctor with all parameters
@@ -33,14 +33,14 @@ class Player {
      * @param credits initial credits
      * @param ship initial ship
      */
-    init Player(name: String, pilotSkill: Int, fighterSkill: Int, traderSkill: Int, engineerSkill: Int, credits: Int, ship: Ship) {
+    init (name: String, pilotSkill: Int, fighterSkill: Int, traderSkill: Int, engineerSkill: Int, credits: Int) {
         self.name = name;
         self.pilotSkill = pilotSkill;
         self.fighterSkill = fighterSkill;
         self.traderSkill = traderSkill;
         self.engineerSkill = engineerSkill;
         self.credits = credits;
-        self.ship = ship;
+        //self.ship = ship;
     }
     
     /**
@@ -52,9 +52,10 @@ class Player {
      * @param traderSkill initial traderSkill
      * @param engineerSkill inital engineerSkill
      */
-    init Player(name: String, pilotSkill: Int, fighterSkill: Int, traderSkill: Int, engineerSkill: Int) {
-        self(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000, new Ship(ShipType.GNAT));
-    }
+//    init Player(name: String, pilotSkill: Int, fighterSkill: Int, traderSkill: Int, engineerSkill: Int) {
+//        self(name, pilotSkill, fighterSkill, traderSkill, engineerSkill, 1000);
+//             //new Ship(ShipType.GNAT));
+//    }
     
     /**
      * getter for name
@@ -110,14 +111,14 @@ class Player {
         return credits;
     }
     
-    /**
-     * getter for ship
-     *
-     * @return ship
-     */
-    func getShip() -> Ship {
-        return ship;
-    }
+//    /**
+//     * getter for ship
+//     *
+//     * @return ship
+//     */
+//    func getShip() -> Ship {
+//        return ship;
+//    }
     
     /**
      * setter for name
@@ -173,24 +174,24 @@ class Player {
         self.credits = credits;
     }
     
-    /**
-     * setter for ship
-     *
-     * @param ship player's ship
-     */
-    func setShip(ship: Ship) {
-        self.ship = ship;
-    }
-    
-    /**
-     * to string for player
-     *
-     * @return string of player info
-     */
-    func toString() -> String {
-        return "Player{" + "name='" + name + "'" + ", pilotSkill=" + pilotSkill +
-            ", fighterSkill=" + fighterSkill + ", traderSkill=" + traderSkill +
-            ", engineerSkill=" + engineerSkill + ", credits=" + credits +
-            ", ship=" + ship + "}";
-    }
+//    /**
+//     * setter for ship
+//     *
+//     * @param ship player's ship
+//     */
+//    func setShip(ship: Ship) {
+//        self.ship = ship;
+//    }
+//
+//    /**
+//     * to string for player
+//     *
+//     * @return string of player info
+//     */
+//    func toString() -> String {
+//        return "Player{" + "name='" + name + "'" + ", pilotSkill=" + pilotSkill +
+//            ", fighterSkill=" + fighterSkill + ", traderSkill=" + traderSkill +
+//            ", engineerSkill=" + engineerSkill + ", credits=" + credits +
+//            ", ship=" + ship + "}";
+//    }
 }

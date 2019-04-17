@@ -91,7 +91,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjr-ix-oi8"/>
                                     <action selector="pilotMinusbuttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Eh-Fk-OgW"/>
                                 </connections>
                             </button>
@@ -208,13 +207,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7n-Tg-yxr">
-                                <rect key="frame" x="120" y="316" width="269" height="152"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="HST-4c-yEf" id="Vt2-jg-NMK"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CREATE A NEW CHARACTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Mg-1X-HEF">
                                 <rect key="frame" x="16" y="47" width="272" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -229,29 +221,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3i-Bg-Uyx">
+                                <rect key="frame" x="244" y="376" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="countinueClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRB-K3-V9d"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txk-fe-u5Q">
+                                <rect key="frame" x="191" y="493" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="X4L-on-Gex" id="gzl-hw-adR"/>
-                        <outlet property="createNewCharacter" destination="4Mg-1X-HEF" id="5HB-Vy-tr2"/>
-                        <outlet property="difficultySpinner" destination="u7n-Tg-yxr" id="7qu-up-qWw"/>
+                        <outlet property="continueButton" destination="V3i-Bg-Uyx" id="Ww9-om-eZq"/>
+                        <outlet property="dificultyTextField" destination="Txk-fe-u5Q" id="cS5-6P-ZdA"/>
                         <outlet property="engineerMinusbutton" destination="vCe-Pa-o0f" id="POJ-eT-aZ1"/>
                         <outlet property="engineerPlusbutton" destination="asJ-4S-tgw" id="E7I-4V-HPg"/>
                         <outlet property="fighterMinusbutton" destination="xK1-fV-7su" id="4K2-G2-arP"/>
                         <outlet property="fighterPlusbutton" destination="yjI-vu-NOh" id="pqg-Ie-ll2"/>
-                        <outlet property="label" destination="QiK-et-x8e" id="xiw-FD-OFF"/>
                         <outlet property="numEngineerSkills" destination="vhp-qM-sek" id="xS3-lQ-Id5"/>
                         <outlet property="numFighterSkills" destination="POF-0V-4dj" id="1hU-PG-0Hk"/>
                         <outlet property="numPilotSkills" destination="ZhM-R6-SkP" id="FQ8-YS-fvK"/>
                         <outlet property="numSkillPointsLabel" destination="p3D-IO-y70" id="UOo-dy-tBv"/>
                         <outlet property="numTraderSkills" destination="OUa-Ec-1sw" id="whJ-7e-DSs"/>
-                        <outlet property="pilotMinusbutton" destination="X4L-on-Gex" id="kJ4-UF-ofp"/>
-                        <outlet property="pilotName" destination="RZj-IB-iV7" id="qdm-Ej-5gy"/>
+                        <outlet property="pilotMinusbutton" destination="X4L-on-Gex" id="xya-JY-Q4W"/>
                         <outlet property="pilotNameTextField" destination="6rY-BL-ghT" id="Mzg-rl-YaX"/>
                         <outlet property="pilotPlusbutton" destination="8hv-Dq-uMC" id="kjd-zU-DOr"/>
-                        <outlet property="skills" destination="hlU-6v-lGL" id="F2V-mL-S8d"/>
                         <outlet property="stringCreateNewCharacter" destination="4Mg-1X-HEF" id="puV-fa-Pqs"/>
                         <outlet property="stringDifficulty" destination="HST-4c-yEf" id="mSU-Y6-tLT"/>
                         <outlet property="stringEngineer" destination="dY3-pU-wAb" id="nQr-Jw-FfH"/>
@@ -261,12 +265,18 @@
                         <outlet property="stringSkillPointsRemainingLabel" destination="p3D-IO-y70" id="lnK-Fn-hr1"/>
                         <outlet property="stringSkills" destination="hlU-6v-lGL" id="zMP-3z-ZQ5"/>
                         <outlet property="stringTrader" destination="Q1h-cS-GFh" id="GQP-hv-xN4"/>
-                        <outlet property="textField" destination="6rY-BL-ghT" id="w4k-Ks-kNh"/>
+                        <outlet property="swipe" destination="8bC-Xf-vdC" id="HaU-dK-TPl"/>
                         <outlet property="traderMinusbutton" destination="hNk-9s-iGL" id="Rxm-7F-Xal"/>
                         <outlet property="traderPlusbutton" destination="avu-2N-u1j" id="Fk0-FG-CYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Vqp-AY-cLn">
+                    <connections>
+                        <action selector="swipeHandler:" destination="BYZ-38-t0r" id="x3f-V7-xgE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="PmG-KM-gf4"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
         </scene>
     </scenes>
