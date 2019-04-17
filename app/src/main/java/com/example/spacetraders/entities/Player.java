@@ -228,14 +228,14 @@ public class Player implements Serializable {
 //        return reputation;
 //    }
 
-//    /**
-//     * getter for ship
-//     *
-//     * @return ship
-//     */
-//    public Ship getShip() {
-//        return ship;
-//    }
+    /**
+     * getter for ship
+     *
+     * @return ship
+     */
+    public Ship getShip() {
+        return ship;
+    }
 
     /**
      * get fuel percentage
