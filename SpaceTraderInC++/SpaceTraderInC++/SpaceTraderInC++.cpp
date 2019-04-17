@@ -3,7 +3,11 @@
 
 #include "framework.h"
 #include "SpaceTraderInC++.h"
+#include <string.h>
 #include <string>
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 #define MAX_LOADSTRING 100
 
@@ -194,16 +198,42 @@ LRESULT CALLBACK WndProc(HWND m_hwnd, UINT message, WPARAM wParam, LPARAM lParam
             {
 			case 1006:
 				{
-					GetWindowText(GetDlgItem (m_hwnd, 1000), (LPWSTR) reinterpret_cast <char*> ((char*)playerName.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1000), (LPWSTR) reinterpret_cast <char*> ((char*)playerName.c_str()), 100);
 					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)pilotSkill.c_str()), 100);
-					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)fighterSkill.c_str()), 100);
-					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)traderSkill.c_str()), 100);
-					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)engineerSkill.c_str()), 100);
-					GetWindowText(GetDlgItem(m_hwnd, 1001), (LPWSTR) reinterpret_cast <char*> ((char*)difficulty.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1002), (LPWSTR) reinterpret_cast <char*> ((char*)fighterSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1003), (LPWSTR) reinterpret_cast <char*> ((char*)traderSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1004), (LPWSTR) reinterpret_cast <char*> ((char*)engineerSkill.c_str()), 100);
+					GetWindowText(GetDlgItem(m_hwnd, 1005), (LPWSTR) reinterpret_cast <char*> ((char*)difficulty.c_str()), 100);
 
-					//std::string output;
-					//output = playerName.c_str() +'\n' +std::to_string(pilotSkill.c_str());
-					MessageBox(m_hwnd, (LPWSTR) playerName.c_str(), L"", MB_OK);
+					std::string output(playerName);
+					output.append((char*)playerName.c_str());
+					//output.append((char*)pilotSkill.c_str());
+					//output.append((char*)fighterSkill.c_str());
+					//output.append((char*)traderSkill.c_str());
+					//output.append((char*)engineerSkill.c_str());
+					//output.append((char*)difficulty.c_str());
+
+					//std::string out;
+					//out = playerName;
+					//out = out + playerName;
+					ofstream myfile("output.txt");
+					if (myfile.is_open())
+					{
+						//std::cin >> playerName;
+						/*
+						char out = *playerName.c_str();
+						while (out != NULL) {
+							myfile << out;
+							out++;
+						}
+						*/
+						myfile << (char*) playerName.c_str();
+						myfile << "\n";
+						myfile << "This is another line.\n";
+						myfile.close();
+					}
+					
+					MessageBox(m_hwnd, (LPWSTR) output.c_str(), L"", MB_OK);
 				}
 				break;
             case IDM_ABOUT:
