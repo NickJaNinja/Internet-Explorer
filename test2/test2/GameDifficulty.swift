@@ -10,14 +10,14 @@ import Foundation
 /**
  * This class represents the various game difficulties
  */
-enum GameDifficulty: String {
-    case BEGINNER = "Beginner"
-    case EASY = "Easy"
-    case NORMAL = "Normal"
-    case HARD = "Hard"
-    case IMPOSSIBLE = "Impossible"
+class GameDifficulty {
+    var BEGINNER: String = "Beginner"
+    var EASY: String = "Easy"
+    var NORMAL: String = "Normal"
+    var HARD: String = "Hard"
+    var IMPOSSIBLE: String = "Impossible"
     
-    var final name: String?
+    var name: String?
     
     /**
      * Constructor for the enumeration
@@ -32,6 +32,6 @@ enum GameDifficulty: String {
      *
      * @return the display string representation of the course
      */
-    public toString() -> String { return name }
+    //public toString() -> String { return name }
 }
 
