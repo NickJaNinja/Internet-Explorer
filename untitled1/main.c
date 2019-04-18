@@ -14,15 +14,15 @@ int main() {
     int engineer;
     int max = 16;
     int i = 0;
-    char * difficulty;
+    char *difficulty;
 
 
     printf("Welcome to Space Trader.\nPlease enter player's name: ");
     fgets(name,BUFF,stdin);
 
 
-    while (i < 3) {
-        printf("Please enter a integer less than %d and bigger than 0: ", max);
+    while (i < 3 && max !=0) {
+        printf("Please enter a integer less than or equal to %d and bigger than 0: ", max);
         if (fgets(integer, BUFF, stdin) != NULL) {
             if (atoi(integer) <= max && atoi(integer) > 0) {
                 max = max - atoi(integer);
@@ -42,27 +42,16 @@ int main() {
             }
         }
     }
-       /* scanf("%d", &in);
-        if (in <= max) {
-            max = max - in;
-            i++;
-
-            if (i == 1) {
-                trade = in;
-            }
-            if (i == 2) {
-                pilot = in;
-            }
-            if (i == 3) {
-                fighter = in;
-
-            }
-
-        } else {
-            printf("Invalid choice\n.");
-        }
-    }*/
     engineer = max;
+    if (max == 0) {
+        if (i == 1) {
+            pilot = 0;
+            fighter = 0;
+        } else if (i == 2){
+            fighter =0;
+        }
+    }
+
     int j = 0;
     while(j < 1) {
         printf("Please select a game difficulty:\n");
@@ -96,9 +85,10 @@ int main() {
          game = createGame(difficulty, player);
     }
 
-    printf("Game Difficulty = %s\nplayer:\nname: %s\ntraderSkill:%d\npilotSkill:%d\nfighterSkill:%d\nEngineerSkill:%d\nCredit:%d\n",difficulty,player->name,player->traderSkill,player->pilotSkill,player->fighterSkill,player->engineerSkill,player->credit);
-    for (int i = 0; i < NUM_PLANETS; i++) {
+    printf("Game Difficulty = %s\nPlayer:\nname:%s\ntraderSkill:%d\npilotSkill:%d\nfighterSkill:%d\nEngineerSkill:%d\nCredit:%d\n",
+            game->difficulty,game->player->name,game->player->traderSkill,game->player->pilotSkill,game->player->fighterSkill,game->player->engineerSkill,player->credit);
+   /* for (int i = 0; i < NUM_PLANETS; i++) {
         printf("Solar System Name: %s, Coords: (%d,%d), Tech Level: %d\n",game->systems[i].name,game->systems[i].xcoord,game->systems[i].ycoord,game->systems[i].techlevel);
-    }
+    }*/
     return 0;
 }

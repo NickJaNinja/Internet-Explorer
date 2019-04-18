@@ -1,3 +1,3 @@
-C:/Users/yahuanzhu/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir
-C:/Users/yahuanzhu/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/yahuanzhu/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

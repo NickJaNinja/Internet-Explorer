@@ -6,29 +6,40 @@
 #include <mem.h>
 #include <stdio.h>
 
-Player* createPlayer(const char* name, int pilotSkill, int fighterSkill, int traderSkill, int engineerSkill) {
+Player* createPlayer(char* name, int traderSkill, int pilotSkill, int fighterSkill, int engineerSkill) {
     Player *player;
+    char *playerName;
 
     if((player = (Player *)malloc(sizeof(Player)))==NULL) {
         return NULL;
     }
+    if ((playerName =(char*)malloc((strlen(name)+1)))== NULL) {
+        return NULL;
+    }
+    strcpy(playerName,name);
     player->credit = 1000;
     player->pilotSkill = pilotSkill;
     player->engineerSkill = engineerSkill;
     player->fighterSkill = fighterSkill;
     player->traderSkill = traderSkill;
-
-    strcpy(player->name,name);
+    player->name = name;
 
     return player;
 
 }
-Game* createGame(const char* difficulty, Player *player) {
+Game* createGame(char* difficulty, Player *player) {
     Game *game;
-    if((game = (Game *)malloc(sizeof(Game)))!=NULL) {
-        strcpy(game->difficulty, difficulty);
-        game->player = player;
-        SolarSystem system1 = {"Planet 1", 0,0,2};
+    char *diff;
+    if((game = (Game *)malloc(sizeof(Game)))==NULL) {
+        return NULL;
+    }
+    if ((diff =(char*)malloc((strlen(difficulty)+1)))== NULL) {
+        return NULL;
+    }
+    strcpy(diff,difficulty);
+    game->difficulty = diff;
+    game->player = player;
+      /*  SolarSystem system1 = {"Planet 1", 0,0,2};
         game->solarsystems[0] = system1;
         SolarSystem system2 = {"Planet 2", 2,6,2};
         game->solarsystems[1] = system2;
@@ -47,7 +58,7 @@ Game* createGame(const char* difficulty, Player *player) {
         SolarSystem system9 = {"Planet 9", 11,56,2};
         game->solarsystems[8] = system9;
         SolarSystem system10 = {"Planet 10", 48,42,2};
-        game->solarsystems[9] = system10;
-    }
+        game->solarsystems[9] = system10;*/
+
     return game;
 }

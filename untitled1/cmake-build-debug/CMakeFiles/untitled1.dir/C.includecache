@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/yahuanzhu/CLionProjects/untitled1/CreatGame.h
-
-C:/Users/yahuanzhu/CLionProjects/untitled1/main.c
-stdio.h
--
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.c
+CreatGame.h
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.h
 stdlib.h
 -
-CreatGame.h
-C:/Users/yahuanzhu/CLionProjects/untitled1/CreatGame.h
+mem.h
+-
+stdio.h
+-
+
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.h
 

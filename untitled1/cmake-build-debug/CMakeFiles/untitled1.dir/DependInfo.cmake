@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/yahuanzhu/CLionProjects/untitled1/CreatGame.c" "C:/Users/yahuanzhu/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/CreatGame.c.obj"
-  "C:/Users/yahuanzhu/CLionProjects/untitled1/main.c" "C:/Users/yahuanzhu/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/main.c.obj"
+  "C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.c" "C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/CreatGame.c.obj"
+  "C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/main.c" "C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

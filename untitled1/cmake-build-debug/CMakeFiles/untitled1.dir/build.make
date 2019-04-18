@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\yahuanzhu\CLionProjects\untitled1
+CMAKE_SOURCE_DIR = C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled1.dir/depend.make
@@ -58,29 +58,29 @@ include CMakeFiles/untitled1.dir/flags.make
 
 CMakeFiles/untitled1.dir/main.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled1.dir/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\main.c.obj   -c C:\Users\yahuanzhu\CLionProjects\untitled1\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled1.dir/main.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\main.c.obj   -c C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\main.c
 
 CMakeFiles/untitled1.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yahuanzhu\CLionProjects\untitled1\main.c > CMakeFiles\untitled1.dir\main.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\main.c > CMakeFiles\untitled1.dir\main.c.i
 
 CMakeFiles/untitled1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yahuanzhu\CLionProjects\untitled1\main.c -o CMakeFiles\untitled1.dir\main.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\main.c -o CMakeFiles\untitled1.dir\main.c.s
 
 CMakeFiles/untitled1.dir/CreatGame.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/CreatGame.c.obj: ../CreatGame.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled1.dir/CreatGame.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\CreatGame.c.obj   -c C:\Users\yahuanzhu\CLionProjects\untitled1\CreatGame.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled1.dir/CreatGame.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\CreatGame.c.obj   -c C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\CreatGame.c
 
 CMakeFiles/untitled1.dir/CreatGame.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/CreatGame.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yahuanzhu\CLionProjects\untitled1\CreatGame.c > CMakeFiles\untitled1.dir\CreatGame.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\CreatGame.c > CMakeFiles\untitled1.dir\CreatGame.c.i
 
 CMakeFiles/untitled1.dir/CreatGame.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/CreatGame.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yahuanzhu\CLionProjects\untitled1\CreatGame.c -o CMakeFiles\untitled1.dir\CreatGame.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\CreatGame.c -o CMakeFiles\untitled1.dir\CreatGame.c.s
 
 # Object files for target untitled1
 untitled1_OBJECTS = \
@@ -96,7 +96,7 @@ untitled1.exe: CMakeFiles/untitled1.dir/build.make
 untitled1.exe: CMakeFiles/untitled1.dir/linklibs.rsp
 untitled1.exe: CMakeFiles/untitled1.dir/objects1.rsp
 untitled1.exe: CMakeFiles/untitled1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable untitled1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable untitled1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\untitled1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/untitled1.dir/clean:
 .PHONY : CMakeFiles/untitled1.dir/clean
 
 CMakeFiles/untitled1.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\yahuanzhu\CLionProjects\untitled1 C:\Users\yahuanzhu\CLionProjects\untitled1 C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug C:\Users\yahuanzhu\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\untitled1.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1 C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1 C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug C:\Users\yahuanzhu\cs2340\Internet-Explorer\untitled1\cmake-build-debug\CMakeFiles\untitled1.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/untitled1.dir/depend
 

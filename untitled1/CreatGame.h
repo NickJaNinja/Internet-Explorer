@@ -10,7 +10,7 @@
 
 typedef struct player{char* name; int pilotSkill; int fighterSkill; int traderSkill; int engineerSkill; int credit;} Player;
 
-typedef struct game{char* difficulty; Player *player; SolarSystem systems[NUM_PLANETS];}Game;
+typedef struct game{char* difficulty; Player *player;}Game;// SolarSystem systems[NUM_PLANETS];}Game;
 
 typedef struct solarsystem {
     char *name;
@@ -19,9 +19,8 @@ typedef struct solarsystem {
     int techlevel;
 } SolarSystem;
 
-Player* createPlayer(const char* name, int traderSkill,int pilotSkill, int fighterSkill, int engineerSkill);
-
-Game* createGame(const char *difficulty, Player *player);
+Player* createPlayer(char* name, int traderSkill,int pilotSkill, int fighterSkill, int engineerSkill);
+Game* createGame(char *difficulty, Player *player);
 
 
 
