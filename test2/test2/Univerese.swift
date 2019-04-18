@@ -24,5 +24,8 @@ class Universe {
         let nine = Planet(planetName: "xx", techLevel: 0, xCord: 77, yCOrd: 88)
         let ten = Planet(planetName: "oo", techLevel: 0, xCord: 99, yCOrd: 00)
         print(one.planetName, two.planetName, three.planetName, five.planetName, four.planetName, six.planetName, seven.planetName, eight.planetName, nine.planetName, ten.planetName)
+        print(one.xCord, two.xCord, three.xCord, five.xCord, four.xCord, six.xCord, seven.xCord, eight.xCord, nine.xCord, ten.xCord)
+        print(one.yCOrd, two.yCOrd, three.yCOrd, five.yCOrd, four.yCOrd, six.yCOrd, seven.yCOrd, eight.yCOrd, nine.yCOrd, ten.yCOrd)
+        print(one.techLevel, two.techLevel, three.techLevel, five.techLevel, four.techLevel, six.techLevel, seven.techLevel, eight.techLevel, nine.techLevel, ten.techLevel)
     }
 }
