@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/yahuanzhu/CLionProjects/untitled1/CreatGame.h
+
+C:/Users/yahuanzhu/CLionProjects/untitled1/main.c
+stdio.h
+-
+stdlib.h
+-
+CreatGame.h
+C:/Users/yahuanzhu/CLionProjects/untitled1/CreatGame.h
+
