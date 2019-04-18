@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E00093922680291007B7E76 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00093822680291007B7E76 /* Planet.swift */; };
+		2E00093B2268069F007B7E76 /* Univerese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00093A2268069F007B7E76 /* Univerese.swift */; };
+		2E1A46BB2267F97C0005A871 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1A46BA2267F97C0005A871 /* secondViewController.swift */; };
 		2ED9435822186F120098FB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9435722186F120098FB4A /* AppDelegate.swift */; };
 		2ED9435A22186F120098FB4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9435922186F120098FB4A /* ViewController.swift */; };
 		2ED9435D22186F120098FB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED9435B22186F120098FB4A /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E00093822680291007B7E76 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		2E00093A2268069F007B7E76 /* Univerese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Univerese.swift; sourceTree = "<group>"; };
+		2E1A46BA2267F97C0005A871 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 		2ED9435422186F120098FB4A /* test2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED9435722186F120098FB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED9435922186F120098FB4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,11 +116,14 @@
 				2ED943CA2218B7520098FB4A /* Game.swift */,
 				2ED943C92218B7520098FB4A /* GameDifficulty.swift */,
 				2ED943CB2218B7520098FB4A /* Player.swift */,
+				2E00093822680291007B7E76 /* Planet.swift */,
+				2E00093A2268069F007B7E76 /* Univerese.swift */,
 				2ED943C72218B7500098FB4A /* Ship.swift */,
 				2ED943C82218B7510098FB4A /* ShipType.swift */,
 				2ED9435722186F120098FB4A /* AppDelegate.swift */,
 				2ED9435922186F120098FB4A /* ViewController.swift */,
 				2ED9435B22186F120098FB4A /* Main.storyboard */,
+				2E1A46BA2267F97C0005A871 /* secondViewController.swift */,
 				2ED9435E22186F130098FB4A /* Assets.xcassets */,
 				2ED9436022186F130098FB4A /* LaunchScreen.storyboard */,
 				2ED9436322186F130098FB4A /* Info.plist */,
@@ -208,13 +217,16 @@
 				TargetAttributes = {
 					2ED9435322186F120098FB4A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					2ED9436722186F130098FB4A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 2ED9435322186F120098FB4A;
 					};
 					2ED9437222186F130098FB4A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 2ED9435322186F120098FB4A;
 					};
 				};
@@ -271,10 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1A46BB2267F97C0005A871 /* secondViewController.swift in Sources */,
 				2ED9435A22186F120098FB4A /* ViewController.swift in Sources */,
 				2ED943CF2218B7520098FB4A /* Game.swift in Sources */,
+				2E00093922680291007B7E76 /* Planet.swift in Sources */,
 				2ED943CC2218B7520098FB4A /* Ship.swift in Sources */,
 				2ED9435822186F120098FB4A /* AppDelegate.swift in Sources */,
+				2E00093B2268069F007B7E76 /* Univerese.swift in Sources */,
 				2ED943D02218B7520098FB4A /* Player.swift in Sources */,
 				2ED943CD2218B7520098FB4A /* ShipType.swift in Sources */,
 				2ED943CE2218B7520098FB4A /* GameDifficulty.swift in Sources */,
@@ -461,7 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -479,7 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -499,7 +514,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test2.app/test2";
 			};
@@ -520,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test2.app/test2";
 			};
@@ -540,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = test2;
 			};
@@ -560,7 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cecilia.test2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = test2;
 			};
