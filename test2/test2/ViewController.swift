@@ -39,7 +39,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var engineerMinusbutton: UIButton!
     @IBOutlet weak var engineerPlusbutton: UIButton!
     
-        @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     
 //    @IBOutlet weak var difficultySpinner: UIPickerView!
     
@@ -93,6 +93,7 @@ class ViewController: UIViewController{
                 playerOne.setName(name: pilotNameTextField.text!)
                 dificultyy = dificultyTextField.text!
                 print ("name:", playerOne.getName(), "credits:", playerOne.getCredits(), "dificulty:", dificultyy)
+                performSegue(withIdentifier: "BruceTheHoon", sender: self)
             } else {
                 print ("the difficulty has to be Easy, Medium, Hard, or Insane")
             }

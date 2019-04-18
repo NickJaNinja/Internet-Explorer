@@ -265,19 +265,29 @@
                         <outlet property="stringSkillPointsRemainingLabel" destination="p3D-IO-y70" id="lnK-Fn-hr1"/>
                         <outlet property="stringSkills" destination="hlU-6v-lGL" id="zMP-3z-ZQ5"/>
                         <outlet property="stringTrader" destination="Q1h-cS-GFh" id="GQP-hv-xN4"/>
-                        <outlet property="swipe" destination="8bC-Xf-vdC" id="HaU-dK-TPl"/>
                         <outlet property="traderMinusbutton" destination="hNk-9s-iGL" id="Rxm-7F-Xal"/>
                         <outlet property="traderPlusbutton" destination="avu-2N-u1j" id="Fk0-FG-CYs"/>
+                        <segue destination="ni2-oM-BUL" kind="show" identifier="BruceTheHoon" id="HKs-iu-IXb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="Vqp-AY-cLn">
-                    <connections>
-                        <action selector="swipeHandler:" destination="BYZ-38-t0r" id="x3f-V7-xgE"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="PmG-KM-gf4"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Vqp-AY-cLn"/>
             </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Df2-rh-37e">
+            <objects>
+                <viewController id="ni2-oM-BUL" customClass="secondViewController" customModule="test2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="37g-IH-ZCE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tP4-Ir-yWB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEe-Fp-Ob4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="97"/>
         </scene>
     </scenes>
 </document>
