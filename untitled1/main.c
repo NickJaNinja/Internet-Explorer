@@ -7,7 +7,6 @@ int main() {
 
     char name[BUFF];
     char integer[BUFF];
-    int in;
     int trade;
     int pilot;
     int fighter;
@@ -87,8 +86,8 @@ int main() {
 
     printf("Game Difficulty = %s\nPlayer:\nname:%s\ntraderSkill:%d\npilotSkill:%d\nfighterSkill:%d\nEngineerSkill:%d\nCredit:%d\n",
             game->difficulty,game->player->name,game->player->traderSkill,game->player->pilotSkill,game->player->fighterSkill,game->player->engineerSkill,player->credit);
-   /* for (int i = 0; i < NUM_PLANETS; i++) {
-        printf("Solar System Name: %s, Coords: (%d,%d), Tech Level: %d\n",game->systems[i].name,game->systems[i].xcoord,game->systems[i].ycoord,game->systems[i].techlevel);
-    }*/
+    for (int i = 0; i < NUM_PLANETS; i++) {
+        printf("Solar System Name: %s, Coords: (%d,%d), Tech Level: %d\n",game->solarsystems[i].name,game->solarsystems[i].xcoord,game->solarsystems[i].ycoord,game->solarsystems[i].techlevel);
+    }
     return 0;
 }

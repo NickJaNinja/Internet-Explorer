@@ -6,15 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.c
-CreatGame.h
 C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.h
-stdlib.h
--
-mem.h
--
+
+C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/main.c
 stdio.h
 -
-
+stdlib.h
+-
+CreatGame.h
 C:/Users/yahuanzhu/cs2340/Internet-Explorer/untitled1/CreatGame.h
 

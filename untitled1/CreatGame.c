@@ -39,7 +39,7 @@ Game* createGame(char* difficulty, Player *player) {
     strcpy(diff,difficulty);
     game->difficulty = diff;
     game->player = player;
-      /*  SolarSystem system1 = {"Planet 1", 0,0,2};
+        SolarSystem system1 = {"Planet 1", 0,0,2};
         game->solarsystems[0] = system1;
         SolarSystem system2 = {"Planet 2", 2,6,2};
         game->solarsystems[1] = system2;
@@ -58,7 +58,7 @@ Game* createGame(char* difficulty, Player *player) {
         SolarSystem system9 = {"Planet 9", 11,56,2};
         game->solarsystems[8] = system9;
         SolarSystem system10 = {"Planet 10", 48,42,2};
-        game->solarsystems[9] = system10;*/
+        game->solarsystems[9] = system10;
 
     return game;
 }

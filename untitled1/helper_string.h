@@ -6,7 +6,7 @@
 #define UNTITLED1_HELPER_STRING_H
 
 
-#define
+
 
 
 
