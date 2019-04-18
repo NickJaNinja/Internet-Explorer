@@ -96,6 +96,9 @@ int main() {
          game = createGame(difficulty, player);
     }
 
-    printf("Game Difficulty = %s\nplayer:\nname: %s\ntraderSkill:%d\npilotSkill:%d\nfighterSkill:%d\nEngineerSkill:%d\nCredit:%d",difficulty,player->name,player->traderSkill,player->pilotSkill,player->fighterSkill,player->engineerSkill,player->credit);
+    printf("Game Difficulty = %s\nplayer:\nname: %s\ntraderSkill:%d\npilotSkill:%d\nfighterSkill:%d\nEngineerSkill:%d\nCredit:%d\n",difficulty,player->name,player->traderSkill,player->pilotSkill,player->fighterSkill,player->engineerSkill,player->credit);
+    for (int i = 0; i < NUM_PLANETS; i++) {
+        printf("Solar System Name: %s, Coords: (%d,%d), Tech Level: %d\n",game->systems[i].name,game->systems[i].xcoord,game->systems[i].ycoord,game->systems[i].techlevel);
+    }
     return 0;
 }
