@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Space Trader</title>
+  </head>
+  <body>
+    <h1 id='planet_name'></h1>
+
+		<br><input type=button onClick="market_button()" value="market">
+		<br><br><input type=button onClick="" value="upgrade">
+		<br><br><input type=button onClick="travel_button()" value="travel">
+		<br><br><input type=button onClick="exit_button()" value="exit game">
+  </body>
+
+  <script>
+		change_name(sessionStorage.getItem('planet_name'));
+
+		function exit_button() {
+			window.location.href = "SpaceTrader.html";
+		}
+
+		function market_button() {
+			window.location.href = "SpaceTraderMarket.html";
+		}
+
+		function travel_button() {
+			var planet = prompt("select a planet to travel to\n--------------------------------\nViarat\nYoohza Prime\nA-Mama A-Mia\nAlpha Dumbtauri\nCardassia\nVolcano Planet\nI'm running out of names\nVolcano Planet 2\nHowee\nWooowee", "Planet");
+			if (planet == "Viarat") {
+				change_name(planet);
+			} else if (planet == "Yoohza Prime") {
+				change_name(planet);
+			} else if (planet == "A-Mama A-Mia") {
+				change_name(planet);
+			} else if (planet == "Alpha Dumbtauri") {
+				change_name(planet);
+			} else if (planet == "Cardassia") {
+				change_name(planet);
+			} else if (planet == "Volcano Planet") {
+				change_name(planet);
+			} else if (planet == "I'm running out of names") {
+				change_name(planet);
+			} else if (planet == "Volcano Planet 2") {
+				change_name(planet);
+			} else if (planet == "Howee") {
+				change_name(planet);
+			} else if (planet == "Wooowee") {
+				change_name(planet);
+			} else alert("invalid name");
+		}
+
+		function change_name(name) {
+			document.getElementById("planet_name").innerHTML = name;
+			sessionStorage.setItem('planet_name', name);
+		}
+	</script>
+
+
+
+</html>
+
+<!--var para = document.createElement("P");
+para.innerText = "Planet: Viarat  ";
+document.body.appendChild(para);
+
+var btn1 = document.createElement("BUTTON");
+btn1.innerHTML = "market";
+document.body.appendChild(btn1);
+
+var btn2 = document.createElement("BUTTON");
+btn2.innerHTML = "upgrade";
+document.body.appendChild(btn2);
+
+var btn3 = document.createElement("BUTTON");
+btn3.innerHTML = "leave orbit";
+document.body.appendChild(btn3);-->

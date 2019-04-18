@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Space Trader</title>
+  </head>
+  <body>
+    <h1>Space Trader</h1>
+    <h4 id='date'></h4>
+
+		<t>Enter your name:</t>
+		<input type=text value="Josephi Shostakovich" id="name">
+		</html>
+
+		<br><br>
+		<t>Enter your pilot skill:</t>
+		<input type=text value="4" id="pilot_skill">
+
+		<br><br>
+		<t>Enter your engineer skill:</t>
+		<input type=text value="4" id="engineer_skill">
+
+		<br><br>
+		<t>Enter your fighter skill:</t>
+		<input type=text value="4" id="fighter_skill">
+
+		<br><br>
+		<t>Enter your trader skill:</t>
+		<input type=text value="4" id="trader_skill">
+
+		<br><br><br>
+		<input type=button onClick="confirm_button()" value="confirm">
+
+  </body>
+
+  <script>
+	var player = {
+		name : "test",
+		pilot_skill : 4,
+		engineer_skill : 4,
+		fighter_skill : 4,
+		trader_skill : 4,
+		credits : 1000,
+		cargo : 15,
+		inventory : {
+			water : 0,
+			furs : 0,
+			food : 0,
+			ore : 0,
+			games : 0,
+			firearms : 0,
+			medicine : 0,
+			machines : 0,
+			narcotics : 0,
+			robots : 0
+		}
+	};
+
+  function confirm_button() {
+
+		player.name = document.getElementById('name').value;
+		player.pilot_skill = document.getElementById('pilot_skill').value;
+		player.engineer_skill = document.getElementById('engineer_skill').value;
+		player.fighter_skill = document.getElementById('fighter_skill').value;
+		player.trader_skill = document.getElementById('trader_skill').value;
+
+		sessionStorage.setItem('planet_name', "Viarat");
+		sessionStorage.setItem('player_credits', player.credits);
+		sessionStorage.setItem('player_cargo', player.cargo);
+		sessionStorage.setItem('player_water', player.inventory.water);
+		sessionStorage.setItem('player_furs', player.inventory.furs);
+		sessionStorage.setItem('player_food', player.inventory.food);
+		sessionStorage.setItem('player_ore', player.inventory.ore);
+		sessionStorage.setItem('player_games', player.inventory.games);
+		sessionStorage.setItem('player_firearms', player.inventory.firearms);
+		sessionStorage.setItem('player_medicine', player.inventory.medicine);
+		sessionStorage.setItem('player_machines', player.inventory.machines);
+		sessionStorage.setItem('player_narcotics', player.inventory.narcotics);
+		sessionStorage.setItem('player_robots', player.inventory.robots);
+
+    if ((parseInt(player.pilot_skill, 10) + parseInt(player.engineer_skill, 10) + parseInt(player.fighter_skill, 10) + parseInt(player.trader_skill, 10)) != 16) alert('Your skills must add up to 16');
+    else if(confirm('Name: ' + player.name
+    + '\nPilot Skill: ' + player.pilot_skill
+    + '\nEngineer Skill: ' + player.engineer_skill
+    + '\nFighter Skill: ' + player.fighter_skill
+    + '\nTrader Skill: ' + player.trader_skill)) {
+      document.body.innerHTML = ""
+
+      var planets = [
+       {name: "Viarat",
+        x: Math.floor(Math.random() * 100),
+        y: Math.floor(Math.random() * 100),
+       },
+       {name: "Yoohza Prime",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "A-Mama A-Mia",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Alpha Dumbtauri",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Cardassia",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Volcano Planet",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "I'm running out of names",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Volcano Planet 2",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Howee",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       },
+       {name: "Wooowee",
+       x: Math.floor(Math.random() * 100),
+       y: Math.floor(Math.random() * 100),
+       }
+      ];
+
+      var planetsString;
+
+      planetsString = planets[0].name + ' (' + planets[0].x + ', ' + planets[0].y + ')';
+      var i = 1;
+      while (i < 10) {
+        planetsString = planetsString + '\n' + planets[i].name + ' (' + planets[i].x + ', ' + planets[i].y + ')';
+        i++;
+      }
+
+      if (confirm(planetsString)) {
+        window.location.href = "SpaceTraderPlanet.html";
+      }
+
+	  } else alert('Your skills must add up to 16');
+  }
+  </script>
+
+</html>

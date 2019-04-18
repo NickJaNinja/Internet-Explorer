@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Space Trader</title>
+  </head>
+  <body>
+    <h1>Market</h1>
+    <h4 id='date'></h4>
+
+		<t>Credits: </t><t id='credits_text'></t><br>
+		<t>Cargo Space: </t><t id='cargo_text'></t><br>
+
+
+		<br><t>		Water		</t><input type=button id="buy_water" value="buy">
+		<input type=button id="sell_water" value="sell">
+		<t>	Price: </t><t id='water_price_text'></t><t>		Amount: </t><t id='water_amount_text'></t>
+
+		<br><t>		Furs		</t><input type=button id="buy_furs" value="buy">
+		<input type=button id="sell_furs" value="sell">
+		<t>	Price: </t><t id='furs_price_text'></t><t>		Amount: </t><t id='furs_amount_text'></t>
+
+		<br><t>		Food		</t><input type=button id="buy_food" value="buy">
+		<input type=button id="sell_food" value="sell">
+		<t>	Price: </t><t id='food_price_text'></t><t>		Amount: </t><t id='food_amount_text'></t>
+
+		<br><t>		Ore		</t><input type=button id="buy_ore" value="buy">
+		<input type=button id="sell_ore" value="sell">
+		<t>	Price: </t><t id='ore_price_text'></t><t>		Amount: </t><t id='ore_amount_text'></t>
+
+		<br><t>		Games		</t><input type=button id="buy_games" value="buy">
+		<input type=button id="sell_games" value="sell">
+		<t>	Price: </t><t id='games_price_text'></t><t>		Amount: </t><t id='games_amount_text'></t>
+
+		<br><t>		Firearms		</t><input type=button id="buy_firearms" value="buy">
+		<input type=button id="sell_firearms" value="sell">
+		<t>	Price: </t><t id='firearms_price_text'></t><t>		Amount: </t><t id='firearms_amount_text'></t>
+
+		<br><t>		Medicine		</t><input type=button id="buy_medicine" value="buy">
+		<input type=button id="sell_medicine" value="sell">
+		<t>	Price: </t><t id='medicine_price_text'></t><t>		Amount: </t><t id='medicine_amount_text'></t>
+
+		<br><t>		Machines		</t><input type=button id="buy_machines" value="buy">
+		<input type=button id="sell_machines" value="sell">
+		<t>	Price: </t><t id='machines_price_text'></t><t>		Amount: </t><t id='machines_amount_text'></t>
+
+		<br><t>		Narcotics		</t><input type=button id="buy_narcotics" value="buy">
+		<input type=button id="sell_narcotics" value="sell">
+		<t>	Price: </t><t id='narcotics_price_text'></t><t>		Amount: </t><t id='narcotics_amount_text'></t>
+
+		<br><t>		Slaves		</t><input type=button id="buy_robots" value="buy">
+		<input type=button id="sell_robots" value="sell">
+		<t>	Price: </t><t id='robots_price_text'></t><t>		Amount: </t><t id='robots_amount_text'></t>
+
+
+		<br><br><br><input type=button onClick="leave_market_button()" value="leave market">
+  </body>
+
+<script>
+	document.getElementById("buy_water").addEventListener("click", function() {buy(water)}, false);
+	document.getElementById("sell_water").addEventListener("click", function() {sell(water)}, false);
+
+	document.getElementById("buy_furs").addEventListener("click", function() {buy(furs)}, false);
+	document.getElementById("sell_furs").addEventListener("click", function() {sell(furs)}, false);
+
+	document.getElementById("buy_food").addEventListener("click", function() {buy(food)}, false);
+	document.getElementById("sell_food").addEventListener("click", function() {sell(food)}, false);
+
+	document.getElementById("buy_ore").addEventListener("click", function() {buy(ore)}, false);
+	document.getElementById("sell_ore").addEventListener("click", function() {sell(ore)}, false);
+
+	document.getElementById("buy_games").addEventListener("click", function() {buy(games)}, false);
+	document.getElementById("sell_games").addEventListener("click", function() {sell(games)}, false);
+
+	document.getElementById("buy_firearms").addEventListener("click", function() {buy(firearms)}, false);
+	document.getElementById("sell_firearms").addEventListener("click", function() {sell(firearms)}, false);
+
+	document.getElementById("buy_medicine").addEventListener("click", function() {buy(medicine)}, false);
+	document.getElementById("sell_medicine").addEventListener("click", function() {sell(medicine)}, false);
+
+	document.getElementById("buy_machines").addEventListener("click", function() {buy(machines)}, false);
+	document.getElementById("sell_machines").addEventListener("click", function() {sell(machines)}, false);
+
+	document.getElementById("buy_narcotics").addEventListener("click", function() {buy(narcotics)}, false);
+	document.getElementById("sell_narcotics").addEventListener("click", function() {sell(narcotics)}, false);
+
+	document.getElementById("buy_robots").addEventListener("click", function() {buy(robots)}, false);
+	document.getElementById("sell_robots").addEventListener("click", function() {sell(robots)}, false);
+
+	var planet = sessionStorage.getItem('planet_name');
+	var tech_level = 3;
+
+	if (planet == "Viarat") {
+		tech_level = 2;
+	} else if (planet == "Yoohza Prime") {
+		tech_level = 0;
+	} else if (planet == "A-Mama A-Mia") {
+		tech_level = 5;
+	} else if (planet == "Alpha Dumbtauri") {
+		tech_level = 3;
+	} else if (planet == "Cardassia") {
+		tech_level = 0;
+	} else if (planet == "Volcano Planet") {
+		tech_level = 2;
+	} else if (planet == "I'm running out of names") {
+		tech_level = 1;
+	} else if (planet == "Volcano Planet 2") {
+		tech_level = 4;
+	} else if (planet == "Howee") {
+		tech_level = 5;
+	} else if (planet == "Wooowee") {
+		tech_level = 3;
+	}
+
+	function makeMarketItem(price, amount) {
+  	return {
+    	price,
+    	amount
+  	};
+	}
+
+	let water = makeMarketItem(calculate_price(30, 3, tech_level, 0), sessionStorage.getItem('player_water'));
+	let furs = makeMarketItem(calculate_price(250, 10, tech_level, 0), sessionStorage.getItem('player_furs'));
+	let food = makeMarketItem(calculate_price(100, 5, tech_level, 1), sessionStorage.getItem('player_food'));
+	let ore = makeMarketItem(calculate_price(350, 20, tech_level, 2), sessionStorage.getItem('player_ore'));
+	let games = makeMarketItem(calculate_price(250, -10, tech_level, 3), sessionStorage.getItem('player_games'));
+	let firearms = makeMarketItem(calculate_price(1250, -75, tech_level, 3), sessionStorage.getItem('player_firearms'));
+	let medicine = makeMarketItem(calculate_price(650, -20, tech_level, 4), sessionStorage.getItem('player_medicine'));
+	let machines = makeMarketItem(calculate_price(900, -30, tech_level, 4), sessionStorage.getItem('player_machines'));
+	let narcotics = makeMarketItem(calculate_price(3500, -125, tech_level, 5), sessionStorage.getItem('player_narcotics'));
+	let robots = makeMarketItem(calculate_price(5000, -150, tech_level, 6), sessionStorage.getItem('player_robots'));
+
+	var credits = parseInt(sessionStorage.getItem('player_credits'), 10);
+	var cargo = sessionStorage.getItem('player_cargo');
+	update();
+
+	function buy(item) {
+		if (cargo < 1) alert("Not enough cargo space");
+		else if (credits < item.price) alert("Not enough credits");
+		else {
+			item.amount++;
+			credits -= item.price;
+			cargo--;
+			update();
+		}
+	}
+
+	function sell(item) {
+		if (item.amount < 1) alert("You do not have any to sell");
+		else {
+			item.amount--;
+			credits += item.price;
+			cargo++;
+			update();
+		}
+	}
+
+	function calculate_price(base_price, ipl, tech_level, mtlp_level) {
+		return base_price + (ipl * (tech_level - mtlp_level));
+	}
+
+	function leave_market_button() {
+		window.location.href = "SpaceTraderPlanet.html";
+	}
+
+	function update() {
+		sessionStorage.setItem('player_credits', credits);
+		sessionStorage.setItem('player_cargo', cargo);
+		sessionStorage.setItem('player_water', water.amount);
+		sessionStorage.setItem('player_furs', furs.amount);
+		sessionStorage.setItem('player_food', food.amount);
+		sessionStorage.setItem('player_ore', ore.amount);
+		sessionStorage.setItem('player_games', games.amount);
+		sessionStorage.setItem('player_firearms', firearms.amount);
+		sessionStorage.setItem('player_medicine', medicine.amount);
+		sessionStorage.setItem('player_machines', machines.amount);
+		sessionStorage.setItem('player_narcotics', narcotics.amount);
+		sessionStorage.setItem('player_robots', robots.amount);
+
+		document.getElementById('credits_text').innerHTML = credits;
+		document.getElementById('cargo_text').innerHTML = cargo;
+		document.getElementById('water_amount_text').innerHTML = water.amount;
+		document.getElementById('water_price_text').innerHTML = water.price;
+		document.getElementById('furs_amount_text').innerHTML = furs.amount;
+		document.getElementById('furs_price_text').innerHTML = furs.price;
+		document.getElementById('food_amount_text').innerHTML = food.amount;
+		document.getElementById('food_price_text').innerHTML = food.price;
+		document.getElementById('ore_amount_text').innerHTML = ore.amount;
+		document.getElementById('ore_price_text').innerHTML = ore.price;
+		document.getElementById('games_amount_text').innerHTML = games.amount;
+		document.getElementById('games_price_text').innerHTML = games.price;
+		document.getElementById('firearms_amount_text').innerHTML = firearms.amount;
+		document.getElementById('firearms_price_text').innerHTML = firearms.price;
+		document.getElementById('medicine_amount_text').innerHTML = medicine.amount;
+		document.getElementById('medicine_price_text').innerHTML = medicine.price;
+		document.getElementById('machines_amount_text').innerHTML = machines.amount;
+		document.getElementById('machines_price_text').innerHTML = machines.price;
+		document.getElementById('narcotics_amount_text').innerHTML = narcotics.amount;
+		document.getElementById('narcotics_price_text').innerHTML = narcotics.price;
+		document.getElementById('robots_amount_text').innerHTML = robots.amount;
+		document.getElementById('robots_price_text').innerHTML = robots.price;
+	}
+</script>
