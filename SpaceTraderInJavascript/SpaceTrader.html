@@ -27,8 +27,14 @@
 		<t>Enter your trader skill:</t>
 		<input type=text value="4" id="trader_skill">
 
+		<br><br>
+		<t>Enter your difficulty:</t>
+		<input type=text value="medium" id="difficulty">
+
 		<br><br><br>
 		<input type=button onClick="confirm_button()" value="confirm">
+		<br><br><br><input type=button onClick="load_button()" value="load">
+		<br><br><input type=button onClick="clear_button()" value="delete save">
 
   </body>
 
@@ -41,6 +47,7 @@
 		trader_skill : 4,
 		credits : 1000,
 		cargo : 15,
+		fuel : 20,
 		inventory : {
 			water : 0,
 			furs : 0,
@@ -62,10 +69,18 @@
 		player.engineer_skill = document.getElementById('engineer_skill').value;
 		player.fighter_skill = document.getElementById('fighter_skill').value;
 		player.trader_skill = document.getElementById('trader_skill').value;
+		var difficulty = document.getElementById('difficulty').value;
 
 		sessionStorage.setItem('planet_name', "Viarat");
+		sessionStorage.setItem('difficulty', difficulty);
+		sessionStorage.setItem('player_name', player.name);
+		sessionStorage.setItem('player_pilot', player.pilot_skill);
+		sessionStorage.setItem('player_engineer', player.engineer_skill);
+		sessionStorage.setItem('player_fighter', player.fighter_skill);
+		sessionStorage.setItem('player_trader', player.trader_skill);
 		sessionStorage.setItem('player_credits', player.credits);
 		sessionStorage.setItem('player_cargo', player.cargo);
+		sessionStorage.setItem('player_fuel', player.fuel);
 		sessionStorage.setItem('player_water', player.inventory.water);
 		sessionStorage.setItem('player_furs', player.inventory.furs);
 		sessionStorage.setItem('player_food', player.inventory.food);
@@ -78,11 +93,13 @@
 		sessionStorage.setItem('player_robots', player.inventory.robots);
 
     if ((parseInt(player.pilot_skill, 10) + parseInt(player.engineer_skill, 10) + parseInt(player.fighter_skill, 10) + parseInt(player.trader_skill, 10)) != 16) alert('Your skills must add up to 16');
+		else if (!(difficulty == "easy" || difficulty == "medium" || difficulty == "hard" || difficulty == "insane")) alert('Your difficult must be easy, medium, hard, or insane');
     else if(confirm('Name: ' + player.name
     + '\nPilot Skill: ' + player.pilot_skill
     + '\nEngineer Skill: ' + player.engineer_skill
     + '\nFighter Skill: ' + player.fighter_skill
-    + '\nTrader Skill: ' + player.trader_skill)) {
+    + '\nTrader Skill: ' + player.trader_skill
+	+ '\nDifficulty: ' + difficulty)) {
       document.body.innerHTML = ""
 
       var planets = [
@@ -143,6 +160,38 @@
 
 	  } else alert('Your skills must add up to 16');
   }
+
+	function load_button() {
+		if (!localStorage.getItem('player_water')) alert("no game to load");
+		else {
+			sessionStorage.setItem('planet_name', localStorage.getItem('planet_name'));
+			sessionStorage.setItem('difficulty', localStorage.getItem('difficulty'));
+			sessionStorage.setItem('player_name', localStorage.getItem('player_name'));
+			sessionStorage.setItem('player_pilot', localStorage.getItem('player_pilot'));
+			sessionStorage.setItem('player_engineer', localStorage.getItem('player_engineer'));
+			sessionStorage.setItem('player_fighter', localStorage.getItem('player_fighter'));
+			sessionStorage.setItem('player_trader', localStorage.getItem('player_trader'));
+			sessionStorage.setItem('player_credits', localStorage.getItem('player_credits'));
+			sessionStorage.setItem('player_cargo', localStorage.getItem('player_cargo'));
+			sessionStorage.setItem('player_fuel', localStorage.getItem('player_fuel'));
+			sessionStorage.setItem('player_water', localStorage.getItem('player_water'));
+			sessionStorage.setItem('player_furs', localStorage.getItem('player_furs'));
+			sessionStorage.setItem('player_food', localStorage.getItem('player_food'));
+			sessionStorage.setItem('player_ore', localStorage.getItem('player_ore'));
+			sessionStorage.setItem('player_games', localStorage.getItem('player_games'));
+			sessionStorage.setItem('player_firearms', localStorage.getItem('player_firearms'));
+			sessionStorage.setItem('player_medicine', localStorage.getItem('player_medicine'));
+			sessionStorage.setItem('player_machines', localStorage.getItem('player_machines'));
+			sessionStorage.setItem('player_narcotics', localStorage.getItem('player_narcotics'));
+			sessionStorage.setItem('player_robots', localStorage.getItem('player_robots'));
+			alert("loaded!");
+			window.location.href = "SpaceTraderPlanet.html";
+		}
+	}
+
+	function clear_button() {
+		if (confirm('are you sure?')) localStorage.clear();
+	}
   </script>
 
 </html>

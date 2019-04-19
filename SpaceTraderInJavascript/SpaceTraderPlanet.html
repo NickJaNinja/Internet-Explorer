@@ -7,50 +7,154 @@
     <h1 id='planet_name'></h1>
 
 		<br><input type=button onClick="market_button()" value="market">
-		<br><br><input type=button onClick="" value="upgrade">
+		<br><br><input type=button onClick="status_button()" value="status">
 		<br><br><input type=button onClick="travel_button()" value="travel">
-		<br><br><input type=button onClick="exit_button()" value="exit game">
+		<br><br><input type=button onClick="refuel_button()" value="refuel">
+		<br><br><br><br><input type=button onClick="save_button()" value="save">
+		<br><br><input type=button onClick="load_button()" value="load">
+		<br><br><input type=button onClick="exit_button()" value="exit">
   </body>
 
   <script>
 		change_name(sessionStorage.getItem('planet_name'));
 
-		function exit_button() {
-			window.location.href = "SpaceTrader.html";
-		}
-
 		function market_button() {
 			window.location.href = "SpaceTraderMarket.html";
 		}
 
+		function status_button() {
+			alert("name: " + sessionStorage.getItem('player_name') +
+			"\ndifficulty: " + sessionStorage.getItem('difficulty') +
+			"\npilot skill: " + sessionStorage.getItem('player_pilot') +
+			"\nengineer skill: " + sessionStorage.getItem('player_engineer') +
+			"\nfighter skill: " + sessionStorage.getItem('player_fighter') +
+			"\ntrader skill: " + sessionStorage.getItem('player_trader') +
+			"\n\nfuel remaining: " + sessionStorage.getItem('player_fuel') +
+			"\ncurrent location: " + sessionStorage.getItem('planet_name'));
+		}
+
 		function travel_button() {
-			var planet = prompt("select a planet to travel to\n--------------------------------\nViarat\nYoohza Prime\nA-Mama A-Mia\nAlpha Dumbtauri\nCardassia\nVolcano Planet\nI'm running out of names\nVolcano Planet 2\nHowee\nWooowee", "Planet");
-			if (planet == "Viarat") {
-				change_name(planet);
-			} else if (planet == "Yoohza Prime") {
-				change_name(planet);
-			} else if (planet == "A-Mama A-Mia") {
-				change_name(planet);
-			} else if (planet == "Alpha Dumbtauri") {
-				change_name(planet);
-			} else if (planet == "Cardassia") {
-				change_name(planet);
-			} else if (planet == "Volcano Planet") {
-				change_name(planet);
-			} else if (planet == "I'm running out of names") {
-				change_name(planet);
-			} else if (planet == "Volcano Planet 2") {
-				change_name(planet);
-			} else if (planet == "Howee") {
-				change_name(planet);
-			} else if (planet == "Wooowee") {
-				change_name(planet);
-			} else alert("invalid name");
+			if (sessionStorage.getItem('player_fuel') < 5) {
+				alert("Not enough fuel to travel");
+			} else {
+				sessionStorage.setItem('player_fuel', sessionStorage.getItem('player_fuel') - 5);
+				var planet = prompt("select a planet to travel to\n--------------------------------\nViarat\nYoohza Prime\nA-Mama A-Mia\nAlpha Dumbtauri\nCardassia\nVolcano Planet\nI'm running out of names\nVolcano Planet 2\nHowee\nWooowee", "Planet");
+				if (planet == "Viarat") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Yoohza Prime") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "A-Mama A-Mia") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Alpha Dumbtauri") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Cardassia") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Volcano Planet") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "I'm running out of names") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Volcano Planet 2") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Howee") {
+					change_name(planet);
+					random_event();
+				} else if (planet == "Wooowee") {
+					change_name(planet);
+					random_event();
+				} else alert("invalid name");
+			}
+		}
+
+		function refuel_button() {
+			if (sessionStorage.getItem('player_fuel') == 20) {
+				alert("you already have max fuel");
+			} else if (sessionStorage.getItem('player_credits') >= 50) {
+				alert("refueled for 50 credits!");
+				sessionStorage.setItem('player_fuel', 20);
+				sessionStorgae.setItem('player_credits', sessionStorage.getItem('player_credits') - 50);
+			} else {
+				slert("not enough credits");
+			}
+		}
+
+		function save_button() {
+			localStorage.setItem('planet_name', sessionStorage.getItem('planet_name'));
+			localStorage.setItem('difficulty', sessionStorage.getItem('difficulty'));
+			localStorage.setItem('player_name', sessionStorage.getItem('player_name'));
+			localStorage.setItem('player_pilot', sessionStorage.getItem('player_pilot'));
+			localStorage.setItem('player_engineer', sessionStorage.getItem('player_engineer'));
+			localStorage.setItem('player_fighter', sessionStorage.getItem('player_fighter'));
+			localStorage.setItem('player_trader', sessionStorage.getItem('player_trader'));
+			localStorage.setItem('player_credits', sessionStorage.getItem('player_credits'));
+			localStorage.setItem('player_cargo', sessionStorage.getItem('player_cargo'));
+			localStorage.setItem('player_fuel', sessionStorage.getItem('player_fuel'));
+			localStorage.setItem('player_water', sessionStorage.getItem('player_water'));
+			localStorage.setItem('player_furs', sessionStorage.getItem('player_furs'));
+			localStorage.setItem('player_food', sessionStorage.getItem('player_food'));
+			localStorage.setItem('player_ore', sessionStorage.getItem('player_ore'));
+			localStorage.setItem('player_games', sessionStorage.getItem('player_games'));
+			localStorage.setItem('player_firearms', sessionStorage.getItem('player_firearms'));
+			localStorage.setItem('player_medicine', sessionStorage.getItem('player_medicine'));
+			localStorage.setItem('player_machines', sessionStorage.getItem('player_machines'));
+			localStorage.setItem('player_narcotics', sessionStorage.getItem('player_narcotics'));
+			localStorage.setItem('player_robots', sessionStorage.getItem('player_robots'));
+			alert("saved!");
+		}
+
+		function load_button() {
+			if (!localStorage.getItem('player_water')) alert("no game to load");
+			else {
+				sessionStorage.setItem('planet_name', localStorage.getItem('planet_name'));
+				sessionStorage.setItem('difficulty', localStorage.getItem('difficulty'));
+				sessionStorage.setItem('player_name', localStorage.getItem('player_name'));
+				sessionStorage.setItem('player_pilot', localStorage.getItem('player_pilot'));
+				sessionStorage.setItem('player_engineer', localStorage.getItem('player_engineer'));
+				sessionStorage.setItem('player_fighter', localStorage.getItem('player_fighter'));
+				sessionStorage.setItem('player_trader', localStorage.getItem('player_trader'));
+				sessionStorage.setItem('player_credits', localStorage.getItem('player_credits'));
+				sessionStorage.setItem('player_cargo', localStorage.getItem('player_cargo'));
+				sessionStorage.setItem('player_fuel', localStorage.getItem('player_fuel'));
+				sessionStorage.setItem('player_water', localStorage.getItem('player_water'));
+				sessionStorage.setItem('player_furs', localStorage.getItem('player_furs'));
+				sessionStorage.setItem('player_food', localStorage.getItem('player_food'));
+				sessionStorage.setItem('player_ore', localStorage.getItem('player_ore'));
+				sessionStorage.setItem('player_games', localStorage.getItem('player_games'));
+				sessionStorage.setItem('player_firearms', localStorage.getItem('player_firearms'));
+				sessionStorage.setItem('player_medicine', localStorage.getItem('player_medicine'));
+				sessionStorage.setItem('player_machines', localStorage.getItem('player_machines'));
+				sessionStorage.setItem('player_narcotics', localStorage.getItem('player_narcotics'));
+				sessionStorage.setItem('player_robots', localStorage.getItem('player_robots'));
+				change_name(sessionStorage.getItem('planet_name'));
+				alert("loaded!");
+			}
+		}
+
+		function exit_button() {
+			window.location.href = "SpaceTrader.html";
 		}
 
 		function change_name(name) {
 			document.getElementById("planet_name").innerHTML = name;
 			sessionStorage.setItem('planet_name', name);
+		}
+
+		function random_event() {
+			var random = Math.floor(Math.random() * 8);
+			if (random == 0 && sessionStorage.getItem('player_credits') > 100) {
+				alert('Oh no! Bob and his band of space pirates stole 100 credits!');
+				sessionStorage.setItem('player_credits', sessionStorage.getItem('player_credits') - 100);
+			} else if (random == 1) {
+				alert('Oh no! Nick Fratto drank half of your fuel!');
+				sessionStorage.setItem('player_fuel', Math.floor(sessionStorage.getItem('player_fuel')/2));
+			}
 		}
 	</script>
 
